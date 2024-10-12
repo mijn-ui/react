@@ -1,6 +1,6 @@
 import React from "react"
 import { Button } from "@/components/ui/button"
-import ButtonSourceCode from "./button.tsx?raw"
+import ButtonSourceCode from "!!raw-loader!./button.tsx"
 import type { Meta, StoryObj } from "@storybook/react"
 
 const meta: Meta<typeof Button> = {

@@ -1,4 +1,4 @@
-declare module "*.tsx?raw" {
+declare module "!!raw-loader!*" {
   const content: string
   export default content
 }
