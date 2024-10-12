@@ -1,11 +1,11 @@
-import './global.css';
-import { RootProvider } from 'fumadocs-ui/provider';
-import { Inter } from 'next/font/google';
-import type { ReactNode } from 'react';
+import type { ReactNode } from "react"
+import { Inter } from "next/font/google"
+import "./global.css"
+import { RootProvider } from "fumadocs-ui/provider"
 
 const inter = Inter({
-  subsets: ['latin'],
-});
+  subsets: ["latin"],
+})
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
@@ -14,5 +14,5 @@ export default function Layout({ children }: { children: ReactNode }) {
         <RootProvider>{children}</RootProvider>
       </body>
     </html>
-  );
+  )
 }

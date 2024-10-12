@@ -6,24 +6,38 @@
     "build": "next build",
     "dev": "next dev",
     "start": "next start",
-    "postinstall": "fumadocs-mdx"
+    "postinstall": "fumadocs-mdx",
+    "prepare": "husky",
+    "lint": "eslint ./app/** ./components/**",
+    "lint:fix": "eslint --fix ./app/** ./components/**"
   },
   "dependencies": {
-    "next": "^14.2.8",
-    "fumadocs-ui": "13.4.10",
     "fumadocs-core": "13.4.10",
+    "fumadocs-mdx": "10.0.2",
+    "fumadocs-ui": "13.4.10",
+    "next": "^14.2.8",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "fumadocs-mdx": "10.0.2"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@eslint/js": "^9.12.0",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/mdx": "^2.0.13",
     "@types/node": "22.5.4",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
-    "typescript": "^5.5.4",
-    "@types/mdx": "^2.0.13",
     "autoprefixer": "^10.4.20",
+    "eslint": "^9.12.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.37.1",
+    "globals": "^15.11.0",
+    "husky": "^9.1.6",
     "postcss": "^8.4.45",
-    "tailwindcss": "^3.4.10"
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.8.1"
   }
 }
