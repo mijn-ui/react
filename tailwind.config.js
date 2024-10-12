@@ -144,5 +144,6 @@ export default {
         "scale-out": "scale-out 0.5s 0.2s ease-out, fade-out 0.4s ease-out",
       },
     },
+    plugins: [require("tailwindcss-animate")],
   },
 }
