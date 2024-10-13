@@ -1,4 +1,4 @@
-import { type HomeLayoutProps } from "fumadocs-ui/home-layout";
+import { type HomeLayoutProps } from "fumadocs-ui/home-layout"
 
 /**
  * Shared layout configurations
@@ -18,4 +18,4 @@ export const baseOptions: HomeLayoutProps = {
       active: "nested-url",
     },
   ],
-};
+}
