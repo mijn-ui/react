@@ -1,6 +1,6 @@
 import type { ReactNode } from "react"
-import { source } from "@/app/source"
 import { baseOptions } from "../layout.config"
+import { source } from "@/app/source"
 import { DocsLayout } from "fumadocs-ui/layout"
 
 export default function Layout({ children }: { children: ReactNode }) {

@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* general */
+    --main: 241 245 249; /* slate-100 */
+    --main-text: 0 0 0; /* black */
+
+    --main-border: 212 212 212; /* neutral-300 */
+
+    --surface: 255 255 255; /* white */
+    --surface-text: 0 0 0; /* black */
+
+    --muted: 229 229 229; /* neutral-200 */
+    --muted-text: 64 64 64; /* neutral-700 */
+
+    --primary: 249 115 22; /* orange-500 */
+    --primary-text: 255 255 255; /* white */
+
+    --secondary: 254 215 170; /* #FED7AA */
+    --secondary-text: 194 65 12; /* orange-700 */
+
+    --accent: 245 245 245; /* neutral-100 */
+    --accent-text: 0 0 0; /* black */
+
+    --info: 59 130 246; /* blue-500 */
+    --info-text: 30 64 175; /* blue-800 */
+    --info-filled-text: 255 255 255; /* white */
+
+    --danger: 220 38 38; /* red-500 */
+    --danger-text: 153 27 27; /* red-800 */
+    --danger-filled-text: 255 255 255; /* white */
+
+    --warning: 234 179 8; /* yellow-500 */
+    --warning-text: 133 77 14; /* yellow-800 */
+    --warning-filled-text: 0 0 0; /* white */
+
+    --success: 22 163 74; /* green-500 */
+    --success-text: 22 101 52; /* green-800 */
+    --success-filled-text: 255 255 255; /* white */
+
+    --disabled: 212 212 212; /* neutral-300 */
+    --disabled-text: 115 115 115; /* neutral 500 */
+
+    --ring: 255 255 255; /* white */
+
+    --input-border: 212 212 212; /* neutral-500 */
+    --kanban: 226 232 240; /* slate-300 */
+  }
+
+  .dark {
+    /* general */
+    --main: 10 10 10; /* neutral-900 */
+    --main-text: 245 245 245; /* neutral-100 */
+
+    --main-border: 64 64 64;
+
+    --surface: 19 19 19; /* #131313 */
+    --surface-text: 245 245 245; /* neutral-100 */
+
+    --muted: 38 38 38; /* neutral-800 */
+    --muted-text: 163 163 163; /* neutral-400 */
+
+    --primary: 249 115 22; /* orange-500 */
+    --primary-text: 255 255 255; /* white */
+
+    --secondary: 254 215 170; /* #FED7AA */
+    --secondary-text: 194 65 12; /* orange-700 */
+
+    --accent: 31 31 31; /* neutral-850 */
+    --accent-text: 245 245 245; /* neutral-100 */
+
+    --info: 59 130 246; /* blue-500 */
+    --info-text: 191 219 254; /* blue-200 */
+    --info-filled-text: 255 255 255; /* white */
+
+    --danger: 220 38 38; /* red-500 */
+    --danger-text: 254 202 202; /* red-200 */
+    --danger-filled-text: 255 255 255; /* white */
+
+    --warning: 234 179 8; /* yellow-500 */
+    --warning-text: 254 240 138; /* yellow-200 */
+    --warning-filled-text: 0 0 0; /* white */
+
+    --success: 22 163 74; /* green-500 */
+    --success-text: 187 247 208; /* green-200 */
+    --success-filled-text: 255 255 255; /* white */
+
+    --disabled: 38 38 38; /* neutral-800 */
+    --disabled-text: 115 115 115; /* neutral-800 */
+
+    --ring: 38 38 38;
+
+    --main-border: 82 82 82; /* neutral-700 */
+
+    --input-border: 64 64 64; /* neutral-600 */
+    --kanban: 38 38 38; /* neutral-800 */
+  }
+
+  body {
+    @apply border-main-border bg-main text-main-text;
+    font-family: sans-serif;
+  }
+}
