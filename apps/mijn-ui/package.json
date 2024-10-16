@@ -1,5 +1,5 @@
 {
-  "name": "@picosbs/mijn-ui-beta",
+  "name": "mijn-ui",
   "type": "module",
   "version": "1.0.0",
   "description": "This is a react component library",
@@ -12,12 +12,12 @@
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
+    "lib:build": "rollup -c",
+    "lib:dev": "rollup -c -w",
     "test": "jest --watchAll --verbose",
     "test:noWatch": "jest --verbose -o",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "dev": "storybook dev -p 6006",
+    "build": "storybook build",
     "lint": "eslint ./src",
     "lint:fix": "eslint --fix ./src"
   },
