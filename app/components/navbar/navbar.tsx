@@ -1,26 +1,45 @@
 "use client"
 
 import React from "react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
 import { FaCashRegister } from "react-icons/fa"
+import { IoCaretDown } from "react-icons/io5"
 
 const Navbar = () => {
   return (
-    <header className="fixed inset-x-0 top-0 z-30 flex justify-between items-center h-16 w-full backdrop-blur-sm">
+    <header className="fixed inset-x-0 top-0 bg-transparent z-30 flex justify-between items-center h-16 w-full backdrop-blur-sm">
       <nav className="flex w-full items-center justify-between px-5 py-2">
-        <h3 className="font-bold text-lg flex items-center gap-2">
-          <Logo className="fill-fd-foreground size-7" />
-          MijnUI
-        </h3>
+        <div className="flex items-center gap-3">
+          <Link href={"/"} className="font-bold  flex items-center gap-2">
+            <Logo className="fill-fd-foreground size-5 items-center" />
+            MijnUI
+          </Link>
+          <Popover>
+            <PopoverTrigger className="h-auto py-1.5 shadow-none">
+              <span>v0.0.1</span>
+              <IoCaretDown />
+            </PopoverTrigger>
+            <PopoverContent className="p-1.5 w-28 bg-fd-popover border-fd-border">
+              <Link
+                href={"/docs"}
+                className="text-sm py-1.5 px-2 rounded-md hover:bg-fd-accent w-full block"
+              >
+                v0.0.1
+              </Link>
+            </PopoverContent>
+          </Popover>
+        </div>
 
         <div className="flex items-center gap-2">
-          <div className="rounded-full bg-green-500/20 px-3 py-1 text-xs font-semibold text-success">
-            Beta: v0.0.1
-          </div>
-
           <Button
             size={"icon"}
-            className="size-9 text-xs text-muted-text hover:text-secondary-text sm:size-10"
+            className="size-9 text-xs text-mutedforeground hover:text-secondaryforeground sm:size-10"
             variant={"surface"}
           >
             <FaCashRegister />

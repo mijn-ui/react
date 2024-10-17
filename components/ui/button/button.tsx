@@ -12,13 +12,14 @@ const buttonStyles = cva(
   {
     variants: {
       variant: {
-        primary: "bg-primary text-primary-text hover:bg-primary/90",
-        secondary: "bg-secondary text-secondary-text hover:bg-secondary/90",
+        primary: "bg-primary text-primary-foreground hover:bg-primary/90",
+        secondary:
+          "bg-secondary text-secondary-foreground hover:bg-secondary/90",
         outline:
-          "border border-main-border hover:bg-accent hover:text-accent-text",
-        danger: "bg-danger text-danger-filled-text hover:bg-danger/90",
-        ghost: "hover:bg-accent hover:text-accent-text",
-        surface: "bg-surface text-surface-text hover:bg-accent shadow-sm",
+          "border border-border hover:bg-accent hover:text-accent-foreground",
+        danger: "bg-danger text-danger-filled-foreground hover:bg-danger/90",
+        ghost: "hover:bg-accent hover:text-accent-foreground",
+        surface: "bg-surface text-surface-foreground hover:bg-accent shadow-sm",
       },
       radius: {
         none: "rounded-none",

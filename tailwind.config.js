@@ -14,70 +14,74 @@ export default {
   theme: {
     extend: {
       colors: {
-        main: {
-          DEFAULT: "rgb(var(--main) / <alpha-value>)",
-          text: "rgb(var(--main-text) / <alpha-value>)",
+        background: {
+          DEFAULT: "hsl(var(--background) / <alpha-value>)",
+          foreground: "hsl(var(--foreground) / <alpha-value>)",
         },
 
         muted: {
-          DEFAULT: "rgb(var(--muted) / <alpha-value>)",
-          text: "rgb(var(--muted-text) / <alpha-value>)",
+          DEFAULT: "hsl(var(--muted) / <alpha-value>)",
+          foreground: "hsl(var(--muted-foreground) / <alpha-value>)",
         },
 
         surface: {
-          DEFAULT: "rgb(var(--surface) / <alpha-value>)",
-          text: "rgb(var(--surface-text) / <alpha-value>)",
+          DEFAULT: "hsl(var(--surface) / <alpha-value>)",
+          foreground: "hsl(var(--surface-foreground) / <alpha-value>)",
         },
 
         primary: {
-          DEFAULT: "rgb(var(--primary) / <alpha-value>)",
-          text: "rgb(var(--primary-text) / <alpha-value>)",
+          DEFAULT: "hsl(var(--primary) / <alpha-value>)",
+          foreground: "hsl(var(--primary-foreground) / <alpha-value>)",
         },
 
         secondary: {
-          DEFAULT: "rgb(var(--secondary) / <alpha-value>)",
-          text: "rgb(var(--secondary-text) / <alpha-value>)",
+          DEFAULT: "hsl(var(--secondary) / <alpha-value>)",
+          foreground: "hsl(var(--secondary-foreground) / <alpha-value>)",
         },
 
         accent: {
-          DEFAULT: "rgb(var(--accent) / <alpha-value>)",
-          text: "rgb(var(--accent-text) / <alpha-value>)",
+          DEFAULT: "hsl(var(--accent) / <alpha-value>)",
+          foreground: "hsl(var(--accent-foreground) / <alpha-value>)",
         },
 
         success: {
-          DEFAULT: "rgb(var(--success) / <alpha-value>)",
-          text: "rgb(var(--success-text) / <alpha-value>)",
-          "filled-text": "rgb(var(--success-filled-text) / <alpha-value>)",
+          DEFAULT: "hsl(var(--success) / <alpha-value>)",
+          foreground: "hsl(var(--success-foreground) / <alpha-value>)",
+          "filled-foreground":
+            "hsl(var(--success-filled-foreground) / <alpha-value>)",
         },
 
         info: {
-          DEFAULT: "rgb(var(--info) / <alpha-value>)",
-          text: "rgb(var(--info-text) / <alpha-value>)",
-          "filled-text": "rgb(var(--info-filled-text) / <alpha-value>)",
+          DEFAULT: "hsl(var(--info) / <alpha-value>)",
+          foreground: "hsl(var(--info-foreground) / <alpha-value>)",
+          "filled-foreground":
+            "hsl(var(--info-filled-foreground) / <alpha-value>)",
         },
 
         warning: {
-          DEFAULT: "rgb(var(--warning) / <alpha-value>)",
-          text: "rgb(var(--warning-text) / <alpha-value>)",
-          "filled-text": "rgb(var(--warning-filled-text) / <alpha-value>)",
+          DEFAULT: "hsl(var(--warning) / <alpha-value>)",
+          foreground: "hsl(var(--warning-foreground) / <alpha-value>)",
+          "filled-foreground":
+            "hsl(var(--warning-filled-foreground) / <alpha-value>)",
         },
 
         danger: {
-          DEFAULT: "rgb(var(--danger) / <alpha-value>)",
-          text: "rgb(var(--danger-text) / <alpha-value>)",
-          "filled-text": "rgb(var(--danger-filled-text) / <alpha-value>)",
+          DEFAULT: "hsl(var(--danger) / <alpha-value>)",
+          foreground: "hsl(var(--danger-foreground) / <alpha-value>)",
+          "filled-foreground":
+            "hsl(var(--danger-filled-foreground) / <alpha-value>)",
         },
 
         disabled: {
-          DEFAULT: "rgb(var(--disabled) / <alpha-value>)",
-          text: "rgb(var(--disabled-text) / <alpha-value>)",
+          DEFAULT: "hsl(var(--disabled) / <alpha-value>)",
+          foreground: "hsl(var(--disabled-foreground) / <alpha-value>)",
         },
 
-        "main-border": "rgb(var(--main-border) / <alpha-value>)",
-        "input-border": "rgb(var(--input-border) / <alpha-value>)",
+        "background-border": "hsl(var(--background-border) / <alpha-value>)",
+        "input-border": "hsl(var(--input-border) / <alpha-value>)",
 
-        kanban: "rgb(var(--kanban) / <alpha-value>)",
-        ring: "rgb(var(--ring) / <alpha-value>)",
+        kanban: "hsl(var(--kanban) / <alpha-value>)",
+        ring: "hsl(var(--ring) / <alpha-value>)",
       },
 
       borderRadius: {
@@ -144,9 +148,6 @@ export default {
         "scale-out": "scale-out 0.5s 0.2s ease-out, fade-out 0.4s ease-out",
       },
     },
-    plugins: [
-      require("tailwindcss-animate"),
-      require("@tailwindcss/typography"),
-    ],
   },
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 }

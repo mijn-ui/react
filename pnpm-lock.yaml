@@ -44,12 +44,6 @@ importers:
       tailwind-merge:
         specifier: ^2.5.3
         version: 2.5.3
-      tailwindcss-animate:
-        specifier: ^1.0.7
-        version: 1.0.7(tailwindcss@3.4.13)
-      tailwindcss-typography:
-        specifier: ^3.1.0
-        version: 3.1.0
     devDependencies:
       '@commitlint/cli':
         specifier: ^19.5.0
@@ -108,6 +102,9 @@ importers:
       tailwindcss:
         specifier: ^3.4.10
         version: 3.4.13
+      tailwindcss-animate:
+        specifier: ^1.0.7
+        version: 1.0.7(tailwindcss@3.4.13)
       typescript:
         specifier: ^5.5.4
         version: 5.6.3
@@ -3157,10 +3154,6 @@ packages:
     resolution: {integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
-
-  tailwindcss-typography@3.1.0:
-    resolution: {integrity: sha512-uqovHMt9orPs1kl2U+bidlcO25tmUGJjjluQdI67yRnOy/IlqKe6tYcHHAsQPhehlk3r11/T3CE7Uc0PSUJcNg==}
-    deprecated: Use @tailwindcss/typography
 
   tailwindcss@3.4.13:
     resolution: {integrity: sha512-KqjHOJKogOUt5Bs752ykCeiwvi0fKVkr5oqsFNt/8px/tA8scFPIlkygsf6jXrfCqGHz7VflA6+yytWuM+XhFw==}
@@ -6999,10 +6992,6 @@ snapshots:
   tailwindcss-animate@1.0.7(tailwindcss@3.4.13):
     dependencies:
       tailwindcss: 3.4.13
-
-  tailwindcss-typography@3.1.0:
-    dependencies:
-      lodash: 4.17.21
 
   tailwindcss@3.4.13:
     dependencies:

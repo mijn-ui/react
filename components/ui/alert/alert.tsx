@@ -7,7 +7,7 @@ import { applyUnstyled, cn } from "@/utils"
 import { VariantProps, cva } from "class-variance-authority"
 
 const alertStyles = cva(
-  "relative rounded-lg w-full py-4 px-3 [&>span~*]:pl-8 border-main-border border [&>svg]:text-main-text [&>div]:translate-y-[-3px]",
+  "relative rounded-lg w-full py-4 px-3 [&>span~*]:pl-8 border-background-border border [&>svg]:text-foreground [&>div]:translate-y-[-3px]",
   {
     variants: {
       variant: {
@@ -28,7 +28,7 @@ const alertStyles = cva(
         variant: "default",
         status: "success",
         className:
-          "bg-success/10 dark:border-success/80 border-success text-success-text [&>svg]:text-success-text",
+          "bg-success/10 dark:border-success/80 border-success text-success-foreground [&>svg]:text-success-foreground",
       },
       {
         variant: "default",
@@ -40,19 +40,19 @@ const alertStyles = cva(
         variant: "default",
         status: "warning",
         className:
-          "bg-warning/10 dark:border-warning/50 border-warning text-warning-text [&>svg]:text-warning-text",
+          "bg-warning/10 dark:border-warning/50 border-warning text-warning-foreground [&>svg]:text-warning-foreground",
       },
       {
         variant: "default",
         status: "danger",
         className:
-          "bg-danger/10 border-danger dark:border-danger/50 text-danger-text [&>svg]:text-danger-text",
+          "bg-danger/10 border-danger dark:border-danger/50 text-danger-foreground [&>svg]:text-danger-foreground",
       },
       {
         variant: "default",
         status: "neutral",
         className:
-          "bg-main/10 dark:border-main-text/50 border-main-text text-main-text [&>svg]:text-main-text",
+          "bg-background/10 dark:border-foreground/50 border-foreground text-foreground [&>svg]:text-foreground",
       },
 
       /* -------------------------------------------------------------------------- */
@@ -60,30 +60,30 @@ const alertStyles = cva(
         variant: "filled",
         status: "success",
         className:
-          "bg-success dark:bg-success/80 text-success-filled-text [&>svg]:text-success-filled-text",
+          "bg-success dark:bg-success/80 text-success-filled-foreground [&>svg]:text-success-filled-foreground",
       },
       {
         variant: "filled",
         status: "info",
         className:
-          "bg-info dark:bg-info/80 text-info-filled-text [&>svg]:text-info-filled-text",
+          "bg-info dark:bg-info/80 text-info-filled-foreground [&>svg]:text-info-filled-foreground",
       },
       {
         variant: "filled",
         status: "warning",
         className:
-          "bg-warning dark:bg-warning/80 text-warning-filled-text [&>svg]:text-warning-filled-text",
+          "bg-warning dark:bg-warning/80 text-warning-filled-foreground [&>svg]:text-warning-filled-foreground",
       },
       {
         variant: "filled",
         status: "danger",
         className:
-          "bg-danger dark:bg-danger/80 text-danger-filled-text [&>svg]:text-danger-filled-text",
+          "bg-danger dark:bg-danger/80 text-danger-filled-foreground [&>svg]:text-danger-filled-foreground",
       },
       {
         variant: "filled",
         status: "neutral",
-        className: "bg-main-text text-main [&>svg]:text-main",
+        className: "bg-foreground text-background [&>svg]:text-background",
       },
 
       /* -------------------------------------------------------------------------- */
@@ -111,7 +111,7 @@ const alertStyles = cva(
       {
         variant: "outline",
         status: "neutral",
-        className: "border-main-text text-main-text [&>svg]:text-main-text",
+        className: "border-foreground text-foreground [&>svg]:text-foreground",
       },
     ],
     defaultVariants: {
