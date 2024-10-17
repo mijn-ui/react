@@ -11,6 +11,7 @@
     "lint:fix": "eslint --fix ./app"
   },
   "dependencies": {
+    "@repo/react": "workspace:*",
     "fumadocs-core": "13.4.10",
     "fumadocs-mdx": "10.0.2",
     "fumadocs-ui": "13.4.10",
@@ -18,28 +19,30 @@
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.6.6",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@eslint/compat": "^1.1.1",
     "@eslint/js": "^9.7.0",
-    "eslint": "~9.9.0",
-    "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-react": "^7.34.4",
-    "eslint-plugin-react-hooks": "^5.0.0",
-    "globals": "^15.8.0",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
-    "prettier": "^3.2.5",
-    "prettier-plugin-tailwindcss": "^0.6.6",
-    "recommended.js": "link:eslint-plugin-react/configs/recommended.js",
-    "typescript-eslint": "^8.0.1",
+    "@types/eslint": "^9.6.1",
     "@types/mdx": "^2.0.13",
     "@types/node": "22.5.4",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.20",
+    "eslint": "~9.9.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.34.4",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "globals": "^15.8.0",
     "postcss": "^8.4.45",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.6.6",
+    "recommended.js": "link:eslint-plugin-react/configs/recommended.js",
     "tailwindcss": "^3.4.10",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.0.1"
   }
 }

@@ -1,4 +1,12 @@
+"use client"
+
 import Link from "next/link"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@repo/react"
 
 export default function HomePage() {
   return (
@@ -14,6 +22,18 @@ export default function HomePage() {
         </Link>{" "}
         and see the documentation.
       </p>
+      <Accordion
+        className="w-full max-w-80 font-serif"
+        collapsible
+        type="single"
+      >
+        <AccordionItem value="item-1">
+          <AccordionTrigger>Is it accessible</AccordionTrigger>
+          <AccordionContent className="font-sans">
+            Yes. It adheres to the WAI-ARIA design pattern.
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
     </main>
   )
 }
