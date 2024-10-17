@@ -31,7 +31,7 @@
 
 .dark {
   /* general */
-  --background: 0 0% 4%; /* neutral-900 */
+  --background: 0 0% 7%; /* neutral-900 */
   --foreground: 0 0% 96%; /* neutral-100 */
 
   --popover: 0 0% 7%; /* #131313 */
@@ -51,7 +51,7 @@
 
   --ring: 0 0% 15%;
 
-  --border: 0 0% 32%; /* neutral-700 */
+  --border: 0 0% 15%; /* neutral-700 */
 
   --input: 0 0% 25%; /* neutral-600 */
   --kanban: 0 0% 15%; /* neutral-800 */
@@ -59,4 +59,12 @@
 
 [data-search-full] {
   @apply text-fd-muted-foreground/80 bg-fd-popover;
+}
+
+[data-toc] {
+  @apply pt-20;
+}
+
+#nd-docs-layout aside#nd-sidebar {
+  @apply bg-fd-background/10 backdrop-blur-sm pt-12;
 }

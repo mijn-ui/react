@@ -1,3 +1,5 @@
+"use client"
+
 import * as React from "react"
 import { UnstyledProvider, useUnstyled } from "@/context/UnstyledProvider"
 import { UnstyledProps } from "@/types"
@@ -26,30 +28,31 @@ const alertStyles = cva(
         variant: "default",
         status: "success",
         className:
-          "bg-success/10 border-success text-success-text [&>svg]:text-success-text",
+          "bg-success/10 dark:border-success/80 border-success text-success-text [&>svg]:text-success-text",
       },
       {
         variant: "default",
         status: "info",
-        className: "bg-info/10 border-info text-info [&>svg]:text-info",
+        className:
+          "bg-info/10 dark:border-info/50 border-info text-info [&>svg]:text-info",
       },
       {
         variant: "default",
         status: "warning",
         className:
-          "bg-warning/10 border-warning text-warning-text [&>svg]:text-warning-text",
+          "bg-warning/10 dark:border-warning/50 border-warning text-warning-text [&>svg]:text-warning-text",
       },
       {
         variant: "default",
         status: "danger",
         className:
-          "bg-danger/10 border-danger text-danger-text [&>svg]:text-danger-text",
+          "bg-danger/10 border-danger dark:border-danger/50 text-danger-text [&>svg]:text-danger-text",
       },
       {
         variant: "default",
         status: "neutral",
         className:
-          "bg-main/10 border-main-text text-main-text [&>svg]:text-main-text",
+          "bg-main/10 dark:border-main-text/50 border-main-text text-main-text [&>svg]:text-main-text",
       },
 
       /* -------------------------------------------------------------------------- */
