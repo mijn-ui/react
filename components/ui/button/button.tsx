@@ -19,7 +19,7 @@ const buttonStyles = cva(
           "border border-border hover:bg-accent hover:text-accent-foreground",
         danger: "bg-danger text-danger-filled-foreground hover:bg-danger/90",
         ghost: "hover:bg-accent hover:text-accent-foreground",
-        surface: "bg-surface text-surface-foreground hover:bg-accent shadow-sm",
+        surface: "bg-surface border text-surface-foreground hover:bg-accent",
       },
       radius: {
         none: "rounded-none",

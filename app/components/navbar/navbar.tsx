@@ -10,7 +10,7 @@ import {
   SelectTrigger,
 } from "@/components/ui/select"
 import { useSearchContext } from "fumadocs-ui/provider"
-import { LuGithub } from "react-icons/lu"
+import { LuGithub, LuSearch } from "react-icons/lu"
 
 const Navbar = () => {
   const { setOpenSearch } = useSearchContext()
@@ -36,12 +36,29 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-2">
-          <Button size={"icon"} variant={"surface"} className="border" asChild>
+          <Button
+            onClick={() => setOpenSearch(true)}
+            variant={"surface"}
+            size={"sm"}
+            className="text-muted-foreground gap-2"
+          >
+            <LuSearch />
+            <span>Search...</span>
+            <div className="inline-flex border rounded-full ml-4 gap-1 h-5 px-2 py-px">
+              <kbd className="text-[0.625rem]">Ctrl+</kbd>
+              <kbd className="text-[0.625rem]">K</kbd>
+            </div>
+          </Button>
+          <Button
+            size={"sm"}
+            variant={"surface"}
+            className="border px-2"
+            asChild
+          >
             <Link href={"/"}>
               <LuGithub size={18} />
             </Link>
           </Button>
-          <Button onClick={() => setOpenSearch(true)}>Test</Button>
         </div>
       </nav>
 

@@ -5,7 +5,7 @@ export default {
   content: [
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
-    "./content/**/*.{md,mdx}",
+    "./content/**/*.{ts,tsx,md,mdx}",
     "./mdx-components.{ts,tsx}",
     "./node_modules/fumadocs-ui/dist/**/*.js",
     "./.storybook/preview.tsx",
@@ -14,10 +14,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: {
-          DEFAULT: "hsl(var(--background) / <alpha-value>)",
-          foreground: "hsl(var(--foreground) / <alpha-value>)",
-        },
+        background: "hsl(var(--background) / <alpha-value>)",
+
+        foreground: "hsl(var(--foreground) / <alpha-value>)",
 
         muted: {
           DEFAULT: "hsl(var(--muted) / <alpha-value>)",

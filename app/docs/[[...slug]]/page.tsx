@@ -24,7 +24,7 @@ export default async function Page({
       <DocsTitle className="text-4xl pt-12 font-extrabold">
         {page.data.title}
       </DocsTitle>
-      <DocsDescription className="mb-0">
+      <DocsDescription className="mb-0 text-lg">
         {page.data.description}
       </DocsDescription>
       <DocsBody className="prose">

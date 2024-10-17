@@ -21,7 +21,7 @@
   --accent: 0 0% 96%; /* neutral-100 */
   --accent-foreground: 0 0% 0%; /* black */
 
-  --surface: 0 0% 100%; /* white */
+  --surface: 0 0% 98%; /* neutral-50 */
   --surface-foreground: 0 0% 0%; /* black */
 
   --info: 216 76% 52%; /* blue-500 */
@@ -33,7 +33,7 @@
   --danger-filled-foreground: 0 0% 100%; /* white */
 
   --warning: 45 92% 47%; /* yellow-500 */
-  --warning-foreground: 45 81% 27%; /* yellow-800 */
+  --warning-foreground: 28 73% 26%; /* yellow-900 */
   --warning-filled-foreground: 0 0% 0%; /* white */
 
   --success: 140 76% 38%; /* green-500 */
