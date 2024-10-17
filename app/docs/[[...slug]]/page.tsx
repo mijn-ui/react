@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
+import GradientBackground from "@/app/components/decorators/GradientBackground"
 import { source } from "@/app/source"
 import defaultMdxComponents from "fumadocs-ui/mdx"
 import {
@@ -21,9 +22,14 @@ export default async function Page({
 
   return (
     <DocsPage toc={page.data.toc} full={page.data.full}>
-      <DocsTitle>{page.data.title}</DocsTitle>
-      <DocsDescription>{page.data.description}</DocsDescription>
-      <DocsBody>
+      <DocsTitle className="text-4xl font-extrabold">
+        {page.data.title}
+      </DocsTitle>
+      <GradientBackground />
+      <DocsDescription className="mb-0">
+        {page.data.description}
+      </DocsDescription>
+      <DocsBody className="prose">
         <MDX components={{ ...defaultMdxComponents }} />
       </DocsBody>
     </DocsPage>
