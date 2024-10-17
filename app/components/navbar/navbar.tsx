@@ -4,14 +4,17 @@ import React from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover"
-import { FaCashRegister } from "react-icons/fa"
-import { IoCaretDown } from "react-icons/io5"
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+} from "@/components/ui/select"
+import { useSearchContext } from "fumadocs-ui/provider"
+import { LuGithub } from "react-icons/lu"
 
 const Navbar = () => {
+  const { setOpenSearch } = useSearchContext()
+
   return (
     <header className="fixed inset-x-0 top-0 bg-transparent z-30 flex justify-between items-center h-16 w-full backdrop-blur-sm">
       <nav className="flex w-full items-center justify-between px-5 py-2">
@@ -20,30 +23,25 @@ const Navbar = () => {
             <Logo className="fill-fd-foreground size-5 items-center" />
             MijnUI
           </Link>
-          <Popover>
-            <PopoverTrigger className="h-auto py-1.5 shadow-none">
-              <span>v0.0.1</span>
-              <IoCaretDown />
-            </PopoverTrigger>
-            <PopoverContent className="p-1.5 w-28 bg-fd-popover border-fd-border">
-              <Link
-                href={"/docs"}
-                className="text-sm py-1.5 px-2 rounded-md hover:bg-fd-accent w-full block"
-              >
-                v0.0.1
-              </Link>
-            </PopoverContent>
-          </Popover>
+          <Select>
+            <SelectTrigger className="h-auto w-24 py-1.5 shadow-none">
+              v0.0.1
+            </SelectTrigger>
+            <SelectContent className="p-1.5 w-28 bg-fd-popover border-fd-border">
+              <SelectItem value="v0.0.1">
+                <Link href={"/docs"}>v0.0.1</Link>
+              </SelectItem>
+            </SelectContent>
+          </Select>
         </div>
 
         <div className="flex items-center gap-2">
-          <Button
-            size={"icon"}
-            className="size-9 text-xs text-mutedforeground hover:text-secondaryforeground sm:size-10"
-            variant={"surface"}
-          >
-            <FaCashRegister />
+          <Button size={"icon"} variant={"surface"} className="border" asChild>
+            <Link href={"/"}>
+              <LuGithub size={18} />
+            </Link>
           </Button>
+          <Button onClick={() => setOpenSearch(true)}>Test</Button>
         </div>
       </nav>
 
