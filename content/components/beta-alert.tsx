@@ -4,7 +4,7 @@ import {
   AlertDescription,
   AlertIcon,
   AlertTitle,
-} from "@/components/ui/alert"
+} from "@/mijn-ui/ui/alert"
 import { LuAlertCircle } from "react-icons/lu"
 
 const BetaAlert = () => {

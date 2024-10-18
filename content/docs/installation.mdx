@@ -1,0 +1,146 @@
+---
+title: Installation
+description: Manual Installation
+---
+
+import BetaAlert from "../components/beta-alert"
+import { Step, Steps } from "fumadocs-ui/components/steps"
+
+<BetaAlert />
+
+<Steps>
+  <Step>
+### Install Next.js
+
+```bash title="Terminal"
+  npx create-next-app@latest
+```
+
+Make sure to include **TypeScript** and **Tailwind CSS** since Mijn-UI components relies on them.
+
+```bash title="Terminal"
+  ...
+  Would you like to use TypeScript? Yes
+  ...
+  Would you like to use Tailwind CSS? Yes
+  ...
+```
+
+</Step>
+<Step>
+ 
+### Add Themes
+
+These are the default themes provided by mijn-ui. If you would like to create your own theme, learn more about themes [here](/docs/themes).
+
+```css title="Css"
+@root {
+  :root {
+    /* general */
+    --background: 210 14% 95%; /* slate-100 */
+    --foreground: 0 0% 0%; /* black */
+
+    --border: 0 0% 83%; /* neutral-300 */
+
+    --muted: 0 0% 90%; /* neutral-200 */
+    --muted-foreground: 0 0% 25%; /* neutral-700 */
+
+    --primary: 29 100% 52%; /* orange-500 */
+    --primary-foreground: 0 0% 100%; /* white */
+
+    --secondary: 34 100% 82%; /* #FED7AA */
+    --secondary-foreground: 29 93% 39%; /* orange-700 */
+
+    --accent: 0 0% 96%; /* neutral-100 */
+    --accent-foreground: 0 0% 0%; /* black */
+
+    --surface: 0 0% 98%; /* neutral-50 */
+    --surface-foreground: 0 0% 0%; /* black */
+
+    --info: 216 76% 52%; /* blue-500 */
+    --info-foreground: 219 64% 43%; /* blue-800 */
+    --info-filled-foreground: 0 0% 100%; /* white */
+
+    --danger: 0 72% 43%; /* red-500 */
+    --danger-foreground: 0 82% 31%; /* red-800 */
+    --danger-filled-foreground: 0 0% 100%; /* white */
+
+    --warning: 45 92% 47%; /* yellow-500 */
+    --warning-foreground: 28 73% 26%; /* yellow-900 */
+    --warning-filled-foreground: 0 0% 0%; /* white */
+
+    --success: 140 76% 38%; /* green-500 */
+    --success-foreground: 140 49% 20%; /* green-800 */
+    --success-filled-foreground: 0 0% 100%; /* white */
+
+    --disabled: 0 0% 83%; /* neutral-300 */
+    --disabled-foreground: 0 0% 45%; /* neutral 500 */
+
+    --ring: 0 0% 100%; /* white */
+
+    --input: 0 0% 83%; /* neutral-500 */
+    --kanban: 0 0% 88%; /* slate-300 */
+  }
+
+  .dark {
+    /* general */
+    --background: 0 0% 4%; /* neutral-900 */
+    --foreground: 0 0% 96%; /* neutral-100 */
+
+    --surface: 0 0% 7%; /* #131313 */
+    --surface-foreground: 0 0% 96%; /* neutral-100 */
+
+    --muted: 0 0% 15%; /* neutral-800 */
+    --muted-foreground: 0 0% 64%; /* neutral-400 */
+
+    --primary: 29 100% 52%; /* orange-500 */
+    --primary-foreground: 0 0% 100%; /* white */
+
+    --secondary: 34 100% 82%; /* #FED7AA */
+    --secondary-foreground: 29 93% 39%; /* orange-700 */
+
+    --accent: 0 0% 12%; /* neutral-850 */
+    --accent-foreground: 0 0% 96%; /* neutral-100 */
+
+    --info: 216 76% 52%; /* blue-500 */
+    --info-foreground: 207 70% 80%; /* blue-200 */
+    --info-filled-foreground: 0 0% 100%; /* white */
+
+    --danger: 0 72% 43%; /* red-500 */
+    --danger-foreground: 0 79% 79%; /* red-200 */
+    --danger-filled-foreground: 0 0% 100%; /* white */
+
+    --warning: 45 92% 47%; /* yellow-500 */
+    --warning-foreground: 45 94% 70%; /* yellow-200 */
+    --warning-filled-foreground: 0 0% 0%; /* white */
+
+    --success: 140 76% 38%; /* green-500 */
+    --success-foreground: 140 71% 82%; /* green-200 */
+    --success-filled-foreground: 0 0% 100%; /* white */
+
+    --disabled: 0 0% 15%; /* neutral-800 */
+    --disabled-foreground: 0 0% 45%; /* neutral-800 */
+
+    --ring: 0 0% 15%;
+
+    --border: 0 0% 15%;
+
+    --input: 0 0% 25%; /* neutral-600 */
+    --kanban: 0 0% 15%; /* neutral-800 */
+  }
+
+  body {
+    @apply bg-background text-foreground border-border;
+  }
+}
+```
+
+  </Step>
+
+  <Step>
+    ### That's it
+
+    You can now start adding components to your project. Check out the [components](/docs/components) section to learn more about the available components.
+
+  </Step>
+</Steps>

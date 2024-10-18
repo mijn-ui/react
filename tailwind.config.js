@@ -3,7 +3,7 @@ import { createPreset } from "fumadocs-ui/tailwind-plugin"
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./components/**/*.{ts,tsx}",
+    "./mijn-ui/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./content/**/*.{ts,tsx,md,mdx}",
     "./mdx-components.{ts,tsx}",

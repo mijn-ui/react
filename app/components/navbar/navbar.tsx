@@ -2,13 +2,13 @@
 
 import React from "react"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/mijn-ui/ui/button"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-} from "@/components/ui/select"
+} from "@/mijn-ui/ui/select"
 import { useSearchContext } from "fumadocs-ui/provider"
 import { LuGithub, LuSearch } from "react-icons/lu"
 
@@ -49,12 +49,7 @@ const Navbar = () => {
               <kbd className="text-[0.625rem]">K</kbd>
             </div>
           </Button>
-          <Button
-            size={"sm"}
-            variant={"surface"}
-            className="border px-2"
-            asChild
-          >
+          <Button variant={"surface"} className="border px-2" asChild>
             <Link href={"/"}>
               <LuGithub size={18} />
             </Link>

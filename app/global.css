@@ -111,3 +111,11 @@ body {
 #nd-docs-layout aside#nd-sidebar {
   @apply bg-fd-background/10 backdrop-blur-sm pt-12;
 }
+
+#nd-docs-layout .steps .step::before {
+  @apply bg-surface text-surface-foreground shadow-sm;
+}
+
+.fd-codeblock {
+  @apply bg-surface;
+}
