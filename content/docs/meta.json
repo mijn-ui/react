@@ -1,5 +1,3 @@
 {
-  "title": "mijn-ui",
-  "root": true,
-  "pages": ["---Getting Started---", "index", "motivation", "installation"]
+  "pages": ["---Getting Started---", "index", "...(getting-started)", "..."]
 }

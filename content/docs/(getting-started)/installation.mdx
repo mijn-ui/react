@@ -3,7 +3,7 @@ title: Installation
 description: Manual Installation
 ---
 
-import BetaAlert from "../components/beta-alert"
+import BetaAlert from "../../components/beta-alert"
 import { Step, Steps } from "fumadocs-ui/components/steps"
 
 <BetaAlert />
@@ -31,7 +31,7 @@ Make sure to include **TypeScript** and **Tailwind CSS** since Mijn-UI component
  
 ### Add Themes
 
-These are the default themes provided by mijn-ui. If you would like to create your own theme, learn more about themes [here](/docs/themes).
+These are the default themes provided by mijn-ui. If you would like to create your own theme, learn more about themes [here](/docs/theming).
 
 ```css title="Css"
 @root {
@@ -76,10 +76,9 @@ These are the default themes provided by mijn-ui. If you would like to create yo
     --disabled: 0 0% 83%; /* neutral-300 */
     --disabled-foreground: 0 0% 45%; /* neutral 500 */
 
-    --ring: 0 0% 100%; /* white */
+    --ring: 0 0% 0%; /* black */
 
     --input: 0 0% 83%; /* neutral-500 */
-    --kanban: 0 0% 88%; /* slate-300 */
   }
 
   .dark {
@@ -121,12 +120,11 @@ These are the default themes provided by mijn-ui. If you would like to create yo
     --disabled: 0 0% 15%; /* neutral-800 */
     --disabled-foreground: 0 0% 45%; /* neutral-800 */
 
-    --ring: 0 0% 15%;
+    --ring: 0 0% 15%; /* neutral-800 */
 
-    --border: 0 0% 15%;
+    --border: 0 0% 15%; /* neutral-800 */
 
     --input: 0 0% 25%; /* neutral-600 */
-    --kanban: 0 0% 15%; /* neutral-800 */
   }
 
   body {

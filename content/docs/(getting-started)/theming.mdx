@@ -1,0 +1,210 @@
+---
+title: Theming
+description: Mijn-UI uses Tawildin CSS variables for themeing.
+---
+
+import ThemesVariableAlert from "../../components/themes-variable-alert"
+import { Tab, Tabs } from "fumadocs-ui/components/tabs"
+
+---
+
+## Color Conventions
+
+`background` and `foreground` colors
+
+- The `background` variable is used for the background color of the component.
+- The `foreground` variable is used for the text color.
+
+### Example
+
+For the following CSS variables:
+
+```css title="Css"
+{
+  --primary: 29 100% 52%; /* orange-500 */
+  --primary-foreground: 0 0% 100%; /* white */
+}
+```
+
+- The background color will be `hsl(var(--primary))`.
+- The foreground (text) color will be `hsl(var(--primary-foreground))`.
+
+#### Usage in the Component
+
+```tsx title="example.tsx"
+<div className="bg-primary text-primary-foreground">Hello</div>
+```
+
+<ThemesVariableAlert />
+
+## List of Variables
+
+---
+
+Default `Background` and `Text` color
+
+```css
+{
+  --background: 210 14% 95%; /* slate-100 */
+  --foreground: 0 0% 0%; /* black */
+}
+```
+
+`Background` and `Text` color of components such as `Separator`, `Switch`, `AvatarFallback`
+
+```css
+{
+  --muted: 0 0% 90%; /* neutral-200 */
+  --muted-foreground: 0 0% 25%; /* neutral-700 */
+}
+```
+
+`Background` and `Text` color of components such as
+`Card`, `Popover`,`Input`, `Dialog`, `Button`, etc...
+
+```css
+{
+  --surface: 0 0% 98%; /* neutral-50 */
+  --surface-foreground: 0 0% 0%; /* black */
+}
+```
+
+Border color for inputs such as `Input`, `Select`, `Textarea`
+
+```css
+{
+  --input: 0 0% 83%; /* neutral-500 */
+}
+```
+
+Primary background and text color for `Button`
+
+```css
+{
+  --primary: 29 100% 52%; /* orange-500 */
+  --primary-foreground: 0 0% 100%; /* white */
+}
+```
+
+Secondary background and text color for `Button`
+
+```css
+{
+  --secondary: 34 100% 82%; /* #FED7AA */
+  --secondary-foreground: 29 93% 39%; /* orange-700 */
+}
+```
+
+Used for accents such as hover effects on `Button`, `Select`, `AutoComplete`, etc...
+
+```css
+{
+  --accent: 0 0% 96%; /* neutral-100 */
+  --accent-foreground: 0 0% 0%; /* black */
+}
+```
+
+Default `border` color
+
+```css
+{
+  --border: 0 0% 83%; /* neutral-300 */
+}
+```
+
+Default `ring` color
+
+```css
+{
+  --ring: 0 0% 83%; /* neutral-300 */
+}
+```
+
+---
+
+### Status Colors
+
+status colors for components such as `Alert`, `Input`, `Button`, `Progress`, `Indicator`, etc...
+
+- `Background`: Background color of the component.
+- `foreground`: Text color when the component background is outline.
+- `filled-foreground`: Text color when the component background is filled.
+
+  ```css
+  {
+    --info: 216 76% 52%; /* blue-500 */
+    --info-foreground: 219 64% 43%; /* blue-800 */
+    --info-filled-foreground: 0 0% 100%; /* white */
+  }
+  ```
+
+  ```css
+  {
+    --warning: 45 92% 47%; /* yellow-500 */
+    --warning-foreground: 28 73% 26%; /* yellow-900 */
+    --warning-filled-foreground: 0 0% 0%; /* white */
+  }
+  ```
+
+  ```css
+  {
+    --danger: 0 72% 43%; /* red-500 */
+    --danger-foreground: 0 82% 31%; /* red-800 */
+    --danger-filled-foreground: 0 0% 100%; /* white */
+  }
+  ```
+
+  ```css
+  {
+    --success: 140 76% 38%; /* green-500 */
+    --success-foreground: 140 49% 20%; /* green-800 */
+    --success-filled-foreground: 0 0% 100%; /* white */
+  }
+  ```
+
+## Adding New Colors
+
+To add new colors, you need to add them to your CSS file and to your tailwind.config.js file.
+
+<Tabs items={['global.css', 'tailwind.config.js']}>
+  <Tab value="global.css">
+  ```css
+  :root {
+    --card: 0 0% 98%; /* neutral-50 */
+    --card-foreground: 0 0% 0%; /* black */
+  }
+
+  .dark {
+  --card: 0 0% 7%; /* #131313 */
+  --card-foreground: 0 0% 96%; /* neutral-100 */
+  }
+```
+  </Tab>
+
+  <Tab value="tailwind.config.js">
+  ```js
+  module.exports = {
+    theme: {
+      extend: {
+        colors: {
+          card: "hsl(var(--card))",
+          "card-foreground": "hsl(var(--card-foreground))",
+        },
+      },
+    },
+  }
+```
+  </Tab>
+</Tabs>
+
+You can now use the new colors in your components.
+
+```tsx
+<div className="bg-card text-card-foreground">Hello</div>
+```
+
+### Other Color Formats
+
+While we use HSL colors for theming as recommended by [ShadCN](https://ui.shadcn.com/docs/theming). However, you can also use other color formats if you prefer. Tailwind CSS supports various color formats including RGB, RGBA, and HSL.
+
+For more information on using different color formats, refer to the [Tailwind CSS documentation](https://tailwindcss.com/docs/customizing-colors#using-css-variables).

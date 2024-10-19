@@ -216,7 +216,11 @@ const AlertDescription = React.forwardRef<
 
   return (
     <p
-      className={cn(isUnstyled, "mt-1 text-sm", className)}
+      className={cn(
+        isUnstyled,
+        "mt-1 text-sm text-accent-foreground/80",
+        className,
+      )}
       ref={ref}
       {...props}
     />
