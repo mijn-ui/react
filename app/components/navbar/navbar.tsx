@@ -16,7 +16,7 @@ const Navbar = () => {
   const { setOpenSearch } = useSearchContext()
 
   return (
-    <header className="fixed inset-x-0 top-0 bg-transparent z-30 flex justify-between items-center h-16 w-full backdrop-blur-sm">
+    <header className="fixed preview inset-x-0 top-0 bg-transparent z-30 flex justify-between items-center h-16 w-full backdrop-blur-sm">
       <nav className="flex w-full items-center justify-between px-5 py-2">
         <div className="flex items-center gap-3">
           <Link href={"/"} className="font-bold  flex items-center gap-2">
@@ -40,7 +40,7 @@ const Navbar = () => {
             onClick={() => setOpenSearch(true)}
             variant={"surface"}
             size={"sm"}
-            className="text-muted-foreground gap-2"
+            className="text-neutral-foreground gap-2"
           >
             <LuSearch />
             <span>Search...</span>

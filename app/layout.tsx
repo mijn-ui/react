@@ -1,6 +1,6 @@
 import type { ReactNode } from "react"
 import { Inter } from "next/font/google"
-import "./global.css"
+import "./css/global.css"
 import { RootProvider } from "fumadocs-ui/provider"
 
 const inter = Inter({

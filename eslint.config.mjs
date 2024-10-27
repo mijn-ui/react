@@ -6,7 +6,12 @@ import tseslint from "typescript-eslint"
 
 export default [
   {
-    ignores: ["tailwind.config.js", "**/tailwind.config.js"],
+    ignores: [
+      "/node_modules",
+      "tailwind.config.js",
+      "**/tailwind.config.js",
+      "*.config.JS",
+    ],
   },
   { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
   { languageOptions: { globals: globals.browser } },

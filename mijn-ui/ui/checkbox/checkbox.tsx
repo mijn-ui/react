@@ -17,15 +17,15 @@ export const checkboxStyles = cva(
     variants: {
       variant: {
         primary:
-          "data-[state=checked]:text-primary-foreground data-[state=indeterminate]:text-primary-foreground border-main-foreground  data-[state=checked]:border-primary data-[state=checked]:bg-primary data-[state=indeterminate]:border-primary data-[state=indeterminate]:bg-primary",
+          "data-[state=checked]:text-primary-text data-[state=indeterminate]:text-primary-text border-main-text  data-[state=checked]:border-primary data-[state=checked]:bg-primary data-[state=indeterminate]:border-primary data-[state=indeterminate]:bg-primary",
         secondary:
-          "data-[state=checked]:text-secondary-foreground data-[state=indeterminate]:text-secondary-foreground data-[state=checked]:border-secondary data-[state=indeterminate]:border-secondary border-main-foreground data-[state=indeterminate]:bg-secondary data-[state=checked]:bg-secondary",
+          "data-[state=checked]:text-secondary-text data-[state=indeterminate]:text-secondary-text data-[state=checked]:border-secondary data-[state=indeterminate]:border-secondary border-main-text data-[state=indeterminate]:bg-secondary data-[state=checked]:bg-secondary",
         outline:
-          "[data-state=checked]:text-main-foreground [data-state=indeterminate]:text-main-foreground border border-main-foreground",
+          "[data-state=checked]:text-main-text [data-state=indeterminate]:text-main-text border border-main-text",
         danger:
-          "data-[state=checked]:text-danger-filled-foreground data-[state=indeterminate]:text-danger-filled-foreground data-[state=checked]:border-danger data-[state=indeterminate]:border-danger border-main-foreground data-[state=checked]:bg-danger data-[state=indeterminate]:bg-danger",
+          "data-[state=checked]:text-danger-filled-text data-[state=indeterminate]:text-danger-filled-text data-[state=checked]:border-danger data-[state=indeterminate]:border-danger border-main-text data-[state=checked]:bg-danger data-[state=indeterminate]:bg-danger",
         success:
-          "data-[state=indeterminate]:text-success-filled-foreground data-[state=checked]:text-success-filled-foreground data-[state=indeterminate]:border-success data-[state=checked]:border-success border-main-foreground data-[state=indeterminate]:bg-success data-[state=checked]:bg-success",
+          "data-[state=indeterminate]:text-success-filled-text data-[state=checked]:text-success-filled-text data-[state=indeterminate]:border-success data-[state=checked]:border-success border-main-text data-[state=indeterminate]:bg-success data-[state=checked]:bg-success",
       },
       size: {
         sm: "h-4 w-4",

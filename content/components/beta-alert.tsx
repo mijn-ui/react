@@ -10,7 +10,7 @@ import { LuAlertCircle } from "react-icons/lu"
 const BetaAlert = () => {
   return (
     <Alert
-      className="w-full backdrop-blur-md not-prose"
+      className="preview w-full backdrop-blur-md not-prose"
       variant="default"
       status="warning"
     >

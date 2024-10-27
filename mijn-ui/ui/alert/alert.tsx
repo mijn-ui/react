@@ -10,7 +10,7 @@ import { applyUnstyled, cn } from "@/mijn-ui/utils"
 import { VariantProps, cva } from "class-variance-authority"
 
 const alertStyles = cva(
-  "relative rounded-lg w-full py-4 px-3 [&>span~*]:pl-8 border-background-border border [&>svg]:text-foreground [&>div]:translate-y-[-3px]",
+  "relative rounded-lg w-full py-4 px-3 [&>span~*]:pl-8 border-background-border border [&>svg]:text-main-text [&>div]:translate-y-[-3px]",
   {
     variants: {
       variant: {
@@ -31,7 +31,7 @@ const alertStyles = cva(
         variant: "default",
         status: "success",
         className:
-          "bg-success/10 dark:border-success/80 border-success text-success-foreground [&>svg]:text-success-foreground",
+          "bg-success/10 dark:border-success/80 border-success text-success-text [&>svg]:text-success-text",
       },
       {
         variant: "default",
@@ -43,19 +43,19 @@ const alertStyles = cva(
         variant: "default",
         status: "warning",
         className:
-          "bg-warning/10 dark:border-warning/50 border-warning text-warning-foreground [&>svg]:text-warning-foreground",
+          "bg-warning/10 dark:border-warning/50 border-warning text-warning-text [&>svg]:text-warning-text",
       },
       {
         variant: "default",
         status: "danger",
         className:
-          "bg-danger/10 border-danger dark:border-danger/50 text-danger-foreground [&>svg]:text-danger-foreground",
+          "bg-danger/10 border-danger dark:border-danger/50 text-danger-text [&>svg]:text-danger-text",
       },
       {
         variant: "default",
         status: "neutral",
         className:
-          "bg-background/10 dark:border-foreground/50 border-foreground text-foreground [&>svg]:text-foreground",
+          "bg-main/10 dark:border-main-text/50 border-main-text text-main-text [&>svg]:text-main-text",
       },
 
       /* -------------------------------------------------------------------------- */
@@ -63,30 +63,30 @@ const alertStyles = cva(
         variant: "filled",
         status: "success",
         className:
-          "bg-success dark:bg-success/80 text-success-filled-foreground [&>svg]:text-success-filled-foreground",
+          "bg-success dark:bg-success/80 text-success-filled-text [&>svg]:text-success-filled-text",
       },
       {
         variant: "filled",
         status: "info",
         className:
-          "bg-info dark:bg-info/80 text-info-filled-foreground [&>svg]:text-info-filled-foreground",
+          "bg-info dark:bg-info/80 text-info-filled-text [&>svg]:text-info-filled-text",
       },
       {
         variant: "filled",
         status: "warning",
         className:
-          "bg-warning dark:bg-warning/80 text-warning-filled-foreground [&>svg]:text-warning-filled-foreground",
+          "bg-warning dark:bg-warning/80 text-warning-filled-text [&>svg]:text-warning-filled-text",
       },
       {
         variant: "filled",
         status: "danger",
         className:
-          "bg-danger dark:bg-danger/80 text-danger-filled-foreground [&>svg]:text-danger-filled-foreground",
+          "bg-danger dark:bg-danger/80 text-danger-filled-text [&>svg]:text-danger-filled-text",
       },
       {
         variant: "filled",
         status: "neutral",
-        className: "bg-foreground text-background [&>svg]:text-background",
+        className: "bg-main-text text-background [&>svg]:text-background",
       },
 
       /* -------------------------------------------------------------------------- */
@@ -114,7 +114,7 @@ const alertStyles = cva(
       {
         variant: "outline",
         status: "neutral",
-        className: "border-foreground text-foreground [&>svg]:text-foreground",
+        className: "border-main-text text-main-text [&>svg]:text-main-text",
       },
     ],
     defaultVariants: {
@@ -216,11 +216,7 @@ const AlertDescription = React.forwardRef<
 
   return (
     <p
-      className={cn(
-        isUnstyled,
-        "mt-1 text-sm text-accent-foreground/80",
-        className,
-      )}
+      className={cn(isUnstyled, "mt-1 text-sm text-accent-text/80", className)}
       ref={ref}
       {...props}
     />

@@ -40,11 +40,11 @@ const KeyFeaturesPlayground = () => {
   }
 
   return (
-    <figure className="h-80 w-full not-prose">
+    <figure className="h-80 preview w-full not-prose">
       <figcaption className="text-base mb-3">Try it here!</figcaption>
 
       <div className="w-full h-full rounded-md overflow-hidden flex items-center border">
-        <div className="bg-background w-1/2 h-full flex items-center justify-center">
+        <div className="bg-main w-1/2 h-full flex items-center justify-center">
           <Button
             unstyled={buttonOptions.unstyled}
             loading={buttonOptions.loading}
@@ -62,7 +62,6 @@ const KeyFeaturesPlayground = () => {
           <div className="flex items-center gap-5">
             <div className="flex items-center gap-2">
               <Checkbox
-                variant={"outline"}
                 checked={buttonOptions.unstyled}
                 onCheckedChange={() =>
                   handleChange("unstyled", !buttonOptions.unstyled)
@@ -77,7 +76,6 @@ const KeyFeaturesPlayground = () => {
 
             <div className="flex items-center gap-2">
               <Checkbox
-                variant={"outline"}
                 id="loading"
                 size={"sm"}
                 checked={buttonOptions.loading}
@@ -92,7 +90,6 @@ const KeyFeaturesPlayground = () => {
 
             <div className="flex items-center gap-2">
               <Checkbox
-                variant={"outline"}
                 id="disabled"
                 size={"sm"}
                 checked={buttonOptions.disabled}

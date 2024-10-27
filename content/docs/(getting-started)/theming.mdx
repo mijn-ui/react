@@ -1,166 +1,131 @@
 ---
 title: Theming
-description: Mijn-UI uses Tawildin CSS variables for themeing.
+description: Mijn-UI uses Tawilind CSS variables for themeing.
 ---
 
-import ThemesVariableAlert from "../../components/themes-variable-alert"
+import {
+  ThemesBuilderNotAvailableAlert,
+  ThemesVariableAlert,
+} from "../../components/themes-alert"
 import { Tab, Tabs } from "fumadocs-ui/components/tabs"
 
 ---
 
-## Color Conventions
+import { Step, Steps } from "fumadocs-ui/components/steps"
 
-`background` and `foreground` colors
+<ThemesBuilderNotAvailableAlert />
 
-- The `background` variable is used for the background color of the component.
-- The `foreground` variable is used for the text color.
-
-### Example
-
-For the following CSS variables:
-
-```css title="Css"
-{
-  --primary: 29 100% 52%; /* orange-500 */
-  --primary-foreground: 0 0% 100%; /* white */
-}
-```
-
-- The background color will be `hsl(var(--primary))`.
-- The foreground (text) color will be `hsl(var(--primary-foreground))`.
-
-#### Usage in the Component
-
-```tsx title="example.tsx"
-<div className="bg-primary text-primary-foreground">Hello</div>
-```
-
-<ThemesVariableAlert />
-
-## List of Variables
-
+## List of variables
 ---
 
-Default `Background` and `Text` color
+#### Main Colors
+
+Primary colors for backgrounds, text, and borders across the UI.
 
 ```css
 {
-  --background: 210 14% 95%; /* slate-100 */
-  --foreground: 0 0% 0%; /* black */
+  --main: 210 14% 95%; /* slate-100 */
+  --main-text: 0 0% 0%; /* black */
+  --main-border: 0 0% 83%; /* neutral-300 */
 }
 ```
 
-`Background` and `Text` color of components such as `Separator`, `Switch`, `AvatarFallback`
+#### Surface Colors
+
+For panels, cards, and other contained elements.
 
 ```css
-{
-  --muted: 0 0% 90%; /* neutral-200 */
-  --muted-foreground: 0 0% 25%; /* neutral-700 */
-}
-```
-
-`Background` and `Text` color of components such as
-`Card`, `Popover`,`Input`, `Dialog`, `Button`, etc...
-
-```css
-{
+  {
   --surface: 0 0% 98%; /* neutral-50 */
-  --surface-foreground: 0 0% 0%; /* black */
+  --surface-text: 0 0% 0%; /* black */
 }
 ```
 
-Border color for inputs such as `Input`, `Select`, `Textarea`
+#### Accent colors
+
+For interactive elements like hover effects.
 
 ```css
 {
-  --input: 0 0% 83%; /* neutral-500 */
+  --accent: 0 0% 90%; /* neutral-200 */
+  --accent-text: 0 0% 0%; /* black */
 }
 ```
 
-Primary background and text color for `Button`
+#### Neutral Colors
+
+Muted tones for secondary content, providing balanced visual hierarchy.
 
 ```css
 {
-  --primary: 29 100% 52%; /* orange-500 */
-  --primary-foreground: 0 0% 100%; /* white */
+  --neutral: 0 0% 83%; /* neutral-300 */
+  --neutral-text: 0 0% 25%; /* neutral-700 */
 }
 ```
 
-Secondary background and text color for `Button`
-
-```css
-{
-  --secondary: 34 100% 82%; /* #FED7AA */
-  --secondary-foreground: 29 93% 39%; /* orange-700 */
-}
-```
-
-Used for accents such as hover effects on `Button`, `Select`, `AutoComplete`, etc...
-
-```css
-{
-  --accent: 0 0% 96%; /* neutral-100 */
-  --accent-foreground: 0 0% 0%; /* black */
-}
-```
-
-Default `border` color
+#### Border and Ring Colors
 
 ```css
 {
   --border: 0 0% 83%; /* neutral-300 */
+  --ring: 0 0% 83%; /* neutral-300 */
 }
+
 ```
 
-Default `ring` color
+#### Input Border Color
+
+Used in form fields like Input, Select, and Textarea.
 
 ```css
 {
-  --ring: 0 0% 83%; /* neutral-300 */
+  --input-border: 0 0% 0%; /* black */
 }
+
 ```
 
 ---
 
-### Status Colors
+## Status Colors
 
-status colors for components such as `Alert`, `Input`, `Button`, `Progress`, `Indicator`, etc...
+For `Alert`, `Button`, `Progress`, `Indicator`, and other status-based components.
 
-- `Background`: Background color of the component.
-- `foreground`: Text color when the component background is outline.
-- `filled-foreground`: Text color when the component background is filled.
+#### info
 
-  ```css
-  {
-    --info: 216 76% 52%; /* blue-500 */
-    --info-foreground: 219 64% 43%; /* blue-800 */
-    --info-filled-foreground: 0 0% 100%; /* white */
-  }
-  ```
+```css
+{
+  --info: 216 76% 52%; /* blue-500 */
+  --info-text: 219 64% 43%; /* blue-800 */
+}
+```
 
-  ```css
-  {
-    --warning: 45 92% 47%; /* yellow-500 */
-    --warning-foreground: 28 73% 26%; /* yellow-900 */
-    --warning-filled-foreground: 0 0% 0%; /* white */
-  }
-  ```
+#### warning
 
-  ```css
-  {
-    --danger: 0 72% 43%; /* red-500 */
-    --danger-foreground: 0 82% 31%; /* red-800 */
-    --danger-filled-foreground: 0 0% 100%; /* white */
-  }
-  ```
+```css
+{
+  --warning: 45 92% 47%; /* yellow-500 */
+  --warning-text: 28 73% 26%; /* yellow-900 */
+}
+```
 
-  ```css
-  {
-    --success: 140 76% 38%; /* green-500 */
-    --success-foreground: 140 49% 20%; /* green-800 */
-    --success-filled-foreground: 0 0% 100%; /* white */
-  }
-  ```
+#### danger
+
+```css
+{
+  --danger: 0 72% 43%; /* red-500 */
+  --danger-text: 0 0% 100%; /* white */
+}
+```
+
+#### success
+
+```css
+{
+  --success: 140 76% 38%; /* green-500 */
+  --success-text: 140 49% 20%; /* green-800 */
+}
+```
+---
 
 ## Adding New Colors
 
@@ -171,12 +136,12 @@ To add new colors, you need to add them to your CSS file and to your tailwind.co
   ```css
   :root {
     --card: 0 0% 98%; /* neutral-50 */
-    --card-foreground: 0 0% 0%; /* black */
+    --card-text: 0 0% 0%; /* black */
   }
 
   .dark {
-  --card: 0 0% 7%; /* #131313 */
-  --card-foreground: 0 0% 96%; /* neutral-100 */
+    --card: 0 0% 7%; /* neutral-925 */
+    --card-text: 0 0% 96%; /* neutral-100 */
   }
 ```
   </Tab>
@@ -205,6 +170,6 @@ You can now use the new colors in your components.
 
 ### Other Color Formats
 
-While we use HSL colors for theming as recommended by [ShadCN](https://ui.shadcn.com/docs/theming). However, you can also use other color formats if you prefer. Tailwind CSS supports various color formats including RGB, RGBA, and HSL.
+You can also use other color formats if you prefer. Tailwind CSS supports various color formats including RGB, RGBA, and HSL.
 
 For more information on using different color formats, refer to the [Tailwind CSS documentation](https://tailwindcss.com/docs/customizing-colors#using-css-variables).

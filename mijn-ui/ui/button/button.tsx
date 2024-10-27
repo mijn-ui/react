@@ -41,85 +41,67 @@ const buttonStyles = cva(
         variant: "primary",
         appearance: "outline",
         className:
-          "hover:bg-primary hover:text-primary-foreground border border-primary text-primary",
+          "hover:bg-primary hover:text-primary-text border border-primary text-primary",
       },
       {
         variant: "secondary",
         appearance: "outline",
         className:
-          "hover:bg-secondary hover:text-secondary-foreground border border-secondary text-secondary",
+          "hover:bg-secondary hover:border-secondary border border-secondary-text text-secondary-text",
       },
       {
         variant: "surface",
         appearance: "outline",
         className:
-          "hover:bg-surface hover:text-surface-foreground border border-surface-foreground text-surface-foreground",
+          "hover:bg-surface hover:text-surface-text border border-surface-text text-surface-text",
       },
       {
         variant: "danger",
         appearance: "outline",
         className:
-          "hover:bg-red-500 hover:text-white border border-red-500 text-red-500",
-      },
-
-      {
-        variant: "primary",
-        appearance: "outline",
-        className:
-          "hover:bg-primary hover:text-primary-foreground border border-primary text-primary",
+          "hover:bg-danger hover:text-danger-filled-text border border-danger text-danger",
       },
 
       {
         variant: "primary",
         appearance: "text",
-        className:
-          "hover:bg-primary hover:text-primary-foreground text-primary",
+        className: "hover:bg-primary hover:text-primary-text text-primary",
       },
       {
         variant: "secondary",
         appearance: "text",
-        className:
-          "hover:bg-secondary hover:text-secondary-foreground text-secondary",
+        className: "hover:bg-secondary text-secondary-text",
       },
       {
         variant: "surface",
         appearance: "text",
-        className:
-          "hover:bg-surface hover:text-surface-foreground text-surface-foreground",
+        className: "hover:bg-surface hover:text-surface-text text-surface-text",
       },
       {
         variant: "danger",
         appearance: "text",
-        className: "hover:bg-red-500 hover:text-white text-red-500",
-      },
-
-      {
-        variant: "primary",
-        appearance: "outline",
-        className:
-          "hover:bg-primary hover:text-primary-foreground border border-primary text-primary",
+        className: "hover:bg-danger hover:text-danger-filled-text text-danger",
       },
 
       {
         variant: "primary",
         appearance: "filled",
-        className: "bg-primary text-primary-foreground hover:bg-primary/90",
+        className: "bg-primary text-primary-text hover:bg-primary/90",
       },
       {
         variant: "secondary",
         appearance: "filled",
-        className:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/90",
+        className: "bg-secondary text-secondary-text hover:bg-secondary/90",
       },
       {
         variant: "danger",
         appearance: "filled",
-        className: "bg-danger text-danger-filled-foreground hover:bg-danger/80",
+        className: "bg-danger text-danger-filled-text hover:bg-danger/80",
       },
       {
         variant: "surface",
         appearance: "filled",
-        className: "bg-surface border text-surface-foreground hover:bg-accent",
+        className: "bg-surface border text-surface-text hover:bg-accent",
       },
     ],
     defaultVariants: {
