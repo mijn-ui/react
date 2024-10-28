@@ -86,45 +86,55 @@ Used in form fields like Input, Select, and Textarea.
 
 ---
 
-## Status Colors
 
-For `Alert`, `Button`, `Progress`, `Indicator`, and other status-based components.
+### Status Colors
+
+status colors for components such as `Alert`, `Input`, `Button`, `Progress`, `Indicator`, etc...
+
+- `background`: Background color of the component.
+- `text`: Text color when the component background is outline.
+- `filled-text`: Text color when the component background is filled.
 
 #### info
 
-```css
+```css 
 {
   --info: 216 76% 52%; /* blue-500 */
   --info-text: 219 64% 43%; /* blue-800 */
+  --info-filled-text: 0 0% 100%; /* white */
 }
 ```
 
 #### warning
 
-```css
+```css 
 {
   --warning: 45 92% 47%; /* yellow-500 */
   --warning-text: 28 73% 26%; /* yellow-900 */
+  --warning-filled-text: 0 0% 0%; /* white */
 }
 ```
 
 #### danger
 
-```css
+```css 
 {
   --danger: 0 72% 43%; /* red-500 */
-  --danger-text: 0 0% 100%; /* white */
+  --danger-text: 0 82% 31%; /* red-800 */
+  --danger-filled-text: 0 0% 100%; /* white */
 }
 ```
 
 #### success
 
-```css
+```css 
 {
   --success: 140 76% 38%; /* green-500 */
   --success-text: 140 49% 20%; /* green-800 */
+  --success-filled-text: 0 0% 100%; /* white */
 }
 ```
+
 ---
 
 ## Adding New Colors
