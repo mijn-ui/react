@@ -1,3 +1,10 @@
 {
-  "pages": ["---Getting Started---", "index", "...(getting-started)", "..."]
+  "pages": [
+    "---Getting Started---",
+    "index",
+    "...(getting-started)",
+    "---Components---",
+    "...(components)",
+    "..."
+  ]
 }

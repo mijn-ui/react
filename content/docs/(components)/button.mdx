@@ -1,0 +1,102 @@
+---
+title: Button
+---
+
+import ComponentPreview from "@/content/components/component-preview"
+import { Button } from "@/mijn-ui/ui/button"
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+ 
+### Default
+
+<ComponentPreview>
+  <Button>Button</Button>
+</ComponentPreview>
+
+<Tabs items={["Example Usage", "Source Code"]}>
+  <Tab value="Example Usage">
+  ```tsx
+  <Button>Button</Button>
+  ```
+  </Tab>
+  <Tab value="Source Code">
+  ```json doc-gen:file
+    {
+      "file": "./mijn-ui/ui/button/button.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+  ```
+</Tab>
+</Tabs>
+
+---
+
+### Colors
+
+<ComponentPreview>
+  <Button color="primary">Button</Button>
+  <Button color="secondary">Button</Button>
+  <Button color="surface">Button</Button>
+  <Button color="danger">Button</Button>
+</ComponentPreview>
+
+```tsx
+<Button color="primary">Button</Button>
+<Button color="secondary">Button</Button>
+<Button color="surface">Button</Button>
+<Button color="danger">Button</Button>
+```
+
+---
+
+### Variants
+
+<ComponentPreview>
+  <Button variant="filled">Button</Button>
+  <Button variant="outline">Button</Button>
+  <Button variant="text">Button</Button>
+</ComponentPreview>
+
+```tsx
+<Button variant="filled">Button</Button>
+<Button variant="outline">Button</Button>
+<Button variant="text">Button</Button>
+```
+
+---
+
+### Radius
+
+<ComponentPreview>
+  <Button radius="sm">Button</Button>
+  <Button radius="md">Button</Button>
+  <Button radius="lg">Button</Button>
+  <Button radius="full">Button</Button>
+</ComponentPreview>
+
+```tsx
+<Button radius="sm">Button</Button>
+<Button radius="md">Button</Button>
+<Button radius="lg">Button</Button>
+<Button radius="full">Button</Button>
+```
+
+---
+
+### Sizes
+
+<ComponentPreview>
+  <Button size="sm">Button</Button>
+  <Button size="md">Button</Button>
+  <Button size="lg">Button</Button>
+  <Button size="icon">B</Button>
+</ComponentPreview>
+
+```tsx
+<Button size="sm">Button</Button>
+<Button size="md">Button</Button>
+<Button size="lg">Button</Button>
+<Button size="icon">B</Button>
+```

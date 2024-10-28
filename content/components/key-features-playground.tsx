@@ -10,10 +10,10 @@ import { VariantProps } from "class-variance-authority"
 
 type ButtonOptionsType = {
   unstyled: boolean
-  appearance: VariantProps<typeof buttonStyles>["appearance"]
+  variant: VariantProps<typeof buttonStyles>["variant"]
   loading: boolean
   disabled: boolean
-  variant: VariantProps<typeof buttonStyles>["variant"]
+  color: VariantProps<typeof buttonStyles>["color"]
   size: VariantProps<typeof buttonStyles>["size"]
   radius: VariantProps<typeof buttonStyles>["radius"]
 }
@@ -21,15 +21,15 @@ type ButtonOptionsType = {
 const KeyFeaturesPlayground = () => {
   const [buttonOptions, setButtonOptions] = React.useState<ButtonOptionsType>({
     unstyled: false,
-    appearance: "filled",
+    variant: "filled",
     loading: false,
     disabled: false,
-    variant: "primary",
+    color: "primary",
     size: "md",
     radius: "md",
   })
 
-  console.log(buttonOptions.variant)
+  console.log(buttonOptions.color)
 
   const handleChange = (key: string, value: boolean | string) => {
     console.log("reached")
@@ -49,8 +49,11 @@ const KeyFeaturesPlayground = () => {
             unstyled={buttonOptions.unstyled}
             loading={buttonOptions.loading}
             disabled={buttonOptions.disabled}
+            // need to fix types issues, not important but I'll fix it later
+            /* eslint-disable-next-line */
+            // @ts-expect-error
+            color={buttonOptions.color}
             variant={buttonOptions.variant}
-            appearance={buttonOptions.appearance}
             radius={buttonOptions.radius}
             size={buttonOptions.size}
           >
@@ -108,8 +111,8 @@ const KeyFeaturesPlayground = () => {
               <RadioGroup
                 className="mt-4"
                 defaultValue="filled"
-                value={buttonOptions.appearance || "filled"}
-                onValueChange={(value) => handleChange("appearance", value)}
+                value={buttonOptions.variant || "filled"}
+                onValueChange={(value) => handleChange("variant", value)}
               >
                 <p className="text-sm">Appearance</p>
                 <div className="flex items-center space-x-2">
@@ -129,8 +132,8 @@ const KeyFeaturesPlayground = () => {
               <RadioGroup
                 className="mt-4"
                 defaultValue="primary"
-                value={buttonOptions.variant || "primary"}
-                onValueChange={(value) => handleChange("variant", value)}
+                value={buttonOptions.color || "primary"}
+                onValueChange={(value) => handleChange("color", value)}
               >
                 <p className="text-sm">Variants</p>
                 <div className="flex items-center space-x-2">

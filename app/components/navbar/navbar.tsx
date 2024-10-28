@@ -38,7 +38,7 @@ const Navbar = () => {
         <div className="flex items-center gap-2">
           <Button
             onClick={() => setOpenSearch(true)}
-            variant={"surface"}
+            color={"surface"}
             size={"sm"}
             className="text-neutral-foreground gap-2"
           >
@@ -49,7 +49,7 @@ const Navbar = () => {
               <kbd className="text-[0.625rem]">K</kbd>
             </div>
           </Button>
-          <Button variant={"surface"} className="border px-2" asChild>
+          <Button color={"surface"} className="border px-2" asChild>
             <Link href={"/"}>
               <LuGithub size={18} />
             </Link>

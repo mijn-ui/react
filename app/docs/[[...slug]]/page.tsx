@@ -28,6 +28,7 @@ export default async function Page({
       <DocsDescription className="mb-0 text-lg">
         {page.data.description}
       </DocsDescription>
+      <hr />
       <DocsBody className="prose">
         <MDX components={{ ...defaultMdxComponents, Tabs, Tab }} />
       </DocsBody>

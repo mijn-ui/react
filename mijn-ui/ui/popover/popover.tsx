@@ -44,7 +44,7 @@ const PopoverTrigger = React.forwardRef<
       ref={ref}
       className={applyUnstyled(
         isUnstyled,
-        buttonStyles({ variant: "surface" }),
+        buttonStyles({ color: "surface" }),
         className,
       )}
       {...props}
@@ -73,7 +73,7 @@ const PopoverClose = React.forwardRef<
       ref={ref}
       className={applyUnstyled(
         isUnstyled,
-        buttonStyles({ appearance: "text" }),
+        buttonStyles({ variant: "text" }),
         className,
       )}
       {...props}

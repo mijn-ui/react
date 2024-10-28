@@ -11,7 +11,7 @@ const buttonStyles = cva(
   ],
   {
     variants: {
-      variant: {
+      color: {
         primary: "",
         secondary: "",
         surface: "",
@@ -30,7 +30,7 @@ const buttonStyles = cva(
         lg: "h-11 px-8",
         icon: "h-10 w-10",
       },
-      appearance: {
+      variant: {
         filled: "",
         outline: "border border-current",
         text: "bg-transparent",
@@ -38,75 +38,75 @@ const buttonStyles = cva(
     },
     compoundVariants: [
       {
-        variant: "primary",
-        appearance: "outline",
+        color: "primary",
+        variant: "outline",
         className:
           "hover:bg-primary hover:text-primary-text border border-primary text-primary",
       },
       {
-        variant: "secondary",
-        appearance: "outline",
+        color: "secondary",
+        variant: "outline",
         className:
           "hover:bg-secondary hover:border-secondary border border-secondary-text text-secondary-text",
       },
       {
-        variant: "surface",
-        appearance: "outline",
+        color: "surface",
+        variant: "outline",
         className:
           "hover:bg-surface hover:text-surface-text border border-surface-text text-surface-text",
       },
       {
-        variant: "danger",
-        appearance: "outline",
+        color: "danger",
+        variant: "outline",
         className:
           "hover:bg-danger hover:text-danger-filled-text border border-danger text-danger",
       },
 
       {
-        variant: "primary",
-        appearance: "text",
+        color: "primary",
+        variant: "text",
         className: "hover:bg-primary hover:text-primary-text text-primary",
       },
       {
-        variant: "secondary",
-        appearance: "text",
+        color: "secondary",
+        variant: "text",
         className: "hover:bg-secondary text-secondary-text",
       },
       {
-        variant: "surface",
-        appearance: "text",
+        color: "surface",
+        variant: "text",
         className: "hover:bg-surface hover:text-surface-text text-surface-text",
       },
       {
-        variant: "danger",
-        appearance: "text",
+        color: "danger",
+        variant: "text",
         className: "hover:bg-danger hover:text-danger-filled-text text-danger",
       },
 
       {
-        variant: "primary",
-        appearance: "filled",
+        color: "primary",
+        variant: "filled",
         className: "bg-primary text-primary-text hover:bg-primary/90",
       },
       {
-        variant: "secondary",
-        appearance: "filled",
+        color: "secondary",
+        variant: "filled",
         className: "bg-secondary text-secondary-text hover:bg-secondary/90",
       },
       {
-        variant: "danger",
-        appearance: "filled",
+        color: "danger",
+        variant: "filled",
         className: "bg-danger text-danger-filled-text hover:bg-danger/80",
       },
       {
-        variant: "surface",
-        appearance: "filled",
+        color: "surface",
+        variant: "filled",
         className: "bg-surface border text-surface-text hover:bg-accent",
       },
     ],
     defaultVariants: {
-      appearance: "filled",
-      variant: "primary",
+      variant: "filled",
+      color: "primary",
       radius: "md",
       size: "md",
     },
@@ -124,8 +124,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     {
       unstyled,
       className,
+      color,
       variant,
-      appearance,
       size,
       radius,
       loading,
@@ -142,7 +142,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <Component
         className={applyUnstyled(
           unstyled,
-          buttonStyles({ variant, appearance, size, radius }),
+          buttonStyles({ color, variant, size, radius }),
           className,
         )}
         ref={ref}

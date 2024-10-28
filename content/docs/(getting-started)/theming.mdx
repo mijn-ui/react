@@ -9,13 +9,12 @@ import {
 } from "../../components/themes-alert"
 import { Tab, Tabs } from "fumadocs-ui/components/tabs"
 
----
-
 import { Step, Steps } from "fumadocs-ui/components/steps"
 
 <ThemesBuilderNotAvailableAlert />
 
 ## List of variables
+
 ---
 
 #### Main Colors
@@ -86,7 +85,6 @@ Used in form fields like Input, Select, and Textarea.
 
 ---
 
-
 ### Status Colors
 
 status colors for components such as `Alert`, `Input`, `Button`, `Progress`, `Indicator`, etc...
@@ -97,7 +95,7 @@ status colors for components such as `Alert`, `Input`, `Button`, `Progress`, `In
 
 #### info
 
-```css 
+```css
 {
   --info: 216 76% 52%; /* blue-500 */
   --info-text: 219 64% 43%; /* blue-800 */
@@ -107,7 +105,7 @@ status colors for components such as `Alert`, `Input`, `Button`, `Progress`, `In
 
 #### warning
 
-```css 
+```css
 {
   --warning: 45 92% 47%; /* yellow-500 */
   --warning-text: 28 73% 26%; /* yellow-900 */
@@ -117,7 +115,7 @@ status colors for components such as `Alert`, `Input`, `Button`, `Progress`, `In
 
 #### danger
 
-```css 
+```css
 {
   --danger: 0 72% 43%; /* red-500 */
   --danger-text: 0 82% 31%; /* red-800 */
@@ -127,7 +125,7 @@ status colors for components such as `Alert`, `Input`, `Button`, `Progress`, `In
 
 #### success
 
-```css 
+```css
 {
   --success: 140 76% 38%; /* green-500 */
   --success-text: 140 49% 20%; /* green-800 */
@@ -149,11 +147,12 @@ To add new colors, you need to add them to your CSS file and to your tailwind.co
     --card-text: 0 0% 0%; /* black */
   }
 
-  .dark {
-    --card: 0 0% 7%; /* neutral-925 */
-    --card-text: 0 0% 96%; /* neutral-100 */
-  }
-```
+.dark {
+--card: 0 0% 7%; /_ neutral-925 _/
+--card-text: 0 0% 96%; /_ neutral-100 _/
+}
+
+````
   </Tab>
 
   <Tab value="tailwind.config.js">
@@ -168,7 +167,8 @@ To add new colors, you need to add them to your CSS file and to your tailwind.co
       },
     },
   }
-```
+````
+
   </Tab>
 </Tabs>
 
