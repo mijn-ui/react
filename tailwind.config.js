@@ -5,6 +5,7 @@ export default {
   content: [
     "./mijn-ui/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
+    "./examples/**/*.{ts,tsx}",
     "./content/**/*.{ts,tsx,md,mdx}",
     "./mdx-components.{ts,tsx}",
     "./node_modules/fumadocs-ui/dist/**/*.js",

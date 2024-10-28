@@ -1,0 +1,105 @@
+---
+title: Accordion
+---
+
+import ComponentPreview from "@/content/components/component-preview"
+import AccordionCustomIconExample from "@/examples/accordion/custom-icon"
+import MultiAccordionExample from "@/examples/accordion/multi-accordion"
+import SingleAccordionExample from "@/examples/accordion/single-accordion"
+import UnstyledAccordionExample from "@/examples/accordion/unstyled-accordion.tsx"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/mijn-ui/ui/accordion"
+import { Tab, Tabs } from "fumadocs-ui/components/tabs"
+
+### Installation
+
+<ComponentPreview>
+  <SingleAccordionExample />
+</ComponentPreview>
+
+```package-install
+@radix-ui/react-accordion
+```
+
+<Tabs items={["Source code", "Example usage"]}>
+  <Tab value="Source code">
+  ```json doc-gen:file
+    {
+      "file": "./mijn-ui/ui/accordion/accordion.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+  ```
+</Tab>
+  <Tab value="Example usage">
+  ```json doc-gen:file
+    {
+      "file": "./examples/accordion/single-accordion.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": ""
+      }
+    }
+  ```
+  </Tab>
+</Tabs>
+
+---
+
+### Multi Accordion
+
+<ComponentPreview>
+  <MultiAccordionExample />
+</ComponentPreview>
+
+```json doc-gen:file
+{
+  "file": "./examples/accordion/multi-accordion.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": ""
+  }
+}
+```
+
+---
+
+### Custom Icon
+
+<ComponentPreview>
+  <AccordionCustomIconExample />
+</ComponentPreview>
+
+```json doc-gen:file
+{
+  "file": "./examples/accordion/custom-icon.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": ""
+  }
+}
+```
+
+---
+
+### Unstyled Accordion
+
+<ComponentPreview>
+  <UnstyledAccordionExample />
+</ComponentPreview>
+
+```json doc-gen:file
+{
+  "file": "./examples/accordion/unstyled-accordion.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": ""
+  }
+}
+```
