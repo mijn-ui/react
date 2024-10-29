@@ -4,9 +4,9 @@ import * as React from "react"
 import {
   UnstyledProvider,
   useUnstyled,
-} from "@/mijn-ui/context/UnstyledProvider"
-import { UnstyledProps } from "@/mijn-ui/types"
-import { applyUnstyled, cn } from "@/mijn-ui/utils"
+} from "@mijn-ui/context/UnstyledProvider"
+import { UnstyledProps } from "@mijn-ui/types"
+import { applyUnstyled, cn } from "@mijn-ui/utils"
 import * as SelectPrimitive from "@radix-ui/react-select"
 import { LuCheck, LuChevronDown, LuChevronUp } from "react-icons/lu"
 

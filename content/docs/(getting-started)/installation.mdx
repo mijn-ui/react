@@ -3,39 +3,118 @@ title: Installation
 description: Manual Installation
 ---
 
-import BetaAlert from "../../components/beta-alert"
-import { Step, Steps } from "fumadocs-ui/components/steps"
 
-<BetaAlert />
+<Alert 
+  title="V0.0.1 Beta"
+  description="At this time, npm packages are not available. We are currently offering code snippets for manual integration."
+  status="warning"
+ />
 
 <Steps>
   <Step>
-### Install Next.js
+### Install Next.js and Required Dependencies
 
-
-```bash title="Terminal"
+```bash title="bash"
   npx create-next-app@latest
 ```
 
-Make sure to include **TypeScript** and **Tailwind CSS** since Mijn-UI components relies on them.
+Since we are in the beta stage, the following options work pretty well for installation. Please ensure to select these options:
 
-```bash title="Terminal"
+```bash title="bash"
   ...
-  Would you like to use TypeScript? Yes
-  ...
-  Would you like to use Tailwind CSS? Yes
-  ...
+  ✔ Would you like to use TypeScript? Yes
+  ✔ Would you like to use ESLint?  Yes
+  ✔ Would you like to use Tailwind CSS? Yes
+  ✔ Would you like your code inside a `src/` directory? Yes
+  ✔ Would you like to use App Router? (recommended) Yes
+  ✔ Would you like to use Turbopack for next dev? Yes
+  ✔ Would you like to customize the import alias (@/* by default)? No
 ```
+
+  After setting up the Next.js project, install these dependencies used by Mijn-UI components:
+
+  ```package-install
+  react-icons class-variance-authority
+  ```
 
 </Step>
 <Step>
+
+### Configure TypeScript Path Aliases
+
+Since this project is still in a beta phase, and extensive testing is ongoing, we recommend configuring TypeScript with path aliases for better project organization and readability. Please use the following setup in your tsconfig.json:
+
+```json title="tsconfig.json"
+  {
+    compilerOptions: {
+      "baseUrl": ".", // Sets the root directory                   // [!code highlight]
+        "paths": {    // Path aliases for cleaner imports          // [!code highlight]
+          "@/*": ["./src/*"],           // [!code highlight]
+          "@mijn-ui/*": ["./mijn-ui/*"] // [!code highlight]
+      }
+    }
+  }
+```
+
+### Recommended Folder Structure
+
+This setup will help keep your code modular and organized, especially for complex projects. Here’s the suggested folder structure to work seamlessly with the path aliases:
+
+<Files>
+  <Folder name="public">
+      <File name="..." />
+  </Folder>
+  <Folder name="src">
+    <Folder name="app">
+      <File name="page.tsx" />
+      <File name="..." />
+    </Folder>
+  </Folder>
+  <Folder defaultOpen name="mijn-ui">
+    <Folder name="components">
+      <File name="button.tsx" />
+      <File name="..." />
+    </Folder>
+    <Folder name="utils">
+      <File name="index.tsx" />
+      <File name="..." />
+    </Folder>
+    <Folder name="context">
+      <File name="UnstyledProvider.tsx" />
+      <File name="..." />
+    </Folder>
+    <Folder name="types">
+      <File name="index.ts" />
+      <File name="..." />
+    </Folder>
+    <Folder name="hooks">
+      <File name="use-controlled-state.ts" />
+      <File name="..." />
+    </Folder>
+  </Folder>
+</Files>
+
+<Alert 
+title=""
+description="While this is the recommended folder structure for the beta version, you can customize it as needed. However, modifications may introduce
+unexpected errors."
+className="mt-4" />
+
+</Step>
+<Step>
+
+
  
 ### Add Themes
 
 These are the default themes provided by mijn-ui. If you would like to create your own theme, learn more about themes [here](/docs/theming).
 
-```css title="Css"
-@root {
+```css title="src/app/global.css"
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
   :root {
   --main: 210 14% 95%; /* slate-100 */
   --main-text: 0 0% 0%; /* black */
@@ -133,11 +212,16 @@ These are the default themes provided by mijn-ui. If you would like to create yo
 <Step>
 ### Configure tailwind
 
+Since our components are stored in a separate `mijn-ui` folder, we need to include this folder in the Tailwind CSS content array. This ensures Tailwind scans these files to generate the required CSS classes:
+
 ```js title="tailwind.config.js"
 /** @type {import('tailwindcss').Config} */
 
 export default {
-  ...
+    content: [
+    ...
+    "./mijn-ui/**/*.{js,ts,jsx,tsx,mdx}", // Ensure Tailwind scans all mijn-ui files  // [!code highlight]
+  ],
   theme: {
     extend: {
       colors: {
@@ -206,10 +290,63 @@ export default {
 ```
 </Step>
 
+    <Step>
+      ### Include Essential Utilities, Types, Context, and Hooks and Install Dependencies
+
+    1. Within the `mijn-ui` folder, create a `utils` directory and add the following file and install necessary dependencies:
+
+      ```package-install
+      clsx tailwind-merge
+      ```
+
+      ```json doc-gen:file
+      {
+        "file": "./mijn-ui/utils/index.tsx",
+        "codeblock": {
+          "lang": "tsx",
+          "meta": "title=\"mijn-ui/utils/index.tsx\""
+        }
+      }
+      ```
+    2. Within the `mijn-ui` folder, create a `types` directory and add the following file: 
+
+      ```json doc-gen:file
+      {
+        "file": "./mijn-ui/types/index.ts",
+        "codeblock": {
+          "lang": "ts",
+          "meta": "title=\"mijn-ui/types/index.ts\""
+        }
+      }
+      ```
+    3. Create a `context` folder, and add:
+
+      ```json doc-gen:file
+      {
+        "file": "./mijn-ui/context/UnstyledProvider.tsx",
+        "codeblock": {
+          "lang": "tsx",
+          "meta": "title=\"mijn-ui/context/UnstyledProvider.tsx\""
+        }
+      }
+      ```
+    4. Create a `hooks` folder, and add:
+
+      ```json doc-gen:file
+      {
+        "file": "./mijn-ui/hooks/use-controlled-state.ts",
+        "codeblock": {
+          "lang": "ts",
+          "meta": "title=\"mijn-ui/hooks/use-controlled-state.ts\""
+        }
+      }
+      ```
+    </Step>
+
   <Step>
     ### That's it
 
-    You can now start adding components to your project. Check out the [components](/docs/accordoin) section to learn more about the available components.
+    You can now start adding components to your project. Check out the [components](/docs/accordion) section to learn more about the available components.
 
   </Step>
 </Steps>

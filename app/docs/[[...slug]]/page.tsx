@@ -1,6 +1,10 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
+import ComponentPreview from "@/app/components/mdx/component-preview"
+import Alert from "@/app/components/mdx/mdx-alert"
 import { source } from "@/app/source"
+import { File, Files, Folder } from "fumadocs-ui/components/files"
+import { Step, Steps } from "fumadocs-ui/components/steps"
 import { Tab, Tabs } from "fumadocs-ui/components/tabs"
 import defaultMdxComponents from "fumadocs-ui/mdx"
 import {
@@ -30,7 +34,20 @@ export default async function Page({
       </DocsDescription>
       <hr />
       <DocsBody className="prose">
-        <MDX components={{ ...defaultMdxComponents, Tabs, Tab }} />
+        <MDX
+          components={{
+            ...defaultMdxComponents,
+            Steps,
+            Step,
+            Tabs,
+            Tab,
+            File,
+            Files,
+            Folder,
+            Alert,
+            ComponentPreview,
+          }}
+        />
       </DocsBody>
     </DocsPage>
   )

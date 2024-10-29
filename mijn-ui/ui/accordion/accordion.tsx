@@ -4,9 +4,9 @@ import * as React from "react"
 import {
   UnstyledProvider,
   useUnstyled,
-} from "@/mijn-ui/context/UnstyledProvider"
-import { UnstyledProps } from "@/mijn-ui/types"
-import { applyUnstyled } from "@/mijn-ui/utils"
+} from "@mijn-ui/context/UnstyledProvider"
+import { UnstyledProps } from "@mijn-ui/types"
+import { applyUnstyled } from "@mijn-ui/utils"
 import * as RadixAccordion from "@radix-ui/react-accordion"
 import { VariantProps, cva } from "class-variance-authority"
 import { LuChevronDown } from "react-icons/lu"

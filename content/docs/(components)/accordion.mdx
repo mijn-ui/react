@@ -2,7 +2,6 @@
 title: Accordion
 ---
 
-import ComponentPreview from "@/content/components/component-preview"
 import AccordionCustomIconExample from "@/examples/accordion/custom-icon"
 import MultiAccordionExample from "@/examples/accordion/multi-accordion"
 import SingleAccordionExample from "@/examples/accordion/single-accordion"
@@ -13,42 +12,103 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/mijn-ui/ui/accordion"
-import { Tab, Tabs } from "fumadocs-ui/components/tabs"
 
-### Installation
+
+### Default Accordion
 
 <ComponentPreview>
   <SingleAccordionExample />
 </ComponentPreview>
 
-```package-install
-@radix-ui/react-accordion
-```
 
-<Tabs items={["Source code", "Example usage"]}>
-  <Tab value="Source code">
-  ```json doc-gen:file
-    {
-      "file": "./mijn-ui/ui/accordion/accordion.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": ""
-      }
+## Installation
+
+<Steps>
+  <Step>
+    ### Install Required Packages
+
+    ```package-install
+    @radix-ui/react-accordion
+    ```
+  </Step>
+
+  <Step>
+    ### Copy and Paste the Source Code
+
+    <Tabs items={["Source code", "Example usage"]}>
+      <Tab value="Source code">
+        ```json doc-gen:file
+          {
+            "file": "./mijn-ui/ui/accordion/accordion.tsx",
+            "codeblock": {
+              "lang": "tsx",
+              "meta": ""
+            }
+          }
+        ```
+      </Tab>
+      <Tab value="Example usage">
+        ```json doc-gen:file
+          {
+            "file": "./examples/accordion/single-accordion.tsx",
+            "codeblock": {
+              "lang": "tsx",
+              "meta": ""
+            }
+          }
+        ```
+      </Tab>
+    </Tabs>  
+  </Step>
+
+  <Step>
+    ### Add Animations to Your Tailwind Configuration
+
+    ```js
+    /** @type {import('tailwindcss').Config} */
+  export default {
+    theme: {
+      extend: {
+        keyframes: {                      // [!code highlight]
+          "fade-in": {                    // [!code highlight]
+            "0%": {                       // [!code highlight]
+              opacity: 0,                 // [!code highlight]
+            },                            // [!code highlight]
+            "100%": {                     // [!code highlight]
+              opacity: 1,                 // [!code highlight]
+            },                            // [!code highlight]
+          },                              // [!code highlight]
+          "fade-out": {                   // [!code highlight]
+            "0%": {                       // [!code highlight]
+              opacity: 1,                 // [!code highlight]
+            },                            // [!code highlight]
+            "100%": {                     // [!code highlight]
+              opacity: 0,                 // [!code highlight]
+            },                            // [!code highlight]
+          },                              // [!code highlight]
+          "accordion-expand": {           // [!code highlight]
+            from: { height: "0" },        // [!code highlight]
+            to: { height: "var(--radix-accordion-content-height)" }, // [!code highlight]
+          },                                                         // [!code highlight]
+          "accordion-collapse": {                                    // [!code highlight]
+            from: {                                                  // [!code highlight]
+              height: "var(--radix-accordion-content-height)",       // [!code highlight]
+            },                                                       // [!code highlight]
+            to: { height: "0" },                                     // [!code highlight]
+          },                                                         // [!code highlight]
+        },                                                           // [!code highlight]
+        animation: {                                                 // [!code highlight]
+          "accordion-expand": "accordion-expand 0.2s ease-in-out, fade-in 0.4s ease-in-out",                    // [!code highlight]
+          "accordion-collapse": "accordion-collapse 0.2s ease-in-out, fade-out 0.4s ease-in-out",                     // [!code highlight]
+        },                                // [!code highlight]
+      }                                   // [!code highlight]
     }
-  ```
-</Tab>
-  <Tab value="Example usage">
-  ```json doc-gen:file
-    {
-      "file": "./examples/accordion/single-accordion.tsx",
-      "codeblock": {
-        "lang": "tsx",
-        "meta": ""
-      }
-    }
-  ```
-  </Tab>
-</Tabs>
+  }
+    ```
+
+  </Step>
+</Steps>
+
 
 ---
 

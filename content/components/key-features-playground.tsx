@@ -114,7 +114,7 @@ const KeyFeaturesPlayground = () => {
                 value={buttonOptions.variant || "filled"}
                 onValueChange={(value) => handleChange("variant", value)}
               >
-                <p className="text-sm">Appearance</p>
+                <p className="text-sm">Variant</p>
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="filled" id="filled" />
                   <Label htmlFor="filled">filled</Label>
@@ -135,7 +135,7 @@ const KeyFeaturesPlayground = () => {
                 value={buttonOptions.color || "primary"}
                 onValueChange={(value) => handleChange("color", value)}
               >
-                <p className="text-sm">Variants</p>
+                <p className="text-sm">Colors</p>
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="primary" id="primary" />
                   <Label htmlFor="primary">primary</Label>

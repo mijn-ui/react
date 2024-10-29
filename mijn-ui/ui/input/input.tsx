@@ -1,9 +1,9 @@
 "use client"
 
 import * as React from "react"
-import { UnstyledProps } from "@/mijn-ui/types"
-import { Label } from "@/mijn-ui/ui/label"
-import { applyUnstyled, cn } from "@/mijn-ui/utils"
+import { UnstyledProps } from "@mijn-ui/types"
+import { Label } from "@mijn-ui/ui/label"
+import { applyUnstyled, cn } from "@mijn-ui/utils"
 import { IconType } from "react-icons"
 
 export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
