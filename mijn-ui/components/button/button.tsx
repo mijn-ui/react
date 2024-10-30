@@ -54,7 +54,7 @@ const buttonStyles = cva(
         color: "accent",
         variant: "outline",
         className:
-          "hover:bg-accent hover:text-accent-text border border-accent text-accent-text",
+          "hover:bg-accent hover:text-accent-text border border-main-border text-accent-text",
       },
       {
         color: "neutral",

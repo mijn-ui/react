@@ -39,17 +39,18 @@ const Navbar = () => {
           <Button
             onClick={() => setOpenSearch(true)}
             color={"accent"}
+            variant={"outline"}
             size={"sm"}
-            className="text-neutral-foreground gap-2"
+            className="gap-2"
           >
             <LuSearch />
-            <span>Search...</span>
+            <span className="text-neutral-text">Search...</span>
             <div className="inline-flex border rounded-full ml-4 gap-1 h-5 px-2 py-px">
               <kbd className="text-[0.625rem]">Ctrl+</kbd>
               <kbd className="text-[0.625rem]">K</kbd>
             </div>
           </Button>
-          <Button color={"accent"} className="border px-2" asChild>
+          <Button color={"accent"} size={"sm"} className="border px-2" asChild>
             <Link href={"/"}>
               <LuGithub size={18} />
             </Link>
