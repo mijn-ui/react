@@ -44,7 +44,7 @@ const AlertDialogTrigger = React.forwardRef<
       ref={ref}
       className={applyUnstyled(
         isUnstyled,
-        buttonStyles({ color: "surface" }),
+        buttonStyles({ color: "secondary" }),
         className,
       )}
       {...props}
@@ -255,7 +255,7 @@ const AlertDialogCancel = React.forwardRef<
       ref={ref}
       className={applyUnstyled(
         isUnstyled,
-        buttonStyles({ variant: "text" }),
+        buttonStyles({ color: "accent", variant: "text" }),
         className,
       )}
       {...props}

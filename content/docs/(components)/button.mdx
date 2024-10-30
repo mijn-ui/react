@@ -3,7 +3,8 @@ title: Button
 ---
 
 import { Button } from "@mijn-ui/components/button"
- 
+import ButtonVariants from "@/examples/button/button-variants"
+
 <ComponentPreview>
   <Button>Button</Button>
 </ComponentPreview>
@@ -34,7 +35,7 @@ import { Button } from "@mijn-ui/components/button"
             "file": "./mijn-ui/components/button/button.tsx",
             "codeblock": {
               "lang": "tsx",
-              "meta": "title=\"mijn-ui/ui/button.tsx\""
+              "meta": "title=\"mijn-ui/components/button.tsx\""
             }
           }
           ```
@@ -48,33 +49,83 @@ import { Button } from "@mijn-ui/components/button"
 ### Colors
 
 <ComponentPreview>
-  <Button color="primary">Button</Button>
-  <Button color="secondary">Button</Button>
-  <Button color="surface">Button</Button>
-  <Button color="danger">Button</Button>
+  <Button color="primary">Primary</Button>
+  <Button color="secondary">Secondary</Button>
+  <Button color="accent">Accent</Button>
+  <Button color="neutral">Neutral</Button>
+  <Button color="danger">Danger</Button>
 </ComponentPreview>
 
 ```tsx
-<Button color="primary">Button</Button>
-<Button color="secondary">Button</Button>
-<Button color="surface">Button</Button>
-<Button color="danger">Button</Button>
+<Button color="primary">Primary</Button>
+<Button color="secondary">Secondary</Button>
+<Button color="accent">Accent</Button>
+<Button color="neutral">Neutral</Button>
+<Button color="danger">Danger</Button>
 ```
 
 ---
 
 ### Variants
 
-<ComponentPreview>
-  <Button variant="filled">Button</Button>
-  <Button variant="outline">Button</Button>
-  <Button variant="text">Button</Button>
+The variants for the secondary color are not fully supported yet. They may work in dark mode, but in light mode, the text color of secondary variants is not very visible.
+
+#### Filled
+
+There are three colors available for the filled variant `primary`, `accent`, and `danger`.
+
+<ComponentPreview className="flex">
+<Button variant="filled" color="primary">Primary</Button>
+<Button variant="filled" color="accent">Accent</Button>
+<Button variant="filled" color="neutral">Neutral</Button>
+<Button variant="filled" color="danger">Danger</Button>
 </ComponentPreview>
 
 ```tsx
-<Button variant="filled">Button</Button>
-<Button variant="outline">Button</Button>
-<Button variant="text">Button</Button>
+<Button variant="filled" color="primary">Primary</Button>
+<Button variant="filled" color="accent">Accent</Button>
+<Button variant="filled" color="neutral">Neutral</Button>
+<Button variant="filled" color="danger">Danger</Button>
+```
+
+---
+
+#### Outline
+
+There are three colors available for the outline variant `primary`, `accent`, and `danger`.
+
+<ComponentPreview className="flex">
+<Button variant="outline" color="primary">Primary</Button>
+<Button variant="outline" color="accent">Accent</Button>
+<Button variant="outline" color="neutral">Neutral</Button>
+<Button variant="outline" color="danger">Danger</Button>
+</ComponentPreview>
+
+```tsx
+<Button variant="outline" color="primary">Primary</Button>
+<Button variant="outline" color="accent">Accent</Button>
+<Button variant="outline" color="neutral">Neutral</Button>
+<Button variant="outline" color="danger">Danger</Button>
+```
+
+---
+
+#### Text
+
+There are three colors available for the text variant `primary`, `accent`, and `danger`.
+
+<ComponentPreview className="flex">
+<Button variant="text" color="primary">Primary</Button>
+<Button variant="text" color="accent">Accent</Button>
+<Button variant="text" color="neutral">Neutral</Button>
+<Button variant="text" color="danger">Danger</Button>
+</ComponentPreview>
+
+```tsx
+<Button variant="text" color="primary">Primary</Button>
+<Button variant="text" color="accent">Accent</Button>
+<Button variant="text" color="neutral">Neutral</Button>
+<Button variant="text" color="danger">Danger</Button>
 ```
 
 ---

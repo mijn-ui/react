@@ -44,7 +44,7 @@ const PopoverTrigger = React.forwardRef<
       ref={ref}
       className={applyUnstyled(
         isUnstyled,
-        buttonStyles({ color: "surface" }),
+        buttonStyles({ color: "accent" }),
         className,
       )}
       {...props}

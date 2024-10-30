@@ -14,7 +14,8 @@ const buttonStyles = cva(
       color: {
         primary: "",
         secondary: "",
-        surface: "",
+        accent: "",
+        neutral: "",
         danger: "",
       },
       radius: {
@@ -47,13 +48,19 @@ const buttonStyles = cva(
         color: "secondary",
         variant: "outline",
         className:
-          "hover:bg-secondary hover:border-secondary border border-secondary-text text-secondary-text",
+          "hover:bg-secondary hover:text-secondary-text border border-secondary text-secondary",
       },
       {
-        color: "surface",
+        color: "accent",
         variant: "outline",
         className:
-          "hover:bg-surface hover:text-surface-text border border-surface-text text-surface-text",
+          "hover:bg-accent hover:text-accent-text border border-accent text-accent-text",
+      },
+      {
+        color: "neutral",
+        variant: "outline",
+        className:
+          "hover:bg-neutral hover:text-neutral-text border border-neutral text-neutral-text",
       },
       {
         color: "danger",
@@ -70,17 +77,23 @@ const buttonStyles = cva(
       {
         color: "secondary",
         variant: "text",
-        className: "hover:bg-secondary text-secondary-text",
-      },
-      {
-        color: "surface",
-        variant: "text",
-        className: "hover:bg-surface hover:text-surface-text text-surface-text",
+        className:
+          "hover:bg-secondary hover:text-secondary-text text-secondary",
       },
       {
         color: "danger",
         variant: "text",
         className: "hover:bg-danger hover:text-danger-filled-text text-danger",
+      },
+      {
+        color: "accent",
+        variant: "text",
+        className: "hover:bg-accent text-accent-text",
+      },
+      {
+        color: "neutral",
+        variant: "text",
+        className: "hover:bg-neutral text-neutral-text",
       },
 
       {
@@ -99,9 +112,14 @@ const buttonStyles = cva(
         className: "bg-danger text-danger-filled-text hover:bg-danger/80",
       },
       {
-        color: "surface",
+        color: "accent",
         variant: "filled",
-        className: "bg-surface border text-surface-text hover:bg-accent",
+        className: "bg-accent text-accent-text hover:bg-accent/80",
+      },
+      {
+        color: "neutral",
+        variant: "filled",
+        className: "bg-neutral text-neutral-text hover:bg-neutral/80",
       },
     ],
     defaultVariants: {
