@@ -206,7 +206,7 @@ const AlertDialogDescription = React.forwardRef<
       ref={ref}
       className={applyUnstyled(
         isUnstyled,
-        "text-sm text-muted-text",
+        "text-sm text-neutral-text",
         className,
       )}
       {...props}

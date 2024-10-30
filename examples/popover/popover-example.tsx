@@ -102,7 +102,7 @@ const PopoverExample = ({ unstyled = false }: PopoverExampleProps) => {
             <RxCross2 />
           </Button>
         </PopoverClose>
-        <PopoverArrow className="fill-muted-text" />
+        <PopoverArrow className="fill-neutral-text" />
       </PopoverContent>
     </Popover>
   )
