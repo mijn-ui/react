@@ -2,13 +2,13 @@
 
 import React from "react"
 import Link from "next/link"
-import { Button } from "@/mijn-ui/components/button"
+import { Button } from "@mijn-ui/components/button"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-} from "@/mijn-ui/components/select"
+} from "@mijn-ui/components/select"
 import { useSearchContext } from "fumadocs-ui/provider"
 import { LuGithub, LuSearch } from "react-icons/lu"
 

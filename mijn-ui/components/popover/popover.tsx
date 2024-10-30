@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { buttonStyles } from "@/mijn-ui/components/button"
+import { buttonStyles } from "@mijn-ui/components/button"
 import {
   UnstyledProvider,
   useUnstyled,
@@ -44,7 +44,7 @@ const PopoverTrigger = React.forwardRef<
       ref={ref}
       className={applyUnstyled(
         isUnstyled,
-        buttonStyles({ color: "accent" }),
+        buttonStyles({ color: "secondary" }),
         className,
       )}
       {...props}

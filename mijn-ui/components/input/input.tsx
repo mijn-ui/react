@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Label } from "@/mijn-ui/components/label"
+import { Label } from "@mijn-ui/components/label"
 import { UnstyledProps } from "@mijn-ui/types"
 import { applyUnstyled, cn } from "@mijn-ui/utils"
 import { IconType } from "react-icons"
@@ -65,7 +65,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           className={applyUnstyled(
             unstyled,
             cn(
-              "peer flex h-10 w-full rounded-md border border-input-border bg-main bg-transparent px-3 py-2 text-sm outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-neutral-text autofill:shadow-[inset_0_0_0px_1000px_rgb(var(--surface))] autofill:[-webkit-text-fill-color:rgb(var(--main-text))_!important] focus-visible:border-main-text focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-main-text focus-visible:ring-offset-0 disabled:cursor-not-allowed",
+              "peer flex h-10 w-full rounded-md border border-main-border bg-main bg-transparent px-3 py-2 text-sm outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-neutral-text autofill:shadow-[inset_0_0_0px_1000px_rgb(var(--surface))] autofill:[-webkit-text-fill-color:rgb(var(--main-text))_!important] focus-visible:border-input-border focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-0 disabled:cursor-not-allowed",
               StartIcon ? "pl-8" : "",
               EndIcon ? "pr-8" : "",
             ),
