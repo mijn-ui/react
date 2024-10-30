@@ -10,7 +10,7 @@ import { applyUnstyled, cn } from "@mijn-ui/utils"
 import { VariantProps, cva } from "class-variance-authority"
 
 const alertStyles = cva(
-  "relative rounded-lg w-full py-4 px-3 [&>span~*]:pl-8 border-background-border border [&>svg]:text-main-text [&>div]:translate-y-[-3px]",
+  "relative group rounded-lg w-full py-4 px-3 [&>span~*]:pl-8 border-main-border border [&>svg]:text-main-text",
   {
     variants: {
       variant: {
@@ -23,7 +23,7 @@ const alertStyles = cva(
         info: "",
         warning: "",
         danger: "",
-        neutral: "",
+        default: "",
       },
     },
     compoundVariants: [
@@ -31,62 +31,58 @@ const alertStyles = cva(
         variant: "default",
         status: "success",
         className:
-          "bg-success/10 dark:border-success/80 border-success text-success-text [&>svg]:text-success-text",
+          "bg-success/10 dark:border-success/50 border-success [&>h5]:text-success-text [&>span>svg]:text-success-text [&>p]:text-main-text/80",
       },
       {
         variant: "default",
         status: "info",
         className:
-          "bg-info/10 dark:border-info/50 border-info text-info [&>svg]:text-info",
+          "bg-info/10 dark:border-info/50 border-info [&>h5]:text-info-text [&>span>svg]:text-info-text [&>p]:text-main-text/80",
       },
       {
         variant: "default",
         status: "warning",
         className:
-          "bg-warning/10 dark:border-warning/50 border-warning text-warning-text [&>svg]:text-warning-text",
+          "bg-warning/10 dark:border-warning/50 border-warning [&>h5]:text-warning-text [&>span>svg]:text-warning-text [&>p]:text-main-text/80",
       },
       {
         variant: "default",
         status: "danger",
         className:
-          "bg-danger/10 border-danger dark:border-danger/50 text-danger-text [&>svg]:text-danger-text",
+          "bg-danger/10 border-danger dark:border-danger/50 [&>h5]:text-danger-text [&>span>svg]:text-danger-text [&>p]:text-main-text/80",
       },
       {
         variant: "default",
-        status: "neutral",
+        status: "default",
         className:
-          "bg-main/10 dark:border-main-text/50 border-main-text text-main-text [&>svg]:text-main-text",
+          "bg-main/10 dark:border-main-text/50 border-main-text [&>h5]:text-main-text [&>span>svg]:text-main-text [&>p]:text-main-text/80",
       },
 
       /* -------------------------------------------------------------------------- */
       {
         variant: "filled",
         status: "success",
-        className:
-          "bg-success dark:bg-success/80 text-success-filled-text [&>svg]:text-success-filled-text",
+        className: "bg-success dark:bg-success/80 text-success-filled-text",
       },
       {
         variant: "filled",
         status: "info",
-        className:
-          "bg-info dark:bg-info/80 text-info-filled-text [&>svg]:text-info-filled-text",
+        className: "bg-info dark:bg-info/80 text-info-filled-text",
       },
       {
         variant: "filled",
         status: "warning",
-        className:
-          "bg-warning dark:bg-warning/80 text-warning-filled-text [&>svg]:text-warning-filled-text",
+        className: "bg-warning dark:bg-warning/80 text-warning-filled-text",
       },
       {
         variant: "filled",
         status: "danger",
-        className:
-          "bg-danger dark:bg-danger/80 text-danger-filled-text [&>svg]:text-danger-filled-text",
+        className: "bg-danger dark:bg-danger/80 text-danger-filled-text",
       },
       {
         variant: "filled",
-        status: "neutral",
-        className: "bg-main-text text-background [&>svg]:text-background",
+        status: "default",
+        className: "bg-main-text text-main",
       },
 
       /* -------------------------------------------------------------------------- */
@@ -94,32 +90,35 @@ const alertStyles = cva(
       {
         variant: "outline",
         status: "success",
-        className: "border-success text-success [&>svg]:text-success",
+        className:
+          "border-success [&>h5]:text-success [&>span>svg]:text-success",
       },
       {
         variant: "outline",
         status: "info",
-        className: "border-info text-info [&>svg]:text-info",
+        className: "border-info [&>h5]:text-info [&>span>svg]:text-info",
       },
       {
         variant: "outline",
         status: "warning",
-        className: "border-warning text-warning [&>svg]:text-warning ",
+        className:
+          "border-warning [&>h5]:text-warning [&>span>svg]:text-warning ",
       },
       {
         variant: "outline",
         status: "danger",
-        className: "border-danger text-danger [&>svg]:text-danger",
+        className: "border-danger [&>h5]:text-danger [&>span>svg]:text-danger",
       },
       {
         variant: "outline",
-        status: "neutral",
-        className: "border-main-text text-main-text [&>svg]:text-main-text",
+        status: "default",
+        className:
+          "border-main-text [&>h5]:text-main-text [&>span>svg]:text-main-text",
       },
     ],
     defaultVariants: {
-      variant: "outline",
-      status: "info",
+      variant: "default",
+      status: "default",
     },
   },
 )
@@ -138,6 +137,8 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
       <div
         ref={ref}
         {...props}
+        data-status={status || "default"}
+        data-variant={variant}
         className={applyUnstyled(
           unstyled,
           alertStyles({ variant, status }),
@@ -192,7 +193,7 @@ const AlertTitle = React.forwardRef<HTMLHeadingElement, AlertTitle>(
       <h5
         className={applyUnstyled(
           isUnstyled,
-          "w-full text-base font-semibold leading-none",
+          "w-full font-semibold leading-none",
           className,
         )}
         ref={ref}
@@ -216,7 +217,7 @@ const AlertDescription = React.forwardRef<
 
   return (
     <p
-      className={cn(isUnstyled, "mt-1 text-sm text-accent-text/80", className)}
+      className={cn(isUnstyled, "mt-1 text-sm", className)}
       ref={ref}
       {...props}
     />

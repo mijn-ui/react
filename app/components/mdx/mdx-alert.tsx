@@ -5,8 +5,8 @@ import {
   AlertTitle,
   Alert as MijnUIAlert,
   alertStyles,
-} from "@/mijn-ui/ui/alert"
-import { cn } from "@/mijn-ui/utils"
+} from "@mijn-ui/ui/alert"
+import { cn } from "@mijn-ui/utils"
 import { VariantProps } from "class-variance-authority"
 import { LuAlertCircle, LuBug } from "react-icons/lu"
 

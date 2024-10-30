@@ -14,8 +14,6 @@ import {
 } from "@/mijn-ui/ui/accordion"
 
 
-### Default Accordion
-
 <ComponentPreview>
   <SingleAccordionExample />
 </ComponentPreview>
@@ -25,7 +23,7 @@ import {
 
 <Steps>
   <Step>
-    ### Install Required Packages
+    #### Install Required Packages
 
     ```package-install
     @radix-ui/react-accordion
@@ -33,7 +31,7 @@ import {
   </Step>
 
   <Step>
-    ### Copy and Paste the Source Code
+    #### Copy and paste the following code into  `mijn-ui` folder.
 
     <Tabs items={["Source code", "Example usage"]}>
       <Tab value="Source code">
@@ -42,7 +40,7 @@ import {
             "file": "./mijn-ui/ui/accordion/accordion.tsx",
             "codeblock": {
               "lang": "tsx",
-              "meta": ""
+              "meta": "title=\"mijn-ui/ui/accordion.tsx\""
             }
           }
         ```
@@ -53,7 +51,7 @@ import {
             "file": "./examples/accordion/single-accordion.tsx",
             "codeblock": {
               "lang": "tsx",
-              "meta": ""
+              "meta": "title=\"single-accordion.tsx\""
             }
           }
         ```
@@ -62,9 +60,9 @@ import {
   </Step>
 
   <Step>
-    ### Add Animations to Your Tailwind Configuration
+    #### Add Animations to Your Tailwind Configuration
 
-    ```js
+    ```js title="tailwind.config.js"
     /** @type {import('tailwindcss').Config} */
   export default {
     theme: {
