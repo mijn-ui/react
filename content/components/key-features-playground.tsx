@@ -1,11 +1,11 @@
 "use client"
 
 import React from "react"
-import { Button } from "@mijn-ui/ui/button"
-import { buttonStyles } from "@mijn-ui/ui/button"
-import { Checkbox } from "@mijn-ui/ui/checkbox"
-import { Label } from "@mijn-ui/ui/label"
-import { RadioGroup, RadioGroupItem } from "@mijn-ui/ui/radio-group"
+import { Button } from "@/mijn-ui/components/button"
+import { buttonStyles } from "@/mijn-ui/components/button"
+import { Checkbox } from "@/mijn-ui/components/checkbox"
+import { Label } from "@/mijn-ui/components/label"
+import { RadioGroup, RadioGroupItem } from "@/mijn-ui/components/radio-group"
 import { VariantProps } from "class-variance-authority"
 
 type ButtonOptionsType = {

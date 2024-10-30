@@ -4,7 +4,7 @@ import {
   AlertDescription,
   AlertIcon,
   AlertTitle,
-} from "@/mijn-ui/ui/alert"
+} from "@/mijn-ui/components/alert"
 import { MdErrorOutline } from "react-icons/md"
 
 const AlertOutline = () => {

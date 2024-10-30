@@ -4,7 +4,7 @@ import {
   AlertDescription,
   AlertIcon,
   AlertTitle,
-} from "@mijn-ui/ui/alert"
+} from "@/mijn-ui/components/alert"
 import { IoRocketOutline } from "react-icons/io5"
 
 const AlertExample = () => {
