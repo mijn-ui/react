@@ -4,7 +4,6 @@ import * as React from "react"
 import { Label } from "@mijn-ui/components/label"
 import { UnstyledProps } from "@mijn-ui/types"
 import { applyUnstyled, cn } from "@mijn-ui/utils"
-import { IconType } from "react-icons"
 
 export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   className?: string
@@ -14,8 +13,8 @@ export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
     startIcon?: string
     endIcon?: string
   }
-  startIcon?: IconType
-  endIcon?: IconType
+  startIcon?: React.ReactNode
+  endIcon?: React.ReactNode
   label?: React.ReactNode
 } & UnstyledProps
 
@@ -26,8 +25,8 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       className,
       classNames,
       type,
-      startIcon: StartIcon,
-      endIcon: EndIcon,
+      startIcon,
+      endIcon,
       label,
       id = React.useId(),
       disabled,
@@ -43,21 +42,15 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           className,
         )}
       >
-        {StartIcon && (
+        {startIcon && (
           <div
             className={applyUnstyled(
               unstyled,
-              "absolute left-2 top-1/2 -translate-y-1/2 transform",
+              "absolute left-2 top-1/2 [&>svg]:text-neutral-text text-base -translate-y-1/2 transform",
+              classNames?.startIcon,
             )}
           >
-            <StartIcon
-              size={16}
-              className={applyUnstyled(
-                unstyled,
-                "text-neutral-text",
-                classNames?.startIcon,
-              )}
-            />
+            {startIcon}
           </div>
         )}
         <input
@@ -65,9 +58,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           className={applyUnstyled(
             unstyled,
             cn(
-              "peer flex h-10 w-full rounded-md border border-main-border bg-main bg-transparent px-3 py-2 text-sm outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-neutral-text autofill:shadow-[inset_0_0_0px_1000px_rgb(var(--surface))] autofill:[-webkit-text-fill-color:rgb(var(--main-text))_!important] focus-visible:border-input-border focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-0 disabled:cursor-not-allowed",
-              StartIcon ? "pl-8" : "",
-              EndIcon ? "pr-8" : "",
+              "peer flex h-10 w-full rounded-md border border-main-border bg-main bg-transparent px-3 py-2 text-sm outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-neutral-text focus-visible:border-input-border focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-0 disabled:cursor-not-allowed",
+              startIcon ? "pl-8" : "",
+              endIcon ? "pr-8" : "",
             ),
             classNames?.input,
           )}
@@ -75,7 +68,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           id={id}
           disabled={disabled}
           // Adding an empty space by default ensures the floating label moves correctly on focus or when input is present.
-          placeholder=" "
+          placeholder=""
           {...props}
         />
 
@@ -85,7 +78,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               unstyled,
               cn(
                 "absolute start-2 top-2 z-10 max-w-fit origin-[0] -translate-y-4 scale-75 transform cursor-text bg-transparent px-2 text-sm text-neutral-text duration-300",
-                StartIcon || EndIcon
+                startIcon || endIcon
                   ? "rtl:left start-2 top-2 -translate-y-4 scale-75 bg-main px-2 rtl:translate-x-1/4"
                   : "peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:start-2 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:bg-main peer-focus:px-2 rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4",
               ),
@@ -97,21 +90,15 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           </Label>
         )}
 
-        {EndIcon && (
+        {endIcon && (
           <div
             className={applyUnstyled(
               unstyled,
-              "absolute right-3.5 top-1/2 -translate-y-1/2 transform",
+              "absolute right-3.5 top-1/2 text-base [&>svg]:text-neutral-text -translate-y-1/2 transform",
+              classNames?.endIcon,
             )}
           >
-            <EndIcon
-              className={applyUnstyled(
-                unstyled,
-                "text-neutral-text",
-                classNames?.endIcon,
-              )}
-              size={16}
-            />
+            {endIcon}
           </div>
         )}
       </div>
