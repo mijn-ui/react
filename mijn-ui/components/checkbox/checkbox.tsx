@@ -15,13 +15,15 @@ export const checkboxStyles = cva(
   ],
   {
     variants: {
-      variant: {
+      color: {
         primary:
           "data-[state=checked]:text-primary-text data-[state=indeterminate]:text-primary-text border-main-text  data-[state=checked]:border-primary data-[state=checked]:bg-primary data-[state=indeterminate]:border-primary data-[state=indeterminate]:bg-primary",
         secondary:
           "data-[state=checked]:text-secondary-text data-[state=indeterminate]:text-secondary-text data-[state=checked]:border-secondary data-[state=indeterminate]:border-secondary border-main-text data-[state=indeterminate]:bg-secondary data-[state=checked]:bg-secondary",
-        outline:
-          "[data-state=checked]:text-main-text [data-state=indeterminate]:text-main-text border border-main-text",
+        accent:
+          "data-[state=checked]:text-accent-text data-[state=indeterminate]:text-accent-text data-[state=checked]:border-main-border data-[state=indeterminate]:border-main-border border-main-text data-[state=indeterminate]:bg-accent data-[state=checked]:bg-accent",
+        neutral:
+          "data-[state=checked]:text-neutral-text data-[state=indeterminate]:text-neutral-text data-[state=checked]:border-neutral data-[state=indeterminate]:border-neutral border-main-text data-[state=indeterminate]:bg-neutral data-[state=checked]:bg-neutral",
         danger:
           "data-[state=checked]:text-danger-filled-text data-[state=indeterminate]:text-danger-filled-text data-[state=checked]:border-danger data-[state=indeterminate]:border-danger border-main-text data-[state=checked]:bg-danger data-[state=indeterminate]:bg-danger",
         success:
@@ -34,7 +36,7 @@ export const checkboxStyles = cva(
       },
     },
     defaultVariants: {
-      variant: "primary",
+      color: "primary",
       size: "md",
     },
   },
@@ -63,7 +65,7 @@ const Checkbox = React.forwardRef<
       onCheckedChange: ControlledOnCheckedChange,
       defaultChecked,
       unstyled,
-      variant,
+      color,
       size,
       className,
       ...props
@@ -81,7 +83,7 @@ const Checkbox = React.forwardRef<
         ref={ref}
         className={applyUnstyled(
           unstyled,
-          checkboxStyles({ variant, size }),
+          checkboxStyles({ color, size }),
           className,
         )}
         {...props}
