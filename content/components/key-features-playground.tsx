@@ -57,7 +57,7 @@ const KeyFeaturesPlayground = () => {
             radius={buttonOptions.radius}
             size={buttonOptions.size}
           >
-            Click Me
+            {buttonOptions.size === "icon" ? "M" : "MijnUI"}
           </Button>
         </div>
 
@@ -141,13 +141,13 @@ const KeyFeaturesPlayground = () => {
                   <Label htmlFor="primary">primary</Label>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="secondary" id="secondary" />
-                  <Label htmlFor="secondary">secondary</Label>
+                  <RadioGroupItem value="neutral" id="neutral" />
+                  <Label htmlFor="neutral">neutral</Label>
                 </div>
 
                 <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="surface" id="surface" />
-                  <Label htmlFor="surface">surface</Label>
+                  <RadioGroupItem value="accent" id="accent" />
+                  <Label htmlFor="accent">accent</Label>
                 </div>
 
                 <div className="flex items-center space-x-2">
