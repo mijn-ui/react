@@ -52,7 +52,7 @@ const SelectTrigger = React.forwardRef<
       ref={ref}
       className={applyUnstyled(
         isUnstyled,
-        "flex h-10 w-full items-center justify-between rounded-md border border-main-border bg-surface px-3 py-2 text-sm placeholder:text-neutral-text focus:border-main-text focus:outline-none focus:ring-1 focus:ring-text disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 hover:bg-accent",
+        "flex h-10 w-full items-center justify-between rounded-md border border-main-border bg-surface px-3 py-2 text-sm placeholder:text-neutral-text focus:border-input-border focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 hover:bg-accent",
         className,
       )}
       {...props}
@@ -183,7 +183,7 @@ const SelectLabel = React.forwardRef<
       ref={ref}
       className={applyUnstyled(
         isUnstyled,
-        "py-1.5 pl-8 pr-2 text-sm font-semibold",
+        "py-1.5 pr-8 pl-2 text-sm font-semibold",
         className,
       )}
       {...props}
