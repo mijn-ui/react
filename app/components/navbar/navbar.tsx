@@ -2,6 +2,7 @@
 
 import React from "react"
 import Link from "next/link"
+import { Badge } from "@mijn-ui/components/badge"
 import { Button } from "@mijn-ui/components/button"
 import {
   Select,
@@ -33,6 +34,13 @@ const Navbar = () => {
               </SelectItem>
             </SelectContent>
           </Select>
+          <Link
+            href={"https://mijn-ui-next-15.vercel.app/"}
+            className="-mt-1"
+            target="_blank"
+          >
+            <Badge color="accent">Next.js 15</Badge>
+          </Link>
         </div>
 
         <div className="flex items-center gap-2">
@@ -51,7 +59,7 @@ const Navbar = () => {
             </div>
           </Button>
           <Button color={"accent"} size={"sm"} className="border px-2" asChild>
-            <Link href={"/"}>
+            <Link target="_blank" href={"https://github.com/HTLA380/MijnUI"}>
               <LuGithub size={18} />
             </Link>
           </Button>
