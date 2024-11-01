@@ -3,11 +3,9 @@
 @tailwind utilities;
 
 @import "./theme.css";
+@import "./docs.css";
 
 :root {
-  /* docs variables */
-  --navbar-height: 4rem;
-
   /* general */
   --background: 210 14% 95%; /* slate-100 */
   --foreground: 0 0% 0%; /* black */
@@ -63,40 +61,6 @@
 
 body {
   @apply bg-fd-background;
-}
-
-[data-search-full] {
-  @apply bg-fd-popover text-fd-muted-foreground/80;
-}
-
-[data-toc] {
-  padding-top: calc(var(--navbar-height) + 1rem);
-}
-
-#nd-tocnav {
-  @apply md:top-[var(--navbar-height)];
-}
-
-#nd-docs-layout aside#nd-sidebar {
-  @apply sm:bg-fd-background/10 sm:pt-[calc(var(--navbar-height)-1.5rem)] sm:backdrop-blur-sm;
-
-  a {
-    @apply pl-4;
-  }
-}
-
-#nd-docs-layout {
-  .steps .step::before {
-    @apply bg-fd-card text-fd-card-foreground shadow-sm;
-  }
-
-  [role="tablist"] {
-    @apply bg-fd-accent;
-  }
-}
-
-.fd-codeblock {
-  @apply bg-fd-card;
 }
 
 .custom_scroll_bar {
