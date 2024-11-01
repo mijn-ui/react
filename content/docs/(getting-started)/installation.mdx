@@ -34,7 +34,7 @@ Since we are in the beta stage, the following options work pretty well for insta
   After setting up the Next.js project, install these dependencies used by Mijn-UI components:
 
   ```package-install
-  react-icons class-variance-authority
+  react-icons class-variance-authority tailwindcss-animate clsx tailwind-merge
   ```
 
 </Step>
@@ -101,10 +101,8 @@ unexpected errors."
 className="mt-4" />
 
 </Step>
-<Step>
 
-
- 
+<Step> 
 ### Add Themes
 
 These are the default themes provided by mijn-ui. If you would like to create your own theme, learn more about themes [here](/docs/theming).
@@ -201,8 +199,12 @@ These are the default themes provided by mijn-ui. If you would like to create yo
   --input-border: 0 0% 96%; /* neutral-100 */
   }
 
+  * {
+    @apply border-main-border;
+  }
+
   body {
-    @apply bg-main text-main-text border-main-border;
+    @apply bg-main text-main-text;
   }
 }
 ```
@@ -283,8 +285,40 @@ export default {
         "input-border": "hsl(var(--input-border) / <alpha-value>)",
         ring: "hsl(var(--ring) / <alpha-value>)",
       },
+
+
+      borderRadius: {
+        default: "0.25rem",
+      },
+
+      transitionDuration: {
+        400: "400ms",
+      },
+
+      keyframes: {
+        "accordion-expand": {
+          from: { height: "0", opacity: "0" },
+          to: { height: "var(--radix-accordion-content-height)", opacity: "1" },
+        },
+        "accordion-collapse": {
+          from: {
+            height: "var(--radix-accordion-content-height)",
+            opacity: "1",
+          },
+          to: { height: "0" },
+          opacity: "0",
+        },
+      },
+      
+      animation: {
+        "accordion-expand":
+          "accordion-expand 0.2s ease-in-out, fade-in 0.4s ease-in-out",
+        "accordion-collapse":
+          "accordion-collapse 0.2s ease-in-out, fade-out 0.4s ease-in-out",
+      },
     },
   },
+  plugins: [require("tailwindcss-animate")],
 }
 
 ```
@@ -294,10 +328,6 @@ export default {
       ### Include Essential Utilities, Types, Context, and Hooks and Install Dependencies
 
     1. Within the `mijn-ui` folder, create a `utils` directory and add the following file and install necessary dependencies:
-
-      ```package-install
-      clsx tailwind-merge
-      ```
 
       ```json doc-gen:file
       {
@@ -347,6 +377,6 @@ export default {
     ### That's it
 
     You can now start adding components to your project. Check out the [components](/docs/accordion) section to learn more about the available components.
-
   </Step>
+  
 </Steps>
