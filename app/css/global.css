@@ -1,9 +1,9 @@
+@import "./theme.css";
+@import "./docs.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import "./theme.css";
-@import "./docs.css";
 
 :root {
   /* general */
@@ -17,9 +17,6 @@
 
   --primary: 29 100% 52%; /* orange-500 */
   --primary-foreground: 0 0% 100%; /* white */
-
-  --secondary: 34 100% 82%; /* #FED7AA */
-  --secondary-foreground: 29 93% 39%; /* orange-700 */
 
   --accent: 0 0% 90%; /* neutral-200 */
   --accent-foreground: 0 0% 0%; /* black */
@@ -45,9 +42,6 @@
 
   --primary: 29 100% 52%; /* orange-500 */
   --primary-foreground: 0 0% 100%; /* white */
-
-  --secondary: 34 100% 82%; /* #FED7AA */
-  --secondary-foreground: 29 93% 39%; /* orange-700 */
 
   --accent: 0 0% 12%; /* neutral-850 */
   --accent-foreground: 0 0% 96%; /* neutral-100 */
