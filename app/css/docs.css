@@ -7,7 +7,7 @@
 }
 
 [data-toc] {
-  padding-top: calc(var(--navbar-height) + 1rem) !important;
+  @apply !pt-[calc(var(--navbar-height)+1rem)];
 }
 
 #nd-tocnav {
