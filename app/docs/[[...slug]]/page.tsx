@@ -25,7 +25,7 @@ export default async function Page(props: {
 
   return (
     <DocsPage toc={page.data.toc} full={page.data.full}>
-      <DocsTitle className="text-4xl mt-[calc(var(--navbar-height)-1rem)] font-extrabold">
+      <DocsTitle className="text-4xl md:mt-[calc(var(--navbar-height)-1rem)] font-extrabold">
         {page.data.title}
       </DocsTitle>
       <DocsDescription className="mb-0 text-lg">

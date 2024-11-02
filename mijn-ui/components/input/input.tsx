@@ -64,7 +64,7 @@ const Input = ({
           classNames?.input,
         )}
         ref={ref}
-        id={id || userId}
+        id={userId || id}
         disabled={disabled}
         // Adding an empty space by default ensures the floating label moves correctly on focus or when input is present.
         placeholder=""
@@ -83,7 +83,7 @@ const Input = ({
             ),
             classNames?.label,
           )}
-          htmlFor={id || userId}
+          htmlFor={userId || id}
         >
           {label}
         </Label>
