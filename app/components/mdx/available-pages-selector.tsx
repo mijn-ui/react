@@ -12,6 +12,11 @@ import {
   SelectValue,
 } from "@/mijn-ui/components/select"
 
+const PAGE_OPTIONS = {
+  next: "/docs",
+  tailwind: "/docs/tailwind",
+}
+
 const AvailablePagesSelector = () => {
   const router = useRouter()
   const pathname = usePathname()
@@ -20,7 +25,9 @@ const AvailablePagesSelector = () => {
     router.push(value)
   }
 
-  const defaultValue = pathname === "/docs" ? "/docs" : "/docs/tailwind"
+  const defaultValue = pathname.startsWith("/docs/tailwind/")
+    ? PAGE_OPTIONS.tailwind
+    : PAGE_OPTIONS.next
 
   return (
     <Select onValueChange={handleChange} defaultValue={defaultValue}>
@@ -30,8 +37,8 @@ const AvailablePagesSelector = () => {
       <SelectContent className="preview bg-surface backdrop-blur-md">
         <SelectGroup>
           <SelectLabel>Available Pages</SelectLabel>
-          <SelectItem value="/docs">Next.js</SelectItem>
-          <SelectItem value="/docs/tailwind">Tailwind CSS</SelectItem>
+          <SelectItem value={PAGE_OPTIONS.next}>Next.js</SelectItem>
+          <SelectItem value={PAGE_OPTIONS.tailwind}>Tailwind CSS</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>
