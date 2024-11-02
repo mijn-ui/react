@@ -1,34 +1,38 @@
-import pluginJs from "@eslint/js"
+import { FlatCompat } from "@eslint/eslintrc"
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended"
-import pluginReact from "eslint-plugin-react"
-import globals from "globals"
-import tseslint from "typescript-eslint"
+import path from "path"
+import { fileURLToPath } from "url"
 
-export default [
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+})
+
+/** @type {import('eslint').Linter.Config[]} */
+const configs = [
+  eslintPluginPrettierRecommended,
+
   {
     ignores: [
-      "/node_modules",
+      "**/node_modules/*",
+      "**/out/*",
+      "**/.next/*",
+      "**/coverage",
       "tailwind.config.js",
-      "**/tailwind.config.js",
-      "*.config.JS",
+      "app/styles/global.css",
+    ],
+    files: [
+      "app/**/*.{ts,tsx}",
+      "content/**/*.{ts,tsx}",
+      "mijn-ui/**/*.{ts,tsx}",
+      "examples/**/*.{ts,tsx}",
     ],
   },
-  { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
-  { languageOptions: { globals: globals.browser } },
-  pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
-  pluginReact.configs.flat.recommended,
-  eslintPluginPrettierRecommended,
-  {
-    rules: {
-      "react/react-in-jsx-scope": "off",
-      "react/prop-types": "off",
-      "@typescript-eslint/no-explicit-any": "off",
-    },
-    settings: {
-      react: {
-        version: "detect",
-      },
-    },
-  },
+
+  ...compat.extends("next/core-web-vitals"),
+  ...compat.extends("next/typescript"),
 ]
+
+export default configs

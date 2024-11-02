@@ -26,11 +26,13 @@ const Input = ({
   startIcon,
   endIcon,
   label,
-  id = React.useId(),
+  id: userId,
   disabled,
   ref,
   ...props
 }: InputProps) => {
+  const id = React.useId()
+
   return (
     <div
       className={applyUnstyled(
@@ -62,7 +64,7 @@ const Input = ({
           classNames?.input,
         )}
         ref={ref}
-        id={id}
+        id={id || userId}
         disabled={disabled}
         // Adding an empty space by default ensures the floating label moves correctly on focus or when input is present.
         placeholder=""
@@ -81,7 +83,7 @@ const Input = ({
             ),
             classNames?.label,
           )}
-          htmlFor={id}
+          htmlFor={id || userId}
         >
           {label}
         </Label>
