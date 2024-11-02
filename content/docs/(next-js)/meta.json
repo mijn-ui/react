@@ -6,5 +6,6 @@
     "---Components---",
     "...(components)",
     "..."
-  ]
+  ],
+  "root": true
 }

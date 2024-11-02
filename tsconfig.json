@@ -30,8 +30,10 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "content/docs/index.mdx",
-    "tailwind.config.js"
+    "content/docs/(next-js)/index.mdx",
+    "tailwind.config.js",
+    "content/common/tw-html.config.js",
+    "content/common/tw-config-next.js"
   ],
   "exclude": ["node_modules"]
 }

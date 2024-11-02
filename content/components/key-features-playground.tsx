@@ -59,7 +59,7 @@ const KeyFeaturesPlayground = () => {
         </div>
 
         <div className="bg-surface w-full flex-grow xl:flex-initial sm:max-w-80 xl:max-w-none xl:w-1/2 h-full p-5 flex flex-col gap-4 items-center">
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-5 sm:w-full">
             <div className="flex items-center gap-2">
               <Checkbox
                 checked={buttonOptions.unstyled}

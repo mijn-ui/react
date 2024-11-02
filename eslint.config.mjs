@@ -13,16 +13,7 @@ const compat = new FlatCompat({
 /** @type {import('eslint').Linter.Config[]} */
 const configs = [
   eslintPluginPrettierRecommended,
-
   {
-    ignores: [
-      "**/node_modules/*",
-      "**/out/*",
-      "**/.next/*",
-      "**/coverage",
-      "tailwind.config.js",
-      "app/styles/global.css",
-    ],
     files: [
       "app/**/*.{ts,tsx}",
       "content/**/*.{ts,tsx}",
@@ -30,7 +21,22 @@ const configs = [
       "examples/**/*.{ts,tsx}",
     ],
   },
-
+  {
+    ignores: [
+      "**/node_modules/*",
+      "**/out/*",
+      "**/.next/*",
+      "**/coverage",
+      "tailwind.config.js",
+      "content/common/*",
+      "app/styles/global.css",
+    ],
+  },
+  {
+    rules: {
+      "import/no-anonymous-default-export": "off",
+    },
+  },
   ...compat.extends("next/core-web-vitals"),
   ...compat.extends("next/typescript"),
 ]

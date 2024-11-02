@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import ComponentPreview from "@/app/components/mdx/component-preview"
 import Alert from "@/app/components/mdx/mdx-alert"
+import TWComponentPreview from "@/app/components/mdx/tailwind-component-preview"
 import { source } from "@/app/source"
 import { File, Files, Folder } from "fumadocs-ui/components/files"
 import { Step, Steps } from "fumadocs-ui/components/steps"
@@ -45,6 +46,7 @@ export default async function Page(props: {
             Folder,
             Alert,
             ComponentPreview,
+            TWComponentPreview,
           }}
         />
       </DocsBody>
