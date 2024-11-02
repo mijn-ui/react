@@ -16,7 +16,7 @@ const DialogPortal = DialogPrimitive.Portal
 /*                                   Dialog                                   */
 /* -------------------------------------------------------------------------- */
 
-type DialogProps = React.ComponentPropsWithoutRef<typeof DialogPrimitive.Root> &
+type DialogProps = React.ComponentPropsWithRef<typeof DialogPrimitive.Root> &
   UnstyledProps
 
 const Dialog = ({ unstyled = false, ...props }: DialogProps) => (
@@ -29,10 +29,17 @@ const Dialog = ({ unstyled = false, ...props }: DialogProps) => (
 /*                                DialogTrigger                               */
 /* -------------------------------------------------------------------------- */
 
-const DialogTrigger = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Trigger> & UnstyledProps
->(({ unstyled, className, ...props }, ref) => {
+type DialogTriggerProps = React.ComponentPropsWithRef<
+  typeof DialogPrimitive.Trigger
+> &
+  UnstyledProps
+
+const DialogTrigger = ({
+  unstyled,
+  className,
+  ref,
+  ...props
+}: DialogTriggerProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -47,18 +54,24 @@ const DialogTrigger = React.forwardRef<
       {...props}
     />
   )
-})
-
+}
 DialogTrigger.displayName = DialogPrimitive.Trigger.displayName
 
 /* -------------------------------------------------------------------------- */
 /*                                 DialogClose                                */
 /* -------------------------------------------------------------------------- */
 
-const DialogClose = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Close>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Close> & UnstyledProps
->(({ unstyled, className, ...props }, ref) => {
+type DialogCloseProps = React.ComponentPropsWithRef<
+  typeof DialogPrimitive.Close
+> &
+  UnstyledProps
+
+const DialogClose = ({
+  unstyled,
+  className,
+  ref,
+  ...props
+}: DialogCloseProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -73,18 +86,24 @@ const DialogClose = React.forwardRef<
       {...props}
     />
   )
-})
-
+}
 DialogClose.displayName = DialogPrimitive.Close.displayName
 
 /* -------------------------------------------------------------------------- */
 /*                                DialogOverlay                               */
 /* -------------------------------------------------------------------------- */
 
-const DialogOverlay = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Overlay>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay> & UnstyledProps
->(({ unstyled, className, ...props }, ref) => {
+type DialogOverlayProps = React.ComponentPropsWithRef<
+  typeof DialogPrimitive.Overlay
+> &
+  UnstyledProps
+
+const DialogOverlay = ({
+  unstyled,
+  className,
+  ref,
+  ...props
+}: DialogOverlayProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -99,18 +118,25 @@ const DialogOverlay = React.forwardRef<
       {...props}
     />
   )
-})
-
+}
 DialogOverlay.displayName = DialogPrimitive.Overlay.displayName
 
 /* -------------------------------------------------------------------------- */
 /*                                DialogContent                               */
 /* -------------------------------------------------------------------------- */
 
-const DialogContent = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content> & UnstyledProps
->(({ unstyled, className, children, ...props }, ref) => {
+type DialogContentProps = React.ComponentPropsWithRef<
+  typeof DialogPrimitive.Content
+> &
+  UnstyledProps
+
+const DialogContent = ({
+  unstyled,
+  className,
+  children,
+  ref,
+  ...props
+}: DialogContentProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -137,8 +163,7 @@ const DialogContent = React.forwardRef<
       </div>
     </DialogPortal>
   )
-})
-DialogContent.displayName = DialogPrimitive.Content.displayName
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                DialogHeader                                */
@@ -194,10 +219,17 @@ DialogFooter.displayName = "DialogFooter"
 /*                                 DialogTitle                                */
 /* -------------------------------------------------------------------------- */
 
-const DialogTitle = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Title>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Title> & UnstyledProps
->(({ unstyled, className, ...props }, ref) => {
+type DialogTitleProps = React.ComponentPropsWithRef<
+  typeof DialogPrimitive.Title
+> &
+  UnstyledProps
+
+const DialogTitle = ({
+  unstyled,
+  className,
+  ref,
+  ...props
+}: DialogTitleProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -212,18 +244,23 @@ const DialogTitle = React.forwardRef<
       {...props}
     />
   )
-})
-DialogTitle.displayName = DialogPrimitive.Title.displayName
+}
 
 /* -------------------------------------------------------------------------- */
 /*                              DialogDescription                             */
 /* -------------------------------------------------------------------------- */
 
-const DialogDescription = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Description>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description> &
-    UnstyledProps
->(({ unstyled, className, ...props }, ref) => {
+type DialogDescriptionProps = React.ComponentPropsWithRef<
+  typeof DialogPrimitive.Description
+> &
+  UnstyledProps
+
+const DialogDescription = ({
+  unstyled,
+  className,
+  ref,
+  ...props
+}: DialogDescriptionProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -238,8 +275,7 @@ const DialogDescription = React.forwardRef<
       {...props}
     />
   )
-})
-DialogDescription.displayName = DialogPrimitive.Description.displayName
+}
 
 export {
   Dialog,

@@ -31,11 +31,17 @@ const AlertDialog = ({
 /*                             AlertDialogTrigger                             */
 /* -------------------------------------------------------------------------- */
 
-const AlertDialogTrigger = React.forwardRef<
-  React.ElementRef<typeof AlertDialogPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Trigger> &
-    UnstyledProps
->(({ unstyled, className, ...props }, ref) => {
+type AlertDialogTriggerProps = React.ComponentPropsWithRef<
+  typeof AlertDialogPrimitive.Trigger
+> &
+  UnstyledProps
+
+const AlertDialogTrigger = ({
+  unstyled,
+  className,
+  ref,
+  ...props
+}: AlertDialogTriggerProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -50,18 +56,23 @@ const AlertDialogTrigger = React.forwardRef<
       {...props}
     />
   )
-})
-AlertDialogTrigger.displayName = AlertDialogPrimitive.Trigger.displayName
+}
 
 /* -------------------------------------------------------------------------- */
 /*                             AlertDialogOverlay                             */
 /* -------------------------------------------------------------------------- */
 
-const AlertDialogOverlay = React.forwardRef<
-  React.ElementRef<typeof AlertDialogPrimitive.Overlay>,
-  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Overlay> &
-    UnstyledProps
->(({ className, unstyled, ...props }, ref) => {
+type AlertDialogOverlayProps = React.ComponentPropsWithRef<
+  typeof AlertDialogPrimitive.Overlay
+> &
+  UnstyledProps
+
+const AlertDialogOverlay = ({
+  className,
+  unstyled,
+  ref,
+  ...props
+}: AlertDialogOverlayProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -76,18 +87,23 @@ const AlertDialogOverlay = React.forwardRef<
       ref={ref}
     />
   )
-})
-AlertDialogOverlay.displayName = AlertDialogPrimitive.Overlay.displayName
+}
 
 /* -------------------------------------------------------------------------- */
 /*                             AlertDialogContent                             */
 /* -------------------------------------------------------------------------- */
 
-const AlertDialogContent = React.forwardRef<
-  React.ElementRef<typeof AlertDialogPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Content> &
-    UnstyledProps
->(({ unstyled, className, ...props }, ref) => {
+type AlertDialogContentProps = React.ComponentPropsWithRef<
+  typeof AlertDialogPrimitive.Content
+> &
+  UnstyledProps
+
+const AlertDialogContent = ({
+  unstyled,
+  className,
+  ref,
+  ...props
+}: AlertDialogContentProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -113,8 +129,7 @@ const AlertDialogContent = React.forwardRef<
       </div>
     </AlertDialogPortal>
   )
-})
-AlertDialogContent.displayName = AlertDialogPrimitive.Content.displayName
+}
 
 /* -------------------------------------------------------------------------- */
 /*                              AlertDialogHeader                             */
@@ -170,11 +185,17 @@ AlertDialogFooter.displayName = "AlertDialogFooter"
 /*                              AlertDialogTitle                              */
 /* -------------------------------------------------------------------------- */
 
-const AlertDialogTitle = React.forwardRef<
-  React.ElementRef<typeof AlertDialogPrimitive.Title>,
-  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Title> &
-    UnstyledProps
->(({ unstyled, className, ...props }, ref) => {
+type AlertDialogTitleProps = React.ComponentPropsWithRef<
+  typeof AlertDialogPrimitive.Title
+> &
+  UnstyledProps
+
+const AlertDialogTitle = ({
+  unstyled,
+  className,
+  ref,
+  ...props
+}: AlertDialogTitleProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -185,19 +206,23 @@ const AlertDialogTitle = React.forwardRef<
       {...props}
     />
   )
-})
-
-AlertDialogTitle.displayName = AlertDialogPrimitive.Title.displayName
+}
 
 /* -------------------------------------------------------------------------- */
 /*                           AlertDialogDescription                           */
 /* -------------------------------------------------------------------------- */
 
-const AlertDialogDescription = React.forwardRef<
-  React.ElementRef<typeof AlertDialogPrimitive.Description>,
-  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Description> &
-    UnstyledProps
->(({ unstyled, className, ...props }, ref) => {
+type AlertDialogDescriptionProps = React.ComponentPropsWithRef<
+  typeof AlertDialogPrimitive.Description
+> &
+  UnstyledProps
+
+const AlertDialogDescription = ({
+  unstyled,
+  className,
+  ref,
+  ...props
+}: AlertDialogDescriptionProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -212,19 +237,23 @@ const AlertDialogDescription = React.forwardRef<
       {...props}
     />
   )
-})
-AlertDialogDescription.displayName =
-  AlertDialogPrimitive.Description.displayName
+}
 
 /* -------------------------------------------------------------------------- */
 /*                              AlertDialogAction                             */
 /* -------------------------------------------------------------------------- */
 
-const AlertDialogAction = React.forwardRef<
-  React.ElementRef<typeof AlertDialogPrimitive.Action>,
-  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Action> &
-    UnstyledProps
->(({ unstyled, className, ...props }, ref) => {
+type AlertDialogActionProps = React.ComponentPropsWithRef<
+  typeof AlertDialogPrimitive.Action
+> &
+  UnstyledProps
+
+const AlertDialogAction = ({
+  unstyled,
+  className,
+  ref,
+  ...props
+}: AlertDialogActionProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -235,18 +264,23 @@ const AlertDialogAction = React.forwardRef<
       {...props}
     />
   )
-})
-AlertDialogAction.displayName = AlertDialogPrimitive.Action.displayName
+}
 
 /* -------------------------------------------------------------------------- */
 /*                              AlertDialogCancel                             */
 /* -------------------------------------------------------------------------- */
 
-const AlertDialogCancel = React.forwardRef<
-  React.ElementRef<typeof AlertDialogPrimitive.Cancel>,
-  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Cancel> &
-    UnstyledProps
->(({ unstyled, className, ...props }, ref) => {
+type AlertDialogCancelProps = React.ComponentPropsWithRef<
+  typeof AlertDialogPrimitive.Cancel
+> &
+  UnstyledProps
+
+const AlertDialogCancel = ({
+  unstyled,
+  className,
+  ref,
+  ...props
+}: AlertDialogCancelProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -261,8 +295,7 @@ const AlertDialogCancel = React.forwardRef<
       {...props}
     />
   )
-})
-AlertDialogCancel.displayName = AlertDialogPrimitive.Cancel.displayName
+}
 
 export {
   AlertDialog,

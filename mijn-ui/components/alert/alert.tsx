@@ -131,25 +131,28 @@ export type AlertProps = React.ComponentProps<"div"> &
   VariantProps<typeof alertStyles> &
   UnstyledProps
 
-const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
-  ({ variant, status, unstyled = false, className, ...props }, ref) => (
-    <UnstyledProvider unstyled={unstyled}>
-      <div
-        ref={ref}
-        {...props}
-        data-status={status || "default"}
-        data-variant={variant}
-        className={applyUnstyled(
-          unstyled,
-          alertStyles({ variant, status }),
-          className,
-        )}
-      />
-    </UnstyledProvider>
-  ),
+const Alert = ({
+  variant,
+  status,
+  unstyled = false,
+  className,
+  ref,
+  ...props
+}: AlertProps) => (
+  <UnstyledProvider unstyled={unstyled}>
+    <div
+      ref={ref}
+      {...props}
+      data-status={status || "default"}
+      data-variant={variant}
+      className={applyUnstyled(
+        unstyled,
+        alertStyles({ variant, status }),
+        className,
+      )}
+    />
+  </UnstyledProvider>
 )
-
-Alert.displayName = "Alert"
 
 /* -------------------------------------------------------------------------- */
 /*                                  AlertIcon                                 */
@@ -157,26 +160,22 @@ Alert.displayName = "Alert"
 
 type AlertIconProps = React.ComponentProps<"span"> & UnstyledProps
 
-const AlertIcon = React.forwardRef<HTMLSpanElement, AlertIconProps>(
-  ({ unstyled, className, ...props }, ref) => {
-    const { unstyled: contextUnstyled } = useUnstyled()
-    const isUnstyled = unstyled ?? contextUnstyled
+const AlertIcon = ({ unstyled, className, ref, ...props }: AlertIconProps) => {
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
-    return (
-      <span
-        className={applyUnstyled(
-          isUnstyled,
-          "translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:h-5 [&>svg]:w-5",
-          className,
-        )}
-        ref={ref}
-        {...props}
-      />
-    )
-  },
-)
-
-AlertIcon.displayName = "AlertIcon"
+  return (
+    <span
+      className={applyUnstyled(
+        isUnstyled,
+        "translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:h-5 [&>svg]:w-5",
+        className,
+      )}
+      ref={ref}
+      {...props}
+    />
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                 AlertTitle                                 */
@@ -184,34 +183,32 @@ AlertIcon.displayName = "AlertIcon"
 
 type AlertTitle = React.ComponentProps<"h5"> & UnstyledProps
 
-const AlertTitle = React.forwardRef<HTMLHeadingElement, AlertTitle>(
-  ({ unstyled, className, ...props }, ref) => {
-    const { unstyled: contextUnstyled } = useUnstyled()
-    const isUnstyled = unstyled ?? contextUnstyled
+const AlertTitle = ({ unstyled, className, ref, ...props }: AlertTitle) => {
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
-    return (
-      <h5
-        className={applyUnstyled(
-          isUnstyled,
-          "w-full font-semibold leading-none",
-          className,
-        )}
-        ref={ref}
-        {...props}
-      />
-    )
-  },
-)
-
-AlertTitle.displayName = "AlertTitle"
+  return (
+    <h5
+      className={applyUnstyled(
+        isUnstyled,
+        "w-full font-semibold leading-none",
+        className,
+      )}
+      ref={ref}
+      {...props}
+    />
+  )
+}
 
 /* ---------------------------- AlertDescription ---------------------------- */
 type AlertDescriptionProps = React.ComponentProps<"p"> & UnstyledProps
 
-const AlertDescription = React.forwardRef<
-  HTMLParagraphElement,
-  AlertDescriptionProps
->(({ unstyled, className, ...props }, ref) => {
+const AlertDescription = ({
+  unstyled,
+  className,
+  ref,
+  ...props
+}: AlertDescriptionProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -222,8 +219,6 @@ const AlertDescription = React.forwardRef<
       {...props}
     />
   )
-})
-
-AlertDescription.displayName = "AlertDescription"
+}
 
 export { Alert, AlertDescription, AlertIcon, alertStyles, AlertTitle }

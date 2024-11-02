@@ -33,17 +33,20 @@ const Select = ({ unstyled = false, ...props }: SelectProps) => {
 /*                                SelectTrigger                               */
 /* -------------------------------------------------------------------------- */
 
-type SelectTriggerProps = React.ComponentPropsWithoutRef<
+type SelectTriggerProps = React.ComponentPropsWithRef<
   typeof SelectPrimitive.Trigger
 > &
   UnstyledProps & {
     icon?: React.ReactNode
   }
 
-const SelectTrigger = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.Trigger>,
-  SelectTriggerProps
->(({ unstyled, className, children, ...props }, ref) => {
+const SelectTrigger = ({
+  unstyled,
+  className,
+  children,
+  ref,
+  ...props
+}: SelectTriggerProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -63,18 +66,23 @@ const SelectTrigger = React.forwardRef<
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
   )
-})
-SelectTrigger.displayName = SelectPrimitive.Trigger.displayName
+}
 
 /* -------------------------------------------------------------------------- */
 /*                            SelectScrollUpButton                            */
 /* -------------------------------------------------------------------------- */
 
-const SelectScrollUpButton = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.ScrollUpButton>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.ScrollUpButton> &
-    UnstyledProps
->(({ unstyled, className, ...props }, ref) => {
+type SelectScrollUpButtonProps = React.ComponentPropsWithRef<
+  typeof SelectPrimitive.ScrollUpButton
+> &
+  UnstyledProps
+
+const SelectScrollUpButton = ({
+  unstyled,
+  className,
+  ref,
+  ...props
+}: SelectScrollUpButtonProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -91,18 +99,23 @@ const SelectScrollUpButton = React.forwardRef<
       <LuChevronUp className="h-4 w-4" />
     </SelectPrimitive.ScrollUpButton>
   )
-})
-SelectScrollUpButton.displayName = SelectPrimitive.ScrollUpButton.displayName
+}
 
 /* -------------------------------------------------------------------------- */
 /*                           SelectScrollDownButton                           */
 /* -------------------------------------------------------------------------- */
 
-const SelectScrollDownButton = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.ScrollDownButton>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.ScrollDownButton> &
-    UnstyledProps
->(({ unstyled, className, ...props }, ref) => {
+type SelectScrollDownButtonProps = React.ComponentPropsWithRef<
+  typeof SelectPrimitive.ScrollDownButton
+> &
+  UnstyledProps
+
+const SelectScrollDownButton = ({
+  unstyled,
+  className,
+  ref,
+  ...props
+}: SelectScrollDownButtonProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -119,18 +132,25 @@ const SelectScrollDownButton = React.forwardRef<
       <LuChevronDown className="h-4 w-4" />
     </SelectPrimitive.ScrollDownButton>
   )
-})
-SelectScrollDownButton.displayName =
-  SelectPrimitive.ScrollDownButton.displayName
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                SelectContent                               */
 /* -------------------------------------------------------------------------- */
 
-const SelectContent = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content> & UnstyledProps
->(({ unstyled, className, children, position = "popper", ...props }, ref) => {
+type SelectContentProps = React.ComponentPropsWithRef<
+  typeof SelectPrimitive.Content
+> &
+  UnstyledProps
+
+const SelectContent = ({
+  unstyled,
+  className,
+  children,
+  position = "popper",
+  ref,
+  ...props
+}: SelectContentProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -164,17 +184,23 @@ const SelectContent = React.forwardRef<
       </SelectPrimitive.Content>
     </SelectPrimitive.Portal>
   )
-})
-SelectContent.displayName = SelectPrimitive.Content.displayName
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                 SelectLabel                                */
 /* -------------------------------------------------------------------------- */
 
-const SelectLabel = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.Label>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Label> & UnstyledProps
->(({ unstyled, className, ...props }, ref) => {
+type SelectLabelProps = React.ComponentPropsWithRef<
+  typeof SelectPrimitive.Label
+> &
+  UnstyledProps
+
+const SelectLabel = ({
+  unstyled,
+  className,
+  ref,
+  ...props
+}: SelectLabelProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -189,17 +215,24 @@ const SelectLabel = React.forwardRef<
       {...props}
     />
   )
-})
-SelectLabel.displayName = SelectPrimitive.Label.displayName
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                 SelectItem                                 */
 /* -------------------------------------------------------------------------- */
 
-const SelectItem = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item> & UnstyledProps
->(({ unstyled, className, children, ...props }, ref) => {
+type SelectItemProps = React.ComponentPropsWithRef<
+  typeof SelectPrimitive.Item
+> &
+  UnstyledProps
+
+const SelectItem = ({
+  unstyled,
+  className,
+  children,
+  ref,
+  ...props
+}: SelectItemProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -227,18 +260,23 @@ const SelectItem = React.forwardRef<
       </span>
     </SelectPrimitive.Item>
   )
-})
-SelectItem.displayName = SelectPrimitive.Item.displayName
+}
 
 /* -------------------------------------------------------------------------- */
 /*                               SelectSeparator                              */
 /* -------------------------------------------------------------------------- */
 
-const SelectSeparator = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.Separator>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Separator> &
-    UnstyledProps
->(({ unstyled, className, ...props }, ref) => {
+type SelectSeparatorProps = React.ComponentPropsWithRef<
+  typeof SelectPrimitive.Separator
+> &
+  UnstyledProps
+
+const SelectSeparator = ({
+  unstyled,
+  className,
+  ref,
+  ...props
+}: SelectSeparatorProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -253,8 +291,7 @@ const SelectSeparator = React.forwardRef<
       {...props}
     />
   )
-})
-SelectSeparator.displayName = SelectPrimitive.Separator.displayName
+}
 
 export {
   Select,

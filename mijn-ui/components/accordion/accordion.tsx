@@ -28,16 +28,17 @@ const accordionStyles = cva("[&>div]:border-b [&>div]:border-b-main-border", {
 /*                                  Accordion                                 */
 /* -------------------------------------------------------------------------- */
 
-type AccordionProps = React.ComponentPropsWithoutRef<
-  typeof RadixAccordion.Root
-> &
+type AccordionProps = React.ComponentPropsWithRef<typeof RadixAccordion.Root> &
   VariantProps<typeof accordionStyles> &
   UnstyledProps
 
-const Accordion = React.forwardRef<
-  React.ElementRef<typeof RadixAccordion.Root>,
-  AccordionProps
->(({ className, unstyled = false, variant, ...props }, ref) => (
+const Accordion = ({
+  className,
+  unstyled = false,
+  variant,
+  ref,
+  ...props
+}: AccordionProps) => (
   <UnstyledProvider unstyled={unstyled}>
     <RadixAccordion.Root
       ref={ref}
@@ -49,23 +50,23 @@ const Accordion = React.forwardRef<
       {...props}
     />
   </UnstyledProvider>
-))
-
-Accordion.displayName = "Accordion"
+)
 
 /* -------------------------------------------------------------------------- */
 /*                                AccordionItem                               */
 /* -------------------------------------------------------------------------- */
 
-type AccordionItemProps = React.ComponentPropsWithoutRef<
+type AccordionItemProps = React.ComponentPropsWithRef<
   typeof RadixAccordion.Item
 > &
   UnstyledProps
 
-const AccordionItem = React.forwardRef<
-  React.ElementRef<typeof RadixAccordion.Item>,
-  AccordionItemProps
->(({ className, unstyled, ...props }, ref) => {
+const AccordionItem = ({
+  className,
+  unstyled,
+  ref,
+  ...props
+}: AccordionItemProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -76,24 +77,27 @@ const AccordionItem = React.forwardRef<
       {...props}
     />
   )
-})
-AccordionItem.displayName = "AccordionItem"
+}
 
 /* -------------------------------------------------------------------------- */
 /*                              AccordionTrigger                              */
 /* -------------------------------------------------------------------------- */
 
-type AccordionTriggerProps = React.ComponentPropsWithoutRef<
+type AccordionTriggerProps = React.ComponentPropsWithRef<
   typeof RadixAccordion.Trigger
 > &
   UnstyledProps & {
     icon?: React.ReactNode
   }
 
-const AccordionTrigger = React.forwardRef<
-  React.ElementRef<typeof RadixAccordion.Trigger>,
-  AccordionTriggerProps
->(({ className, icon, unstyled, children, ...props }, ref) => {
+const AccordionTrigger = ({
+  className,
+  icon,
+  unstyled,
+  children,
+  ref,
+  ...props
+}: AccordionTriggerProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -123,23 +127,24 @@ const AccordionTrigger = React.forwardRef<
       </RadixAccordion.Trigger>
     </RadixAccordion.Header>
   )
-})
-
-AccordionTrigger.displayName = RadixAccordion.Trigger.displayName
+}
 
 /* -------------------------------------------------------------------------- */
 /*                            AccordionContentProps                           */
 /* -------------------------------------------------------------------------- */
 
-type AccordionContentProps = React.ComponentPropsWithoutRef<
+type AccordionContentProps = React.ComponentPropsWithRef<
   typeof RadixAccordion.Content
 > &
   UnstyledProps
 
-const AccordionContent = React.forwardRef<
-  React.ElementRef<typeof RadixAccordion.Content>,
-  AccordionContentProps
->(({ className, unstyled, children, ...props }, ref) => {
+const AccordionContent = ({
+  className,
+  unstyled,
+  children,
+  ref,
+  ...props
+}: AccordionContentProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -157,8 +162,6 @@ const AccordionContent = React.forwardRef<
       </div>
     </RadixAccordion.Content>
   )
-})
-
-AccordionContent.displayName = RadixAccordion.Content.displayName
+}
 
 export { Accordion, AccordionContent, AccordionItem, AccordionTrigger }

@@ -33,43 +33,43 @@ export const avatarStyles = cva(
 /*                                 AvatarGroup                                */
 /* -------------------------------------------------------------------------- */
 
-type AvatarGroupProps = React.ComponentProps<"div"> & {
+type AvatarGroupProps = React.ComponentPropsWithRef<"div"> & {
   max?: number
 } & UnstyledProps
 
-const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>(
-  ({ unstyled = false, max, children, className, ...props }, ref) => {
-    const childArray = React.Children.toArray(children)
-    const visibleChildren = max ? childArray.slice(0, max) : childArray
-    const remainingChildrenCount = max ? childArray.length - max : 0
+const AvatarGroup = ({
+  max,
+  children,
+  className,
+  unstyled = false,
+  ref,
+  ...props
+}: AvatarGroupProps) => {
+  const childArray = React.Children.toArray(children)
+  const visibleChildren = max ? childArray.slice(0, max) : childArray
+  const remainingChildrenCount = max ? childArray.length - max : 0
 
-    return (
-      <UnstyledProvider unstyled={unstyled}>
-        <div
-          className={cn(
-            "flex items-center justify-center -space-x-2",
-            className,
-          )}
-          {...props}
-          ref={ref}
-        >
-          {visibleChildren}
-          {remainingChildrenCount > 0 && (
-            <span
-              className={
-                "!ml-1.5 flex items-center justify-center text-xs text-neutral-text"
-              }
-            >
-              +{remainingChildrenCount}
-            </span>
-          )}
-        </div>
-      </UnstyledProvider>
-    )
-  },
-)
-
-AvatarGroup.displayName = "AvatarGroup"
+  return (
+    <UnstyledProvider unstyled={unstyled}>
+      <div
+        className={cn("flex items-center justify-center -space-x-2", className)}
+        {...props}
+        ref={ref}
+      >
+        {visibleChildren}
+        {remainingChildrenCount > 0 && (
+          <span
+            className={
+              "!ml-1.5 flex items-center justify-center text-xs text-neutral-text"
+            }
+          >
+            +{remainingChildrenCount}
+          </span>
+        )}
+      </div>
+    </UnstyledProvider>
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                   Avatar                                   */
@@ -77,14 +77,11 @@ AvatarGroup.displayName = "AvatarGroup"
 
 export type AvatarVariantProps = VariantProps<typeof avatarStyles>
 
-type AvatarProps = React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root> &
+type AvatarProps = React.ComponentPropsWithRef<typeof AvatarPrimitive.Root> &
   AvatarVariantProps &
   UnstyledProps
 
-const Avatar = React.forwardRef<
-  React.ElementRef<typeof AvatarPrimitive.Root>,
-  AvatarProps
->(({ unstyled, size, className, ...props }, ref) => {
+const Avatar = ({ unstyled, size, className, ref, ...props }: AvatarProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -95,22 +92,23 @@ const Avatar = React.forwardRef<
       {...props}
     />
   )
-})
-Avatar.displayName = AvatarPrimitive.Root.displayName
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                 AvatarImage                                */
 /* -------------------------------------------------------------------------- */
 
-type AvatarImageProps = React.ComponentPropsWithoutRef<
+type AvatarImageProps = React.ComponentPropsWithRef<
   typeof AvatarPrimitive.Image
 > &
   UnstyledProps
 
-const AvatarImage = React.forwardRef<
-  React.ElementRef<typeof AvatarPrimitive.Image>,
-  AvatarImageProps
->(({ unstyled, className, ...props }, ref) => {
+const AvatarImage = ({
+  unstyled,
+  className,
+  ref,
+  ...props
+}: AvatarImageProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -125,22 +123,23 @@ const AvatarImage = React.forwardRef<
       {...props}
     />
   )
-})
-AvatarImage.displayName = AvatarPrimitive.Image.displayName
+}
 
 /* -------------------------------------------------------------------------- */
 /*                               AvatarFallback                               */
 /* -------------------------------------------------------------------------- */
 
-type AvatarFallbackProps = React.ComponentPropsWithoutRef<
+type AvatarFallbackProps = React.ComponentPropsWithRef<
   typeof AvatarPrimitive.Fallback
 > &
   UnstyledProps
 
-const AvatarFallback = React.forwardRef<
-  React.ElementRef<typeof AvatarPrimitive.Fallback>,
-  AvatarFallbackProps
->(({ unstyled, className, ...props }, ref) => {
+const AvatarFallback = ({
+  unstyled,
+  className,
+  ref,
+  ...props
+}: AvatarFallbackProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -155,7 +154,6 @@ const AvatarFallback = React.forwardRef<
       {...props}
     />
   )
-})
-AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName
+}
 
 export { Avatar, AvatarFallback, AvatarGroup, AvatarImage }

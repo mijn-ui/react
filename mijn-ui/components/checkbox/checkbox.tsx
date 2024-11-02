@@ -46,7 +46,7 @@ export const checkboxStyles = cva(
 /*                                  Checkbox                                  */
 /* -------------------------------------------------------------------------- */
 
-type CheckboxProps = React.ComponentPropsWithoutRef<
+type CheckboxProps = React.ComponentPropsWithRef<
   typeof CheckboxPrimitive.Root
 > &
   UnstyledProps &
@@ -55,54 +55,45 @@ type CheckboxProps = React.ComponentPropsWithoutRef<
     onCheckedChange?: (checked: boolean | "indeterminate") => void
   }
 
-const Checkbox = React.forwardRef<
-  React.ElementRef<typeof CheckboxPrimitive.Root>,
-  CheckboxProps
->(
-  (
-    {
-      checked: ControlledChecked,
-      onCheckedChange: ControlledOnCheckedChange,
-      defaultChecked,
-      unstyled,
-      color,
-      size,
-      className,
-      ...props
-    },
-    ref,
-  ) => {
-    const [checked, setChecked] = useControlledState<boolean | "indeterminate">(
-      ControlledChecked,
-      !!defaultChecked,
-      ControlledOnCheckedChange,
-    )
+const Checkbox = ({
+  checked: ControlledChecked,
+  onCheckedChange: ControlledOnCheckedChange,
+  defaultChecked,
+  unstyled,
+  color,
+  size,
+  className,
+  ref,
+  ...props
+}: CheckboxProps) => {
+  const [checked, setChecked] = useControlledState<boolean | "indeterminate">(
+    ControlledChecked,
+    !!defaultChecked,
+    ControlledOnCheckedChange,
+  )
 
-    return (
-      <CheckboxPrimitive.Root
-        ref={ref}
-        className={applyUnstyled(
-          unstyled,
-          checkboxStyles({ color, size }),
-          className,
-        )}
-        {...props}
-        checked={checked}
-        onCheckedChange={setChecked}
+  return (
+    <CheckboxPrimitive.Root
+      ref={ref}
+      className={applyUnstyled(
+        unstyled,
+        checkboxStyles({ color, size }),
+        className,
+      )}
+      {...props}
+      checked={checked}
+      onCheckedChange={setChecked}
+    >
+      <CheckboxPrimitive.Indicator
+        className={cn("flex items-center justify-center text-current")}
       >
-        <CheckboxPrimitive.Indicator
-          className={cn("flex items-center justify-center text-current")}
-        >
-          {checked === "indeterminate" && (
-            <RxDividerHorizontal className="size-4" />
-          )}
-          {checked === true && <LuCheck className="size-4" />}
-        </CheckboxPrimitive.Indicator>
-      </CheckboxPrimitive.Root>
-    )
-  },
-)
-
-Checkbox.displayName = CheckboxPrimitive.Root.displayName
+        {checked === "indeterminate" && (
+          <RxDividerHorizontal className="size-4" />
+        )}
+        {checked === true && <LuCheck className="size-4" />}
+      </CheckboxPrimitive.Indicator>
+    </CheckboxPrimitive.Root>
+  )
+}
 
 export { Checkbox }
