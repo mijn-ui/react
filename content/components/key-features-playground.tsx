@@ -29,10 +29,7 @@ const KeyFeaturesPlayground = () => {
     radius: "md",
   })
 
-  console.log(buttonOptions.color)
-
   const handleChange = (key: string, value: boolean | string) => {
-    console.log("reached")
     setButtonOptions((prev) => ({
       ...prev,
       [key]: value,

@@ -1,6 +1,4 @@
-import Link from "next/link"
 import Logo from "./components/icons/logo"
-import { Badge } from "@mijn-ui/components/badge"
 import { type HomeLayoutProps } from "fumadocs-ui/home-layout"
 
 /**
@@ -18,9 +16,6 @@ export const baseOptions: HomeLayoutProps = {
           <Logo className="fill-fd-foreground size-5 items-center" />
           MijnUI
         </p>
-        <Link href={"https://mijn-ui-next-15.vercel.app/"} target="_blank">
-          <Badge color="accent">Next.js 15</Badge>
-        </Link>
       </div>
     ),
     url: "/",
