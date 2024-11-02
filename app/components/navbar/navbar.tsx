@@ -17,7 +17,7 @@ const Navbar = () => {
   const { setOpenSearch } = useSearchContext()
 
   return (
-    <header className="fixed hidden preview inset-x-0 top-0 bg-transparent z-50 md:flex justify-between items-center h-[var(--navbar-height)] w-full backdrop-blur-sm">
+    <header className="fixed hidden preview inset-x-0 top-0 bg-transparent z-50 md:flex justify-between items-center h-[var(--navbar-height)] w-full backdrop-blur-md">
       <nav className="flex w-full items-center justify-between px-5 py-2">
         <div className="flex items-center gap-3">
           <Link href={"/"} className="font-bold  flex items-center gap-2">

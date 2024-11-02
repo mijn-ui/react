@@ -1,6 +1,7 @@
 import type { ReactNode } from "react"
 import { source } from "@/app/source"
 import GradientBackground from "../components/decorators/gradient-background"
+import AvailablePagesSelector from "../components/mdx/available-pages-selector"
 import Navbar from "../components/navbar/navbar"
 import { baseOptions } from "../layout.config"
 import { DocsLayout } from "fumadocs-ui/layout"
@@ -13,7 +14,12 @@ export default function Layout({ children }: { children: ReactNode }) {
         collapsible: false,
         enabled: true,
         hideSearch: true,
-        banner: <GradientBackground />,
+        banner: (
+          <div className="pt-4 w-full preview">
+            <AvailablePagesSelector />
+            <GradientBackground />
+          </div>
+        ),
       }}
       {...baseOptions}
     >
