@@ -1,13 +1,14 @@
 import Logo from "./components/icons/logo"
+import { Badge } from "@/mijn-ui/components/badge"
 import { type HomeLayoutProps } from "fumadocs-ui/home-layout"
 
 /**
  * Shared layout configurations
  *
- * you can configure layouts individually from:
  * Home Layout: app/(home)/layout.tsx
  * Docs Layout: app/docs/layout.tsx
  */
+
 export const baseOptions: HomeLayoutProps = {
   nav: {
     children: (
@@ -16,6 +17,9 @@ export const baseOptions: HomeLayoutProps = {
           <Logo className="fill-fd-foreground size-5 items-center" />
           MijnUI
         </p>
+        <Badge className="bg-primary/20 text-primary hover:bg-primary/20">
+          v0.0.1
+        </Badge>
       </div>
     ),
     url: "/",

@@ -2,7 +2,7 @@ import type { ReactNode } from "react"
 import { source } from "@/app/source"
 import GradientBackground from "../components/decorators/gradient-background"
 import AvailablePagesSelector from "../components/mdx/available-pages-selector"
-import Navbar from "../components/navbar/navbar"
+import Navbar from "../components/navbar"
 import { baseOptions } from "../layout.config"
 import { DocsLayout } from "fumadocs-ui/layout"
 

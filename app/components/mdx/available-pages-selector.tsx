@@ -31,14 +31,18 @@ const AvailablePagesSelector = () => {
 
   return (
     <Select onValueChange={handleChange} defaultValue={defaultValue}>
-      <SelectTrigger className="bg-surface backdrop-blur-md w-full">
+      <SelectTrigger className="w-full h-8 text-xs">
         <SelectValue placeholder="Select a page" />
       </SelectTrigger>
-      <SelectContent className="preview bg-surface backdrop-blur-md">
+      <SelectContent className="preview bg-surface w-[var(--radix-popover-trigger-width)]">
         <SelectGroup>
-          <SelectLabel>Available Pages</SelectLabel>
-          <SelectItem value={PAGE_OPTIONS.next}>Next.js</SelectItem>
-          <SelectItem value={PAGE_OPTIONS.tailwind}>Tailwind CSS</SelectItem>
+          <SelectLabel className="text-xs">Available Pages</SelectLabel>
+          <SelectItem className="text-xs" value={PAGE_OPTIONS.next}>
+            Next.js
+          </SelectItem>
+          <SelectItem className="text-xs" value={PAGE_OPTIONS.tailwind}>
+            Tailwind CSS
+          </SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>
