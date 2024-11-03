@@ -4,7 +4,7 @@ import * as React from "react"
 import {
   UnstyledProvider,
   useUnstyled,
-} from "@mijn-ui/context/UnstyledProvider"
+} from "@mijn-ui/context/unstyled-provider"
 import { UnstyledProps } from "@mijn-ui/types"
 import { applyUnstyled, cn } from "@mijn-ui/utils"
 import { VariantProps, cva } from "class-variance-authority"

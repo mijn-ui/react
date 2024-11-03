@@ -5,7 +5,7 @@ import { buttonStyles } from "@mijn-ui/components/button"
 import {
   UnstyledProvider,
   useUnstyled,
-} from "@mijn-ui/context/UnstyledProvider"
+} from "@mijn-ui/context/unstyled-provider"
 import { UnstyledProps } from "@mijn-ui/types"
 import { applyUnstyled } from "@mijn-ui/utils"
 import * as RadixPopover from "@radix-ui/react-popover"
