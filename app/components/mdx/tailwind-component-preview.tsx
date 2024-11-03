@@ -24,7 +24,9 @@ const TWComponentPreview = ({
       setLoading(true)
       setError(false)
       try {
-        const response = await fetch(`/api/get-html?filename=${src}`)
+        const response = await fetch(`/api/get-html?filename=${src}`, {
+          cache: "force-cache",
+        })
         if (!response.ok) {
           throw new Error("Failed to fetch HTML content")
         }
