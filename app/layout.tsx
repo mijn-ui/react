@@ -12,7 +12,25 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <body>
-        <RootProvider>{children}</RootProvider>
+        <RootProvider
+          search={{
+            options: {
+              defaultTag: "next-js",
+              tags: [
+                {
+                  name: "Next.js",
+                  value: "next-js",
+                },
+                {
+                  name: "Tailwind Css",
+                  value: "tailwind",
+                },
+              ],
+            },
+          }}
+        >
+          {children}
+        </RootProvider>
       </body>
     </html>
   )

@@ -8,5 +8,7 @@ export const { GET } = createSearchAPI("advanced", {
     structuredData: page.data.structuredData,
     id: page.url,
     url: page.url,
+    tag: page.url.startsWith("/docs/tailwind/") ? "tailwind" : "next-js",
   })),
+  tag: true,
 })

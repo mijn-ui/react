@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { usePathname, useRouter } from "next/navigation"
 import {
   Select,
@@ -20,17 +20,24 @@ const PAGE_OPTIONS = {
 const AvailablePagesSelector = () => {
   const router = useRouter()
   const pathname = usePathname()
+  const [selectedValue, setSelectedValue] = useState("")
+
+  // Update selected value whenever the path changes
+  useEffect(() => {
+    setSelectedValue(
+      pathname.startsWith("/docs/tailwind")
+        ? PAGE_OPTIONS.tailwind
+        : PAGE_OPTIONS.next,
+    )
+  }, [pathname])
 
   const handleChange = (value: string) => {
+    setSelectedValue(value)
     router.push(value)
   }
 
-  const defaultValue = pathname.startsWith("/docs/tailwind/")
-    ? PAGE_OPTIONS.tailwind
-    : PAGE_OPTIONS.next
-
   return (
-    <Select onValueChange={handleChange} defaultValue={defaultValue}>
+    <Select onValueChange={handleChange} value={selectedValue}>
       <SelectTrigger className="w-full h-8 text-xs">
         <SelectValue placeholder="Select a page" />
       </SelectTrigger>
