@@ -3,13 +3,8 @@
 import React from "react"
 import Link from "next/link"
 import Logo from "../icons/logo"
+import { Badge } from "@/mijn-ui/components/badge"
 import { Button } from "@mijn-ui/components/button"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-} from "@mijn-ui/components/select"
 import { useSearchContext } from "fumadocs-ui/provider"
 import { LuGithub, LuSearch } from "react-icons/lu"
 
@@ -24,16 +19,9 @@ const Navbar = () => {
             <Logo className="fill-fd-foreground size-5 items-center" />
             MijnUI
           </Link>
-          <Select>
-            <SelectTrigger className="h-auto w-24 py-1.5 shadow-none">
-              v0.0.1
-            </SelectTrigger>
-            <SelectContent className="p-1.5 w-28 bg-fd-popover border-fd-border">
-              <SelectItem value="v0.0.1">
-                <Link href={"/docs"}>v0.0.1</Link>
-              </SelectItem>
-            </SelectContent>
-          </Select>
+          <Badge className="bg-primary/20 text-primary hover:bg-primary/20">
+            v0.0.1
+          </Badge>
         </div>
 
         <div className="flex items-center gap-2">
