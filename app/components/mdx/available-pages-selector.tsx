@@ -10,7 +10,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/mijn-ui/components/select"
+} from "@mijn-ui/components/select"
 
 const PAGE_OPTIONS = {
   next: "/docs",

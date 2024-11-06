@@ -3,7 +3,7 @@
 import React from "react"
 import Link from "next/link"
 import Logo from "../icons/logo"
-import { Badge } from "@/mijn-ui/components/badge"
+import { Badge } from "@mijn-ui/components/badge"
 import { Button } from "@mijn-ui/components/button"
 import { useSearchContext } from "fumadocs-ui/provider"
 import { LuGithub, LuSearch } from "react-icons/lu"

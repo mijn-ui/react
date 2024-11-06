@@ -1,5 +1,5 @@
 import Logo from "./components/icons/logo"
-import { Badge } from "@/mijn-ui/components/badge"
+import { Badge } from "@mijn-ui/components/badge"
 import { type HomeLayoutProps } from "fumadocs-ui/home-layout"
 
 /**
