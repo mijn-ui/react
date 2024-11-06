@@ -32,13 +32,14 @@ const configs = [
       "app/styles/global.css",
     ],
   },
+  ...compat.extends("next/core-web-vitals"),
+  ...compat.extends("next/typescript"),
   {
     rules: {
       "import/no-anonymous-default-export": "off",
+      "@typescript-eslint/no-explicit-any": "off",
     },
   },
-  ...compat.extends("next/core-web-vitals"),
-  ...compat.extends("next/typescript"),
 ]
 
 export default configs
