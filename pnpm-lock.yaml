@@ -57,6 +57,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      cmdk:
+        specifier: ^1.0.4
+        version: 1.0.4(react-dom@19.0.0-rc-02c0e824-20241028(react@19.0.0-rc-02c0e824-20241028))(react@19.0.0-rc-02c0e824-20241028)(types-react-dom@19.0.0-rc.1)(types-react@19.0.0-rc.1)
       fumadocs-core:
         specifier: 13.4.10
         version: 13.4.10(next@15.0.2(react-dom@19.0.0-rc-02c0e824-20241028(react@19.0.0-rc-02c0e824-20241028))(react@19.0.0-rc-02c0e824-20241028))(react-dom@19.0.0-rc-02c0e824-20241028(react@19.0.0-rc-02c0e824-20241028))(react@19.0.0-rc-02c0e824-20241028)(types-react@19.0.0-rc.1)
@@ -1623,8 +1626,8 @@ packages:
     resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
     engines: {node: '>=6'}
 
-  cmdk@1.0.3:
-    resolution: {integrity: sha512-2c3uTjwT4YeHj60q2k8S1B0WHSoGR6t5CPnec6PMFD2QF4gwid0t1VSPNeEmL02EwBwNky/A3gwPCOViKTtoPA==}
+  cmdk@1.0.4:
+    resolution: {integrity: sha512-AnsjfHyHpQ/EFeAnG216WY7A5LiYCoZzCSygiLvfXC3H3LFGCprErteUcszaVluGOhuOTbJS3jWHrSDYPBBygg==}
     peerDependencies:
       react: ^18 || ^19 || ^19.0.0-rc
       react-dom: ^18 || ^19 || ^19.0.0-rc
@@ -5438,7 +5441,7 @@ snapshots:
 
   clsx@2.1.1: {}
 
-  cmdk@1.0.3(react-dom@19.0.0-rc-02c0e824-20241028(react@19.0.0-rc-02c0e824-20241028))(react@19.0.0-rc-02c0e824-20241028)(types-react-dom@19.0.0-rc.1)(types-react@19.0.0-rc.1):
+  cmdk@1.0.4(react-dom@19.0.0-rc-02c0e824-20241028(react@19.0.0-rc-02c0e824-20241028))(react@19.0.0-rc-02c0e824-20241028)(types-react-dom@19.0.0-rc.1)(types-react@19.0.0-rc.1):
     dependencies:
       '@radix-ui/react-dialog': 1.1.2(react-dom@19.0.0-rc-02c0e824-20241028(react@19.0.0-rc-02c0e824-20241028))(react@19.0.0-rc-02c0e824-20241028)(types-react-dom@19.0.0-rc.1)(types-react@19.0.0-rc.1)
       '@radix-ui/react-id': 1.1.0(react@19.0.0-rc-02c0e824-20241028)(types-react@19.0.0-rc.1)
@@ -6229,7 +6232,7 @@ snapshots:
       '@radix-ui/react-tabs': 1.1.1(react-dom@19.0.0-rc-02c0e824-20241028(react@19.0.0-rc-02c0e824-20241028))(react@19.0.0-rc-02c0e824-20241028)(types-react-dom@19.0.0-rc.1)(types-react@19.0.0-rc.1)
       '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.14)
       class-variance-authority: 0.7.0
-      cmdk: 1.0.3(react-dom@19.0.0-rc-02c0e824-20241028(react@19.0.0-rc-02c0e824-20241028))(react@19.0.0-rc-02c0e824-20241028)(types-react-dom@19.0.0-rc.1)(types-react@19.0.0-rc.1)
+      cmdk: 1.0.4(react-dom@19.0.0-rc-02c0e824-20241028(react@19.0.0-rc-02c0e824-20241028))(react@19.0.0-rc-02c0e824-20241028)(types-react-dom@19.0.0-rc.1)(types-react@19.0.0-rc.1)
       fumadocs-core: 13.4.10(next@15.0.2(react-dom@19.0.0-rc-02c0e824-20241028(react@19.0.0-rc-02c0e824-20241028))(react@19.0.0-rc-02c0e824-20241028))(react-dom@19.0.0-rc-02c0e824-20241028(react@19.0.0-rc-02c0e824-20241028))(react@19.0.0-rc-02c0e824-20241028)(types-react@19.0.0-rc.1)
       lucide-react: 0.438.0(react@19.0.0-rc-02c0e824-20241028)
       next: 15.0.2(react-dom@19.0.0-rc-02c0e824-20241028(react@19.0.0-rc-02c0e824-20241028))(react@19.0.0-rc-02c0e824-20241028)

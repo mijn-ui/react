@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "start": "next start",
     "postinstall": "fumadocs-mdx",
     "prepare": "husky",
@@ -29,6 +29,7 @@
     "@radix-ui/react-slot": "^1.1.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "cmdk": "^1.0.4",
     "fumadocs-core": "13.4.10",
     "fumadocs-docgen": "^1.2.0",
     "fumadocs-mdx": "10.0.2",

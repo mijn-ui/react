@@ -4,8 +4,8 @@ import * as React from "react"
 import {
   UnstyledProvider,
   useUnstyled,
-} from "@/mijn-ui/context/unstyled-provider"
-import { UnstyledProps } from "@/mijn-ui/types"
+} from "@mijn-ui/context/unstyled-provider"
+import { UnstyledProps } from "@mijn-ui/types"
 import { applyUnstyled } from "@mijn-ui/utils"
 
 /* -------------------------------------------------------------------------- */

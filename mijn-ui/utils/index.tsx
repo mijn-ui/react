@@ -1,3 +1,4 @@
+import type * as React from "react"
 import clsx, { ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 
@@ -21,4 +22,18 @@ export const applyUnstyled = (
   userClasses?: string,
 ): string | undefined => {
   return unstyled ? userClasses : cn(defaultClasses, userClasses)
+}
+
+export function mergeRefs<T>(
+  refs: Array<React.Ref<T> | undefined | null>,
+): React.RefCallback<T> {
+  return (value) => {
+    refs.forEach((ref) => {
+      if (typeof ref === "function") {
+        ref(value)
+      } else if (ref && "current" in ref) {
+        ;(ref as React.RefObject<T | null>).current = value
+      }
+    })
+  }
 }

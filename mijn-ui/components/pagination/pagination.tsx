@@ -1,11 +1,11 @@
 import * as React from "react"
 import { usePaginationRange } from "./use-pagination"
+import { buttonStyles } from "@mijn-ui/components/button"
 import {
   UnstyledProvider,
   useUnstyled,
-} from "@/mijn-ui/context/unstyled-provider"
-import { UnstyledProps } from "@/mijn-ui/types"
-import { buttonStyles } from "@mijn-ui/components/button"
+} from "@mijn-ui/context/unstyled-provider"
+import { UnstyledProps } from "@mijn-ui/types"
 import { applyUnstyled } from "@mijn-ui/utils"
 import { LuMoreHorizontal } from "react-icons/lu"
 
