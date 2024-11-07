@@ -48,10 +48,7 @@ const CommandDialog = ({
   return (
     <Dialog {...props}>
       <DialogContent
-        className={applyUnstyled(
-          isUnstyled,
-          "preview overflow-hidden p-0 shadow-lg",
-        )}
+        className={applyUnstyled(isUnstyled, " overflow-hidden p-0 shadow-lg")}
       >
         <Command
           className={applyUnstyled(

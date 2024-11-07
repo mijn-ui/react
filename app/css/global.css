@@ -5,6 +5,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* theme */
+
 :root {
   /* general */
   --background: 210 14% 95%; /* slate-100 */

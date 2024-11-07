@@ -53,7 +53,7 @@ const AutocompleteWithDialog = () => {
   return (
     <Dialog>
       <DialogTrigger>Add User</DialogTrigger>
-      <DialogContent className="preview">
+      <DialogContent className="">
         <div className="flex flex-col space-y-2 text-center sm:text-left">
           <DialogTitle>User Information</DialogTitle>
         </div>
@@ -68,7 +68,7 @@ const AutocompleteWithDialog = () => {
             />
           </AutocompleteTrigger>
           <AutocompleteContent
-            className="preview"
+            className=""
             emptyMessage="No Frameworks Found"
             loading={false}
           >

@@ -22,7 +22,7 @@ const PopoverExample = ({ unstyled = false }: PopoverExampleProps) => {
       <PopoverTrigger className="rounded-full">
         <RxMixerHorizontal size={18} />
       </PopoverTrigger>
-      <PopoverContent className="relative w-72 preview">
+      <PopoverContent className="relative w-72 ">
         <div className="flex flex-col justify-center gap-2.5">
           <p className="text-base font-medium">Dimensions</p>
 

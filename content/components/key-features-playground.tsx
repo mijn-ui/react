@@ -37,7 +37,7 @@ const KeyFeaturesPlayground = () => {
   }
 
   return (
-    <figure className="preview w-full not-prose">
+    <figure className=" w-full not-prose">
       <figcaption className="text-base mb-3">Try it here!</figcaption>
 
       <div className="w-full flex-col sm:flex-row rounded-md overflow-hidden flex items-center border h-80">

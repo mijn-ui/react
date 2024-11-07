@@ -44,7 +44,7 @@ const TWComponentPreview = ({
   return (
     <div
       className={cn(
-        "not-prose preview relative flex min-h-80 w-full items-center justify-center gap-5 rounded-lg border p-5",
+        "not-prose relative flex min-h-80 w-full items-center justify-center gap-5 rounded-lg border p-5",
         className,
       )}
       {...props}

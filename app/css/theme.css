@@ -1,87 +1,87 @@
-.preview {
-  --main: 210 14% 95%; /* slate-100 */
-  --main-text: 0 0% 0%; /* black */
-  --main-border: 0 0% 83%; /* neutral-300 */
+:root {
+  --mijnui-main: 210 14% 95%; /* slate-100 */
+  --mijnui-main-text: 0 0% 0%; /* black */
+  --mijnui-main-border: 0 0% 83%; /* neutral-300 */
 
-  --surface: 0 0% 98%; /* neutral-50 */
-  --surface-text: 0 0% 0%; /* black */
+  --mijnui-surface: 0 0% 98%; /* neutral-50 */
+  --mijnui-surface-text: 0 0% 0%; /* black */
 
-  --neutral: 0 0% 83%; /* neutral-300 */
-  --neutral-text: 0 0% 25%; /* neutral-700 */
+  --mijnui-neutral: 0 0% 83%; /* neutral-300 */
+  --mijnui-neutral-text: 0 0% 25%; /* neutral-700 */
 
-  --accent: 0 0% 90%; /* neutral-200 */
-  --accent-text: 0 0% 0%; /* black */
+  --mijnui-accent: 0 0% 90%; /* neutral-200 */
+  --mijnui-accent-text: 0 0% 0%; /* black */
 
-  --primary: 29 100% 52%; /* orange-500 */
-  --primary-text: 0 0% 100%; /* white */
+  --mijnui-primary: 29 100% 52%; /* orange-500 */
+  --mijnui-primary-text: 0 0% 100%; /* white */
 
-  --secondary: 33 100% 87% /* #FED7AA */;
-  --secondary-text: 29 93% 39%; /* orange-700 */
+  --mijnui-secondary: 33 100% 87% /* #FED7AA */;
+  --mijnui-secondary-text: 29 93% 39%; /* orange-700 */
 
-  --info: 216 76% 52%; /* blue-500 */
-  --info-text: 219 64% 43%; /* blue-800 */
-  --info-filled-text: 0 0% 100%; /* white */
+  --mijnui-info: 216 76% 52%; /* blue-500 */
+  --mijnui-info-text: 219 64% 43%; /* blue-800 */
+  --mijnui-info-filled-text: 0 0% 100%; /* white */
 
-  --danger: 0 72% 43%; /* red-500 */
-  --danger-text: 0 82% 31%; /* red-800 */
-  --danger-filled-text: 0 0% 100%; /* white */
+  --mijnui-danger: 0 72% 43%; /* red-500 */
+  --mijnui-danger-text: 0 82% 31%; /* red-800 */
+  --mijnui-danger-filled-text: 0 0% 100%; /* white */
 
-  --warning: 45 92% 47%; /* yellow-500 */
-  --warning-text: 28 73% 26%; /* yellow-900 */
-  --warning-filled-text: 0 0% 0%; /* white */
+  --mijnui-warning: 45 92% 47%; /* yellow-500 */
+  --mijnui-warning-text: 28 73% 26%; /* yellow-900 */
+  --mijnui-warning-filled-text: 0 0% 0%; /* white */
 
-  --success: 140 76% 38%; /* green-500 */
-  --success-text: 140 49% 20%; /* green-800 */
-  --success-filled-text: 0 0% 100%; /* white */
+  --mijnui-success: 140 76% 38%; /* green-500 */
+  --mijnui-success-text: 140 49% 20%; /* green-800 */
+  --mijnui-success-filled-text: 0 0% 100%; /* white */
 
-  --radius: 0.375rem;
+  --mijnui-radius: 0.375rem;
 
-  --ring: 0 0% 15%; /* neutral-800 */
+  --mijnui-ring: 0 0% 15%; /* neutral-800 */
 
-  --input-border: 0 0% 0%; /* black */
-  --kanban: 214 32% 91%; /* slate-200 */
+  --mijnui-input-border: 0 0% 0%; /* black */
+  --mijnui-kanban: 214 32% 91%; /* slate-200 */
 }
 
-.dark .preview {
-  --main: 0 0% 4%; /* neutral-950 */
-  --main-text: 0 0% 96%; /* neutral-100 */
-  --main-border: 0 0% 15%; /* neutral-800 */
+.dark {
+  --mijnui-main: 0 0% 4%; /* neutral-950 */
+  --mijnui-main-text: 0 0% 96%; /* neutral-100 */
+  --mijnui-main-border: 0 0% 15%; /* neutral-800 */
 
-  --surface: 0 0% 7%; /* neutral-925 */
-  --surface-text: 0 0% 96%; /* neutral-100 */
+  --mijnui-surface: 0 0% 7%; /* neutral-925 */
+  --mijnui-surface-text: 0 0% 96%; /* neutral-100 */
 
-  --neutral: 0 0% 15%; /* neutral-800 */
-  --neutral-text: 0 0% 64%; /* neutral-400 */
+  --mijnui-neutral: 0 0% 15%; /* neutral-800 */
+  --mijnui-neutral-text: 0 0% 64%; /* neutral-400 */
 
-  --accent: 0 0% 12%; /* neutral-850 */
-  --accent-text: 0 0% 96%; /* neutral-100 */
+  --mijnui-accent: 0 0% 12%; /* neutral-850 */
+  --mijnui-accent-text: 0 0% 96%; /* neutral-100 */
 
-  --primary: 29 100% 52%; /* orange-500 */
-  --primary-text: 0 0% 100%; /* white */
+  --mijnui-primary: 29 100% 52%; /* orange-500 */
+  --mijnui-primary-text: 0 0% 100%; /* white */
 
-  --secondary: 34 100% 82%; /* #FED7AA */
-  --secondary-text: 29 93% 39%; /* orange-700 */
+  --mijnui-secondary: 34 100% 82%; /* #FED7AA */
+  --mijnui-secondary-text: 29 93% 39%; /* orange-700 */
 
-  --info: 216 76% 52%; /* blue-500 */
-  --info-text: 207 70% 80%; /* blue-200 */
-  --info-filled-text: 0 0% 100%; /* white */
+  --mijnui-info: 216 76% 52%; /* blue-500 */
+  --mijnui-info-text: 207 70% 80%; /* blue-200 */
+  --mijnui-info-filled-text: 0 0% 100%; /* white */
 
-  --danger: 0 72% 43%; /* red-500 */
-  --danger-text: 0 79% 79%; /* red-200 */
-  --danger-filled-text: 0 0% 100%; /* white */
+  --mijnui-danger: 0 72% 43%; /* red-500 */
+  --mijnui-danger-text: 0 79% 79%; /* red-200 */
+  --mijnui-danger-filled-text: 0 0% 100%; /* white */
 
-  --warning: 45 92% 47%; /* yellow-500 */
-  --warning-text: 53 98% 77%; /* yellow-200 */
-  --warning-filled-text: 0 0% 0%; /* white */
+  --mijnui-warning: 45 92% 47%; /* yellow-500 */
+  --mijnui-warning-text: 53 98% 77%; /* yellow-200 */
+  --mijnui-warning-filled-text: 0 0% 0%; /* white */
 
-  --success: 140 76% 38%; /* green-500 */
-  --success-text: 140 71% 82%; /* green-200 */
-  --success-filled-text: 0 0% 100%; /* white */
+  --mijnui-success: 140 76% 38%; /* green-500 */
+  --mijnui-success-text: 140 71% 82%; /* green-200 */
+  --mijnui-success-filled-text: 0 0% 100%; /* white */
 
-  --radius: 0.375rem;
+  --mijnui-radius: 0.375rem;
 
-  --ring: 0 0% 96%; /* neutral-100 */
+  --mijnui-ring: 0 0% 96%; /* neutral-100 */
 
-  --input-border: 0 0% 96%; /* neutral-100 */
-  --kanban: 215 25% 27%; /* slate-700 */
+  --mijnui-input-border: 0 0% 96%; /* neutral-100 */
+  --mijnui-kanban: 215 25% 27%; /* slate-700 */
 }

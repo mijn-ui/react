@@ -33,7 +33,7 @@ const AutocompleteExample = () => {
         />
       </AutocompleteTrigger>
       <AutocompleteContent
-        className="preview"
+        className=""
         emptyMessage="No Frameworks Found"
         loading={false}
       >

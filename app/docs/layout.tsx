@@ -15,7 +15,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         enabled: true,
         hideSearch: true,
         banner: (
-          <div className="pt-4 w-full preview">
+          <div className="pt-4 w-full">
             <AvailablePagesSelector />
             <GradientBackground />
           </div>
