@@ -106,7 +106,6 @@ type PaginationContentProps = React.ComponentPropsWithRef<"nav"> & UnstyledProps
 const PaginationContent = ({
   className,
   unstyled,
-  ref,
   ...props
 }: PaginationContentProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -120,7 +119,6 @@ const PaginationContent = ({
         className,
       )}
       {...props}
-      ref={ref}
     />
   )
 }
@@ -134,7 +132,6 @@ type PaginationListProps = React.ComponentProps<"ul"> & UnstyledProps
 const PaginationList = ({
   className,
   unstyled,
-  ref,
   ...props
 }: PaginationListProps) => {
   const { currentPage, setPage, paginationRange } = usePagination()
@@ -149,7 +146,6 @@ const PaginationList = ({
         className,
       )}
       {...props}
-      ref={ref}
     >
       {paginationRange.map((page, index) => (
         <li key={index} onClick={() => setPage(page)}>
@@ -181,7 +177,6 @@ type PaginationPreviousButtonProps = React.ComponentProps<"button"> &
 const PaginationPreviousButton = ({
   className,
   unstyled,
-  ref,
   ...props
 }: PaginationPreviousButtonProps) => {
   const { goToPreviousPage } = usePagination()
@@ -202,7 +197,6 @@ const PaginationPreviousButton = ({
         className,
       )}
       {...props}
-      ref={ref}
     />
   )
 }
@@ -216,7 +210,6 @@ type PaginationNextButtonProps = React.ComponentProps<"button"> & UnstyledProps
 const PaginationNextButton = ({
   className,
   unstyled,
-  ref,
   ...props
 }: PaginationNextButtonProps) => {
   const { goToNextPage } = usePagination()
@@ -237,7 +230,6 @@ const PaginationNextButton = ({
         className,
       )}
       {...props}
-      ref={ref}
     />
   )
 }

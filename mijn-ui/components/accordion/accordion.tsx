@@ -36,12 +36,10 @@ const Accordion = ({
   className,
   unstyled = false,
   variant,
-  ref,
   ...props
 }: AccordionProps) => (
   <UnstyledProvider unstyled={unstyled}>
     <RadixAccordion.Root
-      ref={ref}
       className={applyUnstyled(
         unstyled,
         accordionStyles({ variant }),
@@ -64,7 +62,6 @@ type AccordionItemProps = React.ComponentPropsWithRef<
 const AccordionItem = ({
   className,
   unstyled,
-  ref,
   ...props
 }: AccordionItemProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -72,7 +69,6 @@ const AccordionItem = ({
 
   return (
     <RadixAccordion.Item
-      ref={ref}
       className={applyUnstyled(isUnstyled, "w-full", className)}
       {...props}
     />
@@ -95,7 +91,6 @@ const AccordionTrigger = ({
   icon,
   unstyled,
   children,
-  ref,
   ...props
 }: AccordionTriggerProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -104,7 +99,6 @@ const AccordionTrigger = ({
   return (
     <RadixAccordion.Header className={applyUnstyled(isUnstyled, "flex")}>
       <RadixAccordion.Trigger
-        ref={ref}
         className={applyUnstyled(
           isUnstyled,
           "group flex w-full items-center justify-between py-3",
@@ -142,7 +136,6 @@ const AccordionContent = ({
   className,
   unstyled,
   children,
-  ref,
   ...props
 }: AccordionContentProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -150,7 +143,6 @@ const AccordionContent = ({
 
   return (
     <RadixAccordion.Content
-      ref={ref}
       className={applyUnstyled(
         isUnstyled,
         "overflow-hidden text-sm transition-[height] data-[state=closed]:animate-accordion-collapse data-[state=open]:animate-accordion-expand",

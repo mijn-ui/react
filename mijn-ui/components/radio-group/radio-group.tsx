@@ -9,12 +9,11 @@ type RadioGroupProps = React.ComponentPropsWithRef<
   typeof RadioGroupPrimitive.Root
 >
 
-const RadioGroup = ({ className, ref, ...props }: RadioGroupProps) => {
+const RadioGroup = ({ className, ...props }: RadioGroupProps) => {
   return (
     <RadioGroupPrimitive.Root
       className={cn("grid gap-2", className)}
       {...props}
-      ref={ref}
     />
   )
 }
@@ -24,10 +23,9 @@ type RadioGroupItemProps = React.ComponentPropsWithRef<
   typeof RadioGroupPrimitive.Item
 >
 
-const RadioGroupItem = ({ className, ref, ...props }: RadioGroupItemProps) => {
+const RadioGroupItem = ({ className, ...props }: RadioGroupItemProps) => {
   return (
     <RadioGroupPrimitive.Item
-      ref={ref}
       className={cn(
         "aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-offset-main focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
         className,

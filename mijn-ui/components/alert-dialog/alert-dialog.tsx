@@ -39,7 +39,6 @@ type AlertDialogTriggerProps = React.ComponentPropsWithRef<
 const AlertDialogTrigger = ({
   unstyled,
   className,
-  ref,
   ...props
 }: AlertDialogTriggerProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -47,7 +46,6 @@ const AlertDialogTrigger = ({
 
   return (
     <AlertDialogPrimitive.Trigger
-      ref={ref}
       className={applyUnstyled(
         isUnstyled,
         buttonStyles({ color: "secondary" }),
@@ -70,7 +68,6 @@ type AlertDialogOverlayProps = React.ComponentPropsWithRef<
 const AlertDialogOverlay = ({
   className,
   unstyled,
-  ref,
   ...props
 }: AlertDialogOverlayProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -84,7 +81,6 @@ const AlertDialogOverlay = ({
         className,
       )}
       {...props}
-      ref={ref}
     />
   )
 }
@@ -101,7 +97,6 @@ type AlertDialogContentProps = React.ComponentPropsWithRef<
 const AlertDialogContent = ({
   unstyled,
   className,
-  ref,
   ...props
 }: AlertDialogContentProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -118,7 +113,6 @@ const AlertDialogContent = ({
 
       <div className="fixed inset-0 z-50 flex items-center justify-center">
         <AlertDialogPrimitive.Content
-          ref={ref}
           className={applyUnstyled(
             isUnstyled,
             "flex w-full max-w-lg flex-col gap-2 rounded-xl border border-main-border bg-surface p-6 shadow-lg !duration-300 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-90 data-[state=open]:zoom-in-90",
@@ -193,7 +187,6 @@ type AlertDialogTitleProps = React.ComponentPropsWithRef<
 const AlertDialogTitle = ({
   unstyled,
   className,
-  ref,
   ...props
 }: AlertDialogTitleProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -201,7 +194,6 @@ const AlertDialogTitle = ({
 
   return (
     <AlertDialogPrimitive.Title
-      ref={ref}
       className={applyUnstyled(isUnstyled, "text-lg font-semibold", className)}
       {...props}
     />
@@ -220,7 +212,6 @@ type AlertDialogDescriptionProps = React.ComponentPropsWithRef<
 const AlertDialogDescription = ({
   unstyled,
   className,
-  ref,
   ...props
 }: AlertDialogDescriptionProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -228,7 +219,6 @@ const AlertDialogDescription = ({
 
   return (
     <AlertDialogPrimitive.Description
-      ref={ref}
       className={applyUnstyled(
         isUnstyled,
         "text-sm text-neutral-text",
@@ -251,7 +241,6 @@ type AlertDialogActionProps = React.ComponentPropsWithRef<
 const AlertDialogAction = ({
   unstyled,
   className,
-  ref,
   ...props
 }: AlertDialogActionProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -259,7 +248,6 @@ const AlertDialogAction = ({
 
   return (
     <AlertDialogPrimitive.Action
-      ref={ref}
       className={applyUnstyled(isUnstyled, buttonStyles(), className)}
       {...props}
     />
@@ -278,7 +266,6 @@ type AlertDialogCancelProps = React.ComponentPropsWithRef<
 const AlertDialogCancel = ({
   unstyled,
   className,
-  ref,
   ...props
 }: AlertDialogCancelProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -286,7 +273,6 @@ const AlertDialogCancel = ({
 
   return (
     <AlertDialogPrimitive.Cancel
-      ref={ref}
       className={applyUnstyled(
         isUnstyled,
         buttonStyles({ color: "accent", variant: "text" }),

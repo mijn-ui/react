@@ -200,7 +200,6 @@ const AutocompleteContent = ({
   loading,
   emptyMessage,
   children,
-  ref,
   ...props
 }: AutocompleteContentProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -231,7 +230,7 @@ const AutocompleteContent = ({
         e.stopPropagation()
       }}
     >
-      <CommandPrimitive.List ref={ref} {...props}>
+      <CommandPrimitive.List {...props}>
         {!loading && children}
         {!loading && (
           <CommandEmpty>{emptyMessage || "No Options Found"}</CommandEmpty>
@@ -259,7 +258,6 @@ const AutocompleteGroup = ({
   unstyled,
   children,
   className,
-  ref,
   ...props
 }: AutocompleteGroupProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -267,7 +265,6 @@ const AutocompleteGroup = ({
 
   return (
     <CommandPrimitive.Group
-      ref={ref}
       className={applyUnstyled(isUnstyled, "", className)}
       {...props}
     >
@@ -289,7 +286,6 @@ const AutocompleteItem = ({
   unstyled,
   className,
   children,
-  ref,
   value,
   ...props
 }: AutocompleteItemProps) => {
@@ -301,7 +297,6 @@ const AutocompleteItem = ({
 
   return (
     <CommandPrimitive.Item
-      ref={ref}
       key={value}
       value={value}
       onMouseDown={(event) => {

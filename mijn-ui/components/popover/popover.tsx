@@ -35,7 +35,6 @@ type PopoverTriggerProps = React.ComponentPropsWithRef<
 const PopoverTrigger = ({
   unstyled,
   className,
-  ref,
   ...props
 }: PopoverTriggerProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -43,7 +42,6 @@ const PopoverTrigger = ({
 
   return (
     <RadixPopover.Trigger
-      ref={ref}
       className={applyUnstyled(
         isUnstyled,
         buttonStyles({ color: "secondary" }),
@@ -61,18 +59,12 @@ type PopoverCloseProps = React.ComponentPropsWithRef<
 > &
   UnstyledProps
 
-const PopoverClose = ({
-  unstyled,
-  className,
-  ref,
-  ...props
-}: PopoverCloseProps) => {
+const PopoverClose = ({ unstyled, className, ...props }: PopoverCloseProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <RadixPopover.Close
-      ref={ref}
       className={applyUnstyled(
         isUnstyled,
         buttonStyles({ variant: "text" }),
@@ -96,7 +88,6 @@ const PopoverContent = ({
   align = "center",
   side = "bottom",
   sideOffset = 4,
-  ref,
   ...props
 }: PopoverContentProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -105,7 +96,6 @@ const PopoverContent = ({
   return (
     <RadixPopover.Portal>
       <RadixPopover.Content
-        ref={ref}
         side={side}
         align={align}
         sideOffset={sideOffset}

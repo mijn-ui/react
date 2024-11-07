@@ -136,12 +136,10 @@ const Alert = ({
   status,
   unstyled = false,
   className,
-  ref,
   ...props
 }: AlertProps) => (
   <UnstyledProvider unstyled={unstyled}>
     <div
-      ref={ref}
       {...props}
       data-status={status || "default"}
       data-variant={variant}
@@ -160,7 +158,7 @@ const Alert = ({
 
 type AlertIconProps = React.ComponentProps<"span"> & UnstyledProps
 
-const AlertIcon = ({ unstyled, className, ref, ...props }: AlertIconProps) => {
+const AlertIcon = ({ unstyled, className, ...props }: AlertIconProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -171,7 +169,6 @@ const AlertIcon = ({ unstyled, className, ref, ...props }: AlertIconProps) => {
         "translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:h-5 [&>svg]:w-5",
         className,
       )}
-      ref={ref}
       {...props}
     />
   )
@@ -183,7 +180,7 @@ const AlertIcon = ({ unstyled, className, ref, ...props }: AlertIconProps) => {
 
 type AlertTitle = React.ComponentProps<"h5"> & UnstyledProps
 
-const AlertTitle = ({ unstyled, className, ref, ...props }: AlertTitle) => {
+const AlertTitle = ({ unstyled, className, ...props }: AlertTitle) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
@@ -194,7 +191,6 @@ const AlertTitle = ({ unstyled, className, ref, ...props }: AlertTitle) => {
         "w-full font-semibold leading-none",
         className,
       )}
-      ref={ref}
       {...props}
     />
   )
@@ -206,19 +202,12 @@ type AlertDescriptionProps = React.ComponentProps<"p"> & UnstyledProps
 const AlertDescription = ({
   unstyled,
   className,
-  ref,
   ...props
 }: AlertDescriptionProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
-  return (
-    <p
-      className={cn(isUnstyled, "mt-1 text-sm", className)}
-      ref={ref}
-      {...props}
-    />
-  )
+  return <p className={cn(isUnstyled, "mt-1 text-sm", className)} {...props} />
 }
 
 export { Alert, AlertDescription, AlertIcon, alertStyles, AlertTitle }

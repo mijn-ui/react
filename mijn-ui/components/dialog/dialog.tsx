@@ -37,7 +37,6 @@ type DialogTriggerProps = React.ComponentPropsWithRef<
 const DialogTrigger = ({
   unstyled,
   className,
-  ref,
   ...props
 }: DialogTriggerProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -45,7 +44,6 @@ const DialogTrigger = ({
 
   return (
     <DialogPrimitive.Trigger
-      ref={ref}
       className={applyUnstyled(
         isUnstyled,
         buttonStyles({ color: "secondary" }),
@@ -66,18 +64,12 @@ type DialogCloseProps = React.ComponentPropsWithRef<
 > &
   UnstyledProps
 
-const DialogClose = ({
-  unstyled,
-  className,
-  ref,
-  ...props
-}: DialogCloseProps) => {
+const DialogClose = ({ unstyled, className, ...props }: DialogCloseProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <DialogPrimitive.Close
-      ref={ref}
       className={applyUnstyled(
         isUnstyled,
         buttonStyles({ color: "neutral", variant: "text" }),
@@ -101,7 +93,6 @@ type DialogOverlayProps = React.ComponentPropsWithRef<
 const DialogOverlay = ({
   unstyled,
   className,
-  ref,
   ...props
 }: DialogOverlayProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -109,7 +100,6 @@ const DialogOverlay = ({
 
   return (
     <DialogPrimitive.Overlay
-      ref={ref}
       className={applyUnstyled(
         isUnstyled,
         "fixed inset-0 z-50 bg-black/80 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
@@ -134,7 +124,6 @@ const DialogContent = ({
   unstyled,
   className,
   children,
-  ref,
   ...props
 }: DialogContentProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -150,7 +139,6 @@ const DialogContent = ({
           and accessibility regardless of the unstyled prop's usage. */}
       <div className="fixed inset-0 z-50 flex items-center justify-center">
         <DialogPrimitive.Content
-          ref={ref}
           className={applyUnstyled(
             isUnstyled,
             "flex w-full max-w-lg m-4 flex-col gap-3 rounded-xl border border-main-border bg-surface p-6 shadow-lg !duration-300 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-90 data-[state=open]:zoom-in-90",
@@ -224,18 +212,12 @@ type DialogTitleProps = React.ComponentPropsWithRef<
 > &
   UnstyledProps
 
-const DialogTitle = ({
-  unstyled,
-  className,
-  ref,
-  ...props
-}: DialogTitleProps) => {
+const DialogTitle = ({ unstyled, className, ...props }: DialogTitleProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <DialogPrimitive.Title
-      ref={ref}
       className={applyUnstyled(
         isUnstyled,
         "text-lg font-semibold leading-none tracking-tight",
@@ -258,7 +240,6 @@ type DialogDescriptionProps = React.ComponentPropsWithRef<
 const DialogDescription = ({
   unstyled,
   className,
-  ref,
   ...props
 }: DialogDescriptionProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -266,7 +247,6 @@ const DialogDescription = ({
 
   return (
     <DialogPrimitive.Description
-      ref={ref}
       className={applyUnstyled(
         isUnstyled,
         "text-sm text-neutral-text",

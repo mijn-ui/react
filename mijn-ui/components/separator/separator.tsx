@@ -12,11 +12,9 @@ const Separator = ({
   className,
   orientation = "horizontal",
   decorative = true,
-  ref,
   ...props
 }: SeparatorProps) => (
   <SeparatorPrimitive.Root
-    ref={ref}
     decorative={decorative}
     orientation={orientation}
     className={cn(

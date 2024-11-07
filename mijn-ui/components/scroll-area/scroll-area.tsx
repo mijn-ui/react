@@ -8,14 +8,8 @@ type ScrollAreaProps = React.ComponentPropsWithRef<
   typeof ScrollAreaPrimitive.Root
 >
 
-const ScrollArea = ({
-  className,
-  children,
-  ref,
-  ...props
-}: ScrollAreaProps) => (
+const ScrollArea = ({ className, children, ...props }: ScrollAreaProps) => (
   <ScrollAreaPrimitive.Root
-    ref={ref}
     className={cn("relative overflow-hidden", className)}
     {...props}
   >
@@ -34,11 +28,9 @@ type ScrollBarProps = React.ComponentPropsWithRef<
 const ScrollBar = ({
   className,
   orientation = "vertical",
-  ref,
   ...props
 }: ScrollBarProps) => (
   <ScrollAreaPrimitive.ScrollAreaScrollbar
-    ref={ref}
     orientation={orientation}
     className={cn(
       "flex touch-none select-none transition-colors",

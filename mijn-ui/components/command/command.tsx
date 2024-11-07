@@ -2,33 +2,63 @@
 
 import * as React from "react"
 import { Dialog, DialogContent } from "@mijn-ui/components/dialog"
-import { cn } from "@mijn-ui/utils"
+import {
+  UnstyledProvider,
+  useUnstyled,
+} from "@mijn-ui/context/unstyled-provider"
+import { UnstyledProps } from "@mijn-ui/types"
+import { applyUnstyled, cn } from "@mijn-ui/utils"
 import { type DialogProps } from "@radix-ui/react-dialog"
 import { Command as CommandPrimitive } from "cmdk"
 import { LuSearch } from "react-icons/lu"
 
-const Command = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive>
->(({ className, ...props }, ref) => (
-  <CommandPrimitive
-    ref={ref}
-    className={cn(
-      "flex h-full w-full flex-col overflow-hidden rounded-md border-main-border bg-surface text-surface-text",
-      className,
-    )}
-    {...props}
-  />
-))
-Command.displayName = CommandPrimitive.displayName
+/* -------------------------------------------------------------------------- */
+/*                                   Command                                  */
+/* -------------------------------------------------------------------------- */
 
-type CommandDialogProps = DialogProps & {}
+type CommandProps = React.ComponentPropsWithRef<typeof CommandPrimitive> &
+  UnstyledProps
 
-const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
+const Command = ({ unstyled = false, className, ...props }: CommandProps) => (
+  <UnstyledProvider unstyled={unstyled}>
+    <CommandPrimitive
+      className={cn(
+        "flex h-full w-full flex-col overflow-hidden rounded-md border-main-border bg-surface text-surface-text",
+        className,
+      )}
+      {...props}
+    />
+  </UnstyledProvider>
+)
+
+/* -------------------------------------------------------------------------- */
+/*                                CommandDialog                               */
+/* -------------------------------------------------------------------------- */
+
+type CommandDialogProps = DialogProps & UnstyledProps
+
+const CommandDialog = ({
+  children,
+  unstyled,
+  ...props
+}: CommandDialogProps) => {
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
+
   return (
     <Dialog {...props}>
-      <DialogContent className="overflow-hidden p-0 shadow-lg">
-        <Command className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-neutral-text [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5">
+      <DialogContent
+        className={applyUnstyled(
+          isUnstyled,
+          "preview overflow-hidden p-0 shadow-lg",
+        )}
+      >
+        <Command
+          className={applyUnstyled(
+            isUnstyled,
+            "[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-neutral-text [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5",
+          )}
+        >
           {children}
         </Command>
       </DialogContent>
@@ -36,105 +66,191 @@ const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
   )
 }
 
-const CommandInput = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Input>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
->(({ className, ...props }, ref) => (
-  <div
-    className="flex items-center border-b border-main-border px-3"
-    cmdk-input-wrapper=""
-  >
-    <LuSearch className="mr-2 h-4 w-4 shrink-0 opacity-50" />
-    <CommandPrimitive.Input
-      ref={ref}
-      className={cn(
-        "flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-neutral-text disabled:cursor-not-allowed disabled:opacity-50",
+/* -------------------------------------------------------------------------- */
+/*                                CommandInput                                */
+/* -------------------------------------------------------------------------- */
+
+type CommandInputProps = React.ComponentPropsWithRef<
+  typeof CommandPrimitive.Input
+> &
+  UnstyledProps
+
+const CommandInput = ({ className, unstyled, ...props }: CommandInputProps) => {
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
+
+  return (
+    <div
+      className={applyUnstyled(
+        isUnstyled,
+        "flex items-center border-b border-main-border px-3",
+      )}
+      cmdk-input-wrapper=""
+    >
+      <LuSearch
+        className={applyUnstyled(
+          isUnstyled,
+          "mr-2 h-4 w-4 shrink-0 opacity-50",
+        )}
+      />
+      <CommandPrimitive.Input
+        className={applyUnstyled(
+          isUnstyled,
+          "flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-neutral-text disabled:cursor-not-allowed disabled:opacity-50",
+          className,
+        )}
+        {...props}
+      />
+    </div>
+  )
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 CommandList                                */
+/* -------------------------------------------------------------------------- */
+
+type CommandListProps = React.ComponentPropsWithRef<
+  typeof CommandPrimitive.List
+> &
+  UnstyledProps
+
+const CommandList = ({ className, unstyled, ...props }: CommandListProps) => {
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
+
+  return (
+    <CommandPrimitive.List
+      className={applyUnstyled(
+        isUnstyled,
+        "max-h-[300px] overflow-y-auto overflow-x-hidden",
         className,
       )}
       {...props}
     />
-  </div>
-))
+  )
+}
 
-CommandInput.displayName = CommandPrimitive.Input.displayName
+/* -------------------------------------------------------------------------- */
+/*                                CommandEmpty                                */
+/* -------------------------------------------------------------------------- */
 
-const CommandList = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.List>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive.List>
->(({ className, ...props }, ref) => (
-  <CommandPrimitive.List
-    ref={ref}
-    className={cn("max-h-[300px] overflow-y-auto overflow-x-hidden", className)}
-    {...props}
-  />
-))
+type CommandEmptyProps = React.ComponentPropsWithRef<
+  typeof CommandPrimitive.Empty
+> &
+  UnstyledProps
 
-CommandList.displayName = CommandPrimitive.List.displayName
+const CommandEmpty = ({ unstyled, className, ...props }: CommandEmptyProps) => {
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
-const CommandEmpty = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Empty>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive.Empty>
->((props, ref) => (
-  <CommandPrimitive.Empty
-    ref={ref}
-    className="py-6 text-center text-sm"
-    {...props}
-  />
-))
+  return (
+    <CommandPrimitive.Empty
+      className={applyUnstyled(
+        isUnstyled,
+        "py-6 text-center text-sm",
+        className,
+      )}
+      {...props}
+    />
+  )
+}
 
-CommandEmpty.displayName = CommandPrimitive.Empty.displayName
+/* -------------------------------------------------------------------------- */
+/*                                CommandGroup                                */
+/* -------------------------------------------------------------------------- */
 
-const CommandGroup = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Group>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive.Group>
->(({ className, ...props }, ref) => (
-  <CommandPrimitive.Group
-    ref={ref}
-    className={cn(
-      "text-text overflow-hidden p-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-neutral-text",
-      className,
-    )}
-    {...props}
-  />
-))
+type CommandGroupProps = React.ComponentPropsWithRef<
+  typeof CommandPrimitive.Group
+> &
+  UnstyledProps
 
-CommandGroup.displayName = CommandPrimitive.Group.displayName
+const CommandGroup = ({ className, unstyled, ...props }: CommandGroupProps) => {
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
-const CommandSeparator = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Separator>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive.Separator>
->(({ className, ...props }, ref) => (
-  <CommandPrimitive.Separator
-    ref={ref}
-    className={cn("-mx-1 h-px bg-main-border", className)}
-    {...props}
-  />
-))
-CommandSeparator.displayName = CommandPrimitive.Separator.displayName
+  return (
+    <CommandPrimitive.Group
+      className={applyUnstyled(
+        isUnstyled,
+        "text-text overflow-hidden p-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-neutral-text",
+        className,
+      )}
+      {...props}
+    />
+  )
+}
 
-const CommandItem = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive.Item>
->(({ className, ...props }, ref) => (
-  <CommandPrimitive.Item
-    ref={ref}
-    className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-auto data-[selected='true']:bg-accent data-[selected=true]:text-accent-text data-[disabled=true]:opacity-50",
-      className,
-    )}
-    {...props}
-  />
-))
+/* -------------------------------------------------------------------------- */
+/*                              CommandSeparator                              */
+/* -------------------------------------------------------------------------- */
 
-CommandItem.displayName = CommandPrimitive.Item.displayName
+type CommandSeparatorProps = React.ComponentPropsWithRef<
+  typeof CommandPrimitive.Separator
+> &
+  UnstyledProps
+
+const CommandSeparator = ({
+  className,
+  unstyled,
+  ...props
+}: CommandSeparatorProps) => {
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
+
+  return (
+    <CommandPrimitive.Separator
+      className={applyUnstyled(
+        isUnstyled,
+        "-mx-1 h-px bg-main-border",
+        className,
+      )}
+      {...props}
+    />
+  )
+}
+/* -------------------------------------------------------------------------- */
+/*                                 CommandItem                                */
+/* -------------------------------------------------------------------------- */
+
+type CommandItemProps = React.ComponentPropsWithRef<
+  typeof CommandPrimitive.Item
+> &
+  UnstyledProps
+
+const CommandItem = ({ className, unstyled, ...props }: CommandItemProps) => {
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
+
+  return (
+    <CommandPrimitive.Item
+      className={applyUnstyled(
+        isUnstyled,
+        "relative flex cursor-default select-none items-center rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-auto data-[selected='true']:bg-accent data-[selected=true]:text-accent-text data-[disabled=true]:opacity-50",
+        className,
+      )}
+      {...props}
+    />
+  )
+}
+/* -------------------------------------------------------------------------- */
+/*                               CommandShortcut                              */
+/* -------------------------------------------------------------------------- */
+
+type CommandShortcutProps = React.HTMLAttributes<HTMLSpanElement> &
+  UnstyledProps
 
 const CommandShortcut = ({
   className,
+  unstyled,
   ...props
-}: React.HTMLAttributes<HTMLSpanElement>) => {
+}: CommandShortcutProps) => {
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
+
   return (
     <span
-      className={cn(
+      className={applyUnstyled(
+        isUnstyled,
         "ml-auto text-xs tracking-widest text-neutral-text",
         className,
       )}
@@ -142,7 +258,6 @@ const CommandShortcut = ({
     />
   )
 }
-CommandShortcut.displayName = "CommandShortcut"
 
 export {
   Command,

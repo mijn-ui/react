@@ -42,7 +42,6 @@ const AvatarGroup = ({
   children,
   className,
   unstyled = false,
-  ref,
   ...props
 }: AvatarGroupProps) => {
   const childArray = React.Children.toArray(children)
@@ -54,7 +53,6 @@ const AvatarGroup = ({
       <div
         className={cn("flex items-center justify-center -space-x-2", className)}
         {...props}
-        ref={ref}
       >
         {visibleChildren}
         {remainingChildrenCount > 0 && (
@@ -81,13 +79,12 @@ type AvatarProps = React.ComponentPropsWithRef<typeof AvatarPrimitive.Root> &
   AvatarVariantProps &
   UnstyledProps
 
-const Avatar = ({ unstyled, size, className, ref, ...props }: AvatarProps) => {
+const Avatar = ({ unstyled, size, className, ...props }: AvatarProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <AvatarPrimitive.Root
-      ref={ref}
       className={applyUnstyled(isUnstyled, avatarStyles({ size }), className)}
       {...props}
     />
@@ -103,18 +100,12 @@ type AvatarImageProps = React.ComponentPropsWithRef<
 > &
   UnstyledProps
 
-const AvatarImage = ({
-  unstyled,
-  className,
-  ref,
-  ...props
-}: AvatarImageProps) => {
+const AvatarImage = ({ unstyled, className, ...props }: AvatarImageProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <AvatarPrimitive.Image
-      ref={ref}
       className={applyUnstyled(
         isUnstyled,
         "aspect-square h-full w-full object-cover",
@@ -137,7 +128,6 @@ type AvatarFallbackProps = React.ComponentPropsWithRef<
 const AvatarFallback = ({
   unstyled,
   className,
-  ref,
   ...props
 }: AvatarFallbackProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -145,7 +135,6 @@ const AvatarFallback = ({
 
   return (
     <AvatarPrimitive.Fallback
-      ref={ref}
       className={applyUnstyled(
         isUnstyled,
         "flex h-full w-full items-center justify-center rounded-full bg-neutral",

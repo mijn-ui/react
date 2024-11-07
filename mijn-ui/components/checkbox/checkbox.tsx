@@ -63,7 +63,6 @@ const Checkbox = ({
   color,
   size,
   className,
-  ref,
   ...props
 }: CheckboxProps) => {
   const [checked, setChecked] = useControlledState<boolean | "indeterminate">(
@@ -74,7 +73,6 @@ const Checkbox = ({
 
   return (
     <CheckboxPrimitive.Root
-      ref={ref}
       className={applyUnstyled(
         unstyled,
         checkboxStyles({ color, size }),

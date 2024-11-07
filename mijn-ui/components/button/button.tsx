@@ -148,7 +148,6 @@ const Button = ({
   disabled,
   asChild = false,
   children,
-  ref,
   ...props
 }: ButtonProps) => {
   const Component = asChild ? Slot : "button"
@@ -160,7 +159,6 @@ const Button = ({
         buttonStyles({ color, variant, size, radius }),
         className,
       )}
-      ref={ref}
       disabled={loading || disabled}
       {...props}
     >

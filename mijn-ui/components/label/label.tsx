@@ -14,10 +14,9 @@ type LabelProps = React.ComponentPropsWithRef<typeof LabelPrimitive.Root> &
   VariantProps<typeof labelVariants> &
   UnstyledProps
 
-const Label = ({ unstyled, className, ref, ...props }: LabelProps) => {
+const Label = ({ unstyled, className, ...props }: LabelProps) => {
   return (
     <LabelPrimitive.Root
-      ref={ref}
       className={applyUnstyled(unstyled, labelVariants(), className)}
       {...props}
     />

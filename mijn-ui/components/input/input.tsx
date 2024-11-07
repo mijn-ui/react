@@ -28,7 +28,6 @@ const Input = ({
   label,
   id: userId,
   disabled,
-  ref,
   ...props
 }: InputProps) => {
   const id = React.useId()
@@ -63,7 +62,6 @@ const Input = ({
           ),
           classNames?.input,
         )}
-        ref={ref}
         id={userId || id}
         disabled={disabled}
         // Adding an empty space by default ensures the floating label moves correctly on focus or when input is present.

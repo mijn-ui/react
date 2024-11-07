@@ -44,7 +44,6 @@ const SelectTrigger = ({
   unstyled,
   className,
   children,
-  ref,
   ...props
 }: SelectTriggerProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -52,7 +51,6 @@ const SelectTrigger = ({
 
   return (
     <SelectPrimitive.Trigger
-      ref={ref}
       className={applyUnstyled(
         isUnstyled,
         "flex h-10 w-full items-center justify-between rounded-md border border-main-border bg-surface px-3 py-2 text-sm placeholder:text-neutral-text focus:border-input-border focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 hover:bg-accent",
@@ -80,7 +78,6 @@ type SelectScrollUpButtonProps = React.ComponentPropsWithRef<
 const SelectScrollUpButton = ({
   unstyled,
   className,
-  ref,
   ...props
 }: SelectScrollUpButtonProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -88,7 +85,6 @@ const SelectScrollUpButton = ({
 
   return (
     <SelectPrimitive.ScrollUpButton
-      ref={ref}
       className={applyUnstyled(
         isUnstyled,
         "flex cursor-default items-center justify-center py-1",
@@ -113,7 +109,6 @@ type SelectScrollDownButtonProps = React.ComponentPropsWithRef<
 const SelectScrollDownButton = ({
   unstyled,
   className,
-  ref,
   ...props
 }: SelectScrollDownButtonProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -121,7 +116,6 @@ const SelectScrollDownButton = ({
 
   return (
     <SelectPrimitive.ScrollDownButton
-      ref={ref}
       className={applyUnstyled(
         isUnstyled,
         "flex cursor-default items-center justify-center py-1",
@@ -148,7 +142,6 @@ const SelectContent = ({
   className,
   children,
   position = "popper",
-  ref,
   ...props
 }: SelectContentProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -157,7 +150,6 @@ const SelectContent = ({
   return (
     <SelectPrimitive.Portal>
       <SelectPrimitive.Content
-        ref={ref}
         className={applyUnstyled(
           isUnstyled,
           cn(
@@ -195,18 +187,12 @@ type SelectLabelProps = React.ComponentPropsWithRef<
 > &
   UnstyledProps
 
-const SelectLabel = ({
-  unstyled,
-  className,
-  ref,
-  ...props
-}: SelectLabelProps) => {
+const SelectLabel = ({ unstyled, className, ...props }: SelectLabelProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <SelectPrimitive.Label
-      ref={ref}
       className={applyUnstyled(
         isUnstyled,
         "py-1.5 pr-8 pl-2 text-sm font-semibold",
@@ -230,7 +216,6 @@ const SelectItem = ({
   unstyled,
   className,
   children,
-  ref,
   ...props
 }: SelectItemProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -238,7 +223,6 @@ const SelectItem = ({
 
   return (
     <SelectPrimitive.Item
-      ref={ref}
       className={applyUnstyled(
         isUnstyled,
         "relative flex w-full cursor-default select-none items-center rounded-md py-1.5 pr-8 pl-2 text-sm outline-none focus:bg-accent focus:text-accent-text data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[state=checked]:text-primary data-[state=checked]:bg-primary/10",
@@ -274,7 +258,6 @@ type SelectSeparatorProps = React.ComponentPropsWithRef<
 const SelectSeparator = ({
   unstyled,
   className,
-  ref,
   ...props
 }: SelectSeparatorProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -282,7 +265,6 @@ const SelectSeparator = ({
 
   return (
     <SelectPrimitive.Separator
-      ref={ref}
       className={applyUnstyled(
         isUnstyled,
         "-mx-1 my-1 h-px bg-neutral",

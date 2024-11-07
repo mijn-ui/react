@@ -14,11 +14,10 @@ import { applyUnstyled } from "@mijn-ui/utils"
 
 type TableProps = React.ComponentPropsWithRef<"table"> & UnstyledProps
 
-const Table = ({ className, unstyled = false, ref, ...props }: TableProps) => {
+const Table = ({ className, unstyled = false, ...props }: TableProps) => {
   return (
     <UnstyledProvider unstyled={unstyled}>
       <table
-        ref={ref}
         className={applyUnstyled(unstyled, "relative text-sm", className)}
         {...props}
       />
@@ -35,7 +34,7 @@ type TableHeaderProps = React.ComponentPropsWithRef<"thead"> & UnstyledProps
 const TableHeader = ({
   className,
   unstyled,
-  ref,
+
   ...props
 }: TableHeaderProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -43,7 +42,6 @@ const TableHeader = ({
 
   return (
     <thead
-      ref={ref}
       className={applyUnstyled(isUnstyled, "h-11", className)}
       {...props}
     />
@@ -56,13 +54,12 @@ const TableHeader = ({
 
 type TableBodyProps = React.ComponentPropsWithRef<"tbody"> & UnstyledProps
 
-const TableBody = ({ className, unstyled, ref, ...props }: TableBodyProps) => {
+const TableBody = ({ className, unstyled, ...props }: TableBodyProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <tbody
-      ref={ref}
       className={applyUnstyled(
         isUnstyled,
         "divide-border divide-y [&>tr:hover]:bg-accent",
@@ -79,18 +76,12 @@ const TableBody = ({ className, unstyled, ref, ...props }: TableBodyProps) => {
 
 type TableFooterProps = React.ComponentPropsWithRef<"tfoot"> & UnstyledProps
 
-const TableFooter = ({
-  className,
-  unstyled,
-  ref,
-  ...props
-}: TableFooterProps) => {
+const TableFooter = ({ className, unstyled, ...props }: TableFooterProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <tfoot
-      ref={ref}
       className={applyUnstyled(
         isUnstyled,
         "border-t border-t-main-border font-medium",
@@ -107,13 +98,12 @@ const TableFooter = ({
 
 type TableRowProps = React.ComponentPropsWithRef<"tr"> & UnstyledProps
 
-const TableRow = ({ className, unstyled, ref, ...props }: TableRowProps) => {
+const TableRow = ({ className, unstyled, ...props }: TableRowProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <tr
-      ref={ref}
       className={applyUnstyled(
         isUnstyled,
         "border-b border-main-border text-left",
@@ -133,7 +123,6 @@ type TableHeaderCellProps = React.ComponentPropsWithRef<"th"> & UnstyledProps
 const TableHeaderCell = ({
   className,
   unstyled,
-  ref,
   ...props
 }: TableHeaderCellProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -141,7 +130,6 @@ const TableHeaderCell = ({
 
   return (
     <th
-      ref={ref}
       className={applyUnstyled(
         isUnstyled,
         "px-4 py-3 font-semibold",
@@ -158,13 +146,12 @@ const TableHeaderCell = ({
 
 type TableCellProps = React.ComponentPropsWithRef<"td"> & UnstyledProps
 
-const TableCell = ({ className, unstyled, ref, ...props }: TableCellProps) => {
+const TableCell = ({ className, unstyled, ...props }: TableCellProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <td
-      ref={ref}
       className={applyUnstyled(isUnstyled, "px-4 py-2 align-middle", className)}
       {...props}
     />
@@ -177,18 +164,12 @@ const TableCell = ({ className, unstyled, ref, ...props }: TableCellProps) => {
 
 type TableCaptionProps = React.ComponentPropsWithRef<"caption"> & UnstyledProps
 
-const TableCaption = ({
-  className,
-  unstyled,
-  ref,
-  ...props
-}: TableCaptionProps) => {
+const TableCaption = ({ className, unstyled, ...props }: TableCaptionProps) => {
   const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <caption
-      ref={ref}
       className={applyUnstyled(
         isUnstyled,
         "mt-4 text-sm text-neutral-text",
