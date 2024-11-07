@@ -2,12 +2,15 @@
 
 import React, { useEffect, useState } from "react"
 import { cn } from "@mijn-ui/utils"
+import axios from "axios"
 import HTMLReactParser from "html-react-parser"
 
 type CodePreviewerProps = React.ComponentPropsWithoutRef<"div"> & {
   src: string
   children?: React.ReactNode
 }
+
+export const revalidate = 3600 // revalidate every hour
 
 const TWComponentPreview = ({
   src,
@@ -24,14 +27,8 @@ const TWComponentPreview = ({
       setLoading(true)
       setError(false)
       try {
-        const response = await fetch(`/api/get-html?filename=${src}`, {
-          cache: "force-cache",
-        })
-        if (!response.ok) {
-          throw new Error("Failed to fetch HTML content")
-        }
-        const { html } = await response.json()
-        const parsedHTML = HTMLReactParser(html)
+        const response = await axios.get(`/api/get-html?filename=${src}`)
+        const parsedHTML = HTMLReactParser(response.data.html)
         setReactElement(parsedHTML)
       } catch (err) {
         console.error(err)
