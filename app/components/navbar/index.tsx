@@ -3,6 +3,7 @@
 import React from "react"
 import Link from "next/link"
 import Logo from "../icons/logo"
+import ThemeToggler from "../theme-toggler"
 import { Badge } from "@mijn-ui/components/badge"
 import { Button } from "@mijn-ui/components/button"
 import { useSearchContext } from "fumadocs-ui/provider"
@@ -44,6 +45,7 @@ const Navbar = () => {
               <LuGithub size={18} />
             </Link>
           </Button>
+          <ThemeToggler />
         </div>
       </nav>
 

@@ -2,6 +2,10 @@
   --navbar-height: 4rem;
 }
 
+h1 {
+  @apply bg-gradient-to-br from-main-text to-neutral-text/70 bg-clip-text font-bold tracking-tight text-transparent sm:font-extrabold;
+}
+
 [data-search-full] {
   @apply bg-fd-popover text-fd-muted-foreground/80;
 }

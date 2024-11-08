@@ -22,6 +22,7 @@ export const baseOptions: HomeLayoutProps = {
         </Badge>
       </div>
     ),
+
     url: "/",
   },
 }

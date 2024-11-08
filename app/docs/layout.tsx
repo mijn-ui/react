@@ -14,6 +14,9 @@ export default function Layout({ children }: { children: ReactNode }) {
         collapsible: false,
         enabled: true,
         hideSearch: true,
+        footerProps: {
+          className: "hidden",
+        },
         banner: (
           <div className="pt-4 w-full">
             <AvailablePagesSelector />
