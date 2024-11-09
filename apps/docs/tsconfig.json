@@ -1,6 +1,25 @@
 {
-  "extends": "@repo/typescript-config/nextjs.json",
   "compilerOptions": {
+    "baseUrl": ".",
+    "target": "ESNext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "paths": {
+      "@/*": ["./*"],
+      "@mijn-ui/*": ["../../packages/mijn-ui/*"],
+      "@examples/*": ["../../examples/*"]
+    },
     "plugins": [
       {
         "name": "next"
@@ -9,10 +28,13 @@
   },
   "include": [
     "next-env.d.ts",
-    "next.config.mjs",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "content/docs/(next-js)/index.mdx",
+    "tailwind.config.js",
+    "content/common/tw-html.config.js",
+    "content/common/tw-config-next.js"
   ],
   "exclude": ["node_modules"]
 }
