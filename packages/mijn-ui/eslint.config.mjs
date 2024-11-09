@@ -1,4 +1,5 @@
 import { FlatCompat } from "@eslint/eslintrc";
+import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended"
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -11,6 +12,7 @@ const compat = new FlatCompat({
 
 /** @type {import('eslint').Linter.Config[]} */
 const configs = [
+  eslintPluginPrettierRecommended,
   {
     files: ["**/*.{ts,tsx}"],
   },
