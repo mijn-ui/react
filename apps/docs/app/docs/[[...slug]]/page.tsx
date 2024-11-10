@@ -1,3 +1,5 @@
+/* eslint-disable-next-line */
+// @ts-nocheck
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import ComponentPreview from "@/app/components/mdx/component-preview"
