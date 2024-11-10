@@ -18,7 +18,6 @@ const Navbar = () => {
             v0.0.1
           </Badge>
         </div>
-
         <div className="flex items-center">
           <Link
             className="text-sm hidden sm:block mr-2 text-neutral-text hover:text-secondary-text"
