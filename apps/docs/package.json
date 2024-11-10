@@ -11,6 +11,7 @@
     "eslint:fix": "eslint --fix"
   },
   "dependencies": {
+    "axios": "^1.7.7",
     "class-variance-authority": "^0.7.0",
     "fumadocs-core": "13.4.10",
     "fumadocs-docgen": "^1.2.0",

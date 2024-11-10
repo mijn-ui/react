@@ -29,7 +29,7 @@ export default function HomePage() {
               className: "text-xs md:text-sm",
             }),
           )}
-          href={"/docs/accordion"}
+          href={"/docs/components/accordion"}
         >
           Components
         </Link>

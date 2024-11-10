@@ -7,7 +7,7 @@ export default {
 
     "../../packages/mijn-ui/components/**/*.{ts,tsx}",
     "../../packages/mijn-ui/utils/**/*.{ts,tsx}",
-    "./mijn-ui-tailwind/**/*.html",
+    "../../examples/html/**/*.html",
 
     "./app/**/*.{ts,tsx}",
     "../../examples/**/*.{ts,tsx}",

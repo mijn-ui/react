@@ -13,7 +13,8 @@ export async function GET(req: Request) {
 
     const filePath = path.join(
       process.cwd(),
-      "mijn-ui-tailwind",
+      "../..",
+      "examples/html",
       `${filename}.html`,
     )
     const html = fs.readFileSync(filePath, "utf8")
