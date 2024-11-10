@@ -6,11 +6,8 @@ node_modules
 .pnp.js
 
 # Local env files
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env*
+.env*.local
 
 # Testing
 coverage
@@ -26,7 +23,7 @@ coverage
 out/
 build
 dist
-
+*.tsbuildinfo
 
 # Debug
 npm-debug.log*
@@ -36,3 +33,12 @@ yarn-error.log*
 # Misc
 .DS_Store
 *.pem
+
+# generated content
+.contentlayer
+.content-collections
+.source
+
+# others
+next-env.d.ts
+*storybook.log
