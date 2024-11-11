@@ -2,14 +2,14 @@
 
 name: "Bug report"
 description: Report an issue
-title: '[bug]: '
+title: "[bug]: "
 labels: ["bug"]
 body:
   - type: markdown
     attributes:
       value: |
         ### Thanks for taking the time to create a bug report. Please search open/closed issues before submitting, as the issue may have already been reported/addressed.
- 
+
   - type: markdown
     attributes:
       value: |
@@ -38,14 +38,14 @@ body:
     id: reproduction
     attributes:
       label: How to reproduce
-      description:  A step-by-step description of how to reproduce the bug.
+      description: A step-by-step description of how to reproduce the bug.
       placeholder: |
         1. Go to '...'
         2. Click on '....'
         3. See error
     validations:
       required: true
- 
+
   - type: textarea
     id: system-info
     attributes:
