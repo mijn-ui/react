@@ -2,9 +2,11 @@
   "name": "@mijn-ui/react",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "lint": "eslint **/*.{ts,tsx}",
-    "types:check": "tsc --noEmit"
+    "types:check": "tsc --noEmit",
+    "test": "vitest run"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.1",

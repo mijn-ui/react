@@ -29,4 +29,4 @@ jobs:
         run: pnpm run build
 
       - name: Run Tests
-        run: node tests/simple-test.js
+        run: pnpm test
