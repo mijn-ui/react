@@ -45,19 +45,6 @@ body:
         3. See error
     validations:
       required: true
-
-  - type: input
-    id: codesandbox-stackblitz
-    attributes:
-      label: Codesandbox/StackBlitz link
-      description: | 
-        A link to a CodeSandbox or StackBlitz that includes a minimal reproduction of the problem. In rare cases when not applicable, you can link to a GitHub repository that we can easily run to recreate the issue. If a report is vague and does not have a reproduction, it will be closed without warning. 
-
-        > [!CAUTION]
-        > If you skip this step, this issue might be **labeled** with `please add a reproduction` and **closed**.
-    validations:
-      required: false
-
  
   - type: textarea
     id: system-info
