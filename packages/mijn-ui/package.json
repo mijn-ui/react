@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "lint": "eslint **/*.{ts,tsx}"
+    "lint": "eslint **/*.{ts,tsx}",
+    "types:check": "tsc --noEmit"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.1",
