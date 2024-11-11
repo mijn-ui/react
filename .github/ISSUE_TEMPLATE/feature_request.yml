@@ -14,7 +14,7 @@ body:
     attributes:
       value: |
         #### If you aren't sure this is a bug or not, please open a discussion instead:
-        - [Discussions]https://github.com/HTLA380/MijnUI/discussions/new?category=general)
+        - [Discussions](https://github.com/HTLA380/MijnUI/discussions/new?category=general)
 
   - type: textarea
     id: feature-description
