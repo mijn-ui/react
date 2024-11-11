@@ -1,9 +1,9 @@
-import * as React from "react";
-import { UnstyledProps } from "@mijn-ui/types";
-import { applyUnstyled } from "@mijn-ui/utils";
-import { Slot, Slottable } from "@radix-ui/react-slot";
-import { type VariantProps, cva } from "class-variance-authority";
-import { LuLoader2 } from "react-icons/lu";
+import * as React from "react"
+import { UnstyledProps } from "@mijn-ui/types"
+import { applyUnstyled } from "@mijn-ui/utils"
+import { Slot, Slottable } from "@radix-ui/react-slot"
+import { type VariantProps, cva } from "class-variance-authority"
+import { LuLoader2 } from "react-icons/lu"
 
 const buttonStyles = cva(
   [
@@ -41,27 +41,32 @@ const buttonStyles = cva(
       {
         color: "primary",
         variant: "outline",
-        className: "hover:bg-primary hover:text-primary-text border border-primary text-primary",
+        className:
+          "hover:bg-primary hover:text-primary-text border border-primary text-primary",
       },
       {
         color: "secondary",
         variant: "outline",
-        className: "hover:bg-secondary hover:text-secondary-text border border-secondary text-secondary",
+        className:
+          "hover:bg-secondary hover:text-secondary-text border border-secondary text-secondary",
       },
       {
         color: "accent",
         variant: "outline",
-        className: "hover:bg-accent hover:text-accent-text border border-main-border text-accent-text",
+        className:
+          "hover:bg-accent hover:text-accent-text border border-main-border text-accent-text",
       },
       {
         color: "neutral",
         variant: "outline",
-        className: "hover:bg-neutral hover:text-neutral-text border border-neutral text-neutral-text",
+        className:
+          "hover:bg-neutral hover:text-neutral-text border border-neutral text-neutral-text",
       },
       {
         color: "danger",
         variant: "outline",
-        className: "hover:bg-danger hover:text-danger-filled-text border border-danger text-danger",
+        className:
+          "hover:bg-danger hover:text-danger-filled-text border border-danger text-danger",
       },
 
       {
@@ -72,7 +77,8 @@ const buttonStyles = cva(
       {
         color: "secondary",
         variant: "text",
-        className: "hover:bg-secondary hover:text-secondary-text text-secondary",
+        className:
+          "hover:bg-secondary hover:text-secondary-text text-secondary",
       },
       {
         color: "danger",
@@ -122,14 +128,14 @@ const buttonStyles = cva(
       radius: "md",
       size: "md",
     },
-  }
-);
+  },
+)
 
 export type ButtonProps = React.ComponentPropsWithRef<"button"> &
   VariantProps<typeof buttonStyles> & {
-    asChild?: boolean;
-    loading?: boolean;
-  } & UnstyledProps;
+    asChild?: boolean
+    loading?: boolean
+  } & UnstyledProps
 
 const Button = ({
   unstyled,
@@ -144,18 +150,29 @@ const Button = ({
   children,
   ...props
 }: ButtonProps) => {
-  const Component = asChild ? Slot : "button";
+  const Component = asChild ? Slot : "button"
 
   return (
     <Component
-      className={applyUnstyled(unstyled, buttonStyles({ color, variant, size, radius }), className)}
+      className={applyUnstyled(
+        unstyled,
+        buttonStyles({ color, variant, size, radius }),
+        className,
+      )}
       disabled={loading || disabled}
       {...props}
     >
-      {loading && <LuLoader2 className={applyUnstyled(unstyled, "mr-2 h-5 w-5 animate-spin text-current")} />}
+      {loading && (
+        <LuLoader2
+          className={applyUnstyled(
+            unstyled,
+            "mr-2 h-5 w-5 animate-spin text-current",
+          )}
+        />
+      )}
       <Slottable>{loading ? "Loading..." : children}</Slottable>
     </Component>
-  );
-};
+  )
+}
 
-export { Button, buttonStyles };
+export { Button, buttonStyles }
