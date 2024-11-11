@@ -58,7 +58,8 @@ body:
     validations:
       required: false
 
-   - type: textarea
+ 
+  - type: textarea
     id: system-info
     attributes:
       label: System Info
