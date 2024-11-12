@@ -15,7 +15,7 @@ const configs = [
     files: ["**/*.{ts,tsx}"],
   },
   {
-    ignores: ["**/node_modules/*", "**/out/*", "**/.next/*"],
+    ignores: ["node_modules/*", "out/*", ".next/*"],
   },
   ...compat.extends("next/core-web-vitals"),
   ...compat.extends("next/typescript"),

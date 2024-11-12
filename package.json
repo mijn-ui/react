@@ -7,14 +7,14 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "lint:fix": "turbo run lint:fix",
-    "prettier": "prettier --no-cache --check --ignore-path .gitignore --ignore-path .prettierignore .",
-    "prettier:fix": "prettier --cache --write --list-different --ignore-path .gitignore --ignore-path .prettierignore .",
+    "lint:prettier": "prettier --cache --check --ignore-path .gitignore --ignore-path .prettierignore .",
+    "prettier": "prettier --cache --write --list-different --ignore-path .gitignore --ignore-path .prettierignore .",
     "types:check": "turbo run types:check"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@vitest/ui": "^2.1.4",
-    "prettier": "^3.2.5",
+    "prettier": "^3.3.3",
     "turbo": "^2.2.3",
     "typescript": "5.5.4",
     "vitest": "^2.1.4"
