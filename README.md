@@ -4,9 +4,10 @@
 
 ### Features
 
-* **Radix UI** for accessible and customizable functionality.
-- **Tailwind CSS** for very convenient styling and adjusting.
-- Components available **unstyled**, or **styled**.
+- **Radix UI** for accessible and customizable functionality.
+
+* **Tailwind CSS** for very convenient styling and adjusting.
+* Components available **unstyled**, or **styled**.
 
 ### Feedback
 
