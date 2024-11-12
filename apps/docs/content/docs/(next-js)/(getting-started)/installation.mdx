@@ -43,15 +43,13 @@ react-icons class-variance-authority tailwindcss-animate clsx tailwind-merge
 
 Since this project is still in a beta phase, and extensive testing is ongoing, we recommend configuring TypeScript with path aliases for better project organization and readability. Please use the following setup in your tsconfig.json:
 
-```json title="tsconfig.json"
+
+```json doc-gen:file
 {
-  "compilerOptions": {
-    "baseUrl": ".", // Sets the root directory                   // [!code highlight]
-    "paths": {
-      // Path aliases for cleaner imports          // [!code highlight]
-      "@/*": ["./src/*"], // [!code highlight]
-      "@mijn-ui/*": ["../../packages/mijn-ui/*"] // [!code highlight]
-    }
+  "file": "./examples/react/tsconfig.json",
+  "codeblock": {
+    "lang": "json",
+    "meta": "title=\"tsconfig.json\""
   }
 }
 ```
@@ -96,8 +94,7 @@ This setup will help keep your code modular and organized, especially for comple
 
 <Alert
   title=""
-  description="While this is the recommended folder structure for the beta version, you can customize it as needed. However, modifications may introduce
-unexpected errors."
+  description="While this is the recommended folder structure for the beta version, you can customize it as needed. However, modifications may introduce unexpected errors."
   className="mt-4"
 />
 
@@ -110,7 +107,7 @@ These are the default themes provided by mijn-ui. If you would like to create yo
 
 ```json doc-gen:file
 {
-  "file": "./content/common/component-themes.css",
+  "file": "./examples/react/global.css",
   "codeblock": {
     "lang": "css",
     "meta": "title=\"global.css\""
@@ -127,7 +124,7 @@ Since our components are stored in a separate `mijn-ui` folder, we need to inclu
 
 ```json doc-gen:file
 {
-  "file": "./content/common/tw-next-example.config.js",
+  "file": "./examples/react/tailwind.config.js",
   "codeblock": {
     "lang": "js",
     "meta": "title=\"tailwind-config.js\""
@@ -144,7 +141,7 @@ Since our components are stored in a separate `mijn-ui` folder, we need to inclu
 
       ```json doc-gen:file
       {
-        "file": "../../packages/mijn-ui/utils/index.tsx",
+        "file": "../../packages/mijn-ui/src/utils/index.tsx",
         "codeblock": {
           "lang": "tsx",
           "meta": "title=\"mijn-ui/utils/index.tsx\""
@@ -155,7 +152,7 @@ Since our components are stored in a separate `mijn-ui` folder, we need to inclu
 
       ```json doc-gen:file
       {
-        "file": "../../packages/mijn-ui/types/index.ts",
+        "file": "../../packages/mijn-ui/src/types/index.ts",
         "codeblock": {
           "lang": "ts",
           "meta": "title=\"mijn-ui/types/index.ts\""
@@ -166,7 +163,7 @@ Since our components are stored in a separate `mijn-ui` folder, we need to inclu
 
       ```json doc-gen:file
       {
-        "file": "../../packages/mijn-ui/context/unstyled-provider.tsx",
+        "file": "../../packages/mijn-ui/src/context/unstyled-provider.tsx",
         "codeblock": {
           "lang": "tsx",
           "meta": "title=\"mijn-ui/context/unstyled-provider.tsx\""
@@ -177,7 +174,7 @@ Since our components are stored in a separate `mijn-ui` folder, we need to inclu
 
       ```json doc-gen:file
       {
-        "file": "../../packages/mijn-ui/hooks/use-controlled-state.ts",
+        "file": "../../packages/mijn-ui/src/hooks/use-controlled-state.ts",
         "codeblock": {
           "lang": "ts",
           "meta": "title=\"mijn-ui/hooks/use-controlled-state.ts\""

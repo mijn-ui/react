@@ -27,6 +27,7 @@ const configs = [
       "tailwind.config.js",
       "content/common/*",
       "app/styles/global.css",
+      "examples/**/*.config.js",
     ],
   },
   ...compat.extends("next/core-web-vitals"),
