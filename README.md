@@ -10,4 +10,4 @@
 
 ### Feedback
 
-Got any suggestions or issues? Open an issue or contact us. We'd love to hear from you.
+Got any suggestions or issues? Open an [issue](https://github.com/HTLA380/MijnUI/issues) or [discussion](https://github.com/HTLA380/MijnUI/discussions). We'd love to hear from you.
