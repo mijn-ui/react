@@ -7,7 +7,7 @@ import { LuLoader2 } from "react-icons/lu"
 
 const buttonStyles = cva(
   [
-    "inline-flex items-center justify-center gap-1 transition-colors duration-300 ease-in-out active:brightness-90 text-sm disabled:pointer-events-none disabled:brightness-75 disabled:opacity-80",
+    "inline-flex items-center justify-center gap-1 transition-colors duration-200 ease-in-out active:brightness-90 text-sm disabled:pointer-events-none disabled:brightness-75 disabled:opacity-80",
   ],
   {
     variants: {
@@ -34,7 +34,7 @@ const buttonStyles = cva(
       variant: {
         filled: "",
         outline: "border border-current",
-        text: "bg-transparent",
+        text: "",
       },
     },
     compoundVariants: [

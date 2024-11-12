@@ -50,9 +50,9 @@ export const Calendar = ({
           "h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-accent/50 [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20",
         [SelectionState.range_end]: "day-range-end",
         [SelectionState.selected]:
-          "!bg-primary text-primary-text hover:bg-primary hover:text-primary-text focus:bg-primary focus:text-primary-text",
+          "bg-primary text-primary-text hover:bg-primary hover:text-primary-text focus:bg-primary focus:text-primary-text",
         [SelectionState.range_middle]:
-          "aria-selected:bg-accent aria-selected:text-accent-text",
+          "aria-selected:bg-accent/75 aria-selected:text-accent-text",
         [DayFlag.today]: "bg-accent text-accent-text",
         [DayFlag.outside]:
           "day-outside text-neutral-text opacity-50 aria-selected:bg-accent/50 aria-selected:text-neutral-text aria-selected:opacity-30",
