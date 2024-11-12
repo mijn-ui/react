@@ -20,10 +20,10 @@ const configs = [
   },
   {
     ignores: [
-      "**/node_modules/*",
-      "**/out/*",
-      "**/.next/*",
-      "**/coverage",
+      "node_modules/*",
+      "out/*",
+      ".next/*",
+      "coverage",
       "tailwind.config.js",
       "content/common/*",
       "app/styles/global.css",

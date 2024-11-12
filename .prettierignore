@@ -1,3 +1,8 @@
+CHANGELOG.md
+pnpm-lock.yaml
+.changeset/*.md
+.github/**/*.md
+
 public 
 *.mdx
 *.html
@@ -7,3 +12,4 @@ public
 yarn.lock
 node_modules
 pnpm-lock.yaml
+
