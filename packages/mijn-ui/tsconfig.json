@@ -3,7 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@mijn-ui/*": ["./*"]
+      "@mijn-ui/*": ["./src/*"]
     }
   },
   "exclude": ["node_modules", "dist"]

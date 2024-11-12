@@ -17,8 +17,8 @@
     "incremental": true,
     "paths": {
       "@/*": ["./*"],
-      "@mijn-ui/*": ["../../packages/mijn-ui/*"],
-      "@examples/*": ["../../examples/*"]
+      "@mijn-ui/*": ["../../packages/mijn-ui/src/*"],
+      "@examples/*": ["./examples/*"]
     },
     "plugins": [
       {

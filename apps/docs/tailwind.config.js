@@ -6,12 +6,10 @@ export default {
   content: [
     "./node_modules/fumadocs-ui/dist/**/*.js",
 
-    "../../packages/mijn-ui/components/**/*.{ts,tsx}",
-    "../../packages/mijn-ui/utils/**/*.{ts,tsx}",
-    "../../examples/html/**/*.html",
+    "../../packages/mijn-ui/src/**/*.{ts,tsx}",
 
     "./app/**/*.{ts,tsx}",
-    "../../examples/**/*.{ts,tsx}",
+    "./examples/**/*.{ts,html,tsx}",
     "./content/**/*.{ts,tsx,md,mdx}",
   ],
   presets: [createPreset()],

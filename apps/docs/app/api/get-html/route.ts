@@ -13,7 +13,6 @@ export async function GET(req: Request) {
 
     const filePath = path.join(
       process.cwd(),
-      "../..",
       "examples/html",
       `${filename}.html`,
     )
