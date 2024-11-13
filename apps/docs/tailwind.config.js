@@ -1,10 +1,11 @@
+import typography from "@tailwindcss/typography"
 import { createPreset } from "fumadocs-ui/tailwind-plugin"
 import tailwindAnimate from "tailwindcss-animate"
 
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./node_modules/fumadocs-ui/dist/**/*.js",
+    "../../node_modules/fumadocs-ui/dist/**/*.js",
 
     "../../packages/mijn-ui/src/**/*.{ts,tsx}",
 
@@ -143,5 +144,5 @@ export default {
       },
     },
   },
-  plugins: [tailwindAnimate],
+  plugins: [tailwindAnimate, typography],
 }

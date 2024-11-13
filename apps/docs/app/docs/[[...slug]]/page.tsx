@@ -20,6 +20,11 @@ import {
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>
 }) {
+  // I'm not sure why the tailwindcss typography plugin isn't working in development mode. It might be due to my machine, but it works fine in production mode. As a temporary workaround, I'm including this code to ensure that all the tailwind typography classes work in development mode.
+  if (process.env.NODE_ENV === "development") {
+    import("../../css/prose.css")
+  }
+
   const params = await props.params
   const page = source.getPage(params.slug)
   if (!page) notFound()
@@ -35,6 +40,7 @@ export default async function Page(props: {
         {page.data.description}
       </DocsDescription>
       <hr />
+
       <DocsBody>
         <MDX
           components={{
