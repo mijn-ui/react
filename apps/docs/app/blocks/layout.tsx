@@ -1,13 +1,14 @@
 import type { ReactNode } from "react"
 import { Metadata } from "next"
-import Footer from "../components/layout/footer"
+import Footer from "@/app/components/layout/footer"
 import { baseOptions } from "../layout.config"
 import { source } from "../source"
 import Navbar from "@/content/mdx-components/navbar"
 import { DocsLayout } from "fumadocs-ui/layout"
 
 export const metadata: Metadata = {
-  description: "Reusable components for clean, responsive interfaces.",
+  title: "MijnUI | Blocks",
+  description: "Blocks",
 }
 
 export default function Layout({
@@ -27,6 +28,9 @@ export default function Layout({
       }}
       {...baseOptions}
     >
+      {/* <div className="fixed top-[var(--navbar-height)] px-5 py-1 inset-x-0 bg-info/20 text-info-text">
+        Blocks are currently in progress will be available soon!
+      </div> */}
       <Navbar />
 
       {children}

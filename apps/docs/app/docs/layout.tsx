@@ -1,9 +1,9 @@
 import type { ReactNode } from "react"
 import { source } from "@/app/source"
+import AvailablePagesSelector from "../../content/mdx-components/available-pages-selector"
 import GradientBackground from "../components/decorators/gradient-background"
-import AvailablePagesSelector from "../components/mdx/available-pages-selector"
-import Navbar from "../components/navbar"
 import { baseOptions } from "../layout.config"
+import Navbar from "@/content/mdx-components/navbar"
 import { DocsLayout } from "fumadocs-ui/layout"
 
 export default function Layout({ children }: { children: ReactNode }) {
@@ -11,11 +11,10 @@ export default function Layout({ children }: { children: ReactNode }) {
     <DocsLayout
       tree={source.pageTree}
       sidebar={{
-        collapsible: false,
         enabled: true,
         hideSearch: true,
         footerProps: {
-          className: "hidden",
+          className: "[&_[data-theme-toggle]]:hidden",
         },
         banner: (
           <div className="pt-4 w-full">
