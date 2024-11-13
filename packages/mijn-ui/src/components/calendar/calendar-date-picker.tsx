@@ -388,7 +388,7 @@ export const CalendarDatePicker = React.forwardRef<
             }
           `}
         </style>
-        <Popover open={isPopoverOpen} onOpenChange={setIsPopoverOpen}>
+        <Popover modal open={isPopoverOpen} onOpenChange={setIsPopoverOpen}>
           <PopoverTrigger asChild>
             <Button
               id="date"
@@ -532,6 +532,7 @@ export const CalendarDatePicker = React.forwardRef<
           </PopoverTrigger>
           {isPopoverOpen && (
             <PopoverContent
+              collisionPadding={{ top: 20, bottom: 20 }}
               className="w-auto"
               align="center"
               onInteractOutside={handleClose}

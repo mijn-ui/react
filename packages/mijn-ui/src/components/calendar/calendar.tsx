@@ -24,9 +24,8 @@ export const Calendar = ({
       showOutsideDays={showOutsideDays}
       className={cn("border-main-border bg-surface p-3", className)}
       classNames={{
-        [UI.Months]:
-          "relative flex flex-col sm:flex-row space-y-4 sm:space-y-0",
-        [UI.Month]: "",
+        [UI.Months]: "relative flex flex-col sm:flex-row",
+        [UI.Month]: "space-y-0",
         [UI.MonthCaption]: "flex justify-center py-2 relative items-center",
         [UI.CaptionLabel]: "text-sm font-medium",
         [UI.PreviousMonthButton]: cn(
