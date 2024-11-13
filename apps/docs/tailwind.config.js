@@ -5,7 +5,7 @@ import tailwindAnimate from "tailwindcss-animate"
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "../../node_modules/fumadocs-ui/dist/**/*.js",
+    "../node_modules/fumadocs-ui/dist/**/*.js",
 
     "../../packages/mijn-ui/src/**/*.{ts,tsx}",
 
