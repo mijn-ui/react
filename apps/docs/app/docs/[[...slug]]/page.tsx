@@ -1,11 +1,12 @@
 /* eslint-disable-next-line */
 // @ts-nocheck
 import type { Metadata } from "next"
+import dynamic from "next/dynamic"
 import { notFound } from "next/navigation"
-import ComponentPreview from "@/app/components/mdx/component-preview"
-import Alert from "@/app/components/mdx/mdx-alert"
-import TWComponentPreview from "@/app/components/mdx/tailwind-component-preview"
 import { source } from "@/app/source"
+import ComponentPreview from "@/content/mdx-components/component-preview"
+import Alert from "@/content/mdx-components/mdx-alert"
+import TWComponentPreview from "@/content/mdx-components/tailwind-component-preview"
 import { File, Files, Folder } from "fumadocs-ui/components/files"
 import { Step, Steps } from "fumadocs-ui/components/steps"
 import { Tab, Tabs } from "fumadocs-ui/components/tabs"
@@ -17,14 +18,14 @@ import {
   DocsTitle,
 } from "fumadocs-ui/page"
 
+// I'm not sure why the tailwindcss typography plugin isn't working in development mode. It might be due to my machine, but it works fine in production mode. As a temporary workaround, I'm including this code to ensure that all the tailwind typography classes work in development mode.
+if (process.env.NODE_ENV === "development") {
+  dynamic(() => import("../../css/prose.css"))
+}
+
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>
 }) {
-  // I'm not sure why the tailwindcss typography plugin isn't working in development mode. It might be due to my machine, but it works fine in production mode. As a temporary workaround, I'm including this code to ensure that all the tailwind typography classes work in development mode.
-  if (process.env.NODE_ENV === "development") {
-    import("../../css/prose.css")
-  }
-
   const params = await props.params
   const page = source.getPage(params.slug)
   if (!page) notFound()
