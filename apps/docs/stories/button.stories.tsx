@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "@acme/ui/button";
+import "../global.css";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@acme/ui/components/accordion";
+import { Button } from "@acme/ui/components/button";
+import { Calendar } from "@acme/ui/components/calendar";
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -22,25 +25,23 @@ type Story = StoryObj<typeof Button>;
  */
 export const Primary: Story = {
   render: (props) => (
-    <Button
-      {...props}
-      onClick={(): void => {
-        // eslint-disable-next-line no-alert -- alert for demo
-        alert("Hello from Turborepo!");
-      }}
-    >
-      Hello
-    </Button>
+    <>
+      <Calendar selected={new Date()} className="w-fit" />
+      <Accordion variant="surface" className="w-full max-w-80" collapsible type="single">
+        <AccordionItem value="item-1">
+          <AccordionTrigger>Is it accessible</AccordionTrigger>
+          <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-2">
+          <AccordionTrigger>Is it accessible</AccordionTrigger>
+          <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    </>
   ),
   name: "Button",
   args: {
     children: "Hello",
     type: "button",
-    style: {
-      color: "blue",
-      border: "1px solid gray",
-      padding: 10,
-      borderRadius: 10,
-    },
   },
 };
