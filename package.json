@@ -7,14 +7,14 @@
     "clean": "turbo run clean && rm -rf node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "changeset": "changeset",
-    "version-packages": "changeset version",
-    "release": "turbo run build --filter=docs^... && changeset publish"
+    "version": "changeset version",
+    "release": "turbo run build --filter=./packages/mijn-ui && changeset publish"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.27.2",
+    "@changesets/cli": "^2.27.9",
     "prettier": "^3.2.5",
     "turbo": "^2.2.3"
   },
-  "packageManager": "pnpm@8.15.6",
-  "name": "design-system"
+  "packageManager": "pnpm@9.12.3",
+  "name": "mijn-ui"
 }
