@@ -1,9 +1,9 @@
 "use client";
 
 import * as React from "react";
-import { Label } from "@/components/label";
-import { UnstyledProps } from "@/types";
-import { applyUnstyled, cn } from "@/utils";
+import { Label } from "@mijn-ui/components/label";
+import { UnstyledProps } from "@mijn-ui/types";
+import { applyUnstyled, cn } from "@mijn-ui/utils";
 
 export type InputProps = React.ComponentPropsWithRef<"input"> & {
   className?: string;

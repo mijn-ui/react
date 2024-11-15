@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { cn } from "@/utils";
+import { cn } from "@mijn-ui/utils";
 import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area";
 
 type ScrollAreaProps = React.ComponentPropsWithRef<typeof ScrollAreaPrimitive.Root>;

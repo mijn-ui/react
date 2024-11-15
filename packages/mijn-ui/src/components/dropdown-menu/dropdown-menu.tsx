@@ -1,10 +1,10 @@
 "use client";
 
 import * as React from "react";
-import { buttonStyles } from "@/components/button";
-import { UnstyledProvider, useUnstyled } from "@/context/unstyled-provider";
-import { UnstyledProps } from "@/types";
-import { applyUnstyled, cn } from "@/utils";
+import { buttonStyles } from "@mijn-ui/components/button";
+import { UnstyledProvider, useUnstyled } from "@mijn-ui/context/unstyled-provider";
+import { UnstyledProps } from "@mijn-ui/types";
+import { applyUnstyled, cn } from "@mijn-ui/utils";
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { LuCheck, LuChevronRight, LuCircle } from "react-icons/lu";
 

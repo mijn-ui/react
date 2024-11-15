@@ -1,8 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { buttonStyles } from "@/components/button";
-import { cn } from "@/utils";
+import { buttonStyles } from "@mijn-ui/components/button";
+import { cn } from "@mijn-ui/utils";
 import { DayFlag, DayPicker, SelectionState, UI } from "react-day-picker";
 import { LuChevronDown, LuChevronLeft, LuChevronRight, LuChevronUp } from "react-icons/lu";
 

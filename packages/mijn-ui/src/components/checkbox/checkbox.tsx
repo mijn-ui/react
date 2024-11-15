@@ -1,9 +1,9 @@
 "use client";
 
 import * as React from "react";
-import { useControlledState } from "@/hooks/use-controlled-state";
-import { UnstyledProps } from "@/types";
-import { applyUnstyled, cn } from "@/utils";
+import { useControlledState } from "@mijn-ui/hooks/use-controlled-state";
+import { UnstyledProps } from "@mijn-ui/types";
+import { applyUnstyled, cn } from "@mijn-ui/utils";
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import { VariantProps, cva } from "class-variance-authority";
 import { LuCheck } from "react-icons/lu";

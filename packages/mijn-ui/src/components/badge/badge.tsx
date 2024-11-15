@@ -1,6 +1,6 @@
 import * as React from "react";
-import { UnstyledProps } from "@/types";
-import { applyUnstyled } from "@/utils";
+import { UnstyledProps } from "@mijn-ui/types";
+import { applyUnstyled } from "@mijn-ui/utils";
 import { type VariantProps, cva } from "class-variance-authority";
 
 const badgeVariants = cva(

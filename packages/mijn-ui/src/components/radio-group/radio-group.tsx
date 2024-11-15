@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { cn } from "@/utils";
+import { cn } from "@mijn-ui/utils";
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 import { LuCircle } from "react-icons/lu";
 

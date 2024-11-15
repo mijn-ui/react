@@ -7,11 +7,11 @@ Full credit for the original implementation goes to [sersavan](https://github.co
 
  */
 import * as React from "react";
-import { Button, buttonStyles } from "@/components/button";
-import { Calendar } from "@/components/calendar";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/popover";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/select";
-import { cn } from "@/utils";
+import { Button, buttonStyles } from "@mijn-ui/components/button";
+import { Calendar } from "@mijn-ui/components/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "@mijn-ui/components/popover";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@mijn-ui/components/select";
+import { cn } from "@mijn-ui/utils";
 import { VariantProps } from "class-variance-authority";
 import {
   endOfDay,

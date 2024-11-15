@@ -1,9 +1,9 @@
 import * as React from "react";
 import { usePaginationRange } from "./use-pagination";
-import { buttonStyles } from "@/components/button";
-import { UnstyledProvider, useUnstyled } from "@/context/unstyled-provider";
-import { UnstyledProps } from "@/types";
-import { applyUnstyled } from "@/utils";
+import { buttonStyles } from "@mijn-ui/components/button";
+import { UnstyledProvider, useUnstyled } from "@mijn-ui/context/unstyled-provider";
+import { UnstyledProps } from "@mijn-ui/types";
+import { applyUnstyled } from "@mijn-ui/utils";
 import { LuMoreHorizontal } from "react-icons/lu";
 
 type PaginationContextType = {

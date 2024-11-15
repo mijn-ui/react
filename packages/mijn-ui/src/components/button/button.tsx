@@ -1,6 +1,6 @@
 import * as React from "react";
-import { UnstyledProps } from "@/types";
-import { applyUnstyled } from "@/utils";
+import { UnstyledProps } from "@mijn-ui/types";
+import { applyUnstyled } from "@mijn-ui/utils";
 import { Slot, Slottable } from "@radix-ui/react-slot";
 import { type VariantProps, cva } from "class-variance-authority";
 import { LuLoader2 } from "react-icons/lu";

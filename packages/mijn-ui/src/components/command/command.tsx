@@ -1,10 +1,10 @@
 "use client";
 
 import * as React from "react";
-import { Dialog, DialogContent } from "@/components/dialog";
-import { UnstyledProvider, useUnstyled } from "@/context/unstyled-provider";
-import { UnstyledProps } from "@/types";
-import { applyUnstyled, cn } from "@/utils";
+import { Dialog, DialogContent } from "@mijn-ui/components/dialog";
+import { UnstyledProvider, useUnstyled } from "@mijn-ui/context/unstyled-provider";
+import { UnstyledProps } from "@mijn-ui/types";
+import { applyUnstyled, cn } from "@mijn-ui/utils";
 import { type DialogProps } from "@radix-ui/react-dialog";
 import { Command as CommandPrimitive } from "cmdk";
 import { LuSearch } from "react-icons/lu";

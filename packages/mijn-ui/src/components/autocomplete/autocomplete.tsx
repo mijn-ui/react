@@ -1,11 +1,11 @@
 import * as React from "react";
-import { CommandEmpty } from "@/components/command";
-import { PopoverContent } from "@/components/popover";
-import { Skeleton } from "@/components/skeleton";
-import { UnstyledProvider, useUnstyled } from "@/context/unstyled-provider";
-import { UnstyledProps } from "@/types";
-import { applyUnstyled, cn } from "@/utils";
-import { mergeRefs } from "@/utils";
+import { CommandEmpty } from "@mijn-ui/components/command";
+import { PopoverContent } from "@mijn-ui/components/popover";
+import { Skeleton } from "@mijn-ui/components/skeleton";
+import { UnstyledProvider, useUnstyled } from "@mijn-ui/context/unstyled-provider";
+import { UnstyledProps } from "@mijn-ui/types";
+import { applyUnstyled, cn } from "@mijn-ui/utils";
+import { mergeRefs } from "@mijn-ui/utils";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
 import { Popover } from "@radix-ui/react-popover";
 import { Command as CommandPrimitive } from "cmdk";
