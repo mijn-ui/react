@@ -4,7 +4,7 @@ import { baseOptions } from "@/app/layout.config";
 
 export default function Layout({ children }: { children: ReactNode }): React.ReactElement {
   return (
-    <HomeLayout className="pt-0" {...baseOptions}>
+    <HomeLayout className="pt-0 justify-center items-center" {...baseOptions}>
       {children}
     </HomeLayout>
   );
