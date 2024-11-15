@@ -1,4 +1,6 @@
-import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
+import { Badge } from "@mijn-ui/react/components/badge";
+import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
+import Logo from "./components/logo";
 
 /**
  * Shared layout configurations
@@ -9,13 +11,14 @@ import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
  */
 export const baseOptions: BaseLayoutProps = {
   nav: {
-    title: 'My App',
+    children: (
+      <div className="flex md:hidden items-center gap-2">
+        <p className="font-bold flex items-center gap-2">
+          <Logo className="fill-fd-foreground size-5 items-center" />
+          MijnUI
+        </p>
+        <Badge className="bg-primary/20 text-primary hover:bg-primary/20">v0.0.1</Badge>
+      </div>
+    ),
   },
-  links: [
-    {
-      text: 'Documentation',
-      url: '/docs',
-      active: 'nested-url',
-    },
-  ],
 };
