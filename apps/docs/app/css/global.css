@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./theme.css";
+@import "./override.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* theme */
+
+:root {
+  /* general */
+  --background: 210 14% 95%; /* slate-100 */
+  --foreground: 0 0% 0%; /* black */
+
+  --border: 0 0% 83%; /* neutral-300 */
+
+  --muted: 0 0% 83%; /* neutral-300 */
+  --muted-foreground: 0 0% 25%; /* neutral-700 */
+
+  --primary: 29 100% 52%; /* orange-500 */
+  --primary-foreground: 0 0% 100%; /* white */
+
+  --accent: 0 0% 90%; /* neutral-200 */
+  --accent-foreground: 0 0% 0%; /* black */
+
+  --card: 0 0% 98%; /* neutral-50 */
+  --card-foreground: 0 0% 0%; /* black */
+
+  --ring: 0 0% 15%; /* neutral-800 */
+
+  --input: 0 0% 83%; /* neutral-500 */
+}
+
+.dark {
+  /* general */
+  --background: 0 0% 4%; /* neutral-900 */
+  --foreground: 0 0% 96%; /* neutral-100 */
+
+  --card: 0 0% 7%; /* #131313 */
+  --card-foreground: 0 0% 96%; /* neutral-100 */
+
+  --muted: 0 0% 15%; /* neutral-800 */
+  --muted-foreground: 0 0% 64%; /* neutral-400 */
+
+  --primary: 29 100% 52%; /* orange-500 */
+  --primary-foreground: 0 0% 100%; /* white */
+
+  --accent: 0 0% 12%; /* neutral-850 */
+  --accent-foreground: 0 0% 96%; /* neutral-100 */
+
+  --ring: 0 0% 96%; /* neutral-100 */
+
+  --border: 0 0% 15%;
+
+  --input: 0 0% 25%; /* neutral-600 */
+}
+
+body {
+  @apply bg-fd-background;
+}
+
+.custom_scroll_bar {
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.custom_scroll_bar::-webkit-scrollbar {
+  height: 0.5rem;
+  width: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .custom_scroll_bar::-webkit-scrollbar {
+    height: 0.3rem;
+    width: 0.3rem;
+  }
+}
+
+.custom_scroll_bar::-webkit-scrollbar-thumb {
+  border-radius: 0.25rem;
+  @apply bg-fd-muted;
+}
+
+.custom_scroll_bar::-webkit-scrollbar-track {
+  border-radius: 0.25rem;
+  @apply bg-transparent;
+  margin: 0.5rem 0.5rem;
+}
+
+.custom_scroll_bar::-webkit-scrollbar-corner {
+  @apply bg-transparent;
+}
