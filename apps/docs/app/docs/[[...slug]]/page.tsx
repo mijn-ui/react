@@ -12,9 +12,7 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
 
   return (
     <DocsPage toc={page.data.toc} full={page.data.full}>
-      <DocsTitle className="md:text-4xl md:mt-[calc(var(--navbar-height)-1rem)] md:font-extrabold">
-        {page.data.title}
-      </DocsTitle>
+      <DocsTitle className="md:text-4xl md:font-extrabold">{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
         <MDX components={{ ...defaultMdxComponents }} />

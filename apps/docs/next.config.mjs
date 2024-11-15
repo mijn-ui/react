@@ -1,10 +1,19 @@
-import { createMDX } from 'fumadocs-mdx/next';
+import createBundleAnalyzer from "@next/bundle-analyzer";
+import { createMDX } from "fumadocs-mdx/next";
+
+const withAnalyzer = createBundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+});
+
+/** @type {import('next').NextConfig} */
+
+const config = {
+  reactStrictMode: true,
+  images: {
+    unoptimized: true,
+  },
+};
 
 const withMDX = createMDX();
 
-/** @type {import('next').NextConfig} */
-const config = {
-  reactStrictMode: true,
-};
-
-export default withMDX(config);
+export default withAnalyzer(withMDX(config));

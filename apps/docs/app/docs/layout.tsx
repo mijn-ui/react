@@ -2,8 +2,7 @@ import { DocsLayout } from "fumadocs-ui/layouts/docs";
 import type { ReactNode } from "react";
 import { baseOptions } from "@/app/layout.config";
 import { source } from "@/lib/source";
-import GradientBackground from "../components/decorators/gradient-background";
-import Navbar from "../mdx-components/navbar";
+import { LeftRadialGradient } from "../components/decorators/gradient-bg";
 import AvailablePagesSelector from "../mdx-components/available-pages-selector";
 
 export default function Layout({ children }: { children: ReactNode }) {
@@ -13,10 +12,10 @@ export default function Layout({ children }: { children: ReactNode }) {
       sidebar={{
         enabled: true,
         banner: (
-          <div className="pt-4 w-full">
+          <>
             <AvailablePagesSelector />
-            <GradientBackground />
-          </div>
+            <LeftRadialGradient />
+          </>
         ),
       }}
       containerProps={{
@@ -25,7 +24,6 @@ export default function Layout({ children }: { children: ReactNode }) {
       }}
       {...baseOptions}
     >
-      <Navbar />
       {children}
     </DocsLayout>
   );

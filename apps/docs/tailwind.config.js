@@ -132,10 +132,23 @@ export default {
           },
           to: { height: "0" },
         },
+        "collapsible-expand": {
+          from: { height: "0" },
+          to: { height: "var(--radix-collapsible-content-height)" },
+        },
+        "collapsible-collapse": {
+          from: {
+            height: "var(--radix-collapsible-content-height)",
+          },
+          to: { height: "0" },
+        },
       },
       animation: {
         "accordion-expand": "accordion-expand 0.2s ease-in-out, fade-in 0.4s ease-in-out",
         "accordion-collapse": "accordion-collapse 0.2s ease-in-out, fade-out 0.4s ease-in-out",
+
+        "collapsible-expand": "collapsible-expand 0.2s ease-in-out, fade-in 0.2s ease-in-out",
+        "collapsible-collapse": "collapsible-collapse 0.2s ease-in-out, fade-out 0.2s ease-in-out",
 
         "scale-in": "scale-in 0.5s 0.2s ease-out, fade-in 0.4s ease-out",
         "scale-out": "scale-out 0.5s 0.2s ease-out, fade-out 0.4s ease-out",

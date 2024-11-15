@@ -20,7 +20,7 @@ const ThemeToggler = ({ className }: { className?: string }) => {
       <button
         onClick={() => setTheme("light")}
         className={cn(
-          "text-neutral-text flex items-center justify-center size-9 transition duration-200 hover:text-secondary-text sm:size-10",
+          "text-neutral-text flex items-center justify-center size-8 transition duration-200 hover:text-secondary-text sm:size-10",
           className
         )}
       >
@@ -33,7 +33,7 @@ const ThemeToggler = ({ className }: { className?: string }) => {
       <button
         onClick={() => setTheme("dark")}
         className={cn(
-          "text-neutral-text flex items-center justify-center size-9 transition duration-200 hover:text-secondary-text sm:size-10",
+          "text-neutral-text flex items-center justify-center size-8 transition duration-200 hover:text-secondary-text sm:size-10",
           className
         )}
       >
