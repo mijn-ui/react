@@ -1,4 +1,5 @@
 import { defineConfig } from "tsup";
+import { preserveDirectivesPlugin } from "esbuild-plugin-preserve-directives";
 
 const exportedComponents = [
   "accordion",
@@ -42,5 +43,13 @@ export default defineConfig({
   skipNodeModulesBundle: true,
   external: ["tailwindcss"],
   tsconfig: "./tsconfig.build.json",
-  outDir: "./dist", // Output directory for generated files
+  outDir: "./dist",
+  metafile: true, // improving the accuracy
+  esbuildPlugins: [
+    preserveDirectivesPlugin({
+      directives: ["use client", "use strict"],
+      include: /\.(js|ts|jsx|tsx)$/,
+      exclude: /node_modules/,
+    }),
+  ],
 });

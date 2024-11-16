@@ -1,0 +1,157 @@
+---
+title: Badge
+---
+
+import { Badge } from "@mijn-ui/react/components/badge";
+
+<ComponentPreview className="flex-col md:flex-row">
+  <Badge>Badge</Badge>
+</ComponentPreview>
+
+### Installation
+
+<Steps>
+  <Step>
+  **Copy and paste the following code into `mijn-ui` folder.**
+
+  <Tabs items={["Source code", "Example usage"]}>
+    <Tab value="Source code">
+        ```json doc-gen:file
+          {
+            "file": "../../packages/mijn-ui/src/components/badge/badge.tsx",
+            "codeblock": {
+              "lang": "tsx",
+              "meta": "title=\"mijn-ui/components/badge.tsx\""
+            }
+          }
+        ```
+    </Tab>
+    <Tab value="Example usage">
+        ```tsx
+        <Badge>Badge</Badge>
+        ```
+    </Tab>
+  </Tabs>  
+  </Step>
+  
+  <Step>
+  **Ensure that everything is functioning correctly after installation.**
+  </Step>
+</Steps>
+---
+
+### Badge colors
+
+<ComponentPreview className="flex-col md:flex-row">
+  <Badge color="primary">Primary</Badge>
+  <Badge color="secondary">Secondary</Badge>
+  <Badge color="accent">Accent</Badge>
+  <Badge color="neutral">Neutral</Badge>
+  <Badge color="danger">Danger</Badge>
+</ComponentPreview>
+
+---
+
+### Variants
+
+The variants for the secondary color are not fully supported yet. They may work in dark mode, but in light mode, the text color of secondary variant is not very visible.
+
+#### Filled
+
+There are four colors available for the filled variant `primary`, `accent`, `neutral` and `danger`.
+
+<ComponentPreview className="flex-col md:flex-row">
+  <Badge variant="filled" color="primary">
+    Primary
+  </Badge>
+  <Badge variant="filled" color="accent">
+    Accent
+  </Badge>
+  <Badge variant="filled" color="neutral">
+    Neutral
+  </Badge>
+  <Badge variant="filled" color="danger">
+    Danger
+  </Badge>
+</ComponentPreview>
+
+```tsx
+<Badge variant="filled" color="primary">Primary</Badge>
+<Badge variant="filled" color="accent">Accent</Badge>
+<Badge variant="filled" color="neutral">Neutral</Badge>
+<Badge variant="filled" color="danger">Danger</Badge>
+```
+
+---
+
+#### Outline
+
+There are four colors available for the outline variant `primary`, `accent`, `neutral` and `danger`.
+
+<ComponentPreview className="flex-col md:flex-row">
+  <Badge variant="outline" color="primary">
+    Primary
+  </Badge>
+  <Badge variant="outline" color="accent">
+    Accent
+  </Badge>
+  <Badge variant="outline" color="neutral">
+    Neutral
+  </Badge>
+  <Badge variant="outline" color="danger">
+    Danger
+  </Badge>
+</ComponentPreview>
+
+```tsx
+<Badge variant="outline" color="primary">Primary</Badge>
+<Badge variant="outline" color="accent">Accent</Badge>
+<Badge variant="outline" color="neutral">Neutral</Badge>
+<Badge variant="outline" color="danger">Danger</Badge>
+```
+
+---
+
+#### Text
+
+There are four colors available for the text variant `primary`, `accent`, `neutral` and `danger`.
+
+<ComponentPreview className="flex-col md:flex-row">
+  <Badge variant="text" color="primary">
+    Primary
+  </Badge>
+  <Badge variant="text" color="accent">
+    Accent
+  </Badge>
+  <Badge variant="text" color="neutral">
+    Neutral
+  </Badge>
+  <Badge variant="text" color="danger">
+    Danger
+  </Badge>
+</ComponentPreview>
+
+```tsx
+<Badge variant="text" color="primary">Primary</Badge>
+<Badge variant="text" color="accent">Accent</Badge>
+<Badge variant="text" color="neutral">Neutral</Badge>
+<Badge variant="text" color="danger">Danger</Badge>
+```
+
+---
+
+### Radius
+
+<ComponentPreview className="flex-col md:flex-row">
+  <Badge radius="sm">Badge</Badge>
+  <Badge radius="md">Badge</Badge>
+  <Badge radius="lg">Badge</Badge>
+  <Badge radius="full">Badge</Badge>
+</ComponentPreview>
+
+```tsx
+<Badge radius="sm">Badge</Badge>
+<Badge radius="md">Badge</Badge>
+<Badge radius="lg">Badge</Badge>
+<Badge radius="full">Badge</Badge>
+```

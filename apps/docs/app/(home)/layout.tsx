@@ -1,11 +1,13 @@
 import type { ReactNode } from "react";
-import { HomeLayout } from "fumadocs-ui/layouts/home";
-import { baseOptions } from "@/app/layout.config";
+import Footer from "../components/layout/footer";
+import Navbar from "@/mdx-components/navbar";
 
 export default function Layout({ children }: { children: ReactNode }): React.ReactElement {
   return (
-    <HomeLayout className="pt-0 justify-center items-center" {...baseOptions}>
+    <div className="w-full h-screen flex flex-col items-center">
+      <Navbar />
       {children}
-    </HomeLayout>
+      <Footer />
+    </div>
   );
 }

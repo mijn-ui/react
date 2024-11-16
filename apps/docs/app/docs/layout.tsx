@@ -3,7 +3,6 @@ import type { ReactNode } from "react";
 import { baseOptions } from "@/app/layout.config";
 import { source } from "@/lib/source";
 import { LeftRadialGradient } from "../components/decorators/gradient-bg";
-import AvailablePagesSelector from "../mdx-components/available-pages-selector";
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
@@ -11,12 +10,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       tree={source.pageTree}
       sidebar={{
         enabled: true,
-        banner: (
-          <>
-            <AvailablePagesSelector />
-            <LeftRadialGradient />
-          </>
-        ),
+        banner: <LeftRadialGradient />,
       }}
       containerProps={{
         // Hide the theme toggle and search component in the docs sidebar

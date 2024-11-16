@@ -1,11 +1,11 @@
 :root {
-  --navbar-height: 4rem;
+  --fd-nav-height: 4rem !important;
   --toc-height: 2rem;
 }
 
 @media (max-width: 768px) {
   :root {
-    --navbar-height: 3rem;
+    --fd-nav-height: 3rem !important;
   }
 }
 

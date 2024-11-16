@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <section className="flex w-full gap-4 max-w-4xl flex-col items-center px-5 text-start md:text-center sm:px-8 md:px-10 justify-center h-[calc(100vh-var(--navbar-height))]">
+    <section className="w-full flex gap-4 max-w-4xl flex-col items-center px-5 text-start md:text-center sm:px-8 md:px-10 justify-center flex-1">
       <h1 className="bg-gradient-to-br from-main-text to-neutral-text/70 bg-clip-text font-bold tracking-tight text-transparent text-3xl/[1.2] sm:text-4xl/[1.2] sm:font-extrabold lg:text-5xl/[1.2]">
         Reusable components for clean, responsive interfaces.
       </h1>
