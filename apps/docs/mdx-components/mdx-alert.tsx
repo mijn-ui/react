@@ -17,11 +17,20 @@ type AlertProps = {
   className?: string;
 };
 
-const Alert = ({ title, description, status = "info", className }: AlertProps) => {
+const Alert = ({
+  title,
+  description,
+  status = "info",
+  className,
+}: AlertProps) => {
   const Icon = status === "danger" ? LuBug : LuAlertCircle;
 
   return (
-    <MijnUIAlert className={cn("not-prose  w-full backdrop-blur-md", className)} variant="default" status={status}>
+    <MijnUIAlert
+      className={cn("not-prose  w-full backdrop-blur-md", className)}
+      variant="default"
+      status={status}
+    >
       <AlertIcon>
         <Icon />
       </AlertIcon>

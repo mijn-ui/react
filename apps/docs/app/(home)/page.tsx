@@ -13,7 +13,12 @@ export default function HomePage() {
       </p>
 
       <div className="flex items-center justify-start md:justify-center w-full gap-2">
-        <Link className={cn(buttonStyles({ size: "sm", className: "text-xs md:text-sm" }))} href={"/docs/next-js"}>
+        <Link
+          className={cn(
+            buttonStyles({ size: "sm", className: "text-xs md:text-sm" }),
+          )}
+          href={"/docs/next-js"}
+        >
           Getting Started
         </Link>
         <Link
@@ -22,7 +27,7 @@ export default function HomePage() {
               size: "sm",
               color: "secondary",
               className: "text-xs md:text-sm",
-            })
+            }),
           )}
           href={"/docs/next-js/components/accordion"}
         >

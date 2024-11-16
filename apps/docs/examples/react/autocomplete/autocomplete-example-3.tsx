@@ -9,7 +9,13 @@ import {
   AutocompleteTrigger,
 } from "@mijn-ui/react/components/autocomplete";
 import { Button } from "@mijn-ui/react/components/button";
-import { Dialog, DialogClose, DialogContent, DialogTitle, DialogTrigger } from "@mijn-ui/react/components/dialog";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogTitle,
+  DialogTrigger,
+} from "@mijn-ui/react/components/dialog";
 import { Input } from "@mijn-ui/react/components/input";
 import { ScrollArea } from "@mijn-ui/react/components/scroll-area";
 import { LuChevronsUpDown } from "react-icons/lu";
@@ -55,9 +61,17 @@ const AutocompleteWithDialog = () => {
         <Input placeholder="Email" />
         <Autocomplete value={value} onValueChange={setValue}>
           <AutocompleteTrigger asChild>
-            <Input className="bg-surface" placeholder={"Search for a framework"} endIcon={<LuChevronsUpDown />} />
+            <Input
+              className="bg-surface"
+              placeholder={"Search for a framework"}
+              endIcon={<LuChevronsUpDown />}
+            />
           </AutocompleteTrigger>
-          <AutocompleteContent className="" emptyMessage="No Frameworks Found" loading={false}>
+          <AutocompleteContent
+            className=""
+            emptyMessage="No Frameworks Found"
+            loading={false}
+          >
             <ScrollArea className="flex max-h-60 flex-col overflow-y-auto">
               <AutocompleteGroup>
                 {FRAMEWORKS.map((framework) => (

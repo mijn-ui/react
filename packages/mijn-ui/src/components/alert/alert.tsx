@@ -1,7 +1,10 @@
 "use client";
 
 import * as React from "react";
-import { UnstyledProvider, useUnstyled } from "@mijn-ui/context/unstyled-provider";
+import {
+  UnstyledProvider,
+  useUnstyled,
+} from "@mijn-ui/context/unstyled-provider";
 import { UnstyledProps } from "@mijn-ui/types";
 import { applyUnstyled, cn } from "@mijn-ui/utils";
 import { VariantProps, cva } from "class-variance-authority";
@@ -87,7 +90,8 @@ const alertStyles = cva(
       {
         variant: "outline",
         status: "success",
-        className: "border-success [&>h5]:text-success [&>span>svg]:text-success",
+        className:
+          "border-success [&>h5]:text-success [&>span>svg]:text-success",
       },
       {
         variant: "outline",
@@ -97,7 +101,8 @@ const alertStyles = cva(
       {
         variant: "outline",
         status: "warning",
-        className: "border-warning [&>h5]:text-warning [&>span>svg]:text-warning ",
+        className:
+          "border-warning [&>h5]:text-warning [&>span>svg]:text-warning ",
       },
       {
         variant: "outline",
@@ -107,29 +112,42 @@ const alertStyles = cva(
       {
         variant: "outline",
         status: "default",
-        className: "border-main-text [&>h5]:text-main-text [&>span>svg]:text-main-text",
+        className:
+          "border-main-text [&>h5]:text-main-text [&>span>svg]:text-main-text",
       },
     ],
     defaultVariants: {
       variant: "default",
       status: "default",
     },
-  }
+  },
 );
 
 /* -------------------------------------------------------------------------- */
 /*                                    Alert                                   */
 /* -------------------------------------------------------------------------- */
 
-export type AlertProps = React.ComponentProps<"div"> & VariantProps<typeof alertStyles> & UnstyledProps;
+export type AlertProps = React.ComponentProps<"div"> &
+  VariantProps<typeof alertStyles> &
+  UnstyledProps;
 
-const Alert = ({ variant, status, unstyled = false, className, ...props }: AlertProps) => (
+const Alert = ({
+  variant,
+  status,
+  unstyled = false,
+  className,
+  ...props
+}: AlertProps) => (
   <UnstyledProvider unstyled={unstyled}>
     <div
       {...props}
       data-status={status || "default"}
       data-variant={variant}
-      className={applyUnstyled(unstyled, alertStyles({ variant, status }), className)}
+      className={applyUnstyled(
+        unstyled,
+        alertStyles({ variant, status }),
+        className,
+      )}
     />
   </UnstyledProvider>
 );
@@ -149,7 +167,7 @@ const AlertIcon = ({ unstyled, className, ...props }: AlertIconProps) => {
       className={applyUnstyled(
         isUnstyled,
         "translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:h-5 [&>svg]:w-5",
-        className
+        className,
       )}
       {...props}
     />
@@ -166,13 +184,26 @@ const AlertTitle = ({ unstyled, className, ...props }: AlertTitle) => {
   const { unstyled: contextUnstyled } = useUnstyled();
   const isUnstyled = unstyled ?? contextUnstyled;
 
-  return <h5 className={applyUnstyled(isUnstyled, "w-full font-semibold leading-none", className)} {...props} />;
+  return (
+    <h5
+      className={applyUnstyled(
+        isUnstyled,
+        "w-full font-semibold leading-none",
+        className,
+      )}
+      {...props}
+    />
+  );
 };
 
 /* ---------------------------- AlertDescription ---------------------------- */
 type AlertDescriptionProps = React.ComponentProps<"p"> & UnstyledProps;
 
-const AlertDescription = ({ unstyled, className, ...props }: AlertDescriptionProps) => {
+const AlertDescription = ({
+  unstyled,
+  className,
+  ...props
+}: AlertDescriptionProps) => {
   const { unstyled: contextUnstyled } = useUnstyled();
   const isUnstyled = unstyled ?? contextUnstyled;
 

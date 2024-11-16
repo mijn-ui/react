@@ -45,9 +45,17 @@ const AutocompleteWithScrollArea = () => {
   return (
     <Autocomplete value={value} onValueChange={setValue}>
       <AutocompleteTrigger asChild>
-        <Input className="bg-surface" placeholder={"Search for a framework"} startIcon={<LuSearch />} />
+        <Input
+          className="bg-surface"
+          placeholder={"Search for a framework"}
+          startIcon={<LuSearch />}
+        />
       </AutocompleteTrigger>
-      <AutocompleteContent className="" emptyMessage="No Frameworks Found" loading={false}>
+      <AutocompleteContent
+        className=""
+        emptyMessage="No Frameworks Found"
+        loading={false}
+      >
         <ScrollArea className="flex max-h-52 flex-col overflow-y-auto">
           <AutocompleteGroup>
             {FRAMEWORKS.map((framework) => (

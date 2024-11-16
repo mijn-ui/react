@@ -14,7 +14,8 @@ export default function Layout({ children }: { children: ReactNode }) {
       }}
       containerProps={{
         // Hide the theme toggle and search component in the docs sidebar
-        className: "[&_[data-theme-toggle]]:hidden [&_[data-search-full]]:hidden",
+        className:
+          "[&_[data-theme-toggle]]:hidden [&_[data-search-full]]:hidden",
       }}
       {...baseOptions}
     >

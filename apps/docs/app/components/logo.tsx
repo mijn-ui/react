@@ -2,7 +2,14 @@ import React from "react";
 
 const Logo = ({ ...props }: React.ComponentProps<"svg">) => {
   return (
-    <svg width="40" height="40" viewBox="0 0 65 69" fill="currentColor" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      width="40"
+      height="40"
+      viewBox="0 0 65 69"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <path
         d="M29.5909 5.97315C29.5909 7.51623 28.9779 8.9961 27.8868 10.0872L22.9207 15.0534C21.0881 16.886 17.9545 15.588 17.9545 12.9963V10.7931C17.9545 9.25001 18.5675 7.77013 19.6586 6.67901L24.6248 1.71288C26.4574 -0.119741 29.5909 1.1782 29.5909 3.76992V5.97315Z"
         fill="currentColor"

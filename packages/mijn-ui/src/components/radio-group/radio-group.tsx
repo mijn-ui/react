@@ -5,21 +5,30 @@ import { cn } from "@mijn-ui/utils";
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 import { LuCircle } from "react-icons/lu";
 
-type RadioGroupProps = React.ComponentPropsWithRef<typeof RadioGroupPrimitive.Root>;
+type RadioGroupProps = React.ComponentPropsWithRef<
+  typeof RadioGroupPrimitive.Root
+>;
 
 const RadioGroup = ({ className, ...props }: RadioGroupProps) => {
-  return <RadioGroupPrimitive.Root className={cn("grid gap-2", className)} {...props} />;
+  return (
+    <RadioGroupPrimitive.Root
+      className={cn("grid gap-2", className)}
+      {...props}
+    />
+  );
 };
 RadioGroup.displayName = RadioGroupPrimitive.Root.displayName;
 
-type RadioGroupItemProps = React.ComponentPropsWithRef<typeof RadioGroupPrimitive.Item>;
+type RadioGroupItemProps = React.ComponentPropsWithRef<
+  typeof RadioGroupPrimitive.Item
+>;
 
 const RadioGroupItem = ({ className, ...props }: RadioGroupItemProps) => {
   return (
     <RadioGroupPrimitive.Item
       className={cn(
         "aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-offset-main focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
-        className
+        className,
       )}
       {...props}
     >

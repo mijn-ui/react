@@ -10,7 +10,9 @@ import { LuCheck } from "react-icons/lu";
 import { RxDividerHorizontal } from "react-icons/rx";
 
 export const checkboxStyles = cva(
-  ["disabled:cursor-not-allowed disabled:opacity-50 peer h-5 w-5 shrink-0 rounded-default border"],
+  [
+    "disabled:cursor-not-allowed disabled:opacity-50 peer h-5 w-5 shrink-0 rounded-default border",
+  ],
   {
     variants: {
       color: {
@@ -37,14 +39,16 @@ export const checkboxStyles = cva(
       color: "primary",
       size: "md",
     },
-  }
+  },
 );
 
 /* -------------------------------------------------------------------------- */
 /*                                  Checkbox                                  */
 /* -------------------------------------------------------------------------- */
 
-type CheckboxProps = React.ComponentPropsWithRef<typeof CheckboxPrimitive.Root> &
+type CheckboxProps = React.ComponentPropsWithRef<
+  typeof CheckboxPrimitive.Root
+> &
   UnstyledProps &
   VariantProps<typeof checkboxStyles> & {
     checked?: boolean | "indeterminate";
@@ -64,18 +68,26 @@ const Checkbox = ({
   const [checked, setChecked] = useControlledState<boolean | "indeterminate">(
     ControlledChecked,
     !!defaultChecked,
-    ControlledOnCheckedChange
+    ControlledOnCheckedChange,
   );
 
   return (
     <CheckboxPrimitive.Root
-      className={applyUnstyled(unstyled, checkboxStyles({ color, size }), className)}
+      className={applyUnstyled(
+        unstyled,
+        checkboxStyles({ color, size }),
+        className,
+      )}
       {...props}
       checked={checked}
       onCheckedChange={setChecked}
     >
-      <CheckboxPrimitive.Indicator className={cn("flex items-center justify-center text-current")}>
-        {checked === "indeterminate" && <RxDividerHorizontal className="size-4" />}
+      <CheckboxPrimitive.Indicator
+        className={cn("flex items-center justify-center text-current")}
+      >
+        {checked === "indeterminate" && (
+          <RxDividerHorizontal className="size-4" />
+        )}
         {checked === true && <LuCheck className="size-4" />}
       </CheckboxPrimitive.Indicator>
     </CheckboxPrimitive.Root>

@@ -19,12 +19,14 @@ export const cn = (...classes: ClassValue[]) => twMerge(clsx(classes));
 export const applyUnstyled = (
   unstyled: boolean | undefined,
   defaultClasses: string,
-  userClasses?: string
+  userClasses?: string,
 ): string | undefined => {
   return unstyled ? userClasses : cn(defaultClasses, userClasses);
 };
 
-export function mergeRefs<T>(refs: Array<React.Ref<T> | undefined | null>): React.RefCallback<T> {
+export function mergeRefs<T>(
+  refs: Array<React.Ref<T> | undefined | null>,
+): React.RefCallback<T> {
   return (value) => {
     refs.forEach((ref) => {
       if (typeof ref === "function") {

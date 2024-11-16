@@ -1,7 +1,10 @@
 import * as React from "react";
 import { usePaginationRange } from "./use-pagination";
 import { buttonStyles } from "@mijn-ui/components/button";
-import { UnstyledProvider, useUnstyled } from "@mijn-ui/context/unstyled-provider";
+import {
+  UnstyledProvider,
+  useUnstyled,
+} from "@mijn-ui/context/unstyled-provider";
 import { UnstyledProps } from "@mijn-ui/types";
 import { applyUnstyled } from "@mijn-ui/utils";
 import { LuMoreHorizontal } from "react-icons/lu";
@@ -16,7 +19,9 @@ type PaginationContextType = {
   goToNextPage: () => void;
 };
 
-const PaginationContext = React.createContext<PaginationContextType | undefined>(undefined);
+const PaginationContext = React.createContext<
+  PaginationContextType | undefined
+>(undefined);
 
 type PaginationProps = {
   totalPages: number;
@@ -34,7 +39,8 @@ const Pagination: React.FC<PaginationProps> = ({
   currentPage: propsCurrentPage,
   onChangePage,
 }) => {
-  const [internalCurrentPage, setInternalCurrentPage] = React.useState<number>(1);
+  const [internalCurrentPage, setInternalCurrentPage] =
+    React.useState<number>(1);
 
   const isControlled = propsCurrentPage !== undefined;
   const currentPage = isControlled ? propsCurrentPage : internalCurrentPage;
@@ -55,7 +61,8 @@ const Pagination: React.FC<PaginationProps> = ({
 
   const goToPreviousPage = () => setPage(Math.max(currentPage - 1, 1));
 
-  const goToNextPage = () => setPage(Math.min(currentPage + 1, Math.ceil(totalPages / itemsPerPage)));
+  const goToNextPage = () =>
+    setPage(Math.min(currentPage + 1, Math.ceil(totalPages / itemsPerPage)));
 
   React.useEffect(() => {
     if (!isControlled && propsCurrentPage !== undefined) {
@@ -83,7 +90,9 @@ const Pagination: React.FC<PaginationProps> = ({
 const usePagination = (): PaginationContextType => {
   const context = React.useContext(PaginationContext);
   if (context === undefined) {
-    throw new Error("usePaginationContext must be used within a PaginationProvider");
+    throw new Error(
+      "usePaginationContext must be used within a PaginationProvider",
+    );
   }
   return context;
 };
@@ -92,13 +101,27 @@ const usePagination = (): PaginationContextType => {
 /*                              PaginationContent                             */
 /* -------------------------------------------------------------------------- */
 
-type PaginationContentProps = React.ComponentPropsWithRef<"nav"> & UnstyledProps;
+type PaginationContentProps = React.ComponentPropsWithRef<"nav"> &
+  UnstyledProps;
 
-const PaginationContent = ({ className, unstyled, ...props }: PaginationContentProps) => {
+const PaginationContent = ({
+  className,
+  unstyled,
+  ...props
+}: PaginationContentProps) => {
   const { unstyled: contextUnstyled } = useUnstyled();
   const isUnstyled = unstyled ?? contextUnstyled;
 
-  return <nav className={applyUnstyled(isUnstyled, "flex items-center gap-2", className)} {...props} />;
+  return (
+    <nav
+      className={applyUnstyled(
+        isUnstyled,
+        "flex items-center gap-2",
+        className,
+      )}
+      {...props}
+    />
+  );
 };
 
 type PaginationListProps = React.ComponentProps<"ul"> & UnstyledProps;
@@ -107,13 +130,24 @@ type PaginationListProps = React.ComponentProps<"ul"> & UnstyledProps;
 /*                               PaginationList                               */
 /* -------------------------------------------------------------------------- */
 
-const PaginationList = ({ className, unstyled, ...props }: PaginationListProps) => {
+const PaginationList = ({
+  className,
+  unstyled,
+  ...props
+}: PaginationListProps) => {
   const { currentPage, setPage, paginationRange } = usePagination();
   const { unstyled: contextUnstyled } = useUnstyled();
   const isUnstyled = unstyled ?? contextUnstyled;
 
   return (
-    <ul className={applyUnstyled(isUnstyled, "flex flex-row items-center gap-1", className)} {...props}>
+    <ul
+      className={applyUnstyled(
+        isUnstyled,
+        "flex flex-row items-center gap-1",
+        className,
+      )}
+      {...props}
+    >
       {paginationRange.map((page, index) => (
         <li key={index} onClick={() => setPage(page)}>
           <button
@@ -123,7 +157,7 @@ const PaginationList = ({ className, unstyled, ...props }: PaginationListProps) 
                 variant: page === currentPage ? "outline" : "text",
                 color: "accent",
                 size: "icon",
-              })
+              }),
             )}
           >
             {page}
@@ -138,9 +172,14 @@ const PaginationList = ({ className, unstyled, ...props }: PaginationListProps) 
 /*                          PaginationPreviousButton                          */
 /* -------------------------------------------------------------------------- */
 
-type PaginationPreviousButtonProps = React.ComponentProps<"button"> & UnstyledProps;
+type PaginationPreviousButtonProps = React.ComponentProps<"button"> &
+  UnstyledProps;
 
-const PaginationPreviousButton = ({ className, unstyled, ...props }: PaginationPreviousButtonProps) => {
+const PaginationPreviousButton = ({
+  className,
+  unstyled,
+  ...props
+}: PaginationPreviousButtonProps) => {
   const { goToPreviousPage } = usePagination();
   const { unstyled: contextUnstyled } = useUnstyled();
   const isUnstyled = unstyled ?? contextUnstyled;
@@ -156,7 +195,7 @@ const PaginationPreviousButton = ({ className, unstyled, ...props }: PaginationP
           size: "md",
           className: "gap-1 font-medium",
         }),
-        className
+        className,
       )}
       {...props}
     />
@@ -169,7 +208,11 @@ const PaginationPreviousButton = ({ className, unstyled, ...props }: PaginationP
 
 type PaginationNextButtonProps = React.ComponentProps<"button"> & UnstyledProps;
 
-const PaginationNextButton = ({ className, unstyled, ...props }: PaginationNextButtonProps) => {
+const PaginationNextButton = ({
+  className,
+  unstyled,
+  ...props
+}: PaginationNextButtonProps) => {
   const { goToNextPage } = usePagination();
   const { unstyled: contextUnstyled } = useUnstyled();
   const isUnstyled = unstyled ?? contextUnstyled;
@@ -185,7 +228,7 @@ const PaginationNextButton = ({ className, unstyled, ...props }: PaginationNextB
           size: "md",
           className: "gap-1 pl-2.5 font-medium",
         }),
-        className
+        className,
       )}
       {...props}
     />
@@ -196,9 +239,14 @@ const PaginationNextButton = ({ className, unstyled, ...props }: PaginationNextB
 /*                         PaginationPreviousEllipsis                         */
 /* -------------------------------------------------------------------------- */
 
-type PaginationPreviousEllipsisProps = React.ComponentProps<"span"> & UnstyledProps;
+type PaginationPreviousEllipsisProps = React.ComponentProps<"span"> &
+  UnstyledProps;
 
-const PaginationPreviousEllipsis = ({ className, unstyled, ...props }: PaginationPreviousEllipsisProps) => {
+const PaginationPreviousEllipsis = ({
+  className,
+  unstyled,
+  ...props
+}: PaginationPreviousEllipsisProps) => {
   const { prevEllipsisActive } = usePagination();
   const { unstyled: contextUnstyled } = useUnstyled();
   const isUnstyled = unstyled ?? contextUnstyled;
@@ -208,7 +256,11 @@ const PaginationPreviousEllipsis = ({ className, unstyled, ...props }: Paginatio
   return (
     <span
       aria-hidden
-      className={applyUnstyled(isUnstyled, "flex h-9 w-9 items-center justify-center", className)}
+      className={applyUnstyled(
+        isUnstyled,
+        "flex h-9 w-9 items-center justify-center",
+        className,
+      )}
       {...props}
     >
       <LuMoreHorizontal className="h-4 w-4" />
@@ -222,7 +274,11 @@ const PaginationPreviousEllipsis = ({ className, unstyled, ...props }: Paginatio
 
 type PaginationNextEllipsisProps = React.ComponentProps<"span"> & UnstyledProps;
 
-const PaginationNextEllipsis = ({ className, unstyled, ...props }: PaginationNextEllipsisProps) => {
+const PaginationNextEllipsis = ({
+  className,
+  unstyled,
+  ...props
+}: PaginationNextEllipsisProps) => {
   const { nextEllipsisActive } = usePagination();
   const { unstyled: contextUnstyled } = useUnstyled();
   const isUnstyled = unstyled ?? contextUnstyled;
@@ -232,7 +288,11 @@ const PaginationNextEllipsis = ({ className, unstyled, ...props }: PaginationNex
   return (
     <span
       aria-hidden
-      className={applyUnstyled(isUnstyled, "flex h-9 w-9 items-center justify-center", className)}
+      className={applyUnstyled(
+        isUnstyled,
+        "flex h-9 w-9 items-center justify-center",
+        className,
+      )}
       {...props}
     >
       <LuMoreHorizontal className="h-4 w-4" />

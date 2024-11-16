@@ -2,7 +2,10 @@
 
 import * as React from "react";
 import { buttonStyles } from "@mijn-ui/components/button";
-import { UnstyledProvider, useUnstyled } from "@mijn-ui/context/unstyled-provider";
+import {
+  UnstyledProvider,
+  useUnstyled,
+} from "@mijn-ui/context/unstyled-provider";
 import { UnstyledProps } from "@mijn-ui/types";
 import { applyUnstyled } from "@mijn-ui/utils";
 import * as RadixPopover from "@radix-ui/react-popover";
@@ -11,7 +14,8 @@ const PopoverArrow = RadixPopover.Arrow;
 
 const PopoverAnchor = RadixPopover.Anchor;
 
-type PopoverProps = React.ComponentPropsWithoutRef<typeof RadixPopover.Root> & UnstyledProps;
+type PopoverProps = React.ComponentPropsWithoutRef<typeof RadixPopover.Root> &
+  UnstyledProps;
 
 const Popover = ({ unstyled = false, ...props }: PopoverProps) => {
   return (
@@ -23,15 +27,26 @@ const Popover = ({ unstyled = false, ...props }: PopoverProps) => {
 
 /* ----------------------------- PopoverTrigger ----------------------------- */
 
-type PopoverTriggerProps = React.ComponentPropsWithRef<typeof RadixPopover.Trigger> & UnstyledProps;
+type PopoverTriggerProps = React.ComponentPropsWithRef<
+  typeof RadixPopover.Trigger
+> &
+  UnstyledProps;
 
-const PopoverTrigger = ({ unstyled, className, ...props }: PopoverTriggerProps) => {
+const PopoverTrigger = ({
+  unstyled,
+  className,
+  ...props
+}: PopoverTriggerProps) => {
   const { unstyled: contextUnstyled } = useUnstyled();
   const isUnstyled = unstyled ?? contextUnstyled;
 
   return (
     <RadixPopover.Trigger
-      className={applyUnstyled(isUnstyled, buttonStyles({ color: "secondary" }), className)}
+      className={applyUnstyled(
+        isUnstyled,
+        buttonStyles({ color: "secondary" }),
+        className,
+      )}
       {...props}
     />
   );
@@ -39,7 +54,10 @@ const PopoverTrigger = ({ unstyled, className, ...props }: PopoverTriggerProps) 
 
 /* ----------------------------- PopoverClose ----------------------------- */
 
-type PopoverCloseProps = React.ComponentPropsWithRef<typeof RadixPopover.Close> & UnstyledProps;
+type PopoverCloseProps = React.ComponentPropsWithRef<
+  typeof RadixPopover.Close
+> &
+  UnstyledProps;
 
 const PopoverClose = ({ unstyled, className, ...props }: PopoverCloseProps) => {
   const { unstyled: contextUnstyled } = useUnstyled();
@@ -47,7 +65,11 @@ const PopoverClose = ({ unstyled, className, ...props }: PopoverCloseProps) => {
 
   return (
     <RadixPopover.Close
-      className={applyUnstyled(isUnstyled, buttonStyles({ variant: "text" }), className)}
+      className={applyUnstyled(
+        isUnstyled,
+        buttonStyles({ variant: "text" }),
+        className,
+      )}
       {...props}
     />
   );
@@ -55,7 +77,10 @@ const PopoverClose = ({ unstyled, className, ...props }: PopoverCloseProps) => {
 
 /* ----------------------------- PopoverContent ----------------------------- */
 
-type PopoverContentProps = React.ComponentPropsWithRef<typeof RadixPopover.Content> & UnstyledProps;
+type PopoverContentProps = React.ComponentPropsWithRef<
+  typeof RadixPopover.Content
+> &
+  UnstyledProps;
 
 const PopoverContent = ({
   unstyled,
@@ -77,7 +102,7 @@ const PopoverContent = ({
         className={applyUnstyled(
           isUnstyled,
           "z-50 w-full rounded-lg border border-main-border bg-surface p-4 text-surface-text shadow-md outline-none !duration-300 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-bottom-6 data-[side=left]:slide-in-from-left-6 data-[side=right]:slide-in-from-right-6 data-[side=top]:slide-in-from-top-6",
-          className
+          className,
         )}
         {...props}
       />
@@ -85,4 +110,11 @@ const PopoverContent = ({
   );
 };
 
-export { Popover, PopoverAnchor, PopoverArrow, PopoverClose, PopoverContent, PopoverTrigger };
+export {
+  Popover,
+  PopoverAnchor,
+  PopoverArrow,
+  PopoverClose,
+  PopoverContent,
+  PopoverTrigger,
+};

@@ -1,5 +1,12 @@
 import React from "react";
-import { Table, TableBody, TableCell, TableHeader, TableHeaderCell, TableRow } from "@mijn-ui/react/components/table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHeader,
+  TableHeaderCell,
+  TableRow,
+} from "@mijn-ui/react/components/table";
 import { LuMoreHorizontal } from "react-icons/lu";
 
 const TableExample = () => {
@@ -10,7 +17,9 @@ const TableExample = () => {
           <TableRow>
             <TableHeaderCell>Customer</TableHeaderCell>
             <TableHeaderCell>Date/Time</TableHeaderCell>
-            <TableHeaderCell className="hidden sm:table-cell">Location</TableHeaderCell>
+            <TableHeaderCell className="hidden sm:table-cell">
+              Location
+            </TableHeaderCell>
             <TableHeaderCell>Total</TableHeaderCell>
             <TableHeaderCell>Status</TableHeaderCell>
             <TableHeaderCell></TableHeaderCell>
@@ -33,7 +42,9 @@ const TableExample = () => {
 
             <TableCell>
               <p className="flex items-center gap-2 text-xs text-neutral-text">
-                <span className={`block h-2 w-2 rounded-full bg-green-500 ring-2 ring-green-200`} />
+                <span
+                  className={`block h-2 w-2 rounded-full bg-green-500 ring-2 ring-green-200`}
+                />
                 <span>Paid</span>
               </p>
             </TableCell>
@@ -59,7 +70,9 @@ const TableExample = () => {
 
             <TableCell>
               <p className="flex items-center gap-2 text-xs text-neutral-text">
-                <span className={`block h-2 w-2 rounded-full bg-yellow-500 ring-2 ring-yellow-200`} />
+                <span
+                  className={`block h-2 w-2 rounded-full bg-yellow-500 ring-2 ring-yellow-200`}
+                />
                 <span>Pending</span>
               </p>
             </TableCell>
@@ -78,14 +91,18 @@ const TableExample = () => {
             </TableCell>
 
             <TableCell className="hidden text-balance sm:table-cell">
-              <p className="truncate md:w-44">789 Maple Lane, Pleasantville, NY</p>
+              <p className="truncate md:w-44">
+                789 Maple Lane, Pleasantville, NY
+              </p>
             </TableCell>
 
             <TableCell>$1042.25</TableCell>
 
             <TableCell>
               <p className="flex items-center gap-2 text-xs text-neutral-text">
-                <span className={`block h-2 w-2 rounded-full bg-green-500 ring-2 ring-green-200`} />
+                <span
+                  className={`block h-2 w-2 rounded-full bg-green-500 ring-2 ring-green-200`}
+                />
                 <span>Paid</span>
               </p>
             </TableCell>
@@ -104,14 +121,18 @@ const TableExample = () => {
             </TableCell>
 
             <TableCell className="hidden text-balance sm:table-cell">
-              <p className="truncate md:w-44">890 Birch Boulevard, Riverside, WA</p>
+              <p className="truncate md:w-44">
+                890 Birch Boulevard, Riverside, WA
+              </p>
             </TableCell>
 
             <TableCell>$1042.25</TableCell>
 
             <TableCell>
               <p className="flex items-center gap-2 text-xs text-neutral-text">
-                <span className={`block h-2 w-2 rounded-full bg-red-500 ring-2 ring-red-200`} />
+                <span
+                  className={`block h-2 w-2 rounded-full bg-red-500 ring-2 ring-red-200`}
+                />
                 <span>Returned</span>
               </p>
             </TableCell>

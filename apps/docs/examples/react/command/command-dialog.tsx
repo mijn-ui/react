@@ -11,7 +11,14 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from "@mijn-ui/react/components/command";
-import { LuCalculator, LuCalendar, LuCreditCard, LuSettings, LuSmile, LuUser } from "react-icons/lu";
+import {
+  LuCalculator,
+  LuCalendar,
+  LuCreditCard,
+  LuSettings,
+  LuSmile,
+  LuUser,
+} from "react-icons/lu";
 
 const CommandDialogExample = () => {
   const [open, setOpen] = React.useState(false);

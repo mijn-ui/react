@@ -12,7 +12,12 @@ const InputWithFloatingLabelIcon = () => {
       <Input className="w-80" endIcon={<LuPlus />} label="Username" />
 
       {/* both Icon */}
-      <Input className="w-80" endIcon={<LuPlus />} label="Username" startIcon={<LuPlus />} />
+      <Input
+        className="w-80"
+        endIcon={<LuPlus />}
+        label="Username"
+        startIcon={<LuPlus />}
+      />
     </div>
   );
 };

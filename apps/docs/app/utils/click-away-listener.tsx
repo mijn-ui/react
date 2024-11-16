@@ -114,7 +114,7 @@ const ClickAwayListener: React.FunctionComponent<Props> = ({
       [mappedFocusEvent]: handleBubbledEvents(mappedFocusEvent),
       [mappedMouseEvent]: handleBubbledEvents(mappedMouseEvent),
       [mappedTouchEvent]: handleBubbledEvents(mappedTouchEvent),
-    })
+    }),
   );
 };
 

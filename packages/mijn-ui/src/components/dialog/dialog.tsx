@@ -2,7 +2,10 @@
 
 import * as React from "react";
 import { buttonStyles } from "@mijn-ui/components/button";
-import { UnstyledProvider, useUnstyled } from "@mijn-ui/context/unstyled-provider";
+import {
+  UnstyledProvider,
+  useUnstyled,
+} from "@mijn-ui/context/unstyled-provider";
 import { UnstyledProps } from "@mijn-ui/types";
 import { applyUnstyled } from "@mijn-ui/utils";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
@@ -13,7 +16,8 @@ const DialogPortal = DialogPrimitive.Portal;
 /*                                   Dialog                                   */
 /* -------------------------------------------------------------------------- */
 
-type DialogProps = React.ComponentPropsWithRef<typeof DialogPrimitive.Root> & UnstyledProps;
+type DialogProps = React.ComponentPropsWithRef<typeof DialogPrimitive.Root> &
+  UnstyledProps;
 
 const Dialog = ({ unstyled = false, ...props }: DialogProps) => (
   <UnstyledProvider unstyled={unstyled}>
@@ -25,15 +29,26 @@ const Dialog = ({ unstyled = false, ...props }: DialogProps) => (
 /*                                DialogTrigger                               */
 /* -------------------------------------------------------------------------- */
 
-type DialogTriggerProps = React.ComponentPropsWithRef<typeof DialogPrimitive.Trigger> & UnstyledProps;
+type DialogTriggerProps = React.ComponentPropsWithRef<
+  typeof DialogPrimitive.Trigger
+> &
+  UnstyledProps;
 
-const DialogTrigger = ({ unstyled, className, ...props }: DialogTriggerProps) => {
+const DialogTrigger = ({
+  unstyled,
+  className,
+  ...props
+}: DialogTriggerProps) => {
   const { unstyled: contextUnstyled } = useUnstyled();
   const isUnstyled = unstyled ?? contextUnstyled;
 
   return (
     <DialogPrimitive.Trigger
-      className={applyUnstyled(isUnstyled, buttonStyles({ color: "secondary" }), className)}
+      className={applyUnstyled(
+        isUnstyled,
+        buttonStyles({ color: "secondary" }),
+        className,
+      )}
       {...props}
     />
   );
@@ -44,7 +59,10 @@ DialogTrigger.displayName = DialogPrimitive.Trigger.displayName;
 /*                                 DialogClose                                */
 /* -------------------------------------------------------------------------- */
 
-type DialogCloseProps = React.ComponentPropsWithRef<typeof DialogPrimitive.Close> & UnstyledProps;
+type DialogCloseProps = React.ComponentPropsWithRef<
+  typeof DialogPrimitive.Close
+> &
+  UnstyledProps;
 
 const DialogClose = ({ unstyled, className, ...props }: DialogCloseProps) => {
   const { unstyled: contextUnstyled } = useUnstyled();
@@ -52,7 +70,11 @@ const DialogClose = ({ unstyled, className, ...props }: DialogCloseProps) => {
 
   return (
     <DialogPrimitive.Close
-      className={applyUnstyled(isUnstyled, buttonStyles({ color: "neutral", variant: "text" }), className)}
+      className={applyUnstyled(
+        isUnstyled,
+        buttonStyles({ color: "neutral", variant: "text" }),
+        className,
+      )}
       {...props}
     />
   );
@@ -63,9 +85,16 @@ DialogClose.displayName = DialogPrimitive.Close.displayName;
 /*                                DialogOverlay                               */
 /* -------------------------------------------------------------------------- */
 
-type DialogOverlayProps = React.ComponentPropsWithRef<typeof DialogPrimitive.Overlay> & UnstyledProps;
+type DialogOverlayProps = React.ComponentPropsWithRef<
+  typeof DialogPrimitive.Overlay
+> &
+  UnstyledProps;
 
-const DialogOverlay = ({ unstyled, className, ...props }: DialogOverlayProps) => {
+const DialogOverlay = ({
+  unstyled,
+  className,
+  ...props
+}: DialogOverlayProps) => {
   const { unstyled: contextUnstyled } = useUnstyled();
   const isUnstyled = unstyled ?? contextUnstyled;
 
@@ -74,7 +103,7 @@ const DialogOverlay = ({ unstyled, className, ...props }: DialogOverlayProps) =>
       className={applyUnstyled(
         isUnstyled,
         "fixed inset-0 z-50 bg-black/80 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
-        className
+        className,
       )}
       {...props}
     />
@@ -86,9 +115,17 @@ DialogOverlay.displayName = DialogPrimitive.Overlay.displayName;
 /*                                DialogContent                               */
 /* -------------------------------------------------------------------------- */
 
-type DialogContentProps = React.ComponentPropsWithRef<typeof DialogPrimitive.Content> & UnstyledProps;
+type DialogContentProps = React.ComponentPropsWithRef<
+  typeof DialogPrimitive.Content
+> &
+  UnstyledProps;
 
-const DialogContent = ({ unstyled, className, children, ...props }: DialogContentProps) => {
+const DialogContent = ({
+  unstyled,
+  className,
+  children,
+  ...props
+}: DialogContentProps) => {
   const { unstyled: contextUnstyled } = useUnstyled();
   const isUnstyled = unstyled ?? contextUnstyled;
 
@@ -105,7 +142,7 @@ const DialogContent = ({ unstyled, className, children, ...props }: DialogConten
           className={applyUnstyled(
             isUnstyled,
             "flex w-full max-w-lg m-4 flex-col gap-3 rounded-xl border border-main-border bg-surface p-6 shadow-lg !duration-300 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-90 data-[state=open]:zoom-in-90",
-            className
+            className,
           )}
           {...props}
         >
@@ -120,13 +157,21 @@ const DialogContent = ({ unstyled, className, children, ...props }: DialogConten
 /*                                DialogHeader                                */
 /* -------------------------------------------------------------------------- */
 
-const DialogHeader = ({ unstyled, className, ...props }: React.HTMLAttributes<HTMLDivElement> & UnstyledProps) => {
+const DialogHeader = ({
+  unstyled,
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement> & UnstyledProps) => {
   const { unstyled: contextUnstyled } = useUnstyled();
   const isUnstyled = unstyled ?? contextUnstyled;
 
   return (
     <div
-      className={applyUnstyled(isUnstyled, "flex flex-col space-y-1.5 text-center sm:text-left", className)}
+      className={applyUnstyled(
+        isUnstyled,
+        "flex flex-col space-y-1.5 text-center sm:text-left",
+        className,
+      )}
       {...props}
     />
   );
@@ -137,13 +182,21 @@ DialogHeader.displayName = "DialogHeader";
 /*                                DialogFooter                                */
 /* -------------------------------------------------------------------------- */
 
-const DialogFooter = ({ unstyled, className, ...props }: React.HTMLAttributes<HTMLDivElement> & UnstyledProps) => {
+const DialogFooter = ({
+  unstyled,
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement> & UnstyledProps) => {
   const { unstyled: contextUnstyled } = useUnstyled();
   const isUnstyled = unstyled ?? contextUnstyled;
 
   return (
     <div
-      className={applyUnstyled(isUnstyled, "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", className)}
+      className={applyUnstyled(
+        isUnstyled,
+        "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2",
+        className,
+      )}
       {...props}
     />
   );
@@ -154,7 +207,10 @@ DialogFooter.displayName = "DialogFooter";
 /*                                 DialogTitle                                */
 /* -------------------------------------------------------------------------- */
 
-type DialogTitleProps = React.ComponentPropsWithRef<typeof DialogPrimitive.Title> & UnstyledProps;
+type DialogTitleProps = React.ComponentPropsWithRef<
+  typeof DialogPrimitive.Title
+> &
+  UnstyledProps;
 
 const DialogTitle = ({ unstyled, className, ...props }: DialogTitleProps) => {
   const { unstyled: contextUnstyled } = useUnstyled();
@@ -162,7 +218,11 @@ const DialogTitle = ({ unstyled, className, ...props }: DialogTitleProps) => {
 
   return (
     <DialogPrimitive.Title
-      className={applyUnstyled(isUnstyled, "text-lg font-semibold leading-none tracking-tight", className)}
+      className={applyUnstyled(
+        isUnstyled,
+        "text-lg font-semibold leading-none tracking-tight",
+        className,
+      )}
       {...props}
     />
   );
@@ -172,15 +232,26 @@ const DialogTitle = ({ unstyled, className, ...props }: DialogTitleProps) => {
 /*                              DialogDescription                             */
 /* -------------------------------------------------------------------------- */
 
-type DialogDescriptionProps = React.ComponentPropsWithRef<typeof DialogPrimitive.Description> & UnstyledProps;
+type DialogDescriptionProps = React.ComponentPropsWithRef<
+  typeof DialogPrimitive.Description
+> &
+  UnstyledProps;
 
-const DialogDescription = ({ unstyled, className, ...props }: DialogDescriptionProps) => {
+const DialogDescription = ({
+  unstyled,
+  className,
+  ...props
+}: DialogDescriptionProps) => {
   const { unstyled: contextUnstyled } = useUnstyled();
   const isUnstyled = unstyled ?? contextUnstyled;
 
   return (
     <DialogPrimitive.Description
-      className={applyUnstyled(isUnstyled, "text-sm text-neutral-text", className)}
+      className={applyUnstyled(
+        isUnstyled,
+        "text-sm text-neutral-text",
+        className,
+      )}
       {...props}
     />
   );

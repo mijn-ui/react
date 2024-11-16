@@ -19,6 +19,13 @@ type UnstyledProviderProps = {
   children: React.ReactNode;
 };
 
-export const UnstyledProvider = ({ unstyled, children }: UnstyledProviderProps) => {
-  return <UnstyledContext.Provider value={{ unstyled }}>{children}</UnstyledContext.Provider>;
+export const UnstyledProvider = ({
+  unstyled,
+  children,
+}: UnstyledProviderProps) => {
+  return (
+    <UnstyledContext.Provider value={{ unstyled }}>
+      {children}
+    </UnstyledContext.Provider>
+  );
 };

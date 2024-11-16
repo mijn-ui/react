@@ -21,7 +21,7 @@ const ThemeToggler = ({ className }: { className?: string }) => {
         onClick={() => setTheme("light")}
         className={cn(
           "text-neutral-text flex items-center justify-center size-8 transition duration-200 hover:text-secondary-text sm:size-10",
-          className
+          className,
         )}
       >
         <FiSun />
@@ -34,7 +34,7 @@ const ThemeToggler = ({ className }: { className?: string }) => {
         onClick={() => setTheme("dark")}
         className={cn(
           "text-neutral-text flex items-center justify-center size-8 transition duration-200 hover:text-secondary-text sm:size-10",
-          className
+          className,
         )}
       >
         <FiMoon />

@@ -24,7 +24,11 @@ const AvailablePagesSelector = () => {
 
   // Update selected value whenever the path changes
   useEffect(() => {
-    setSelectedValue(pathname.startsWith("/docs/tailwind") ? PAGE_OPTIONS.tailwind : PAGE_OPTIONS.next);
+    setSelectedValue(
+      pathname.startsWith("/docs/tailwind")
+        ? PAGE_OPTIONS.tailwind
+        : PAGE_OPTIONS.next,
+    );
   }, [pathname]);
 
   const handleChange = (value: string) => {

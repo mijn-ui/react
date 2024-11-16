@@ -1,6 +1,12 @@
 import React from "react";
 import { Button } from "@mijn-ui/react/components/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@mijn-ui/react/components/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@mijn-ui/react/components/card";
 import { LuArrowUpRight, LuPlus } from "react-icons/lu";
 
 const CardExample = () => {

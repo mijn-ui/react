@@ -10,7 +10,15 @@ import {
 import { Input } from "@mijn-ui/react/components/input";
 import { LuSearch } from "react-icons/lu";
 
-const FRAMEWORKS = ["Next.js", "SvelteKit", "Nuxt.js", "Remix", "Astro", "WordPress", "Express.js"];
+const FRAMEWORKS = [
+  "Next.js",
+  "SvelteKit",
+  "Nuxt.js",
+  "Remix",
+  "Astro",
+  "WordPress",
+  "Express.js",
+];
 
 const AutocompleteExample = () => {
   const [value, setValue] = useState("SvelteKit");
@@ -18,9 +26,17 @@ const AutocompleteExample = () => {
   return (
     <Autocomplete value={value} onValueChange={setValue}>
       <AutocompleteTrigger asChild>
-        <Input className="bg-surface" placeholder={"Search for a framework"} startIcon={<LuSearch />} />
+        <Input
+          className="bg-surface"
+          placeholder={"Search for a framework"}
+          startIcon={<LuSearch />}
+        />
       </AutocompleteTrigger>
-      <AutocompleteContent className="" emptyMessage="No Frameworks Found" loading={false}>
+      <AutocompleteContent
+        className=""
+        emptyMessage="No Frameworks Found"
+        loading={false}
+      >
         {FRAMEWORKS.map((framework) => (
           <AutocompleteItem key={framework} value={framework}>
             {framework}

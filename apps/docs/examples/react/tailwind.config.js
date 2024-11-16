@@ -2,8 +2,7 @@
 
 export default {
   content: [
-    ...
-  "./mijn-ui/**/*.{js,ts,jsx,tsx,mdx}", // Ensure Tailwind scans all mijn-ui files  // [!code highlight]
+    ..."./mijn-ui/**/*.{js,ts,jsx,tsx,mdx}", // Ensure Tailwind scans all mijn-ui files  // [!code highlight]
   ],
   theme: {
     extend: {
@@ -99,4 +98,4 @@ export default {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};

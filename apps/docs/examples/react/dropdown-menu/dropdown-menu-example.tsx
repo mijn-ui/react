@@ -20,7 +20,9 @@ const DropdownMenuExample = () => {
         <DropdownMenuItem>Cut</DropdownMenuItem>
 
         <DropdownMenuSub>
-          <DropdownMenuSubTrigger className="justify-between gap-4">Copy as</DropdownMenuSubTrigger>
+          <DropdownMenuSubTrigger className="justify-between gap-4">
+            Copy as
+          </DropdownMenuSubTrigger>
           <DropdownMenuPortal>
             <DropdownMenuSubContent className="">
               <DropdownMenuItem>Text</DropdownMenuItem>
@@ -30,7 +32,9 @@ const DropdownMenuExample = () => {
         </DropdownMenuSub>
 
         <DropdownMenuSub>
-          <DropdownMenuSubTrigger className="justify-between gap-4">Audio</DropdownMenuSubTrigger>
+          <DropdownMenuSubTrigger className="justify-between gap-4">
+            Audio
+          </DropdownMenuSubTrigger>
           <DropdownMenuPortal>
             <DropdownMenuSubContent className="">
               <DropdownMenuItem>png</DropdownMenuItem>
@@ -43,7 +47,9 @@ const DropdownMenuExample = () => {
         <DropdownMenuItem>Audio</DropdownMenuItem>
 
         <DropdownMenuSub>
-          <DropdownMenuSubTrigger className="justify-between gap-4">Share</DropdownMenuSubTrigger>
+          <DropdownMenuSubTrigger className="justify-between gap-4">
+            Share
+          </DropdownMenuSubTrigger>
           <DropdownMenuPortal>
             <DropdownMenuSubContent className="">
               <DropdownMenuItem>Mail</DropdownMenuItem>

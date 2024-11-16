@@ -12,7 +12,12 @@ type CodePreviewerProps = React.ComponentPropsWithoutRef<"div"> & {
 
 export const revalidate = 3600; // revalidate every hour
 
-const TWComponentPreview = ({ src, className, children, ...props }: CodePreviewerProps) => {
+const TWComponentPreview = ({
+  src,
+  className,
+  children,
+  ...props
+}: CodePreviewerProps) => {
   const [reactElement, setReactElement] = useState<React.ReactNode>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<boolean>(false);
@@ -40,7 +45,7 @@ const TWComponentPreview = ({ src, className, children, ...props }: CodePreviewe
     <div
       className={cn(
         "not-prose relative flex min-h-80 w-full items-center justify-center gap-5 rounded-lg border p-5",
-        className
+        className,
       )}
       {...props}
     >
@@ -64,7 +69,9 @@ const TWComponentPreview = ({ src, className, children, ...props }: CodePreviewe
           <p className="text-sm">Loading...</p>
         </div>
       ) : error ? (
-        <p className="text-sm text-danger">Error loading content. Please try refreshing the page again.</p>
+        <p className="text-sm text-danger">
+          Error loading content. Please try refreshing the page again.
+        </p>
       ) : (
         reactElement
       )}

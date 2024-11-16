@@ -1,5 +1,10 @@
 import React from "react";
-import { Avatar, AvatarFallback, AvatarGroup, AvatarImage } from "@mijn-ui/react/components/avatar";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarGroup,
+  AvatarImage,
+} from "@mijn-ui/react/components/avatar";
 
 const AvatarGroupExample = () => {
   return (

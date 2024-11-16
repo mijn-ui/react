@@ -58,19 +58,22 @@ export default {
         warning: {
           DEFAULT: "hsl(var(--mijnui-warning) / <alpha-value>)",
           text: "hsl(var(--mijnui-warning-text) / <alpha-value>)",
-          "filled-text": "hsl(var(--mijnui-warning-filled-text) / <alpha-value>)",
+          "filled-text":
+            "hsl(var(--mijnui-warning-filled-text) / <alpha-value>)",
         },
 
         danger: {
           DEFAULT: "hsl(var(--mijnui-danger) / <alpha-value>)",
           text: "hsl(var(--mijnui-danger-text) / <alpha-value>)",
-          "filled-text": "hsl(var(--mijnui-danger-filled-text) / <alpha-value>)",
+          "filled-text":
+            "hsl(var(--mijnui-danger-filled-text) / <alpha-value>)",
         },
 
         success: {
           DEFAULT: "hsl(var(--mijnui-success) / <alpha-value>)",
           text: "hsl(var(--mijnui-success-text) / <alpha-value>)",
-          "filled-text": "hsl(var(--mijnui-success-filled-text) / <alpha-value>)",
+          "filled-text":
+            "hsl(var(--mijnui-success-filled-text) / <alpha-value>)",
         },
 
         kanban: "hsl(var(--mijnui-kanban) / <alpha-value>)",
@@ -143,11 +146,15 @@ export default {
         },
       },
       animation: {
-        "accordion-expand": "accordion-expand 0.2s ease-in-out, fade-in 0.4s ease-in-out",
-        "accordion-collapse": "accordion-collapse 0.2s ease-in-out, fade-out 0.4s ease-in-out",
+        "accordion-expand":
+          "accordion-expand 0.2s ease-in-out, fade-in 0.4s ease-in-out",
+        "accordion-collapse":
+          "accordion-collapse 0.2s ease-in-out, fade-out 0.4s ease-in-out",
 
-        "collapsible-expand": "collapsible-expand 0.2s ease-in-out, fade-in 0.2s ease-in-out",
-        "collapsible-collapse": "collapsible-collapse 0.2s ease-in-out, fade-out 0.2s ease-in-out",
+        "collapsible-expand":
+          "collapsible-expand 0.2s ease-in-out, fade-in 0.2s ease-in-out",
+        "collapsible-collapse":
+          "collapsible-collapse 0.2s ease-in-out, fade-out 0.2s ease-in-out",
 
         "scale-in": "scale-in 0.5s 0.2s ease-out, fade-in 0.4s ease-out",
         "scale-out": "scale-out 0.5s 0.2s ease-out, fade-out 0.4s ease-out",

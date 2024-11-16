@@ -8,7 +8,11 @@ import { Badge } from "@mijn-ui/react/components/badge";
 import { Button } from "@mijn-ui/react/components/button";
 import { useSearchContext } from "fumadocs-ui/provider";
 import { LuMenu, LuExternalLink, LuGithub, LuSearch } from "react-icons/lu";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@mijn-ui/react/components/collapsible";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@mijn-ui/react/components/collapsible";
 import { Separator } from "@mijn-ui/react/components/separator";
 import { TopRightRadialGradient } from "@/app/components/decorators/gradient-bg";
 import ClickAwayListener from "@/app/utils/click-away-listener";
@@ -31,7 +35,11 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   const renderPages = PAGES.map((page) => (
-    <Link key={page.title} className="text-sm text-neutral-text hover:text-secondary-text" href={page.href}>
+    <Link
+      key={page.title}
+      className="text-sm text-neutral-text hover:text-secondary-text"
+      href={page.href}
+    >
       {page.title}
     </Link>
   ));
@@ -44,7 +52,9 @@ const Navbar = () => {
             <Logo className="fill-fd-foreground size-5 items-center" />
             MijnUI
           </Link>
-          <Badge className="bg-primary/20 text-primary hover:bg-primary/20">v0.0.1</Badge>
+          <Badge className="bg-primary/20 text-primary hover:bg-primary/20">
+            v0.0.1
+          </Badge>
 
           <div className="hidden md:flex gap-4">{renderPages}</div>
         </div>

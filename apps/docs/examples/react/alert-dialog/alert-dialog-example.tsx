@@ -18,8 +18,9 @@ const AlertDialogExample = () => {
         <AlertDialogHeader>
           <AlertDialogTitle>Confirm Account Deletion</AlertDialogTitle>
           <AlertDialogDescription>
-            Deleting your account is irreversible. All your account information, including data and settings, will be
-            permanently erased. Are you absolutely sure?
+            Deleting your account is irreversible. All your account information,
+            including data and settings, will be permanently erased. Are you
+            absolutely sure?
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>

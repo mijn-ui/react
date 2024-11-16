@@ -2,7 +2,10 @@ import * as React from "react";
 import { CommandEmpty } from "@mijn-ui/components/command";
 import { PopoverContent } from "@mijn-ui/components/popover";
 import { Skeleton } from "@mijn-ui/components/skeleton";
-import { UnstyledProvider, useUnstyled } from "@mijn-ui/context/unstyled-provider";
+import {
+  UnstyledProvider,
+  useUnstyled,
+} from "@mijn-ui/context/unstyled-provider";
 import { UnstyledProps } from "@mijn-ui/types";
 import { applyUnstyled, cn } from "@mijn-ui/utils";
 import { mergeRefs } from "@mijn-ui/utils";
@@ -28,7 +31,8 @@ type AutocompleteContextProps = {
   setShouldFilter: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const AutocompleteContext = React.createContext<AutocompleteContextProps | null>(null);
+const AutocompleteContext =
+  React.createContext<AutocompleteContextProps | null>(null);
 
 const useAutocomplete = () => {
   const context = React.useContext(AutocompleteContext);
@@ -42,12 +46,20 @@ const useAutocomplete = () => {
 /*                                  Autocomplete                                  */
 /* -------------------------------------------------------------------------- */
 
-type AutocompleteProps = React.ComponentPropsWithoutRef<typeof CommandPrimitive> & {
+type AutocompleteProps = React.ComponentPropsWithoutRef<
+  typeof CommandPrimitive
+> & {
   value: string;
   onValueChange: (value: string) => void;
 } & UnstyledProps;
 
-const Autocomplete = ({ unstyled = false, value, onValueChange, children, ...props }: AutocompleteProps) => {
+const Autocomplete = ({
+  unstyled = false,
+  value,
+  onValueChange,
+  children,
+  ...props
+}: AutocompleteProps) => {
   const inputRef = React.useRef<HTMLInputElement>(null);
 
   const [isOpen, setOpen] = React.useState(false);
@@ -89,7 +101,7 @@ const Autocomplete = ({ unstyled = false, value, onValueChange, children, ...pro
         inputRef?.current?.blur();
       }, 0);
     },
-    [onValueChange]
+    [onValueChange],
   );
 
   return (
@@ -114,7 +126,11 @@ const Autocomplete = ({ unstyled = false, value, onValueChange, children, ...pro
     >
       <Popover open={isOpen} onOpenChange={setOpen}>
         <UnstyledProvider unstyled={unstyled}>
-          <CommandPrimitive shouldFilter={shouldFilter} onKeyDown={handleKeyDown} {...props}>
+          <CommandPrimitive
+            shouldFilter={shouldFilter}
+            onKeyDown={handleKeyDown}
+            {...props}
+          >
             {children}
           </CommandPrimitive>
         </UnstyledProvider>
@@ -127,10 +143,25 @@ const Autocomplete = ({ unstyled = false, value, onValueChange, children, ...pro
 /*                               AutocompleteTrigger                              */
 /* -------------------------------------------------------------------------- */
 
-type AutocompleteTriggerProps = React.ComponentPropsWithRef<typeof CommandPrimitive.Input> & UnstyledProps;
+type AutocompleteTriggerProps = React.ComponentPropsWithRef<
+  typeof CommandPrimitive.Input
+> &
+  UnstyledProps;
 
-const AutocompleteTrigger = ({ unstyled, ref, className, ...props }: AutocompleteTriggerProps) => {
-  const { inputValue, inputRef, setInputValue, setOpen, handleBlur, setShouldFilter } = useAutocomplete();
+const AutocompleteTrigger = ({
+  unstyled,
+  ref,
+  className,
+  ...props
+}: AutocompleteTriggerProps) => {
+  const {
+    inputValue,
+    inputRef,
+    setInputValue,
+    setOpen,
+    handleBlur,
+    setShouldFilter,
+  } = useAutocomplete();
   const { unstyled: contextUnstyled } = useUnstyled();
   const isUnstyled = unstyled ?? contextUnstyled;
 
@@ -156,7 +187,9 @@ const AutocompleteTrigger = ({ unstyled, ref, className, ...props }: Autocomplet
 /*                               AutocompleteContent                              */
 /* -------------------------------------------------------------------------- */
 
-type AutocompleteContentProps = React.ComponentPropsWithRef<typeof CommandPrimitive.List> & {
+type AutocompleteContentProps = React.ComponentPropsWithRef<
+  typeof CommandPrimitive.List
+> & {
   emptyMessage?: string;
   loading?: boolean;
 } & UnstyledProps;
@@ -177,11 +210,18 @@ const AutocompleteContent = ({
       asChild
       onOpenAutoFocus={(e) => e.preventDefault()}
       onInteractOutside={(e) => {
-        if (e.target instanceof Element && e.target.hasAttribute("cmdk-input")) {
+        if (
+          e.target instanceof Element &&
+          e.target.hasAttribute("cmdk-input")
+        ) {
           e.preventDefault();
         }
       }}
-      className={applyUnstyled(isUnstyled, "w-[--radix-popover-trigger-width] overflow-y-auto p-1", className)}
+      className={applyUnstyled(
+        isUnstyled,
+        "w-[--radix-popover-trigger-width] overflow-y-auto p-1",
+        className,
+      )}
       // you can set this to true if you want to flip the content to flip when there isn't enough space for the comboBox content
       avoidCollisions={false}
       // to prevent scrolling issue when Popover inside Dialog
@@ -192,7 +232,9 @@ const AutocompleteContent = ({
     >
       <CommandPrimitive.List {...props}>
         {!loading && children}
-        {!loading && <CommandEmpty>{emptyMessage || "No Options Found"}</CommandEmpty>}
+        {!loading && (
+          <CommandEmpty>{emptyMessage || "No Options Found"}</CommandEmpty>
+        )}
         {loading && (
           <CommandPrimitive.Loading>
             <Skeleton className="h-7 w-full" />
@@ -207,14 +249,25 @@ const AutocompleteContent = ({
 /*                              AutocompleteGroup                             */
 /* -------------------------------------------------------------------------- */
 
-type AutocompleteGroupProps = React.ComponentPropsWithRef<typeof CommandPrimitive.Group> & UnstyledProps;
+type AutocompleteGroupProps = React.ComponentPropsWithRef<
+  typeof CommandPrimitive.Group
+> &
+  UnstyledProps;
 
-const AutocompleteGroup = ({ unstyled, children, className, ...props }: AutocompleteGroupProps) => {
+const AutocompleteGroup = ({
+  unstyled,
+  children,
+  className,
+  ...props
+}: AutocompleteGroupProps) => {
   const { unstyled: contextUnstyled } = useUnstyled();
   const isUnstyled = unstyled ?? contextUnstyled;
 
   return (
-    <CommandPrimitive.Group className={applyUnstyled(isUnstyled, "", className)} {...props}>
+    <CommandPrimitive.Group
+      className={applyUnstyled(isUnstyled, "", className)}
+      {...props}
+    >
       {children}
     </CommandPrimitive.Group>
   );
@@ -224,9 +277,18 @@ const AutocompleteGroup = ({ unstyled, children, className, ...props }: Autocomp
 /*                                AutocompleteItem                                */
 /* -------------------------------------------------------------------------- */
 
-type AutocompleteItemProps = React.ComponentPropsWithRef<typeof CommandPrimitive.Item> & UnstyledProps;
+type AutocompleteItemProps = React.ComponentPropsWithRef<
+  typeof CommandPrimitive.Item
+> &
+  UnstyledProps;
 
-const AutocompleteItem = ({ unstyled, className, children, value, ...props }: AutocompleteItemProps) => {
+const AutocompleteItem = ({
+  unstyled,
+  className,
+  children,
+  value,
+  ...props
+}: AutocompleteItemProps) => {
   const { selectedValue, handleSelectOption } = useAutocomplete();
   const isSelected = selectedValue === value;
 
@@ -247,9 +309,9 @@ const AutocompleteItem = ({ unstyled, className, children, value, ...props }: Au
         cn(
           "relative cursor-default select-none px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-auto data-[selected=true]:bg-accent data-[selected=true]:text-accent-text data-[disabled=true]:opacity-50 flex w-full items-center justify-between gap-2 rounded-md",
           isSelected &&
-            "bg-primary/20 text-primary data-[selected=true]:bg-primary/20 data-[selected=true]:text-primary"
+            "bg-primary/20 text-primary data-[selected=true]:bg-primary/20 data-[selected=true]:text-primary",
         ),
-        className
+        className,
       )}
       {...props}
     >
@@ -259,4 +321,10 @@ const AutocompleteItem = ({ unstyled, className, children, value, ...props }: Au
   );
 };
 
-export { Autocomplete, AutocompleteContent, AutocompleteGroup, AutocompleteItem, AutocompleteTrigger };
+export {
+  Autocomplete,
+  AutocompleteContent,
+  AutocompleteGroup,
+  AutocompleteItem,
+  AutocompleteTrigger,
+};

@@ -5,12 +5,25 @@ import { UnstyledProps } from "@mijn-ui/types";
 import { applyUnstyled } from "@mijn-ui/utils";
 import * as ProgressPrimitive from "@radix-ui/react-progress";
 
-type ProgressProps = React.ComponentPropsWithRef<typeof ProgressPrimitive.Root> & UnstyledProps;
+type ProgressProps = React.ComponentPropsWithRef<
+  typeof ProgressPrimitive.Root
+> &
+  UnstyledProps;
 
-const Progress = ({ className, unstyled, value, ref, ...props }: ProgressProps) => (
+const Progress = ({
+  className,
+  unstyled,
+  value,
+  ref,
+  ...props
+}: ProgressProps) => (
   <ProgressPrimitive.Root
     ref={ref}
-    className={applyUnstyled(unstyled, "relative h-2 w-full overflow-hidden rounded-full bg-neutral", className)}
+    className={applyUnstyled(
+      unstyled,
+      "relative h-2 w-full overflow-hidden rounded-full bg-neutral",
+      className,
+    )}
     {...props}
   >
     <ProgressPrimitive.Indicator

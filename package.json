@@ -6,7 +6,8 @@
     "start": "turbo run start",
     "lint": "turbo run lint",
     "clean": "turbo run clean && rm -rf node_modules",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "lint:prettier": "prettier --cache --check --ignore-path .gitignore --ignore-path .prettierignore .",
+    "prettier": "prettier --cache --write --list-different --ignore-path .gitignore --ignore-path .prettierignore .",
     "changeset": "changeset",
     "version": "changeset version",
     "release": "turbo run build --filter=./packages/mijn-ui && changeset publish"

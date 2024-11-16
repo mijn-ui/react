@@ -5,7 +5,10 @@ import { Button } from "@mijn-ui/react/components/button";
 import { buttonStyles } from "@mijn-ui/react/components/button";
 import { Checkbox } from "@mijn-ui/react/components/checkbox";
 import { Label } from "@mijn-ui/react/components/label";
-import { RadioGroup, RadioGroupItem } from "@mijn-ui/react/components/radio-group";
+import {
+  RadioGroup,
+  RadioGroupItem,
+} from "@mijn-ui/react/components/radio-group";
 import { VariantProps } from "class-variance-authority";
 
 type ButtonOptionsType = {
@@ -30,7 +33,12 @@ const CheckboxWithLabel = ({
   label: string;
 }) => (
   <div className="flex items-center gap-2">
-    <Checkbox id={id} size={"sm"} checked={checked} onCheckedChange={onCheckedChange} />
+    <Checkbox
+      id={id}
+      size={"sm"}
+      checked={checked}
+      onCheckedChange={onCheckedChange}
+    />
     <Label className="text-sm" htmlFor={id}>
       {label}
     </Label>
@@ -50,7 +58,12 @@ const RadioGroupWithOptions = ({
   label: string;
   options: { value: string; id: string }[];
 }) => (
-  <RadioGroup className="sm:min-w-24" defaultValue={defaultValue} value={value} onValueChange={onValueChange}>
+  <RadioGroup
+    className="sm:min-w-24"
+    defaultValue={defaultValue}
+    value={value}
+    onValueChange={onValueChange}
+  >
     <p className="text-sm">{label}</p>
     {options.map((option) => (
       <div className="flex items-center space-x-2" key={option.id}>
@@ -105,21 +118,27 @@ const KeyFeaturesPlayground = () => {
             <CheckboxWithLabel
               id="unstyled"
               checked={buttonOptions.unstyled}
-              onCheckedChange={() => handleChange("unstyled", !buttonOptions.unstyled)}
+              onCheckedChange={() =>
+                handleChange("unstyled", !buttonOptions.unstyled)
+              }
               label="Unstyled"
             />
 
             <CheckboxWithLabel
               id="loading"
               checked={buttonOptions.loading}
-              onCheckedChange={() => handleChange("loading", !buttonOptions.loading)}
+              onCheckedChange={() =>
+                handleChange("loading", !buttonOptions.loading)
+              }
               label="Loading"
             />
 
             <CheckboxWithLabel
               id="disabled"
               checked={buttonOptions.disabled}
-              onCheckedChange={() => handleChange("disabled", !buttonOptions.disabled)}
+              onCheckedChange={() =>
+                handleChange("disabled", !buttonOptions.disabled)
+              }
               label="Disabled"
             />
           </div>

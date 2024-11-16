@@ -31,27 +31,32 @@ const badgeVariants = cva(
       {
         color: "primary",
         variant: "outline",
-        className: "hover:bg-primary hover:text-primary-text border border-primary text-primary",
+        className:
+          "hover:bg-primary hover:text-primary-text border border-primary text-primary",
       },
       {
         color: "secondary",
         variant: "outline",
-        className: "hover:bg-secondary hover:text-secondary-text border border-secondary text-secondary",
+        className:
+          "hover:bg-secondary hover:text-secondary-text border border-secondary text-secondary",
       },
       {
         color: "accent",
         variant: "outline",
-        className: "hover:bg-accent hover:text-accent-text border border-main-border text-accent-text",
+        className:
+          "hover:bg-accent hover:text-accent-text border border-main-border text-accent-text",
       },
       {
         color: "neutral",
         variant: "outline",
-        className: "hover:bg-neutral hover:text-neutral-text border border-neutral text-neutral-text",
+        className:
+          "hover:bg-neutral hover:text-neutral-text border border-neutral text-neutral-text",
       },
       {
         color: "danger",
         variant: "outline",
-        className: "hover:bg-danger hover:text-danger-filled-text border border-danger text-danger",
+        className:
+          "hover:bg-danger hover:text-danger-filled-text border border-danger text-danger",
       },
 
       {
@@ -62,7 +67,8 @@ const badgeVariants = cva(
       {
         color: "secondary",
         variant: "text",
-        className: "hover:bg-secondary hover:text-secondary-text text-secondary",
+        className:
+          "hover:bg-secondary hover:text-secondary-text text-secondary",
       },
       {
         color: "danger",
@@ -111,13 +117,31 @@ const badgeVariants = cva(
       variant: "filled",
       radius: "full",
     },
-  }
+  },
 );
 
-export type BadgeProps = React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof badgeVariants> & UnstyledProps;
+export type BadgeProps = React.HTMLAttributes<HTMLDivElement> &
+  VariantProps<typeof badgeVariants> &
+  UnstyledProps;
 
-function Badge({ unstyled, className, color, variant, radius, ...props }: BadgeProps) {
-  return <div className={applyUnstyled(unstyled, badgeVariants({ color, variant, radius }), className)} {...props} />;
+function Badge({
+  unstyled,
+  className,
+  color,
+  variant,
+  radius,
+  ...props
+}: BadgeProps) {
+  return (
+    <div
+      className={applyUnstyled(
+        unstyled,
+        badgeVariants({ color, variant, radius }),
+        className,
+      )}
+      {...props}
+    />
+  );
 }
 
 export { Badge, badgeVariants };

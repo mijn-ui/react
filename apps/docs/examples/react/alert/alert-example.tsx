@@ -1,5 +1,10 @@
 import React from "react";
-import { Alert, AlertDescription, AlertIcon, AlertTitle } from "@mijn-ui/react/components/alert";
+import {
+  Alert,
+  AlertDescription,
+  AlertIcon,
+  AlertTitle,
+} from "@mijn-ui/react/components/alert";
 import { IoRocketOutline } from "react-icons/io5";
 
 const AlertExample = () => {
@@ -9,7 +14,9 @@ const AlertExample = () => {
         <IoRocketOutline />
       </AlertIcon>
       <AlertTitle>New Feature Added</AlertTitle>
-      <AlertDescription>A new feature has been added to the project.</AlertDescription>
+      <AlertDescription>
+        A new feature has been added to the project.
+      </AlertDescription>
     </Alert>
   );
 };

@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 const ScrollAbleSkeleton = () => {
   return (
@@ -72,7 +72,7 @@ const ScrollAbleSkeleton = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ScrollAbleSkeleton
+export default ScrollAbleSkeleton;

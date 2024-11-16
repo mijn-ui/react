@@ -9,8 +9,18 @@ Full credit for the original implementation goes to [sersavan](https://github.co
 import * as React from "react";
 import { Button, buttonStyles } from "@mijn-ui/components/button";
 import { Calendar } from "@mijn-ui/components/calendar";
-import { Popover, PopoverContent, PopoverTrigger } from "@mijn-ui/components/popover";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@mijn-ui/components/select";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@mijn-ui/components/popover";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@mijn-ui/components/select";
 import { cn } from "@mijn-ui/utils";
 import { VariantProps } from "class-variance-authority";
 import {
@@ -54,7 +64,10 @@ type CalendarDatePickerProps = React.HTMLAttributes<HTMLButtonElement> &
     onDateSelect: (range: { from: Date; to: Date }) => void;
   };
 
-export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDatePickerProps>(
+export const CalendarDatePicker = React.forwardRef<
+  HTMLButtonElement,
+  CalendarDatePickerProps
+>(
   (
     {
       id = "calendar-date-picker",
@@ -68,19 +81,29 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
       color,
       ...props
     },
-    ref
+    ref,
   ) => {
     const [isPopoverOpen, setIsPopoverOpen] = React.useState(false);
     const [selectedRange, setSelectedRange] = React.useState<string | null>(
-      numberOfMonths === 2 ? "This Year" : "Today"
+      numberOfMonths === 2 ? "This Year" : "Today",
     );
-    const [monthFrom, setMonthFrom] = React.useState<Date | undefined>(date?.from);
-    const [yearFrom, setYearFrom] = React.useState<number | undefined>(date?.from?.getFullYear());
-    const [monthTo, setMonthTo] = React.useState<Date | undefined>(numberOfMonths === 2 ? date?.to : date?.from);
+    const [monthFrom, setMonthFrom] = React.useState<Date | undefined>(
+      date?.from,
+    );
+    const [yearFrom, setYearFrom] = React.useState<number | undefined>(
+      date?.from?.getFullYear(),
+    );
+    const [monthTo, setMonthTo] = React.useState<Date | undefined>(
+      numberOfMonths === 2 ? date?.to : date?.from,
+    );
     const [yearTo, setYearTo] = React.useState<number | undefined>(
-      numberOfMonths === 2 ? date?.to?.getFullYear() : date?.from?.getFullYear()
+      numberOfMonths === 2
+        ? date?.to?.getFullYear()
+        : date?.from?.getFullYear(),
     );
-    const [highlightedPart, setHighlightedPart] = React.useState<string | null>(null);
+    const [highlightedPart, setHighlightedPart] = React.useState<string | null>(
+      null,
+    );
 
     const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
@@ -90,7 +113,8 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
 
     const selectDateRange = (from: Date, to: Date, range: string) => {
       const startDate = startOfDay(toDate(from, { timeZone }));
-      const endDate = numberOfMonths === 2 ? endOfDay(toDate(to, { timeZone })) : startDate;
+      const endDate =
+        numberOfMonths === 2 ? endOfDay(toDate(to, { timeZone })) : startDate;
       onDateSelect({ from: startDate, to: endDate });
       setSelectedRange(range);
       setMonthFrom(from);
@@ -131,7 +155,11 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
             numberOfMonths === 2
               ? startOfMonth(toDate(newMonth, { timeZone }))
               : date?.from
-                ? new Date(date.from.getFullYear(), newMonth.getMonth(), date.from.getDate())
+                ? new Date(
+                    date.from.getFullYear(),
+                    newMonth.getMonth(),
+                    date.from.getDate(),
+                  )
                 : newMonth;
           const to =
             numberOfMonths === 2
@@ -152,7 +180,10 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
           const from = date.from
             ? startOfDay(toDate(date.from, { timeZone }))
             : startOfMonth(toDate(newMonth, { timeZone }));
-          const to = numberOfMonths === 2 ? endOfMonth(toDate(newMonth, { timeZone })) : from;
+          const to =
+            numberOfMonths === 2
+              ? endOfMonth(toDate(newMonth, { timeZone }))
+              : from;
           if (from <= to) {
             onDateSelect({ from, to });
             setMonthTo(newMonth);
@@ -191,11 +222,16 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
         }
       } else {
         if (years.includes(newYear)) {
-          const newMonth = monthTo ? new Date(newYear, monthTo.getMonth(), 1) : new Date(newYear, 0, 1);
+          const newMonth = monthTo
+            ? new Date(newYear, monthTo.getMonth(), 1)
+            : new Date(newYear, 0, 1);
           const from = date.from
             ? startOfDay(toDate(date.from, { timeZone }))
             : startOfMonth(toDate(newMonth, { timeZone }));
-          const to = numberOfMonths === 2 ? endOfMonth(toDate(newMonth, { timeZone })) : from;
+          const to =
+            numberOfMonths === 2
+              ? endOfMonth(toDate(newMonth, { timeZone }))
+              : from;
           if (from <= to) {
             onDateSelect({ from, to });
             setYearTo(newYear);
@@ -209,7 +245,10 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
 
     const today = new Date();
 
-    const years = Array.from({ length: yearsRange + 1 }, (_, i) => today.getFullYear() - yearsRange / 2 + i);
+    const years = Array.from(
+      { length: yearsRange + 1 },
+      (_, i) => today.getFullYear() - yearsRange / 2 + i,
+    );
 
     const dateRanges = [
       { label: "Today", start: today, end: today },
@@ -313,9 +352,13 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
 
       const addPassiveEventListener = (element: HTMLElement | null) => {
         if (element) {
-          element.addEventListener("wheel", handleWheel as unknown as EventListener, {
-            passive: false,
-          });
+          element.addEventListener(
+            "wheel",
+            handleWheel as unknown as EventListener,
+            {
+              passive: false,
+            },
+          );
         }
       };
 
@@ -324,13 +367,17 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
       return () => {
         elements.forEach((element) => {
           if (element) {
-            element.removeEventListener("wheel", handleWheel as unknown as EventListener);
+            element.removeEventListener(
+              "wheel",
+              handleWheel as unknown as EventListener,
+            );
           }
         });
       };
     }, [highlightedPart, date, id, handleWheel]);
 
-    const formatWithTz = (date: Date, fmt: string) => formatInTimeZone(date, timeZone, fmt);
+    const formatWithTz = (date: Date, fmt: string) =>
+      formatInTimeZone(date, timeZone, fmt);
 
     return (
       <>
@@ -347,7 +394,10 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
               id="date"
               ref={ref}
               {...props}
-              className={cn("w-auto", buttonStyles({ color, variant, className }))}
+              className={cn(
+                "w-auto",
+                buttonStyles({ color, variant, className }),
+              )}
               onClick={handleTogglePopover}
               suppressHydrationWarning
             >
@@ -358,7 +408,11 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
                     <>
                       <span
                         id={`firstDay-${id}`}
-                        className={cn("date-part", highlightedPart === "firstDay" && "font-bold underline")}
+                        className={cn(
+                          "date-part",
+                          highlightedPart === "firstDay" &&
+                            "font-bold underline",
+                        )}
                         onMouseOver={() => handleMouseOver("firstDay")}
                         onMouseLeave={handleMouseLeave}
                       >
@@ -366,7 +420,11 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
                       </span>{" "}
                       <span
                         id={`firstMonth-${id}`}
-                        className={cn("date-part", highlightedPart === "firstMonth" && "font-bold underline")}
+                        className={cn(
+                          "date-part",
+                          highlightedPart === "firstMonth" &&
+                            "font-bold underline",
+                        )}
                         onMouseOver={() => handleMouseOver("firstMonth")}
                         onMouseLeave={handleMouseLeave}
                       >
@@ -375,7 +433,11 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
                       ,{" "}
                       <span
                         id={`firstYear-${id}`}
-                        className={cn("date-part", highlightedPart === "firstYear" && "font-bold underline")}
+                        className={cn(
+                          "date-part",
+                          highlightedPart === "firstYear" &&
+                            "font-bold underline",
+                        )}
                         onMouseOver={() => handleMouseOver("firstYear")}
                         onMouseLeave={handleMouseLeave}
                       >
@@ -386,7 +448,11 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
                           {" - "}
                           <span
                             id={`secondDay-${id}`}
-                            className={cn("date-part", highlightedPart === "secondDay" && "font-bold underline")}
+                            className={cn(
+                              "date-part",
+                              highlightedPart === "secondDay" &&
+                                "font-bold underline",
+                            )}
                             onMouseOver={() => handleMouseOver("secondDay")}
                             onMouseLeave={handleMouseLeave}
                           >
@@ -394,7 +460,11 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
                           </span>{" "}
                           <span
                             id={`secondMonth-${id}`}
-                            className={cn("date-part", highlightedPart === "secondMonth" && "font-bold underline")}
+                            className={cn(
+                              "date-part",
+                              highlightedPart === "secondMonth" &&
+                                "font-bold underline",
+                            )}
                             onMouseOver={() => handleMouseOver("secondMonth")}
                             onMouseLeave={handleMouseLeave}
                           >
@@ -403,7 +473,11 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
                           ,{" "}
                           <span
                             id={`secondYear-${id}`}
-                            className={cn("date-part", highlightedPart === "secondYear" && "font-bold underline")}
+                            className={cn(
+                              "date-part",
+                              highlightedPart === "secondYear" &&
+                                "font-bold underline",
+                            )}
                             onMouseOver={() => handleMouseOver("secondYear")}
                             onMouseLeave={handleMouseLeave}
                           >
@@ -416,7 +490,10 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
                     <>
                       <span
                         id="day"
-                        className={cn("date-part", highlightedPart === "day" && "font-bold underline")}
+                        className={cn(
+                          "date-part",
+                          highlightedPart === "day" && "font-bold underline",
+                        )}
                         onMouseOver={() => handleMouseOver("day")}
                         onMouseLeave={handleMouseLeave}
                       >
@@ -424,7 +501,10 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
                       </span>{" "}
                       <span
                         id="month"
-                        className={cn("date-part", highlightedPart === "month" && "font-bold underline")}
+                        className={cn(
+                          "date-part",
+                          highlightedPart === "month" && "font-bold underline",
+                        )}
                         onMouseOver={() => handleMouseOver("month")}
                         onMouseLeave={handleMouseLeave}
                       >
@@ -433,7 +513,10 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
                       ,{" "}
                       <span
                         id="year"
-                        className={cn("date-part", highlightedPart === "year" && "font-bold underline")}
+                        className={cn(
+                          "date-part",
+                          highlightedPart === "year" && "font-bold underline",
+                        )}
                         onMouseOver={() => handleMouseOver("year")}
                         onMouseLeave={handleMouseLeave}
                       >
@@ -470,7 +553,8 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
                         size="sm"
                         className={cn(
                           "justify-start hover:bg-primary/90 hover:text-primary-text",
-                          selectedRange === label && "bg-primary text-primary-text hover:bg-primary/90 hover:text-main"
+                          selectedRange === label &&
+                            "bg-primary text-primary-text hover:bg-primary/90 hover:text-main",
                         )}
                         onClick={() => {
                           selectDateRange(start, end, label);
@@ -493,7 +577,9 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
                           handleMonthChange(months.indexOf(value), "from");
                           setSelectedRange(null);
                         }}
-                        value={monthFrom ? months[monthFrom.getMonth()] : undefined}
+                        value={
+                          monthFrom ? months[monthFrom.getMonth()] : undefined
+                        }
                       >
                         <SelectTrigger className="hidden w-[122px] font-medium hover:bg-accent hover:text-accent-text focus:ring-0 focus:ring-offset-0 sm:flex">
                           <SelectValue placeholder="Month" />
@@ -532,7 +618,9 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
                             handleMonthChange(months.indexOf(value), "to");
                             setSelectedRange(null);
                           }}
-                          value={monthTo ? months[monthTo.getMonth()] : undefined}
+                          value={
+                            monthTo ? months[monthTo.getMonth()] : undefined
+                          }
                         >
                           <SelectTrigger className="hidden w-[122px] font-medium hover:bg-accent hover:text-accent-text focus:ring-0 focus:ring-offset-0 sm:flex">
                             <SelectValue placeholder="Month" />
@@ -578,7 +666,8 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
                       showOutsideDays={false}
                       className={cn("flex", className)}
                       classNames={{
-                        [UI.Months]: "relative flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
+                        [UI.Months]:
+                          "relative flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
                       }}
                     />
                   </div>
@@ -589,7 +678,7 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
         </Popover>
       </>
     );
-  }
+  },
 );
 
 CalendarDatePicker.displayName = "CalendarDatePicker";

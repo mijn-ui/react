@@ -2,7 +2,13 @@ import React from "react";
 import { Button } from "@mijn-ui/react/components/button";
 import { Input } from "@mijn-ui/react/components/input";
 import { Label } from "@mijn-ui/react/components/label";
-import { Popover, PopoverArrow, PopoverClose, PopoverContent, PopoverTrigger } from "@mijn-ui/react/components/popover";
+import {
+  Popover,
+  PopoverArrow,
+  PopoverClose,
+  PopoverContent,
+  PopoverTrigger,
+} from "@mijn-ui/react/components/popover";
 import { RxCross2, RxMixerHorizontal } from "react-icons/rx";
 
 // Making All of the Accordion Components Unstyled
@@ -21,7 +27,10 @@ const PopoverExample = ({ unstyled = false }: PopoverExampleProps) => {
           <p className="text-base font-medium">Dimensions</p>
 
           <fieldset className="flex w-full items-center justify-between gap-2">
-            <Label className="inline-block w-20 max-w-fit shrink-0 text-nowrap" htmlFor="width">
+            <Label
+              className="inline-block w-20 max-w-fit shrink-0 text-nowrap"
+              htmlFor="width"
+            >
               Width
             </Label>
             <Input
@@ -34,7 +43,10 @@ const PopoverExample = ({ unstyled = false }: PopoverExampleProps) => {
             />
           </fieldset>
           <fieldset className="flex w-full items-center justify-between gap-2">
-            <Label className="inline-block w-20 max-w-fit shrink-0 text-nowrap" htmlFor="maxWidth">
+            <Label
+              className="inline-block w-20 max-w-fit shrink-0 text-nowrap"
+              htmlFor="maxWidth"
+            >
               Max. width
             </Label>
             <Input
@@ -47,7 +59,10 @@ const PopoverExample = ({ unstyled = false }: PopoverExampleProps) => {
             />
           </fieldset>
           <fieldset className="flex w-full items-center justify-between gap-2">
-            <Label className="inline-block w-20 max-w-fit shrink-0 text-nowrap" htmlFor="height">
+            <Label
+              className="inline-block w-20 max-w-fit shrink-0 text-nowrap"
+              htmlFor="height"
+            >
               Height
             </Label>
             <Input
@@ -60,7 +75,10 @@ const PopoverExample = ({ unstyled = false }: PopoverExampleProps) => {
             />
           </fieldset>
           <fieldset className="flex w-full items-center justify-between gap-2">
-            <Label className="inline-block w-20 max-w-fit shrink-0 text-nowrap" htmlFor="maxHeight">
+            <Label
+              className="inline-block w-20 max-w-fit shrink-0 text-nowrap"
+              htmlFor="maxHeight"
+            >
               Max. height
             </Label>
             <Input

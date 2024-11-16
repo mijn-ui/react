@@ -1,5 +1,10 @@
 import React from "react";
-import { Alert, AlertDescription, AlertIcon, AlertTitle } from "@mijn-ui/react/components/alert";
+import {
+  Alert,
+  AlertDescription,
+  AlertIcon,
+  AlertTitle,
+} from "@mijn-ui/react/components/alert";
 import { IoRocketOutline } from "react-icons/io5";
 import { LuCheckCircle, LuFileWarning } from "react-icons/lu";
 import { MdErrorOutline } from "react-icons/md";
@@ -13,7 +18,9 @@ const AlertStatus = () => {
           <LuCheckCircle />
         </AlertIcon>
         <AlertTitle>Deployment Successful</AlertTitle>
-        <AlertDescription>Your application has been successfully deployed.</AlertDescription>
+        <AlertDescription>
+          Your application has been successfully deployed.
+        </AlertDescription>
       </Alert>
 
       {/* --------------------------------- Info -------------------------------- */}
@@ -22,7 +29,9 @@ const AlertStatus = () => {
           <IoRocketOutline />
         </AlertIcon>
         <AlertTitle>New Feature Added</AlertTitle>
-        <AlertDescription>A new feature has been added to the project.</AlertDescription>
+        <AlertDescription>
+          A new feature has been added to the project.
+        </AlertDescription>
       </Alert>
 
       {/* --------------------------------- Warning -------------------------------- */}
@@ -31,7 +40,9 @@ const AlertStatus = () => {
           <LuFileWarning />
         </AlertIcon>
         <AlertTitle>High Memory Usage</AlertTitle>
-        <AlertDescription>The application is using a high amount of memory.</AlertDescription>
+        <AlertDescription>
+          The application is using a high amount of memory.
+        </AlertDescription>
       </Alert>
 
       {/* --------------------------------- Danger -------------------------------- */}
@@ -40,7 +51,9 @@ const AlertStatus = () => {
           <MdErrorOutline />
         </AlertIcon>
         <AlertTitle>Build Failed</AlertTitle>
-        <AlertDescription>The latest build has failed. Please check the logs for details.</AlertDescription>
+        <AlertDescription>
+          The latest build has failed. Please check the logs for details.
+        </AlertDescription>
       </Alert>
 
       {/* ----------------------------- Neutral/Default ---------------------------- */}
@@ -49,7 +62,9 @@ const AlertStatus = () => {
           <MdErrorOutline />
         </AlertIcon>
         <AlertTitle>New Feature Added</AlertTitle>
-        <AlertDescription>A new feature has been added to the project.</AlertDescription>
+        <AlertDescription>
+          A new feature has been added to the project.
+        </AlertDescription>
       </Alert>
     </div>
   );

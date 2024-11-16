@@ -9,7 +9,7 @@ const ComponentPreview = ({ className, ...props }: CodePreviewerProps) => {
     <div
       className={cn(
         "not-prose relative flex min-h-80 w-full items-center justify-center gap-5 rounded-lg border p-5",
-        className
+        className,
       )}
       {...props}
     />
