@@ -3,9 +3,13 @@
   "tasks": {
     "build": {
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": ["dist/**", "storybook-static/**"],
+      "outputs": [".next/**", "dist/**"],
       "dependsOn": ["^build"]
     },
+    "start": {
+      "dependsOn": ["^build"]
+    },
+
     "lint": {
       "dependsOn": ["^lint"]
     },
