@@ -19,7 +19,8 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
   return (
     <DocsPage toc={page.data.toc} full={page.data.full}>
       <DocsTitle className="md:text-4xl md:font-extrabold">{page.data.title}</DocsTitle>
-      <DocsDescription>{page.data.description}</DocsDescription>
+      <DocsDescription className="mb-0">{page.data.description}</DocsDescription>
+      <hr />
       <DocsBody>
         <MDX
           components={{

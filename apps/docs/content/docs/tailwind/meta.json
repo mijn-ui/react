@@ -1,0 +1,6 @@
+{
+  "title": "Tailwind CSS",
+  "description": "Tailwind CSS components for html",
+  "pages": ["---Getting Started---", "index", "...(getting-started)", "---Components---", "...components", "..."],
+  "root": true
+}

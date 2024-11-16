@@ -1,0 +1,6 @@
+{
+  "title": "Next.js",
+  "description": "React 19 | Next.js 15 components",
+  "pages": ["---Getting Started---", "index", "...(getting-started)", "---Components---", "...components", "..."],
+  "root": true
+}
