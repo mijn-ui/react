@@ -1,20 +1,20 @@
-import React from "react";
-import { Button } from "@mijn-ui/react/components/button";
-import { Input } from "@mijn-ui/react/components/input";
-import { Label } from "@mijn-ui/react/components/label";
+import React from "react"
+import { Button } from "@mijn-ui/react/components/button"
+import { Input } from "@mijn-ui/react/components/input"
+import { Label } from "@mijn-ui/react/components/label"
 import {
   Popover,
   PopoverArrow,
   PopoverClose,
   PopoverContent,
   PopoverTrigger,
-} from "@mijn-ui/react/components/popover";
-import { RxCross2, RxMixerHorizontal } from "react-icons/rx";
+} from "@mijn-ui/react/components/popover"
+import { RxCross2, RxMixerHorizontal } from "react-icons/rx"
 
 // Making All of the Accordion Components Unstyled
 type PopoverExampleProps = {
-  unstyled?: boolean;
-};
+  unstyled?: boolean
+}
 
 const PopoverExample = ({ unstyled = false }: PopoverExampleProps) => {
   return (
@@ -105,7 +105,7 @@ const PopoverExample = ({ unstyled = false }: PopoverExampleProps) => {
         <PopoverArrow className="fill-neutral-text" />
       </PopoverContent>
     </Popover>
-  );
-};
+  )
+}
 
-export default PopoverExample;
+export default PopoverExample

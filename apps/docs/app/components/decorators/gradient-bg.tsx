@@ -1,5 +1,5 @@
-import { cn } from "@mijn-ui/react/utils";
-import React from "react";
+import React from "react"
+import { cn } from "@mijn-ui/react/utils"
 
 const LeftRadialGradient = ({
   className,
@@ -16,8 +16,8 @@ const LeftRadialGradient = ({
       }}
       {...props}
     />
-  );
-};
+  )
+}
 
 const TopRightRadialGradient = ({
   className,
@@ -34,7 +34,7 @@ const TopRightRadialGradient = ({
       }}
       {...props}
     />
-  );
-};
+  )
+}
 
-export { LeftRadialGradient, TopRightRadialGradient };
+export { LeftRadialGradient, TopRightRadialGradient }

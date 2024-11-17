@@ -1,6 +1,6 @@
-"use client";
+"use client"
 
-import * as React from "react";
+import * as React from "react"
 import {
   Pagination,
   PaginationContent,
@@ -9,14 +9,14 @@ import {
   PaginationNextEllipsis,
   PaginationPreviousButton,
   PaginationPreviousEllipsis,
-} from "@mijn-ui/react/components/pagination";
-import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
+} from "@mijn-ui/react/components/pagination"
+import { LuChevronLeft, LuChevronRight } from "react-icons/lu"
 
 const PaginationExample = () => {
-  const [currentPage, setCurrentPage] = React.useState(7);
+  const [currentPage, setCurrentPage] = React.useState(7)
 
-  const ItemsPerPage = 10;
-  const TotalPage = 160;
+  const ItemsPerPage = 10
+  const TotalPage = 160
 
   return (
     <Pagination
@@ -40,7 +40,7 @@ const PaginationExample = () => {
         </PaginationNextButton>
       </PaginationContent>
     </Pagination>
-  );
-};
+  )
+}
 
-export default PaginationExample;
+export default PaginationExample

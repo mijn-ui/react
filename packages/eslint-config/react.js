@@ -1,6 +1,6 @@
-const { resolve } = require("node:path");
+const { resolve } = require("node:path")
 
-const project = resolve(process.cwd(), "tsconfig.json");
+const project = resolve(process.cwd(), "tsconfig.json")
 
 /*
  * This is a custom ESLint configuration for use a library
@@ -36,4 +36,4 @@ module.exports = {
   rules: {
     "import/no-default-export": "off",
   },
-};
+}

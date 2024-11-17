@@ -1,23 +1,23 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { Dialog, DialogContent } from "@mijn-ui/components/dialog";
+import * as React from "react"
+import { Dialog, DialogContent } from "@mijn-ui/components/dialog"
 import {
   UnstyledProvider,
   useUnstyled,
-} from "@mijn-ui/context/unstyled-provider";
-import { UnstyledProps } from "@mijn-ui/types";
-import { applyUnstyled, cn } from "@mijn-ui/utils";
-import { type DialogProps } from "@radix-ui/react-dialog";
-import { Command as CommandPrimitive } from "cmdk";
-import { LuSearch } from "react-icons/lu";
+} from "@mijn-ui/context/unstyled-provider"
+import { UnstyledProps } from "@mijn-ui/types"
+import { applyUnstyled, cn } from "@mijn-ui/utils"
+import { type DialogProps } from "@radix-ui/react-dialog"
+import { Command as CommandPrimitive } from "cmdk"
+import { LuSearch } from "react-icons/lu"
 
 /* -------------------------------------------------------------------------- */
 /*                                   Command                                  */
 /* -------------------------------------------------------------------------- */
 
 type CommandProps = React.ComponentPropsWithRef<typeof CommandPrimitive> &
-  UnstyledProps;
+  UnstyledProps
 
 const Command = ({ unstyled = false, className, ...props }: CommandProps) => (
   <UnstyledProvider unstyled={unstyled}>
@@ -29,21 +29,21 @@ const Command = ({ unstyled = false, className, ...props }: CommandProps) => (
       {...props}
     />
   </UnstyledProvider>
-);
+)
 
 /* -------------------------------------------------------------------------- */
 /*                                CommandDialog                               */
 /* -------------------------------------------------------------------------- */
 
-type CommandDialogProps = DialogProps & UnstyledProps;
+type CommandDialogProps = DialogProps & UnstyledProps
 
 const CommandDialog = ({
   children,
   unstyled,
   ...props
 }: CommandDialogProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <Dialog {...props}>
@@ -60,8 +60,8 @@ const CommandDialog = ({
         </Command>
       </DialogContent>
     </Dialog>
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                CommandInput                                */
@@ -70,11 +70,11 @@ const CommandDialog = ({
 type CommandInputProps = React.ComponentPropsWithRef<
   typeof CommandPrimitive.Input
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const CommandInput = ({ className, unstyled, ...props }: CommandInputProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <div
@@ -99,8 +99,8 @@ const CommandInput = ({ className, unstyled, ...props }: CommandInputProps) => {
         {...props}
       />
     </div>
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                 CommandList                                */
@@ -109,11 +109,11 @@ const CommandInput = ({ className, unstyled, ...props }: CommandInputProps) => {
 type CommandListProps = React.ComponentPropsWithRef<
   typeof CommandPrimitive.List
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const CommandList = ({ className, unstyled, ...props }: CommandListProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <CommandPrimitive.List
@@ -124,8 +124,8 @@ const CommandList = ({ className, unstyled, ...props }: CommandListProps) => {
       )}
       {...props}
     />
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                CommandEmpty                                */
@@ -134,11 +134,11 @@ const CommandList = ({ className, unstyled, ...props }: CommandListProps) => {
 type CommandEmptyProps = React.ComponentPropsWithRef<
   typeof CommandPrimitive.Empty
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const CommandEmpty = ({ unstyled, className, ...props }: CommandEmptyProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <CommandPrimitive.Empty
@@ -149,8 +149,8 @@ const CommandEmpty = ({ unstyled, className, ...props }: CommandEmptyProps) => {
       )}
       {...props}
     />
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                CommandGroup                                */
@@ -159,11 +159,11 @@ const CommandEmpty = ({ unstyled, className, ...props }: CommandEmptyProps) => {
 type CommandGroupProps = React.ComponentPropsWithRef<
   typeof CommandPrimitive.Group
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const CommandGroup = ({ className, unstyled, ...props }: CommandGroupProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <CommandPrimitive.Group
@@ -174,8 +174,8 @@ const CommandGroup = ({ className, unstyled, ...props }: CommandGroupProps) => {
       )}
       {...props}
     />
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                              CommandSeparator                              */
@@ -184,15 +184,15 @@ const CommandGroup = ({ className, unstyled, ...props }: CommandGroupProps) => {
 type CommandSeparatorProps = React.ComponentPropsWithRef<
   typeof CommandPrimitive.Separator
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const CommandSeparator = ({
   className,
   unstyled,
   ...props
 }: CommandSeparatorProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <CommandPrimitive.Separator
@@ -203,8 +203,8 @@ const CommandSeparator = ({
       )}
       {...props}
     />
-  );
-};
+  )
+}
 /* -------------------------------------------------------------------------- */
 /*                                 CommandItem                                */
 /* -------------------------------------------------------------------------- */
@@ -212,11 +212,11 @@ const CommandSeparator = ({
 type CommandItemProps = React.ComponentPropsWithRef<
   typeof CommandPrimitive.Item
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const CommandItem = ({ className, unstyled, ...props }: CommandItemProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <CommandPrimitive.Item
@@ -227,22 +227,22 @@ const CommandItem = ({ className, unstyled, ...props }: CommandItemProps) => {
       )}
       {...props}
     />
-  );
-};
+  )
+}
 /* -------------------------------------------------------------------------- */
 /*                               CommandShortcut                              */
 /* -------------------------------------------------------------------------- */
 
 type CommandShortcutProps = React.HTMLAttributes<HTMLSpanElement> &
-  UnstyledProps;
+  UnstyledProps
 
 const CommandShortcut = ({
   className,
   unstyled,
   ...props
 }: CommandShortcutProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <span
@@ -253,8 +253,8 @@ const CommandShortcut = ({
       )}
       {...props}
     />
-  );
-};
+  )
+}
 
 export {
   Command,
@@ -266,4 +266,4 @@ export {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-};
+}

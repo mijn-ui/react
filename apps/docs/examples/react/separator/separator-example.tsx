@@ -1,4 +1,4 @@
-import { Separator } from "@mijn-ui/react/components/separator";
+import { Separator } from "@mijn-ui/react/components/separator"
 
 const SeparatorExample = () => {
   return (
@@ -18,7 +18,7 @@ const SeparatorExample = () => {
         <div>Source</div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SeparatorExample;
+export default SeparatorExample

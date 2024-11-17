@@ -1,7 +1,7 @@
-import * as React from "react";
-import { UnstyledProps } from "@mijn-ui/types";
-import { applyUnstyled } from "@mijn-ui/utils";
-import { type VariantProps, cva } from "class-variance-authority";
+import * as React from "react"
+import { UnstyledProps } from "@mijn-ui/types"
+import { applyUnstyled } from "@mijn-ui/utils"
+import { type VariantProps, cva } from "class-variance-authority"
 
 const badgeVariants = cva(
   "inline-flex items-center px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring",
@@ -118,11 +118,11 @@ const badgeVariants = cva(
       radius: "full",
     },
   },
-);
+)
 
 export type BadgeProps = React.HTMLAttributes<HTMLDivElement> &
   VariantProps<typeof badgeVariants> &
-  UnstyledProps;
+  UnstyledProps
 
 function Badge({
   unstyled,
@@ -141,7 +141,7 @@ function Badge({
       )}
       {...props}
     />
-  );
+  )
 }
 
-export { Badge, badgeVariants };
+export { Badge, badgeVariants }

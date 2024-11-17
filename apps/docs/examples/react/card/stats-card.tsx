@@ -1,13 +1,13 @@
-import React from "react";
-import { Button } from "@mijn-ui/react/components/button";
+import React from "react"
+import { Button } from "@mijn-ui/react/components/button"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@mijn-ui/react/components/card";
-import { IoBagOutline } from "react-icons/io5";
+} from "@mijn-ui/react/components/card"
+import { IoBagOutline } from "react-icons/io5"
 
 const StatsCardExample = () => {
   return (
@@ -32,7 +32,7 @@ const StatsCardExample = () => {
         </p>
       </CardContent>
     </Card>
-  );
-};
+  )
+}
 
-export default StatsCardExample;
+export default StatsCardExample

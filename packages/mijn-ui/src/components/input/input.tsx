@@ -1,22 +1,22 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { Label } from "@mijn-ui/components/label";
-import { UnstyledProps } from "@mijn-ui/types";
-import { applyUnstyled, cn } from "@mijn-ui/utils";
+import * as React from "react"
+import { Label } from "@mijn-ui/components/label"
+import { UnstyledProps } from "@mijn-ui/types"
+import { applyUnstyled, cn } from "@mijn-ui/utils"
 
 export type InputProps = React.ComponentPropsWithRef<"input"> & {
-  className?: string;
+  className?: string
   classNames?: {
-    input?: string;
-    label?: string;
-    startIcon?: string;
-    endIcon?: string;
-  };
-  startIcon?: React.ReactNode;
-  endIcon?: React.ReactNode;
-  label?: React.ReactNode;
-} & UnstyledProps;
+    input?: string
+    label?: string
+    startIcon?: string
+    endIcon?: string
+  }
+  startIcon?: React.ReactNode
+  endIcon?: React.ReactNode
+  label?: React.ReactNode
+} & UnstyledProps
 
 const Input = ({
   unstyled,
@@ -30,7 +30,7 @@ const Input = ({
   disabled,
   ...props
 }: InputProps) => {
-  const id = React.useId();
+  const id = React.useId()
 
   return (
     <div
@@ -99,9 +99,9 @@ const Input = ({
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-Input.displayName = "Input";
+Input.displayName = "Input"
 
-export { Input };
+export { Input }

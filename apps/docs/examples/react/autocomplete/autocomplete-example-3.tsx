@@ -1,24 +1,24 @@
-"use client";
+"use client"
 
-import * as React from "react";
+import * as React from "react"
 import {
   Autocomplete,
   AutocompleteContent,
   AutocompleteGroup,
   AutocompleteItem,
   AutocompleteTrigger,
-} from "@mijn-ui/react/components/autocomplete";
-import { Button } from "@mijn-ui/react/components/button";
+} from "@mijn-ui/react/components/autocomplete"
+import { Button } from "@mijn-ui/react/components/button"
 import {
   Dialog,
   DialogClose,
   DialogContent,
   DialogTitle,
   DialogTrigger,
-} from "@mijn-ui/react/components/dialog";
-import { Input } from "@mijn-ui/react/components/input";
-import { ScrollArea } from "@mijn-ui/react/components/scroll-area";
-import { LuChevronsUpDown } from "react-icons/lu";
+} from "@mijn-ui/react/components/dialog"
+import { Input } from "@mijn-ui/react/components/input"
+import { ScrollArea } from "@mijn-ui/react/components/scroll-area"
+import { LuChevronsUpDown } from "react-icons/lu"
 
 const FRAMEWORKS = [
   "Next.js",
@@ -45,10 +45,10 @@ const FRAMEWORKS = [
   "Fastify",
   "Hapi.js",
   "AdonisJS",
-];
+]
 
 const AutocompleteWithDialog = () => {
-  const [value, setValue] = React.useState("Next.js");
+  const [value, setValue] = React.useState("Next.js")
 
   return (
     <Dialog>
@@ -91,7 +91,7 @@ const AutocompleteWithDialog = () => {
         </div>
       </DialogContent>
     </Dialog>
-  );
-};
+  )
+}
 
-export default AutocompleteWithDialog;
+export default AutocompleteWithDialog

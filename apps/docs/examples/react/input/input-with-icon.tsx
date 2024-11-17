@@ -1,6 +1,6 @@
-import React from "react";
-import { Input } from "@mijn-ui/react/components/input";
-import { LuPlus } from "react-icons/lu";
+import React from "react"
+import { Input } from "@mijn-ui/react/components/input"
+import { LuPlus } from "react-icons/lu"
 
 const InputWithIcon = () => {
   return (
@@ -23,7 +23,7 @@ const InputWithIcon = () => {
         startIcon={<LuPlus />}
       />
     </div>
-  );
-};
+  )
+}
 
-export default InputWithIcon;
+export default InputWithIcon

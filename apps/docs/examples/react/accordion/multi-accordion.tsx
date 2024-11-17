@@ -1,10 +1,10 @@
-import React from "react";
+import React from "react"
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@mijn-ui/react/components/accordion";
+} from "@mijn-ui/react/components/accordion"
 
 const MultiAccordionExample = () => {
   return (
@@ -31,7 +31,7 @@ const MultiAccordionExample = () => {
         </AccordionContent>
       </AccordionItem>
     </Accordion>
-  );
-};
+  )
+}
 
-export default MultiAccordionExample;
+export default MultiAccordionExample

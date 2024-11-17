@@ -1,13 +1,13 @@
-"use client";
+"use client"
 
-import * as React from "react";
+import * as React from "react"
 import {
   UnstyledProvider,
   useUnstyled,
-} from "@mijn-ui/context/unstyled-provider";
-import { UnstyledProps } from "@mijn-ui/types";
-import { applyUnstyled, cn } from "@mijn-ui/utils";
-import { VariantProps, cva } from "class-variance-authority";
+} from "@mijn-ui/context/unstyled-provider"
+import { UnstyledProps } from "@mijn-ui/types"
+import { applyUnstyled, cn } from "@mijn-ui/utils"
+import { VariantProps, cva } from "class-variance-authority"
 
 const alertStyles = cva(
   "relative group rounded-lg w-full py-4 px-3 [&>span~*]:pl-8 border-main-border border [&>svg]:text-main-text",
@@ -121,7 +121,7 @@ const alertStyles = cva(
       status: "default",
     },
   },
-);
+)
 
 /* -------------------------------------------------------------------------- */
 /*                                    Alert                                   */
@@ -129,7 +129,7 @@ const alertStyles = cva(
 
 export type AlertProps = React.ComponentProps<"div"> &
   VariantProps<typeof alertStyles> &
-  UnstyledProps;
+  UnstyledProps
 
 const Alert = ({
   variant,
@@ -150,17 +150,17 @@ const Alert = ({
       )}
     />
   </UnstyledProvider>
-);
+)
 
 /* -------------------------------------------------------------------------- */
 /*                                  AlertIcon                                 */
 /* -------------------------------------------------------------------------- */
 
-type AlertIconProps = React.ComponentProps<"span"> & UnstyledProps;
+type AlertIconProps = React.ComponentProps<"span"> & UnstyledProps
 
 const AlertIcon = ({ unstyled, className, ...props }: AlertIconProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <span
@@ -171,18 +171,18 @@ const AlertIcon = ({ unstyled, className, ...props }: AlertIconProps) => {
       )}
       {...props}
     />
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                 AlertTitle                                 */
 /* -------------------------------------------------------------------------- */
 
-type AlertTitle = React.ComponentProps<"h5"> & UnstyledProps;
+type AlertTitle = React.ComponentProps<"h5"> & UnstyledProps
 
 const AlertTitle = ({ unstyled, className, ...props }: AlertTitle) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <h5
@@ -193,21 +193,21 @@ const AlertTitle = ({ unstyled, className, ...props }: AlertTitle) => {
       )}
       {...props}
     />
-  );
-};
+  )
+}
 
 /* ---------------------------- AlertDescription ---------------------------- */
-type AlertDescriptionProps = React.ComponentProps<"p"> & UnstyledProps;
+type AlertDescriptionProps = React.ComponentProps<"p"> & UnstyledProps
 
 const AlertDescription = ({
   unstyled,
   className,
   ...props
 }: AlertDescriptionProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
-  return <p className={cn(isUnstyled, "mt-1 text-sm", className)} {...props} />;
-};
+  return <p className={cn(isUnstyled, "mt-1 text-sm", className)} {...props} />
+}
 
-export { Alert, AlertDescription, AlertIcon, alertStyles, AlertTitle };
+export { Alert, AlertDescription, AlertIcon, alertStyles, AlertTitle }

@@ -1,9 +1,9 @@
-import React from "react";
+import React from "react"
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@mijn-ui/react/components/avatar";
+} from "@mijn-ui/react/components/avatar"
 
 const AvatarSizes = () => {
   return (
@@ -38,7 +38,7 @@ const AvatarSizes = () => {
         <AvatarFallback>xxl</AvatarFallback>
       </Avatar>
     </>
-  );
-};
+  )
+}
 
-export default AvatarSizes;
+export default AvatarSizes

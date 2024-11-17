@@ -1,12 +1,12 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { cn } from "@mijn-ui/utils";
-import * as SeparatorPrimitive from "@radix-ui/react-separator";
+import * as React from "react"
+import { cn } from "@mijn-ui/utils"
+import * as SeparatorPrimitive from "@radix-ui/react-separator"
 
 type SeparatorProps = React.ComponentPropsWithRef<
   typeof SeparatorPrimitive.Root
->;
+>
 
 const Separator = ({
   className,
@@ -24,6 +24,6 @@ const Separator = ({
     )}
     {...props}
   />
-);
+)
 
-export { Separator };
+export { Separator }

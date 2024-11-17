@@ -1,7 +1,7 @@
-"use client";
+"use client"
 
-import React, { useEffect, useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react"
+import { usePathname, useRouter } from "next/navigation"
 import {
   Select,
   SelectContent,
@@ -10,17 +10,17 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@mijn-ui/react/components/select";
+} from "@mijn-ui/react/components/select"
 
 const PAGE_OPTIONS = {
   next: "/docs",
   tailwind: "/docs/tailwind",
-};
+}
 
 const AvailablePagesSelector = () => {
-  const router = useRouter();
-  const pathname = usePathname();
-  const [selectedValue, setSelectedValue] = useState("");
+  const router = useRouter()
+  const pathname = usePathname()
+  const [selectedValue, setSelectedValue] = useState("")
 
   // Update selected value whenever the path changes
   useEffect(() => {
@@ -28,13 +28,13 @@ const AvailablePagesSelector = () => {
       pathname.startsWith("/docs/tailwind")
         ? PAGE_OPTIONS.tailwind
         : PAGE_OPTIONS.next,
-    );
-  }, [pathname]);
+    )
+  }, [pathname])
 
   const handleChange = (value: string) => {
-    setSelectedValue(value);
-    router.push(value);
-  };
+    setSelectedValue(value)
+    router.push(value)
+  }
 
   return (
     <Select onValueChange={handleChange} value={selectedValue}>
@@ -56,7 +56,7 @@ const AvailablePagesSelector = () => {
         </SelectGroup>
       </SelectContent>
     </Select>
-  );
-};
+  )
+}
 
-export default AvailablePagesSelector;
+export default AvailablePagesSelector

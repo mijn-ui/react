@@ -1,13 +1,13 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import { CalendarDatePicker } from "@mijn-ui/react/components/calendar";
+import { useState } from "react"
+import { CalendarDatePicker } from "@mijn-ui/react/components/calendar"
 
 const CalendarDatePickerExample = () => {
   const [selectedDateRange, setSelectedDateRange] = useState({
     from: new Date(new Date().getFullYear(), 0, 1),
     to: new Date(),
-  });
+  })
 
   return (
     <div className="max-w-xl p-4">
@@ -27,7 +27,7 @@ const CalendarDatePickerExample = () => {
         </p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CalendarDatePickerExample;
+export default CalendarDatePickerExample

@@ -1,13 +1,13 @@
-import React from "react";
-import { Button } from "@mijn-ui/react/components/button";
+import React from "react"
+import { Button } from "@mijn-ui/react/components/button"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@mijn-ui/react/components/card";
-import { LuArrowUpRight, LuPlus } from "react-icons/lu";
+} from "@mijn-ui/react/components/card"
+import { LuArrowUpRight, LuPlus } from "react-icons/lu"
 
 const CardExample = () => {
   return (
@@ -34,7 +34,7 @@ const CardExample = () => {
         <CardDescription>Manage user accounts and permissions.</CardDescription>
       </CardContent>
     </Card>
-  );
-};
+  )
+}
 
-export default CardExample;
+export default CardExample

@@ -1,11 +1,11 @@
-import React from "react";
+import React from "react"
 import {
   Alert,
   AlertDescription,
   AlertIcon,
   AlertTitle,
-} from "@mijn-ui/react/components/alert";
-import { MdErrorOutline } from "react-icons/md";
+} from "@mijn-ui/react/components/alert"
+import { MdErrorOutline } from "react-icons/md"
 
 const AlertFilled = () => {
   return (
@@ -60,7 +60,7 @@ const AlertFilled = () => {
         <AlertDescription>This is a filled Info Alert.</AlertDescription>
       </Alert>
     </div>
-  );
-};
+  )
+}
 
-export default AlertFilled;
+export default AlertFilled

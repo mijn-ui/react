@@ -1,38 +1,37 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { buttonStyles } from "@mijn-ui/components/button";
+import * as React from "react"
+import { buttonStyles } from "@mijn-ui/components/button"
 import {
   UnstyledProvider,
   useUnstyled,
-} from "@mijn-ui/context/unstyled-provider";
-import { UnstyledProps } from "@mijn-ui/types";
-import { applyUnstyled, cn } from "@mijn-ui/utils";
-import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
-import { LuCheck, LuChevronRight, LuCircle } from "react-icons/lu";
+} from "@mijn-ui/context/unstyled-provider"
+import { UnstyledProps } from "@mijn-ui/types"
+import { applyUnstyled, cn } from "@mijn-ui/utils"
+import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu"
+import { LuCheck, LuChevronRight, LuCircle } from "react-icons/lu"
 
-const DropdownMenuGroup = DropdownMenuPrimitive.Group;
+const DropdownMenuGroup = DropdownMenuPrimitive.Group
 
-const DropdownMenuPortal = DropdownMenuPrimitive.Portal;
+const DropdownMenuPortal = DropdownMenuPrimitive.Portal
 
-const DropdownMenuSub = DropdownMenuPrimitive.Sub;
+const DropdownMenuSub = DropdownMenuPrimitive.Sub
 
-const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup;
+const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup
 
 /* -------------------------------------------------------------------------- */
 /*                                DropdownMenu                                */
 /* -------------------------------------------------------------------------- */
 
-type DropdownMenuProps = DropdownMenuPrimitive.DropdownMenuProps &
-  UnstyledProps;
+type DropdownMenuProps = DropdownMenuPrimitive.DropdownMenuProps & UnstyledProps
 
 const DropdownMenu = ({ unstyled = false, ...props }: DropdownMenuProps) => {
   return (
     <UnstyledProvider unstyled={unstyled}>
       <DropdownMenuPrimitive.Root {...props} />
     </UnstyledProvider>
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                             DropdownMenuTrigger                            */
@@ -41,15 +40,15 @@ const DropdownMenu = ({ unstyled = false, ...props }: DropdownMenuProps) => {
 type DropdownTriggerProps = React.ComponentPropsWithRef<
   typeof DropdownMenuPrimitive.Trigger
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const DropdownMenuTrigger = ({
   unstyled,
   className,
   ...props
 }: DropdownTriggerProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <DropdownMenuPrimitive.Trigger
@@ -60,8 +59,8 @@ const DropdownMenuTrigger = ({
       )}
       {...props}
     />
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                           DropdownMenuSubTrigger                           */
@@ -71,8 +70,8 @@ type DropdownMenuSubTriggerProps = React.ComponentPropsWithRef<
   typeof DropdownMenuPrimitive.SubTrigger
 > &
   UnstyledProps & {
-    inset?: boolean;
-  };
+    inset?: boolean
+  }
 
 const DropdownMenuSubTrigger = ({
   unstyled,
@@ -81,8 +80,8 @@ const DropdownMenuSubTrigger = ({
   children,
   ...props
 }: DropdownMenuSubTriggerProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <DropdownMenuPrimitive.SubTrigger
@@ -101,8 +100,8 @@ const DropdownMenuSubTrigger = ({
       {children}
       <LuChevronRight className="ml-auto" />
     </DropdownMenuPrimitive.SubTrigger>
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                           DropdownMenuSubContent                           */
@@ -111,15 +110,15 @@ const DropdownMenuSubTrigger = ({
 type DropdownMenuSubContentProps = React.ComponentPropsWithRef<
   typeof DropdownMenuPrimitive.SubContent
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const DropdownMenuSubContent = ({
   unstyled,
   className,
   ...props
 }: DropdownMenuSubContentProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <DropdownMenuPrimitive.SubContent
@@ -130,8 +129,8 @@ const DropdownMenuSubContent = ({
       )}
       {...props}
     />
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                             DropdownMenuContent                            */
@@ -140,7 +139,7 @@ const DropdownMenuSubContent = ({
 type DropdownMenuContentProps = React.ComponentPropsWithRef<
   typeof DropdownMenuPrimitive.Content
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const DropdownMenuContent = ({
   className,
@@ -148,8 +147,8 @@ const DropdownMenuContent = ({
   sideOffset = 4,
   ...props
 }: DropdownMenuContentProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <DropdownMenuPrimitive.Portal>
@@ -163,8 +162,8 @@ const DropdownMenuContent = ({
         {...props}
       />
     </DropdownMenuPrimitive.Portal>
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                              DropdownMenuItem                              */
@@ -173,8 +172,8 @@ const DropdownMenuContent = ({
 type DropdownMenuItemProps = React.ComponentPropsWithRef<
   typeof DropdownMenuPrimitive.Item
 > & {
-  inset?: boolean;
-} & UnstyledProps;
+  inset?: boolean
+} & UnstyledProps
 
 const DropdownMenuItem = ({
   unstyled,
@@ -182,8 +181,8 @@ const DropdownMenuItem = ({
   inset,
   ...props
 }: DropdownMenuItemProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <DropdownMenuPrimitive.Item
@@ -197,8 +196,8 @@ const DropdownMenuItem = ({
       )}
       {...props}
     />
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                          DropdownMenuCheckboxItem                          */
@@ -207,7 +206,7 @@ const DropdownMenuItem = ({
 type DropdownMenuCheckboxItemProps = React.ComponentPropsWithRef<
   typeof DropdownMenuPrimitive.CheckboxItem
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const DropdownMenuCheckboxItem = ({
   className,
@@ -216,8 +215,8 @@ const DropdownMenuCheckboxItem = ({
   checked,
   ...props
 }: DropdownMenuCheckboxItemProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <DropdownMenuPrimitive.CheckboxItem
@@ -241,8 +240,8 @@ const DropdownMenuCheckboxItem = ({
       </span>
       {children}
     </DropdownMenuPrimitive.CheckboxItem>
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                            DropdownMenuRadioItem                           */
@@ -251,7 +250,7 @@ const DropdownMenuCheckboxItem = ({
 type DropdownMenuRadioItemProps = React.ComponentPropsWithRef<
   typeof DropdownMenuPrimitive.RadioItem
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const DropdownMenuRadioItem = ({
   className,
@@ -259,8 +258,8 @@ const DropdownMenuRadioItem = ({
   children,
   ...props
 }: DropdownMenuRadioItemProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <DropdownMenuPrimitive.RadioItem
@@ -282,8 +281,8 @@ const DropdownMenuRadioItem = ({
       </span>
       {children}
     </DropdownMenuPrimitive.RadioItem>
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                              DropdownMenuLabel                             */
@@ -291,8 +290,8 @@ const DropdownMenuRadioItem = ({
 type DropdownMenuLabelProps = React.ComponentPropsWithRef<
   typeof DropdownMenuPrimitive.Label
 > & {
-  inset?: boolean;
-} & UnstyledProps;
+  inset?: boolean
+} & UnstyledProps
 
 const DropdownMenuLabel = ({
   className,
@@ -300,8 +299,8 @@ const DropdownMenuLabel = ({
   inset,
   ...props
 }: DropdownMenuLabelProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <DropdownMenuPrimitive.Label
@@ -312,8 +311,8 @@ const DropdownMenuLabel = ({
       )}
       {...props}
     />
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                            DropdownMenuSeparator                           */
@@ -322,15 +321,15 @@ const DropdownMenuLabel = ({
 type DropdownMenuSeparatorProps = React.ComponentPropsWithRef<
   typeof DropdownMenuPrimitive.Separator
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const DropdownMenuSeparator = ({
   className,
   unstyled,
   ...props
 }: DropdownMenuSeparatorProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <DropdownMenuPrimitive.Separator
@@ -341,8 +340,8 @@ const DropdownMenuSeparator = ({
       )}
       {...props}
     />
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                            DropdownMenuShortcut                            */
@@ -353,8 +352,8 @@ const DropdownMenuShortcut = ({
   unstyled,
   ...props
 }: React.HTMLAttributes<HTMLSpanElement> & UnstyledProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <span
@@ -365,9 +364,9 @@ const DropdownMenuShortcut = ({
       )}
       {...props}
     />
-  );
-};
-DropdownMenuShortcut.displayName = "DropdownMenuShortcut";
+  )
+}
+DropdownMenuShortcut.displayName = "DropdownMenuShortcut"
 
 export {
   DropdownMenu,
@@ -385,4 +384,4 @@ export {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuRadioGroup,
-};
+}

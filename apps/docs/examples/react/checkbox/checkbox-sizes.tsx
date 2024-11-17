@@ -1,6 +1,6 @@
-import React from "react";
-import { Checkbox } from "@mijn-ui/react/components/checkbox";
-import { Label } from "@mijn-ui/react/components/label";
+import React from "react"
+import { Checkbox } from "@mijn-ui/react/components/checkbox"
+import { Label } from "@mijn-ui/react/components/label"
 
 const CheckboxSizes = () => {
   return (
@@ -20,7 +20,7 @@ const CheckboxSizes = () => {
         <Label htmlFor="lg">Large</Label>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CheckboxSizes;
+export default CheckboxSizes

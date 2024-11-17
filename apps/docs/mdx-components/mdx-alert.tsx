@@ -1,21 +1,21 @@
-import React from "react";
+import React from "react"
 import {
   AlertDescription,
   AlertIcon,
   AlertTitle,
   Alert as MijnUIAlert,
   alertStyles,
-} from "@mijn-ui/react/components/alert";
-import { cn } from "@mijn-ui/react/utils";
-import { VariantProps } from "class-variance-authority";
-import { LuAlertCircle, LuBug } from "react-icons/lu";
+} from "@mijn-ui/react/components/alert"
+import { cn } from "@mijn-ui/react/utils"
+import { VariantProps } from "class-variance-authority"
+import { LuAlertCircle, LuBug } from "react-icons/lu"
 
 type AlertProps = {
-  title: string;
-  description: string;
-  status?: VariantProps<typeof alertStyles>["status"];
-  className?: string;
-};
+  title: string
+  description: string
+  status?: VariantProps<typeof alertStyles>["status"]
+  className?: string
+}
 
 const Alert = ({
   title,
@@ -23,7 +23,7 @@ const Alert = ({
   status = "info",
   className,
 }: AlertProps) => {
-  const Icon = status === "danger" ? LuBug : LuAlertCircle;
+  const Icon = status === "danger" ? LuBug : LuAlertCircle
 
   return (
     <MijnUIAlert
@@ -37,7 +37,7 @@ const Alert = ({
       <AlertTitle>{title}</AlertTitle>
       <AlertDescription>{description}</AlertDescription>
     </MijnUIAlert>
-  );
-};
+  )
+}
 
-export default Alert;
+export default Alert

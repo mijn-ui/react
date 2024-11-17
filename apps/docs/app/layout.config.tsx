@@ -1,5 +1,5 @@
-import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
-import Navbar from "@/mdx-components/navbar";
+import Navbar from "@/mdx-components/navbar"
+import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared"
 
 /**
  * Shared layout configurations
@@ -12,4 +12,4 @@ export const baseOptions: BaseLayoutProps = {
   nav: {
     component: <Navbar />,
   },
-};
+}

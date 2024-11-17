@@ -1,17 +1,17 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { buttonStyles } from "@mijn-ui/components/button";
-import { cn } from "@mijn-ui/utils";
-import { DayFlag, DayPicker, SelectionState, UI } from "react-day-picker";
+import * as React from "react"
+import { buttonStyles } from "@mijn-ui/components/button"
+import { cn } from "@mijn-ui/utils"
+import { DayFlag, DayPicker, SelectionState, UI } from "react-day-picker"
 import {
   LuChevronDown,
   LuChevronLeft,
   LuChevronRight,
   LuChevronUp,
-} from "react-icons/lu";
+} from "react-icons/lu"
 
-export type CalendarProps = React.ComponentProps<typeof DayPicker>;
+export type CalendarProps = React.ComponentProps<typeof DayPicker>
 
 export const Calendar = ({
   className,
@@ -64,20 +64,20 @@ export const Calendar = ({
       }}
       {...props}
     />
-  );
-};
+  )
+}
 
 const Chevron = ({ orientation = "left" }) => {
   switch (orientation) {
     case "left":
-      return <LuChevronLeft className="h-4 w-4" />;
+      return <LuChevronLeft className="h-4 w-4" />
     case "right":
-      return <LuChevronRight className="h-4 w-4" />;
+      return <LuChevronRight className="h-4 w-4" />
     case "up":
-      return <LuChevronUp className="h-4 w-4" />;
+      return <LuChevronUp className="h-4 w-4" />
     case "down":
-      return <LuChevronDown className="h-4 w-4" />;
+      return <LuChevronDown className="h-4 w-4" />
     default:
-      return null;
+      return null
   }
-};
+}

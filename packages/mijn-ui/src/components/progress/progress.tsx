@@ -1,14 +1,14 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { UnstyledProps } from "@mijn-ui/types";
-import { applyUnstyled } from "@mijn-ui/utils";
-import * as ProgressPrimitive from "@radix-ui/react-progress";
+import * as React from "react"
+import { UnstyledProps } from "@mijn-ui/types"
+import { applyUnstyled } from "@mijn-ui/utils"
+import * as ProgressPrimitive from "@radix-ui/react-progress"
 
 type ProgressProps = React.ComponentPropsWithRef<
   typeof ProgressPrimitive.Root
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const Progress = ({
   className,
@@ -31,6 +31,6 @@ const Progress = ({
       style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
     />
   </ProgressPrimitive.Root>
-);
+)
 
-export { Progress };
+export { Progress }

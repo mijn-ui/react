@@ -1,5 +1,5 @@
-import React from "react";
-import { Button } from "@mijn-ui/react/components/button";
+import React from "react"
+import { Button } from "@mijn-ui/react/components/button"
 
 const ButtonVariants = () => {
   return (
@@ -35,7 +35,7 @@ const ButtonVariants = () => {
         Button
       </Button>
     </div>
-  );
-};
+  )
+}
 
-export default ButtonVariants;
+export default ButtonVariants

@@ -1,13 +1,13 @@
-import React from "react";
+import React from "react"
 import {
   Alert,
   AlertDescription,
   AlertIcon,
   AlertTitle,
-} from "@mijn-ui/react/components/alert";
-import { IoRocketOutline } from "react-icons/io5";
-import { LuCheckCircle, LuFileWarning } from "react-icons/lu";
-import { MdErrorOutline } from "react-icons/md";
+} from "@mijn-ui/react/components/alert"
+import { IoRocketOutline } from "react-icons/io5"
+import { LuCheckCircle, LuFileWarning } from "react-icons/lu"
+import { MdErrorOutline } from "react-icons/md"
 
 const AlertStatus = () => {
   return (
@@ -67,7 +67,7 @@ const AlertStatus = () => {
         </AlertDescription>
       </Alert>
     </div>
-  );
-};
+  )
+}
 
-export default AlertStatus;
+export default AlertStatus

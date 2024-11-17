@@ -1,12 +1,12 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { UnstyledProps } from "@mijn-ui/types";
-import { applyUnstyled } from "@mijn-ui/utils";
-import * as SwitchPrimitives from "@radix-ui/react-switch";
+import * as React from "react"
+import { UnstyledProps } from "@mijn-ui/types"
+import { applyUnstyled } from "@mijn-ui/utils"
+import * as SwitchPrimitives from "@radix-ui/react-switch"
 
 type SwitchProps = React.ComponentPropsWithRef<typeof SwitchPrimitives.Root> &
-  UnstyledProps;
+  UnstyledProps
 
 const Switch = ({ className, unstyled, ...props }: SwitchProps) => (
   <SwitchPrimitives.Root
@@ -24,6 +24,6 @@ const Switch = ({ className, unstyled, ...props }: SwitchProps) => (
       )}
     />
   </SwitchPrimitives.Root>
-);
+)
 
-export { Switch };
+export { Switch }

@@ -1,15 +1,15 @@
-"use client";
+"use client"
 
-import * as React from "react";
+import * as React from "react"
 import {
   UnstyledProvider,
   useUnstyled,
-} from "@mijn-ui/context/unstyled-provider";
-import { UnstyledProps } from "@mijn-ui/types";
-import { applyUnstyled } from "@mijn-ui/utils";
-import * as RadixAccordion from "@radix-ui/react-accordion";
-import { VariantProps, cva } from "class-variance-authority";
-import { LuChevronDown } from "react-icons/lu";
+} from "@mijn-ui/context/unstyled-provider"
+import { UnstyledProps } from "@mijn-ui/types"
+import { applyUnstyled } from "@mijn-ui/utils"
+import * as RadixAccordion from "@radix-ui/react-accordion"
+import { VariantProps, cva } from "class-variance-authority"
+import { LuChevronDown } from "react-icons/lu"
 
 const accordionStyles = cva("[&>div]:border-b [&>div]:border-b-main-border", {
   variants: {
@@ -22,7 +22,7 @@ const accordionStyles = cva("[&>div]:border-b [&>div]:border-b-main-border", {
   defaultVariants: {
     variant: "default",
   },
-});
+})
 
 /* -------------------------------------------------------------------------- */
 /*                                  Accordion                                 */
@@ -32,7 +32,7 @@ export type AccordionProps = React.ComponentPropsWithRef<
   typeof RadixAccordion.Root
 > &
   VariantProps<typeof accordionStyles> &
-  UnstyledProps;
+  UnstyledProps
 
 const Accordion = ({
   className,
@@ -50,7 +50,7 @@ const Accordion = ({
       {...props}
     />
   </UnstyledProvider>
-);
+)
 
 /* -------------------------------------------------------------------------- */
 /*                                AccordionItem                               */
@@ -59,23 +59,23 @@ const Accordion = ({
 export type AccordionItemProps = React.ComponentPropsWithRef<
   typeof RadixAccordion.Item
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const AccordionItem = ({
   className,
   unstyled,
   ...props
 }: AccordionItemProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <RadixAccordion.Item
       className={applyUnstyled(isUnstyled, "w-full", className)}
       {...props}
     />
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                              AccordionTrigger                              */
@@ -85,8 +85,8 @@ export type AccordionTriggerProps = React.ComponentPropsWithRef<
   typeof RadixAccordion.Trigger
 > &
   UnstyledProps & {
-    icon?: React.ReactNode;
-  };
+    icon?: React.ReactNode
+  }
 
 const AccordionTrigger = ({
   className,
@@ -95,8 +95,8 @@ const AccordionTrigger = ({
   children,
   ...props
 }: AccordionTriggerProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <RadixAccordion.Header className={applyUnstyled(isUnstyled, "flex")}>
@@ -122,8 +122,8 @@ const AccordionTrigger = ({
         )}
       </RadixAccordion.Trigger>
     </RadixAccordion.Header>
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                            AccordionContentProps                           */
@@ -132,7 +132,7 @@ const AccordionTrigger = ({
 export type AccordionContentProps = React.ComponentPropsWithRef<
   typeof RadixAccordion.Content
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const AccordionContent = ({
   className,
@@ -140,8 +140,8 @@ const AccordionContent = ({
   children,
   ...props
 }: AccordionContentProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <RadixAccordion.Content
@@ -155,8 +155,8 @@ const AccordionContent = ({
         {children}
       </div>
     </RadixAccordion.Content>
-  );
-};
+  )
+}
 
 export {
   Accordion,
@@ -164,4 +164,4 @@ export {
   AccordionItem,
   AccordionTrigger,
   accordionStyles,
-};
+}

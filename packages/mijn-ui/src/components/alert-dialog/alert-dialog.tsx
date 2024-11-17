@@ -1,16 +1,16 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { buttonStyles } from "@mijn-ui/components/button";
+import * as React from "react"
+import { buttonStyles } from "@mijn-ui/components/button"
 import {
   UnstyledProvider,
   useUnstyled,
-} from "@mijn-ui/context/unstyled-provider";
-import { UnstyledProps } from "@mijn-ui/types";
-import { applyUnstyled } from "@mijn-ui/utils";
-import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
+} from "@mijn-ui/context/unstyled-provider"
+import { UnstyledProps } from "@mijn-ui/types"
+import { applyUnstyled } from "@mijn-ui/utils"
+import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
 
-const AlertDialogPortal = AlertDialogPrimitive.Portal;
+const AlertDialogPortal = AlertDialogPrimitive.Portal
 
 /* -------------------------------------------------------------------------- */
 /*                                 AlertDialog                                */
@@ -24,8 +24,8 @@ const AlertDialog = ({
     <UnstyledProvider unstyled={unstyled}>
       <AlertDialogPrimitive.Root {...props} />
     </UnstyledProvider>
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                             AlertDialogTrigger                             */
@@ -34,15 +34,15 @@ const AlertDialog = ({
 type AlertDialogTriggerProps = React.ComponentPropsWithRef<
   typeof AlertDialogPrimitive.Trigger
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const AlertDialogTrigger = ({
   unstyled,
   className,
   ...props
 }: AlertDialogTriggerProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <AlertDialogPrimitive.Trigger
@@ -53,8 +53,8 @@ const AlertDialogTrigger = ({
       )}
       {...props}
     />
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                             AlertDialogOverlay                             */
@@ -63,15 +63,15 @@ const AlertDialogTrigger = ({
 type AlertDialogOverlayProps = React.ComponentPropsWithRef<
   typeof AlertDialogPrimitive.Overlay
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const AlertDialogOverlay = ({
   className,
   unstyled,
   ...props
 }: AlertDialogOverlayProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <AlertDialogPrimitive.Overlay
@@ -82,8 +82,8 @@ const AlertDialogOverlay = ({
       )}
       {...props}
     />
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                             AlertDialogContent                             */
@@ -92,15 +92,15 @@ const AlertDialogOverlay = ({
 type AlertDialogContentProps = React.ComponentPropsWithRef<
   typeof AlertDialogPrimitive.Content
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const AlertDialogContent = ({
   unstyled,
   className,
   ...props
 }: AlertDialogContentProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <AlertDialogPortal>
@@ -122,8 +122,8 @@ const AlertDialogContent = ({
         />
       </div>
     </AlertDialogPortal>
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                              AlertDialogHeader                             */
@@ -134,8 +134,8 @@ const AlertDialogHeader = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement> & UnstyledProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <div
@@ -146,9 +146,9 @@ const AlertDialogHeader = ({
       )}
       {...props}
     />
-  );
-};
-AlertDialogHeader.displayName = "AlertDialogHeader";
+  )
+}
+AlertDialogHeader.displayName = "AlertDialogHeader"
 
 /* -------------------------------------------------------------------------- */
 /*                              AlertDialogFooter                             */
@@ -159,8 +159,8 @@ const AlertDialogFooter = ({
   unstyled,
   ...props
 }: React.HTMLAttributes<HTMLDivElement> & UnstyledProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <div
@@ -171,9 +171,9 @@ const AlertDialogFooter = ({
       )}
       {...props}
     />
-  );
-};
-AlertDialogFooter.displayName = "AlertDialogFooter";
+  )
+}
+AlertDialogFooter.displayName = "AlertDialogFooter"
 
 /* -------------------------------------------------------------------------- */
 /*                              AlertDialogTitle                              */
@@ -182,23 +182,23 @@ AlertDialogFooter.displayName = "AlertDialogFooter";
 type AlertDialogTitleProps = React.ComponentPropsWithRef<
   typeof AlertDialogPrimitive.Title
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const AlertDialogTitle = ({
   unstyled,
   className,
   ...props
 }: AlertDialogTitleProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <AlertDialogPrimitive.Title
       className={applyUnstyled(isUnstyled, "text-lg font-semibold", className)}
       {...props}
     />
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                           AlertDialogDescription                           */
@@ -207,15 +207,15 @@ const AlertDialogTitle = ({
 type AlertDialogDescriptionProps = React.ComponentPropsWithRef<
   typeof AlertDialogPrimitive.Description
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const AlertDialogDescription = ({
   unstyled,
   className,
   ...props
 }: AlertDialogDescriptionProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <AlertDialogPrimitive.Description
@@ -226,8 +226,8 @@ const AlertDialogDescription = ({
       )}
       {...props}
     />
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                              AlertDialogAction                             */
@@ -236,23 +236,23 @@ const AlertDialogDescription = ({
 type AlertDialogActionProps = React.ComponentPropsWithRef<
   typeof AlertDialogPrimitive.Action
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const AlertDialogAction = ({
   unstyled,
   className,
   ...props
 }: AlertDialogActionProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <AlertDialogPrimitive.Action
       className={applyUnstyled(isUnstyled, buttonStyles(), className)}
       {...props}
     />
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                              AlertDialogCancel                             */
@@ -261,15 +261,15 @@ const AlertDialogAction = ({
 type AlertDialogCancelProps = React.ComponentPropsWithRef<
   typeof AlertDialogPrimitive.Cancel
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const AlertDialogCancel = ({
   unstyled,
   className,
   ...props
 }: AlertDialogCancelProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <AlertDialogPrimitive.Cancel
@@ -280,8 +280,8 @@ const AlertDialogCancel = ({
       )}
       {...props}
     />
-  );
-};
+  )
+}
 
 export {
   AlertDialog,
@@ -295,4 +295,4 @@ export {
   AlertDialogPortal,
   AlertDialogTitle,
   AlertDialogTrigger,
-};
+}

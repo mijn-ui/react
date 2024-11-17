@@ -1,14 +1,14 @@
-"use client";
+"use client"
 
-import { useState } from "react";
+import { useState } from "react"
 import {
   Autocomplete,
   AutocompleteContent,
   AutocompleteItem,
   AutocompleteTrigger,
-} from "@mijn-ui/react/components/autocomplete";
-import { Input } from "@mijn-ui/react/components/input";
-import { LuSearch } from "react-icons/lu";
+} from "@mijn-ui/react/components/autocomplete"
+import { Input } from "@mijn-ui/react/components/input"
+import { LuSearch } from "react-icons/lu"
 
 const FRAMEWORKS = [
   "Next.js",
@@ -18,10 +18,10 @@ const FRAMEWORKS = [
   "Astro",
   "WordPress",
   "Express.js",
-];
+]
 
 const AutocompleteExample = () => {
-  const [value, setValue] = useState("SvelteKit");
+  const [value, setValue] = useState("SvelteKit")
 
   return (
     <Autocomplete value={value} onValueChange={setValue}>
@@ -44,7 +44,7 @@ const AutocompleteExample = () => {
         ))}
       </AutocompleteContent>
     </Autocomplete>
-  );
-};
+  )
+}
 
-export default AutocompleteExample;
+export default AutocompleteExample

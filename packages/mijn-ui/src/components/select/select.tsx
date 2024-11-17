@@ -1,33 +1,33 @@
-"use client";
+"use client"
 
-import * as React from "react";
+import * as React from "react"
 import {
   UnstyledProvider,
   useUnstyled,
-} from "@mijn-ui/context/unstyled-provider";
-import { UnstyledProps } from "@mijn-ui/types";
-import { applyUnstyled, cn } from "@mijn-ui/utils";
-import * as SelectPrimitive from "@radix-ui/react-select";
-import { LuCheck, LuChevronDown, LuChevronUp } from "react-icons/lu";
+} from "@mijn-ui/context/unstyled-provider"
+import { UnstyledProps } from "@mijn-ui/types"
+import { applyUnstyled, cn } from "@mijn-ui/utils"
+import * as SelectPrimitive from "@radix-ui/react-select"
+import { LuCheck, LuChevronDown, LuChevronUp } from "react-icons/lu"
 
-const SelectGroup = SelectPrimitive.Group;
+const SelectGroup = SelectPrimitive.Group
 
-const SelectValue = SelectPrimitive.Value;
+const SelectValue = SelectPrimitive.Value
 
 /* -------------------------------------------------------------------------- */
 /*                                   Select                                   */
 /* -------------------------------------------------------------------------- */
 
 type SelectProps = React.ComponentProps<typeof SelectPrimitive.Root> &
-  UnstyledProps;
+  UnstyledProps
 
 const Select = ({ unstyled = false, ...props }: SelectProps) => {
   return (
     <UnstyledProvider unstyled={unstyled}>
       <SelectPrimitive.Root {...props} />
     </UnstyledProvider>
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                SelectTrigger                               */
@@ -37,8 +37,8 @@ type SelectTriggerProps = React.ComponentPropsWithRef<
   typeof SelectPrimitive.Trigger
 > &
   UnstyledProps & {
-    icon?: React.ReactNode;
-  };
+    icon?: React.ReactNode
+  }
 
 const SelectTrigger = ({
   unstyled,
@@ -46,8 +46,8 @@ const SelectTrigger = ({
   children,
   ...props
 }: SelectTriggerProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <SelectPrimitive.Trigger
@@ -63,8 +63,8 @@ const SelectTrigger = ({
         <LuChevronDown className="h-4 w-4 opacity-50" />
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                            SelectScrollUpButton                            */
@@ -73,15 +73,15 @@ const SelectTrigger = ({
 type SelectScrollUpButtonProps = React.ComponentPropsWithRef<
   typeof SelectPrimitive.ScrollUpButton
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const SelectScrollUpButton = ({
   unstyled,
   className,
   ...props
 }: SelectScrollUpButtonProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <SelectPrimitive.ScrollUpButton
@@ -94,8 +94,8 @@ const SelectScrollUpButton = ({
     >
       <LuChevronUp className="h-4 w-4" />
     </SelectPrimitive.ScrollUpButton>
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                           SelectScrollDownButton                           */
@@ -104,15 +104,15 @@ const SelectScrollUpButton = ({
 type SelectScrollDownButtonProps = React.ComponentPropsWithRef<
   typeof SelectPrimitive.ScrollDownButton
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const SelectScrollDownButton = ({
   unstyled,
   className,
   ...props
 }: SelectScrollDownButtonProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <SelectPrimitive.ScrollDownButton
@@ -125,8 +125,8 @@ const SelectScrollDownButton = ({
     >
       <LuChevronDown className="h-4 w-4" />
     </SelectPrimitive.ScrollDownButton>
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                SelectContent                               */
@@ -135,7 +135,7 @@ const SelectScrollDownButton = ({
 type SelectContentProps = React.ComponentPropsWithRef<
   typeof SelectPrimitive.Content
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const SelectContent = ({
   unstyled,
@@ -144,8 +144,8 @@ const SelectContent = ({
   position = "popper",
   ...props
 }: SelectContentProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <SelectPrimitive.Portal>
@@ -175,8 +175,8 @@ const SelectContent = ({
         <SelectScrollDownButton />
       </SelectPrimitive.Content>
     </SelectPrimitive.Portal>
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                 SelectLabel                                */
@@ -185,11 +185,11 @@ const SelectContent = ({
 type SelectLabelProps = React.ComponentPropsWithRef<
   typeof SelectPrimitive.Label
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const SelectLabel = ({ unstyled, className, ...props }: SelectLabelProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <SelectPrimitive.Label
@@ -200,8 +200,8 @@ const SelectLabel = ({ unstyled, className, ...props }: SelectLabelProps) => {
       )}
       {...props}
     />
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                 SelectItem                                 */
@@ -210,7 +210,7 @@ const SelectLabel = ({ unstyled, className, ...props }: SelectLabelProps) => {
 type SelectItemProps = React.ComponentPropsWithRef<
   typeof SelectPrimitive.Item
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const SelectItem = ({
   unstyled,
@@ -218,8 +218,8 @@ const SelectItem = ({
   children,
   ...props
 }: SelectItemProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <SelectPrimitive.Item
@@ -243,8 +243,8 @@ const SelectItem = ({
         </SelectPrimitive.ItemIndicator>
       </span>
     </SelectPrimitive.Item>
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                               SelectSeparator                              */
@@ -253,15 +253,15 @@ const SelectItem = ({
 type SelectSeparatorProps = React.ComponentPropsWithRef<
   typeof SelectPrimitive.Separator
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const SelectSeparator = ({
   unstyled,
   className,
   ...props
 }: SelectSeparatorProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <SelectPrimitive.Separator
@@ -272,8 +272,8 @@ const SelectSeparator = ({
       )}
       {...props}
     />
-  );
-};
+  )
+}
 
 export {
   Select,
@@ -286,4 +286,4 @@ export {
   SelectSeparator,
   SelectTrigger,
   SelectValue,
-};
+}

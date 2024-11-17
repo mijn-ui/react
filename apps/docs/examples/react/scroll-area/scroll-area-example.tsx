@@ -1,10 +1,10 @@
-import React from "react";
-import { ScrollArea } from "@mijn-ui/react/components/scroll-area";
-import { Separator } from "@mijn-ui/react/components/separator";
+import React from "react"
+import { ScrollArea } from "@mijn-ui/react/components/scroll-area"
+import { Separator } from "@mijn-ui/react/components/separator"
 
 const tags = Array.from({ length: 50 }).map(
   (_, i, a) => `v0.0.1-beta.${a.length - i}`,
-);
+)
 
 const ScrollAreaExample = () => {
   return (
@@ -21,7 +21,7 @@ const ScrollAreaExample = () => {
         ))}
       </div>
     </ScrollArea>
-  );
-};
+  )
+}
 
-export default ScrollAreaExample;
+export default ScrollAreaExample

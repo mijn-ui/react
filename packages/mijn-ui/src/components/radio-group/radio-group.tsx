@@ -1,13 +1,13 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { cn } from "@mijn-ui/utils";
-import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
-import { LuCircle } from "react-icons/lu";
+import * as React from "react"
+import { cn } from "@mijn-ui/utils"
+import * as RadioGroupPrimitive from "@radix-ui/react-radio-group"
+import { LuCircle } from "react-icons/lu"
 
 type RadioGroupProps = React.ComponentPropsWithRef<
   typeof RadioGroupPrimitive.Root
->;
+>
 
 const RadioGroup = ({ className, ...props }: RadioGroupProps) => {
   return (
@@ -15,13 +15,13 @@ const RadioGroup = ({ className, ...props }: RadioGroupProps) => {
       className={cn("grid gap-2", className)}
       {...props}
     />
-  );
-};
-RadioGroup.displayName = RadioGroupPrimitive.Root.displayName;
+  )
+}
+RadioGroup.displayName = RadioGroupPrimitive.Root.displayName
 
 type RadioGroupItemProps = React.ComponentPropsWithRef<
   typeof RadioGroupPrimitive.Item
->;
+>
 
 const RadioGroupItem = ({ className, ...props }: RadioGroupItemProps) => {
   return (
@@ -36,8 +36,8 @@ const RadioGroupItem = ({ className, ...props }: RadioGroupItemProps) => {
         <LuCircle className="h-2.5 w-2.5 fill-current text-current" />
       </RadioGroupPrimitive.Indicator>
     </RadioGroupPrimitive.Item>
-  );
-};
-RadioGroupItem.displayName = RadioGroupPrimitive.Item.displayName;
+  )
+}
+RadioGroupItem.displayName = RadioGroupPrimitive.Item.displayName
 
-export { RadioGroup, RadioGroupItem };
+export { RadioGroup, RadioGroupItem }

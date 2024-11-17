@@ -1,13 +1,13 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { useControlledState } from "@mijn-ui/hooks/use-controlled-state";
-import { UnstyledProps } from "@mijn-ui/types";
-import { applyUnstyled, cn } from "@mijn-ui/utils";
-import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
-import { VariantProps, cva } from "class-variance-authority";
-import { LuCheck } from "react-icons/lu";
-import { RxDividerHorizontal } from "react-icons/rx";
+import * as React from "react"
+import { useControlledState } from "@mijn-ui/hooks/use-controlled-state"
+import { UnstyledProps } from "@mijn-ui/types"
+import { applyUnstyled, cn } from "@mijn-ui/utils"
+import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
+import { VariantProps, cva } from "class-variance-authority"
+import { LuCheck } from "react-icons/lu"
+import { RxDividerHorizontal } from "react-icons/rx"
 
 export const checkboxStyles = cva(
   [
@@ -40,7 +40,7 @@ export const checkboxStyles = cva(
       size: "md",
     },
   },
-);
+)
 
 /* -------------------------------------------------------------------------- */
 /*                                  Checkbox                                  */
@@ -51,9 +51,9 @@ type CheckboxProps = React.ComponentPropsWithRef<
 > &
   UnstyledProps &
   VariantProps<typeof checkboxStyles> & {
-    checked?: boolean | "indeterminate";
-    onCheckedChange?: (checked: boolean | "indeterminate") => void;
-  };
+    checked?: boolean | "indeterminate"
+    onCheckedChange?: (checked: boolean | "indeterminate") => void
+  }
 
 const Checkbox = ({
   checked: ControlledChecked,
@@ -69,7 +69,7 @@ const Checkbox = ({
     ControlledChecked,
     !!defaultChecked,
     ControlledOnCheckedChange,
-  );
+  )
 
   return (
     <CheckboxPrimitive.Root
@@ -91,7 +91,7 @@ const Checkbox = ({
         {checked === true && <LuCheck className="size-4" />}
       </CheckboxPrimitive.Indicator>
     </CheckboxPrimitive.Root>
-  );
-};
+  )
+}
 
-export { Checkbox };
+export { Checkbox }

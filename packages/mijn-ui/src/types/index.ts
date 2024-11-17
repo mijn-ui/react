@@ -1,3 +1,3 @@
 export type UnstyledProps = {
-  unstyled?: boolean;
-};
+  unstyled?: boolean
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import {
   Table,
   TableBody,
@@ -6,8 +6,8 @@ import {
   TableHeader,
   TableHeaderCell,
   TableRow,
-} from "@mijn-ui/react/components/table";
-import { LuMoreHorizontal } from "react-icons/lu";
+} from "@mijn-ui/react/components/table"
+import { LuMoreHorizontal } from "react-icons/lu"
 
 const TableExample = () => {
   return (
@@ -143,7 +143,7 @@ const TableExample = () => {
         </TableBody>
       </Table>
     </div>
-  );
-};
+  )
+}
 
-export default TableExample;
+export default TableExample

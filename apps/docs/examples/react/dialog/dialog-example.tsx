@@ -1,4 +1,4 @@
-import { Button } from "@mijn-ui/react/components/button";
+import { Button } from "@mijn-ui/react/components/button"
 import {
   Dialog,
   DialogClose,
@@ -6,13 +6,13 @@ import {
   DialogDescription,
   DialogTitle,
   DialogTrigger,
-} from "@mijn-ui/react/components/dialog";
-import { Input } from "@mijn-ui/react/components/input";
-import { LuX } from "react-icons/lu";
+} from "@mijn-ui/react/components/dialog"
+import { Input } from "@mijn-ui/react/components/input"
+import { LuX } from "react-icons/lu"
 
 type DialogExampleProps = {
-  unstyled?: boolean;
-};
+  unstyled?: boolean
+}
 
 const DialogExample = ({ unstyled = false }: DialogExampleProps) => {
   return (
@@ -55,7 +55,7 @@ const DialogExample = ({ unstyled = false }: DialogExampleProps) => {
         </div>
       </DialogContent>
     </Dialog>
-  );
-};
+  )
+}
 
-export default DialogExample;
+export default DialogExample

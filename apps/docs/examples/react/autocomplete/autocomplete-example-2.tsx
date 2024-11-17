@@ -1,16 +1,16 @@
-"use client";
+"use client"
 
-import { useState } from "react";
+import { useState } from "react"
 import {
   Autocomplete,
   AutocompleteContent,
   AutocompleteGroup,
   AutocompleteItem,
   AutocompleteTrigger,
-} from "@mijn-ui/react/components/autocomplete";
-import { Input } from "@mijn-ui/react/components/input";
-import { ScrollArea } from "@mijn-ui/react/components/scroll-area";
-import { LuSearch } from "react-icons/lu";
+} from "@mijn-ui/react/components/autocomplete"
+import { Input } from "@mijn-ui/react/components/input"
+import { ScrollArea } from "@mijn-ui/react/components/scroll-area"
+import { LuSearch } from "react-icons/lu"
 
 const FRAMEWORKS = [
   "Next.js",
@@ -37,10 +37,10 @@ const FRAMEWORKS = [
   "Fastify",
   "Hapi.js",
   "AdonisJS",
-];
+]
 
 const AutocompleteWithScrollArea = () => {
-  const [value, setValue] = useState("AdonisJS");
+  const [value, setValue] = useState("AdonisJS")
 
   return (
     <Autocomplete value={value} onValueChange={setValue}>
@@ -67,7 +67,7 @@ const AutocompleteWithScrollArea = () => {
         </ScrollArea>
       </AutocompleteContent>
     </Autocomplete>
-  );
-};
+  )
+}
 
-export default AutocompleteWithScrollArea;
+export default AutocompleteWithScrollArea

@@ -1,6 +1,6 @@
-import React from "react";
-import { Input } from "@mijn-ui/react/components/input";
-import { LuPlus } from "react-icons/lu";
+import React from "react"
+import { Input } from "@mijn-ui/react/components/input"
+import { LuPlus } from "react-icons/lu"
 
 const InputWithFloatingLabelIcon = () => {
   return (
@@ -19,7 +19,7 @@ const InputWithFloatingLabelIcon = () => {
         startIcon={<LuPlus />}
       />
     </div>
-  );
-};
+  )
+}
 
-export default InputWithFloatingLabelIcon;
+export default InputWithFloatingLabelIcon

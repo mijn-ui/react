@@ -1,25 +1,25 @@
-"use client";
+"use client"
 
-import React from "react";
-import { Button } from "@mijn-ui/react/components/button";
-import { buttonStyles } from "@mijn-ui/react/components/button";
-import { Checkbox } from "@mijn-ui/react/components/checkbox";
-import { Label } from "@mijn-ui/react/components/label";
+import React from "react"
+import { Button } from "@mijn-ui/react/components/button"
+import { buttonStyles } from "@mijn-ui/react/components/button"
+import { Checkbox } from "@mijn-ui/react/components/checkbox"
+import { Label } from "@mijn-ui/react/components/label"
 import {
   RadioGroup,
   RadioGroupItem,
-} from "@mijn-ui/react/components/radio-group";
-import { VariantProps } from "class-variance-authority";
+} from "@mijn-ui/react/components/radio-group"
+import { VariantProps } from "class-variance-authority"
 
 type ButtonOptionsType = {
-  unstyled: boolean;
-  variant: VariantProps<typeof buttonStyles>["variant"];
-  loading: boolean;
-  disabled: boolean;
-  color: VariantProps<typeof buttonStyles>["color"];
-  size: VariantProps<typeof buttonStyles>["size"];
-  radius: VariantProps<typeof buttonStyles>["radius"];
-};
+  unstyled: boolean
+  variant: VariantProps<typeof buttonStyles>["variant"]
+  loading: boolean
+  disabled: boolean
+  color: VariantProps<typeof buttonStyles>["color"]
+  size: VariantProps<typeof buttonStyles>["size"]
+  radius: VariantProps<typeof buttonStyles>["radius"]
+}
 
 const CheckboxWithLabel = ({
   id,
@@ -27,10 +27,10 @@ const CheckboxWithLabel = ({
   onCheckedChange,
   label,
 }: {
-  id: string;
-  checked: boolean;
-  onCheckedChange: () => void;
-  label: string;
+  id: string
+  checked: boolean
+  onCheckedChange: () => void
+  label: string
 }) => (
   <div className="flex items-center gap-2">
     <Checkbox
@@ -43,7 +43,7 @@ const CheckboxWithLabel = ({
       {label}
     </Label>
   </div>
-);
+)
 
 const RadioGroupWithOptions = ({
   defaultValue,
@@ -52,11 +52,11 @@ const RadioGroupWithOptions = ({
   label,
   options,
 }: {
-  defaultValue: string;
-  value: string;
-  onValueChange: (value: string) => void;
-  label: string;
-  options: { value: string; id: string }[];
+  defaultValue: string
+  value: string
+  onValueChange: (value: string) => void
+  label: string
+  options: { value: string; id: string }[]
 }) => (
   <RadioGroup
     className="sm:min-w-24"
@@ -72,7 +72,7 @@ const RadioGroupWithOptions = ({
       </div>
     ))}
   </RadioGroup>
-);
+)
 
 const KeyFeaturesPlayground = () => {
   const [buttonOptions, setButtonOptions] = React.useState<ButtonOptionsType>({
@@ -83,14 +83,14 @@ const KeyFeaturesPlayground = () => {
     color: "primary",
     size: "md",
     radius: "md",
-  });
+  })
 
   const handleChange = (key: string, value: boolean | string) => {
     setButtonOptions((prev) => ({
       ...prev,
       [key]: value,
-    }));
-  };
+    }))
+  }
 
   return (
     <figure className="w-full not-prose">
@@ -198,7 +198,7 @@ const KeyFeaturesPlayground = () => {
         </div>
       </div>
     </figure>
-  );
-};
+  )
+}
 
-export default KeyFeaturesPlayground;
+export default KeyFeaturesPlayground

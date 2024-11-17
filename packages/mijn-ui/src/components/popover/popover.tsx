@@ -1,44 +1,44 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { buttonStyles } from "@mijn-ui/components/button";
+import * as React from "react"
+import { buttonStyles } from "@mijn-ui/components/button"
 import {
   UnstyledProvider,
   useUnstyled,
-} from "@mijn-ui/context/unstyled-provider";
-import { UnstyledProps } from "@mijn-ui/types";
-import { applyUnstyled } from "@mijn-ui/utils";
-import * as RadixPopover from "@radix-ui/react-popover";
+} from "@mijn-ui/context/unstyled-provider"
+import { UnstyledProps } from "@mijn-ui/types"
+import { applyUnstyled } from "@mijn-ui/utils"
+import * as RadixPopover from "@radix-ui/react-popover"
 
-const PopoverArrow = RadixPopover.Arrow;
+const PopoverArrow = RadixPopover.Arrow
 
-const PopoverAnchor = RadixPopover.Anchor;
+const PopoverAnchor = RadixPopover.Anchor
 
 type PopoverProps = React.ComponentPropsWithoutRef<typeof RadixPopover.Root> &
-  UnstyledProps;
+  UnstyledProps
 
 const Popover = ({ unstyled = false, ...props }: PopoverProps) => {
   return (
     <UnstyledProvider unstyled={unstyled}>
       <RadixPopover.Root {...props} />
     </UnstyledProvider>
-  );
-};
+  )
+}
 
 /* ----------------------------- PopoverTrigger ----------------------------- */
 
 type PopoverTriggerProps = React.ComponentPropsWithRef<
   typeof RadixPopover.Trigger
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const PopoverTrigger = ({
   unstyled,
   className,
   ...props
 }: PopoverTriggerProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <RadixPopover.Trigger
@@ -49,19 +49,19 @@ const PopoverTrigger = ({
       )}
       {...props}
     />
-  );
-};
+  )
+}
 
 /* ----------------------------- PopoverClose ----------------------------- */
 
 type PopoverCloseProps = React.ComponentPropsWithRef<
   typeof RadixPopover.Close
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const PopoverClose = ({ unstyled, className, ...props }: PopoverCloseProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <RadixPopover.Close
@@ -72,15 +72,15 @@ const PopoverClose = ({ unstyled, className, ...props }: PopoverCloseProps) => {
       )}
       {...props}
     />
-  );
-};
+  )
+}
 
 /* ----------------------------- PopoverContent ----------------------------- */
 
 type PopoverContentProps = React.ComponentPropsWithRef<
   typeof RadixPopover.Content
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const PopoverContent = ({
   unstyled,
@@ -90,8 +90,8 @@ const PopoverContent = ({
   sideOffset = 4,
   ...props
 }: PopoverContentProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <RadixPopover.Portal>
@@ -107,8 +107,8 @@ const PopoverContent = ({
         {...props}
       />
     </RadixPopover.Portal>
-  );
-};
+  )
+}
 
 export {
   Popover,
@@ -117,4 +117,4 @@ export {
   PopoverClose,
   PopoverContent,
   PopoverTrigger,
-};
+}

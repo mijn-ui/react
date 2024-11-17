@@ -1,16 +1,16 @@
-"use client";
+"use client"
 
-import React, { useEffect, useState } from "react";
-import { cn } from "@mijn-ui/react/utils";
-import axios from "axios";
-import HTMLReactParser from "html-react-parser";
+import React, { useEffect, useState } from "react"
+import { cn } from "@mijn-ui/react/utils"
+import axios from "axios"
+import HTMLReactParser from "html-react-parser"
 
 type CodePreviewerProps = React.ComponentPropsWithoutRef<"div"> & {
-  src: string;
-  children?: React.ReactNode;
-};
+  src: string
+  children?: React.ReactNode
+}
 
-export const revalidate = 3600; // revalidate every hour
+export const revalidate = 3600 // revalidate every hour
 
 const TWComponentPreview = ({
   src,
@@ -18,28 +18,28 @@ const TWComponentPreview = ({
   children,
   ...props
 }: CodePreviewerProps) => {
-  const [reactElement, setReactElement] = useState<React.ReactNode>(null);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<boolean>(false);
+  const [reactElement, setReactElement] = useState<React.ReactNode>(null)
+  const [loading, setLoading] = useState<boolean>(true)
+  const [error, setError] = useState<boolean>(false)
 
   useEffect(() => {
     const fetchHtml = async () => {
-      setLoading(true);
-      setError(false);
+      setLoading(true)
+      setError(false)
       try {
-        const response = await axios.get(`/api/get-html?filename=${src}`);
-        const parsedHTML = HTMLReactParser(response.data.html);
-        setReactElement(parsedHTML);
+        const response = await axios.get(`/api/get-html?filename=${src}`)
+        const parsedHTML = HTMLReactParser(response.data.html)
+        setReactElement(parsedHTML)
       } catch (err) {
-        console.error(err);
-        setError(true);
+        console.error(err)
+        setError(true)
       } finally {
-        setLoading(false);
+        setLoading(false)
       }
-    };
+    }
 
-    fetchHtml();
-  }, [src]);
+    fetchHtml()
+  }, [src])
 
   return (
     <div
@@ -77,7 +77,7 @@ const TWComponentPreview = ({
       )}
       {children}
     </div>
-  );
-};
+  )
+}
 
-export default TWComponentPreview;
+export default TWComponentPreview

@@ -1,48 +1,48 @@
 "use client"
 
-import * as React from "react";
-import { CommandEmpty } from "@mijn-ui/components/command";
-import { PopoverContent } from "@mijn-ui/components/popover";
-import { Skeleton } from "@mijn-ui/components/skeleton";
+import * as React from "react"
+import { CommandEmpty } from "@mijn-ui/components/command"
+import { PopoverContent } from "@mijn-ui/components/popover"
+import { Skeleton } from "@mijn-ui/components/skeleton"
 import {
   UnstyledProvider,
   useUnstyled,
-} from "@mijn-ui/context/unstyled-provider";
-import { UnstyledProps } from "@mijn-ui/types";
-import { applyUnstyled, cn } from "@mijn-ui/utils";
-import { mergeRefs } from "@mijn-ui/utils";
-import * as PopoverPrimitive from "@radix-ui/react-popover";
-import { Popover } from "@radix-ui/react-popover";
-import { Command as CommandPrimitive } from "cmdk";
-import { LuCheck } from "react-icons/lu";
+} from "@mijn-ui/context/unstyled-provider"
+import { UnstyledProps } from "@mijn-ui/types"
+import { applyUnstyled, cn } from "@mijn-ui/utils"
+import { mergeRefs } from "@mijn-ui/utils"
+import * as PopoverPrimitive from "@radix-ui/react-popover"
+import { Popover } from "@radix-ui/react-popover"
+import { Command as CommandPrimitive } from "cmdk"
+import { LuCheck } from "react-icons/lu"
 
 type AutocompleteContextProps = {
-  onValueChange: (value: string) => void;
-  inputValue: string;
-  setInputValue: React.Dispatch<React.SetStateAction<string>>;
-  inputRef: React.RefObject<HTMLInputElement | null>;
-  isOpen: boolean;
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  selectedValue: string;
-  setSelectedValue: React.Dispatch<React.SetStateAction<string>>;
+  onValueChange: (value: string) => void
+  inputValue: string
+  setInputValue: React.Dispatch<React.SetStateAction<string>>
+  inputRef: React.RefObject<HTMLInputElement | null>
+  isOpen: boolean
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>
+  selectedValue: string
+  setSelectedValue: React.Dispatch<React.SetStateAction<string>>
 
-  handleSelectOption: (value: string) => void;
-  handleKeyDown: (event: React.KeyboardEvent<HTMLDivElement>) => void;
-  handleBlur: () => void;
+  handleSelectOption: (value: string) => void
+  handleKeyDown: (event: React.KeyboardEvent<HTMLDivElement>) => void
+  handleBlur: () => void
 
-  setShouldFilter: React.Dispatch<React.SetStateAction<boolean>>;
-};
+  setShouldFilter: React.Dispatch<React.SetStateAction<boolean>>
+}
 
 const AutocompleteContext =
-  React.createContext<AutocompleteContextProps | null>(null);
+  React.createContext<AutocompleteContextProps | null>(null)
 
 const useAutocomplete = () => {
-  const context = React.useContext(AutocompleteContext);
+  const context = React.useContext(AutocompleteContext)
   if (!context) {
-    throw new Error("useAutocomplete must be used within AutocompleteProvider");
+    throw new Error("useAutocomplete must be used within AutocompleteProvider")
   }
-  return context;
-};
+  return context
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                  Autocomplete                                  */
@@ -51,9 +51,9 @@ const useAutocomplete = () => {
 type AutocompleteProps = React.ComponentPropsWithoutRef<
   typeof CommandPrimitive
 > & {
-  value: string;
-  onValueChange: (value: string) => void;
-} & UnstyledProps;
+  value: string
+  onValueChange: (value: string) => void
+} & UnstyledProps
 
 const Autocomplete = ({
   unstyled = false,
@@ -62,49 +62,49 @@ const Autocomplete = ({
   children,
   ...props
 }: AutocompleteProps) => {
-  const inputRef = React.useRef<HTMLInputElement>(null);
+  const inputRef = React.useRef<HTMLInputElement>(null)
 
-  const [isOpen, setOpen] = React.useState(false);
-  const [selectedValue, setSelectedValue] = React.useState<string>(value || "");
-  const [inputValue, setInputValue] = React.useState<string>("");
-  const [shouldFilter, setShouldFilter] = React.useState(false);
+  const [isOpen, setOpen] = React.useState(false)
+  const [selectedValue, setSelectedValue] = React.useState<string>(value || "")
+  const [inputValue, setInputValue] = React.useState<string>("")
+  const [shouldFilter, setShouldFilter] = React.useState(false)
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
-    const input = inputRef.current;
+    const input = inputRef.current
     if (!input) {
-      return;
+      return
     }
 
     // Keep the options displayed when the user is typing
     if (!isOpen) {
-      setOpen(true);
+      setOpen(true)
     }
 
     if (event.key === "Escape") {
-      input.blur();
+      input.blur()
     }
-  };
+  }
 
   const handleBlur = React.useCallback(() => {
-    setOpen(false);
-    setInputValue(selectedValue);
-    setShouldFilter(false);
-  }, [selectedValue]);
+    setOpen(false)
+    setInputValue(selectedValue)
+    setShouldFilter(false)
+  }, [selectedValue])
 
   const handleSelectOption = React.useCallback(
     (value: string) => {
-      setInputValue(value);
-      setSelectedValue(value);
-      onValueChange?.(value);
+      setInputValue(value)
+      setSelectedValue(value)
+      onValueChange?.(value)
 
       // This is a hack to prevent the input from being focused after the user selects an option
       // We can call this hack: "The next tick"
       setTimeout(() => {
-        inputRef?.current?.blur();
-      }, 0);
+        inputRef?.current?.blur()
+      }, 0)
     },
     [onValueChange],
-  );
+  )
 
   return (
     <AutocompleteContext.Provider
@@ -138,8 +138,8 @@ const Autocomplete = ({
         </UnstyledProvider>
       </Popover>
     </AutocompleteContext.Provider>
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                               AutocompleteTrigger                              */
@@ -148,7 +148,7 @@ const Autocomplete = ({
 type AutocompleteTriggerProps = React.ComponentPropsWithRef<
   typeof CommandPrimitive.Input
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const AutocompleteTrigger = ({
   unstyled,
@@ -163,9 +163,9 @@ const AutocompleteTrigger = ({
     setOpen,
     handleBlur,
     setShouldFilter,
-  } = useAutocomplete();
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  } = useAutocomplete()
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <PopoverPrimitive.Anchor asChild>
@@ -173,8 +173,8 @@ const AutocompleteTrigger = ({
         ref={mergeRefs([inputRef, ref])}
         value={inputValue}
         onValueChange={(value) => {
-          setInputValue(value);
-          setShouldFilter(true);
+          setInputValue(value)
+          setShouldFilter(true)
         }}
         onBlur={handleBlur}
         onFocus={() => setOpen(true)}
@@ -182,8 +182,8 @@ const AutocompleteTrigger = ({
         {...props}
       />
     </PopoverPrimitive.Anchor>
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                               AutocompleteContent                              */
@@ -192,9 +192,9 @@ const AutocompleteTrigger = ({
 type AutocompleteContentProps = React.ComponentPropsWithRef<
   typeof CommandPrimitive.List
 > & {
-  emptyMessage?: string;
-  loading?: boolean;
-} & UnstyledProps;
+  emptyMessage?: string
+  loading?: boolean
+} & UnstyledProps
 
 const AutocompleteContent = ({
   unstyled,
@@ -204,8 +204,8 @@ const AutocompleteContent = ({
   children,
   ...props
 }: AutocompleteContentProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <PopoverContent
@@ -216,7 +216,7 @@ const AutocompleteContent = ({
           e.target instanceof Element &&
           e.target.hasAttribute("cmdk-input")
         ) {
-          e.preventDefault();
+          e.preventDefault()
         }
       }}
       className={applyUnstyled(
@@ -229,7 +229,7 @@ const AutocompleteContent = ({
       // to prevent scrolling issue when Popover inside Dialog
       // see: https://github.com/radix-ui/primitives/issues/1159
       onWheel={(e) => {
-        e.stopPropagation();
+        e.stopPropagation()
       }}
     >
       <CommandPrimitive.List {...props}>
@@ -244,8 +244,8 @@ const AutocompleteContent = ({
         )}
       </CommandPrimitive.List>
     </PopoverContent>
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                              AutocompleteGroup                             */
@@ -254,7 +254,7 @@ const AutocompleteContent = ({
 type AutocompleteGroupProps = React.ComponentPropsWithRef<
   typeof CommandPrimitive.Group
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const AutocompleteGroup = ({
   unstyled,
@@ -262,8 +262,8 @@ const AutocompleteGroup = ({
   className,
   ...props
 }: AutocompleteGroupProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <CommandPrimitive.Group
@@ -272,8 +272,8 @@ const AutocompleteGroup = ({
     >
       {children}
     </CommandPrimitive.Group>
-  );
-};
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                AutocompleteItem                                */
@@ -282,7 +282,7 @@ const AutocompleteGroup = ({
 type AutocompleteItemProps = React.ComponentPropsWithRef<
   typeof CommandPrimitive.Item
 > &
-  UnstyledProps;
+  UnstyledProps
 
 const AutocompleteItem = ({
   unstyled,
@@ -291,19 +291,19 @@ const AutocompleteItem = ({
   value,
   ...props
 }: AutocompleteItemProps) => {
-  const { selectedValue, handleSelectOption } = useAutocomplete();
-  const isSelected = selectedValue === value;
+  const { selectedValue, handleSelectOption } = useAutocomplete()
+  const isSelected = selectedValue === value
 
-  const { unstyled: contextUnstyled } = useUnstyled();
-  const isUnstyled = unstyled ?? contextUnstyled;
+  const { unstyled: contextUnstyled } = useUnstyled()
+  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <CommandPrimitive.Item
       key={value}
       value={value}
       onMouseDown={(event) => {
-        event.preventDefault();
-        event.stopPropagation();
+        event.preventDefault()
+        event.stopPropagation()
       }}
       onSelect={handleSelectOption}
       className={applyUnstyled(
@@ -320,8 +320,8 @@ const AutocompleteItem = ({
       {children}
       {isSelected ? <LuCheck className="w-4" /> : null}
     </CommandPrimitive.Item>
-  );
-};
+  )
+}
 
 export {
   Autocomplete,
@@ -329,4 +329,4 @@ export {
   AutocompleteGroup,
   AutocompleteItem,
   AutocompleteTrigger,
-};
+}

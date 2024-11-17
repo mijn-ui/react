@@ -1,4 +1,4 @@
-import { cn } from "@mijn-ui/utils";
+import { cn } from "@mijn-ui/utils"
 
 function Skeleton({
   className,
@@ -9,7 +9,7 @@ function Skeleton({
       className={cn("animate-pulse rounded-md bg-neutral", className)}
       {...props}
     />
-  );
+  )
 }
 
-export { Skeleton };
+export { Skeleton }

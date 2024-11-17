@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 const Logo = ({ ...props }: React.ComponentProps<"svg">) => {
   return (
@@ -27,7 +27,7 @@ const Logo = ({ ...props }: React.ComponentProps<"svg">) => {
         fill="currentColor"
       />
     </svg>
-  );
-};
+  )
+}
 
-export default Logo;
+export default Logo

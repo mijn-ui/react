@@ -1,6 +1,6 @@
-import React from "react";
-import { Checkbox } from "@mijn-ui/react/components/checkbox";
-import { Label } from "@mijn-ui/react/components/label";
+import React from "react"
+import { Checkbox } from "@mijn-ui/react/components/checkbox"
+import { Label } from "@mijn-ui/react/components/label"
 
 const CheckboxColors = () => {
   return (
@@ -35,7 +35,7 @@ const CheckboxColors = () => {
         <Label htmlFor="success">Success</Label>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CheckboxColors;
+export default CheckboxColors

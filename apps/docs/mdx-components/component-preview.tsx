@@ -1,8 +1,8 @@
-import { cn } from "@mijn-ui/react/utils";
+import { cn } from "@mijn-ui/react/utils"
 
 type CodePreviewerProps = {
-  children?: React.ReactNode;
-} & React.ComponentPropsWithoutRef<"div">;
+  children?: React.ReactNode
+} & React.ComponentPropsWithoutRef<"div">
 
 const ComponentPreview = ({ className, ...props }: CodePreviewerProps) => {
   return (
@@ -13,7 +13,7 @@ const ComponentPreview = ({ className, ...props }: CodePreviewerProps) => {
       )}
       {...props}
     />
-  );
-};
+  )
+}
 
-export default ComponentPreview;
+export default ComponentPreview

@@ -1,10 +1,10 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { Calendar } from "@mijn-ui/react/components/calendar";
+import * as React from "react"
+import { Calendar } from "@mijn-ui/react/components/calendar"
 
 const CalendarExample = () => {
-  const [date, setDate] = React.useState<Date | undefined>(new Date());
+  const [date, setDate] = React.useState<Date | undefined>(new Date())
 
   return (
     <Calendar
@@ -13,7 +13,7 @@ const CalendarExample = () => {
       onSelect={setDate}
       className="rounded-lg border"
     />
-  );
-};
+  )
+}
 
-export default CalendarExample;
+export default CalendarExample

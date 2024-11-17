@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,7 +8,7 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@mijn-ui/react/components/dropdown-menu";
+} from "@mijn-ui/react/components/dropdown-menu"
 
 const DropdownMenuExample = () => {
   return (
@@ -59,7 +59,7 @@ const DropdownMenuExample = () => {
         </DropdownMenuSub>
       </DropdownMenuContent>
     </DropdownMenu>
-  );
-};
+  )
+}
 
-export default DropdownMenuExample;
+export default DropdownMenuExample

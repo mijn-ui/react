@@ -1,32 +1,32 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { Progress } from "@mijn-ui/react/components/progress";
+import * as React from "react"
+import { Progress } from "@mijn-ui/react/components/progress"
 
 const ProgressExample = () => {
-  const [value, setValue] = React.useState<number>(0);
-  const intervalRef = React.useRef<NodeJS.Timeout | null>(null);
+  const [value, setValue] = React.useState<number>(0)
+  const intervalRef = React.useRef<NodeJS.Timeout | null>(null)
 
   React.useEffect(() => {
     intervalRef.current = setInterval(() => {
       setValue((val) => {
         if (val >= 75) {
           if (intervalRef.current) {
-            clearInterval(intervalRef.current);
+            clearInterval(intervalRef.current)
           }
-          return val;
+          return val
         }
-        return val + 1;
-      });
-    }, 20);
+        return val + 1
+      })
+    }, 20)
 
     // Clear the interval on component unmount
     return () => {
       if (intervalRef.current) {
-        clearInterval(intervalRef.current);
+        clearInterval(intervalRef.current)
       }
-    };
-  }, []);
+    }
+  }, [])
 
   return (
     <div className="w-80 space-y-1">
@@ -40,7 +40,7 @@ const ProgressExample = () => {
         <p>max</p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProgressExample;
+export default ProgressExample

@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { createPreset } from "fumadocs-ui/tailwind-plugin";
+import { createPreset } from "fumadocs-ui/tailwind-plugin"
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -162,4 +162,4 @@ export default {
     },
   },
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
-};
+}

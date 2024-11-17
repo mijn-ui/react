@@ -7,7 +7,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from "@mijn-ui/react/components/command";
+} from "@mijn-ui/react/components/command"
 import {
   LuCalculator,
   LuCalendar,
@@ -15,7 +15,7 @@ import {
   LuSettings,
   LuSmile,
   LuUser,
-} from "react-icons/lu";
+} from "react-icons/lu"
 
 const CommandExample = () => {
   return (
@@ -57,7 +57,7 @@ const CommandExample = () => {
         </CommandGroup>
       </CommandList>
     </Command>
-  );
-};
+  )
+}
 
-export default CommandExample;
+export default CommandExample

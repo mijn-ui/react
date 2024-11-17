@@ -1,5 +1,5 @@
-import { Label } from "@mijn-ui/react/components/label";
-import { Textarea } from "@mijn-ui/react/components/textarea";
+import { Label } from "@mijn-ui/react/components/label"
+import { Textarea } from "@mijn-ui/react/components/textarea"
 
 const TextareaExample = () => {
   return (
@@ -7,7 +7,7 @@ const TextareaExample = () => {
       <Label>Text Area</Label>
       <Textarea placeholder="Type your message here." />
     </div>
-  );
-};
+  )
+}
 
-export default TextareaExample;
+export default TextareaExample

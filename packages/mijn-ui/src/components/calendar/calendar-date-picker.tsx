@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 /**
 Adapted from https://github.com/sersavan/shadcn-calendar-component.
@@ -6,23 +6,23 @@ Adapted from https://github.com/sersavan/shadcn-calendar-component.
 Full credit for the original implementation goes to [sersavan](https://github.com/sersavan), whose work served as the foundation for this component.  
 
  */
-import * as React from "react";
-import { Button, buttonStyles } from "@mijn-ui/components/button";
-import { Calendar } from "@mijn-ui/components/calendar";
+import * as React from "react"
+import { Button, buttonStyles } from "@mijn-ui/components/button"
+import { Calendar } from "@mijn-ui/components/calendar"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@mijn-ui/components/popover";
+} from "@mijn-ui/components/popover"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@mijn-ui/components/select";
-import { cn } from "@mijn-ui/utils";
-import { VariantProps } from "class-variance-authority";
+} from "@mijn-ui/components/select"
+import { cn } from "@mijn-ui/utils"
+import { VariantProps } from "class-variance-authority"
 import {
   endOfDay,
   endOfMonth,
@@ -33,10 +33,10 @@ import {
   startOfWeek,
   startOfYear,
   subDays,
-} from "date-fns";
-import { formatInTimeZone, toDate } from "date-fns-tz";
-import { DateRange, UI } from "react-day-picker";
-import { LuCalendar } from "react-icons/lu";
+} from "date-fns"
+import { formatInTimeZone, toDate } from "date-fns-tz"
+import { DateRange, UI } from "react-day-picker"
+import { LuCalendar } from "react-icons/lu"
 
 const months = [
   "January",
@@ -51,18 +51,18 @@ const months = [
   "October",
   "November",
   "December",
-];
+]
 
 type CalendarDatePickerProps = React.HTMLAttributes<HTMLButtonElement> &
   VariantProps<typeof buttonStyles> & {
-    id?: string;
-    className?: string;
-    date: DateRange;
-    closeOnSelect?: boolean;
-    numberOfMonths?: 1 | 2;
-    yearsRange?: number;
-    onDateSelect: (range: { from: Date; to: Date }) => void;
-  };
+    id?: string
+    className?: string
+    date: DateRange
+    closeOnSelect?: boolean
+    numberOfMonths?: 1 | 2
+    yearsRange?: number
+    onDateSelect: (range: { from: Date; to: Date }) => void
+  }
 
 export const CalendarDatePicker = React.forwardRef<
   HTMLButtonElement,
@@ -83,74 +83,74 @@ export const CalendarDatePicker = React.forwardRef<
     },
     ref,
   ) => {
-    const [isPopoverOpen, setIsPopoverOpen] = React.useState(false);
+    const [isPopoverOpen, setIsPopoverOpen] = React.useState(false)
     const [selectedRange, setSelectedRange] = React.useState<string | null>(
       numberOfMonths === 2 ? "This Year" : "Today",
-    );
+    )
     const [monthFrom, setMonthFrom] = React.useState<Date | undefined>(
       date?.from,
-    );
+    )
     const [yearFrom, setYearFrom] = React.useState<number | undefined>(
       date?.from?.getFullYear(),
-    );
+    )
     const [monthTo, setMonthTo] = React.useState<Date | undefined>(
       numberOfMonths === 2 ? date?.to : date?.from,
-    );
+    )
     const [yearTo, setYearTo] = React.useState<number | undefined>(
       numberOfMonths === 2
         ? date?.to?.getFullYear()
         : date?.from?.getFullYear(),
-    );
+    )
     const [highlightedPart, setHighlightedPart] = React.useState<string | null>(
       null,
-    );
+    )
 
-    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
 
-    const handleClose = () => setIsPopoverOpen(false);
+    const handleClose = () => setIsPopoverOpen(false)
 
-    const handleTogglePopover = () => setIsPopoverOpen((prev) => !prev);
+    const handleTogglePopover = () => setIsPopoverOpen((prev) => !prev)
 
     const selectDateRange = (from: Date, to: Date, range: string) => {
-      const startDate = startOfDay(toDate(from, { timeZone }));
+      const startDate = startOfDay(toDate(from, { timeZone }))
       const endDate =
-        numberOfMonths === 2 ? endOfDay(toDate(to, { timeZone })) : startDate;
-      onDateSelect({ from: startDate, to: endDate });
-      setSelectedRange(range);
-      setMonthFrom(from);
-      setYearFrom(from.getFullYear());
-      setMonthTo(to);
-      setYearTo(to.getFullYear());
+        numberOfMonths === 2 ? endOfDay(toDate(to, { timeZone })) : startDate
+      onDateSelect({ from: startDate, to: endDate })
+      setSelectedRange(range)
+      setMonthFrom(from)
+      setYearFrom(from.getFullYear())
+      setMonthTo(to)
+      setYearTo(to.getFullYear())
       /* eslint-disable-next-line */
-      closeOnSelect && setIsPopoverOpen(false);
-    };
+      closeOnSelect && setIsPopoverOpen(false)
+    }
 
     const handleDateSelect = (range: DateRange | undefined) => {
       if (range) {
-        let from = startOfDay(toDate(range.from as Date, { timeZone }));
-        let to = range.to ? endOfDay(toDate(range.to, { timeZone })) : from;
+        let from = startOfDay(toDate(range.from as Date, { timeZone }))
+        let to = range.to ? endOfDay(toDate(range.to, { timeZone })) : from
         if (numberOfMonths === 1) {
           if (range.from !== date.from) {
-            to = from;
+            to = from
           } else {
-            from = startOfDay(toDate(range.to as Date, { timeZone }));
+            from = startOfDay(toDate(range.to as Date, { timeZone }))
           }
         }
-        onDateSelect({ from, to });
-        setMonthFrom(from);
-        setYearFrom(from.getFullYear());
-        setMonthTo(to);
-        setYearTo(to.getFullYear());
+        onDateSelect({ from, to })
+        setMonthFrom(from)
+        setYearFrom(from.getFullYear())
+        setMonthTo(to)
+        setYearTo(to.getFullYear())
       }
-      setSelectedRange(null);
-    };
+      setSelectedRange(null)
+    }
 
     const handleMonthChange = (newMonthIndex: number, part: string) => {
-      setSelectedRange(null);
+      setSelectedRange(null)
       if (part === "from") {
         if (yearFrom !== undefined) {
-          if (newMonthIndex < 0 || newMonthIndex > yearsRange + 1) return;
-          const newMonth = new Date(yearFrom, newMonthIndex, 1);
+          if (newMonthIndex < 0 || newMonthIndex > yearsRange + 1) return
+          const newMonth = new Date(yearFrom, newMonthIndex, 1)
           const from =
             numberOfMonths === 2
               ? startOfMonth(toDate(newMonth, { timeZone }))
@@ -160,95 +160,95 @@ export const CalendarDatePicker = React.forwardRef<
                     newMonth.getMonth(),
                     date.from.getDate(),
                   )
-                : newMonth;
+                : newMonth
           const to =
             numberOfMonths === 2
               ? date.to
                 ? endOfDay(toDate(date.to, { timeZone }))
                 : endOfMonth(toDate(newMonth, { timeZone }))
-              : from;
+              : from
           if (from <= to) {
-            onDateSelect({ from, to });
-            setMonthFrom(newMonth);
-            setMonthTo(date.to);
+            onDateSelect({ from, to })
+            setMonthFrom(newMonth)
+            setMonthTo(date.to)
           }
         }
       } else {
         if (yearTo !== undefined) {
-          if (newMonthIndex < 0 || newMonthIndex > yearsRange + 1) return;
-          const newMonth = new Date(yearTo, newMonthIndex, 1);
+          if (newMonthIndex < 0 || newMonthIndex > yearsRange + 1) return
+          const newMonth = new Date(yearTo, newMonthIndex, 1)
           const from = date.from
             ? startOfDay(toDate(date.from, { timeZone }))
-            : startOfMonth(toDate(newMonth, { timeZone }));
+            : startOfMonth(toDate(newMonth, { timeZone }))
           const to =
             numberOfMonths === 2
               ? endOfMonth(toDate(newMonth, { timeZone }))
-              : from;
+              : from
           if (from <= to) {
-            onDateSelect({ from, to });
-            setMonthTo(newMonth);
-            setMonthFrom(date.from);
+            onDateSelect({ from, to })
+            setMonthTo(newMonth)
+            setMonthFrom(date.from)
           }
         }
       }
-    };
+    }
 
     const handleYearChange = (newYear: number, part: string) => {
-      setSelectedRange(null);
+      setSelectedRange(null)
       if (part === "from") {
         if (years.includes(newYear)) {
           const newMonth = monthFrom
             ? new Date(newYear, monthFrom ? monthFrom.getMonth() : 0, 1)
-            : new Date(newYear, 0, 1);
+            : new Date(newYear, 0, 1)
           const from =
             numberOfMonths === 2
               ? startOfMonth(toDate(newMonth, { timeZone }))
               : date.from
                 ? new Date(newYear, newMonth.getMonth(), date.from.getDate())
-                : newMonth;
+                : newMonth
           const to =
             numberOfMonths === 2
               ? date.to
                 ? endOfDay(toDate(date.to, { timeZone }))
                 : endOfMonth(toDate(newMonth, { timeZone }))
-              : from;
+              : from
           if (from <= to) {
-            onDateSelect({ from, to });
-            setYearFrom(newYear);
-            setMonthFrom(newMonth);
-            setYearTo(date.to?.getFullYear());
-            setMonthTo(date.to);
+            onDateSelect({ from, to })
+            setYearFrom(newYear)
+            setMonthFrom(newMonth)
+            setYearTo(date.to?.getFullYear())
+            setMonthTo(date.to)
           }
         }
       } else {
         if (years.includes(newYear)) {
           const newMonth = monthTo
             ? new Date(newYear, monthTo.getMonth(), 1)
-            : new Date(newYear, 0, 1);
+            : new Date(newYear, 0, 1)
           const from = date.from
             ? startOfDay(toDate(date.from, { timeZone }))
-            : startOfMonth(toDate(newMonth, { timeZone }));
+            : startOfMonth(toDate(newMonth, { timeZone }))
           const to =
             numberOfMonths === 2
               ? endOfMonth(toDate(newMonth, { timeZone }))
-              : from;
+              : from
           if (from <= to) {
-            onDateSelect({ from, to });
-            setYearTo(newYear);
-            setMonthTo(newMonth);
-            setYearFrom(date.from?.getFullYear());
-            setMonthFrom(date.from);
+            onDateSelect({ from, to })
+            setYearTo(newYear)
+            setMonthTo(newMonth)
+            setYearFrom(date.from?.getFullYear())
+            setMonthFrom(date.from)
           }
         }
       }
-    };
+    }
 
-    const today = new Date();
+    const today = new Date()
 
     const years = Array.from(
       { length: yearsRange + 1 },
       (_, i) => today.getFullYear() - yearsRange / 2 + i,
-    );
+    )
 
     const dateRanges = [
       { label: "Today", start: today, end: today },
@@ -280,66 +280,66 @@ export const CalendarDatePicker = React.forwardRef<
         start: startOfYear(subDays(today, 365)),
         end: endOfYear(subDays(today, 365)),
       },
-    ];
+    ]
 
     const handleMouseOver = (part: string) => {
-      setHighlightedPart(part);
-    };
+      setHighlightedPart(part)
+    }
 
     const handleMouseLeave = () => {
-      setHighlightedPart(null);
-    };
+      setHighlightedPart(null)
+    }
 
     /* eslint-disable-next-line */
     const handleWheel = (event: React.WheelEvent, part: string) => {
-      event.preventDefault();
-      setSelectedRange(null);
+      event.preventDefault()
+      setSelectedRange(null)
       if (highlightedPart === "firstDay") {
-        const newDate = new Date(date.from as Date);
-        const increment = event.deltaY > 0 ? -1 : 1;
-        newDate.setDate(newDate.getDate() + increment);
+        const newDate = new Date(date.from as Date)
+        const increment = event.deltaY > 0 ? -1 : 1
+        newDate.setDate(newDate.getDate() + increment)
         if (newDate <= (date.to as Date)) {
           /* eslint-disable-next-line */
           numberOfMonths === 2
             ? onDateSelect({ from: newDate, to: new Date(date.to as Date) })
-            : onDateSelect({ from: newDate, to: newDate });
-          setMonthFrom(newDate);
+            : onDateSelect({ from: newDate, to: newDate })
+          setMonthFrom(newDate)
         } else if (newDate > (date.to as Date) && numberOfMonths === 1) {
-          onDateSelect({ from: newDate, to: newDate });
-          setMonthFrom(newDate);
+          onDateSelect({ from: newDate, to: newDate })
+          setMonthFrom(newDate)
         }
       } else if (highlightedPart === "firstMonth") {
-        const currentMonth = monthFrom ? monthFrom.getMonth() : 0;
-        const newMonthIndex = currentMonth + (event.deltaY > 0 ? -1 : 1);
-        handleMonthChange(newMonthIndex, "from");
+        const currentMonth = monthFrom ? monthFrom.getMonth() : 0
+        const newMonthIndex = currentMonth + (event.deltaY > 0 ? -1 : 1)
+        handleMonthChange(newMonthIndex, "from")
       } else if (highlightedPart === "firstYear" && yearFrom !== undefined) {
-        const newYear = yearFrom + (event.deltaY > 0 ? -1 : 1);
-        handleYearChange(newYear, "from");
+        const newYear = yearFrom + (event.deltaY > 0 ? -1 : 1)
+        handleYearChange(newYear, "from")
       } else if (highlightedPart === "secondDay") {
-        const newDate = new Date(date.to as Date);
-        const increment = event.deltaY > 0 ? -1 : 1;
-        newDate.setDate(newDate.getDate() + increment);
+        const newDate = new Date(date.to as Date)
+        const increment = event.deltaY > 0 ? -1 : 1
+        newDate.setDate(newDate.getDate() + increment)
         if (newDate >= (date.from as Date)) {
-          onDateSelect({ from: new Date(date.from as Date), to: newDate });
-          setMonthTo(newDate);
+          onDateSelect({ from: new Date(date.from as Date), to: newDate })
+          setMonthTo(newDate)
         }
       } else if (highlightedPart === "secondMonth") {
-        const currentMonth = monthTo ? monthTo.getMonth() : 0;
-        const newMonthIndex = currentMonth + (event.deltaY > 0 ? -1 : 1);
-        handleMonthChange(newMonthIndex, "to");
+        const currentMonth = monthTo ? monthTo.getMonth() : 0
+        const newMonthIndex = currentMonth + (event.deltaY > 0 ? -1 : 1)
+        handleMonthChange(newMonthIndex, "to")
       } else if (highlightedPart === "secondYear" && yearTo !== undefined) {
-        const newYear = yearTo + (event.deltaY > 0 ? -1 : 1);
-        handleYearChange(newYear, "to");
+        const newYear = yearTo + (event.deltaY > 0 ? -1 : 1)
+        handleYearChange(newYear, "to")
       }
-    };
+    }
 
     React.useEffect(() => {
-      const firstDayElement = document.getElementById(`firstDay-${id}`);
-      const firstMonthElement = document.getElementById(`firstMonth-${id}`);
-      const firstYearElement = document.getElementById(`firstYear-${id}`);
-      const secondDayElement = document.getElementById(`secondDay-${id}`);
-      const secondMonthElement = document.getElementById(`secondMonth-${id}`);
-      const secondYearElement = document.getElementById(`secondYear-${id}`);
+      const firstDayElement = document.getElementById(`firstDay-${id}`)
+      const firstMonthElement = document.getElementById(`firstMonth-${id}`)
+      const firstYearElement = document.getElementById(`firstYear-${id}`)
+      const secondDayElement = document.getElementById(`secondDay-${id}`)
+      const secondMonthElement = document.getElementById(`secondMonth-${id}`)
+      const secondYearElement = document.getElementById(`secondYear-${id}`)
 
       const elements = [
         firstDayElement,
@@ -348,7 +348,7 @@ export const CalendarDatePicker = React.forwardRef<
         secondDayElement,
         secondMonthElement,
         secondYearElement,
-      ];
+      ]
 
       const addPassiveEventListener = (element: HTMLElement | null) => {
         if (element) {
@@ -358,11 +358,11 @@ export const CalendarDatePicker = React.forwardRef<
             {
               passive: false,
             },
-          );
+          )
         }
-      };
+      }
 
-      elements.forEach(addPassiveEventListener);
+      elements.forEach(addPassiveEventListener)
 
       return () => {
         elements.forEach((element) => {
@@ -370,14 +370,14 @@ export const CalendarDatePicker = React.forwardRef<
             element.removeEventListener(
               "wheel",
               handleWheel as unknown as EventListener,
-            );
+            )
           }
-        });
-      };
-    }, [highlightedPart, date, id, handleWheel]);
+        })
+      }
+    }, [highlightedPart, date, id, handleWheel])
 
     const formatWithTz = (date: Date, fmt: string) =>
-      formatInTimeZone(date, timeZone, fmt);
+      formatInTimeZone(date, timeZone, fmt)
 
     return (
       <>
@@ -557,11 +557,11 @@ export const CalendarDatePicker = React.forwardRef<
                             "bg-primary text-primary-text hover:bg-primary/90 hover:text-main",
                         )}
                         onClick={() => {
-                          selectDateRange(start, end, label);
-                          setMonthFrom(start);
-                          setYearFrom(start.getFullYear());
-                          setMonthTo(end);
-                          setYearTo(end.getFullYear());
+                          selectDateRange(start, end, label)
+                          setMonthFrom(start)
+                          setYearFrom(start.getFullYear())
+                          setMonthTo(end)
+                          setYearTo(end.getFullYear())
                         }}
                       >
                         {label}
@@ -574,8 +574,8 @@ export const CalendarDatePicker = React.forwardRef<
                     <div className="ml-3 flex gap-2">
                       <Select
                         onValueChange={(value) => {
-                          handleMonthChange(months.indexOf(value), "from");
-                          setSelectedRange(null);
+                          handleMonthChange(months.indexOf(value), "from")
+                          setSelectedRange(null)
                         }}
                         value={
                           monthFrom ? months[monthFrom.getMonth()] : undefined
@@ -594,8 +594,8 @@ export const CalendarDatePicker = React.forwardRef<
                       </Select>
                       <Select
                         onValueChange={(value) => {
-                          handleYearChange(Number(value), "from");
-                          setSelectedRange(null);
+                          handleYearChange(Number(value), "from")
+                          setSelectedRange(null)
                         }}
                         value={yearFrom ? yearFrom.toString() : undefined}
                       >
@@ -615,8 +615,8 @@ export const CalendarDatePicker = React.forwardRef<
                       <div className="flex gap-2">
                         <Select
                           onValueChange={(value) => {
-                            handleMonthChange(months.indexOf(value), "to");
-                            setSelectedRange(null);
+                            handleMonthChange(months.indexOf(value), "to")
+                            setSelectedRange(null)
                           }}
                           value={
                             monthTo ? months[monthTo.getMonth()] : undefined
@@ -635,8 +635,8 @@ export const CalendarDatePicker = React.forwardRef<
                         </Select>
                         <Select
                           onValueChange={(value) => {
-                            handleYearChange(Number(value), "to");
-                            setSelectedRange(null);
+                            handleYearChange(Number(value), "to")
+                            setSelectedRange(null)
                           }}
                           value={yearTo ? yearTo.toString() : undefined}
                         >
@@ -677,8 +677,8 @@ export const CalendarDatePicker = React.forwardRef<
           )}
         </Popover>
       </>
-    );
+    )
   },
-);
+)
 
-CalendarDatePicker.displayName = "CalendarDatePicker";
+CalendarDatePicker.displayName = "CalendarDatePicker"

@@ -1,10 +1,10 @@
-import React from "react";
+import React from "react"
 import {
   Avatar,
   AvatarFallback,
   AvatarGroup,
   AvatarImage,
-} from "@mijn-ui/react/components/avatar";
+} from "@mijn-ui/react/components/avatar"
 
 const AvatarGroupExample = () => {
   return (
@@ -39,7 +39,7 @@ const AvatarGroupExample = () => {
         <AvatarFallback>John Doe</AvatarFallback>
       </Avatar>
     </AvatarGroup>
-  );
-};
+  )
+}
 
-export default AvatarGroupExample;
+export default AvatarGroupExample

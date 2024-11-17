@@ -1,8 +1,8 @@
-import type * as React from "react";
-import clsx, { ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
+import type * as React from "react"
+import clsx, { ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
 
-export const cn = (...classes: ClassValue[]) => twMerge(clsx(classes));
+export const cn = (...classes: ClassValue[]) => twMerge(clsx(classes))
 
 /**
  * Conditionally applies CSS classes based on the `unstyled` flag.
@@ -21,8 +21,8 @@ export const applyUnstyled = (
   defaultClasses: string,
   userClasses?: string,
 ): string | undefined => {
-  return unstyled ? userClasses : cn(defaultClasses, userClasses);
-};
+  return unstyled ? userClasses : cn(defaultClasses, userClasses)
+}
 
 export function mergeRefs<T>(
   refs: Array<React.Ref<T> | undefined | null>,
@@ -30,10 +30,10 @@ export function mergeRefs<T>(
   return (value) => {
     refs.forEach((ref) => {
       if (typeof ref === "function") {
-        ref(value);
+        ref(value)
       } else if (ref && "current" in ref) {
-        (ref as React.MutableRefObject<T | null>).current = value;
+        ;(ref as React.MutableRefObject<T | null>).current = value
       }
-    });
-  };
+    })
+  }
 }

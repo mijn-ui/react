@@ -1,12 +1,12 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { cn } from "@mijn-ui/utils";
-import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area";
+import * as React from "react"
+import { cn } from "@mijn-ui/utils"
+import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area"
 
 type ScrollAreaProps = React.ComponentPropsWithRef<
   typeof ScrollAreaPrimitive.Root
->;
+>
 
 const ScrollArea = ({ className, children, ...props }: ScrollAreaProps) => (
   <ScrollAreaPrimitive.Root
@@ -19,11 +19,11 @@ const ScrollArea = ({ className, children, ...props }: ScrollAreaProps) => (
     <ScrollBar />
     <ScrollAreaPrimitive.Corner />
   </ScrollAreaPrimitive.Root>
-);
+)
 
 type ScrollBarProps = React.ComponentPropsWithRef<
   typeof ScrollAreaPrimitive.ScrollAreaScrollbar
->;
+>
 
 const ScrollBar = ({
   className,
@@ -44,6 +44,6 @@ const ScrollBar = ({
   >
     <ScrollAreaPrimitive.ScrollAreaThumb className="relative flex-1 rounded-full bg-main-border" />
   </ScrollAreaPrimitive.ScrollAreaScrollbar>
-);
+)
 
-export { ScrollArea, ScrollBar };
+export { ScrollArea, ScrollBar }

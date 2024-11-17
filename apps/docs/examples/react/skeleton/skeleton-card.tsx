@@ -1,4 +1,4 @@
-import { Skeleton } from "@mijn-ui/react/components/skeleton";
+import { Skeleton } from "@mijn-ui/react/components/skeleton"
 
 const SkeletonCard = () => {
   return (
@@ -9,7 +9,7 @@ const SkeletonCard = () => {
         <Skeleton className="h-4 w-[200px]" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SkeletonCard;
+export default SkeletonCard

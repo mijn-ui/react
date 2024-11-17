@@ -6,7 +6,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@mijn-ui/react/components/select";
+} from "@mijn-ui/react/components/select"
 
 const SelectExample = () => {
   return (
@@ -25,7 +25,7 @@ const SelectExample = () => {
         </SelectGroup>
       </SelectContent>
     </Select>
-  );
-};
+  )
+}
 
-export default SelectExample;
+export default SelectExample

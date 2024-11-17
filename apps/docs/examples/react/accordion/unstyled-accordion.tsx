@@ -1,10 +1,10 @@
-import React from "react";
+import React from "react"
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@mijn-ui/react/components/accordion";
+} from "@mijn-ui/react/components/accordion"
 
 const UnstyledAccordion = () => {
   return (
@@ -42,7 +42,7 @@ const UnstyledAccordion = () => {
         </AccordionContent>
       </AccordionItem>
     </Accordion>
-  );
-};
+  )
+}
 
-export default UnstyledAccordion;
+export default UnstyledAccordion
