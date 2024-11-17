@@ -12,7 +12,7 @@ For more details about this issue, please refer to the following GitHub discussi
 
 ### Running Dev server consumes a lot of RAM
 
-Another issue we are experiencing is that the `next dev` command is consuming a significant amount of memory, sometimes exceeding 10GB or more. This has been a known issue in Next.js, and unfortunately, there is no known solution or workaround at the moment. If you come across any solution, please let us know.
+Another issue we are experiencing is that the `next dev` command is consuming a significant amount of memory, sometimes exceeding 8GB or more. This has been a known issue in Next.js, and unfortunately, there is no known solution or workaround at the moment. If you come across any solution, please let us know.
 
 You can find the issue here: [Github Issue](https://github.com/vercel/next.js/issues/54708)
 
