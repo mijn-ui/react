@@ -31,18 +31,10 @@ const exportedComponents = [
   "textarea",
 ];
 
-const components = exportedComponents.map(
-  (component) => `src/components/${component}/index.ts`,
-);
+const components = exportedComponents.map((component) => `src/components/${component}/index.ts`);
 
 export default defineConfig({
-  entry: [
-    ...components,
-    "src/utils/index.tsx",
-    "src/hooks",
-    "src/types",
-    "src/context/index.ts",
-  ],
+  entry: [...components, "src/utils/index.tsx", "src/hooks", "src/types", "src/context/index.ts"],
   format: "esm",
   clean: true,
   dts: true,

@@ -1,13 +1,44 @@
-.DS_Store
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# Dependencies
 node_modules
+.pnp
+.pnp.js
+
+# Local env files
+.env*
+.env*.local
+
+# Testing
+coverage
+
+# Turbo
 .turbo
-*.log
-.next
+
+# Vercel
+.vercel
+
+# Build Outputs
+.next/
+out/
+build
 dist
-dist-ssr
-*.local
-.env
-.cache
-server/dist
-public/dist
-storybook-static/
+*.tsbuildinfo
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Misc
+.DS_Store
+*.pem
+
+# generated content
+.contentlayer
+.content-collections
+.source
+
+# others
+next-env.d.ts
+*storybook.log
