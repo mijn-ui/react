@@ -1,13 +1,14 @@
-import createBundleAnalyzer from "@next/bundle-analyzer";
-import { createMDX } from "fumadocs-mdx/next";
+import createBundleAnalyzer from "@next/bundle-analyzer"
+import { createMDX } from "fumadocs-mdx/next"
 
 const withAnalyzer = createBundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
-});
+})
 
 /** @type {import('next').NextConfig} */
 
 const config = {
+  output: "export",
   reactStrictMode: true,
   eslint: {
     ignoreDuringBuilds: true,
@@ -17,13 +18,27 @@ const config = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  
-  serverExternalPackages: ['typescript'],
+
+  webpack: (config, { dev }) => {
+    if (config.cache && !dev) {
+      config.cache = Object.freeze({
+        type: "memory",
+      })
+    }
+    // Important: return the modified config
+    return config
+  },
+
   images: {
     unoptimized: true,
   },
-};
 
-const withMDX = createMDX();
+  experimental: {
+    webpackMemoryOptimizations: true,
+    serverSourceMaps: false,
+  },
+}
 
-export default withAnalyzer(withMDX(config));
+const withMDX = createMDX()
+
+export default withAnalyzer(withMDX(config))

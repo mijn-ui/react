@@ -1,21 +1,21 @@
-"use client";
+"use client"
 
-import React, { useState } from "react";
-import Link from "next/link";
-import Logo from "@/app/components/logo";
-import ThemeToggler from "@/app/components/theme-toggler";
-import { Badge } from "@mijn-ui/react/components/badge";
-import { Button } from "@mijn-ui/react/components/button";
-import { useSearchContext } from "fumadocs-ui/provider";
-import { LuMenu, LuExternalLink, LuGithub, LuSearch } from "react-icons/lu";
+import React, { useState } from "react"
+import Link from "next/link"
+import { TopRightRadialGradient } from "@/app/components/decorators/gradient-bg"
+import Logo from "@/app/components/logo"
+import ThemeToggler from "@/app/components/theme-toggler"
+import ClickAwayListener from "@/app/utils/click-away-listener"
+import { Badge } from "@mijn-ui/react/components/badge"
+import { Button } from "@mijn-ui/react/components/button"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@mijn-ui/react/components/collapsible";
-import { Separator } from "@mijn-ui/react/components/separator";
-import { TopRightRadialGradient } from "@/app/components/decorators/gradient-bg";
-import ClickAwayListener from "@/app/utils/click-away-listener";
+} from "@mijn-ui/react/components/collapsible"
+import { Separator } from "@mijn-ui/react/components/separator"
+import { useSearchContext } from "fumadocs-ui/provider"
+import { LuExternalLink, LuGithub, LuMenu, LuSearch } from "react-icons/lu"
 
 const PAGES = [
   {
@@ -26,13 +26,13 @@ const PAGES = [
     title: "Blocks",
     href: "/blocks",
   },
-];
+]
 
-const GITHUB_URL = "https://github.com/HTLA380/MijnUI";
+const GITHUB_URL = "https://github.com/HTLA380/MijnUI"
 
 const Navbar = () => {
-  const { setOpenSearch } = useSearchContext();
-  const [open, setOpen] = useState(false);
+  const { setOpenSearch } = useSearchContext()
+  const [open, setOpen] = useState(false)
 
   const renderPages = PAGES.map((page) => (
     <Link
@@ -42,7 +42,7 @@ const Navbar = () => {
     >
       {page.title}
     </Link>
-  ));
+  ))
 
   return (
     <header className="sticky border-b inset-x-0 top-0 bg-transparent z-50 md:flex flex-col justify-center items-center h-[var(--navbar-height)] w-full backdrop-blur-md">
@@ -94,11 +94,11 @@ const Navbar = () => {
             <LuSearch />
           </button>
 
-          <Collapsible open={open} onOpenChange={setOpen}>
-            <CollapsibleTrigger className="text-neutral-text flex items-center justify-center size-8 transition duration-200 hover:text-secondary-text">
-              <LuMenu className="text-lg" />
-            </CollapsibleTrigger>
-            <ClickAwayListener onClickAway={() => setOpen(false)}>
+          <ClickAwayListener onClickAway={() => setOpen(false)}>
+            <Collapsible open={open} onOpenChange={setOpen}>
+              <CollapsibleTrigger className="text-neutral-text flex items-center justify-center size-8 transition duration-200 hover:text-secondary-text">
+                <LuMenu className="text-lg" />
+              </CollapsibleTrigger>
               <CollapsibleContent className="overflow-hidden transition-[height] data-[state=closed]:animate-collapsible-collapse data-[state=open]:animate-collapsible-expand absolute inset-x-0 bg-surface top-[calc(var(--navbar-height)] mt-2 text-sm">
                 <div className="flex w-full flex-col relative justify-between items-start space-y-2 px-4 py-2">
                   <div className="flex w-fit flex-col gap-2">{renderPages}</div>
@@ -116,14 +116,14 @@ const Navbar = () => {
                   </div>
                 </div>
               </CollapsibleContent>
-            </ClickAwayListener>
-          </Collapsible>
+            </Collapsible>
+          </ClickAwayListener>
         </div>
       </nav>
 
       <TopRightRadialGradient />
     </header>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
