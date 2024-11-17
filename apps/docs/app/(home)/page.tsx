@@ -1,6 +1,6 @@
-import { buttonStyles } from "@mijn-ui/react/components/button";
-import { cn } from "@mijn-ui/react/utils";
-import Link from "next/link";
+import Link from "next/link"
+import { buttonStyles } from "@mijn-ui/react/components/button"
+import { cn } from "@mijn-ui/react/utils"
 
 export default function HomePage() {
   return (
@@ -9,7 +9,7 @@ export default function HomePage() {
         Reusable components for clean, responsive interfaces.
       </h1>
       <p className="w-full md:w-3/4 font-medium text-neutral-text text-lg">
-        Built with Tailwind and Radix UI for both React and HTML projects.
+        Built with Tailwind and Radix UI for both Next.js and HTML projects.
       </p>
 
       <div className="flex items-center justify-start md:justify-center w-full gap-2">
@@ -17,7 +17,7 @@ export default function HomePage() {
           className={cn(
             buttonStyles({ size: "sm", className: "text-xs md:text-sm" }),
           )}
-          href={"/docs/next-js"}
+          href={"/docs"}
         >
           Getting Started
         </Link>
@@ -35,5 +35,5 @@ export default function HomePage() {
         </Link>
       </div>
     </section>
-  );
+  )
 }

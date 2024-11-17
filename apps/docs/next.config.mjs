@@ -8,7 +8,6 @@ const withAnalyzer = createBundleAnalyzer({
 /** @type {import('next').NextConfig} */
 
 const config = {
-  output: "export",
   reactStrictMode: true,
   eslint: {
     ignoreDuringBuilds: true,
