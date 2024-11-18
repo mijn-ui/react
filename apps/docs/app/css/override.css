@@ -10,7 +10,7 @@
 }
 
 h1 {
-  @apply bg-gradient-to-br from-main-text to-neutral-text/70 bg-clip-text font-bold tracking-tight text-transparent sm:font-extrabold;
+  @apply bg-gradient-to-br from-main-text to-neutral-text/70 bg-clip-text font-bold tracking-tight text-transparent;
 }
 
 [data-search-full] {

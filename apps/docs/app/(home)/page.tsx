@@ -29,9 +29,9 @@ export default function HomePage() {
               className: "text-xs md:text-sm",
             }),
           )}
-          href={"/docs/next-js/components/accordion"}
+          href={"/blocks"}
         >
-          Components
+          Blocks
         </Link>
       </div>
     </section>

@@ -8,10 +8,10 @@ export default function Layout({
   children: ReactNode
 }): React.ReactElement {
   return (
-    <div className="w-full h-screen flex flex-col items-center">
+    <main className="w-full min-h-screen flex flex-col items-center">
       <Navbar />
       {children}
       <Footer />
-    </div>
+    </main>
   )
 }

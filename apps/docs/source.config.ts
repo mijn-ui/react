@@ -6,7 +6,7 @@ import {
 } from "fumadocs-mdx/config"
 
 export const { docs, meta } = defineDocs({
-  dir: "content/docs",
+  dir: ["content/docs", "content/blocks"],
 
   docs: {
     mdxOptions: getDefaultMDXOptions({
