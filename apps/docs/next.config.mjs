@@ -19,7 +19,7 @@ const config = {
   },
 
   webpack: (config, { dev }) => {
-    if (config.cache && !dev) {
+    if (config.cache && dev) {
       config.cache = Object.freeze({
         type: "memory",
       })
