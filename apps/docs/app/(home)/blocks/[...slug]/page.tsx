@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation"
-import { blocks } from "@/lib/source"
+import { blocks } from "@/app/source"
 import ComponentPreview from "@/mdx-components/component-preview"
 import Alert from "@/mdx-components/mdx-alert"
+import NavigationCard from "@/mdx-components/navigation-card"
+import { Step, Steps } from "fumadocs-ui/components/steps"
 import { Tab, Tabs } from "fumadocs-ui/components/tabs"
 import defaultMdxComponents from "fumadocs-ui/mdx"
 
@@ -29,7 +31,16 @@ export default async function Blocks(props: {
             Tab,
             ComponentPreview,
             Alert,
+            Steps,
+            Step,
           }}
+        />
+      </div>
+
+      <div className="mt-4">
+        <NavigationCard
+          previous={page.data.footer.previous}
+          next={page.data.footer.next}
         />
       </div>
     </article>

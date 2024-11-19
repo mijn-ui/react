@@ -8,6 +8,7 @@ export default {
     "./examples/**/*.{ts,tsx,html}",
     "./content/**/*.{md,mdx}",
     "./mdx-components/**/*.{ts,tsx}",
+    "./blocks/**/*.{ts,tsx}",
 
     // I don't know why this path isn't working in production, so I have to include it this way for development and production
     // just a workaround for now, needs to address this later
@@ -158,6 +159,9 @@ export default {
 
         "scale-in": "scale-in 0.5s 0.2s ease-out, fade-in 0.4s ease-out",
         "scale-out": "scale-out 0.5s 0.2s ease-out, fade-out 0.4s ease-out",
+      },
+      fontSize: {
+        xxs: "0.625rem",
       },
     },
   },

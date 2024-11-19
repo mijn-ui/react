@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import { source } from "@/lib/source"
+import { source } from "@/app/source"
 import ComponentPreview from "@/mdx-components/component-preview"
 import Alert from "@/mdx-components/mdx-alert"
 import TWComponentPreview from "@/mdx-components/tailwind-component-preview"

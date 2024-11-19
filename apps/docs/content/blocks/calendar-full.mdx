@@ -1,10 +1,19 @@
 ---
 title: CalendarFull
-full: true
+footer: {
+  previous: {
+    url: "/blocks",
+    name: "Blocks",
+  },
+  next: {
+    url: "/blocks/kanban-column",
+    name: "Kanban Column",
+  }
+}
 ---
 
-import CalendarFullExample from "@/mdx-components/calendar-full/example.tsx"
-import NaviationCard from "@/mdx-components/navigation-card"
+import CalendarFullExample from "@/blocks/calendar-full"
+import NavigationCard from "@/mdx-components/navigation-card"
 
 <ComponentPreview className="rounded-2xl">
   <CalendarFullExample />
@@ -17,13 +26,3 @@ import NaviationCard from "@/mdx-components/navigation-card"
 ```tsx title="CalendarFull"
 Source code is currenly not available for this component.
 ```
-
-
-<NaviationCard previous={{
-  url: "/blocks",
-  name: "Blocks",
-  }} next={{
-    url: "/blocks/kanban",
-    name: "Kanban",
-  }}
-/>

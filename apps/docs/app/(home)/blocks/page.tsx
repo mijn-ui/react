@@ -3,8 +3,11 @@
 import React, { useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import "./glow-effect.css"
+import KanbanShowcase from "./showcase/kanban-showcase"
 import { Card } from "@mijn-ui/react/components/card"
 import { cn } from "@mijn-ui/react/utils"
+import { FaScrewdriverWrench } from "react-icons/fa6"
 
 const Blocks = () => {
   // card glow effect
@@ -52,11 +55,44 @@ const Blocks = () => {
               className="w-full h-full"
             />
           </LinkCard>
-          <LinkCard href="/blocks/kanban" label="KanBan">
-            KanBan
+          <LinkCard
+            href="/blocks/kanban-column"
+            cardContentClass="p-9 pb-8"
+            label="KanBanColumn"
+          >
+            <KanbanShowcase />
           </LinkCard>
-          <LinkCard href="/blocks/screen-state" label="ScreenState">
-            <div className="flex flex-col gap-2">ScreenState</div>
+          <LinkCard href="#" label="ScreenState">
+            <div className="flex flex-col gap-2">
+              <p className="text-sm flex gap-2 items-center text-neutral-text/80">
+                <FaScrewdriverWrench />
+                Inprogress...
+              </p>
+            </div>
+          </LinkCard>
+          <LinkCard href="#" label="Sidebar">
+            <div className="flex flex-col gap-2">
+              <p className="text-sm flex gap-2 items-center text-neutral-text/80">
+                <FaScrewdriverWrench />
+                Inprogress...
+              </p>
+            </div>
+          </LinkCard>
+          <LinkCard href="#" label="DataTable">
+            <div className="flex flex-col gap-2">
+              <p className="text-sm flex gap-2 items-center text-neutral-text/80">
+                <FaScrewdriverWrench />
+                Inprogress...
+              </p>
+            </div>
+          </LinkCard>
+          <LinkCard href="#" label="GanttChart">
+            <div className="flex flex-col gap-2">
+              <p className="text-sm flex gap-2 items-center text-neutral-text/80">
+                <FaScrewdriverWrench />
+                Inprogress...
+              </p>
+            </div>
           </LinkCard>
         </div>
       </div>
