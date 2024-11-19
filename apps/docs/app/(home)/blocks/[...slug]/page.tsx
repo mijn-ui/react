@@ -1,36 +1,27 @@
 import { notFound } from "next/navigation"
-import { source } from "@/lib/source"
+import { blocks } from "@/lib/source"
 import ComponentPreview from "@/mdx-components/component-preview"
 import Alert from "@/mdx-components/mdx-alert"
 import { Tab, Tabs } from "fumadocs-ui/components/tabs"
 import defaultMdxComponents from "fumadocs-ui/mdx"
-import {
-  DocsBody,
-  DocsDescription,
-  DocsPage,
-  DocsTitle,
-} from "fumadocs-ui/page"
 
-export default async function Page(props: {
+export default async function Blocks(props: {
   params: Promise<{ slug?: string[] }>
 }) {
   const params = await props.params
-  const page = source.getPage(params.slug)
+  const page = blocks.getPage(params.slug)
 
   if (!page) notFound()
 
   const MDX = page.data.body
 
   return (
-    <DocsPage toc={page.data.toc} full={page.data.full}>
-      <DocsTitle className="md:text-4xl md:font-extrabold">
+    <article className="mx-auto flex w-full flex-1 flex-col gap-6 px-4 py-10 md:px-8 md:py-12 max-w-[1120px]">
+      <h1 className="text-3xl font-bold md:text-4xl md:font-extrabold">
         {page.data.title}
-      </DocsTitle>
-      <DocsDescription className="mb-0">
-        {page.data.description}
-      </DocsDescription>
+      </h1>
       <hr />
-      <DocsBody>
+      <div className="prose">
         <MDX
           components={{
             ...defaultMdxComponents,
@@ -40,20 +31,20 @@ export default async function Page(props: {
             Alert,
           }}
         />
-      </DocsBody>
-    </DocsPage>
+      </div>
+    </article>
   )
 }
 
 export async function generateStaticParams() {
-  return source.generateParams()
+  return blocks.generateParams()
 }
 
 export async function generateMetadata(props: {
   params: Promise<{ slug?: string[] }>
 }) {
   const params = await props.params
-  const page = source.getPage(params.slug)
+  const page = blocks.getPage(params.slug)
   if (!page) notFound()
 
   return {

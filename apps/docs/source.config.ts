@@ -1,13 +1,12 @@
 import { fileGenerator, remarkDocGen, remarkInstall } from "fumadocs-docgen"
 import {
+  defineCollections,
   defineConfig,
   defineDocs,
   getDefaultMDXOptions,
 } from "fumadocs-mdx/config"
 
 export const { docs, meta } = defineDocs({
-  dir: ["content/docs", "content/blocks"],
-
   docs: {
     mdxOptions: getDefaultMDXOptions({
       remarkPlugins: [
@@ -16,6 +15,11 @@ export const { docs, meta } = defineDocs({
       ],
     }),
   },
+})
+
+export const blocks = defineCollections({
+  dir: "content/blocks",
+  type: "doc",
 })
 
 export default defineConfig()
