@@ -92,6 +92,9 @@ importers:
       react-icons:
         specifier: ^5.3.0
         version: 5.3.0(react@19.0.0-rc-b01722d5-20241114)
+      zod:
+        specifier: ^3.23.8
+        version: 3.23.8
     devDependencies:
       '@tailwindcss/typography':
         specifier: ^0.5.15

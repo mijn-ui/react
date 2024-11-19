@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { notFound } from "next/navigation"
 import { source } from "@/app/source"
 import ComponentPreview from "@/mdx-components/component-preview"
@@ -13,6 +14,7 @@ import {
   DocsPage,
   DocsTitle,
 } from "fumadocs-ui/page"
+import { LuExternalLink } from "react-icons/lu"
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>
@@ -26,9 +28,34 @@ export default async function Page(props: {
 
   return (
     <DocsPage toc={page.data.toc} full={page.data.full}>
-      <DocsTitle className="md:text-4xl md:font-extrabold">
-        {page.data.title}
-      </DocsTitle>
+      <div className="w-full flex items-baseline gap-3 justify-between">
+        <DocsTitle className="md:text-4xl md:font-extrabold">
+          {page.data.title}
+        </DocsTitle>
+
+        <div className="flex items-center gap-4">
+          {page.data.docs && (
+            <Link
+              target="_blank"
+              className="underline text-sm hover:text-primary flex items-center gap-1"
+              href={page.data.docs}
+            >
+              <LuExternalLink />
+              Docs
+            </Link>
+          )}
+          {page.data.apiReference && (
+            <Link
+              target="_blank"
+              className="text-sm flex hover:text-primary items-center gap-1 underline"
+              href={page.data.apiReference}
+            >
+              <LuExternalLink />
+              Api Reference
+            </Link>
+          )}
+        </div>
+      </div>
       <DocsDescription className="mb-0">
         {page.data.description}
       </DocsDescription>

@@ -3,11 +3,17 @@ import {
   defineCollections,
   defineConfig,
   defineDocs,
+  frontmatterSchema,
   getDefaultMDXOptions,
 } from "fumadocs-mdx/config"
+import { z } from "zod"
 
 export const { docs, meta } = defineDocs({
   docs: {
+    schema: frontmatterSchema.extend({
+      docs: z.string().optional(),
+      apiReference: z.string().optional(),
+    }),
     mdxOptions: getDefaultMDXOptions({
       remarkPlugins: [
         remarkInstall,
