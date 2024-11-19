@@ -4,7 +4,7 @@
     "paths": {
       // Path aliases for cleaner imports          // [!code highlight]
       "@/*": ["./src/*"], // [!code highlight]
-      "@mijn-ui/*": ["./mijn-ui/*"] // [!code highlight]
+      "@mijn-ui/react/*": ["./mijn-ui/*"] // [!code highlight]
     }
   }
 }

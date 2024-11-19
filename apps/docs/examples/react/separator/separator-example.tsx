@@ -1,4 +1,4 @@
-import { Separator } from "@mijn-ui/components/separator"
+import { Separator } from "@mijn-ui/react/components/separator"
 
 const SeparatorExample = () => {
   return (

@@ -1,17 +1,20 @@
-import typography from "@tailwindcss/typography"
+/* eslint-disable */
 import { createPreset } from "fumadocs-ui/tailwind-plugin"
-import tailwindAnimate from "tailwindcss-animate"
 
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "../node_modules/fumadocs-ui/dist/**/*.js",
-
-    "../../packages/mijn-ui/src/**/*.{ts,tsx}",
-
     "./app/**/*.{ts,tsx}",
-    "./examples/**/*.{ts,html,tsx}",
-    "./content/**/*.{ts,tsx,md,mdx}",
+    "./examples/**/*.{ts,tsx,html}",
+    "./content/**/*.{md,mdx}",
+    "./mdx-components/**/*.{ts,tsx}",
+    "./blocks/**/*.{ts,tsx}",
+
+    // I don't know why this path isn't working in production, so I have to include it this way for development and production
+    // just a workaround for now, needs to address this later
+    "../../node_modules/fumadocs-ui/dist/**/*.js",
+    "./node_modules/@mijn-ui/react/dist/**/*.js",
+    "./node_modules/fumadocs-ui/dist/**/*.js",
   ],
   presets: [createPreset()],
   theme: {
@@ -132,6 +135,16 @@ export default {
           },
           to: { height: "0" },
         },
+        "collapsible-expand": {
+          from: { height: "0" },
+          to: { height: "var(--radix-collapsible-content-height)" },
+        },
+        "collapsible-collapse": {
+          from: {
+            height: "var(--radix-collapsible-content-height)",
+          },
+          to: { height: "0" },
+        },
       },
       animation: {
         "accordion-expand":
@@ -139,10 +152,18 @@ export default {
         "accordion-collapse":
           "accordion-collapse 0.2s ease-in-out, fade-out 0.4s ease-in-out",
 
+        "collapsible-expand":
+          "collapsible-expand 0.2s ease-in-out, fade-in 0.2s ease-in-out",
+        "collapsible-collapse":
+          "collapsible-collapse 0.2s ease-in-out, fade-out 0.2s ease-in-out",
+
         "scale-in": "scale-in 0.5s 0.2s ease-out, fade-in 0.4s ease-out",
         "scale-out": "scale-out 0.5s 0.2s ease-out, fade-out 0.4s ease-out",
       },
+      fontSize: {
+        xxs: "0.625rem",
+      },
     },
   },
-  plugins: [tailwindAnimate, typography],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 }

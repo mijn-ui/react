@@ -171,7 +171,9 @@ const DropdownMenuContent = ({
 
 type DropdownMenuItemProps = React.ComponentPropsWithRef<
   typeof DropdownMenuPrimitive.Item
-> & { inset?: boolean } & UnstyledProps
+> & {
+  inset?: boolean
+} & UnstyledProps
 
 const DropdownMenuItem = ({
   unstyled,
@@ -287,7 +289,9 @@ const DropdownMenuRadioItem = ({
 
 type DropdownMenuLabelProps = React.ComponentPropsWithRef<
   typeof DropdownMenuPrimitive.Label
-> & { inset?: boolean } & UnstyledProps
+> & {
+  inset?: boolean
+} & UnstyledProps
 
 const DropdownMenuLabel = ({
   className,

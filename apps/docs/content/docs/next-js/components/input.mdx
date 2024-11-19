@@ -1,0 +1,96 @@
+---
+title: Input
+---
+
+import InputFloatingLabelIcon from "@/examples/react/input/input-floating-label-icon";
+import InputWithIcon from "@/examples/react/input/input-with-icon";
+import { Input } from "@mijn-ui/react/components/input";
+
+<ComponentPreview>
+  <Input className="w-80" placeholder="Username..." />
+</ComponentPreview>
+
+### Installation
+
+<Steps>
+  <Step>
+     **Add the Label Component**
+
+    To get started, you need to install the label component. Follow the link below to install it:
+
+    [Label component](/docs/components/label)
+
+  </Step>
+
+  <Step>
+    **Copy and paste the following code into  `mijn-ui` folder.**
+
+    <Tabs items={["Source Code", "Example Usage"]}>
+        <Tab value="Example Usage">
+          ```tsx
+            <Input className="w-80" placeholder="Username..." />
+          ```
+        </Tab>
+        <Tab value="Source Code">
+          ```json doc-gen:file
+            {
+              "file": "../../packages/mijn-ui/src/components/input/input.tsx",
+              "codeblock": {
+                "lang": "tsx",
+                "meta": "title=\"mijn-ui/components/input.tsx\""
+              }
+            }
+          ```
+        </Tab>
+    </Tabs>
+
+  </Step>
+</Steps>
+
+---
+
+### Input with Icon
+
+<ComponentPreview>
+  <InputWithIcon />
+</ComponentPreview>
+
+```json doc-gen:file
+{
+  "file": "./examples/react/input/input-with-icon.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": ""
+  }
+}
+```
+
+---
+
+### Input With Floating Label
+
+<ComponentPreview>
+  <Input className="w-80" label="Username" />
+</ComponentPreview>
+
+```tsx
+<Input className="w-80" label="Username" />
+```
+
+---
+
+### Input Floating Label with Icon
+
+<ComponentPreview>
+  <InputFloatingLabelIcon />
+</ComponentPreview>
+
+```json doc-gen:file
+{
+  "file": "./examples/react/input/input-floating-label-icon.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": ""
+  }
+}
+```

@@ -6,8 +6,8 @@ import {
   AutocompleteContent,
   AutocompleteItem,
   AutocompleteTrigger,
-} from "@mijn-ui/components/autocomplete"
-import { Input } from "@mijn-ui/components/input"
+} from "@mijn-ui/react/components/autocomplete"
+import { Input } from "@mijn-ui/react/components/input"
 import { LuSearch } from "react-icons/lu"
 
 const FRAMEWORKS = [

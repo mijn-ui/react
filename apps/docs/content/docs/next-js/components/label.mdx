@@ -1,0 +1,50 @@
+---
+title: Label
+docs: https://www.radix-ui.com/primitives/docs/components/label
+apiReference: https://www.radix-ui.com/primitives/docs/components/label#api-reference
+---
+
+import { Label } from "@mijn-ui/react/components/label";
+import { Checkbox } from "@mijn-ui/react/components/checkbox";
+
+<ComponentPreview>
+  <div className="flex items-center space-x-2">
+    <Checkbox id="terms1" />
+    <Label htmlFor="terms1">Accept terms and conditions</Label>
+  </div>
+</ComponentPreview>
+
+### Installation
+
+<Steps>
+
+{" "}
+<Step>**Install Required Dependencies:** ```package-install @radix-ui/react-label ```</Step>
+
+  <Step>
+    **Copy and paste the following code into  `mijn-ui` folder.**
+    <Tabs items={["Source Code", "Example Usage"]}>
+        <Tab value="Example Usage">
+          ```tsx
+          <div className="flex items-center space-x-2">
+            <Checkbox id="terms1" />
+            <Label htmlFor="terms1">
+              Accept terms and conditions
+            </Label>
+          </div>
+          ```
+        </Tab>
+        <Tab value="Source Code">
+          ```json doc-gen:file
+          {
+            "file": "../../packages/mijn-ui/src/components/label/label.tsx",
+            "codeblock": {
+              "lang": "tsx",
+              "meta": "title=\"mijn-ui/components/label.tsx\""
+            }
+          }
+          ```
+        </Tab>
+    </Tabs>
+  </Step>
+</Steps>

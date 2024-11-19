@@ -1,0 +1,109 @@
+---
+title: Alert
+---
+
+import AlertExample from "@/examples/react/alert/alert-example";
+import AlertFilled from "@/examples/react/alert/alert-filled";
+import AlertOutline from "@/examples/react/alert/alert-outline";
+import AlertStatuses from "@/examples/react/alert/alert-statuses";
+
+<ComponentPreview>
+  <AlertExample />
+</ComponentPreview>
+
+### Installation
+
+<Steps>
+  <Step>
+  **Copy and paste the following code into `mijn-ui` folder.**
+
+  <Tabs items={["Source code", "Example usage"]}>
+    <Tab value="Source code">
+        ```json doc-gen:file
+          {
+            "file": "../../packages/mijn-ui/src/components/alert/alert.tsx",
+            "codeblock": {
+              "lang": "tsx",
+              "meta": "title=\"mijn-ui/components/alert.tsx\""
+            }
+          }
+        ```
+    </Tab>
+    <Tab value="Example usage">
+        ```json doc-gen:file
+          {
+            "file": "./examples/react/alert/alert-example.tsx",
+            "codeblock": {
+              "lang": "tsx",
+              "meta": "title=\"alert-example.tsx\""
+            }
+          }
+        ```
+    </Tab>
+  </Tabs>  
+  </Step>
+  
+  <Step>
+  **Ensure that everything is functioning correctly after installation.**
+  </Step>
+</Steps>
+
+---
+
+### Alert Statuses
+
+The alert component offers five statuses: `success`, `info`, `warning`, `error`, and `default`:
+
+<ComponentPreview className="md:p-10">
+  <AlertStatuses />
+</ComponentPreview>
+
+```json doc-gen:file
+{
+  "file": "./examples/react/alert/alert-statuses.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": ""
+  }
+}
+```
+
+---
+
+### Alert Variants
+
+The alert component is available in three variants: `default`, `outlined`, and `filled`:
+
+#### Filled
+
+<ComponentPreview className="md:p-10">
+  <AlertFilled />
+</ComponentPreview>
+
+```json doc-gen:file
+{
+  "file": "./examples/react/alert/alert-filled.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": ""
+  }
+}
+```
+
+---
+
+#### Outline
+
+<ComponentPreview className="md:p-10">
+  <AlertOutline />
+</ComponentPreview>
+
+```json doc-gen:file
+{
+  "file": "./examples/react/alert/alert-outline.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": ""
+  }
+}
+```

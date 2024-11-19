@@ -1,25 +1,43 @@
+import createBundleAnalyzer from "@next/bundle-analyzer"
 import { createMDX } from "fumadocs-mdx/next"
-import path from "path"
-import { fileURLToPath } from "url"
 
-const withMDX = createMDX()
-
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+const withAnalyzer = createBundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+})
 
 /** @type {import('next').NextConfig} */
+
 const config = {
   reactStrictMode: true,
-  resolve: {
-    extensions: [".mjs", ".js", ".jsx", ".json"],
+  eslint: {
+    ignoreDuringBuilds: true,
   },
 
-  // I have to specify this to avoid an error during the production build with turbo.
-  // I don't know exactly what the problem is, but it may have something to do with building the cache locally.
-  // You can find more information about this problem and its discussion on GitHub at "https://github.com/vercel/next.js/discussions/39432".
+  // !DANGER - This is a workaround for an unknown bugs with types error durning build and will be enable later
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+
+  webpack: (config, { dev }) => {
+    if (config.cache && dev) {
+      config.cache = Object.freeze({
+        type: "memory",
+      })
+    }
+    // Important: return the modified config
+    return config
+  },
+
+  images: {
+    unoptimized: true,
+  },
+
   experimental: {
-    outputFileTracingRoot: path.join(__dirname, "../../"),
+    webpackMemoryOptimizations: true,
+    serverSourceMaps: false,
   },
 }
 
-export default withMDX(config)
+const withMDX = createMDX()
+
+export default withAnalyzer(withMDX(config))

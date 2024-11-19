@@ -32,7 +32,7 @@ export function mergeRefs<T>(
       if (typeof ref === "function") {
         ref(value)
       } else if (ref && "current" in ref) {
-        ;(ref as React.RefObject<T | null>).current = value
+        ;(ref as React.MutableRefObject<T | null>).current = value
       }
     })
   }

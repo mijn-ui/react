@@ -8,7 +8,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@mijn-ui/components/alert-dialog"
+} from "@mijn-ui/react/components/alert-dialog"
 
 const AlertDialogExample = () => {
   return (

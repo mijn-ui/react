@@ -7,7 +7,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from "@mijn-ui/components/command"
+} from "@mijn-ui/react/components/command"
 import {
   LuCalculator,
   LuCalendar,

@@ -1,26 +1,29 @@
 {
-  "name": "mijn-ui-components",
+  "name": "mijn-ui",
   "private": true,
   "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "start": "turbo run start",
+    "clean": "turbo run clean && rm -rf node_modules",
     "test": "turbo run test",
-    "build": "turbo build",
-    "dev": "turbo dev",
-    "lint": "turbo lint",
-    "lint:fix": "turbo run lint:fix",
+    "types:check": "turbo run types:check",
+    "lint": "turbo run lint",
     "lint:prettier": "prettier --cache --check --ignore-path .gitignore --ignore-path .prettierignore .",
     "prettier": "prettier --cache --write --list-different --ignore-path .gitignore --ignore-path .prettierignore .",
-    "types:check": "turbo run types:check"
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "turbo run build --filter=./packages/mijn-ui && changeset publish"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.27.9",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
-    "@vitest/ui": "^2.1.4",
-    "prettier": "^3.3.3",
-    "turbo": "^2.2.3",
-    "typescript": "5.5.4",
-    "vitest": "^2.1.4"
+    "prettier": "^3.2.5",
+    "turbo": "^2.3.0",
+    "vitest": "^2.1.5"
   },
   "packageManager": "pnpm@9.12.3",
   "engines": {
-    "node": ">=18"
+    "node": ">= 18.17.0"
   }
 }
