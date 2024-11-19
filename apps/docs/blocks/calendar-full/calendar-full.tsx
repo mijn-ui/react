@@ -1,13 +1,11 @@
-import { CalendarOptions, EventSourceInput } from "@fullcalendar/core/index.js";
-import FullCalendarComponent from "@fullcalendar/react";
-
-import { calendarConfig } from "./config";
-
-import "./styles/index.css";
+import { calendarConfig } from "./config"
+import "./styles/index.css"
+import { CalendarOptions, EventSourceInput } from "@fullcalendar/core/index.js"
+import FullCalendarComponent from "@fullcalendar/react"
 
 type CalendarFullProps = CalendarOptions & {
-  events?: EventSourceInput;
-};
+  events?: EventSourceInput
+}
 
 const CalendarFull = ({ events, ...userConfig }: CalendarFullProps) => {
   // Merge default config with user-provided config
@@ -19,9 +17,9 @@ const CalendarFull = ({ events, ...userConfig }: CalendarFullProps) => {
       ...calendarConfig.views,
       ...userConfig.views, // Merge views
     },
-  };
+  }
 
-  return <FullCalendarComponent events={events} {...mergedConfig} />;
-};
+  return <FullCalendarComponent events={events} {...mergedConfig} />
+}
 
-export { CalendarFull };
+export { CalendarFull }

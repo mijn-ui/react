@@ -3,43 +3,43 @@ import {
   DayHeaderContentArg,
   EventContentArg,
   formatDate,
-} from "@fullcalendar/core";
-import dayGridPlugin from "@fullcalendar/daygrid";
-import interactionPlugin from "@fullcalendar/interaction";
-import listPlugin from "@fullcalendar/list";
-import timeGridPlugin from "@fullcalendar/timegrid";
+} from "@fullcalendar/core"
+import dayGridPlugin from "@fullcalendar/daygrid"
+import interactionPlugin from "@fullcalendar/interaction"
+import listPlugin from "@fullcalendar/list"
+import timeGridPlugin from "@fullcalendar/timegrid"
 
 // Utility function to format time
 const formatTime = (date: Date | null): string => {
-  if (!date) return "";
+  if (!date) return ""
 
   const formattedTime = formatDate(date, {
     hour: "numeric",
     minute: "2-digit",
     meridiem: "short",
-  }).toLowerCase();
+  }).toLowerCase()
 
-  return formattedTime.replace(":00", "");
-};
+  return formattedTime.replace(":00", "")
+}
 
 // Utility function to format day headers
 const formatDayHeader = (arg: DayHeaderContentArg) => {
-  const dayNumber = arg.date.getDate();
+  const dayNumber = arg.date.getDate()
   const dayName = arg.date.toLocaleDateString(undefined, {
     weekday: "long",
-  });
+  })
 
   return (
     <>
       <span>{dayNumber}</span> {dayName}
     </>
-  );
-};
+  )
+}
 
 // Event content rendering function
 const renderEventContent = (args: EventContentArg) => {
-  const formattedStart = formatTime(args.event.start);
-  const formattedEnd = formatTime(args.event.end);
+  const formattedStart = formatTime(args.event.start)
+  const formattedEnd = formatTime(args.event.end)
 
   return (
     <div className="custom-event-list">
@@ -56,8 +56,8 @@ const renderEventContent = (args: EventContentArg) => {
         <span className="custom-event-list-time">All-day</span>
       )}
     </div>
-  );
-};
+  )
+}
 
 export const calendarConfig: CalendarOptions = {
   plugins: [dayGridPlugin, interactionPlugin, timeGridPlugin, listPlugin],
@@ -111,10 +111,10 @@ export const calendarConfig: CalendarOptions = {
   },
   eventContent: (arg: EventContentArg) => {
     if (arg.event.start && arg.event.end && !arg.event.allDay) {
-      const startTime = formatTime(arg.event.start);
-      const endTime = formatTime(arg.event.end);
-      arg.timeText = `${startTime} - ${endTime}`;
+      const startTime = formatTime(arg.event.start)
+      const endTime = formatTime(arg.event.end)
+      arg.timeText = `${startTime} - ${endTime}`
     }
-    return true;
+    return true
   },
-};
+}
