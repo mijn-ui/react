@@ -5,7 +5,7 @@
   "fixed": [],
   "linked": [],
   "access": "public",
-  "baseBranch": "npm-packages",
+  "baseBranch": "dev",
   "updateInternalDependencies": "patch",
   "ignore": ["docs"]
 }
