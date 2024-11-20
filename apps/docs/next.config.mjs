@@ -7,7 +7,7 @@ const withAnalyzer = createBundleAnalyzer({
 
 /** @type {import('next').NextConfig} */
 
-const config = {
+const config = withAnalyzer({
   reactStrictMode: true,
   eslint: {
     ignoreDuringBuilds: true,
@@ -35,9 +35,10 @@ const config = {
   experimental: {
     webpackMemoryOptimizations: true,
     serverSourceMaps: false,
+    swcMinify: true,
   },
-}
+})
 
 const withMDX = createMDX()
 
-export default withAnalyzer(withMDX(config))
+export default withMDX(config)

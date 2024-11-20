@@ -1,15 +1,5 @@
 ### Known Issues
 
-**Can't build the docs folder in the development**
-
-I am currently facing an issue where I am unable to build the docs folder in the development environment. The exact cause of this issue is still unknown, but it seems to be related to package versions or other factors.
-
-Deploying it on Vercel seems to be working fine.
-
-For more details about this issue, please refer to the following GitHub discussion: [GitHub Discussion](https://github.com/vercel/next.js/discussions/43577)
-
----
-
 ### Running Dev server consumes a lot of RAM
 
 Another issue we are experiencing is that the `next dev` command is consuming a significant amount of memory, sometimes exceeding 8GB or more. This has been a known issue in Next.js, and unfortunately, there is no known solution or workaround at the moment. If you come across any solution, please let us know.
