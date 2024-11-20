@@ -11,4 +11,4 @@
 
 ### Feedback
 
-Got any suggestions or issues? Open an [issue](https://github.com/HTLA380/MijnUI/issues) or [discussion](https://github.com/HTLA380/MijnUI/discussions). We'd love to hear from you.
+Got any suggestions or issues? Open an [issue](https://github.com/mijn-ui/react/issues) or [discussion](https://github.com/mijn-ui/react/discussions). We'd love to hear from you.
