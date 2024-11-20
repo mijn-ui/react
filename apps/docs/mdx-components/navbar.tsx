@@ -7,15 +7,24 @@ import Logo from "@/app/components/logo"
 import ThemeToggler from "@/app/components/theme-toggler"
 import ClickAwayListener from "@/app/utils/click-away-listener"
 import { Badge } from "@mijn-ui/react/components/badge"
-import { Button } from "@mijn-ui/react/components/button"
+import { Button, buttonStyles } from "@mijn-ui/react/components/button"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@mijn-ui/react/components/collapsible"
 import { Separator } from "@mijn-ui/react/components/separator"
-import { useSearchContext } from "fumadocs-ui/provider"
-import { LuExternalLink, LuGithub, LuMenu, LuSearch } from "react-icons/lu"
+import { cn } from "@mijn-ui/react/utils"
+import { SidebarTrigger } from "fumadocs-core/sidebar"
+import { useSearchContext, useSidebar } from "fumadocs-ui/provider"
+import {
+  LuChevronDown,
+  LuExternalLink,
+  LuGithub,
+  LuMenu,
+  LuSearch,
+  LuX,
+} from "react-icons/lu"
 
 const PAGES = [
   {
@@ -32,7 +41,8 @@ const GITHUB_URL = "https://github.com/mijn-ui/components"
 
 const Navbar = () => {
   const { setOpenSearch } = useSearchContext()
-  const [open, setOpen] = useState(false)
+  const [dropdownOpen, setDropdownOpen] = useState(false)
+  const { open: isSidebarOpen } = useSidebar()
 
   const renderPages = PAGES.map((page) => (
     <Link
@@ -86,7 +96,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Buttons */}
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center md:hidden">
           <button
             onClick={() => setOpenSearch(true)}
             className="text-neutral-text inline-flex items-center justify-center size-8 transition duration-200 hover:text-secondary-text"
@@ -94,10 +104,10 @@ const Navbar = () => {
             <LuSearch />
           </button>
 
-          <ClickAwayListener onClickAway={() => setOpen(false)}>
-            <Collapsible open={open} onOpenChange={setOpen}>
+          <ClickAwayListener onClickAway={() => setDropdownOpen(false)}>
+            <Collapsible open={dropdownOpen} onOpenChange={setDropdownOpen}>
               <CollapsibleTrigger className="text-neutral-text flex items-center justify-center size-8 transition duration-200 hover:text-secondary-text">
-                <LuMenu className="text-lg" />
+                <LuChevronDown className="text-lg" />
               </CollapsibleTrigger>
               <CollapsibleContent className="overflow-hidden transition-[height] data-[state=closed]:animate-collapsible-collapse data-[state=open]:animate-collapsible-expand absolute inset-x-0 bg-surface top-[calc(var(--navbar-height)] mt-2 text-sm">
                 <div className="flex w-full flex-col relative justify-between items-start space-y-2 px-4 py-2">
@@ -118,6 +128,19 @@ const Navbar = () => {
               </CollapsibleContent>
             </Collapsible>
           </ClickAwayListener>
+
+          <SidebarTrigger
+            className={cn(
+              buttonStyles({
+                variant: "text",
+                color: "accent",
+                size: "icon",
+                className: "-me-2 md:hidden",
+              }),
+            )}
+          >
+            {isSidebarOpen ? <LuX /> : <LuMenu />}
+          </SidebarTrigger>
         </div>
       </nav>
 
