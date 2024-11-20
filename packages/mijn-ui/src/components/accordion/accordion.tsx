@@ -28,7 +28,9 @@ const accordionStyles = cva("[&>div]:border-b [&>div]:border-b-main-border", {
 /*                                  Accordion                                 */
 /* -------------------------------------------------------------------------- */
 
-type AccordionProps = React.ComponentPropsWithRef<typeof RadixAccordion.Root> &
+export type AccordionProps = React.ComponentPropsWithRef<
+  typeof RadixAccordion.Root
+> &
   VariantProps<typeof accordionStyles> &
   UnstyledProps
 
@@ -54,7 +56,7 @@ const Accordion = ({
 /*                                AccordionItem                               */
 /* -------------------------------------------------------------------------- */
 
-type AccordionItemProps = React.ComponentPropsWithRef<
+export type AccordionItemProps = React.ComponentPropsWithRef<
   typeof RadixAccordion.Item
 > &
   UnstyledProps
@@ -79,7 +81,7 @@ const AccordionItem = ({
 /*                              AccordionTrigger                              */
 /* -------------------------------------------------------------------------- */
 
-type AccordionTriggerProps = React.ComponentPropsWithRef<
+export type AccordionTriggerProps = React.ComponentPropsWithRef<
   typeof RadixAccordion.Trigger
 > &
   UnstyledProps & {
@@ -127,7 +129,7 @@ const AccordionTrigger = ({
 /*                            AccordionContentProps                           */
 /* -------------------------------------------------------------------------- */
 
-type AccordionContentProps = React.ComponentPropsWithRef<
+export type AccordionContentProps = React.ComponentPropsWithRef<
   typeof RadixAccordion.Content
 > &
   UnstyledProps
@@ -156,4 +158,10 @@ const AccordionContent = ({
   )
 }
 
-export { Accordion, AccordionContent, AccordionItem, AccordionTrigger }
+export {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+  accordionStyles,
+}

@@ -1,18 +1,69 @@
 {
   "name": "@mijn-ui/react",
-  "version": "0.0.0",
-  "private": true,
+  "description": "Reusable components for clean, responsive interfaces.",
+  "author": "Htet Aung Lin<htetaunglin.coder@gmail.com>",
+  "version": "0.0.6",
+  "homepage": "https://mijn-ui.vercel.app",
+  "license": "MIT",
   "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HTLA380/MijnUI.git",
+    "directory": "packages/components/src"
+  },
+  "bugs": {
+    "url": "https://github.com/HTLA380/MijnUI/issues"
+  },
+  "exports": {
+    "./components/*": {
+      "import": "./dist/components/*/index.js",
+      "types": "./dist/components/*/index.d.ts"
+    },
+    "./utils": {
+      "import": "./dist/utils/index.js",
+      "types": "./dist/utils/index.d.ts"
+    },
+    "./types": {
+      "import": "./dist/types/index.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./hooks/*": {
+      "import": "./dist/types/*.js",
+      "types": "./dist/types/*.d.ts"
+    },
+    "./context": {
+      "import": "./dist/context/index.js",
+      "types": "./dist/context/index.d.ts"
+    }
+  },
   "scripts": {
-    "lint": "eslint **/*.{ts,tsx}",
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint . --max-warnings 0",
     "types:check": "tsc --noEmit",
-    "test": "vitest run"
+    "test": "vitest run",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/react": "^18.2.61",
+    "@types/react-dom": "^18.2.19",
+    "esbuild-plugin-preserve-directives": "^0.0.11",
+    "eslint": "^8.57.0",
+    "tsup": "^8.0.2",
+    "typescript": "5.5.4"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.1",
     "@radix-ui/react-alert-dialog": "^1.1.2",
     "@radix-ui/react-avatar": "^1.1.1",
     "@radix-ui/react-checkbox": "^1.1.2",
+    "@radix-ui/react-collapsible": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-dropdown-menu": "^2.1.2",
     "@radix-ui/react-label": "^2.1.0",
@@ -29,50 +80,22 @@
     "cmdk": "^1.0.4",
     "date-fns": "^4.1.0",
     "date-fns-tz": "^3.2.0",
-    "next": "15.0.2",
     "react-day-picker": "^9.3.0",
     "react-icons": "^5.3.0",
     "tailwind-merge": "^2.5.3"
   },
-  "exports": {
-    "./accordion": "./components/accordion/accordion.tsx",
-    "./alert": "./components/alert/alert.tsx",
-    "./alert-dialog": "./components/alert-dialog/alert-dialog.tsx",
-    "./autocomplete": "./components/autocomplete/autocomplete.tsx",
-    "./avatar": "./components/avatar/avatar.tsx",
-    "./badge": "./components/badge/badge.tsx",
-    "./button": "./components/button/button.tsx",
-    "./card": "./components/card/card.tsx",
-    "./checkbox": "./components/checkbox/checkbox.tsx",
-    "./command": "./components/command/command.tsx",
-    "./dialog": "./components/dialog/dialog.tsx",
-    "./dropdown-menu": "./components/dropdown-menu/dropdown-menu.tsx",
-    "./input": "./components/input/input.tsx",
-    "./label": "./components/label/label.tsx",
-    "./pagination": "./components/pagination/pagination.tsx",
-    "./popover": "./components/popover/popover.tsx",
-    "./radio-group": "./components/radio-group/radio-group.tsx",
-    "./scroll-area": "./components/scroll-area/scroll-area.tsx",
-    "./select": "./components/select/select.tsx",
-    "./separator": "./components/separator/separator.tsx",
-    "./skeleton": "./components/skeleton/skeleton.tsx",
-    "./table": "./components/table/table.tsx",
-    "./textarea": "./components/textarea/textarea.tsx",
-    "./utils": "./utils",
-    "./types": "./types",
-    "./use-controlled-state": "./hooks/use-controlled-state.ts",
-    "./context/unstyled-provider": "./context/unstyled-provider.tsx"
+  "peerDependencies": {
+    "next": "14.x.x || 15.x.x",
+    "react": ">= 18",
+    "react-dom": ">= 18",
+    "tailwindcss": "^3.4.14"
   },
-  "devDependencies": {
-    "@eslint/eslintrc": "^3.1.0",
-    "@next/eslint-plugin-next": "^15.0.2",
-    "@repo/typescript-config": "workspace:*",
-    "@types/node": "22.5.4",
-    "@types/react": "npm:types-react@19.0.0-rc.1",
-    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
-    "eslint": "^9.12.0",
-    "eslint-config-next": "^15.0.2",
-    "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5.5.4"
+  "peerDependenciesMeta": {
+    "tailwindcss": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -1,5 +1,9 @@
 import React from "react"
-import { Avatar, AvatarFallback, AvatarImage } from "@mijn-ui/components/avatar"
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@mijn-ui/react/components/avatar"
 
 const AvatarSizes = () => {
   return (

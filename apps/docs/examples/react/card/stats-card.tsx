@@ -1,12 +1,12 @@
 import React from "react"
-import { Button } from "@mijn-ui/components/button"
+import { Button } from "@mijn-ui/react/components/button"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@mijn-ui/components/card"
+} from "@mijn-ui/react/components/card"
 import { IoBagOutline } from "react-icons/io5"
 
 const StatsCardExample = () => {

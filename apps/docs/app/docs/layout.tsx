@@ -1,10 +1,10 @@
+"use client"
+
 import type { ReactNode } from "react"
+import { baseOptions } from "@/app/layout.config"
 import { source } from "@/app/source"
-import AvailablePagesSelector from "../../content/mdx-components/available-pages-selector"
-import GradientBackground from "../components/decorators/gradient-background"
-import { baseOptions } from "../layout.config"
-import Navbar from "@/content/mdx-components/navbar"
-import { DocsLayout } from "fumadocs-ui/layout"
+import { LeftRadialGradient } from "../components/decorators/gradient-bg"
+import { DocsLayout } from "fumadocs-ui/layouts/docs"
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
@@ -12,20 +12,15 @@ export default function Layout({ children }: { children: ReactNode }) {
       tree={source.pageTree}
       sidebar={{
         enabled: true,
-        hideSearch: true,
-        footerProps: {
-          className: "[&_[data-theme-toggle]]:hidden",
-        },
-        banner: (
-          <div className="pt-4 w-full">
-            <AvailablePagesSelector />
-            <GradientBackground />
-          </div>
-        ),
+        banner: <LeftRadialGradient />,
+      }}
+      containerProps={{
+        // Hide the theme toggle and search component in the docs sidebar
+        className:
+          "[&_[data-theme-toggle]]:hidden [&_[data-search-full]]:hidden",
       }}
       {...baseOptions}
     >
-      <Navbar />
       {children}
     </DocsLayout>
   )

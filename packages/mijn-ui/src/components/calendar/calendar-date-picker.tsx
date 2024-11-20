@@ -4,7 +4,6 @@
 Adapted from https://github.com/sersavan/shadcn-calendar-component.
 
 Full credit for the original implementation goes to [sersavan](https://github.com/sersavan), whose work served as the foundation for this component.  
-
  */
 import * as React from "react"
 import { Button, buttonStyles } from "@mijn-ui/components/button"

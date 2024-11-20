@@ -1,14 +1,14 @@
 import React from "react"
-import { Button } from "@mijn-ui/components/button"
-import { Input } from "@mijn-ui/components/input"
-import { Label } from "@mijn-ui/components/label"
+import { Button } from "@mijn-ui/react/components/button"
+import { Input } from "@mijn-ui/react/components/input"
+import { Label } from "@mijn-ui/react/components/label"
 import {
   Popover,
   PopoverArrow,
   PopoverClose,
   PopoverContent,
   PopoverTrigger,
-} from "@mijn-ui/components/popover"
+} from "@mijn-ui/react/components/popover"
 import { RxCross2, RxMixerHorizontal } from "react-icons/rx"
 
 // Making All of the Accordion Components Unstyled

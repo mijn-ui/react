@@ -1,3 +1,5 @@
+"use client"
+
 import * as React from "react"
 import { CommandEmpty } from "@mijn-ui/components/command"
 import { PopoverContent } from "@mijn-ui/components/popover"

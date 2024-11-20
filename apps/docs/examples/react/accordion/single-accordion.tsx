@@ -4,7 +4,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@mijn-ui/components/accordion"
+} from "@mijn-ui/react/components/accordion"
 
 const SingleAccordionExample = () => {
   return (

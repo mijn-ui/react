@@ -1,4 +1,4 @@
-import { Button } from "@mijn-ui/components/button"
+import { Button } from "@mijn-ui/react/components/button"
 import {
   Dialog,
   DialogClose,
@@ -6,8 +6,8 @@ import {
   DialogDescription,
   DialogTitle,
   DialogTrigger,
-} from "@mijn-ui/components/dialog"
-import { Input } from "@mijn-ui/components/input"
+} from "@mijn-ui/react/components/dialog"
+import { Input } from "@mijn-ui/react/components/input"
 import { LuX } from "react-icons/lu"
 
 type DialogExampleProps = {

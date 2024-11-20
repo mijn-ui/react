@@ -1,10 +1,9 @@
 {
-  "extends": "@repo/typescript-config/nextjs.json",
+  "extends": "@repo/typescript-config/react-library.json",
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
       "@mijn-ui/*": ["./src/*"]
     }
   },
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["dist", "build", "node_modules"]
 }

@@ -1,0 +1,92 @@
+---
+title: Checkbox
+docs: https://www.radix-ui.com/primitives/docs/components/checkbox
+apiReference: https://www.radix-ui.com/primitives/docs/components/checkbox#api-reference
+---
+
+import CheckboxColors from "@/examples/react/checkbox/checkbox-colors";
+import CheckboxSizes from "@/examples/react/checkbox/checkbox-sizes";
+import { Checkbox } from "@mijn-ui/react/components/checkbox";
+import { Label } from "@mijn-ui/react/components/label";
+
+<ComponentPreview>
+  <div className="flex items-center space-x-2">
+    <Checkbox id="terms" />
+    <Label htmlFor="terms">Accept terms and conditions</Label>
+  </div>
+</ComponentPreview>
+
+### Installation
+
+<Steps>
+  <Step>
+    **Install Required Dependencies:**
+  
+    ```package-install
+    @radix-ui/react-checkbox
+    ```
+  </Step>
+
+  <Step>
+    **Copy and paste the following code into  `mijn-ui` folder.**
+    <Tabs items={["Source Code", "Example Usage"]}>
+        <Tab value="Example Usage">
+          ```tsx
+          <div className="flex items-center space-x-2">
+            <Checkbox id="terms" />
+            <Label htmlFor="terms">
+              Accept terms and conditions
+            </Label>
+          </div>
+          ```
+        </Tab>
+        <Tab value="Source Code">
+          ```json doc-gen:file
+          {
+            "file": "../../packages/mijn-ui/src/components/checkbox/checkbox.tsx",
+            "codeblock": {
+              "lang": "tsx",
+              "meta": "title=\"mijn-ui/components/checkbox.tsx\""
+            }
+          }
+          ```
+        </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+---
+
+### Checkbox Colors
+
+<ComponentPreview>
+  <CheckboxColors />
+</ComponentPreview>
+
+```json doc-gen:file
+{
+  "file": "./examples/react/checkbox/checkbox-colors.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": ""
+  }
+}
+```
+
+---
+
+### Checkbox Sizes
+
+<ComponentPreview>
+  <CheckboxSizes />
+</ComponentPreview>
+
+```json doc-gen:file
+{
+  "file": "./examples/react/checkbox/checkbox-sizes.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": ""
+  }
+}
+```

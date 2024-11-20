@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Progress } from "@mijn-ui/components/progress"
+import { Progress } from "@mijn-ui/react/components/progress"
 
 const ProgressExample = () => {
   const [value, setValue] = React.useState<number>(0)

@@ -9,7 +9,7 @@ import {
   PaginationNextEllipsis,
   PaginationPreviousButton,
   PaginationPreviousEllipsis,
-} from "@mijn-ui/components/pagination"
+} from "@mijn-ui/react/components/pagination"
 import { LuChevronLeft, LuChevronRight } from "react-icons/lu"
 
 const PaginationExample = () => {
