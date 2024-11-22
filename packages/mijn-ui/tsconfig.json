@@ -1,9 +1,9 @@
 {
-  "extends": "typescript-config/react-library.json",
+  "extends": "tsconfig/react-library.json",
   "compilerOptions": {
     "paths": {
       "@mijn-ui/*": ["./src/*"]
     }
   },
-  "exclude": ["dist", "build", "node_modules"]
+  "exclude": ["node_modules", "dist"]
 }

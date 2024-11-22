@@ -159,6 +159,9 @@ importers:
       tailwindcss-animate:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@3.4.15)
+      tsconfig:
+        specifier: workspace:*
+        version: link:../../packages/ts-config
       typescript:
         specifier: ^5.6.3
         version: 5.6.3
@@ -267,6 +270,9 @@ importers:
       tailwindcss-animate:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@3.4.15)
+      tsconfig:
+        specifier: workspace:*
+        version: link:../ts-config
       tsup:
         specifier: ^8.0.2
         version: 8.3.5(jiti@1.21.6)(postcss@8.4.49)(typescript@5.5.4)(yaml@2.6.1)
@@ -276,6 +282,8 @@ importers:
       typescript-config:
         specifier: workspace:*
         version: link:../typescript-config
+
+  packages/ts-config: {}
 
   packages/typescript-config: {}
 

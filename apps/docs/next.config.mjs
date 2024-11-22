@@ -12,12 +12,6 @@ const config = withAnalyzer({
   eslint: {
     ignoreDuringBuilds: true,
   },
-
-  // !DANGER - This is a workaround for an unknown bugs with types error durning build and will be enable later
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-
   webpack: (config, { dev }) => {
     if (config.cache && dev) {
       config.cache = Object.freeze({
