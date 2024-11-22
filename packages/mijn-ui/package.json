@@ -57,8 +57,7 @@
     "tsconfig": "workspace:*",
     "tailwindcss-animate": "^1.0.7",
     "tsup": "^8.0.2",
-    "typescript": "5.5.4",
-    "typescript-config": "workspace:*"
+    "typescript": "5.5.4"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.1",

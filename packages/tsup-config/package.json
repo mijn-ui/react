@@ -1,0 +1,10 @@
+{
+  "name": "tsup-config",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild-plugin-preserve-directives": "^0.0.11"
+  }
+}

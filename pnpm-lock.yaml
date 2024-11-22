@@ -279,13 +279,54 @@ importers:
       typescript:
         specifier: 5.5.4
         version: 5.5.4
-      typescript-config:
-        specifier: workspace:*
-        version: link:../typescript-config
 
   packages/ts-config: {}
 
-  packages/typescript-config: {}
+  packages/tsup-config:
+    devDependencies:
+      esbuild-plugin-preserve-directives:
+        specifier: ^0.0.11
+        version: 0.0.11(esbuild@0.24.0)
+
+  packages/utilities:
+    dependencies:
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      next:
+        specifier: 15.0.3
+        version: 15.0.3(react-dom@19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114))(react@19.0.0-rc-b01722d5-20241114)
+      react:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114
+      react-dom:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
+      tailwind-merge:
+        specifier: ^2.5.3
+        version: 2.5.4
+      tailwindcss:
+        specifier: ^3.4.14
+        version: 3.4.15
+    devDependencies:
+      '@next/eslint-plugin-next':
+        specifier: ^15.0.3
+        version: 15.0.3
+      '@types/react':
+        specifier: ^18.3.12
+        version: 18.3.12
+      '@types/react-dom':
+        specifier: ^18.3.1
+        version: 18.3.1
+      eslint-config-custom:
+        specifier: workspace:*
+        version: link:../eslint-config-custom
+      tsconfig:
+        specifier: workspace:*
+        version: link:../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../tsup-config
 
 packages:
 
