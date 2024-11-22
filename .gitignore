@@ -5,6 +5,8 @@ node_modules
 .pnp
 .pnp.js
 
+template
+
 # Local env files
 .env*
 .env*.local

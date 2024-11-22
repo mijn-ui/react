@@ -1,5 +1,5 @@
 {
-  "name": "@mijn-ui-react/utilities",
+  "name": "@mijn-ui-react/accordion",
   "author": "Htet Aung Lin<htetaunglin.coder@gmail.com>",
   "version": "0.0.1",
   "homepage": "https://mijn-ui.vercel.app",
@@ -17,22 +17,14 @@
   "bugs": {
     "url": "https://github.com/mijn-ui/components/issues"
   },
-  "exports": {
-    "./shared": {
-      "import": "./dist/shared/index.js",
-      "types": "./dist/shared/index.d.ts"
-    },
-    "./context": {
-      "import": "./dist/context/index.js",
-      "types": "./dist/context/index.d.ts"
-    }
-  },
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "clean": "rimraf dist",
-    "test": "vitest run",
     "build": "tsup",
     "dev": "tsup --watch",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "types:check": "tsc --noEmit"
   },
   "devDependencies": {
@@ -43,19 +35,16 @@
     "tsconfig": "workspace:*"
   },
   "dependencies": {
-    "clsx": "^2.1.1",
-    "tailwind-merge": "^2.5.3"
-  },
-  "peerDependencies": {
-    "next": "15.0.3",
+    "@mijn-ui-react/utilities": "workspace:*",
+    "@radix-ui/react-accordion": "^1.2.1",
+    "class-variance-authority": "^0.7.0",
     "react": "19.0.0-rc-b01722d5-20241114",
     "react-dom": "19.0.0-rc-b01722d5-20241114",
-    "tailwindcss": "^3.4.14"
+    "react-icons": "^5.3.0"
   },
-  "peerDependenciesMeta": {
-    "tailwindcss": {
-      "optional": true
-    }
+  "peerDependencies": {
+    "react": "19.0.0-rc-b01722d5-20241114",
+    "react-dom": "19.0.0-rc-b01722d5-20241114"
   },
   "publishConfig": {
     "access": "public"
