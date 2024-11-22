@@ -23,7 +23,7 @@ const Command = ({ unstyled = false, className, ...props }: CommandProps) => (
   <UnstyledProvider unstyled={unstyled}>
     <CommandPrimitive
       className={cn(
-        "flex h-full w-full flex-col overflow-hidden rounded-md border-main-border bg-surface text-surface-text",
+        "flex size-full flex-col overflow-hidden rounded-md border-main-border bg-surface text-surface-text",
         className,
       )}
       {...props}
@@ -82,6 +82,7 @@ const CommandInput = ({ className, unstyled, ...props }: CommandInputProps) => {
         isUnstyled,
         "flex items-center border-b border-main-border px-3",
       )}
+      /* eslint-disable-next-line */
       cmdk-input-wrapper=""
     >
       <LuSearch

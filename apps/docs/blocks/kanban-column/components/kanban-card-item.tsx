@@ -44,7 +44,7 @@ const KanbanCardItem = ({
           <Badge
             variant={"outline"}
             color="neutral"
-            className="text-xs py-0.5 px-2"
+            className="px-2 py-0.5 text-xs"
           >
             {tag}
           </Badge>
@@ -53,7 +53,7 @@ const KanbanCardItem = ({
 
       {progress && (
         <div className="space-y-1">
-          <div className="flex items-center justify-between text-xs text-muted-text">
+          <div className="text-muted-text flex items-center justify-between text-xs">
             <h5>CheckList</h5>
             <p>3/4</p>
           </div>
@@ -61,7 +61,7 @@ const KanbanCardItem = ({
         </div>
       )}
 
-      <div className="flex w-full items-center justify-between text-muted-text">
+      <div className="text-muted-text flex w-full items-center justify-between">
         <div className="flex items-center gap-2 sm:gap-4">
           <div className="flex items-center gap-1">
             <GoClock size={20} />
@@ -94,7 +94,7 @@ const KanbanCardItem = ({
 
       <button
         onClick={handleOnDelete}
-        className="absolute -right-2 -top-6 flex h-5 w-5 items-center justify-center rounded-full border border-main-border bg-surface opacity-0 transition-opacity hover:brightness-90 group-hover:opacity-100"
+        className="absolute -right-2 -top-6 flex size-5 items-center justify-center rounded-full border border-main-border bg-surface opacity-0 transition-opacity hover:brightness-90 group-hover:opacity-100"
       >
         <LuX size={12} />
       </button>

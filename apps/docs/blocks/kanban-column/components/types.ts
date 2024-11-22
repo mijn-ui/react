@@ -3,6 +3,7 @@ import { UniqueIdentifier } from "@dnd-kit/core"
 // Base type for items, requiring an id
 export type BaseKanbanItem = {
   id: UniqueIdentifier
+  /* eslint-disable-next-line */
   [key: string]: any
 }
 

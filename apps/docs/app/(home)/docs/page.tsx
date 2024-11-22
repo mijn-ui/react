@@ -10,8 +10,8 @@ import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri"
 
 export default function DocsPage(): React.ReactElement {
   return (
-    <section className="w-full flex gap-4 max-w-4xl flex-col items-center px-5 text-start md:text-center sm:px-8 md:px-10 justify-center flex-1">
-      <h1 className="text-4xl/[1/2] font-bold md:font-extrabold md:text-5xl/[1/2]">
+    <section className="flex w-full max-w-4xl flex-1 flex-col items-center justify-center gap-4 px-5 text-start sm:px-8 md:px-10 md:text-center">
+      <h1 className="text-4xl/[1/2] font-bold md:text-5xl/[1/2] md:font-extrabold">
         Getting Started
       </h1>
       <p className="text-fd-muted-foreground">
@@ -19,10 +19,10 @@ export default function DocsPage(): React.ReactElement {
         simple static pages or Next.js for more complex, server-rendered
         applications.
       </p>
-      <div className="grid grid-cols-1 gap-6 mt-4 text-left md:grid-cols-2">
+      <div className="mt-4 grid grid-cols-1 gap-6 text-left md:grid-cols-2">
         <Link href="docs/next-js">
-          <Card className="hover:shadow-md hover:shadow-primary/20 transition relative duration-300 bg-surface border p-3 md:p-5">
-            <span className="absolute top-4 right-4 text-2xl md:text-3xl">
+          <Card className="relative border bg-surface p-3 transition duration-300 hover:shadow-md hover:shadow-primary/20 md:p-5">
+            <span className="absolute right-4 top-4 text-2xl md:text-3xl">
               <RiNextjsFill />
             </span>
             <CardHeader>
@@ -36,8 +36,8 @@ export default function DocsPage(): React.ReactElement {
           </Card>
         </Link>
         <Link href="/docs/tailwind">
-          <Card className="hover:shadow-md hover:shadow-primary/20 transition duration-300 bg-surface border p-3 md:p-5 relative">
-            <span className="absolute top-4 right-4 text-2xl md:text-3xl">
+          <Card className="relative border bg-surface p-3 transition duration-300 hover:shadow-md hover:shadow-primary/20 md:p-5">
+            <span className="absolute right-4 top-4 text-2xl md:text-3xl">
               <RiTailwindCssFill />
             </span>
             <CardHeader className="relative">

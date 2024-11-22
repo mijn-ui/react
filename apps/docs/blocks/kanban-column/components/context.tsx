@@ -25,6 +25,7 @@ export type KanbanProviderProps<ItemType extends BaseKanbanItem> = {
 }
 
 export const KanbanContext = React.createContext<
+  /* eslint-disable-next-line */
   KanbanContextType<any> | undefined
 >(undefined)
 

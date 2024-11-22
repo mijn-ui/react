@@ -32,58 +32,58 @@ const badgeVariants = cva(
         color: "primary",
         variant: "outline",
         className:
-          "hover:bg-primary hover:text-primary-text border border-primary text-primary",
+          "border border-primary text-primary hover:bg-primary hover:text-primary-text",
       },
       {
         color: "secondary",
         variant: "outline",
         className:
-          "hover:bg-secondary hover:text-secondary-text border border-secondary text-secondary",
+          "border border-secondary text-secondary hover:bg-secondary hover:text-secondary-text",
       },
       {
         color: "accent",
         variant: "outline",
         className:
-          "hover:bg-accent hover:text-accent-text border border-main-border text-accent-text",
+          "border border-main-border text-accent-text hover:bg-accent hover:text-accent-text",
       },
       {
         color: "neutral",
         variant: "outline",
         className:
-          "hover:bg-neutral hover:text-neutral-text border border-neutral text-neutral-text",
+          "border border-neutral text-neutral-text hover:bg-neutral hover:text-neutral-text",
       },
       {
         color: "danger",
         variant: "outline",
         className:
-          "hover:bg-danger hover:text-danger-filled-text border border-danger text-danger",
+          "border border-danger text-danger hover:bg-danger hover:text-danger-filled-text",
       },
 
       {
         color: "primary",
         variant: "text",
-        className: "hover:bg-primary hover:text-primary-text text-primary",
+        className: "text-primary hover:bg-primary hover:text-primary-text",
       },
       {
         color: "secondary",
         variant: "text",
         className:
-          "hover:bg-secondary hover:text-secondary-text text-secondary",
+          "text-secondary hover:bg-secondary hover:text-secondary-text",
       },
       {
         color: "danger",
         variant: "text",
-        className: "hover:bg-danger hover:text-danger-filled-text text-danger",
+        className: "text-danger hover:bg-danger hover:text-danger-filled-text",
       },
       {
         color: "accent",
         variant: "text",
-        className: "hover:bg-accent text-accent-text",
+        className: "text-accent-text hover:bg-accent",
       },
       {
         color: "neutral",
         variant: "text",
-        className: "hover:bg-neutral text-neutral-text",
+        className: "text-neutral-text hover:bg-neutral",
       },
 
       {

@@ -1,4 +1,3 @@
-import React from "react"
 import { Button } from "@mijn-ui/react/components/button"
 import {
   Card,
@@ -17,16 +16,16 @@ const CardExample = () => {
           variant={"text"}
           color={"accent"}
           size={"icon"}
-          className="rounded-lg bg-accent p-0 text-disabled-text sm:h-12 sm:w-12"
+          className="text-disabled-text rounded-lg bg-accent p-0 sm:size-12"
           asChild
         >
           <span>
-            <LuPlus className="h-5 w-5 sm:h-6 sm:w-6" />
+            <LuPlus className="size-5 sm:size-6" />
           </span>
         </Button>
 
-        <div className="absolute right-4 top-4 text-disabled-text">
-          <LuArrowUpRight className="h-5 w-5 sm:h-6 sm:w-6" />
+        <div className="text-disabled-text absolute right-4 top-4">
+          <LuArrowUpRight className="size-5 sm:size-6" />
         </div>
       </CardHeader>
       <CardContent>

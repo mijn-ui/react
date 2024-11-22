@@ -11,16 +11,16 @@ import * as AvatarPrimitive from "@radix-ui/react-avatar"
 import { VariantProps, cva } from "class-variance-authority"
 
 export const avatarStyles = cva(
-  ["relative h-10 w-10 shrink-0 overflow-hidden rounded-full"],
+  ["relative size-10 shrink-0 overflow-hidden rounded-full"],
   {
     variants: {
       size: {
-        xxl: "h-16 w-16 text-base",
-        xl: "h-14 w-14 text-sm",
-        lg: "h-12 w-12 text-sm",
-        md: "h-10 w-10 text-sm",
-        sm: "h-8 w-8 text-xs",
-        xs: "h-6 w-6 text-xs",
+        xxl: "size-16 text-base",
+        xl: "size-14 text-sm",
+        lg: "size-12 text-sm",
+        md: "size-10 text-sm",
+        sm: "size-8 text-xs",
+        xs: "size-6 text-xs",
       },
     },
     defaultVariants: {
@@ -56,11 +56,7 @@ const AvatarGroup = ({
       >
         {visibleChildren}
         {remainingChildrenCount > 0 && (
-          <span
-            className={
-              "!ml-1.5 flex items-center justify-center text-xs text-neutral-text"
-            }
-          >
+          <span className="!ml-1.5 flex items-center justify-center text-xs text-neutral-text">
             +{remainingChildrenCount}
           </span>
         )}
@@ -137,7 +133,7 @@ const AvatarFallback = ({
     <AvatarPrimitive.Fallback
       className={applyUnstyled(
         isUnstyled,
-        "flex h-full w-full items-center justify-center rounded-full bg-neutral",
+        "bg-neutral flex h-full w-full items-center justify-center rounded-full",
         className,
       )}
       {...props}

@@ -7,9 +7,9 @@
     "dev": "next dev",
     "start": "next start",
     "postinstall": "fumadocs-mdx",
-    "lint": "eslint . --max-warnings 0",
+    "lint": "eslint .",
     "types:check": "tsc --noEmit",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+    "clean": "rimraf .next"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.1.0",
@@ -43,8 +43,8 @@
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "autoprefixer": "^10.4.20",
-    "eslint": "^8.57.1",
-    "eslint-config-next": "15.0.3",
+    "@next/eslint-plugin-next": "15.0.3",
+    "eslint-config-custom": "workspace:*",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.15",
     "tailwindcss-animate": "^1.0.7",

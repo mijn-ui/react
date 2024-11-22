@@ -1,4 +1,3 @@
-import React from "react"
 import {
   Table,
   TableBody,
@@ -31,7 +30,7 @@ const TableExample = () => {
             <TableCell>Alex Cooper</TableCell>
             <TableCell className="min-w-32">
               <p>Feb 17, 2024</p>
-              <p className="text-xs text-disabled-text">08:48 AM</p>
+              <p className="text-disabled-text text-xs">08:48 AM</p>
             </TableCell>
 
             <TableCell className="hidden text-balance sm:table-cell">
@@ -43,7 +42,7 @@ const TableExample = () => {
             <TableCell>
               <p className="flex items-center gap-2 text-xs text-neutral-text">
                 <span
-                  className={`block h-2 w-2 rounded-full bg-green-500 ring-2 ring-green-200`}
+                  className={`block size-2 rounded-full bg-green-500 ring-2 ring-green-200`}
                 />
                 <span>Paid</span>
               </p>
@@ -59,7 +58,7 @@ const TableExample = () => {
 
             <TableCell className="min-w-32">
               <p>Feb 17, 2024</p>
-              <p className="text-xs text-disabled-text"> 08:48 AM</p>
+              <p className="text-disabled-text text-xs"> 08:48 AM</p>
             </TableCell>
 
             <TableCell className="hidden text-balance sm:table-cell">
@@ -71,7 +70,7 @@ const TableExample = () => {
             <TableCell>
               <p className="flex items-center gap-2 text-xs text-neutral-text">
                 <span
-                  className={`block h-2 w-2 rounded-full bg-yellow-500 ring-2 ring-yellow-200`}
+                  className={`block size-2 rounded-full bg-yellow-500 ring-2 ring-yellow-200`}
                 />
                 <span>Pending</span>
               </p>
@@ -87,7 +86,7 @@ const TableExample = () => {
 
             <TableCell className="min-w-32">
               <p>Feb 17, 2024</p>
-              <p className="text-xs text-disabled-text"> 08:48 AM</p>
+              <p className="text-disabled-text text-xs"> 08:48 AM</p>
             </TableCell>
 
             <TableCell className="hidden text-balance sm:table-cell">
@@ -101,7 +100,7 @@ const TableExample = () => {
             <TableCell>
               <p className="flex items-center gap-2 text-xs text-neutral-text">
                 <span
-                  className={`block h-2 w-2 rounded-full bg-green-500 ring-2 ring-green-200`}
+                  className={`block size-2 rounded-full bg-green-500 ring-2 ring-green-200`}
                 />
                 <span>Paid</span>
               </p>
@@ -117,7 +116,7 @@ const TableExample = () => {
 
             <TableCell className="min-w-32">
               <p>Feb 17, 2024</p>
-              <p className="text-xs text-disabled-text"> 08:48 AM</p>
+              <p className="text-disabled-text text-xs"> 08:48 AM</p>
             </TableCell>
 
             <TableCell className="hidden text-balance sm:table-cell">
@@ -131,7 +130,7 @@ const TableExample = () => {
             <TableCell>
               <p className="flex items-center gap-2 text-xs text-neutral-text">
                 <span
-                  className={`block h-2 w-2 rounded-full bg-red-500 ring-2 ring-red-200`}
+                  className={`block size-2 rounded-full bg-red-500 ring-2 ring-red-200`}
                 />
                 <span>Returned</span>
               </p>

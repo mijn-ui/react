@@ -284,8 +284,8 @@ const CalendarFullExample = () => {
 
   return (
     <>
-      <div className="relative h-full w-full overflow-y-auto rounded-2xl bg-surface p-4">
-        <div className="h-full w-full">
+      <div className="relative size-full overflow-y-auto rounded-2xl bg-surface p-4">
+        <div className="size-full">
           <CalendarFull
             events={events as EventSourceInput}
             eventResize={handleResize}
@@ -338,8 +338,8 @@ const CalendarFullExample = () => {
       >
         <AlertDialogContent className="p-5 sm:p-6">
           <div className="sm:flex sm:items-start">
-            <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
-              <LuBug className="h-6 w-6 text-danger" aria-hidden="true" />
+            <div className="mx-auto flex size-12 shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:size-10">
+              <LuBug className="size-6 text-danger" aria-hidden="true" />
             </div>
             <div className="text-center sm:ml-4 sm:mt-0 sm:text-left">
               <AlertDialogTitle>Delete Event</AlertDialogTitle>

@@ -10,7 +10,7 @@ import { applyUnstyled, cn } from "@mijn-ui/utils"
 import { VariantProps, cva } from "class-variance-authority"
 
 const alertStyles = cva(
-  "relative group rounded-lg w-full py-4 px-3 [&>span~*]:pl-8 border-main-border border [&>svg]:text-main-text",
+  "group relative w-full rounded-lg border border-main-border px-3 py-4 [&>span~*]:pl-8 [&>svg]:text-main-text",
   {
     variants: {
       variant: {
@@ -31,62 +31,57 @@ const alertStyles = cva(
         variant: "default",
         status: "success",
         className:
-          "bg-success/10 dark:border-success/50 border-success [&>h5]:text-success-text [&>span>svg]:text-success-text [&>p]:text-main-text/80",
+          "border-success bg-success/10 dark:border-success/50 [&>h5]:text-success-text [&>p]:text-main-text/80 [&>span>svg]:text-success-text",
       },
       {
         variant: "default",
         status: "info",
         className:
-          "bg-info/10 dark:border-info/50 border-info [&>h5]:text-info-text [&>span>svg]:text-info-text [&>p]:text-main-text/80",
+          "border-info bg-info/10 dark:border-info/50 [&>h5]:text-info-text [&>p]:text-main-text/80 [&>span>svg]:text-info-text",
       },
       {
         variant: "default",
         status: "warning",
         className:
-          "bg-warning/10 dark:border-warning/50 border-warning [&>h5]:text-warning-text [&>span>svg]:text-warning-text [&>p]:text-main-text/80",
+          "border-warning bg-warning/10 dark:border-warning/50 [&>h5]:text-warning-text [&>p]:text-main-text/80 [&>span>svg]:text-warning-text",
       },
       {
         variant: "default",
         status: "danger",
         className:
-          "bg-danger/10 border-danger dark:border-danger/50 [&>h5]:text-danger-text [&>span>svg]:text-danger-text [&>p]:text-main-text/80",
+          "border-danger bg-danger/10 dark:border-danger/50 [&>h5]:text-danger-text [&>p]:text-main-text/80 [&>span>svg]:text-danger-text",
       },
       {
         variant: "default",
         status: "default",
         className:
-          "bg-main/10 dark:border-main-text/50 border-main-text [&>h5]:text-main-text [&>span>svg]:text-main-text [&>p]:text-main-text/80",
+          "border-main-text bg-main/10 dark:border-main-text/50 [&>h5]:text-main-text [&>p]:text-main-text/80 [&>span>svg]:text-main-text",
       },
-
-      /* -------------------------------------------------------------------------- */
       {
         variant: "filled",
         status: "success",
-        className: "bg-success dark:bg-success/80 text-success-filled-text",
+        className: "bg-success text-success-filled-text dark:bg-success/80",
       },
       {
         variant: "filled",
         status: "info",
-        className: "bg-info dark:bg-info/80 text-info-filled-text",
+        className: "bg-info text-info-filled-text dark:bg-info/80",
       },
       {
         variant: "filled",
         status: "warning",
-        className: "bg-warning dark:bg-warning/80 text-warning-filled-text",
+        className: "bg-warning text-warning-filled-text dark:bg-warning/80",
       },
       {
         variant: "filled",
         status: "danger",
-        className: "bg-danger dark:bg-danger/80 text-danger-filled-text",
+        className: "bg-danger text-danger-filled-text dark:bg-danger/80",
       },
       {
         variant: "filled",
         status: "default",
         className: "bg-main-text text-main",
       },
-
-      /* -------------------------------------------------------------------------- */
-
       {
         variant: "outline",
         status: "success",
@@ -102,7 +97,7 @@ const alertStyles = cva(
         variant: "outline",
         status: "warning",
         className:
-          "border-warning [&>h5]:text-warning [&>span>svg]:text-warning ",
+          "border-warning [&>h5]:text-warning [&>span>svg]:text-warning",
       },
       {
         variant: "outline",

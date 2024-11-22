@@ -28,7 +28,7 @@ export default async function Page(props: {
 
   return (
     <DocsPage toc={page.data.toc} full={page.data.full}>
-      <div className="w-full flex items-baseline gap-3 justify-between">
+      <div className="flex w-full items-baseline justify-between gap-3">
         <DocsTitle className="md:text-4xl md:font-extrabold">
           {page.data.title}
         </DocsTitle>
@@ -37,7 +37,7 @@ export default async function Page(props: {
           {page.data.docs && (
             <Link
               target="_blank"
-              className="underline text-sm hover:text-primary flex items-center gap-1"
+              className="flex items-center gap-1 text-sm underline hover:text-primary"
               href={page.data.docs}
             >
               <LuExternalLink />
@@ -47,7 +47,7 @@ export default async function Page(props: {
           {page.data.apiReference && (
             <Link
               target="_blank"
-              className="text-sm flex hover:text-primary items-center gap-1 underline"
+              className="flex items-center gap-1 text-sm underline hover:text-primary"
               href={page.data.apiReference}
             >
               <LuExternalLink />

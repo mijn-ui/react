@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { usePathname, useRouter } from "next/navigation"
 import {
   Select,
@@ -40,11 +40,11 @@ const AvailablePagesSelector = () => {
     <Select onValueChange={handleChange} value={selectedValue}>
       <SelectTrigger
         unstyled
-        className="w-full bg-transparent flex items-center justify-between px-3 py-2 border-b text-sm"
+        className="flex w-full items-center justify-between border-b bg-transparent px-3 py-2 text-sm"
       >
         <SelectValue placeholder="Select a page" />
       </SelectTrigger>
-      <SelectContent className="bg-surface w-[var(--radix-popover-trigger-width)]">
+      <SelectContent className="w-[var(--radix-popover-trigger-width)] bg-surface">
         <SelectGroup>
           <SelectLabel className="text-sm">Available Pages</SelectLabel>
           <SelectItem className="text-xs" value={PAGE_OPTIONS.next}>

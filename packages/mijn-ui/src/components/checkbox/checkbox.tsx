@@ -11,28 +11,28 @@ import { RxDividerHorizontal } from "react-icons/rx"
 
 export const checkboxStyles = cva(
   [
-    "disabled:cursor-not-allowed disabled:opacity-50 peer h-5 w-5 shrink-0 rounded-default border",
+    "peer size-5 shrink-0 rounded-default border disabled:cursor-not-allowed disabled:opacity-50",
   ],
   {
     variants: {
       color: {
         primary:
-          "data-[state=checked]:text-primary-text data-[state=indeterminate]:text-primary-text border-main-text  data-[state=checked]:border-primary data-[state=checked]:bg-primary data-[state=indeterminate]:border-primary data-[state=indeterminate]:bg-primary",
+          "border-main-text data-[state=checked]:border-primary data-[state=indeterminate]:border-primary  data-[state=checked]:bg-primary data-[state=indeterminate]:bg-primary data-[state=checked]:text-primary-text data-[state=indeterminate]:text-primary-text",
         secondary:
-          "data-[state=checked]:text-secondary-text data-[state=indeterminate]:text-secondary-text data-[state=checked]:border-secondary data-[state=indeterminate]:border-secondary border-main-text data-[state=indeterminate]:bg-secondary data-[state=checked]:bg-secondary",
+          "border-main-text data-[state=checked]:border-secondary data-[state=indeterminate]:border-secondary data-[state=checked]:bg-secondary data-[state=indeterminate]:bg-secondary data-[state=checked]:text-secondary-text data-[state=indeterminate]:text-secondary-text",
         accent:
-          "data-[state=checked]:text-accent-text data-[state=indeterminate]:text-accent-text data-[state=checked]:border-main-border data-[state=indeterminate]:border-main-border border-main-text data-[state=indeterminate]:bg-accent data-[state=checked]:bg-accent",
+          "border-main-text data-[state=checked]:border-main-border data-[state=indeterminate]:border-main-border data-[state=checked]:bg-accent data-[state=indeterminate]:bg-accent data-[state=checked]:text-accent-text data-[state=indeterminate]:text-accent-text",
         neutral:
-          "data-[state=checked]:text-neutral-text data-[state=indeterminate]:text-neutral-text data-[state=checked]:border-neutral data-[state=indeterminate]:border-neutral border-main-text data-[state=indeterminate]:bg-neutral data-[state=checked]:bg-neutral",
+          "border-main-text data-[state=checked]:border-neutral data-[state=indeterminate]:border-neutral data-[state=checked]:bg-neutral data-[state=indeterminate]:bg-neutral data-[state=checked]:text-neutral-text data-[state=indeterminate]:text-neutral-text",
         danger:
-          "data-[state=checked]:text-danger-filled-text data-[state=indeterminate]:text-danger-filled-text data-[state=checked]:border-danger data-[state=indeterminate]:border-danger border-main-text data-[state=checked]:bg-danger data-[state=indeterminate]:bg-danger",
+          "border-main-text data-[state=checked]:border-danger data-[state=indeterminate]:border-danger data-[state=checked]:bg-danger data-[state=indeterminate]:bg-danger data-[state=checked]:text-danger-filled-text data-[state=indeterminate]:text-danger-filled-text",
         success:
-          "data-[state=indeterminate]:text-success-filled-text data-[state=checked]:text-success-filled-text data-[state=indeterminate]:border-success data-[state=checked]:border-success border-main-text data-[state=indeterminate]:bg-success data-[state=checked]:bg-success",
+          "border-main-text data-[state=checked]:border-success data-[state=indeterminate]:border-success data-[state=checked]:bg-success data-[state=indeterminate]:bg-success data-[state=checked]:text-success-filled-text data-[state=indeterminate]:text-success-filled-text",
       },
       size: {
-        sm: "h-4 w-4",
-        md: "h-5 w-5",
-        lg: "h-6 w-6",
+        sm: "size-4",
+        md: "size-5",
+        lg: "size-6",
       },
     },
     defaultVariants: {

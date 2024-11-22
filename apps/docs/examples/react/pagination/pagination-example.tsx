@@ -27,16 +27,16 @@ const PaginationExample = () => {
     >
       <PaginationContent>
         <PaginationPreviousButton className="h-9 sm:h-10">
-          <LuChevronLeft className="h-4 w-4" />
+          <LuChevronLeft className="size-4" />
           <span className="hidden sm:inline">Previous</span>
         </PaginationPreviousButton>
         <PaginationPreviousEllipsis />
         {/* you can customize the style of the button using css selectors */}
-        <PaginationList className="[&>li>button]:h-9 [&>li>button]:w-9 sm:[&>li>button]:h-10 sm:[&>li>button]:w-10" />
-        <PaginationNextEllipsis className="[&>svg]:h-3.5 [&>svg]:w-3.5 sm:[&>svg]:h-4 sm:[&>svg]:w-4" />
+        <PaginationList className="[&>li>button]:size-9 sm:[&>li>button]:size-10" />
+        <PaginationNextEllipsis className="[&>svg]:size-3.5 sm:[&>svg]:size-4" />
         <PaginationNextButton className="h-9 sm:h-10">
           <span className="hidden sm:inline">Next</span>
-          <LuChevronRight className="h-4 w-4" />
+          <LuChevronRight className="size-4" />
         </PaginationNextButton>
       </PaginationContent>
     </Pagination>

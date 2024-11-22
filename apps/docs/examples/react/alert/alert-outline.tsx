@@ -1,4 +1,3 @@
-import React from "react"
 import {
   Alert,
   AlertDescription,
@@ -9,7 +8,7 @@ import { MdErrorOutline } from "react-icons/md"
 
 const AlertOutline = () => {
   return (
-    <div className="flex w-full items-center justify-center flex-wrap gap-4">
+    <div className="flex w-full flex-wrap items-center justify-center gap-4">
       {/* ----------------------------- Default ---------------------------- */}
       <Alert className="w-full max-w-lg" variant={"outline"}>
         <AlertIcon>

@@ -1,4 +1,3 @@
-import React from "react"
 import { Button } from "@mijn-ui/react/components/button"
 import {
   Card,
@@ -16,18 +15,18 @@ const StatsCardExample = () => {
         <Button
           color="neutral"
           size={"icon"}
-          className="rounded-full p-0 sm:h-12 sm:w-12"
+          className="rounded-full p-0 sm:size-12"
         >
-          <IoBagOutline className="h-4 w-4 sm:h-5 sm:w-5" />
+          <IoBagOutline className="size-4 sm:size-5" />
         </Button>
       </CardHeader>
 
-      <CardContent className="px-5 pb-5 sm:px-6 sm:pb-6 flex flex-col gap-1">
+      <CardContent className="flex flex-col gap-1 px-5 pb-5 sm:px-6 sm:pb-6">
         <CardDescription>Total Sales</CardDescription>
         <CardTitle className="text-xl font-medium sm:text-2xl">
           $75,890.75
         </CardTitle>
-        <p className="text-xs font-normal text-disabled-text">
+        <p className="text-disabled-text text-xs font-normal">
           <span className="text-success">+128%</span> from June
         </p>
       </CardContent>

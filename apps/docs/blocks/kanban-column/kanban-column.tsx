@@ -107,7 +107,7 @@ const KanbanColumn = React.forwardRef<
   return (
     <div
       className={cn(
-        "bg-kanban relative w-full overflow-auto rounded-2xl py-2",
+        "relative w-full overflow-auto rounded-2xl bg-kanban py-2",
         className,
       )}
       ref={ref}
@@ -189,7 +189,7 @@ const KanbanDraggable = ({
       {children}
       <button
         {...listeners}
-        className="absolute right-4 top-4 flex h-6 w-6 items-center justify-center rounded-md border border-main-border transition-opacity sm:opacity-0 sm:group-hover:opacity-100"
+        className="absolute right-4 top-4 flex size-6 items-center justify-center rounded-md border border-main-border transition-opacity sm:opacity-0 sm:group-hover:opacity-100"
       >
         <LuGripVertical size={16} />
       </button>
@@ -268,7 +268,7 @@ const KanbanItemCount = React.forwardRef<
     <span
       ref={ref}
       className={cn(
-        "flex h-5 w-5 items-center justify-center rounded-full bg-surface text-xs font-medium text-muted-text",
+        "text-muted-text flex size-5 items-center justify-center rounded-full bg-surface text-xs font-medium",
         className,
       )}
       {...props}

@@ -93,11 +93,11 @@ const KeyFeaturesPlayground = () => {
   }
 
   return (
-    <figure className="w-full not-prose">
-      <figcaption className="text-base mb-3">Try it here!</figcaption>
+    <figure className="not-prose w-full">
+      <figcaption className="mb-3 text-base">Try it here!</figcaption>
 
-      <div className="w-full flex-col sm:flex-row rounded-md overflow-hidden flex items-center border h-80">
-        <div className="bg-main min-h-32 flex-auto h-full flex items-center justify-center">
+      <div className="flex h-80 w-full flex-col items-center overflow-hidden rounded-md border sm:flex-row">
+        <div className="flex h-full min-h-32 flex-auto items-center justify-center bg-main">
           <Button
             unstyled={buttonOptions.unstyled}
             loading={buttonOptions.loading}
@@ -113,7 +113,7 @@ const KeyFeaturesPlayground = () => {
           </Button>
         </div>
 
-        <div className="bg-surface w-full flex-grow xl:flex-initial sm:max-w-80 xl:max-w-none xl:w-1/2 h-full p-5 flex flex-col gap-4 items-center">
+        <div className="flex size-full grow flex-col items-center gap-4 bg-surface p-5 sm:max-w-80 xl:w-1/2 xl:max-w-none xl:flex-initial">
           <div className="flex items-center gap-5 sm:w-full">
             <CheckboxWithLabel
               id="unstyled"
@@ -143,7 +143,7 @@ const KeyFeaturesPlayground = () => {
             />
           </div>
 
-          <div className="flex items-start flex-wrap h-full max-h-32 pb-4 sm:pb-0 overflow-y-auto sm:overflow-hidden sm:max-h-none gap-x-6 sm:gap-x-4">
+          <div className="flex h-full max-h-32 flex-wrap items-start gap-x-6 overflow-y-auto pb-4 sm:max-h-none sm:gap-x-4 sm:overflow-hidden sm:pb-0">
             <RadioGroupWithOptions
               defaultValue="filled"
               value={buttonOptions.variant || "filled"}

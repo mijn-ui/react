@@ -262,7 +262,7 @@ const PaginationPreviousEllipsis = ({
       )}
       {...props}
     >
-      <LuMoreHorizontal className="h-4 w-4" />
+      <LuMoreHorizontal className="size-4" />
     </span>
   )
 }
@@ -294,7 +294,7 @@ const PaginationNextEllipsis = ({
       )}
       {...props}
     >
-      <LuMoreHorizontal className="h-4 w-4" />
+      <LuMoreHorizontal className="size-4" />
     </span>
   )
 }

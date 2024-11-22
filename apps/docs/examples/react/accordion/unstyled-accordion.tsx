@@ -1,4 +1,3 @@
-import React from "react"
 import {
   Accordion,
   AccordionContent,
@@ -9,7 +8,7 @@ import {
 const UnstyledAccordion = () => {
   return (
     <Accordion
-      className="rounded-2xl border border-orange-500 p-4 w-96"
+      className="w-96 rounded-2xl border border-orange-500 p-4"
       collapsible
       type="single"
       unstyled

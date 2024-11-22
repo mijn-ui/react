@@ -1,4 +1,3 @@
-import React from "react"
 import Link from "next/link"
 import { LuChevronLeft, LuChevronRight } from "react-icons/lu"
 
@@ -15,7 +14,7 @@ type NavigationCardProps = {
 
 const NavigationCard = ({ previous, next }: NavigationCardProps) => {
   return (
-    <div className="grid grid-cols-2 gap-4 pb-6 not-prose">
+    <div className="not-prose grid grid-cols-2 gap-4 pb-6">
       {previous ? (
         <Link
           href={previous.url}
@@ -32,10 +31,10 @@ const NavigationCard = ({ previous, next }: NavigationCardProps) => {
         <Link
           href={next.url}
           className={
-            "flex w-full flex-col gap-2 rounded-lg border bg-fd-card p-4 text-sm transition-colors hover:bg-fd-accent/80 hover:text-fd-accent-foreground col-start-2 text-end"
+            "col-start-2 flex w-full flex-col gap-2 rounded-lg border bg-fd-card p-4 text-end text-sm transition-colors hover:bg-fd-accent/80 hover:text-fd-accent-foreground"
           }
         >
-          <div className="inline-flex items-center gap-0.5 text-fd-muted-foreground flex-row-reverse">
+          <div className="inline-flex flex-row-reverse items-center gap-0.5 text-fd-muted-foreground">
             <LuChevronRight className="-me-1 size-4 shrink-0 rtl:rotate-180" />
             <p>Next</p>
           </div>

@@ -1,4 +1,3 @@
-import React from "react"
 import { Button } from "@mijn-ui/react/components/button"
 
 const ButtonVariants = () => {

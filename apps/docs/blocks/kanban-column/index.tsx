@@ -124,7 +124,7 @@ const KanbanExample = () => {
                 size="icon"
                 color="accent"
                 variant="text"
-                className="h-7 w-7 rounded-full text-muted-text hover:text-main-text"
+                className="text-muted-text size-7 rounded-full hover:text-main-text"
               >
                 <LuMoreVertical />
               </Button>
@@ -157,7 +157,7 @@ const KanbanExample = () => {
               ) : (
                 <div className="h-32">
                   <div
-                    className="flex h-full w-full flex-col items-center justify-center gap-3 rounded-md px-4 py-2"
+                    className="flex size-full flex-col items-center justify-center gap-3 rounded-md px-4 py-2"
                     // custom dashed border styles
                     style={{
                       backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='6' ry='6' stroke='%23737373FF' stroke-width='1' stroke-dasharray='6' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`,
@@ -167,7 +167,7 @@ const KanbanExample = () => {
                     <span>
                       <StickyNoteIcon /> {/* custom Icon */}
                     </span>
-                    <p className="text-sm text-muted-text">
+                    <p className="text-muted-text text-sm">
                       No tasks currently. Board is empty.
                     </p>
                   </div>
@@ -175,9 +175,9 @@ const KanbanExample = () => {
               )}
             </KanbanContent>
             <KanbanFooter>
-              <button className="flex items-center gap-2 text-sm text-muted-text">
+              <button className="text-muted-text flex items-center gap-2 text-sm">
                 <span>
-                  <LuPlus className="h-5 w-5" />
+                  <LuPlus className="size-5" />
                 </span>
                 Add a new Item
               </button>

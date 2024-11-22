@@ -60,7 +60,7 @@ const SelectTrigger = ({
     >
       {children}
       <SelectPrimitive.Icon asChild>
-        <LuChevronDown className="h-4 w-4 opacity-50" />
+        <LuChevronDown className="size-4 opacity-50" />
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
   )
@@ -92,7 +92,7 @@ const SelectScrollUpButton = ({
       )}
       {...props}
     >
-      <LuChevronUp className="h-4 w-4" />
+      <LuChevronUp className="size-4" />
     </SelectPrimitive.ScrollUpButton>
   )
 }
@@ -123,7 +123,7 @@ const SelectScrollDownButton = ({
       )}
       {...props}
     >
-      <LuChevronDown className="h-4 w-4" />
+      <LuChevronDown className="size-4" />
     </SelectPrimitive.ScrollDownButton>
   )
 }
@@ -153,7 +153,7 @@ const SelectContent = ({
         className={applyUnstyled(
           isUnstyled,
           cn(
-            "relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-lg border border-main-border bg-surface text-surface-text shadow-md !duration-300 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-bottom-6 data-[side=left]:slide-in-from-left-6 data-[side=right]:slide-in-from-right-6 data-[side=top]:slide-in-from-top-6",
+            "relative z-50 max-h-96 min-w-32 overflow-hidden rounded-lg border border-main-border bg-surface text-surface-text shadow-md !duration-300 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-bottom-6 data-[side=left]:slide-in-from-left-6 data-[side=right]:slide-in-from-right-6 data-[side=top]:slide-in-from-top-6",
             position === "popper" &&
               "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1",
           ),
@@ -239,7 +239,7 @@ const SelectItem = ({
         )}
       >
         <SelectPrimitive.ItemIndicator>
-          <LuCheck className="h-4 w-4" />
+          <LuCheck className="size-4" />
         </SelectPrimitive.ItemIndicator>
       </span>
     </SelectPrimitive.Item>

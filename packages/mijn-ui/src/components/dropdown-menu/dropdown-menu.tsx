@@ -89,7 +89,7 @@ const DropdownMenuSubTrigger = ({
         applyUnstyled(
           isUnstyled,
           cn(
-            "flex cursor-default gap-2 select-none items-center rounded-md px-2 py-1.5 text-sm outline-none focus:bg-accent data-[state=open]:bg-accent [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+            "flex cursor-default select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none focus:bg-accent data-[state=open]:bg-accent [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
             inset && "pl-8",
           ),
           className,
@@ -235,7 +235,7 @@ const DropdownMenuCheckboxItem = ({
         )}
       >
         <DropdownMenuPrimitive.ItemIndicator>
-          <LuCheck className="h-4 w-4" />
+          <LuCheck className="size-4" />
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
       {children}
@@ -276,7 +276,7 @@ const DropdownMenuRadioItem = ({
         )}
       >
         <DropdownMenuPrimitive.ItemIndicator>
-          <LuCircle className="h-2 w-2 fill-current" />
+          <LuCircle className="size-2 fill-current" />
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
       {children}

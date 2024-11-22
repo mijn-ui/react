@@ -25,32 +25,32 @@ const CommandExample = () => {
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup heading="Suggestions">
           <CommandItem>
-            <LuCalendar className="mr-2 h-4 w-4" />
+            <LuCalendar className="mr-2 size-4" />
             <span>Calendar</span>
           </CommandItem>
           <CommandItem>
-            <LuSmile className="mr-2 h-4 w-4" />
+            <LuSmile className="mr-2 size-4" />
             <span>Search Emoji</span>
           </CommandItem>
           <CommandItem disabled>
-            <LuCalculator className="mr-2 h-4 w-4" />
+            <LuCalculator className="mr-2 size-4" />
             <span>LuCalculator</span>
           </CommandItem>
         </CommandGroup>
         <CommandSeparator />
         <CommandGroup heading="Settings">
           <CommandItem>
-            <LuUser className="mr-2 h-4 w-4" />
+            <LuUser className="mr-2 size-4" />
             <span>Profile</span>
             <CommandShortcut>⌘P</CommandShortcut>
           </CommandItem>
           <CommandItem>
-            <LuCreditCard className="mr-2 h-4 w-4" />
+            <LuCreditCard className="mr-2 size-4" />
             <span>Billing</span>
             <CommandShortcut>⌘B</CommandShortcut>
           </CommandItem>
           <CommandItem>
-            <LuSettings className="mr-2 h-4 w-4" />
+            <LuSettings className="mr-2 size-4" />
             <span>Settings</span>
             <CommandShortcut>⌘S</CommandShortcut>
           </CommandItem>

@@ -5,18 +5,18 @@ import {
   UnstyledProvider,
   useUnstyled,
 } from "@mijn-ui/context/unstyled-provider"
+import { VariantProps, cva } from "class-variance-authority"
 import { UnstyledProps } from "@mijn-ui/types"
 import { applyUnstyled } from "@mijn-ui/utils"
 import * as RadixAccordion from "@radix-ui/react-accordion"
-import { VariantProps, cva } from "class-variance-authority"
 import { LuChevronDown } from "react-icons/lu"
 
 const accordionStyles = cva("[&>div]:border-b [&>div]:border-b-main-border", {
   variants: {
     variant: {
       default: "",
-      surface: "bg-surface px-4 pt-2 shadow-sm pb-4 rounded-xl",
-      bordered: "border border-main-border rounded-xl px-4 pt-2 pb-4",
+      surface: "rounded-xl bg-surface px-4 pb-4 pt-2 shadow-sm",
+      bordered: "rounded-xl border border-main-border px-4 pb-4 pt-2",
     },
   },
   defaultVariants: {

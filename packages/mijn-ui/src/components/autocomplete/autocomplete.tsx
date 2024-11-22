@@ -309,7 +309,7 @@ const AutocompleteItem = ({
       className={applyUnstyled(
         isUnstyled,
         cn(
-          "relative cursor-default select-none px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-auto data-[selected=true]:bg-accent data-[selected=true]:text-accent-text data-[disabled=true]:opacity-50 flex w-full items-center justify-between gap-2 rounded-md",
+          "relative flex w-full cursor-default select-none items-center justify-between gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-auto data-[selected=true]:bg-accent data-[selected=true]:text-accent-text data-[disabled=true]:opacity-50",
           isSelected &&
             "bg-primary/20 text-primary data-[selected=true]:bg-primary/20 data-[selected=true]:text-primary",
         ),

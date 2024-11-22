@@ -1,4 +1,3 @@
-import React from "react"
 import { Button } from "@mijn-ui/react/components/button"
 import { Input } from "@mijn-ui/react/components/input"
 import { Label } from "@mijn-ui/react/components/label"

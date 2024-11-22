@@ -30,11 +30,11 @@ export const Calendar = ({
         [UI.CaptionLabel]: "text-sm font-medium",
         [UI.PreviousMonthButton]: cn(
           buttonStyles({ color: "neutral", variant: "outline" }),
-          "absolute left-1 top-0 h-7 w-7 bg-transparent p-0 z-10 opacity-50 hover:opacity-100",
+          "absolute left-1 top-0 z-10 size-7 bg-transparent p-0 opacity-50 hover:opacity-100",
         ),
         [UI.NextMonthButton]: cn(
           buttonStyles({ color: "neutral", variant: "outline" }),
-          "absolute right-1 top-0 h-7 w-7 bg-transparent p-0 z-10 opacity-50 hover:opacity-100",
+          "absolute right-1 top-0 z-10 size-7 bg-transparent p-0 opacity-50 hover:opacity-100",
         ),
         [UI.MonthGrid]: "w-full border-collapse space-y-1",
         [UI.Weekdays]: "flex",
@@ -43,7 +43,7 @@ export const Calendar = ({
         [UI.Week]: "flex w-full mt-0.5",
         [UI.Day]: cn(
           buttonStyles({ variant: "text", color: "accent" }),
-          "h-9 w-9 p-0 font-normal aria-selected:opacity-100",
+          "size-9 p-0 font-normal aria-selected:opacity-100",
         ),
         [UI.DayButton]:
           "h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-accent/50 [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20",
@@ -70,13 +70,13 @@ export const Calendar = ({
 const Chevron = ({ orientation = "left" }) => {
   switch (orientation) {
     case "left":
-      return <LuChevronLeft className="h-4 w-4" />
+      return <LuChevronLeft className="size-4" />
     case "right":
-      return <LuChevronRight className="h-4 w-4" />
+      return <LuChevronRight className="size-4" />
     case "up":
-      return <LuChevronUp className="h-4 w-4" />
+      return <LuChevronUp className="size-4" />
     case "down":
-      return <LuChevronDown className="h-4 w-4" />
+      return <LuChevronDown className="size-4" />
     default:
       return null
   }

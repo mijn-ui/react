@@ -1,4 +1,3 @@
-import React from "react"
 import { Checkbox } from "@mijn-ui/react/components/checkbox"
 import { Label } from "@mijn-ui/react/components/label"
 

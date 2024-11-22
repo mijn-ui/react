@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { cn } from "@mijn-ui/react/utils"
 import { useTheme } from "next-themes"
 import { FiMoon, FiSun } from "react-icons/fi"
@@ -20,7 +20,7 @@ const ThemeToggler = ({ className }: { className?: string }) => {
       <button
         onClick={() => setTheme("light")}
         className={cn(
-          "text-neutral-text flex items-center justify-center size-8 transition duration-200 hover:text-secondary-text sm:size-10",
+          "flex size-8 items-center justify-center text-neutral-text transition duration-200 hover:text-secondary-text sm:size-10",
           className,
         )}
       >
@@ -33,7 +33,7 @@ const ThemeToggler = ({ className }: { className?: string }) => {
       <button
         onClick={() => setTheme("dark")}
         className={cn(
-          "text-neutral-text flex items-center justify-center size-8 transition duration-200 hover:text-secondary-text sm:size-10",
+          "flex size-8 items-center justify-center text-neutral-text transition duration-200 hover:text-secondary-text sm:size-10",
           className,
         )}
       >

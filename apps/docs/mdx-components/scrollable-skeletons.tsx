@@ -1,5 +1,3 @@
-import React from "react"
-
 const ScrollAbleSkeleton = () => {
   return (
     <div className="h-screen w-full p-5">
@@ -20,7 +18,7 @@ const ScrollAbleSkeleton = () => {
           <div className="flex h-48 w-full items-center justify-center rounded bg-neutral">
             {" "}
             <svg
-              className="h-12 w-12 text-accent"
+              className="size-12 text-accent"
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
               fill="currentColor"

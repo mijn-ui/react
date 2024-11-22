@@ -1,4 +1,3 @@
-import React from "react"
 import Image from "next/image"
 import { GoClock } from "react-icons/go"
 import { LuMoreVertical, LuPlus } from "react-icons/lu"
@@ -8,11 +7,11 @@ const KanbanShowcase = () => {
     <div className="flex w-full items-center justify-between px-3 pr-2">
       <div className="flex items-center gap-1">
         <h3 className="text-sm font-medium">Todo</h3>
-        <span className="flex h-4 w-4 items-center justify-center rounded-full bg-surface text-xxs font-medium text-surface-text">
+        <span className="flex size-4 items-center justify-center rounded-full bg-surface text-xxs font-medium text-surface-text">
           3
         </span>
       </div>
-      <button className="inline-flex h-7 w-7 items-center justify-center gap-1 rounded-full text-sm text-neutral-text hover:bg-accent hover:text-main-text disabled:bg-disabled disabled:text-disabled-text">
+      <button className="disabled:bg-disabled disabled:text-disabled-text inline-flex size-7 items-center justify-center gap-1 rounded-full text-sm text-neutral-text hover:bg-accent hover:text-main-text">
         <LuMoreVertical />
       </button>
     </div>
@@ -24,7 +23,7 @@ const KanbanShowcase = () => {
         Creating wireframes for iOS application
       </h5>
       <div className="flex flex-wrap">
-        <span className="inline-flex items-center justify-center rounded-full border border-border px-1.5 py-px text-xxs text-main-text hover:bg-accent">
+        <span className="border-border inline-flex items-center justify-center rounded-full border px-1.5 py-px text-xxs text-main-text hover:bg-accent">
           Wireframe
         </span>
       </div>
@@ -63,25 +62,25 @@ const KanbanShowcase = () => {
           </div>
         </div>
         <div className="flex items-center justify-center -space-x-2">
-          <div className="relative flex h-5 w-5 shrink-0 items-center justify-center overflow-hidden rounded-full bg-neutral text-xs">
+          <div className="relative flex size-5 shrink-0 items-center justify-center overflow-hidden rounded-full bg-neutral text-xs">
             <Image
               width={40}
               height={40}
               alt="avatar"
               src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YXZhdGFyfGVufDB8fDB8fHww"
-              className="h-full w-full object-cover"
+              className="size-full object-cover"
             />
           </div>
-          <div className="relative flex h-5 w-5 shrink-0 items-center justify-center overflow-hidden rounded-full bg-neutral text-xs">
+          <div className="relative flex size-5 shrink-0 items-center justify-center overflow-hidden rounded-full bg-neutral text-xs">
             <span>S</span>
           </div>
-          <div className="relative flex h-5 w-5 shrink-0 items-center justify-center overflow-hidden rounded-full bg-neutral text-xs">
+          <div className="relative flex size-5 shrink-0 items-center justify-center overflow-hidden rounded-full bg-neutral text-xs">
             <Image
               width={40}
               height={40}
               alt="avatar"
               src="https://images.unsplash.com/photo-1628157588553-5eeea00af15c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D"
-              className="h-full w-full object-cover"
+              className="size-full object-cover"
             />
           </div>
           <div className="!ml-1.5 flex items-center justify-center text-xxs text-neutral-text">

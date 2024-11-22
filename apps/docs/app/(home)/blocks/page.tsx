@@ -36,7 +36,7 @@ const Blocks = () => {
   }, [])
 
   return (
-    <article className="mx-auto flex w-full flex-1 flex-col gap-6 px-4 py-10 md:px-8 md:py-12 max-w-[1120px]">
+    <article className="mx-auto flex w-full max-w-[1120px] flex-1 flex-col gap-6 px-4 py-10 md:px-8 md:py-12">
       <h1 className="text-3xl font-bold md:text-4xl md:font-extrabold">
         Blocks
       </h1>
@@ -52,7 +52,7 @@ const Blocks = () => {
               width={200}
               height={200}
               alt="calendar-full"
-              className="w-full h-full"
+              className="size-full"
             />
           </LinkCard>
           <LinkCard
@@ -64,7 +64,7 @@ const Blocks = () => {
           </LinkCard>
           <LinkCard href="#" label="ScreenState">
             <div className="flex flex-col gap-2">
-              <p className="text-sm flex gap-2 items-center text-neutral-text/80">
+              <p className="flex items-center gap-2 text-sm text-neutral-text/80">
                 <FaScrewdriverWrench />
                 Inprogress...
               </p>
@@ -72,7 +72,7 @@ const Blocks = () => {
           </LinkCard>
           <LinkCard href="#" label="Sidebar">
             <div className="flex flex-col gap-2">
-              <p className="text-sm flex gap-2 items-center text-neutral-text/80">
+              <p className="flex items-center gap-2 text-sm text-neutral-text/80">
                 <FaScrewdriverWrench />
                 Inprogress...
               </p>
@@ -80,7 +80,7 @@ const Blocks = () => {
           </LinkCard>
           <LinkCard href="#" label="DataTable">
             <div className="flex flex-col gap-2">
-              <p className="text-sm flex gap-2 items-center text-neutral-text/80">
+              <p className="flex items-center gap-2 text-sm text-neutral-text/80">
                 <FaScrewdriverWrench />
                 Inprogress...
               </p>
@@ -88,7 +88,7 @@ const Blocks = () => {
           </LinkCard>
           <LinkCard href="#" label="GanttChart">
             <div className="flex flex-col gap-2">
-              <p className="text-sm flex gap-2 items-center text-neutral-text/80">
+              <p className="flex items-center gap-2 text-sm text-neutral-text/80">
                 <FaScrewdriverWrench />
                 Inprogress...
               </p>
@@ -119,7 +119,7 @@ const LinkCard = ({
     <Link href={href} className={cn("relative col-span-1", containerClass)}>
       <Card
         className={
-          "card_glow relative flex min-h-72 w-full items-center justify-center bg-main border [mask:radial-gradient(75%_75%_at_50%,rgb(0,0,0)_60%,rgba(0,0,0,0)_100%)] sm:aspect-video sm:h-full sm:w-full"
+          "card_glow relative flex min-h-72 w-full items-center justify-center border bg-main [mask:radial-gradient(75%_75%_at_50%,rgb(0,0,0)_60%,rgba(0,0,0,0)_100%)] sm:aspect-video sm:size-full"
         }
         id="card"
       >

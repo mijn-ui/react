@@ -400,7 +400,7 @@ export const CalendarDatePicker = React.forwardRef<
               onClick={handleTogglePopover}
               suppressHydrationWarning
             >
-              <LuCalendar className="mr-2 h-4 w-4" />
+              <LuCalendar className="mr-2 size-4" />
               <span>
                 {date?.from ? (
                   date.to ? (
