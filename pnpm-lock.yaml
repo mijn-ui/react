@@ -17,6 +17,9 @@ importers:
       '@types/eslint__js':
         specifier: ^8.42.3
         version: 8.42.3
+      esbuild-plugin-preserve-directives:
+        specifier: ^0.0.11
+        version: 0.0.11(esbuild@0.24.0)
       eslint:
         specifier: ^9.14.0
         version: 9.15.0(jiti@1.21.6)
@@ -92,6 +95,12 @@ importers:
       axios:
         specifier: ^1.7.7
         version: 1.7.7
+      class-variance-authority:
+        specifier: ^0.7.0
+        version: 0.7.0
+      date-fns:
+        specifier: ^4.1.0
+        version: 4.1.0
       fumadocs-core:
         specifier: 14.4.0
         version: 14.4.0(@types/react@18.3.12)(next@15.0.3(react-dom@19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114))(react@19.0.0-rc-b01722d5-20241114))(react-dom@19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114))(react@19.0.0-rc-b01722d5-20241114)
@@ -563,6 +572,9 @@ importers:
       '@mijn-ui-react/utilities':
         specifier: workspace:*
         version: link:../../utilities
+      '@radix-ui/react-dialog':
+        specifier: ^1.1.2
+        version: 1.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114))(react@19.0.0-rc-b01722d5-20241114)
       cmdk:
         specifier: ^1.0.4
         version: 1.0.4(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114))(react@19.0.0-rc-b01722d5-20241114)
@@ -612,6 +624,9 @@ importers:
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
+      date-fns:
+        specifier: ^4.1.0
+        version: 4.1.0
       date-fns-tz:
         specifier: ^3.2.0
         version: 3.2.0(date-fns@4.1.0)
@@ -887,6 +902,9 @@ importers:
       '@radix-ui/react-radio-group':
         specifier: ^1.2.1
         version: 1.2.1(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114))(react@19.0.0-rc-b01722d5-20241114)
+      class-variance-authority:
+        specifier: ^0.7.0
+        version: 0.7.0
       react:
         specifier: 19.0.0-rc-b01722d5-20241114
         version: 19.0.0-rc-b01722d5-20241114
@@ -1265,11 +1283,7 @@ importers:
 
   packages/ts-config: {}
 
-  packages/tsup-config:
-    devDependencies:
-      esbuild-plugin-preserve-directives:
-        specifier: ^0.0.11
-        version: 0.0.11(esbuild@0.24.0)
+  packages/tsup-config: {}
 
   packages/utilities:
     dependencies:

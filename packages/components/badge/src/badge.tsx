@@ -3,7 +3,7 @@ import { UnstyledProps, applyUnstyled } from "@mijn-ui-react/utilities/shared"
 import { type VariantProps, cva } from "class-variance-authority"
 
 const badgeVariants = cva(
-  "inline-flex items-center px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring",
+  "focus:ring-ring inline-flex items-center px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2",
   {
     variants: {
       color: {
@@ -31,31 +31,31 @@ const badgeVariants = cva(
         color: "primary",
         variant: "outline",
         className:
-          "border border-primary text-primary hover:bg-primary hover:text-primary-text",
+          "border-primary text-primary hover:bg-primary hover:text-primary-text border",
       },
       {
         color: "secondary",
         variant: "outline",
         className:
-          "border border-secondary text-secondary hover:bg-secondary hover:text-secondary-text",
+          "border-secondary text-secondary hover:bg-secondary hover:text-secondary-text border",
       },
       {
         color: "accent",
         variant: "outline",
         className:
-          "border border-main-border text-accent-text hover:bg-accent hover:text-accent-text",
+          "border-main-border text-accent-text hover:bg-accent hover:text-accent-text border",
       },
       {
         color: "neutral",
         variant: "outline",
         className:
-          "border border-neutral text-neutral-text hover:bg-neutral hover:text-neutral-text",
+          "border-neutral text-neutral-text hover:bg-neutral hover:text-neutral-text border",
       },
       {
         color: "danger",
         variant: "outline",
         className:
-          "border border-danger text-danger hover:bg-danger hover:text-danger-filled-text",
+          "border-danger text-danger hover:bg-danger hover:text-danger-filled-text border",
       },
 
       {

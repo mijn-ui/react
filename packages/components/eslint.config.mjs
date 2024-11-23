@@ -3,7 +3,6 @@ import next from "eslint-config-custom/next.js"
 export default [
   ...next,
   {
-    ignorePatterns: ["dist/", "node_modules/"],
     rules: {
       // for the import hacks
       "@typescript-eslint/consistent-type-imports": "off",

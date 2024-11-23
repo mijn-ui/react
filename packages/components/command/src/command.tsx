@@ -23,7 +23,7 @@ const Command = ({ unstyled = false, className, ...props }: CommandProps) => (
   <UnstyledProvider unstyled={unstyled}>
     <CommandPrimitive
       className={cn(
-        "flex size-full flex-col overflow-hidden rounded-md border-main-border bg-surface text-surface-text",
+        "border-main-border bg-surface text-surface-text flex size-full flex-col overflow-hidden rounded-md",
         className,
       )}
       {...props}

@@ -56,7 +56,7 @@ const AvatarGroup = ({
       >
         {visibleChildren}
         {remainingChildrenCount > 0 && (
-          <span className="!ml-1.5 flex items-center justify-center text-xs text-neutral-text">
+          <span className="text-neutral-text !ml-1.5 flex items-center justify-center text-xs">
             +{remainingChildrenCount}
           </span>
         )}

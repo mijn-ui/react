@@ -10,7 +10,7 @@ import {
 import { VariantProps, cva } from "class-variance-authority"
 
 const alertStyles = cva(
-  "group relative w-full rounded-lg border border-main-border px-3 py-4 [&>span~*]:pl-8 [&>svg]:text-main-text",
+  "border-main-border [&>svg]:text-main-text group relative w-full rounded-lg border px-3 py-4 [&>span~*]:pl-8",
   {
     variants: {
       variant: {

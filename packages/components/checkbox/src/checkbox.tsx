@@ -14,7 +14,7 @@ import { RxDividerHorizontal } from "react-icons/rx"
 
 export const checkboxStyles = cva(
   [
-    "peer size-5 shrink-0 rounded-default border disabled:cursor-not-allowed disabled:opacity-50",
+    "rounded-default peer size-5 shrink-0 border disabled:cursor-not-allowed disabled:opacity-50",
   ],
   {
     variants: {

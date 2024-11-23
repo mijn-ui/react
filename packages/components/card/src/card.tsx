@@ -18,7 +18,7 @@ const Card = ({ className, unstyled = false, ...props }: CardProps) => (
   <UnstyledProvider unstyled={unstyled}>
     <div
       className={cn(
-        "rounded-lg bg-surface text-surface-text shadow-sm",
+        "bg-surface text-surface-text rounded-lg shadow-sm",
         className,
       )}
       {...props}

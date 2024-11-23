@@ -385,7 +385,7 @@ export const CalendarDatePicker = React.forwardRef<
         </style>
         <Popover modal open={isPopoverOpen} onOpenChange={setIsPopoverOpen}>
           <PopoverTrigger asChild>
-            <Button
+            <button
               id="date"
               ref={ref}
               {...props}
@@ -523,7 +523,7 @@ export const CalendarDatePicker = React.forwardRef<
                   <span>Pick a date</span>
                 )}
               </span>
-            </Button>
+            </button>
           </PopoverTrigger>
           {isPopoverOpen && (
             <PopoverContent
@@ -539,7 +539,7 @@ export const CalendarDatePicker = React.forwardRef<
             >
               <div className="flex">
                 {numberOfMonths === 2 && (
-                  <div className="hidden flex-col gap-1 border-r border-main-text/10 pr-4 text-left md:flex">
+                  <div className="border-main-text/10 hidden flex-col gap-1 border-r pr-4 text-left md:flex">
                     {dateRanges.map(({ label, start, end }) => (
                       <Button
                         key={label}
@@ -547,7 +547,7 @@ export const CalendarDatePicker = React.forwardRef<
                         color="accent"
                         size="sm"
                         className={cn(
-                          "justify-start hover:bg-primary/90 hover:text-primary-text",
+                          "hover:bg-primary/90 hover:text-primary-text justify-start",
                           selectedRange === label &&
                             "bg-primary text-primary-text hover:bg-primary/90 hover:text-main",
                         )}
@@ -576,7 +576,7 @@ export const CalendarDatePicker = React.forwardRef<
                           monthFrom ? months[monthFrom.getMonth()] : undefined
                         }
                       >
-                        <SelectTrigger className="hidden w-[122px] font-medium hover:bg-accent hover:text-accent-text focus:ring-0 focus:ring-offset-0 sm:flex">
+                        <SelectTrigger className="hover:bg-accent hover:text-accent-text hidden w-[122px] font-medium focus:ring-0 focus:ring-offset-0 sm:flex">
                           <SelectValue placeholder="Month" />
                         </SelectTrigger>
                         <SelectContent>
@@ -594,7 +594,7 @@ export const CalendarDatePicker = React.forwardRef<
                         }}
                         value={yearFrom ? yearFrom.toString() : undefined}
                       >
-                        <SelectTrigger className="hidden w-[122px] font-medium hover:bg-accent hover:text-accent-text focus:ring-0 focus:ring-offset-0 sm:flex">
+                        <SelectTrigger className="hover:bg-accent hover:text-accent-text hidden w-[122px] font-medium focus:ring-0 focus:ring-offset-0 sm:flex">
                           <SelectValue placeholder="Year" />
                         </SelectTrigger>
                         <SelectContent>
@@ -617,7 +617,7 @@ export const CalendarDatePicker = React.forwardRef<
                             monthTo ? months[monthTo.getMonth()] : undefined
                           }
                         >
-                          <SelectTrigger className="hidden w-[122px] font-medium hover:bg-accent hover:text-accent-text focus:ring-0 focus:ring-offset-0 sm:flex">
+                          <SelectTrigger className="hover:bg-accent hover:text-accent-text hidden w-[122px] font-medium focus:ring-0 focus:ring-offset-0 sm:flex">
                             <SelectValue placeholder="Month" />
                           </SelectTrigger>
                           <SelectContent>
@@ -635,7 +635,7 @@ export const CalendarDatePicker = React.forwardRef<
                           }}
                           value={yearTo ? yearTo.toString() : undefined}
                         >
-                          <SelectTrigger className="hidden w-[122px] font-medium hover:bg-accent hover:text-accent-text focus:ring-0 focus:ring-offset-0 sm:flex">
+                          <SelectTrigger className="hover:bg-accent hover:text-accent-text hidden w-[122px] font-medium focus:ring-0 focus:ring-offset-0 sm:flex">
                             <SelectValue placeholder="Year" />
                           </SelectTrigger>
                           <SelectContent>
