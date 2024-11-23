@@ -22,7 +22,6 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "tsup",
-    "dev": "tsup --watch",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "types:check": "tsc --noEmit"

@@ -44,7 +44,6 @@
     "clean": "rimraf dist",
     "test": "vitest run",
     "build": "tsup",
-    "dev": "tsup --watch",
     "lint": "eslint .",
     "types:check": "tsc --noEmit"
   },
