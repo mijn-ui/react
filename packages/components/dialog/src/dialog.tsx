@@ -1,9 +1,9 @@
 "use client"
 
 import * as React from "react"
-import { buttonStyles } from "@mijn-ui-react/button"
-import { UnstyledProvider, useUnstyled } from "@mijn-ui-react/utilities/context"
-import { UnstyledProps, applyUnstyled } from "@mijn-ui-react/utilities/shared"
+import { buttonStyles } from "@mijn-ui/react-button"
+import { UnstyledProvider, useUnstyled } from "@mijn-ui/react-utilities/context"
+import { UnstyledProps, applyUnstyled } from "@mijn-ui/react-utilities/shared"
 import * as DialogPrimitive from "@radix-ui/react-dialog"
 
 const DialogPortal = DialogPrimitive.Portal

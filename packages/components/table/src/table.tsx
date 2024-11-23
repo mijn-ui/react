@@ -1,8 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { UnstyledProvider, useUnstyled } from "@mijn-ui-react/utilities/context"
-import { applyUnstyled, UnstyledProps } from "@mijn-ui-react/utilities/shared"
+import { UnstyledProvider, useUnstyled } from "@mijn-ui/react-utilities/context"
+import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
 
 /* -------------------------------------------------------------------------- */
 /*                                    Table                                   */

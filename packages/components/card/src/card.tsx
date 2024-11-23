@@ -1,12 +1,12 @@
 "use client"
 
 import * as React from "react"
-import { UnstyledProvider, useUnstyled } from "@mijn-ui-react/utilities/context"
+import { UnstyledProvider, useUnstyled } from "@mijn-ui/react-utilities/context"
 import {
   applyUnstyled,
   cn,
   UnstyledProps,
-} from "@mijn-ui-react/utilities/shared"
+} from "@mijn-ui/react-utilities/shared"
 
 /* -------------------------------------------------------------------------- */
 /*                                    Card                                    */

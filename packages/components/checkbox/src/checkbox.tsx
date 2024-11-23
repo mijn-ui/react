@@ -1,12 +1,12 @@
 "use client"
 
 import * as React from "react"
-import { useControlledState } from "@mijn-ui-react/hooks/use-controlled-state"
+import { useControlledState } from "@mijn-ui/react-hooks/use-controlled-state"
 import {
   UnstyledProps,
   applyUnstyled,
   cn,
-} from "@mijn-ui-react/utilities/shared"
+} from "@mijn-ui/react-utilities/shared"
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
 import { VariantProps, cva } from "class-variance-authority"
 import { LuCheck } from "react-icons/lu"

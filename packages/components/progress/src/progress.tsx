@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { applyUnstyled, UnstyledProps } from "@mijn-ui-react/utilities/shared"
+import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
 import * as ProgressPrimitive from "@radix-ui/react-progress"
 
 type ProgressProps = React.ComponentPropsWithRef<

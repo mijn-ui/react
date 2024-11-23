@@ -1,5 +1,5 @@
 {
-  "name": "@mijn-ui-react/input",
+  "name": "@mijn-ui/react-input",
   "author": "Htet Aung Lin<htetaunglin.coder@gmail.com>",
   "version": "0.0.2",
   "homepage": "https://mijn-ui.vercel.app",
@@ -36,8 +36,8 @@
   "dependencies": {
     "react": "19.0.0-rc-b01722d5-20241114",
     "react-dom": "19.0.0-rc-b01722d5-20241114",
-    "@mijn-ui-react/label": "workspace:*",
-    "@mijn-ui-react/utilities": "workspace:*"
+    "@mijn-ui/react-label": "workspace:*",
+    "@mijn-ui/react-utilities": "workspace:*"
   },
   "peerDependencies": {
     "react": "19.0.0-rc-b01722d5-20241114",

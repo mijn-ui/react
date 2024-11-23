@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { applyUnstyled, UnstyledProps } from "@mijn-ui-react/utilities/shared"
+import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
 import * as SwitchPrimitives from "@radix-ui/react-switch"
 
 type SwitchProps = React.ComponentPropsWithRef<typeof SwitchPrimitives.Root> &

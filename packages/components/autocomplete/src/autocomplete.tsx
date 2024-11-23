@@ -1,16 +1,16 @@
 "use client"
 
 import * as React from "react"
-import { CommandEmpty } from "@mijn-ui-react/command"
-import { PopoverContent } from "@mijn-ui-react/popover"
-import { Skeleton } from "@mijn-ui-react/skeleton"
-import { UnstyledProvider, useUnstyled } from "@mijn-ui-react/utilities/context"
+import { CommandEmpty } from "@mijn-ui/react-command"
+import { PopoverContent } from "@mijn-ui/react-popover"
+import { Skeleton } from "@mijn-ui/react-skeleton"
+import { UnstyledProvider, useUnstyled } from "@mijn-ui/react-utilities/context"
 import {
   UnstyledProps,
   applyUnstyled,
   cn,
   mergeRefs,
-} from "@mijn-ui-react/utilities/shared"
+} from "@mijn-ui/react-utilities/shared"
 import * as PopoverPrimitive from "@radix-ui/react-popover"
 import { Popover } from "@radix-ui/react-popover"
 import { Command as CommandPrimitive } from "cmdk"

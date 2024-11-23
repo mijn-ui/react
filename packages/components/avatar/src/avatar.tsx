@@ -1,12 +1,12 @@
 "use client"
 
 import * as React from "react"
-import { UnstyledProvider, useUnstyled } from "@mijn-ui-react/utilities/context"
+import { UnstyledProvider, useUnstyled } from "@mijn-ui/react-utilities/context"
 import {
   UnstyledProps,
   applyUnstyled,
   cn,
-} from "@mijn-ui-react/utilities/shared"
+} from "@mijn-ui/react-utilities/shared"
 import * as AvatarPrimitive from "@radix-ui/react-avatar"
 import { VariantProps, cva } from "class-variance-authority"
 

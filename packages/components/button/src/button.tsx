@@ -1,5 +1,5 @@
 import * as React from "react"
-import { UnstyledProps, applyUnstyled } from "@mijn-ui-react/utilities/shared"
+import { UnstyledProps, applyUnstyled } from "@mijn-ui/react-utilities/shared"
 import { Slot, Slottable } from "@radix-ui/react-slot"
 import { type VariantProps, cva } from "class-variance-authority"
 import { LuLoader2 } from "react-icons/lu"

@@ -1,9 +1,9 @@
 "use client"
 
 import * as React from "react"
-import { UnstyledProvider, useUnstyled } from "@mijn-ui-react/utilities/context"
+import { UnstyledProvider, useUnstyled } from "@mijn-ui/react-utilities/context"
 import { VariantProps, cva } from "class-variance-authority"
-import { applyUnstyled, UnstyledProps } from "@mijn-ui-react/utilities/shared"
+import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
 import * as RadixAccordion from "@radix-ui/react-accordion"
 import { LuChevronDown } from "react-icons/lu"
 

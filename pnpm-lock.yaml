@@ -177,7 +177,7 @@ importers:
 
   packages/components/accordion:
     dependencies:
-      '@mijn-ui-react/utilities':
+      '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       '@radix-ui/react-accordion':
@@ -214,7 +214,7 @@ importers:
 
   packages/components/alert:
     dependencies:
-      '@mijn-ui-react/utilities':
+      '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       class-variance-authority:
@@ -245,10 +245,10 @@ importers:
 
   packages/components/alert-dialog:
     dependencies:
-      '@mijn-ui-react/button':
+      '@mijn-ui/react-button':
         specifier: workspace:*
         version: link:../button
-      '@mijn-ui-react/utilities':
+      '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       '@radix-ui/react-alert-dialog':
@@ -282,16 +282,16 @@ importers:
 
   packages/components/autocomplete:
     dependencies:
-      '@mijn-ui-react/command':
+      '@mijn-ui/react-command':
         specifier: workspace:*
         version: link:../command
-      '@mijn-ui-react/popover':
+      '@mijn-ui/react-popover':
         specifier: workspace:*
         version: link:../popover
-      '@mijn-ui-react/skeleton':
+      '@mijn-ui/react-skeleton':
         specifier: workspace:*
         version: link:../skeleton
-      '@mijn-ui-react/utilities':
+      '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       '@radix-ui/react-popover':
@@ -328,7 +328,7 @@ importers:
 
   packages/components/avatar:
     dependencies:
-      '@mijn-ui-react/utilities':
+      '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       '@radix-ui/react-avatar':
@@ -362,7 +362,7 @@ importers:
 
   packages/components/badge:
     dependencies:
-      '@mijn-ui-react/utilities':
+      '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       class-variance-authority:
@@ -393,7 +393,7 @@ importers:
 
   packages/components/button:
     dependencies:
-      '@mijn-ui-react/utilities':
+      '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       '@radix-ui/react-slot':
@@ -430,10 +430,10 @@ importers:
 
   packages/components/calendar:
     dependencies:
-      '@mijn-ui-react/button':
+      '@mijn-ui/react-button':
         specifier: workspace:*
         version: link:../button
-      '@mijn-ui-react/utilities':
+      '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       react:
@@ -467,7 +467,7 @@ importers:
 
   packages/components/card:
     dependencies:
-      '@mijn-ui-react/utilities':
+      '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       class-variance-authority:
@@ -498,10 +498,10 @@ importers:
 
   packages/components/checkbox:
     dependencies:
-      '@mijn-ui-react/hooks':
+      '@mijn-ui/react-hooks':
         specifier: workspace:*
         version: link:../../hooks
-      '@mijn-ui-react/utilities':
+      '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       '@radix-ui/react-checkbox':
@@ -566,10 +566,10 @@ importers:
 
   packages/components/command:
     dependencies:
-      '@mijn-ui-react/dialog':
+      '@mijn-ui/react-dialog':
         specifier: workspace:*
         version: link:../dialog
-      '@mijn-ui-react/utilities':
+      '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       '@radix-ui/react-dialog':
@@ -606,19 +606,19 @@ importers:
 
   packages/components/date-picker:
     dependencies:
-      '@mijn-ui-react/button':
+      '@mijn-ui/react-button':
         specifier: workspace:*
         version: link:../button
-      '@mijn-ui-react/calendar':
+      '@mijn-ui/react-calendar':
         specifier: workspace:*
         version: link:../calendar
-      '@mijn-ui-react/popover':
+      '@mijn-ui/react-popover':
         specifier: workspace:*
         version: link:../popover
-      '@mijn-ui-react/select':
+      '@mijn-ui/react-select':
         specifier: workspace:*
         version: link:../select
-      '@mijn-ui-react/utilities':
+      '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       class-variance-authority:
@@ -661,10 +661,10 @@ importers:
 
   packages/components/dialog:
     dependencies:
-      '@mijn-ui-react/button':
+      '@mijn-ui/react-button':
         specifier: workspace:*
         version: link:../button
-      '@mijn-ui-react/utilities':
+      '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       '@radix-ui/react-dialog':
@@ -695,10 +695,10 @@ importers:
 
   packages/components/dropdown-menu:
     dependencies:
-      '@mijn-ui-react/button':
+      '@mijn-ui/react-button':
         specifier: workspace:*
         version: link:../button
-      '@mijn-ui-react/utilities':
+      '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       '@radix-ui/react-dropdown-menu':
@@ -732,10 +732,10 @@ importers:
 
   packages/components/input:
     dependencies:
-      '@mijn-ui-react/label':
+      '@mijn-ui/react-label':
         specifier: workspace:*
         version: link:../label
-      '@mijn-ui-react/utilities':
+      '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       react:
@@ -763,7 +763,7 @@ importers:
 
   packages/components/label:
     dependencies:
-      '@mijn-ui-react/utilities':
+      '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       '@radix-ui/react-label':
@@ -797,10 +797,10 @@ importers:
 
   packages/components/pagination:
     dependencies:
-      '@mijn-ui-react/button':
+      '@mijn-ui/react-button':
         specifier: workspace:*
         version: link:../button
-      '@mijn-ui-react/utilities':
+      '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       react:
@@ -831,10 +831,10 @@ importers:
 
   packages/components/popover:
     dependencies:
-      '@mijn-ui-react/button':
+      '@mijn-ui/react-button':
         specifier: workspace:*
         version: link:../button
-      '@mijn-ui-react/utilities':
+      '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       '@radix-ui/react-popover':
@@ -865,7 +865,7 @@ importers:
 
   packages/components/progress:
     dependencies:
-      '@mijn-ui-react/utilities':
+      '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       '@radix-ui/react-progress':
@@ -896,7 +896,7 @@ importers:
 
   packages/components/radio-group:
     dependencies:
-      '@mijn-ui-react/utilities':
+      '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       '@radix-ui/react-radio-group':
@@ -933,7 +933,7 @@ importers:
 
   packages/components/scroll-area:
     dependencies:
-      '@mijn-ui-react/utilities':
+      '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       '@radix-ui/react-scroll-area':
@@ -964,7 +964,7 @@ importers:
 
   packages/components/select:
     dependencies:
-      '@mijn-ui-react/utilities':
+      '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       '@radix-ui/react-select':
@@ -998,7 +998,7 @@ importers:
 
   packages/components/separator:
     dependencies:
-      '@mijn-ui-react/utilities':
+      '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       '@radix-ui/react-separator':
@@ -1029,7 +1029,7 @@ importers:
 
   packages/components/skeleton:
     dependencies:
-      '@mijn-ui-react/utilities':
+      '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       react:
@@ -1057,7 +1057,7 @@ importers:
 
   packages/components/switch:
     dependencies:
-      '@mijn-ui-react/utilities':
+      '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       '@radix-ui/react-switch':
@@ -1088,7 +1088,7 @@ importers:
 
   packages/components/table:
     dependencies:
-      '@mijn-ui-react/utilities':
+      '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       react:
@@ -1116,7 +1116,7 @@ importers:
 
   packages/components/textarea:
     dependencies:
-      '@mijn-ui-react/utilities':
+      '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       react:

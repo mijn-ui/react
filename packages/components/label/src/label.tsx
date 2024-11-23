@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { applyUnstyled, UnstyledProps } from "@mijn-ui-react/utilities/shared"
+import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
 import * as LabelPrimitive from "@radix-ui/react-label"
 import { type VariantProps, cva } from "class-variance-authority"
 

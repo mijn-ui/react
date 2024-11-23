@@ -1,8 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { buttonStyles } from "@mijn-ui-react/button"
-import { cn } from "@mijn-ui-react/utilities/shared"
+import { buttonStyles } from "@mijn-ui/react-button"
+import { cn } from "@mijn-ui/react-utilities/shared"
 import { DayFlag, DayPicker, SelectionState, UI } from "react-day-picker"
 import {
   LuChevronDown,

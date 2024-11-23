@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { cn } from "@mijn-ui-react/utilities/shared"
+import { cn } from "@mijn-ui/react-utilities/shared"
 import * as SeparatorPrimitive from "@radix-ui/react-separator"
 
 type SeparatorProps = React.ComponentPropsWithRef<

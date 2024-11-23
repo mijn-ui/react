@@ -1,5 +1,5 @@
 import * as React from "react"
-import { UnstyledProps, applyUnstyled } from "@mijn-ui-react/utilities/shared"
+import { UnstyledProps, applyUnstyled } from "@mijn-ui/react-utilities/shared"
 import { type VariantProps, cva } from "class-variance-authority"
 
 const badgeVariants = cva(

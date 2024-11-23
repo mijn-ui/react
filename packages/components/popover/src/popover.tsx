@@ -1,9 +1,9 @@
 "use client"
 
 import * as React from "react"
-import { buttonStyles } from "@mijn-ui-react/button"
-import { UnstyledProvider, useUnstyled } from "@mijn-ui-react/utilities/context"
-import { applyUnstyled, UnstyledProps } from "@mijn-ui-react/utilities/shared"
+import { buttonStyles } from "@mijn-ui/react-button"
+import { UnstyledProvider, useUnstyled } from "@mijn-ui/react-utilities/context"
+import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
 import * as RadixPopover from "@radix-ui/react-popover"
 
 const PopoverArrow = RadixPopover.Arrow

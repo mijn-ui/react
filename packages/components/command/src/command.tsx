@@ -1,13 +1,13 @@
 "use client"
 
 import * as React from "react"
-import { Dialog, DialogContent } from "@mijn-ui-react/dialog"
-import { UnstyledProvider, useUnstyled } from "@mijn-ui-react/utilities/context"
+import { Dialog, DialogContent } from "@mijn-ui/react-dialog"
+import { UnstyledProvider, useUnstyled } from "@mijn-ui/react-utilities/context"
 import {
   applyUnstyled,
   cn,
   UnstyledProps,
-} from "@mijn-ui-react/utilities/shared"
+} from "@mijn-ui/react-utilities/shared"
 import { type DialogProps } from "@radix-ui/react-dialog"
 import { Command as CommandPrimitive } from "cmdk"
 import { LuSearch } from "react-icons/lu"

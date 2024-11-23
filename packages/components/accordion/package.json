@@ -1,5 +1,5 @@
 {
-  "name": "@mijn-ui-react/accordion",
+  "name": "@mijn-ui/react-accordion",
   "author": "Htet Aung Lin<htetaunglin.coder@gmail.com>",
   "version": "0.0.2",
   "homepage": "https://mijn-ui.vercel.app",
@@ -34,7 +34,7 @@
     "tsconfig": "workspace:*"
   },
   "dependencies": {
-    "@mijn-ui-react/utilities": "workspace:*",
+    "@mijn-ui/react-utilities": "workspace:*",
     "@radix-ui/react-accordion": "^1.2.1",
     "class-variance-authority": "^0.7.0",
     "react": "19.0.0-rc-b01722d5-20241114",
