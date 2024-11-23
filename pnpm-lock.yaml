@@ -584,7 +584,7 @@ importers:
     dependencies:
       '@mijn-ui-react/label':
         specifier: workspace:*
-        version: link:../pagination
+        version: link:../label
       '@mijn-ui-react/utilities':
         specifier: workspace:*
         version: link:../../utilities
@@ -662,6 +662,40 @@ importers:
       react-icons:
         specifier: ^5.3.0
         version: 5.3.0(react@19.0.0-rc-b01722d5-20241114)
+    devDependencies:
+      '@next/eslint-plugin-next':
+        specifier: ^15.0.3
+        version: 15.0.3
+      '@types/react':
+        specifier: ^18.3.12
+        version: 18.3.12
+      '@types/react-dom':
+        specifier: ^18.3.1
+        version: 18.3.1
+      eslint-config-custom:
+        specifier: workspace:*
+        version: link:../../eslint-config-custom
+      tsconfig:
+        specifier: workspace:*
+        version: link:../../ts-config
+
+  packages/components/popover:
+    dependencies:
+      '@mijn-ui-react/button':
+        specifier: workspace:*
+        version: link:../button
+      '@mijn-ui-react/utilities':
+        specifier: workspace:*
+        version: link:../../utilities
+      '@radix-ui/react-popover':
+        specifier: ^1.1.2
+        version: 1.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114))(react@19.0.0-rc-b01722d5-20241114)
+      react:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114
+      react-dom:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
     devDependencies:
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
