@@ -271,6 +271,52 @@ importers:
         specifier: workspace:*
         version: link:../../ts-config
 
+  packages/components/autocomplete:
+    dependencies:
+      '@mijn-ui-react/command':
+        specifier: workspace:*
+        version: link:../command
+      '@mijn-ui-react/popover':
+        specifier: workspace:*
+        version: link:../popover
+      '@mijn-ui-react/skeleton':
+        specifier: workspace:*
+        version: link:../skeleton
+      '@mijn-ui-react/utilities':
+        specifier: workspace:*
+        version: link:../../utilities
+      '@radix-ui/react-popover':
+        specifier: ^1.1.2
+        version: 1.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114))(react@19.0.0-rc-b01722d5-20241114)
+      cmdk:
+        specifier: ^1.0.4
+        version: 1.0.4(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114))(react@19.0.0-rc-b01722d5-20241114)
+      react:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114
+      react-dom:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
+      react-icons:
+        specifier: 5.3.0
+        version: 5.3.0(react@19.0.0-rc-b01722d5-20241114)
+    devDependencies:
+      '@next/eslint-plugin-next':
+        specifier: ^15.0.3
+        version: 15.0.3
+      '@types/react':
+        specifier: ^18.3.12
+        version: 18.3.12
+      '@types/react-dom':
+        specifier: ^18.3.1
+        version: 18.3.1
+      eslint-config-custom:
+        specifier: workspace:*
+        version: link:../../eslint-config-custom
+      tsconfig:
+        specifier: workspace:*
+        version: link:../../ts-config
+
   packages/components/avatar:
     dependencies:
       '@mijn-ui-react/utilities':
@@ -350,6 +396,43 @@ importers:
       react:
         specifier: 19.0.0-rc-b01722d5-20241114
         version: 19.0.0-rc-b01722d5-20241114
+      react-dom:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
+      react-icons:
+        specifier: ^5.3.0
+        version: 5.3.0(react@19.0.0-rc-b01722d5-20241114)
+    devDependencies:
+      '@next/eslint-plugin-next':
+        specifier: ^15.0.3
+        version: 15.0.3
+      '@types/react':
+        specifier: ^18.3.12
+        version: 18.3.12
+      '@types/react-dom':
+        specifier: ^18.3.1
+        version: 18.3.1
+      eslint-config-custom:
+        specifier: workspace:*
+        version: link:../../eslint-config-custom
+      tsconfig:
+        specifier: workspace:*
+        version: link:../../ts-config
+
+  packages/components/calendar:
+    dependencies:
+      '@mijn-ui-react/button':
+        specifier: workspace:*
+        version: link:../button
+      '@mijn-ui-react/utilities':
+        specifier: workspace:*
+        version: link:../../utilities
+      react:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114
+      react-day-picker:
+        specifier: ^9.3.0
+        version: 9.3.2(react@19.0.0-rc-b01722d5-20241114)
       react-dom:
         specifier: 19.0.0-rc-b01722d5-20241114
         version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
@@ -486,6 +569,58 @@ importers:
       react:
         specifier: 19.0.0-rc-b01722d5-20241114
         version: 19.0.0-rc-b01722d5-20241114
+      react-dom:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
+      react-icons:
+        specifier: ^5.3.0
+        version: 5.3.0(react@19.0.0-rc-b01722d5-20241114)
+    devDependencies:
+      '@next/eslint-plugin-next':
+        specifier: ^15.0.3
+        version: 15.0.3
+      '@types/react':
+        specifier: ^18.3.12
+        version: 18.3.12
+      '@types/react-dom':
+        specifier: ^18.3.1
+        version: 18.3.1
+      eslint-config-custom:
+        specifier: workspace:*
+        version: link:../../eslint-config-custom
+      tsconfig:
+        specifier: workspace:*
+        version: link:../../ts-config
+
+  packages/components/date-picker:
+    dependencies:
+      '@mijn-ui-react/button':
+        specifier: workspace:*
+        version: link:../button
+      '@mijn-ui-react/calendar':
+        specifier: workspace:*
+        version: link:../calendar
+      '@mijn-ui-react/popover':
+        specifier: workspace:*
+        version: link:../popover
+      '@mijn-ui-react/select':
+        specifier: workspace:*
+        version: link:../select
+      '@mijn-ui-react/utilities':
+        specifier: workspace:*
+        version: link:../../utilities
+      class-variance-authority:
+        specifier: ^0.7.0
+        version: 0.7.0
+      date-fns-tz:
+        specifier: ^3.2.0
+        version: 3.2.0(date-fns@4.1.0)
+      react:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114
+      react-day-picker:
+        specifier: ^9.3.0
+        version: 9.3.2(react@19.0.0-rc-b01722d5-20241114)
       react-dom:
         specifier: 19.0.0-rc-b01722d5-20241114
         version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
@@ -690,6 +825,282 @@ importers:
       '@radix-ui/react-popover':
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114))(react@19.0.0-rc-b01722d5-20241114)
+      react:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114
+      react-dom:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
+    devDependencies:
+      '@next/eslint-plugin-next':
+        specifier: ^15.0.3
+        version: 15.0.3
+      '@types/react':
+        specifier: ^18.3.12
+        version: 18.3.12
+      '@types/react-dom':
+        specifier: ^18.3.1
+        version: 18.3.1
+      eslint-config-custom:
+        specifier: workspace:*
+        version: link:../../eslint-config-custom
+      tsconfig:
+        specifier: workspace:*
+        version: link:../../ts-config
+
+  packages/components/progress:
+    dependencies:
+      '@mijn-ui-react/utilities':
+        specifier: workspace:*
+        version: link:../../utilities
+      '@radix-ui/react-progress':
+        specifier: ^1.1.0
+        version: 1.1.0(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114))(react@19.0.0-rc-b01722d5-20241114)
+      react:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114
+      react-dom:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
+    devDependencies:
+      '@next/eslint-plugin-next':
+        specifier: ^15.0.3
+        version: 15.0.3
+      '@types/react':
+        specifier: ^18.3.12
+        version: 18.3.12
+      '@types/react-dom':
+        specifier: ^18.3.1
+        version: 18.3.1
+      eslint-config-custom:
+        specifier: workspace:*
+        version: link:../../eslint-config-custom
+      tsconfig:
+        specifier: workspace:*
+        version: link:../../ts-config
+
+  packages/components/radio-group:
+    dependencies:
+      '@mijn-ui-react/utilities':
+        specifier: workspace:*
+        version: link:../../utilities
+      '@radix-ui/react-radio-group':
+        specifier: ^1.2.1
+        version: 1.2.1(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114))(react@19.0.0-rc-b01722d5-20241114)
+      react:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114
+      react-dom:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
+      react-icons:
+        specifier: ^5.3.0
+        version: 5.3.0(react@19.0.0-rc-b01722d5-20241114)
+    devDependencies:
+      '@next/eslint-plugin-next':
+        specifier: ^15.0.3
+        version: 15.0.3
+      '@types/react':
+        specifier: ^18.3.12
+        version: 18.3.12
+      '@types/react-dom':
+        specifier: ^18.3.1
+        version: 18.3.1
+      eslint-config-custom:
+        specifier: workspace:*
+        version: link:../../eslint-config-custom
+      tsconfig:
+        specifier: workspace:*
+        version: link:../../ts-config
+
+  packages/components/scroll-area:
+    dependencies:
+      '@mijn-ui-react/utilities':
+        specifier: workspace:*
+        version: link:../../utilities
+      '@radix-ui/react-scroll-area':
+        specifier: ^1.2.0
+        version: 1.2.1(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114))(react@19.0.0-rc-b01722d5-20241114)
+      react:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114
+      react-dom:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
+    devDependencies:
+      '@next/eslint-plugin-next':
+        specifier: ^15.0.3
+        version: 15.0.3
+      '@types/react':
+        specifier: ^18.3.12
+        version: 18.3.12
+      '@types/react-dom':
+        specifier: ^18.3.1
+        version: 18.3.1
+      eslint-config-custom:
+        specifier: workspace:*
+        version: link:../../eslint-config-custom
+      tsconfig:
+        specifier: workspace:*
+        version: link:../../ts-config
+
+  packages/components/select:
+    dependencies:
+      '@mijn-ui-react/utilities':
+        specifier: workspace:*
+        version: link:../../utilities
+      '@radix-ui/react-select':
+        specifier: ^2.1.2
+        version: 2.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114))(react@19.0.0-rc-b01722d5-20241114)
+      react:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114
+      react-dom:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
+      react-icons:
+        specifier: ^5.3.0
+        version: 5.3.0(react@19.0.0-rc-b01722d5-20241114)
+    devDependencies:
+      '@next/eslint-plugin-next':
+        specifier: ^15.0.3
+        version: 15.0.3
+      '@types/react':
+        specifier: ^18.3.12
+        version: 18.3.12
+      '@types/react-dom':
+        specifier: ^18.3.1
+        version: 18.3.1
+      eslint-config-custom:
+        specifier: workspace:*
+        version: link:../../eslint-config-custom
+      tsconfig:
+        specifier: workspace:*
+        version: link:../../ts-config
+
+  packages/components/separator:
+    dependencies:
+      '@mijn-ui-react/utilities':
+        specifier: workspace:*
+        version: link:../../utilities
+      '@radix-ui/react-separator':
+        specifier: ^1.1.0
+        version: 1.1.0(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114))(react@19.0.0-rc-b01722d5-20241114)
+      react:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114
+      react-dom:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
+    devDependencies:
+      '@next/eslint-plugin-next':
+        specifier: ^15.0.3
+        version: 15.0.3
+      '@types/react':
+        specifier: ^18.3.12
+        version: 18.3.12
+      '@types/react-dom':
+        specifier: ^18.3.1
+        version: 18.3.1
+      eslint-config-custom:
+        specifier: workspace:*
+        version: link:../../eslint-config-custom
+      tsconfig:
+        specifier: workspace:*
+        version: link:../../ts-config
+
+  packages/components/skeleton:
+    dependencies:
+      '@mijn-ui-react/utilities':
+        specifier: workspace:*
+        version: link:../../utilities
+      react:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114
+      react-dom:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
+    devDependencies:
+      '@next/eslint-plugin-next':
+        specifier: ^15.0.3
+        version: 15.0.3
+      '@types/react':
+        specifier: ^18.3.12
+        version: 18.3.12
+      '@types/react-dom':
+        specifier: ^18.3.1
+        version: 18.3.1
+      eslint-config-custom:
+        specifier: workspace:*
+        version: link:../../eslint-config-custom
+      tsconfig:
+        specifier: workspace:*
+        version: link:../../ts-config
+
+  packages/components/switch:
+    dependencies:
+      '@mijn-ui-react/utilities':
+        specifier: workspace:*
+        version: link:../../utilities
+      '@radix-ui/react-switch':
+        specifier: ^1.1.1
+        version: 1.1.1(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114))(react@19.0.0-rc-b01722d5-20241114)
+      react:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114
+      react-dom:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
+    devDependencies:
+      '@next/eslint-plugin-next':
+        specifier: ^15.0.3
+        version: 15.0.3
+      '@types/react':
+        specifier: ^18.3.12
+        version: 18.3.12
+      '@types/react-dom':
+        specifier: ^18.3.1
+        version: 18.3.1
+      eslint-config-custom:
+        specifier: workspace:*
+        version: link:../../eslint-config-custom
+      tsconfig:
+        specifier: workspace:*
+        version: link:../../ts-config
+
+  packages/components/table:
+    dependencies:
+      '@mijn-ui-react/utilities':
+        specifier: workspace:*
+        version: link:../../utilities
+      react:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114
+      react-dom:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
+    devDependencies:
+      '@next/eslint-plugin-next':
+        specifier: ^15.0.3
+        version: 15.0.3
+      '@types/react':
+        specifier: ^18.3.12
+        version: 18.3.12
+      '@types/react-dom':
+        specifier: ^18.3.1
+        version: 18.3.1
+      eslint-config-custom:
+        specifier: workspace:*
+        version: link:../../eslint-config-custom
+      tsconfig:
+        specifier: workspace:*
+        version: link:../../ts-config
+
+  packages/components/textarea:
+    dependencies:
+      '@mijn-ui-react/utilities':
+        specifier: workspace:*
+        version: link:../../utilities
       react:
         specifier: 19.0.0-rc-b01722d5-20241114
         version: 19.0.0-rc-b01722d5-20241114
