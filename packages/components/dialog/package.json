@@ -1,5 +1,5 @@
 {
-  "name": "@mijn-ui-react/command",
+  "name": "@mijn-ui-react/dialog",
   "author": "Htet Aung Lin<htetaunglin.coder@gmail.com>",
   "version": "0.0.1",
   "homepage": "https://mijn-ui.vercel.app",
@@ -37,7 +37,9 @@
   "dependencies": {
     "react": "19.0.0-rc-b01722d5-20241114",
     "react-dom": "19.0.0-rc-b01722d5-20241114",
-    "@radix-ui/react-collapsible": "^1.1.1"
+    "@mijn-ui-react/button": "workspace:*",
+    "@mijn-ui-react/utilities": "workspace:*",
+    "@radix-ui/react-dialog": "^1.1.2"
   },
   "peerDependencies": {
     "react": "19.0.0-rc-b01722d5-20241114",
