@@ -1,5 +1,5 @@
-import { Checkbox } from "@mijn-ui/react/components/checkbox"
-import { Label } from "@mijn-ui/react/components/label"
+import { Checkbox } from "@mijn-ui/react-checkbox"
+import { Label } from "@mijn-ui/react-label"
 
 const CheckboxColors = () => {
   return (

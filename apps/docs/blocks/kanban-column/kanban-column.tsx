@@ -26,7 +26,7 @@ import {
   useSortable,
 } from "@dnd-kit/sortable"
 import { CSS } from "@dnd-kit/utilities"
-import { cn } from "@mijn-ui/react/utils"
+import { cn } from "@mijn-ui/react-utilities/shared"
 import { LuGripVertical } from "react-icons/lu"
 
 /* ------------------ make Kanban to be more user friendly ------------------ */

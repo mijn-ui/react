@@ -3,7 +3,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@mijn-ui/react/components/accordion"
+} from "@mijn-ui/react-accordion"
 
 const MultiAccordionExample = () => {
   return (

@@ -7,17 +7,17 @@ import {
   AutocompleteGroup,
   AutocompleteItem,
   AutocompleteTrigger,
-} from "@mijn-ui/react/components/autocomplete"
-import { Button } from "@mijn-ui/react/components/button"
+} from "@mijn-ui/react-autocomplete"
+import { Button } from "@mijn-ui/react-button"
 import {
   Dialog,
   DialogClose,
   DialogContent,
   DialogTitle,
   DialogTrigger,
-} from "@mijn-ui/react/components/dialog"
-import { Input } from "@mijn-ui/react/components/input"
-import { ScrollArea } from "@mijn-ui/react/components/scroll-area"
+} from "@mijn-ui/react-dialog"
+import { Input } from "@mijn-ui/react-input"
+import { ScrollArea } from "@mijn-ui/react-scroll-area"
 import { LuChevronsUpDown } from "react-icons/lu"
 
 const FRAMEWORKS = [

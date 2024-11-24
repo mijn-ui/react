@@ -6,15 +6,15 @@ import { TopRightRadialGradient } from "@/app/components/decorators/gradient-bg"
 import Logo from "@/app/components/logo"
 import ThemeToggler from "@/app/components/theme-toggler"
 import ClickAwayListener from "@/app/utils/click-away-listener"
-import { Badge } from "@mijn-ui/react/components/badge"
-import { Button, buttonStyles } from "@mijn-ui/react/components/button"
+import { Badge } from "@mijn-ui/react-badge"
+import { Button, buttonStyles } from "@mijn-ui/react-button"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@mijn-ui/react/components/collapsible"
-import { Separator } from "@mijn-ui/react/components/separator"
-import { cn } from "@mijn-ui/react/utils"
+} from "@mijn-ui/react-collapsible"
+import { Separator } from "@mijn-ui/react-separator"
+import { cn } from "@mijn-ui/react-utilities/shared"
 import { SidebarTrigger } from "fumadocs-core/sidebar"
 import { useSearchContext, useSidebar } from "fumadocs-ui/provider"
 import {

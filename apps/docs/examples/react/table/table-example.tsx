@@ -5,7 +5,7 @@ import {
   TableHeader,
   TableHeaderCell,
   TableRow,
-} from "@mijn-ui/react/components/table"
+} from "@mijn-ui/react-table"
 import { LuMoreHorizontal } from "react-icons/lu"
 
 const TableExample = () => {

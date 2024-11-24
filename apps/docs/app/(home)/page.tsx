@@ -1,6 +1,6 @@
 import Link from "next/link"
-import { buttonStyles } from "@mijn-ui/react/components/button"
-import { cn } from "@mijn-ui/react/utils"
+import { buttonStyles } from "@mijn-ui/react-button"
+import { cn } from "@mijn-ui/react-utilities/shared"
 
 export default function HomePage() {
   return (

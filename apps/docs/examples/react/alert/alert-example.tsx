@@ -3,7 +3,7 @@ import {
   AlertDescription,
   AlertIcon,
   AlertTitle,
-} from "@mijn-ui/react/components/alert"
+} from "@mijn-ui/react-alert"
 import { IoRocketOutline } from "react-icons/io5"
 
 const AlertExample = () => {

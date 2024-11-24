@@ -1,5 +1,5 @@
-import { Label } from "@mijn-ui/react/components/label"
-import { Textarea } from "@mijn-ui/react/components/textarea"
+import { Label } from "@mijn-ui/react-label"
+import { Textarea } from "@mijn-ui/react-textarea"
 
 const TextareaExample = () => {
   return (

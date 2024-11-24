@@ -3,7 +3,7 @@ import {
   AvatarFallback,
   AvatarGroup,
   AvatarImage,
-} from "@mijn-ui/react/components/avatar"
+} from "@mijn-ui/react-avatar"
 
 const AvatarGroupExample = () => {
   return (

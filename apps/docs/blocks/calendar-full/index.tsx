@@ -12,16 +12,16 @@ import {
   AlertDialogDescription,
   AlertDialogFooter,
   AlertDialogTitle,
-} from "@mijn-ui/react/components/alert-dialog"
-import { Button } from "@mijn-ui/react/components/button"
+} from "@mijn-ui/react-alert-dialog"
+import { Button } from "@mijn-ui/react-button"
 import {
   Dialog,
   DialogContent,
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@mijn-ui/react/components/dialog"
-import { Input } from "@mijn-ui/react/components/input"
+} from "@mijn-ui/react-dialog"
+import { Input } from "@mijn-ui/react-input"
 import { setMonth, setYear } from "date-fns"
 import { LuBug } from "react-icons/lu"
 

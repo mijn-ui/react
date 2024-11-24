@@ -7,7 +7,7 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@mijn-ui/react/components/dropdown-menu"
+} from "@mijn-ui/react-dropdown-menu"
 
 const DropdownMenuExample = () => {
   return (

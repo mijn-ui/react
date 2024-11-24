@@ -14,7 +14,7 @@ import {
   KanbanItemCount,
   KanbanTitle,
 } from "./kanban-column"
-import { Button } from "@mijn-ui/react/components/button"
+import { Button } from "@mijn-ui/react-button"
 import { LuMoreVertical, LuPlus } from "react-icons/lu"
 
 // Default Kanban container data for initial state

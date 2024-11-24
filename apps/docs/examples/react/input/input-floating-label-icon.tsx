@@ -1,4 +1,4 @@
-import { Input } from "@mijn-ui/react/components/input"
+import { Input } from "@mijn-ui/react-input"
 import { LuPlus } from "react-icons/lu"
 
 const InputWithFloatingLabelIcon = () => {

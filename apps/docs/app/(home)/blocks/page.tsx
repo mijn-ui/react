@@ -5,8 +5,8 @@ import Image from "next/image"
 import Link from "next/link"
 import "./glow-effect.css"
 import KanbanShowcase from "./showcase/kanban-showcase"
-import { Card } from "@mijn-ui/react/components/card"
-import { cn } from "@mijn-ui/react/utils"
+import { Card } from "@mijn-ui/react-card"
+import { cn } from "@mijn-ui/react-utilities/shared"
 import { FaScrewdriverWrench } from "react-icons/fa6"
 
 const Blocks = () => {

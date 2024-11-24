@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useState } from "react"
-import { cn } from "@mijn-ui/react/utils"
+import { cn } from "@mijn-ui/react-utilities/shared"
 import axios from "axios"
 import HTMLReactParser from "html-react-parser"
 

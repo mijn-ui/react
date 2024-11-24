@@ -5,7 +5,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@mijn-ui/react/components/card"
+} from "@mijn-ui/react-card"
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri"
 
 export default function DocsPage(): React.ReactElement {

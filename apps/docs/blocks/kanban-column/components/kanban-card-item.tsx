@@ -7,9 +7,9 @@ import {
   AvatarFallback,
   AvatarGroup,
   AvatarImage,
-} from "@mijn-ui/react/components/avatar"
-import { Badge } from "@mijn-ui/react/components/badge"
-import { Progress } from "@mijn-ui/react/components/progress"
+} from "@mijn-ui/react-avatar"
+import { Badge } from "@mijn-ui/react-badge"
+import { Progress } from "@mijn-ui/react-progress"
 import { GoClock } from "react-icons/go"
 import { LuX } from "react-icons/lu"
 
