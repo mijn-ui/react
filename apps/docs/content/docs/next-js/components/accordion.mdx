@@ -4,16 +4,16 @@ docs: https://www.radix-ui.com/primitives/docs/components/accordion
 apiReference: https://www.radix-ui.com/primitives/docs/components/accordion#api-reference
 ---
 
-import AccordionCustomIconExample from "@/examples/react/accordion/custom-icon";
-import MultiAccordionExample from "@/examples/react/accordion/multi-accordion";
-import SingleAccordionExample from "@/examples/react/accordion/single-accordion";
-import UnstyledAccordionExample from "@/examples/react/accordion/unstyled-accordion.tsx";
+import AccordionCustomIconExample from "@/examples/react/accordion/custom-icon"
+import MultiAccordionExample from "@/examples/react/accordion/multi-accordion"
+import SingleAccordionExample from "@/examples/react/accordion/single-accordion"
+import UnstyledAccordionExample from "@/examples/react/accordion/unstyled-accordion.tsx"
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@mijn-ui/react-accordion";
+} from "@mijn-ui/react-accordion"
 
 <ComponentPreview>
   <SingleAccordionExample />
@@ -21,21 +21,27 @@ import {
 
 ### Installation
 
-<Steps>
-  <Step>
-    **Install Required Packages**
+<InstallationTabs items={["Npm", "Manual"]}>
+  <InstallationTabsContent value="Npm">
+  ```package-install
+  @mijn-ui/react-accordion
+  ```
+  </InstallationTabsContent>
 
-    ```package-install
-    @radix-ui/react-accordion
-    ```
+  <InstallationTabsContent value="Manual">
+    <Steps>
+      <Step>
+        **Install Required Packages**
 
-  </Step>
+        ```package-install
+        @radix-ui/react-accordion
+        ```
 
-  <Step>
-    **Copy and paste the following code into  `mijn-ui` folder.**
+      </Step>
 
-    <Tabs items={["Source code", "Example usage"]}>
-      <Tab value="Source code">
+      <Step>
+        **Copy and paste the following code into  `mijn-ui` folder.**
+
         ```json doc-gen:file
           {
             "file": "../../packages/components/accordion/src/accordion.tsx",
@@ -45,82 +51,82 @@ import {
             }
           }
         ```
-      </Tab>
-      <Tab value="Example usage">
-        ```json doc-gen:file
-          {
-            "file": "./examples/react/accordion/single-accordion.tsx",
-            "codeblock": {
-              "lang": "tsx",
-              "meta": "title=\"single-accordion.tsx\""
-            }
-          }
-        ```
-      </Tab>
-    </Tabs>
+      </Step>
 
-  </Step>
+      <Step>
+        **Add Animations to Your Tailwind Configuration**
 
-   <Step>
-    **Add Animations to Your Tailwind Configuration**
+    ```js title="tailwind.config.js"
+    /** @type {import('tailwindcss').Config} */
+    export default {
+      theme: {
+        extend: {
+          keyframes: {
+            // [!code highlight]
+            "fade-in": {
+              // [!code highlight]
+              "0%": {
+                // [!code highlight]
+                opacity: "0", // [!code highlight]
+              }, // [!code highlight]
+              "100%": {
+                // [!code highlight]
+                opacity: "1", // [!code highlight]
+              }, // [!code highlight]
+            }, // [!code highlight]
+            "fade-out": {
+              // [!code highlight]
+              "0%": {
+                // [!code highlight]
+                opacity: "1", // [!code highlight]
+              }, // [!code highlight]
+              "100%": {
+                // [!code highlight]
+                opacity: "0", // [!code highlight]
+              }, // [!code highlight]
+            }, // [!code highlight]
+            "accordion-expand": {
+              // [!code highlight]
+              from: { height: "0" }, // [!code highlight]
+              to: { height: "var(--radix-accordion-content-height)" }, // [!code highlight]
+            }, // [!code highlight]
+            "accordion-collapse": {
+              // [!code highlight]
+              from: {
+                // [!code highlight]
+                height: "var(--radix-accordion-content-height)", // [!code highlight]
+              }, // [!code highlight]
+              to: { height: "0" }, // [!code highlight]
+            }, // [!code highlight]
+          }, // [!code highlight]
+          animation: {
+            // [!code highlight]
+            "accordion-expand":
+              "accordion-expand 0.2s ease-in-out, fade-in 0.4s ease-in-out", // [!code highlight]
+            "accordion-collapse":
+              "accordion-collapse 0.2s ease-in-out, fade-out 0.4s ease-in-out", // [!code highlight]
+          }, // [!code highlight]
+        }, // [!code highlight]
+      },
+    };
+    ```
+      </Step>
+    </Steps>
 
-```js title="tailwind.config.js"
-/** @type {import('tailwindcss').Config} */
-export default {
-  theme: {
-    extend: {
-      keyframes: {
-        // [!code highlight]
-        "fade-in": {
-          // [!code highlight]
-          "0%": {
-            // [!code highlight]
-            opacity: "0", // [!code highlight]
-          }, // [!code highlight]
-          "100%": {
-            // [!code highlight]
-            opacity: "1", // [!code highlight]
-          }, // [!code highlight]
-        }, // [!code highlight]
-        "fade-out": {
-          // [!code highlight]
-          "0%": {
-            // [!code highlight]
-            opacity: "1", // [!code highlight]
-          }, // [!code highlight]
-          "100%": {
-            // [!code highlight]
-            opacity: "0", // [!code highlight]
-          }, // [!code highlight]
-        }, // [!code highlight]
-        "accordion-expand": {
-          // [!code highlight]
-          from: { height: "0" }, // [!code highlight]
-          to: { height: "var(--radix-accordion-content-height)" }, // [!code highlight]
-        }, // [!code highlight]
-        "accordion-collapse": {
-          // [!code highlight]
-          from: {
-            // [!code highlight]
-            height: "var(--radix-accordion-content-height)", // [!code highlight]
-          }, // [!code highlight]
-          to: { height: "0" }, // [!code highlight]
-        }, // [!code highlight]
-      }, // [!code highlight]
-      animation: {
-        // [!code highlight]
-        "accordion-expand":
-          "accordion-expand 0.2s ease-in-out, fade-in 0.4s ease-in-out", // [!code highlight]
-        "accordion-collapse":
-          "accordion-collapse 0.2s ease-in-out, fade-out 0.4s ease-in-out", // [!code highlight]
-      }, // [!code highlight]
-    }, // [!code highlight]
-  },
-};
+  </InstallationTabsContent>
+</InstallationTabs>
+
+**Example Usage**
+
+```json doc-gen:file
+{
+  "file": "./examples/react/accordion/single-accordion.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": "title=\"single-accordion.tsx\""
+  }
+}
 ```
-
-  </Step>
-</Steps>
 
 ---
 

@@ -12,7 +12,14 @@ import CalendarDatePickerExample from "@/examples/react/calendar/calendar-date-p
 
 ### Installation
 
-<Steps>
+<InstallationTabs items={["Npm", "Manual"]}>
+  <InstallationTabsContent value="Npm">
+  ```package-install
+  @mijn-ui/react-calendar
+  ```
+  </InstallationTabsContent>
+  <InstallationTabsContent value="Manual">
+  <Steps>
   <Step>
      **Add the Button Component**
 
@@ -33,33 +40,31 @@ import CalendarDatePickerExample from "@/examples/react/calendar/calendar-date-p
   <Step>
     **Copy and paste the following code into  `mijn-ui` folder.**
 
-    <Tabs items={["Source code", "Example usage"]}>
-      <Tab value="Source code">
-        ```json doc-gen:file
-          {
-            "file": "../../packages/components/calendar/src/calendar.tsx",
-            "codeblock": {
-              "lang": "tsx",
-              "meta": "title=\"mijn-ui/components/calendar.tsx\""
-            }
-          }
-        ```
-      </Tab>
-      <Tab value="Example usage">
-        ```json doc-gen:file
-          {
-            "file": "./examples/react/calendar/calendar-example.tsx",
-            "codeblock": {
-              "lang": "tsx",
-              "meta": "title=\"calendar-example.tsx\""
-            }
-          }
-        ```
-      </Tab>
-    </Tabs>
-
+    ```json doc-gen:file
+      {
+        "file": "../../packages/components/calendar/src/calendar.tsx",
+        "codeblock": {
+          "lang": "tsx",
+          "meta": "title=\"mijn-ui/components/calendar.tsx\""
+        }
+      }
+    ```
   </Step>
 </Steps>
+</InstallationTabsContent>
+</InstallationTabs>
+
+**Example Usage**
+
+```json doc-gen:file
+  {
+    "file": "./examples/react/calendar/calendar-example.tsx",
+    "codeblock": {
+      "lang": "tsx",
+      "meta": "title=\"calendar-example.tsx\""
+    }
+  }
+```
 
 ---
 

@@ -4,7 +4,7 @@ docs: https://www.radix-ui.com/primitives/docs/components/separator
 apiReference: https://www.radix-ui.com/primitives/docs/components/separator#api-reference
 ---
 
-import SeparatorExample from "@/examples/react/separator/separator-example";
+import SeparatorExample from "@/examples/react/separator/separator-example"
 
 <ComponentPreview>
   <SeparatorExample />
@@ -12,7 +12,14 @@ import SeparatorExample from "@/examples/react/separator/separator-example";
 
 ### Installation
 
-<Steps>
+<InstallationTabs items={["Npm", "Manual"]}>
+  <InstallationTabsContent value="Npm">
+  ```package-install
+  @mijn-ui/react-separator
+  ```
+  </InstallationTabsContent>
+  <InstallationTabsContent value="Manual">
+  <Steps>
   <Step>
     **Install Required Dependencies:**
   
@@ -23,29 +30,29 @@ import SeparatorExample from "@/examples/react/separator/separator-example";
 
   <Step>
     **Copy and paste the following code into  `mijn-ui` folder.**
-    <Tabs items={["Source Code", "Example Usage"]}>
-        <Tab value="Example Usage">
-          ```json doc-gen:file
-          {
-            "file": "./examples/react/separator/separator-example.tsx",
-            "codeblock": {
-              "lang": "tsx",
-              "meta": "title=\"separator-example.tsx\""
-            }
-          }
-          ```
-        </Tab>
-        <Tab value="Source Code">
-          ```json doc-gen:file
-          {
-            "file": "../../packages/components/separator/src/separator.tsx",
-            "codeblock": {
-              "lang": "tsx",
-              "meta": "title=\"mijn-ui/components/separator.tsx\""
-            }
-          }
-          ```
-        </Tab>
-    </Tabs>
+
+    ```json doc-gen:file
+    {
+      "file": "../../packages/components/separator/src/separator.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": "title=\"mijn-ui/components/separator.tsx\""
+      }
+    }
+    ```
   </Step>
 </Steps>
+</InstallationTabsContent>
+</InstallationTabs>
+
+**Example Usage**
+
+```json doc-gen:file
+  {
+    "file": "./examples/react/separator/separator-example.tsx",
+    "codeblock": {
+      "lang": "tsx",
+      "meta": "title=\"separator-example.tsx\""
+    }
+  }
+```

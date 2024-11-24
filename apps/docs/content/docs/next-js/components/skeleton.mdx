@@ -2,8 +2,8 @@
 title: Skeleton
 ---
 
-import SkeletonCard from "@/examples/react/skeleton/skeleton-card";
-import SkeletonExample from "@/examples/react/skeleton/skeleton-example";
+import SkeletonCard from "@/examples/react/skeleton/skeleton-card"
+import SkeletonExample from "@/examples/react/skeleton/skeleton-example"
 
 <ComponentPreview>
   <SkeletonExample />
@@ -11,40 +11,46 @@ import SkeletonExample from "@/examples/react/skeleton/skeleton-example";
 
 ### Installation
 
-<Steps>
+<InstallationTabs items={["Npm", "Manual"]}>
+  <InstallationTabsContent value="Npm">
+  ```package-install
+  @mijn-ui/react-skeleton
+  ```
+  </InstallationTabsContent>
+  <InstallationTabsContent value="Manual">
+  <Steps>
   <Step>
   **Copy and paste the following code into `mijn-ui` folder.**
 
-  <Tabs items={["Source code", "Example usage"]}>
-    <Tab value="Source code">
-      ```json doc-gen:file
-        {
-          "file": "../../packages/components/skeleton/src/skeleton.tsx",
-          "codeblock": {
-            "lang": "tsx",
-            "meta": "title=\"mijn-ui/components/skeleton.tsx\""
-          }
-        }
-      ```
-    </Tab>
-    <Tab value="Example usage">
-      ```json doc-gen:file
-        {
-          "file": "./examples/react/skeleton/skeleton-example.tsx",
-          "codeblock": {
-            "lang": "tsx",
-            "meta": "title=\"skeleton-example.tsx\""
-          }
-        }
-      ```
-    </Tab>
-  </Tabs>  
+  ```json doc-gen:file
+    {
+      "file": "../../packages/components/skeleton/src/skeleton.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": "title=\"mijn-ui/components/skeleton.tsx\""
+      }
+    }
+  ```
   </Step>
   
   <Step>
   **Ensure that everything is functioning correctly after installation.**
   </Step>
 </Steps>
+</InstallationTabsContent>
+</InstallationTabs>
+
+**Example Usage**
+
+```json doc-gen:file
+  {
+    "file": "./examples/react/skeleton/skeleton-example.tsx",
+    "codeblock": {
+      "lang": "tsx",
+      "meta": "title=\"skeleton-example.tsx\""
+    }
+  }
+```
 
 ---
 

@@ -2,7 +2,7 @@
 title: Table
 ---
 
-import TableExample from "@/examples/react/table/table-example";
+import TableExample from "@/examples/react/table/table-example"
 
 <ComponentPreview className="p-10">
   <TableExample />
@@ -10,39 +10,43 @@ import TableExample from "@/examples/react/table/table-example";
 
 ### Installation
 
-<Steps>
+<InstallationTabs items={["Npm", "Manual"]}>
+  <InstallationTabsContent value="Npm">
+  ```package-install
+  @mijn-ui/react-table
+  ```
+  </InstallationTabsContent>
+  <InstallationTabsContent value="Manual">
+  <Steps>
   <Step>
   **Copy and paste the following code into `mijn-ui` folder.**
 
-  <Tabs items={["Source code", "Example usage"]}>
-    <Tab value="Source code">
-        ```json doc-gen:file
-          {
-            "file": "../../packages/components/table/src/table.tsx",
-            "codeblock": {
-              "lang": "tsx",
-              "meta": "title=\"mijn-ui/components/table.tsx\""
-            }
-          }
-        ```
-    </Tab>
-    <Tab value="Example usage">
-        ```json doc-gen:file
-          {
-            "file": "./examples/react/table/table-example.tsx",
-            "codeblock": {
-              "lang": "tsx",
-              "meta": "title=\"table-example.tsx\""
-            }
-          }
-        ```
-    </Tab>
-  </Tabs>  
+  ```json doc-gen:file
+    {
+      "file": "../../packages/components/table/src/table.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": "title=\"mijn-ui/components/table.tsx\""
+      }
+    }
+  ```
   </Step>
   
   <Step>
   **Ensure that everything is functioning correctly after installation.**
   </Step>
 </Steps>
+</InstallationTabsContent>
+</InstallationTabs>
 
----
+**Example Usage**
+
+```json doc-gen:file
+  {
+    "file": "./examples/react/table/table-example.tsx",
+    "codeblock": {
+      "lang": "tsx",
+      "meta": "title=\"table-example.tsx\""
+    }
+  }
+```

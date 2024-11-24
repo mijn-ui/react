@@ -2,7 +2,7 @@
 title: Pagination
 ---
 
-import PaginationExample from "@/examples/react/pagination/pagination-example";
+import PaginationExample from "@/examples/react/pagination/pagination-example"
 
 <ComponentPreview>
   <PaginationExample />
@@ -10,7 +10,14 @@ import PaginationExample from "@/examples/react/pagination/pagination-example";
 
 ### Installation
 
-<Steps>
+<InstallationTabs items={["Npm", "Manual"]}>
+  <InstallationTabsContent value="Npm">
+  ```package-install
+  @mijn-ui/react-pagination
+  ```
+  </InstallationTabsContent>
+  <InstallationTabsContent value="Manual">
+  <Steps>
   <Step>
     **Add the Button Component**
 
@@ -22,43 +29,43 @@ import PaginationExample from "@/examples/react/pagination/pagination-example";
   <Step>
    **Copy and paste the following code into `mijn-ui` folder.**
 
-```json doc-gen:file
-{
-  "file": "../../packages/components/pagination/src/use-pagination.ts",
-  "codeblock": {
-    "lang": "tsx",
-    "meta": "title=\"mijn-ui/components/pagination/use-pagination.ts\""
-  }
-}
-```
+    ```json doc-gen:file
+    {
+      "file": "../../packages/components/pagination/src/use-pagination.ts",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": "title=\"mijn-ui/components/pagination/use-pagination.ts\""
+      }
+    }
+    ```
 
-  <Tabs items={["Source code", "Example usage"]}>
-    <Tab value="Source code">
-        ```json doc-gen:file
-          {
-            "file": "../../packages/components/pagination/src/pagination.tsx",
-            "codeblock": {
-              "lang": "tsx",
-              "meta": "title=\"mijn-ui/components/pagination/pagination.tsx\""
-            }
-          }
-        ```
-    </Tab>
-    <Tab value="Example usage">
-        ```json doc-gen:file
-          {
-            "file": "./examples/react/pagination/pagination-example.tsx",
-            "codeblock": {
-              "lang": "tsx",
-              "meta": "title=\"pagination-example.tsx\""
-            }
-          }
-        ```
-    </Tab>
-  </Tabs>  
+    ```json doc-gen:file
+      {
+        "file": "../../packages/components/pagination/src/pagination.tsx",
+        "codeblock": {
+          "lang": "tsx",
+          "meta": "title=\"mijn-ui/components/pagination/pagination.tsx\""
+        }
+      }
+    ```
   </Step>
 
   <Step>
   **Ensure that everything is functioning correctly after installation.**
   </Step>
 </Steps>
+</InstallationTabsContent>
+</InstallationTabs>
+
+**Example Usage**
+
+```json doc-gen:file
+  {
+    "file": "./examples/react/pagination/pagination-example.tsx",
+    "codeblock": {
+      "lang": "tsx",
+      "meta": "title=\"pagination-example.tsx\""
+    }
+  }
+```
+

@@ -2,10 +2,10 @@
 title: Alert
 ---
 
-import AlertExample from "@/examples/react/alert/alert-example";
-import AlertFilled from "@/examples/react/alert/alert-filled";
-import AlertOutline from "@/examples/react/alert/alert-outline";
-import AlertStatuses from "@/examples/react/alert/alert-statuses";
+import AlertExample from "@/examples/react/alert/alert-example"
+import AlertFilled from "@/examples/react/alert/alert-filled"
+import AlertOutline from "@/examples/react/alert/alert-outline"
+import AlertStatuses from "@/examples/react/alert/alert-statuses"
 
 <ComponentPreview>
   <AlertExample />
@@ -13,40 +13,48 @@ import AlertStatuses from "@/examples/react/alert/alert-statuses";
 
 ### Installation
 
-<Steps>
-  <Step>
-  **Copy and paste the following code into `mijn-ui` folder.**
-
-  <Tabs items={["Source code", "Example usage"]}>
-    <Tab value="Source code">
-        ```json doc-gen:file
-          {
-            "file": "../../packages/components/alert/src/alert.tsx",
-            "codeblock": {
-              "lang": "tsx",
-              "meta": "title=\"mijn-ui/components/alert.tsx\""
-            }
-          }
-        ```
-    </Tab>
-    <Tab value="Example usage">
-        ```json doc-gen:file
-          {
-            "file": "./examples/react/alert/alert-example.tsx",
-            "codeblock": {
-              "lang": "tsx",
-              "meta": "title=\"alert-example.tsx\""
-            }
-          }
-        ```
-    </Tab>
-  </Tabs>  
-  </Step>
+<InstallationTabs items={["Npm", "Manual"]}>
+  <InstallationTabsContent value="Npm">
+  ```package-install
+  @mijn-ui/react-alert
+  ```
+  </InstallationTabsContent>
   
-  <Step>
-  **Ensure that everything is functioning correctly after installation.**
-  </Step>
-</Steps>
+  <InstallationTabsContent value="Manual">
+  <Steps>
+    <Step>
+    **Copy and paste the following code into `mijn-ui` folder.**
+
+    ```json doc-gen:file
+      {
+        "file": "../../packages/components/alert/src/alert.tsx",
+        "codeblock": {
+          "lang": "tsx",
+          "meta": "title=\"mijn-ui/components/alert.tsx\""
+        }
+      }
+    ```
+    </Step>
+
+    <Step>
+    **Ensure that everything is functioning correctly after installation.**
+    </Step>
+
+  </Steps>
+  </InstallationTabsContent>
+</InstallationTabs>
+
+**Example Usage**
+
+```json doc-gen:file
+  {
+    "file": "./examples/react/alert/alert-example.tsx",
+    "codeblock": {
+      "lang": "tsx",
+      "meta": "title=\"alert-example.tsx\""
+    }
+  }
+```
 
 ---
 

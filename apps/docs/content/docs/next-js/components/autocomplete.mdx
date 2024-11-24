@@ -2,9 +2,9 @@
 title: Autocomplete
 ---
 
-import AutocompleteExample from "@/examples/react/autocomplete/autocomplete-example";
-import AutocompleteWithScrollArea from "@/examples/react/autocomplete/autocomplete-example-2";
-import AutocompleteWithDialog from "@/examples/react/autocomplete/autocomplete-example-3";
+import AutocompleteExample from "@/examples/react/autocomplete/autocomplete-example"
+import AutocompleteWithScrollArea from "@/examples/react/autocomplete/autocomplete-example-2"
+import AutocompleteWithDialog from "@/examples/react/autocomplete/autocomplete-example-3"
 
 <ComponentPreview>
   <AutocompleteExample />
@@ -12,7 +12,15 @@ import AutocompleteWithDialog from "@/examples/react/autocomplete/autocomplete-e
 
 ### Installation
 
-<Steps>
+<InstallationTabs items={["Npm", "Manual"]}>
+  <InstallationTabsContent value="Npm">
+  ```package-install
+  @mijn-ui/react-autocomplete
+  ```
+  </InstallationTabsContent>
+  
+  <InstallationTabsContent value="Manual">
+  <Steps>
   <Step>
     **Autocomplete uses the following components: Popover, Skeleton, and Command. If you haven't installed them yet, you can install them by following the links below:**
 
@@ -24,36 +32,35 @@ import AutocompleteWithDialog from "@/examples/react/autocomplete/autocomplete-e
   <Step>
   **Copy and paste the following code into `mijn-ui` folder.**
 
-  <Tabs items={["Source code", "Example usage"]}>
-    <Tab value="Source code">
-        ```json doc-gen:file
-          {
-            "file": "../../packages/components/autocomplete/src/autocomplete.tsx",
-            "codeblock": {
-              "lang": "tsx",
-              "meta": "title=\"mijn-ui/components/autocomplete.tsx\""
-            }
-          }
-        ```
-    </Tab>
-    <Tab value="Example usage">
-        ```json doc-gen:file
-          {
-            "file": "./examples/react/autocomplete/autocomplete-example.tsx",
-            "codeblock": {
-              "lang": "tsx",
-              "meta": "title=\"autocomplete-example.tsx\""
-            }
-          }
-        ```
-    </Tab>
-  </Tabs>  
+  ```json doc-gen:file
+    {
+      "file": "../../packages/components/autocomplete/src/autocomplete.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": "title=\"mijn-ui/components/autocomplete.tsx\""
+      }
+    }
+  ``` 
   </Step>
   
   <Step>
   **Ensure that everything is functioning correctly after installation.**
   </Step>
 </Steps>
+</InstallationTabsContent>
+</InstallationTabs>
+
+**Example Usage**
+
+```json doc-gen:file
+  {
+    "file": "./examples/react/autocomplete/autocomplete-example.tsx",
+    "codeblock": {
+      "lang": "tsx",
+      "meta": "title=\"autocomplete-example.tsx\""
+    }
+  }
+```
 
 ---
 

@@ -2,7 +2,7 @@
 title: Textarea
 ---
 
-import TextAreaExample from "@/examples/react/textarea/textarea-example";
+import TextAreaExample from "@/examples/react/textarea/textarea-example"
 
 <ComponentPreview>
   <TextAreaExample />
@@ -10,37 +10,44 @@ import TextAreaExample from "@/examples/react/textarea/textarea-example";
 
 ### Installation
 
-<Steps>
+<InstallationTabs items={["Npm", "Manual"]}>
+  <InstallationTabsContent value="Npm">
+  ```package-install
+  @mijn-ui/react-text-area
+  ```
+  </InstallationTabsContent>
+  <InstallationTabsContent value="Manual">
+  <Steps>
   <Step>
   **Copy and paste the following code into `mijn-ui` folder.**
-
-  <Tabs items={["Source code", "Example usage"]}>
-    <Tab value="Source code">
-        ```json doc-gen:file
-          {
-            "file": "../../packages/components/textarea/src/textarea.tsx",
-            "codeblock": {
-              "lang": "tsx",
-              "meta": "title=\"mijn-ui/components/textarea.tsx\""
-            }
-          }
-        ```
-    </Tab>
-    <Tab value="Example usage">
-        ```json doc-gen:file
-          {
-            "file": "./examples/react/textarea/textarea-example.tsx",
-            "codeblock": {
-              "lang": "tsx",
-              "meta": "title=\"textarea-example.tsx\""
-            }
-          }
-        ```
-    </Tab>
-  </Tabs>  
+ 
+  ```json doc-gen:file
+    {
+      "file": "../../packages/components/textarea/src/textarea.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": "title=\"mijn-ui/components/textarea.tsx\""
+      }
+    }
+  ```
   </Step>
   
   <Step>
   **Ensure that everything is functioning correctly after installation.**
   </Step>
 </Steps>
+</InstallationTabsContent>
+</InstallationTabs>
+
+**Example Usage**
+
+```json doc-gen:file
+  {
+    "file": "./examples/react/textarea/textarea-example.tsx",
+    "codeblock": {
+      "lang": "tsx",
+      "meta": "title=\"textarea-example.tsx\""
+    }
+  }
+```
+

@@ -3,8 +3,8 @@ title: Command
 docs: https://cmdk.paco.me
 ---
 
-import CommandDialogExample from "@/examples/react/command/command-dialog";
-import CommandExample from "@/examples/react/command/command-example";
+import CommandDialogExample from "@/examples/react/command/command-dialog"
+import CommandExample from "@/examples/react/command/command-example"
 
 <ComponentPreview>
   <CommandExample />
@@ -12,40 +12,59 @@ import CommandExample from "@/examples/react/command/command-example";
 
 ### Installation
 
-<Steps>
+<InstallationTabs items={["Npm", "Manual"]}>
+  <InstallationTabsContent value="Npm">
+  ```package-install
+  @mijn-ui/react-command
+  ```
+  </InstallationTabsContent>
+  <InstallationTabsContent value="Manual">
+  <Steps>
+  <Step>
+    **Add the Dialog Component**
+
+    To get started, you need to install the dialog component. Follow the link below to install it:
+
+    [Dialog component](/docs/components/dialog)
+  </Step>
+  <Step>
+  **Install Required Dependencies:** 
+  ```package-install
+  cmdk
+  ```
+  </Step>
   <Step>
   **Copy and paste the following code into `mijn-ui` folder.**
 
-  <Tabs items={["Source code", "Example usage"]}>
-    <Tab value="Source code">
-        ```json doc-gen:file
-          {
-            "file": "../../packages/components/command/src/command.tsx",
-            "codeblock": {
-              "lang": "tsx",
-              "meta": "title=\"mijn-ui/components/command.tsx\""
-            }
-          }
-        ```
-    </Tab>
-    <Tab value="Example usage">
-        ```json doc-gen:file
-          {
-            "file": "./examples/react/command/command-example.tsx",
-            "codeblock": {
-              "lang": "tsx",
-              "meta": "title=\"command-example.tsx\""
-            }
-          }
-        ```
-    </Tab>
-  </Tabs>  
+  ```json doc-gen:file
+    {
+      "file": "../../packages/components/command/src/command.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": "title=\"mijn-ui/components/command.tsx\""
+      }
+    }
+  ```
   </Step>
   
   <Step>
   **Ensure that everything is functioning correctly after installation.**
   </Step>
 </Steps>
+</InstallationTabsContent>
+</InstallationTabs>
+
+**Example Usage**
+
+```json doc-gen:file
+  {
+    "file": "./examples/react/command/command-example.tsx",
+    "codeblock": {
+      "lang": "tsx",
+      "meta": "title=\"command-example.tsx\""
+    }
+  }
+```
 
 ---
 

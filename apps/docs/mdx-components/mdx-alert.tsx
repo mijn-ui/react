@@ -26,7 +26,7 @@ const Alert = ({
 
   return (
     <MijnUIAlert
-      className={cn("not-prose  w-full backdrop-blur-md", className)}
+      className={cn("not-prose w-full backdrop-blur-md", className)}
       variant="default"
       status={status}
     >

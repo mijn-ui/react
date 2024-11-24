@@ -15,6 +15,10 @@ import {
   DocsTitle,
 } from "fumadocs-ui/page"
 import { LuExternalLink } from "react-icons/lu"
+import {
+  InstallationTabs,
+  InstallationTabsContent,
+} from "@/mdx-components/installation-tabs"
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>
@@ -72,6 +76,8 @@ export default async function Page(props: {
             Files,
             Folder,
             Alert,
+            InstallationTabs,
+            InstallationTabsContent,
             ComponentPreview,
             TWComponentPreview,
           }}

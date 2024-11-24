@@ -6,6 +6,7 @@ pnpm-lock.yaml
 public 
 *.mdx
 *.hbs
+_configs
 
 .next
 yarn.lock

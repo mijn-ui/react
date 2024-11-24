@@ -1,0 +1,75 @@
+---
+title: Package Installation
+description: This guide provides instructions for installing Mijn-UI components via npm packages.
+root: true
+---
+
+### Requirements
+
+- [NextJS 15](https://nextjs.org) or later
+- [React 19](https://react.dev) or later
+- [Tailwind Css 3.4](https://tailwindcss.com/) or later
+
+### Starter Template
+
+You can either use the [nextjs-starter](https://github.com/mijn-ui/nextjs-starter) template to get started quickly or follow the steps below to integrate Mijn-UI components.
+
+---
+
+<Steps>
+  <Step>
+  #### Install Next.js and Required Dependencies
+
+  ```bash title="bash"
+    npx create-next-app@latest
+  ```
+
+  Since we are in the beta stage, the following options work pretty well for installation. Please ensure to select these options:
+
+  ```bash title="bash"
+    ...
+    ✔ Would you like to use TypeScript? Yes
+    ✔ Would you like to use ESLint?  Yes
+    ✔ Would you like to use Tailwind CSS? Yes
+    ✔ Would you like your code inside a `src/` directory? Yes
+    ✔ Would you like to use App Router? (recommended) Yes
+    ✔ Would you like to use Turbopack for next dev? Yes
+    ✔ Would you like to customize the import alias (@/* by default)? No
+  ```
+  </Step>
+
+  <Step>
+  ### Add Themes
+
+  These are the default themes provided by mijn-ui. If you would like to create your own theme, learn more about themes [here](/docs/theming).
+
+  ```json doc-gen:file
+  {
+    "file": "./examples/react/_configs/global.css",
+    "codeblock": {
+      "lang": "css",
+      "meta": "title=\"global.css\""
+    }
+  }
+  ```
+  </Step>
+
+  <Step>
+  ### Configure tailwind
+
+  ```json doc-gen:file
+  {
+    "file": "./examples/react/_configs/tw-config.js",
+    "codeblock": {
+      "lang": "js",
+      "meta": "title=\"tailwind-config.js\""
+    }
+  }
+  ```
+  </Step>
+  <Step>
+   ### That's it
+
+  You can now start adding components to your project. Check out the [components](/docs/components/accordion) section to learn more about the available components.
+  </Step>
+</Steps>

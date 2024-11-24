@@ -4,7 +4,7 @@ docs: https://www.radix-ui.com/primitives/docs/components/dialog
 apiReference: https://www.radix-ui.com/primitives/docs/components/dialog#api-reference
 ---
 
-import DialogExample from "@/examples/react/dialog/dialog-example";
+import DialogExample from "@/examples/react/dialog/dialog-example"
 
 <ComponentPreview>
   <DialogExample />
@@ -12,7 +12,14 @@ import DialogExample from "@/examples/react/dialog/dialog-example";
 
 ### Installation
 
-<Steps>
+<InstallationTabs items={["Npm", "Manual"]}>
+  <InstallationTabsContent value="Npm">
+  ```package-install
+  @mijn-ui/react-dialog
+  ```
+  </InstallationTabsContent>
+  <InstallationTabsContent value="Manual">
+  <Steps>
   <Step>
      **Add the Button Component**
 
@@ -32,30 +39,30 @@ import DialogExample from "@/examples/react/dialog/dialog-example";
   <Step>
     **Copy and paste the following code into  `mijn-ui` folder.**
 
-    <Tabs items={["Source Code", "Example Usage"]}>
-        <Tab value="Example Usage">
-          ```json doc-gen:file
-          {
-            "file": "./examples/react/dialog/dialog-example.tsx",
-            "codeblock": {
-              "lang": "tsx",
-              "meta": "title=\"dialog-example.tsx\""
-            }
-          }
-          ```
-        </Tab>
-        <Tab value="Source Code">
-          ```json doc-gen:file
-            {
-              "file": "../../packages/components/dialog/src/dialog.tsx",
-              "codeblock": {
-                "lang": "tsx",
-                "meta": "title=\"mijn-ui/components/dialog.tsx\""
-              }
-            }
-          ```
-        </Tab>
-    </Tabs>
-
+    ```json doc-gen:file
+      {
+        "file": "../../packages/components/dialog/src/dialog.tsx",
+        "codeblock": {
+          "lang": "tsx",
+          "meta": "title=\"mijn-ui/components/dialog.tsx\""
+        }
+      }
+    ```
   </Step>
 </Steps>
+</InstallationTabsContent>
+</InstallationTabs>
+
+**Example Usage**
+
+
+```json doc-gen:file
+  {
+    "file": "./examples/react/dialog/dialog-example.tsx",
+    "codeblock": {
+      "lang": "tsx",
+      "meta": "title=\"dialog-example.tsx\""
+    }
+  }
+```
+

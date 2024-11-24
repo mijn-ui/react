@@ -4,8 +4,10 @@
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
+    "build:pkg": "turbo run build --filter={./packages/**/*}",
     "start": "turbo run start",
     "clean": "turbo run clean",
+    "clean:node-modules": "rimraf ./apps/**/node_modules && rimraf ./packages/**/**/node_modules && rimraf ./node_modules",
     "test": "turbo run test",
     "types:check": "turbo run types:check",
     "lint": "turbo run lint",

@@ -4,7 +4,7 @@ docs: https://www.radix-ui.com/primitives/docs/components/scroll-area
 apiReference: https://www.radix-ui.com/primitives/docs/components/scroll-area#api-reference
 ---
 
-import ScrollAreaExample from "@/examples/react/scroll-area/scroll-area-example";
+import ScrollAreaExample from "@/examples/react/scroll-area/scroll-area-example"
 
 <ComponentPreview>
   <ScrollAreaExample />
@@ -12,7 +12,15 @@ import ScrollAreaExample from "@/examples/react/scroll-area/scroll-area-example"
 
 ### Installation
 
-<Steps>
+<InstallationTabs items={["Npm", "Manual"]}>
+  <InstallationTabsContent value="Npm">
+  ```package-install
+  @mijn-ui/react-scroll-area
+  ```
+  </InstallationTabsContent>
+  
+  <InstallationTabsContent value="Manual">
+  <Steps>
   <Step>
     **Install Required Dependencies:**
   
@@ -23,29 +31,29 @@ import ScrollAreaExample from "@/examples/react/scroll-area/scroll-area-example"
 
   <Step>
     **Copy and paste the following code into  `mijn-ui` folder.**
-    <Tabs items={["Source Code", "Example Usage"]}>
-        <Tab value="Example Usage">
-          ```json doc-gen:file
-          {
-            "file": "./examples/react/scroll-area/scroll-area-example.tsx",
-            "codeblock": {
-              "lang": "tsx",
-              "meta": "title=\"scroll-area-example.tsx\""
-            }
-          }
-          ```
-        </Tab>
-        <Tab value="Source Code">
-          ```json doc-gen:file
-          {
-            "file": "../../packages/components/scroll-area/src/scroll-area.tsx",
-            "codeblock": {
-              "lang": "tsx",
-              "meta": "title=\"mijn-ui/components/scroll-area.tsx\""
-            }
-          }
-          ```
-        </Tab>
-    </Tabs>
+
+    ```json doc-gen:file
+      {
+        "file": "../../packages/components/scroll-area/src/scroll-area.tsx",
+        "codeblock": {
+          "lang": "tsx",
+          "meta": "title=\"mijn-ui/components/scroll-area.tsx\""
+        }
+      }
+    ```
   </Step>
 </Steps>
+</InstallationTabsContent>
+</InstallationTabs>
+
+**Example Usage**
+
+```json doc-gen:file
+  {
+    "file": "./examples/react/scroll-area/scroll-area-example.tsx",
+    "codeblock": {
+      "lang": "tsx",
+      "meta": "title=\"scroll-area-example.tsx\""
+    }
+  }
+```

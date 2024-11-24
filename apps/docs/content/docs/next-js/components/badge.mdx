@@ -2,7 +2,7 @@
 title: Badge
 ---
 
-import { Badge } from "@mijn-ui/react-badge";
+import { Badge } from "@mijn-ui/react-badge"
 
 <ComponentPreview className="flex-col md:flex-row">
   <Badge>Badge</Badge>
@@ -10,34 +10,41 @@ import { Badge } from "@mijn-ui/react-badge";
 
 ### Installation
 
-<Steps>
+<InstallationTabs items={["Npm", "Manual"]}>
+  <InstallationTabsContent value="Npm">
+  ```package-install
+  @mijn-ui/react-badge
+  ```
+  </InstallationTabsContent>
+  <InstallationTabsContent value="Manual">
+  <Steps>
   <Step>
   **Copy and paste the following code into `mijn-ui` folder.**
 
-  <Tabs items={["Source code", "Example usage"]}>
-    <Tab value="Source code">
-        ```json doc-gen:file
-          {
-            "file": "../../packages/components/badge/src/badge.tsx",
-            "codeblock": {
-              "lang": "tsx",
-              "meta": "title=\"mijn-ui/components/badge.tsx\""
-            }
-          }
-        ```
-    </Tab>
-    <Tab value="Example usage">
-        ```tsx
-        <Badge>Badge</Badge>
-        ```
-    </Tab>
-  </Tabs>  
+  ```json doc-gen:file
+    {
+      "file": "../../packages/components/badge/src/badge.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": "title=\"mijn-ui/components/badge.tsx\""
+      }
+    }
+  ```
   </Step>
   
   <Step>
   **Ensure that everything is functioning correctly after installation.**
   </Step>
 </Steps>
+</InstallationTabsContent>
+</InstallationTabs>
+
+**Example Usage**
+
+```tsx
+<Badge>Badge</Badge>
+```
+
 ---
 
 ### Badge colors

@@ -64,6 +64,7 @@
     "@mijn-ui/react-skeleton": "workspace:*",
     "@mijn-ui/react-switch": "workspace:*",
     "@mijn-ui/react-table": "workspace:*",
+    "@mijn-ui/react-tabs": "workspace:*",
     "@mijn-ui/react-textarea": "workspace:*"
   },
   "devDependencies": {

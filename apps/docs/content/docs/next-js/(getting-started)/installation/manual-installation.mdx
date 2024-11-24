@@ -1,17 +1,26 @@
 ---
-title: Installation
-description: Manual Installation
+title: Manual Installation
+description: This guide provides instructions for installing Mijn-UI components using copy-and-paste source code snippets.
 ---
 
-<Alert
-  title="V0.0.1 Beta"
-  description="At this time, npm packages are not available. We are currently offering code snippets for manual integration."
-  status="warning"
-/>
+
+### Requirements
+
+- [NextJS 15](https://nextjs.org) or later
+- [React 19](https://react.dev) or later
+- [Tailwind Css 3.4](https://tailwindcss.com/) or later
+
+### Starter Template
+
+Manual setups can be time-consuming, so I created a [nextjs-starter-manual](https://github.com/mijn-ui/nextjs-starter-manual) template to help you get started quickly you can either use this or follow the steps below to integrate Mijn-UI components manually.
+
+If you have an existing project and need to integrate Mijn-UI components manually, simply copy the `mijn-ui` folder from the [nextjs-starter-manual](https://github.com/mijn-ui/nextjs-starter-manual) and install the necessary dependencies used by this folder.
+
+---
 
 <Steps>
   <Step>
-### Install Next.js and Required Dependencies
+#### Install Next.js and Required Dependencies
 
 ```bash title="bash"
   npx create-next-app@latest
@@ -45,7 +54,7 @@ Since this project is still in a beta phase, and extensive testing is ongoing, w
 
 ```json doc-gen:file
 {
-  "file": "./examples/react/tsconfig-example.json",
+  "file": "./examples/react/_configs/tsconfig-example.json",
   "codeblock": {
     "lang": "json",
     "meta": "title=\"tsconfig.json\""
@@ -55,7 +64,7 @@ Since this project is still in a beta phase, and extensive testing is ongoing, w
 
 ### Recommended Folder Structure
 
-This setup will help keep your code modular and organized, especially for complex projects. Here’s the suggested folder structure to work seamlessly with the path aliases:
+I recommend using this folder structure for manual integration, similar to the packages folder structure. This way, you won't need to update any component paths, as the source codes are from the mijn-ui packages folder.
 
 <Files>
   <Folder name="public">
@@ -69,19 +78,21 @@ This setup will help keep your code modular and organized, especially for comple
   </Folder>
   <Folder defaultOpen name="mijn-ui">
     <Folder name="components">
-      <File name="button.tsx" />
+      <Folder name="react-accordion">
+        <File name="index.tsx" />
+      </Folder>
+      <Folder name="react-button">
+        <File name="index.tsx" />
+      </Folder>
       <File name="..." />
     </Folder>
-    <Folder name="utils">
-      <File name="index.tsx" />
-      <File name="..." />
-    </Folder>
-    <Folder name="context">
-      <File name="unstyled-provider.tsx" />
-      <File name="..." />
-    </Folder>
-    <Folder name="types">
-      <File name="index.ts" />
+    <Folder name="utilities">
+      <Folder name="context">
+        <File name="index.ts" />
+      </Folder>
+      <Folder name="shared">
+        <File name="index.ts" />
+      </Folder>
       <File name="..." />
     </Folder>
     <Folder name="hooks">
@@ -93,20 +104,20 @@ This setup will help keep your code modular and organized, especially for comple
 
 <Alert
   title=""
-  description="While this is the recommended folder structure for the beta version, you can customize it as needed. However, modifications may introduce unexpected errors."
+  description="Note: This folder structure is a suggestion. You can customize it according to your project requirements."
   className="mt-4"
 />
 
 </Step>
 
-<Step> 
+<Step>
 ### Add Themes
 
 These are the default themes provided by mijn-ui. If you would like to create your own theme, learn more about themes [here](/docs/theming).
 
 ```json doc-gen:file
 {
-  "file": "./examples/react/global.css",
+  "file": "./examples/react/_configs/global.css",
   "codeblock": {
     "lang": "css",
     "meta": "title=\"global.css\""
@@ -123,7 +134,7 @@ Since our components are stored in a separate `mijn-ui` folder, we need to inclu
 
 ```json doc-gen:file
 {
-  "file": "./examples/react/tailwind.config.js",
+  "file": "./examples/react/_configs/tw-config-manual.js",
   "codeblock": {
     "lang": "js",
     "meta": "title=\"tailwind-config.js\""
@@ -136,40 +147,64 @@ Since our components are stored in a separate `mijn-ui` folder, we need to inclu
     <Step>
       ### Include Essential Utilities, Types, Context, and Hooks and Install Dependencies
 
-    1. Within the `mijn-ui` folder, create a `utils` directory and add the following file and install necessary dependencies:
+    1. Within the `mijn-ui` folder, create a `utilities` directory and add the following files and install necessary dependencies:
 
+    <Tabs items={['shared', 'context']}>
+      <Tab value="shared">
       ```json doc-gen:file
       {
         "file": "../../packages/utilities/src/shared/cn.ts",
         "codeblock": {
           "lang": "tsx",
-          "meta": "title=\"mijn-ui/utils/index.tsx\""
+          "meta": "title=\"mijn-ui/utilities/shared/cn.ts\""
         }
       }
       ```
-    2. Within the `mijn-ui` folder, create a `types` directory and add the following file:
 
       ```json doc-gen:file
       {
-        "file": "../../packages/utilities/src/shared/cn.ts",
-        "codeblock": {
-          "lang": "ts",
-          "meta": "title=\"mijn-ui/types/index.ts\""
-        }
-      }
-      ```
-    3. Create a `context` folder, and add:
-
-      ```json doc-gen:file
-      {
-        "file": "../../packages/utilities/src/context/unstyled-provider.tsx",
+        "file": "../../packages/utilities/src/shared/apply-unstyled.ts",
         "codeblock": {
           "lang": "tsx",
-          "meta": "title=\"mijn-ui/context/unstyled-provider.tsx\""
+          "meta": "title=\"mijn-ui/utilities/shared/apply-unstyled.ts\""
         }
       }
       ```
-    4. Create a `hooks` folder, and add:
+
+      ```json doc-gen:file
+      {
+        "file": "../../packages/utilities/src/shared/index.ts",
+        "codeblock": {
+          "lang": "tsx",
+          "meta": "title=\"mijn-ui/utilities/shared/index.ts\""
+        }
+      }
+      ```
+      </Tab>
+        <Tab value="context">
+          ```json doc-gen:file
+          {
+            "file": "../../packages/utilities/src/context/unstyled-provider.tsx",
+            "codeblock": {
+              "lang": "tsx",
+              "meta": "title=\"mijn-ui/utilities/context/unstyled-provider.tsx\""
+            }
+          }
+          ```
+
+          ```json doc-gen:file
+          {
+            "file": "../../packages/utilities/src/context/index.ts",
+            "codeblock": {
+              "lang": "tsx",
+              "meta": "title=\"mijn-ui/utilities/context/index.ts\""
+            }
+          }
+          ```
+        </Tab>
+      </Tabs>
+
+    2. Create a `hooks` folder, and add:
 
       ```json doc-gen:file
       {

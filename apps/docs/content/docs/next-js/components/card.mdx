@@ -2,8 +2,8 @@
 title: Card
 ---
 
-import CardExample from "@/examples/react/card/card-example";
-import StatsCardExample from "@/examples/react/card/stats-card";
+import CardExample from "@/examples/react/card/card-example"
+import StatsCardExample from "@/examples/react/card/stats-card"
 
 <ComponentPreview>
   <CardExample />
@@ -11,40 +11,46 @@ import StatsCardExample from "@/examples/react/card/stats-card";
 
 ### Installation
 
-<Steps>
+<InstallationTabs items={["Npm", "Manual"]}>
+  <InstallationTabsContent value="Npm">
+  ```package-install
+  @mijn-ui/react-card
+  ```
+  </InstallationTabsContent>
+  <InstallationTabsContent value="Manual">
+  <Steps>
   <Step>
   **Copy and paste the following code into `mijn-ui` folder.**
 
-  <Tabs items={["Source code", "Example usage"]}>
-    <Tab value="Source code">
-        ```json doc-gen:file
-          {
-            "file": "../../packages/components/card/src/card.tsx",
-            "codeblock": {
-              "lang": "tsx",
-              "meta": "title=\"mijn-ui/components/card.tsx\""
-            }
-          }
-        ```
-    </Tab>
-    <Tab value="Example usage">
-        ```json doc-gen:file
-          {
-            "file": "./examples/react/card/card-example.tsx",
-            "codeblock": {
-              "lang": "tsx",
-              "meta": "title=\"card-example.tsx\""
-            }
-          }
-        ```
-    </Tab>
-  </Tabs>  
+  ```json doc-gen:file
+    {
+      "file": "../../packages/components/card/src/card.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": "title=\"mijn-ui/components/card.tsx\""
+      }
+    }
+  ```
   </Step>
   
   <Step>
   **Ensure that everything is functioning correctly after installation.**
   </Step>
 </Steps>
+</InstallationTabsContent>
+</InstallationTabs>
+
+**Example Usage**
+
+```json doc-gen:file
+  {
+    "file": "./examples/react/card/card-example.tsx",
+    "codeblock": {
+      "lang": "tsx",
+      "meta": "title=\"card-example.tsx\""
+    }
+  }
+```
 
 ---
 

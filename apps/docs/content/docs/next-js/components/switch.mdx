@@ -4,7 +4,7 @@ docs: https://www.radix-ui.com/primitives/docs/components/switch
 apiReference: https://www.radix-ui.com/primitives/docs/components/switch#api-reference
 ---
 
-import { Switch } from "@mijn-ui/react-switch";
+import { Switch } from "@mijn-ui/react-switch"
 
 <ComponentPreview>
   <Switch />
@@ -12,31 +12,39 @@ import { Switch } from "@mijn-ui/react-switch";
 
 ### Installation
 
-<Steps>
+<InstallationTabs items={["Npm", "Manual"]}>
+  <InstallationTabsContent value="Npm">
+  ```package-install
+  @mijn-ui/react-switch
+  ```
+  </InstallationTabsContent>
+  <InstallationTabsContent value="Manual">
+  <Steps>
   <Step>
   **Copy and paste the following code into `mijn-ui` folder.**
 
-  <Tabs items={["Source code", "Example usage"]}>
-    <Tab value="Source code">
-        ```json doc-gen:file
-          {
-            "file": "../../packages/components/switch/src/switch.tsx",
-            "codeblock": {
-              "lang": "tsx",
-              "meta": "title=\"mijn-ui/components/switch.tsx\""
-            }
-          }
-        ```
-    </Tab>
-    <Tab value="Example usage">
-        ```tsx
-        <Switch />
-        ```
-    </Tab>
-  </Tabs>  
+ 
+  ```json doc-gen:file
+    {
+      "file": "../../packages/components/switch/src/switch.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": "title=\"mijn-ui/components/switch.tsx\""
+      }
+    }
+  ```
   </Step>
   
   <Step>
   **Ensure that everything is functioning correctly after installation.**
   </Step>
 </Steps>
+</InstallationTabsContent>
+</InstallationTabs>
+
+**Example Usage**
+
+```tsx
+<Switch />
+```
+

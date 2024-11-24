@@ -4,7 +4,7 @@ docs: https://www.radix-ui.com/primitives/docs/components/progress
 apiReference: https://www.radix-ui.com/primitives/docs/components/progress#api-reference
 ---
 
-import ProgressExample from "@/examples/react/progress/progress-example";
+import ProgressExample from "@/examples/react/progress/progress-example"
 
 <ComponentPreview>
   <ProgressExample />
@@ -12,39 +12,43 @@ import ProgressExample from "@/examples/react/progress/progress-example";
 
 ### Installation
 
-<Steps>
+<InstallationTabs items={["Npm", "Manual"]}>
+  <InstallationTabsContent value="Npm">
+  ```package-install
+  @mijn-ui/react-progress
+  ```
+  </InstallationTabsContent>
+  <InstallationTabsContent value="Manual">
+  <Steps>
   <Step>
   **Copy and paste the following code into `mijn-ui` folder.**
-
-  <Tabs items={["Source code", "Example usage"]}>
-    <Tab value="Source code">
-        ```json doc-gen:file
-          {
-            "file": "../../packages/components/progress/src/progress.tsx",
-            "codeblock": {
-              "lang": "tsx",
-              "meta": "title=\"mijn-ui/components/progress.tsx\""
-            }
-          }
-        ```
-    </Tab>
-    <Tab value="Example usage">
-        ```json doc-gen:file
-          {
-            "file": "./examples/react/progress/progress-example.tsx",
-            "codeblock": {
-              "lang": "tsx",
-              "meta": "title=\"progress-example.tsx\""
-            }
-          }
-        ```
-    </Tab>
-  </Tabs>  
+ 
+  ```json doc-gen:file
+    {
+      "file": "../../packages/components/progress/src/progress.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": "title=\"mijn-ui/components/progress.tsx\""
+      }
+    }
+  ```
   </Step>
   
   <Step>
   **Ensure that everything is functioning correctly after installation.**
   </Step>
 </Steps>
+</InstallationTabsContent>
+</InstallationTabs>
 
----
+**Example Usage**
+
+```json doc-gen:file
+  {
+    "file": "./examples/react/progress/progress-example.tsx",
+    "codeblock": {
+      "lang": "tsx",
+      "meta": "title=\"progress-example.tsx\""
+    }
+  }
+```

@@ -24,8 +24,9 @@ h1 {
 #nd-docs-layout aside#nd-sidebar {
   @apply sm:bg-fd-background/10 sm:backdrop-blur-md;
 
-  a {
-    @apply pl-4;
+  a,
+  button {
+    @apply px-4;
   }
 }
 
