@@ -11,11 +11,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mijn-ui/components.git",
+    "url": "git+https://github.com/mijn-ui/mijn-ui-react.git",
     "directory": "packages/components/src"
   },
   "bugs": {
-    "url": "https://github.com/mijn-ui/components/issues"
+    "url": "https://github.com/mijn-ui/mijn-ui-react/issues"
   },
   "exports": {
     "./*": {

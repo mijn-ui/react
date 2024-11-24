@@ -37,7 +37,7 @@ const PAGES = [
   },
 ]
 
-const GITHUB_URL = "https://github.com/mijn-ui/components"
+const GITHUB_URL = "https://github.com/mijn-ui/mijn-ui-react"
 
 const Navbar = () => {
   const { setOpenSearch } = useSearchContext()
