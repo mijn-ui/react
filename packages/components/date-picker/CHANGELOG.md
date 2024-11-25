@@ -1,5 +1,17 @@
 # @mijn-ui-react/date-picker
 
+## 0.0.3
+
+### Patch Changes
+
+- cbc483f: Rename packages
+- Updated dependencies [cbc483f]
+  - @mijn-ui/react-calendar@0.0.3
+  - @mijn-ui/react-popover@0.0.3
+  - @mijn-ui/react-button@0.0.3
+  - @mijn-ui/react-select@0.0.3
+  - @mijn-ui/react-utilities@0.0.3
+
 ## 0.0.2
 
 ### Patch Changes
