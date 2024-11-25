@@ -1,3 +1,3 @@
 {
-  "pages": ["package-installation", "manual-installation"]
+  "pages": ["npm-install", "manual-install"]
 }

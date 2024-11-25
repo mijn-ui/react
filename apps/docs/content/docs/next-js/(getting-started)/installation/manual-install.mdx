@@ -1,6 +1,6 @@
 ---
 title: Manual Installation
-description: This guide provides instructions for installing Mijn-UI components using copy-and-paste source code snippets.
+description: This guide provides instructions for using Mijn-UI components by copying and pasting source code snippets. 
 ---
 
 
@@ -12,15 +12,17 @@ description: This guide provides instructions for installing Mijn-UI components 
 
 ### Starter Template
 
-Manual setups can be time-consuming, so I created a [nextjs-starter-manual](https://github.com/mijn-ui/nextjs-starter-manual) template to help you get started quickly you can either use this or follow the steps below to integrate Mijn-UI components manually.
+Manual setups can be time-consuming, so I created a [nextjs-starter-manual](https://github.com/mijn-ui/nextjs-starter-manual) template to help you get started quickly you can either use this or follow the steps [below](#setting-up-manually) to integrate Mijn-UI components manually.
 
 If you have an existing project and need to integrate Mijn-UI components manually, simply copy the `mijn-ui` folder from the [nextjs-starter-manual](https://github.com/mijn-ui/nextjs-starter-manual) and install the necessary dependencies used by this folder.
 
 ---
 
+### Setting Up Manually
+
 <Steps>
   <Step>
-#### Install Next.js and Required Dependencies
+**Install Next.js and Required Dependencies**
 
 ```bash title="bash"
   npx create-next-app@latest
@@ -48,7 +50,7 @@ react-icons class-variance-authority tailwindcss-animate clsx tailwind-merge
 </Step>
 <Step>
 
-### Configure TypeScript Path Aliases
+**Configure TypeScript Path Aliases**
 
 Since this project is still in a beta phase, and extensive testing is ongoing, we recommend configuring TypeScript with path aliases for better project organization and readability. Please use the following setup in your tsconfig.json:
 
@@ -61,8 +63,7 @@ Since this project is still in a beta phase, and extensive testing is ongoing, w
   }
 }
 ```
-
-### Recommended Folder Structure
+**Recommended Folder Structure**
 
 I recommend using this folder structure for manual integration, similar to the packages folder structure. This way, you won't need to update any component paths, as the source codes are from the mijn-ui packages folder.
 
@@ -78,12 +79,8 @@ I recommend using this folder structure for manual integration, similar to the p
   </Folder>
   <Folder defaultOpen name="mijn-ui">
     <Folder name="components">
-      <Folder name="react-accordion">
-        <File name="index.tsx" />
-      </Folder>
-      <Folder name="react-button">
-        <File name="index.tsx" />
-      </Folder>
+      <File name="react-accordion.tsx" />
+      <File name="react-button.tsx" />
       <File name="..." />
     </Folder>
     <Folder name="utilities">
@@ -111,7 +108,8 @@ I recommend using this folder structure for manual integration, similar to the p
 </Step>
 
 <Step>
-### Add Themes
+
+**Add Themes**
 
 These are the default themes provided by mijn-ui. If you would like to create your own theme, learn more about themes [here](/docs/theming).
 
@@ -128,7 +126,7 @@ These are the default themes provided by mijn-ui. If you would like to create yo
 </Step>
 
 <Step>
-### Configure tailwind
+**Configure tailwind**
 
 Since our components are stored in a separate `mijn-ui` folder, we need to include this folder in the Tailwind CSS content array. This ensures Tailwind scans these files to generate the required CSS classes:
 
@@ -145,7 +143,7 @@ Since our components are stored in a separate `mijn-ui` folder, we need to inclu
 </Step>
 
     <Step>
-      ### Include Essential Utilities, Types, Context, and Hooks and Install Dependencies
+      **Include Essential Utilities, Types, Context, and Hooks and Install Dependencies**
 
     1. Within the `mijn-ui` folder, create a `utilities` directory and add the following files and install necessary dependencies:
 
@@ -218,7 +216,7 @@ Since our components are stored in a separate `mijn-ui` folder, we need to inclu
     </Step>
 
   <Step>
-    ### That's it
+    **That's it**
 
     You can now start adding components to your project. Check out the [components](/docs/components/accordion) section to learn more about the available components.
 
