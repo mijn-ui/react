@@ -86,8 +86,10 @@ export default {
             height: "var(--radix-accordion-content-height)",
             opacity: "1",
           },
-          to: { height: "0" },
-          opacity: "0",
+          to: {
+            height: "0",
+            opacity: "0"
+          },
         },
       },
 
