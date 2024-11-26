@@ -43,3 +43,11 @@ h1 {
 .fd-codeblock {
   @apply bg-fd-card;
 }
+
+/* override for the preview */
+
+.preview {
+  [role="tablist"] {
+    @apply !bg-main;
+  }
+}
