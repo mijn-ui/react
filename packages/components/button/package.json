@@ -7,7 +7,7 @@
   "type": "module",
   "sideEffects": false,
   "files": [
-    "dist/*"
+    "dist"
   ],
   "repository": {
     "type": "git",
