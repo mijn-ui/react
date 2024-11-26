@@ -15,7 +15,7 @@
     "prettier": "prettier --cache --write --list-different --ignore-path .gitignore --ignore-path .prettierignore .",
     "changeset": "changeset",
     "version": "changeset version",
-    "release": "turbo run build --filter=\"{packages/**/*}\" && changeset publish"
+    "release": "changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.9",
