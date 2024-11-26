@@ -32,12 +32,12 @@ export default async function Page(props: {
 
   return (
     <DocsPage toc={page.data.toc} full={page.data.full}>
-      <div className="flex w-full items-baseline justify-between gap-3">
+      <div className="flex w-full flex-col items-baseline justify-between gap-3 sm:flex-row">
         <DocsTitle className="md:text-4xl md:font-extrabold">
           {page.data.title}
         </DocsTitle>
 
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
           {page.data.docs && (
             <Link
               target="_blank"

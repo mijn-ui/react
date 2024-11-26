@@ -25,6 +25,7 @@ import {
   LuSearch,
   LuX,
 } from "react-icons/lu"
+import { usePathname } from "next/navigation"
 
 const PAGES = [
   {
@@ -43,6 +44,10 @@ const Navbar = () => {
   const { setOpenSearch } = useSearchContext()
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const { open: isSidebarOpen } = useSidebar()
+  const pathname = usePathname()
+
+  // Check if the pathname starts with '/docs/' but isn't exactly '/docs'
+  const isDocsPage = /^\/docs\/.+/.test(pathname)
 
   const renderPages = PAGES.map((page) => (
     <Link
@@ -53,6 +58,21 @@ const Navbar = () => {
       {page.title}
     </Link>
   ))
+
+  const renderSidebarTrigger = (
+    <SidebarTrigger
+      className={cn(
+        buttonStyles({
+          variant: "text",
+          color: "accent",
+          size: "icon",
+          className: "-me-2 md:hidden",
+        }),
+      )}
+    >
+      {isSidebarOpen ? <LuX /> : <LuMenu />}
+    </SidebarTrigger>
+  )
 
   return (
     <header className="sticky inset-x-0 top-0 z-50 h-[var(--navbar-height)] w-full flex-col items-center justify-center border-b bg-transparent backdrop-blur-md md:flex">
@@ -129,18 +149,7 @@ const Navbar = () => {
             </Collapsible>
           </ClickAwayListener>
 
-          <SidebarTrigger
-            className={cn(
-              buttonStyles({
-                variant: "text",
-                color: "accent",
-                size: "icon",
-                className: "-me-2 md:hidden",
-              }),
-            )}
-          >
-            {isSidebarOpen ? <LuX /> : <LuMenu />}
-          </SidebarTrigger>
+          {isDocsPage && renderSidebarTrigger}
         </div>
       </nav>
 
