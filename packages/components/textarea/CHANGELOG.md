@@ -1,5 +1,13 @@
 # @mijn-ui-react/textarea
 
+## 0.0.3
+
+### Patch Changes
+
+- cbc483f: Rename packages
+- Updated dependencies [cbc483f]
+  - @mijn-ui/react-utilities@0.0.3
+
 ## 0.0.2
 
 ### Patch Changes
