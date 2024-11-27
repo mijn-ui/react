@@ -73,15 +73,14 @@ import { Button } from "@mijn-ui/react-button"
 
 ### Variants
 
-The variants for the secondary color are not fully supported yet. They may work in dark mode, but in light mode, the text color of secondary variant is not very visible.
-
 #### Filled
-
-There are four colors available for the filled variant `primary`, `accent`, `neutral` and `danger`.
 
 <ComponentPreview className="flex-col md:flex-row">
   <Button variant="filled" color="primary">
     Primary
+  </Button>
+  <Button variant="filled" color="secondary">
+    Secondary
   </Button>
   <Button variant="filled" color="accent">
     Accent
@@ -96,6 +95,7 @@ There are four colors available for the filled variant `primary`, `accent`, `neu
 
 ```tsx
 <Button variant="filled" color="primary">Primary</Button>
+<Button variant="filled" color="secondary">Secondary</Button>
 <Button variant="filled" color="accent">Accent</Button>
 <Button variant="filled" color="neutral">Neutral</Button>
 <Button variant="filled" color="danger">Danger</Button>
@@ -105,11 +105,12 @@ There are four colors available for the filled variant `primary`, `accent`, `neu
 
 #### Outline
 
-There are four colors available for the outline variant `primary`, `accent`, `neutral` and `danger`.
-
 <ComponentPreview className="flex-col md:flex-row">
   <Button variant="outline" color="primary">
     Primary
+  </Button>
+  <Button variant="outline" color="secondary">
+    Secondary
   </Button>
   <Button variant="outline" color="accent">
     Accent
@@ -124,6 +125,7 @@ There are four colors available for the outline variant `primary`, `accent`, `ne
 
 ```tsx
 <Button variant="outline" color="primary">Primary</Button>
+<Button variant="outline" color="secondary">Secondary</Button>
 <Button variant="outline" color="accent">Accent</Button>
 <Button variant="outline" color="neutral">Neutral</Button>
 <Button variant="outline" color="danger">Danger</Button>
@@ -133,11 +135,12 @@ There are four colors available for the outline variant `primary`, `accent`, `ne
 
 #### Text
 
-There are four colors available for the text variant `primary`, `accent`, `neutral` and `danger`.
-
 <ComponentPreview className="flex-col md:flex-row">
   <Button variant="text" color="primary">
     Primary
+  </Button>
+  <Button variant="text" color="secondary">
+    Secondary
   </Button>
   <Button variant="text" color="accent">
     Accent
@@ -152,6 +155,7 @@ There are four colors available for the text variant `primary`, `accent`, `neutr
 
 ```tsx
 <Button variant="text" color="primary">Primary</Button>
+<Button variant="text" color="secondary">Secondary</Button>
 <Button variant="text" color="accent">Accent</Button>
 <Button variant="text" color="neutral">Neutral</Button>
 <Button variant="text" color="danger">Danger</Button>

@@ -37,7 +37,7 @@ const badgeVariants = cva(
         color: "secondary",
         variant: "outline",
         className:
-          "border-secondary text-secondary hover:bg-secondary hover:text-secondary-text border",
+          "border-secondary text-secondary-text dark:text-secondary hover:bg-secondary dark:hover:text-secondary-text border",
       },
       {
         color: "accent",
@@ -67,7 +67,7 @@ const badgeVariants = cva(
         color: "secondary",
         variant: "text",
         className:
-          "text-secondary hover:bg-secondary hover:text-secondary-text",
+          "text-secondary-text dark:text-secondary hover:bg-secondary dark:hover:text-secondary-text",
       },
       {
         color: "danger",

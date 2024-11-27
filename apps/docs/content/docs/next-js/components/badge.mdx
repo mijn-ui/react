@@ -47,7 +47,7 @@ import { Badge } from "@mijn-ui/react-badge"
 
 ---
 
-### Badge colors
+### Colors
 
 <ComponentPreview className="flex-col md:flex-row">
   <Badge color="primary">Primary</Badge>
@@ -61,15 +61,14 @@ import { Badge } from "@mijn-ui/react-badge"
 
 ### Variants
 
-The variants for the secondary color are not fully supported yet. They may work in dark mode, but in light mode, the text color of secondary variant is not very visible.
-
 #### Filled
-
-There are four colors available for the filled variant `primary`, `accent`, `neutral` and `danger`.
 
 <ComponentPreview className="flex-col md:flex-row">
   <Badge variant="filled" color="primary">
     Primary
+  </Badge>
+  <Badge variant="filled" color="secondary">
+    Secondary
   </Badge>
   <Badge variant="filled" color="accent">
     Accent
@@ -84,6 +83,7 @@ There are four colors available for the filled variant `primary`, `accent`, `neu
 
 ```tsx
 <Badge variant="filled" color="primary">Primary</Badge>
+<Badge variant="filled" color="secondary">Secondary</Badge>
 <Badge variant="filled" color="accent">Accent</Badge>
 <Badge variant="filled" color="neutral">Neutral</Badge>
 <Badge variant="filled" color="danger">Danger</Badge>
@@ -93,11 +93,12 @@ There are four colors available for the filled variant `primary`, `accent`, `neu
 
 #### Outline
 
-There are four colors available for the outline variant `primary`, `accent`, `neutral` and `danger`.
-
 <ComponentPreview className="flex-col md:flex-row">
   <Badge variant="outline" color="primary">
     Primary
+  </Badge>
+  <Badge variant="outline" color="secondary">
+    Secondary
   </Badge>
   <Badge variant="outline" color="accent">
     Accent
@@ -112,6 +113,7 @@ There are four colors available for the outline variant `primary`, `accent`, `ne
 
 ```tsx
 <Badge variant="outline" color="primary">Primary</Badge>
+<Badge variant="outline" color="secondary">Secondary</Badge>
 <Badge variant="outline" color="accent">Accent</Badge>
 <Badge variant="outline" color="neutral">Neutral</Badge>
 <Badge variant="outline" color="danger">Danger</Badge>
@@ -121,11 +123,12 @@ There are four colors available for the outline variant `primary`, `accent`, `ne
 
 #### Text
 
-There are four colors available for the text variant `primary`, `accent`, `neutral` and `danger`.
-
 <ComponentPreview className="flex-col md:flex-row">
   <Badge variant="text" color="primary">
     Primary
+  </Badge>
+  <Badge variant="text" color="secondary">
+    Secondary
   </Badge>
   <Badge variant="text" color="accent">
     Accent
@@ -140,6 +143,7 @@ There are four colors available for the text variant `primary`, `accent`, `neutr
 
 ```tsx
 <Badge variant="text" color="primary">Primary</Badge>
+<Badge variant="text" color="secondary">Secondary</Badge>
 <Badge variant="text" color="accent">Accent</Badge>
 <Badge variant="text" color="neutral">Neutral</Badge>
 <Badge variant="text" color="danger">Danger</Badge>
