@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react"
 import { cn } from "@mijn-ui/react-utilities/shared"
-import axios from "axios"
 import HTMLReactParser from "html-react-parser"
 
 type CodePreviewerProps = React.ComponentPropsWithoutRef<"div"> & {
@@ -27,8 +26,11 @@ const TWComponentPreview = ({
       setLoading(true)
       setError(false)
       try {
-        const response = await axios.get(`/api/get-html?filename=${src}`)
-        const parsedHTML = HTMLReactParser(response.data.html)
+        const response = await fetch(`/api/get-html?filename=${src}`, {
+          cache: "force-cache",
+        })
+        const data = await response.json()
+        const parsedHTML = HTMLReactParser(data.html)
         setReactElement(parsedHTML)
       } catch (err) {
         console.error(err)
