@@ -50,14 +50,14 @@ const BlockPreviewData = [
 const Blocks = () => {
   return (
     <GlowEffectWrapper>
-      <article className="mx-auto flex w-full max-w-[1120px] flex-1 flex-col gap-6 px-4 py-10 md:px-8 md:py-12">
+      <article className="mx-auto flex w-full max-w-screen-xl flex-1 flex-col gap-6 px-4 py-10 sm:w-fit md:px-8 md:py-12">
         <h1 className="text-3xl font-bold md:text-4xl md:font-extrabold">
           Blocks
         </h1>
         <hr />
         <div className="not-prose">
           <div
-            className="grid w-full grid-cols-1 sm:p-2 md:gap-2 lg:grid-cols-2 xl:grid-cols-3"
+            className="grid w-full grid-cols-1 place-items-center sm:p-2 md:gap-2 lg:grid-cols-2 xl:grid-cols-3"
             id="cards"
           >
             {BlockPreviewData.map((data) => (
@@ -98,7 +98,7 @@ const LinkCard = ({
     <Link
       href={href}
       className={cn(
-        "relative col-span-1",
+        "relative col-span-1 w-full max-w-96",
         inprogress && "pointer-events-none",
         containerClass,
       )}
