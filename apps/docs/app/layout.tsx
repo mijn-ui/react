@@ -10,7 +10,9 @@ const inter = Inter({
   fallback: ["sans-serif"],
 })
 
-// I'm not sure why the tailwindcss typography plugin isn't working in development mode. It might be due to my machine, but it works fine in production mode. As a temporary workaround, I'm including this code to ensure that all the tailwind typography classes work in development mode.
+// I'm not sure why the tailwindcss typography plugin isn't working in development mode.
+// It might be due to my machine, but it works fine in production mode. As a temporary workaround,
+// I'm including this code to ensure that all the tailwind typography classes work in development mode.
 if (process.env.NODE_ENV === "development") {
   /* eslint-disable-next-line */
   // @ts-ignore: Cannot find module

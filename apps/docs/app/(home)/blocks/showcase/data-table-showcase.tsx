@@ -90,7 +90,7 @@ const DataTableShowcase = () => {
           <div className="h-1.5 w-full rounded-sm bg-accent" />
         </div>
 
-        <div className="px-2 flex items-center justify-between">
+        <div className="flex items-center justify-between px-2">
           <div className="flex items-center gap-1">
             <div className="h-2.5 w-5 rounded-sm bg-accent" />
             <div className="h-1.5 w-6 rounded-full bg-accent" />
