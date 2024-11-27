@@ -15,7 +15,7 @@
   --mijnui-primary: 29 100% 52%; /* orange-500 */
   --mijnui-primary-text: 0 0% 100%; /* white */
 
-  --mijnui-secondary: 33 100% 87% /* #FED7AA */;
+  --mijnui-secondary: 33 100% 87%; /* orange-200 */
   --mijnui-secondary-text: 29 93% 39%; /* orange-700 */
 
   --mijnui-info: 216 76% 52%; /* blue-500 */
@@ -51,7 +51,7 @@
   --mijnui-surface-text: 0 0% 96%; /* neutral-100 */
 
   --mijnui-neutral: 0 0% 15%; /* neutral-800 */
-  --mijnui-neutral-text: 0 0% 64%; /* neutral-400 */
+  --mijnui-neutral-text: 0 0% 83%; /* neutral-300 */
 
   --mijnui-accent: 0 0% 12%; /* neutral-850 */
   --mijnui-accent-text: 0 0% 96%; /* neutral-100 */
@@ -59,7 +59,7 @@
   --mijnui-primary: 29 100% 52%; /* orange-500 */
   --mijnui-primary-text: 0 0% 100%; /* white */
 
-  --mijnui-secondary: 34 100% 82%; /* #FED7AA */
+  --mijnui-secondary: 34 100% 82%; /* orange-200 */
   --mijnui-secondary-text: 29 93% 39%; /* orange-700 */
 
   --mijnui-info: 216 76% 52%; /* blue-500 */
