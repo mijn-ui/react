@@ -26,6 +26,12 @@ export const { docs, meta } = defineDocs({
 export const blocks = defineCollections({
   dir: "content/blocks",
   type: "doc",
+  mdxOptions: getDefaultMDXOptions({
+    remarkPlugins: [
+      remarkInstall,
+      [remarkDocGen, { generators: [fileGenerator()] }],
+    ],
+  }),
 })
 
 export default defineConfig()

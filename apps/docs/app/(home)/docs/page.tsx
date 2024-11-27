@@ -54,7 +54,7 @@ export default function DocsPage(): React.ReactElement {
           href="/docs/laraval"
           className="pointer-events-none col-span-1 sm:col-span-2 md:col-span-1"
         >
-          <Card className="relative border bg-surface p-3 brightness-50 transition duration-300 hover:shadow-md hover:shadow-primary/20 md:p-5">
+          <Card className="relative border bg-surface p-3 opacity-50 transition duration-300 hover:shadow-md hover:shadow-primary/20 md:p-5">
             <span className="absolute right-4 top-4 text-2xl md:text-3xl">
               <FaLaravel />
             </span>
