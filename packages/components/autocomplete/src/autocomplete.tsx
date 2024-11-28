@@ -85,26 +85,23 @@ const Autocomplete = ({
     }
   }
 
-  const handleBlur = React.useCallback(() => {
+  const handleBlur = () => {
     setOpen(false)
     setInputValue(selectedValue)
     setShouldFilter(false)
-  }, [selectedValue])
+  }
 
-  const handleSelectOption = React.useCallback(
-    (value: string) => {
-      setInputValue(value)
-      setSelectedValue(value)
-      onValueChange?.(value)
+  const handleSelectOption = (value: string) => {
+    setInputValue(value)
+    setSelectedValue(value)
+    onValueChange?.(value)
 
-      // This is a hack to prevent the input from being focused after the user selects an option
-      // We can call this hack: "The next tick"
-      setTimeout(() => {
-        inputRef?.current?.blur()
-      }, 0)
-    },
-    [onValueChange],
-  )
+    // This is a hack to prevent the input from being focused after the user selects an option
+    // We can call this hack: "The next tick"
+    setTimeout(() => {
+      inputRef?.current?.blur()
+    }, 0)
+  }
 
   return (
     <AutocompleteContext.Provider
