@@ -9,11 +9,12 @@ const withAnalyzer = createBundleAnalyzer({
 
 const config = withAnalyzer({
   reactStrictMode: true,
+  swcMinify: true,
   eslint: {
     ignoreDuringBuilds: true,
   },
   webpack: (config, { dev }) => {
-    if (config.cache && dev) {
+    if (config.cache && !dev) {
       config.cache = Object.freeze({
         type: "memory",
       })
@@ -25,7 +26,7 @@ const config = withAnalyzer({
   images: {
     unoptimized: true,
   },
-
+  productionBrowserSourceMaps: false,
   experimental: {
     webpackMemoryOptimizations: true,
     serverSourceMaps: false,
