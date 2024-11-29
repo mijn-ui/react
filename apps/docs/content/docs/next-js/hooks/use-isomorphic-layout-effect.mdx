@@ -1,0 +1,46 @@
+---
+title: use-isomorphic-layout-effect
+description: Custom hook that uses either useLayoutEffect or useEffect based on the environment (client-side or server-side).
+docs: https://usehooks-ts.com/react-hook/use-isomorphic-layout-effect
+---
+
+### Installation
+
+
+<InstallationTabs items={["Npm", "Manual"]}>
+  <InstallationTabsContent value="Npm">
+  ```package-install
+  @mijn-ui/react-hooks
+  ```
+  </InstallationTabsContent>
+  
+  <InstallationTabsContent value="Manual">
+  ```json doc-gen:file
+      {
+        "file": "../../packages/hooks/src/use-isomorphic-layout-effect.ts",
+        "codeblock": {
+          "lang": "tsx",
+          "meta": "title=\"mijn-ui/react-hooks/use-isomorphic-layout-effect.ts\""
+        }
+      }
+    ```
+  </InstallationTabsContent>
+</ InstallationTabs>
+
+---
+
+### Usage
+
+```tsx
+import { useIsomorphicLayoutEffect } from 'usehooks-ts'
+
+export default function Component() {
+  useIsomorphicLayoutEffect(() => { // [!code highlight]
+    console.log(
+      "In the browser, I'm an `useLayoutEffect`, but in SSR, I'm an `useEffect`.",
+    )
+  }, [])
+
+  return <p>Hello, world</p>
+}
+```

@@ -1,0 +1,109 @@
+---
+title: use-responsive-variants
+description: The `useResponsiveVariant` hook simplifies responsive behavior by dynamically adapting values based on your viewport size. It works with predefined breakpoints and a default value, letting you easily manage responsive design in your components.
+root: true
+---
+
+### Installation
+
+<InstallationTabs items={["Npm", "Manual"]}>
+  <InstallationTabsContent value="Npm">
+  ```package-install
+  @mijn-ui/react-hooks
+  ```
+  </InstallationTabsContent>
+  
+  <InstallationTabsContent value="Manual">
+  **Add [use-media-query](/docs/next-js/hooks/use-media-query) hook**
+
+  ```json doc-gen:file
+      {
+        "file": "../../packages/hooks/src/use-responsive-variant.ts",
+        "codeblock": {
+          "lang": "tsx",
+          "meta": "title=\"mijn-ui/react-hooks/use-responsive-variant.ts\""
+        }
+      }
+    ```
+  </InstallationTabsContent>
+</ InstallationTabs>
+
+---
+
+
+### How It Works
+
+The `useResponsiveVariant` hook helps you respond to different screen sizes by using a set of predefined breakpoints. You pass in an object with values for each breakpoint and a required `initial` value. The hook evaluates the current viewport size and returns the corresponding value:
+
+- If the viewport matches a breakpoint, the associated value is returned.
+- If no breakpoint matches, the `initial` value acts as a fallback.
+
+This makes the hook especially useful for creating responsive designs, where UI behavior or appearance changes based on screen size.
+
+---
+### Breakpoints
+
+The hook uses the following predefined breakpoints (based on Tailwind CSS):
+
+| Key   | Min Width |
+|-------|-----------|
+| `sm`  | 640px     |
+| `md`  | 768px     |
+| `lg`  | 1024px    |
+| `xl`  | 1280px    |
+| `2xl` | 1536px    |
+
+---
+
+### Parameters
+
+The hook accepts an object with the following keys:
+
+| **Key**    | **Type**               | **Description**                                    |
+|------------|------------------------|----------------------------------------------------|
+| `initial`  | `ResponsiveValue<T>`   | The default value used when no breakpoints match.  |
+| `sm`       | `ResponsiveValue<T>`   | Optional value for screens ≥ 640px.               |
+| `md`       | `ResponsiveValue<T>`   | Optional value for screens ≥ 768px.               |
+| `lg`       | `ResponsiveValue<T>`   | Optional value for screens ≥ 1024px.              |
+| `xl`       | `ResponsiveValue<T>`   | Optional value for screens ≥ 1280px.              |
+| `2xl`      | `ResponsiveValue<T>`   | Optional value for screens ≥ 1536px.              |
+
+---
+
+### Return Value
+
+The hook evaluates the viewport size and returns the value for the largest matching breakpoint. If no breakpoints match, it returns the `initial` value as a fallback.
+
+---
+
+### Usage
+
+Here’s an example of using the `useResponsiveVariant` hook to create a responsive button:
+
+**Example: Responsive Button Sizes**
+
+```tsx
+"use client"
+
+import { Button, ButtonProps } from '@mijn-ui/react-button'
+
+function Example() {
+  const buttonSize = useResponsiveVariant<ButtonProps['size']>({
+    initial: "sm", // Default size
+    sm: "md",      // Small screen size
+    md: "lg",      // Medium screen size
+  })
+
+  return <Button size={buttonSize}>Button</Button>
+}
+```
+
+- On small screens (≥640px), the button size will be `"md"`.
+- On medium screens (≥768px), it will be `"lg"`.
+- If the screen is smaller than `sm`, the button size will default to `"sm"`.
+
+---
+
+### Credits
+
+This implementation is inspired by [Gomah's Gist](https://gist.github.com/Gomah/cb2b0b3f7cb9838a0efd6508a42c3eda).

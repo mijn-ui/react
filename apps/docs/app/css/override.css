@@ -24,9 +24,18 @@ h1 {
 #nd-docs-layout aside#nd-sidebar {
   @apply sm:bg-fd-background/10 sm:backdrop-blur-md;
 
-  a,
+  a {
+    @apply px-4 inline-block truncate w-[calc(var(--fd-sidebar-width)-48px)] overflow-hidden;
+  }
+
   button {
-    @apply px-4;
+    &[data-state="open"] {
+      @apply text-fd-foreground [&>svg]:rotate-180;
+    }
+
+    & > svg {
+      @apply rotate-0;
+    }
   }
 }
 
