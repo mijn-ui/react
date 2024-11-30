@@ -1,48 +1,42 @@
 {
-  "name": "@mijn-ui/react-label",
+  "name": "@mijn-ui/react-theme",
   "author": "Htet Aung Lin<htetaunglin.coder@gmail.com>",
-  "version": "0.0.4",
+  "version": "0.0.1",
   "homepage": "https://mijn-ui.vercel.app",
   "license": "MIT",
   "type": "module",
   "sideEffects": false,
   "files": [
-    "dist"
+    "dist/*"
   ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mijn-ui/mijn-ui-react.git",
-    "directory": "packages/components/label"
+    "directory": "packages/theme/src"
   },
   "bugs": {
     "url": "https://github.com/mijn-ui/mijn-ui-react/issues"
   },
-  "exports": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "exports": {
+    "./*": {
+      "import": "./dist/*.js",
+      "types": "./dist/*.d.ts"
+    }
+  },
   "scripts": {
     "clean": "rimraf dist",
     "build": "tsup",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
     "types:check": "tsc --noEmit"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^15.0.3",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.15",
+    "tailwindcss-animate": "^1.0.7",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*"
   },
-  "dependencies": {
-    "react": "19.0.0-rc-b01722d5-20241114",
-    "react-dom": "19.0.0-rc-b01722d5-20241114",
-    "class-variance-authority": "^0.7.0",
-    "@mijn-ui/react-utilities": "workspace:*",
-    "@radix-ui/react-label": "^2.1.0"
-  },
   "peerDependencies": {
-    "react": "19.0.0-rc-b01722d5-20241114",
-    "react-dom": "19.0.0-rc-b01722d5-20241114"
+    "tailwindcss": ">=3.4.0"
   },
   "publishConfig": {
     "access": "public"
