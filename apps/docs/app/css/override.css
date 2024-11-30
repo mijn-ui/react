@@ -1,11 +1,13 @@
 :root {
   --fd-nav-height: 4rem !important;
   --toc-height: 2rem;
+  --fd-banner-height: -0.5rem !important;
 }
 
 @media (max-width: 768px) {
   :root {
     --fd-nav-height: 3rem !important;
+    --fd-banner-height: 0.5rem !important;
   }
 }
 
@@ -18,7 +20,7 @@ h1 {
 }
 
 #nd-tocnav {
-  @apply md:top-[var(--navbar-height)] h-[var(--toc-height)];
+  @apply h-[var(--toc-height)];
 }
 
 #nd-docs-layout aside#nd-sidebar {
