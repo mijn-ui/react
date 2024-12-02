@@ -1,5 +1,12 @@
 # @mijn-ui-react/popover
 
+## 0.0.5
+
+### Patch Changes
+
+- Updated dependencies [0b5c4d3]
+  - @mijn-ui/react-button@0.0.5
+
 ## 0.0.4
 
 ### Patch Changes

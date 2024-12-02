@@ -1,5 +1,11 @@
 # @mijn-ui-react/button
 
+## 0.0.5
+
+### Patch Changes
+
+- 0b5c4d3: Chore: fix button color issues
+
 ## 0.0.4
 
 ### Patch Changes
