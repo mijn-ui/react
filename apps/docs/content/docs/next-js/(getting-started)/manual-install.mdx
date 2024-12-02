@@ -21,7 +21,7 @@ Manual setups can be time-consuming, so I created a [nextjs-starter](https://git
   <Step>
   **Install Next.js and Required Dependencies**
 
-  Begin by creating a new Next.js application 
+  Start by creating a new Next.js application:
 
   ```bash title="bash"
   npx create-next-app@latest
@@ -40,10 +40,16 @@ Manual setups can be time-consuming, so I created a [nextjs-starter](https://git
     ✔ Would you like to customize the import alias (@/* by default)? No / Yes
   ```
 
-  Then, add the required Mijn UI packages:
+  Next, add the Mijn-UI packages:
 
   ```package-install
-  @mijn-ui/react-utilities @mijn-ui/react-hooks @mijn-ui/react-theme
+  @mijn-ui/react-utilities @mijn-ui/react-hooks @mijn-ui/react-theme 
+  ```
+
+  Finally, install additional dependencies required by most components:
+
+  ```package-install
+  react-icons class-variance-authority
   ```
   </Step>
 
