@@ -35,7 +35,7 @@ const ProgressExample = () => {
         <p>{value}%</p>
       </div>
       <Progress value={value} />
-      <div className="flex items-center justify-between text-xs text-neutral-text">
+      <div className="flex items-center justify-between text-xs text-muted-text">
         <p>min</p>
         <p>max</p>
       </div>

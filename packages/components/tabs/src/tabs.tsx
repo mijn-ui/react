@@ -30,7 +30,7 @@ const TabsList = ({ className, unstyled, ...props }: TabsListProps) => {
     <TabsPrimitive.List
       className={applyUnstyled(
         isUnstyled,
-        "bg-main text-neutral-text inline-flex h-10 items-center justify-center rounded-lg p-1",
+        "bg-main text-muted-text inline-flex h-10 items-center justify-center rounded-lg p-1",
         className,
       )}
       {...props}

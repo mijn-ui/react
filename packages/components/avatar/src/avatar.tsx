@@ -56,7 +56,7 @@ const AvatarGroup = ({
       >
         {visibleChildren}
         {remainingChildrenCount > 0 && (
-          <span className="text-neutral-text !ml-1.5 flex items-center justify-center text-xs">
+          <span className="text-muted-text !ml-1.5 flex items-center justify-center text-xs">
             +{remainingChildrenCount}
           </span>
         )}
@@ -133,7 +133,7 @@ const AvatarFallback = ({
     <AvatarPrimitive.Fallback
       className={applyUnstyled(
         isUnstyled,
-        "bg-neutral flex h-full w-full items-center justify-center rounded-full",
+        "bg-muted flex h-full w-full items-center justify-center rounded-full",
         className,
       )}
       {...props}

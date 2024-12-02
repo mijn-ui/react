@@ -40,7 +40,7 @@ const TableExample = () => {
             <TableCell>$1042.25</TableCell>
 
             <TableCell>
-              <p className="flex items-center gap-2 text-xs text-neutral-text">
+              <p className="flex items-center gap-2 text-xs text-muted-text">
                 <span
                   className={`block size-2 rounded-full bg-green-500 ring-2 ring-green-200`}
                 />
@@ -68,7 +68,7 @@ const TableExample = () => {
             <TableCell>$1042.25</TableCell>
 
             <TableCell>
-              <p className="flex items-center gap-2 text-xs text-neutral-text">
+              <p className="flex items-center gap-2 text-xs text-muted-text">
                 <span
                   className={`block size-2 rounded-full bg-yellow-500 ring-2 ring-yellow-200`}
                 />
@@ -98,7 +98,7 @@ const TableExample = () => {
             <TableCell>$1042.25</TableCell>
 
             <TableCell>
-              <p className="flex items-center gap-2 text-xs text-neutral-text">
+              <p className="flex items-center gap-2 text-xs text-muted-text">
                 <span
                   className={`block size-2 rounded-full bg-green-500 ring-2 ring-green-200`}
                 />
@@ -128,7 +128,7 @@ const TableExample = () => {
             <TableCell>$1042.25</TableCell>
 
             <TableCell>
-              <p className="flex items-center gap-2 text-xs text-neutral-text">
+              <p className="flex items-center gap-2 text-xs text-muted-text">
                 <span
                   className={`block size-2 rounded-full bg-red-500 ring-2 ring-red-200`}
                 />

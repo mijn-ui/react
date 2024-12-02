@@ -25,8 +25,8 @@ export const checkboxStyles = cva(
           "border-main-text data-[state=checked]:border-secondary data-[state=indeterminate]:border-secondary data-[state=checked]:bg-secondary data-[state=indeterminate]:bg-secondary data-[state=checked]:text-secondary-text data-[state=indeterminate]:text-secondary-text",
         accent:
           "border-main-text data-[state=checked]:border-main-border data-[state=indeterminate]:border-main-border data-[state=checked]:bg-accent data-[state=indeterminate]:bg-accent data-[state=checked]:text-accent-text data-[state=indeterminate]:text-accent-text",
-        neutral:
-          "border-main-text data-[state=checked]:border-neutral data-[state=indeterminate]:border-neutral data-[state=checked]:bg-neutral data-[state=indeterminate]:bg-neutral data-[state=checked]:text-neutral-text data-[state=indeterminate]:text-neutral-text",
+        muted:
+          "border-main-text data-[state=checked]:border-muted data-[state=indeterminate]:border-muted data-[state=checked]:bg-muted data-[state=indeterminate]:bg-muted data-[state=checked]:text-muted-text data-[state=indeterminate]:text-muted-text",
         danger:
           "border-main-text data-[state=checked]:border-danger data-[state=indeterminate]:border-danger data-[state=checked]:bg-danger data-[state=indeterminate]:bg-danger data-[state=checked]:text-danger-filled-text data-[state=indeterminate]:text-danger-filled-text",
         success:

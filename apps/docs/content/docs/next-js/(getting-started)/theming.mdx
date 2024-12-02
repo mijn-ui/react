@@ -3,127 +3,147 @@ title: Theming
 description: Mijn-UI uses Tawilind CSS variables for themeing.
 ---
 
-## List of variables
+### Variables List
 
-### Main Colors
+- `main` colors for backgrounds, text, and borders across the UI.
 
-Primary colors for backgrounds, text, and borders across the UI.
-
-```css
-{
-  --main: 210 14% 95%; /* slate-100 */
-  --main-text: 0 0% 0%; /* black */
-  --main-border: 0 0% 83%; /* neutral-300 */
-}
-```
-
-### Surface Colors
-
-For panels, cards, and other contained elements.
-
-```css
+  ```css
   {
-  --surface: 0 0% 98%; /* neutral-50 */
-  --surface-text: 0 0% 0%; /* black */
-}
-```
+    --main: 210 14% 95%; /* slate-100 */
+    --main-text: 0 0% 0%; /* black */
+    --main-border: 0 0% 83%; /* neutral-300 */
+  }
+  ```
 
-### Accent colors
+- `surface` colors For panels, cards, and other contained elements.
 
-For interactive elements like hover effects.
+  ```css
+    {
+    --surface: 0 0% 98%; /* neutral-50 */
+    --surface-text: 0 0% 0%; /* black */
+  }
+  ```
+
+- `primary` colors for buttons, links, and other primary actions.
+
+  ```css
+  {
+  --primary: 29 100% 52%; /* orange-500 */
+  --primary-text: 0 0% 100%; /* white */
+  }
+  ```
+
+- `secondary` colors for buttons, links, and other primary actions.
+
+  ```css
+  {
+  --secondary: 34 100% 82%; /* #FED7AA */
+  --secondary-text: 29 93% 39%; /* orange-700 */
+  }
+  ```
+
+- `accent` colors For interactive elements like hover effects.
+
+  ```css
+  {
+    --accent: 0 0% 90%; /* neutral-200 */
+    --accent-text: 0 0% 0%; /* black */
+  }
+  ```
+
+- `muted` colors for disabled or inactive elements.
+
+  ```css
+  {
+    --muted: 0 0% 83%; /* neutral-300 */
+    --muted-text: 0 0% 25%; /* neutral-700 */
+  }
+  ```
+
+- `border` and `ring` colors
+
+  ```css
+  {
+    --border: 0 0% 83%; /* neutral-300 */
+    --ring: 0 0% 83%; /* neutral-300 */
+  }
+
+  ```
+
+- `input-border` Color Used in form fields like Input, Select, and Textarea.
+
+  ```css
+  {
+    --input-border: 0 0% 0%; /* black */
+  }
+  ```
+
+**Status Colors**
+
+- `info` Color for background, text, and text color when the background is filled for informational elements.
+
+  ```css
+  {
+    --info: 216 76% 52%; /* blue-500 */
+    --info-text: 219 64% 43%; /* blue-800 */
+    --info-filled-text: 0 0% 100%; /* white */
+  }
+  ```
+
+- `warning` Color for background, text, and text color when the background is filled for warning elements.
+
+  ```css
+  {
+    --warning: 45 92% 47%; /* yellow-500 */
+    --warning-text: 28 73% 26%; /* yellow-900 */
+    --warning-filled-text: 0 0% 0%; /* white */
+  }
+  ```
+
+- `danger` Color for background, text, and text color when the background is filled for danger elements.
+
+  ```css
+  {
+    --danger: 0 72% 43%; /* red-500 */
+    --danger-text: 0 82% 31%; /* red-800 */
+    --danger-filled-text: 0 0% 100%; /* white */
+  }
+  ```
+
+- `success` Color for background, text, and text color when the background is filled for success elements.
+
+  ```css
+  {
+    --success: 140 76% 38%; /* green-500 */
+    --success-text: 140 49% 20%; /* green-800 */
+    --success-filled-text: 0 0% 100%; /* white */
+  }
+  ```
+
+---
+
+
+### Overriding Colors
+
+Mijn-UI defines color variables using a Tailwind plugin, but you can easily override them in your CSS. Use the [variables list](/docs/next-js/theming#variables-list) as a reference to redefine specific colors.
+
+For example, to override the `--main` color:
 
 ```css
-{
-  --accent: 0 0% 90%; /* neutral-200 */
-  --accent-text: 0 0% 0%; /* black */
+@layer base {
+  :root {
+    --main: 0 0% 100%; /* white */
+  }
+
+  .dark {
+    --main: 0 0% 7%; /* neutral-925 */
+  }
 }
-```
-
-### Neutral Colors
-
-Muted tones for secondary content, providing balanced visual hierarchy.
-
-```css
-{
-  --neutral: 0 0% 83%; /* neutral-300 */
-  --neutral-text: 0 0% 25%; /* neutral-700 */
-}
-```
-
-### Border and Ring Colors
-
-```css
-{
-  --border: 0 0% 83%; /* neutral-300 */
-  --ring: 0 0% 83%; /* neutral-300 */
-}
-
-```
-
-### Input Border Color
-
-Used in form fields like Input, Select, and Textarea.
-
-```css
-{
-  --input-border: 0 0% 0%; /* black */
-}
-
 ```
 
 ---
 
-### Status Colors
-
-status colors for components such as `Alert`, `Input`, `Button`, `Progress`, `Indicator`, etc...
-
-- `background`: Background color of the component.
-- `text`: Text color when the component background is outline.
-- `filled-text`: Text color when the component background is filled.
-
-#### info
-
-```css
-{
-  --info: 216 76% 52%; /* blue-500 */
-  --info-text: 219 64% 43%; /* blue-800 */
-  --info-filled-text: 0 0% 100%; /* white */
-}
-```
-
-#### warning
-
-```css
-{
-  --warning: 45 92% 47%; /* yellow-500 */
-  --warning-text: 28 73% 26%; /* yellow-900 */
-  --warning-filled-text: 0 0% 0%; /* white */
-}
-```
-
-#### danger
-
-```css
-{
-  --danger: 0 72% 43%; /* red-500 */
-  --danger-text: 0 82% 31%; /* red-800 */
-  --danger-filled-text: 0 0% 100%; /* white */
-}
-```
-
-#### success
-
-```css
-{
-  --success: 140 76% 38%; /* green-500 */
-  --success-text: 140 49% 20%; /* green-800 */
-  --success-filled-text: 0 0% 100%; /* white */
-}
-```
-
----
-
-## Adding New Colors
+### Adding New Colors
 
 To add new colors, you need to add them to your CSS file and to your tailwind.config.js file.
 
@@ -136,8 +156,8 @@ To add new colors, you need to add them to your CSS file and to your tailwind.co
   }
 
   .dark {
-  --card: 0 0% 7%; /* neutral-925 */
-  --card-text: 0 0% 96%; /* neutral-100 */
+    --card: 0 0% 7%; /* neutral-925 */
+    --card-text: 0 0% 96%; /* neutral-100 */
   }
   ```
   </Tab>
@@ -169,24 +189,3 @@ You can now use the new colors in your components.
 You can also use other color formats if you prefer. Tailwind CSS supports various color formats including RGB, RGBA, and HSL.
 
 For more information on using different color formats, refer to the [Tailwind CSS documentation](https://tailwindcss.com/docs/customizing-colors#using-css-variables).
-
-
----
-
-## Overriding Colors
-
-Mijn-UI defines color variables using a Tailwind plugin, but you can easily override them in your CSS. Use the [list of variables](docs/next-js/theming#list-of-variables) as a reference to redefine specific colors.
-
-For example, to override the `--main` color:
-
-```css
-@layer base {
-  :root {
-    --main: 0 0% 100%; /* white */
-  }
-
-  .dark {
-    --main: 0 0% 7%; /* neutral-925 */
-  }
-}
-```

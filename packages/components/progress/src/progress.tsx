@@ -20,7 +20,7 @@ const Progress = ({
     ref={ref}
     className={applyUnstyled(
       unstyled,
-      "relative h-2 w-full overflow-hidden rounded-full bg-neutral",
+      "relative h-2 w-full overflow-hidden rounded-full bg-muted",
       className,
     )}
     {...props}

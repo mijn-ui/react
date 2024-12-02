@@ -112,7 +112,7 @@ const AccordionTrigger = ({
           <LuChevronDown
             className={applyUnstyled(
               isUnstyled,
-              "h-4 w-4 shrink-0 text-neutral-text duration-400 ease-in-out group-data-[state=open]:rotate-180",
+              "h-4 w-4 shrink-0 text-muted-text duration-400 ease-in-out group-data-[state=open]:rotate-180",
             )}
           />
         )}

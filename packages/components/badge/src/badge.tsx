@@ -10,7 +10,7 @@ const badgeVariants = cva(
         primary: "",
         secondary: "",
         accent: "",
-        neutral: "",
+        muted: "",
         danger: "",
       },
       variant: {
@@ -46,10 +46,10 @@ const badgeVariants = cva(
           "border-main-border text-accent-text hover:bg-accent hover:text-accent-text border",
       },
       {
-        color: "neutral",
+        color: "muted",
         variant: "outline",
         className:
-          "border-neutral text-neutral-text hover:bg-neutral hover:text-neutral-text border",
+          "border-muted text-muted-text hover:bg-muted hover:text-muted-text border",
       },
       {
         color: "danger",
@@ -80,9 +80,9 @@ const badgeVariants = cva(
         className: "text-accent-text hover:bg-accent",
       },
       {
-        color: "neutral",
+        color: "muted",
         variant: "text",
-        className: "text-neutral-text hover:bg-neutral",
+        className: "text-muted-text hover:bg-muted",
       },
 
       {
@@ -106,9 +106,9 @@ const badgeVariants = cva(
         className: "bg-accent text-accent-text hover:bg-accent/80",
       },
       {
-        color: "neutral",
+        color: "muted",
         variant: "filled",
-        className: "bg-neutral text-neutral-text hover:bg-neutral/80",
+        className: "bg-muted text-muted-text hover:bg-muted/80",
       },
     ],
     defaultVariants: {

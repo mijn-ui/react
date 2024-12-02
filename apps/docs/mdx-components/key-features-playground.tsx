@@ -160,7 +160,7 @@ const KeyFeaturesPlayground = () => {
               label="Colors"
               options={[
                 { value: "primary", id: "primary" },
-                { value: "neutral", id: "neutral" },
+                { value: "muted", id: "muted" },
                 { value: "accent", id: "accent" },
                 { value: "danger", id: "danger" },
               ]}

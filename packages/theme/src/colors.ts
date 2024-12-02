@@ -8,8 +8,8 @@ const defaultColors: Preset = {
     surface: "0 0% 98%",
     "surface-text": "0 0% 0%",
 
-    neutral: "0 0% 83%",
-    "neutral-text": "0 0% 25%",
+    muted: "0 0% 83%",
+    "muted-text": "0 0% 25%",
 
     accent: "0 0% 90%",
     "accent-text": "0 0% 0%",
@@ -50,8 +50,8 @@ const defaultColors: Preset = {
     surface: "0 0% 7%",
     "surface-text": "0 0% 96%",
 
-    neutral: "0 0% 15%",
-    "neutral-text": "0 0% 64%",
+    muted: "0 0% 15%",
+    "muted-text": "0 0% 64%",
 
     accent: "0 0% 12%",
     "accent-text": "0 0% 96%",

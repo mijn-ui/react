@@ -31,7 +31,7 @@
         }
 
         .custom-event-list-time {
-          @apply text-sm text-neutral-text;
+          @apply text-sm text-muted-text;
         }
       }
     }

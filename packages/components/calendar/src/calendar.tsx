@@ -29,17 +29,17 @@ export const Calendar = ({
         [UI.MonthCaption]: "flex justify-center py-2 relative items-center",
         [UI.CaptionLabel]: "text-sm font-medium",
         [UI.PreviousMonthButton]: cn(
-          buttonStyles({ color: "neutral", variant: "outline" }),
+          buttonStyles({ color: "muted", variant: "outline" }),
           "absolute left-1 top-0 z-10 size-7 bg-transparent p-0 opacity-50 hover:opacity-100",
         ),
         [UI.NextMonthButton]: cn(
-          buttonStyles({ color: "neutral", variant: "outline" }),
+          buttonStyles({ color: "muted", variant: "outline" }),
           "absolute right-1 top-0 z-10 size-7 bg-transparent p-0 opacity-50 hover:opacity-100",
         ),
         [UI.MonthGrid]: "w-full border-collapse space-y-1",
         [UI.Weekdays]: "flex",
         [UI.Weekday]:
-          "text-neutral-text w-9 font-normal text-[0.8rem] h-9 flex items-center justify-center",
+          "text-muted-text w-9 font-normal text-[0.8rem] h-9 flex items-center justify-center",
         [UI.Week]: "flex w-full mt-0.5",
         [UI.Day]: cn(
           buttonStyles({ variant: "text", color: "accent" }),
@@ -54,8 +54,8 @@ export const Calendar = ({
           "aria-selected:bg-accent/75 aria-selected:text-accent-text",
         [DayFlag.today]: "bg-accent text-accent-text",
         [DayFlag.outside]:
-          "day-outside text-neutral-text opacity-50 aria-selected:bg-accent/50 aria-selected:text-neutral-text aria-selected:opacity-30",
-        [DayFlag.disabled]: "text-neutral-text opacity-50",
+          "day-outside text-muted-text opacity-50 aria-selected:bg-accent/50 aria-selected:text-muted-text aria-selected:opacity-30",
+        [DayFlag.disabled]: "text-muted-text opacity-50",
         [DayFlag.hidden]: "invisible",
         ...classNames,
       }}

@@ -5,7 +5,7 @@ const ScrollAbleSkeleton = () => {
         {" "}
         <div role="status" className="my-7 animate-pulse">
           {" "}
-          <div className="mb-4 h-2.5 w-48 rounded-full bg-neutral"></div>
+          <div className="mb-4 h-2.5 w-48 rounded-full bg-muted"></div>
           <div className="mb-2.5 h-2 max-w-[460px] rounded-full bg-accent"></div>
           <div className="mb-2.5 h-2 max-w-[500px] rounded-full bg-accent"></div>
           <div className="mb-2.5 h-2 max-w-[450px] rounded-full bg-accent"></div>
@@ -15,7 +15,7 @@ const ScrollAbleSkeleton = () => {
         </div>
         <div role="status" className="mb-7 max-w-lg animate-pulse">
           {" "}
-          <div className="flex h-48 w-full items-center justify-center rounded bg-neutral">
+          <div className="flex h-48 w-full items-center justify-center rounded bg-muted">
             {" "}
             <svg
               className="size-12 text-accent"
@@ -50,7 +50,7 @@ const ScrollAbleSkeleton = () => {
         </div>
         <div role="status" className="mb-6 mt-7 animate-pulse">
           {" "}
-          <div className="mb-4 h-2.5 w-48 rounded-full bg-neutral"></div>
+          <div className="mb-4 h-2.5 w-48 rounded-full bg-muted"></div>
           <div className="mb-2.5 h-2 max-w-[460px] rounded-full bg-accent"></div>
           <div className="mb-2.5 h-2 max-w-[450px] rounded-full bg-accent"></div>
           <div className="mb-2.5 h-2 max-w-[460px] rounded-full bg-accent"></div>

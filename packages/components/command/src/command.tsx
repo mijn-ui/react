@@ -53,7 +53,7 @@ const CommandDialog = ({
         <Command
           className={applyUnstyled(
             isUnstyled,
-            "[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-neutral-text [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5",
+            "[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-text [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5",
           )}
         >
           {children}
@@ -94,7 +94,7 @@ const CommandInput = ({ className, unstyled, ...props }: CommandInputProps) => {
       <CommandPrimitive.Input
         className={applyUnstyled(
           isUnstyled,
-          "flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-neutral-text disabled:cursor-not-allowed disabled:opacity-50",
+          "flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-text disabled:cursor-not-allowed disabled:opacity-50",
           className,
         )}
         {...props}
@@ -170,7 +170,7 @@ const CommandGroup = ({ className, unstyled, ...props }: CommandGroupProps) => {
     <CommandPrimitive.Group
       className={applyUnstyled(
         isUnstyled,
-        "text-text overflow-hidden p-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-neutral-text",
+        "text-text overflow-hidden p-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-text",
         className,
       )}
       {...props}
@@ -249,7 +249,7 @@ const CommandShortcut = ({
     <span
       className={applyUnstyled(
         isUnstyled,
-        "ml-auto text-xs tracking-widest text-neutral-text",
+        "ml-auto text-xs tracking-widest text-muted-text",
         className,
       )}
       {...props}

@@ -13,7 +13,7 @@ const StatsCardExample = () => {
     <Card className="max-w-44">
       <CardHeader className="px-5 pb-5 sm:px-6 sm:pb-4">
         <Button
-          color="neutral"
+          color="muted"
           size={"icon"}
           className="rounded-full p-0 sm:size-12"
         >

@@ -43,7 +43,7 @@ const KanbanCardItem = ({
         <div key={tag} className="flex flex-wrap">
           <Badge
             variant={"outline"}
-            color="neutral"
+            color="muted"
             className="px-2 py-0.5 text-xs"
           >
             {tag}

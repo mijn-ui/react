@@ -335,7 +335,7 @@ const DropdownMenuSeparator = ({
     <DropdownMenuPrimitive.Separator
       className={applyUnstyled(
         isUnstyled,
-        "-mx-1 my-1 h-px bg-neutral",
+        "-mx-1 my-1 h-px bg-muted",
         className,
       )}
       {...props}

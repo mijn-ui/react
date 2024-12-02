@@ -53,7 +53,7 @@ const SelectTrigger = ({
     <SelectPrimitive.Trigger
       className={applyUnstyled(
         isUnstyled,
-        "flex h-10 w-full items-center justify-between rounded-md border border-main-border bg-surface px-3 py-2 text-sm placeholder:text-neutral-text focus:border-input-border focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 hover:bg-accent",
+        "flex h-10 w-full items-center justify-between rounded-md border border-main-border bg-surface px-3 py-2 text-sm placeholder:text-muted-text focus:border-input-border focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 hover:bg-accent",
         className,
       )}
       {...props}
@@ -267,7 +267,7 @@ const SelectSeparator = ({
     <SelectPrimitive.Separator
       className={applyUnstyled(
         isUnstyled,
-        "-mx-1 my-1 h-px bg-neutral",
+        "-mx-1 my-1 h-px bg-muted",
         className,
       )}
       {...props}

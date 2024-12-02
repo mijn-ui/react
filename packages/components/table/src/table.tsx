@@ -168,7 +168,7 @@ const TableCaption = ({ className, unstyled, ...props }: TableCaptionProps) => {
     <caption
       className={applyUnstyled(
         isUnstyled,
-        "mt-4 text-sm text-neutral-text",
+        "mt-4 text-sm text-muted-text",
         className,
       )}
       {...props}

@@ -20,8 +20,8 @@ const CheckboxColors = () => {
       </div>
 
       <div className="flex items-center gap-2">
-        <Checkbox defaultChecked id="neutral" color="neutral" />
-        <Label htmlFor="neutral">Neutral</Label>
+        <Checkbox defaultChecked id="muted" color="muted" />
+        <Label htmlFor="muted">Neutral</Label>
       </div>
 
       <div className="flex items-center gap-2">

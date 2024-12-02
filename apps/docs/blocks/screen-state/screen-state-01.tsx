@@ -29,7 +29,7 @@ const ScreenState01 = () => {
       </CardContent>
 
       <CardFooter className="gap-3">
-        <Button className="h-9 sm:h-10" color="neutral" variant={"outline"}>
+        <Button className="h-9 sm:h-10" color="muted" variant={"outline"}>
           Cancel
         </Button>
         <Button className="h-9 sm:h-10">Create New File</Button>

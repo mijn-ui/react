@@ -9,8 +9,8 @@ type Keys =
   | "main-text"
   | "surface"
   | "surface-text"
-  | "neutral"
-  | "neutral-text"
+  | "muted"
+  | "muted-text"
   | "accent"
   | "accent-text"
   | "primary"
@@ -68,8 +68,8 @@ function createTailwindColors(): TailwindColors {
     "main-text",
     "surface",
     "surface-text",
-    "neutral",
-    "neutral-text",
+    "muted",
+    "muted-text",
     "accent",
     "accent-text",
     "primary",

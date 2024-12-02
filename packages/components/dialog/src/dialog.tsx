@@ -68,7 +68,7 @@ const DialogClose = ({ unstyled, className, ...props }: DialogCloseProps) => {
     <DialogPrimitive.Close
       className={applyUnstyled(
         isUnstyled,
-        buttonStyles({ color: "neutral", variant: "text" }),
+        buttonStyles({ color: "muted", variant: "text" }),
         className,
       )}
       {...props}
@@ -245,7 +245,7 @@ const DialogDescription = ({
     <DialogPrimitive.Description
       className={applyUnstyled(
         isUnstyled,
-        "text-sm text-neutral-text",
+        "text-sm text-muted-text",
         className,
       )}
       {...props}

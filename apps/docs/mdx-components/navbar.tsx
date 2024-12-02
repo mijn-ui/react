@@ -52,7 +52,7 @@ const Navbar = () => {
   const renderPages = PAGES.map((page) => (
     <Link
       key={page.title}
-      className="text-sm text-neutral-text hover:text-secondary-text"
+      className="text-sm text-muted-text hover:text-secondary-text"
       href={page.href}
     >
       {page.title}
@@ -99,7 +99,7 @@ const Navbar = () => {
             className="gap-2"
           >
             <LuSearch />
-            <span className="inline-block text-neutral-text">Search...</span>
+            <span className="inline-block text-muted-text">Search...</span>
             <div className="ml-4 inline-flex h-5 gap-1 rounded-full border px-2 py-px">
               <kbd className="text-xxs">Ctrl+</kbd>
               <kbd className="text-xxs">K</kbd>
@@ -119,14 +119,14 @@ const Navbar = () => {
         <div className="flex items-center md:hidden">
           <button
             onClick={() => setOpenSearch(true)}
-            className="inline-flex size-8 items-center justify-center text-neutral-text transition duration-200 hover:text-secondary-text"
+            className="inline-flex size-8 items-center justify-center text-muted-text transition duration-200 hover:text-secondary-text"
           >
             <LuSearch />
           </button>
 
           <ClickAwayListener onClickAway={() => setDropdownOpen(false)}>
             <Collapsible open={dropdownOpen} onOpenChange={setDropdownOpen}>
-              <CollapsibleTrigger className="flex size-8 items-center justify-center text-neutral-text transition duration-200 hover:text-secondary-text">
+              <CollapsibleTrigger className="flex size-8 items-center justify-center text-muted-text transition duration-200 hover:text-secondary-text">
                 <LuChevronDown className="text-lg" />
               </CollapsibleTrigger>
               <CollapsibleContent className="top-[calc(var(--navbar-height)] absolute inset-x-0 mt-2 overflow-hidden bg-surface text-sm transition-[height] data-[state=closed]:animate-collapsible-collapse data-[state=open]:animate-collapsible-expand">
@@ -136,7 +136,7 @@ const Navbar = () => {
 
                   <div className="flex w-full items-center justify-between">
                     <Link
-                      className="inline-flex items-center gap-2 text-neutral-text hover:text-secondary-text"
+                      className="inline-flex items-center gap-2 text-muted-text hover:text-secondary-text"
                       target="_blank"
                       href={GITHUB_URL}
                     >

@@ -13,8 +13,8 @@
 
   --fd-border: var(--main-border); /* neutral-300 */
 
-  --fd-muted: var(--neutral); /* neutral-300 */
-  --fd-muted-foreground: var(--neutral-text); /* neutral-700 */
+  --fd-muted: var(--muted); /* neutral-300 */
+  --fd-muted-foreground: var(--muted-text); /* neutral-700 */
 
   --fd-primary: var(--primary); /* orange-500 */
   --fd-primary-foreground: var(--primary-text); /* white */

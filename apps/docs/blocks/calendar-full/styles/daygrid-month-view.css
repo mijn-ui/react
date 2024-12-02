@@ -5,13 +5,13 @@
     /* day-header styles */
     .month-view__day-header {
       .fc-col-header-cell-cushion {
-        @apply block bg-accent px-3 py-2 text-left text-sm font-medium uppercase text-neutral-text;
+        @apply block bg-accent px-3 py-2 text-left text-sm font-medium uppercase text-muted-text;
       }
     }
 
     /* styles for the last month days and the next month days */
     .fc-day-other {
-      @apply text-neutral-text;
+      @apply text-muted-text;
     }
 
     /* day-cell styles */

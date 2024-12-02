@@ -217,7 +217,7 @@ const AlertDialogDescription = ({
     <AlertDialogPrimitive.Description
       className={applyUnstyled(
         isUnstyled,
-        "text-sm text-neutral-text",
+        "text-sm text-muted-text",
         className,
       )}
       {...props}
