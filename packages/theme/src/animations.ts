@@ -1,6 +1,5 @@
 export const animations = {
   keyframes: {
-    /* ----------------------------- base keyframes ----------------------------- */
     "fade-in": {
       from: { opacity: "0" },
       to: { opacity: "1" },
@@ -17,9 +16,6 @@ export const animations = {
       from: { transform: "scale(1)" },
       to: { transform: "scale(.5)" },
     },
-
-    /* -------------------------- components keyframes -------------------------- */
-
     "accordion-open": {
       from: { height: "0" },
       to: { height: "var(--radix-accordion-content-height)" },
@@ -61,20 +57,14 @@ export const animations = {
     "scale-in": "scale-in 300ms ease",
     "scale-out": "scale-out 300ms ease",
 
-    "dialog-open": "dialog-open 200ms cubic-bezier(0.32, 0.72, 0, 1)",
-    "dialog-close": "dialog-close 300ms cubic-bezier(0.32, 0.72, 0, 1)",
-
-    "popover-open": "popover-open 150ms ease",
-    "popover-close": "popover-close 150ms ease",
-
     "accordion-open":
       "accordion-open 0.2s ease-in-out, fade-in 0.4s ease-in-out",
     "accordion-close":
-      "accordion-close 0.2s ease-in-out, fade-in 0.4s ease-in-out",
+      "accordion-close 0.2s ease-in-out, fade-out 0.4s ease-in-out",
 
     "collapsible-open":
       "collapsible-open 0.2s ease-in-out, fade-in 0.4s ease-in-out",
     "collapsible-close":
-      "collapsible-close 0.2s ease-in-out, fade-in 0.4s ease-in-out",
+      "collapsible-close 0.2s ease-in-out, fade-out 0.4s ease-in-out",
   },
 }

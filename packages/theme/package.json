@@ -17,12 +17,8 @@
   "bugs": {
     "url": "https://github.com/mijn-ui/mijn-ui-react/issues"
   },
-  "exports": {
-    "./*": {
-      "import": "./dist/*.js",
-      "types": "./dist/*.d.ts"
-    }
-  },
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "clean": "rimraf dist",
     "build": "tsup",

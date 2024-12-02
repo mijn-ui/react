@@ -42,6 +42,16 @@ export interface Preset {
   dark: Theme
 }
 
+function getThemeStyles(theme: Theme): Record<string, string> {
+  return Object.fromEntries(
+    Object.entries(theme).map(([key, value]) => [variableName(key), value]),
+  )
+}
+
+function variableName(name: string): string {
+  return `--${name}`
+}
+
 function colorToCSS(name: string): string {
   return `hsl(var(--${name}) / <alpha-value>)`
 }
@@ -98,24 +108,25 @@ export const mijnUiTheme = plugin(
   function ({ addBase }) {
     addBase({
       ":root": {
-        ...presets.defaultColors.light,
+        ...getThemeStyles(presets.defaultColors.light),
       },
       ".dark": {
-        ...presets.defaultColors.dark,
+        ...getThemeStyles(presets.defaultColors.dark),
       },
       "*": {
-        "border-color": `theme('colors.main-border')`,
+        "@apply border-main-border": {},
       },
       body: {
-        "background-color": `theme('colors.main')`,
-        color: `theme('colors.main-text')`,
+        "@apply bg-main text-main-text": {},
       },
     })
   },
   {
     theme: {
       extend: {
-        colors: createTailwindColors(),
+        colors: {
+          ...createTailwindColors(),
+        },
         ...animations,
       },
     },
@@ -124,5 +135,7 @@ export const mijnUiTheme = plugin(
 
 export const mijnUiPreset: PresetsConfig = {
   darkMode: "class",
-  plugins: [mijnUiTheme, animatePlugin],
+  plugins: [animatePlugin, mijnUiTheme],
 }
+
+export { presets } from "./colors"
