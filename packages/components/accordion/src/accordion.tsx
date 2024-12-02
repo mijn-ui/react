@@ -143,7 +143,7 @@ const AccordionContent = ({
     <RadixAccordion.Content
       className={applyUnstyled(
         isUnstyled,
-        "overflow-hidden text-sm transition-[height] data-[state=closed]:animate-accordion-collapse data-[state=open]:animate-accordion-expand",
+        "overflow-hidden text-sm transition-[height] data-[state=closed]:animate-accordion-close data-[state=open]:animate-accordion-open",
       )}
       {...props}
     >

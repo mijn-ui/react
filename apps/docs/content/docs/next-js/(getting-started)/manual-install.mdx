@@ -3,7 +3,6 @@ title: Manual Installation
 description: This guide provides instructions for using Mijn-UI components by copying and pasting source code snippets. 
 ---
 
-
 ### Requirements
 
 - [NextJS 15](https://nextjs.org) or later
@@ -20,183 +19,84 @@ Manual setups can be time-consuming, so I created a [nextjs-starter](https://git
 
 <Steps>
   <Step>
-**Install Next.js and Required Dependencies**
+  **Install Next.js and Required Dependencies**
 
-```bash title="bash"
+  Begin by creating a new Next.js application 
+
+  ```bash title="bash"
   npx create-next-app@latest
-```
+  ```
 
-Since we are in the beta stage, the following options work pretty well for installation. Please ensure to select these options:
+  Then, add the required Mijn UI packages:
 
-```bash title="bash"
-  ...
-  ✔ Would you like to use TypeScript? Yes
-  ✔ Would you like to use ESLint?  Yes
-  ✔ Would you like to use Tailwind CSS? Yes
-  ✔ Would you like your code inside a `src/` directory? Yes
-  ✔ Would you like to use App Router? (recommended) Yes
-  ✔ Would you like to use Turbopack for next dev? Yes
-  ✔ Would you like to customize the import alias (@/* by default)? No
-```
-
-After setting up the Next.js project, install these dependencies used by Mijn-UI components:
-
-```package-install
-react-icons class-variance-authority tailwindcss-animate clsx tailwind-merge
-```
-
-</Step>
-<Step>
-
-**Configure TypeScript Path Aliases**
-
-Since this project is still in a beta phase, and extensive testing is ongoing, we recommend configuring TypeScript with path aliases for better project organization and readability. Please use the following setup in your tsconfig.json:
-
-```json doc-gen:file
-{
-  "file": "./examples/react/_configs/tsconfig-example.json",
-  "codeblock": {
-    "lang": "json",
-    "meta": "title=\"tsconfig.json\""
-  }
-}
-```
-**Recommended Folder Structure**
-
-I recommend using this folder structure for manual integration, similar to the packages folder structure. This way, you won't need to update any component paths, as the source codes are from the mijn-ui packages folder.
-
-<Files>
-  <Folder name="public">
-    <File name="..." />
-  </Folder>
-  <Folder name="src">
-    <Folder name="app">
-      <File name="page.tsx" />
-      <File name="..." />
-    </Folder>
-  </Folder>
-  <Folder defaultOpen name="mijn-ui">
-    <Folder name="react-utilities">
-      <Folder name="context">
-        <File name="index.ts" />
-      </Folder>
-      <Folder name="shared">
-        <File name="index.ts" />
-      </Folder>
-      <File name="..." />
-    </Folder>
-    <Folder name="react-hooks">
-      <File name="use-controlled-state.ts" />
-      <File name="..." />
-    </Folder>
-    <File name="react-accordion.tsx" />
-    <File name="react-button.tsx" />
-    <File name="react-input.tsx" />
-    <File name="..." />
-  </Folder>
-</Files>
-
-<Alert
-  title=""
-  description="Note: This folder structure is a suggestion. You can customize it according to your project requirements."
-  className="mt-4"
-/>
-
-</Step>
-
-<Step>
-
-**Add Themes**
-
-These are the default themes provided by mijn-ui. If you would like to create your own theme, learn more about themes [here](/docs/theming).
-
-```json doc-gen:file
-{
-  "file": "./examples/react/_configs/global.css",
-  "codeblock": {
-    "lang": "css",
-    "meta": "title=\"global.css\""
-  }
-}
-```
-
-</Step>
-
-<Step>
-**Configure tailwind**
-
-Since our components are stored in a separate `mijn-ui` folder, we need to include this folder in the Tailwind CSS content array. This ensures Tailwind scans these files to generate the required CSS classes:
-
-```json doc-gen:file
-{
-  "file": "./examples/react/_configs/tw-config-manual.js",
-  "codeblock": {
-    "lang": "js",
-    "meta": "title=\"tailwind-config.js\""
-  }
-}
-```
-
-</Step>
-
-    <Step>
-      **Include Essential Utilities, Types, Context, and Hooks and Install Dependencies**
-
-    1. Within the `mijn-ui` folder, create a `utilities` directory and add the following files and install necessary dependencies:
-
-    <Tabs items={['shared', 'context']}>
-      <Tab value="shared">
-      ```json doc-gen:file
-      {
-        "file": "../../packages/utilities/src/shared/index.ts",
-        "codeblock": {
-          "lang": "tsx",
-          "meta": "title=\"mijn-ui/react-utilities/shared/index.ts\""
-        }
-      }
-      ```
-      </Tab>
-        <Tab value="context">
-          ```json doc-gen:file
-          {
-            "file": "../../packages/utilities/src/context/unstyled-provider.tsx",
-            "codeblock": {
-              "lang": "tsx",
-              "meta": "title=\"mijn-ui/react-utilities/context/unstyled-provider.tsx\""
-            }
-          }
-          ```
-
-          ```json doc-gen:file
-          {
-            "file": "../../packages/utilities/src/context/index.ts",
-            "codeblock": {
-              "lang": "tsx",
-              "meta": "title=\"mijn-ui/react-utilities/context/index.ts\""
-            }
-          }
-          ```
-        </Tab>
-      </Tabs>
-
-    2. Create a `hooks` folder, and add:
-
-      ```json doc-gen:file
-      {
-        "file": "../../packages/hooks/src/use-controlled-state.ts",
-        "codeblock": {
-          "lang": "ts",
-          "meta": "title=\"mijn-ui/react-hooks/use-controlled-state.ts\""
-        }
-      }
-      ```
-    </Step>
+  ```package-install
+  @mijn-ui/react-utilities @mijn-ui/react-hooks @mijn-ui/react-theme
+  ```
+  </Step>
 
   <Step>
-    **That's it**
+  **Configure TypeScript Path Aliases**
 
-    You can now start adding components to your project. Check out the [components](/docs/next-js/components/accordion) section to learn more about the available components.
+  ```json doc-gen:file
+  {
+    "file": "./examples/react/_configs/tsconfig-example.json",
+    "codeblock": {
+      "lang": "json",
+      "meta": "title=\"tsconfig.json\""
+    }
+  }
+  ```
+  **Recommended Folder Structure**
 
+  I recommend using this folder structure for manual integration, similar to the packages folder structure. This way, you won't need to update any component paths, as the source codes are from the mijn-ui packages folder.
+
+  <Files>
+    <Folder name="public">
+      <File name="..." />
+    </Folder>
+    <Folder name="src">
+      <Folder name="app">
+        <File name="page.tsx" />
+        <File name="..." />
+      </Folder>
+    </Folder>
+    <Folder defaultOpen name="mijn-ui">
+      <File name="react-accordion.tsx" />
+      <File name="react-button.tsx" />
+      <File name="react-input.tsx" />
+      <File name="..." />
+    </Folder>
+  </Files>
+
+  <Alert
+    title=""
+    description="Note: This folder structure is a suggestion. You can customize it according to your project requirements."
+    className="mt-4"
+  />
   </Step>
-  
+
+
+  <Step>
+  **Configure Tailwind Theme Plugin:**
+
+    `@mijn-ui/react-theme` is a Tailwind CSS plugin that provides the default theme for Mijn-UI components. Currently, only one theme is available, but you can customize it by following the [override](/docs/next-js/theming#overriding-colors) guide.
+
+    ```tsx title="tailwind.config.js"
+    import { mijnUiPreset } from "@mijn-ui/react-theme"
+    /** @type {import('tailwindcss').Config} */
+
+    export default {
+      content: [
+        ...
+        "./mijn-ui/**/*.{js,ts,jsx,tsx}", // Ensure Tailwind scans all mijn-ui components  // [!code highlight]
+      ],
+      presets: [mijnUiPreset], // [!code highlight]
+    }
+    ```
+  </Step>
+  <Step>
+  **That's it**
+
+  You can now start adding components to your project. Check out the [components](/docs/next-js/components/accordion) section to learn more about the available components.
+  </Step>
 </Steps>

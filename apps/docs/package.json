@@ -21,6 +21,7 @@
     "@fullcalendar/list": "^6.1.15",
     "@fullcalendar/react": "^6.1.15",
     "@fullcalendar/timegrid": "^6.1.15",
+    "@mijn-ui/react-theme": "workspace:*",
     "@mijn-ui/react-accordion": "workspace:*",
     "@mijn-ui/react-alert": "workspace:*",
     "@mijn-ui/react-alert-dialog": "workspace:*",

@@ -23,52 +23,48 @@ You can either use the [nextjs-template](https://github.com/mijn-ui/nextjs-templ
   **Install Next.js and Required Dependencies**
 
   ```bash title="bash"
-    npx create-next-app@latest
+  npx create-next-app@latest
   ```
 
-  Since we are in the beta stage, the following options work pretty well for installation. Please ensure to select these options:
+  Make sure to use Tailwind CSS when setting up your Next.js project.
 
   ```bash title="bash"
     ...
-    ✔ Would you like to use TypeScript? Yes
-    ✔ Would you like to use ESLint?  Yes
-    ✔ Would you like to use Tailwind CSS? Yes
-    ✔ Would you like your code inside a `src/` directory? Yes
-    ✔ Would you like to use App Router? (recommended) Yes
-    ✔ Would you like to use Turbopack for next dev? Yes
-    ✔ Would you like to customize the import alias (@/* by default)? No
+    ✔ Would you like to use TypeScript? No / Yes
+    ✔ Would you like to use ESLint? No / Yes
+    ✔ Would you like to use Tailwind CSS? Yes # [!code highlight]
+    ✔ Would you like your code inside a `src/` directory? No / Yes
+    ✔ Would you like to use App Router? (recommended) No / Yes
+    ✔ Would you like to use Turbopack for next dev? No / Yes
+    ✔ Would you like to customize the import alias (@/* by default)? No / Yes
   ```
   </Step>
 
   <Step>
-  **Add Themes**
+  **Install Tailwind Theme Plugin**
 
-  These are the default themes provided by mijn-ui. If you would like to create your own theme, learn more about themes [here](/docs/theming).
+  MijnUI provides a Tailwind plugin with a default theme. You can use this default theme or [override](/docs/next-js/theming#overriding-colors) it as needed. Currently, we have only one theme available.
 
-  ```json doc-gen:file
-  {
-    "file": "./examples/react/_configs/global.css",
-    "codeblock": {
-      "lang": "css",
-      "meta": "title=\"global.css\""
+  ```package-install
+  @mijn-ui/react-theme
+  ```
+  
+  In the Tailwind config file:
+
+  ```tsx title="tailwind.config.js"
+    import { mijnUiPreset } from "@mijn-ui/react-theme"
+    /** @type {import('tailwindcss').Config} */
+
+    export default {
+      content: [
+        ...
+        "./node_modules/@mijn-ui/**/dist/*.js", // Ensure Tailwind scans all mijn-ui packages  // [!code highlight]
+      ],
+      presets: [mijnUiPreset], // [!code highlight]
     }
-  }
   ```
   </Step>
 
-  <Step>
-  **Configure tailwind**
-
-  ```json doc-gen:file
-  {
-    "file": "./examples/react/_configs/tw-config.js",
-    "codeblock": {
-      "lang": "js",
-      "meta": "title=\"tailwind-config.js\""
-    }
-  }
-  ```
-  </Step>
   <Step>
   **That's it**
 

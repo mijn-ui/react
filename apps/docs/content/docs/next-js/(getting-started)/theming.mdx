@@ -3,17 +3,9 @@ title: Theming
 description: Mijn-UI uses Tawilind CSS variables for themeing.
 ---
 
-<Alert 
-status="warning"
-title="Creating your own theme"
-description=" The theme builder is currently not available and will be available soon. Stay tuned for updates!"
-/>
-
 ## List of variables
 
----
-
-#### Main Colors
+### Main Colors
 
 Primary colors for backgrounds, text, and borders across the UI.
 
@@ -25,7 +17,7 @@ Primary colors for backgrounds, text, and borders across the UI.
 }
 ```
 
-#### Surface Colors
+### Surface Colors
 
 For panels, cards, and other contained elements.
 
@@ -36,7 +28,7 @@ For panels, cards, and other contained elements.
 }
 ```
 
-#### Accent colors
+### Accent colors
 
 For interactive elements like hover effects.
 
@@ -47,7 +39,7 @@ For interactive elements like hover effects.
 }
 ```
 
-#### Neutral Colors
+### Neutral Colors
 
 Muted tones for secondary content, providing balanced visual hierarchy.
 
@@ -58,7 +50,7 @@ Muted tones for secondary content, providing balanced visual hierarchy.
 }
 ```
 
-#### Border and Ring Colors
+### Border and Ring Colors
 
 ```css
 {
@@ -68,7 +60,7 @@ Muted tones for secondary content, providing balanced visual hierarchy.
 
 ```
 
-#### Input Border Color
+### Input Border Color
 
 Used in form fields like Input, Select, and Textarea.
 
@@ -177,3 +169,24 @@ You can now use the new colors in your components.
 You can also use other color formats if you prefer. Tailwind CSS supports various color formats including RGB, RGBA, and HSL.
 
 For more information on using different color formats, refer to the [Tailwind CSS documentation](https://tailwindcss.com/docs/customizing-colors#using-css-variables).
+
+
+---
+
+## Overriding Colors
+
+Mijn-UI defines color variables using a Tailwind plugin, but you can easily override them in your CSS. Use the [list of variables](docs/next-js/theming#list-of-variables) as a reference to redefine specific colors.
+
+For example, to override the `--main` color:
+
+```css
+@layer base {
+  :root {
+    --main: 0 0% 100%; /* white */
+  }
+
+  .dark {
+    --main: 0 0% 7%; /* neutral-925 */
+  }
+}
+```

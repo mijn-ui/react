@@ -2,65 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "./theme.css";
 @import "./override.css";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* theme */
-
+/* These variables come from the Tailwind plugin @mijn-ui/react-theme */
+/* eg: --main, --main-text */
 :root {
   /* general */
-  --background: 210 14% 95%; /* slate-100 */
-  --foreground: 0 0% 0%; /* black */
+  --fd-background: var(--main); /* slate-100 */
+  --fd-foreground: var(--main-text); /* black */
 
-  --border: 0 0% 83%; /* neutral-300 */
+  --fd-border: var(--main-border); /* neutral-300 */
 
-  --muted: 0 0% 83%; /* neutral-300 */
-  --muted-foreground: 0 0% 25%; /* neutral-700 */
+  --fd-muted: var(--neutral); /* neutral-300 */
+  --fd-muted-foreground: var(--neutral-text); /* neutral-700 */
 
-  --primary: 29 100% 52%; /* orange-500 */
-  --primary-foreground: 0 0% 100%; /* white */
+  --fd-primary: var(--primary); /* orange-500 */
+  --fd-primary-foreground: var(--primary-text); /* white */
 
-  --accent: 0 0% 90%; /* neutral-200 */
-  --accent-foreground: 0 0% 0%; /* black */
+  --fd-accent: var(--accent); /* neutral-200 */
+  --fd-accent-foreground: var(--accent-text); /* black */
 
-  --card: 0 0% 98%; /* neutral-50 */
-  --card-foreground: 0 0% 0%; /* black */
+  --fd-card: var(--surface); /* neutral-50 */
+  --fd-card-foreground: var(--surface-text); /* black */
 
-  --ring: 0 0% 15%; /* neutral-800 */
+  --fd-ring: var(--ring); /* neutral-800 */
 
-  --input: 0 0% 83%; /* neutral-500 */
-}
-
-.dark {
-  /* general */
-  --background: 0 0% 4%; /* neutral-900 */
-  --foreground: 0 0% 96%; /* neutral-100 */
-
-  --card: 0 0% 7%; /* neutral-925 */
-  --card-foreground: 0 0% 96%; /* neutral-100 */
-
-  --muted: 0 0% 15%; /* neutral-800 */
-  --muted-foreground: 0 0% 64%; /* neutral-400 */
-
-  --primary: 29 100% 52%; /* orange-500 */
-  --primary-foreground: 0 0% 100%; /* white */
-
-  --accent: 0 0% 12%; /* neutral-850 */
-  --accent-foreground: 0 0% 96%; /* neutral-100 */
-
-  --ring: 0 0% 96%; /* neutral-100 */
-
-  --border: 0 0% 15%;
-
-  --input: 0 0% 25%; /* neutral-600 */
-}
-
-body {
-  @apply bg-fd-background;
+  --fd-input: var(--input-border); /* neutral-500 */
 }
 
 .custom_scroll_bar {

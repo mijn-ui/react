@@ -52,65 +52,6 @@ import {
           }
         ```
       </Step>
-
-      <Step>
-        **Add Animations to Your Tailwind Configuration**
-
-    ```js title="tailwind.config.js"
-    /** @type {import('tailwindcss').Config} */
-    export default {
-      theme: {
-        extend: {
-          keyframes: {
-            // [!code highlight]
-            "fade-in": {
-              // [!code highlight]
-              "0%": {
-                // [!code highlight]
-                opacity: "0", // [!code highlight]
-              }, // [!code highlight]
-              "100%": {
-                // [!code highlight]
-                opacity: "1", // [!code highlight]
-              }, // [!code highlight]
-            }, // [!code highlight]
-            "fade-out": {
-              // [!code highlight]
-              "0%": {
-                // [!code highlight]
-                opacity: "1", // [!code highlight]
-              }, // [!code highlight]
-              "100%": {
-                // [!code highlight]
-                opacity: "0", // [!code highlight]
-              }, // [!code highlight]
-            }, // [!code highlight]
-            "accordion-expand": {
-              // [!code highlight]
-              from: { height: "0" }, // [!code highlight]
-              to: { height: "var(--radix-accordion-content-height)" }, // [!code highlight]
-            }, // [!code highlight]
-            "accordion-collapse": {
-              // [!code highlight]
-              from: {
-                // [!code highlight]
-                height: "var(--radix-accordion-content-height)", // [!code highlight]
-              }, // [!code highlight]
-              to: { height: "0" }, // [!code highlight]
-            }, // [!code highlight]
-          }, // [!code highlight]
-          animation: {
-            // [!code highlight]
-            "accordion-expand":
-              "accordion-expand 0.2s ease-in-out, fade-in 0.4s ease-in-out", // [!code highlight]
-            "accordion-collapse":
-              "accordion-collapse 0.2s ease-in-out, fade-out 0.4s ease-in-out", // [!code highlight]
-          }, // [!code highlight]
-        }, // [!code highlight]
-      },
-    };
-    ```
-      </Step>
     </Steps>
 
   </InstallationTabsContent>
