@@ -46,8 +46,8 @@ const Navbar = () => {
   const { open: isSidebarOpen } = useSidebar()
   const pathname = usePathname()
 
-  // Check if the pathname starts with '/docs/' but isn't exactly '/docs'
-  const isDocsPage = /^\/docs\/.+/.test(pathname)
+  // Check if the pathname starts with '/docs'
+  const isDocsPage = /^\/docs/.test(pathname)
 
   const renderPages = PAGES.map((page) => (
     <Link
@@ -129,7 +129,7 @@ const Navbar = () => {
               <CollapsibleTrigger className="flex size-8 items-center justify-center text-muted-text transition duration-200 hover:text-secondary-text">
                 <LuChevronDown className="text-lg" />
               </CollapsibleTrigger>
-              <CollapsibleContent className="top-[calc(var(--navbar-height)] absolute inset-x-0 mt-2 overflow-hidden bg-surface text-sm transition-[height] data-[state=closed]:animate-collapsible-collapse data-[state=open]:animate-collapsible-expand">
+              <CollapsibleContent className="top-[calc(var(--navbar-height)] absolute inset-x-0 mt-2 overflow-hidden bg-surface text-sm transition-[height] data-[state=closed]:animate-collapsible-close data-[state=open]:animate-collapsible-open">
                 <div className="relative flex w-full flex-col items-start justify-between space-y-2 px-4 py-2">
                   <div className="flex w-fit flex-col gap-2">{renderPages}</div>
                   <Separator />

@@ -7,5 +7,4 @@ export const { GET } = createFromSource(source, (page) => ({
   url: page.url,
   id: page.url,
   structuredData: page.data.structuredData,
-  tag: page.url.startsWith("/docs/tailwind") ? "tailwind" : "next-js",
 }))

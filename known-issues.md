@@ -1,17 +1,5 @@
 ### Known Issues
 
-### Running Dev server consumes a lot of RAM
-
-Another issue we are experiencing is that the `next dev` command is consuming a significant amount of memory, sometimes exceeding 8GB or more. This has been a known issue in Next.js, and unfortunately, there is no known solution or workaround at the moment. If you come across any solution, please let us know.
-
-You can find the issue here: [Github Issue](https://github.com/vercel/next.js/issues/54708)
-
-According to the earlier mentioned discussion, it is recommended to have at least 16GB of available RAM to run the development server without any issues. Running it on a system with lower RAM may result in system crashes due to high memory consumption.
-
-Please note that we are actively working on finding a solution to these issues and will update you as soon as we have any further information.
-
----
-
 ### Tailwind CSS Reference issue with dev and production server
 
 The current monorepo stores most of the packages like Tailwind, Next.js, and ESLint in the root, including the packages from the Fumadocs, which is the documentation framework used in the current docs repo.

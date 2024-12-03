@@ -1,0 +1,101 @@
+---
+title: Input
+---
+
+import InputFloatingLabelIcon from "@/examples/input/input-floating-label-icon"
+import InputWithIcon from "@/examples/input/input-with-icon"
+import { Input } from "@mijn-ui/react-input"
+
+<ComponentPreview>
+  <Input className="w-80" placeholder="Username..." />
+</ComponentPreview>
+
+### Installation
+
+<InstallationTabs items={["Npm", "Manual"]}>
+  <InstallationTabsContent value="Npm">
+  ```package-install
+  @mijn-ui/react-input
+  ```
+  </InstallationTabsContent>
+  <InstallationTabsContent value="Manual">
+  <Steps>
+  <Step>
+     **Add the Label Component**
+
+    To get started, you need to install the label component. Follow the link below to install it:
+
+    [Label component](/docs/next-js/components/label)
+
+  </Step>
+
+  <Step>
+    **Copy and paste the following code into  `mijn-ui` folder.**
+
+    ```json doc-gen:file
+      {
+        "file": "../../packages/components/input/src/input.tsx",
+        "codeblock": {
+          "lang": "tsx",
+          "meta": "title=\"mijn-ui/components/react-input.tsx\""
+        }
+      }
+    ```
+  </Step>
+</Steps>
+</InstallationTabsContent>
+</InstallationTabs>
+
+**Example Usage**
+
+```tsx
+  <Input className="w-80" placeholder="Username..." />
+```
+
+---
+
+### Input with Icon
+
+<ComponentPreview>
+  <InputWithIcon />
+</ComponentPreview>
+
+```json doc-gen:file
+{
+  "file": "./examples/input/input-with-icon.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": ""
+  }
+}
+```
+
+---
+
+### Input With Floating Label
+
+<ComponentPreview>
+  <Input className="w-80" label="Username" />
+</ComponentPreview>
+
+```tsx
+<Input className="w-80" label="Username" />
+```
+
+---
+
+### Input Floating Label with Icon
+
+<ComponentPreview>
+  <InputFloatingLabelIcon />
+</ComponentPreview>
+
+```json doc-gen:file
+{
+  "file": "./examples/input/input-floating-label-icon.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": ""
+  }
+}
+```

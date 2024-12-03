@@ -9,6 +9,7 @@ import {
 import { z } from "zod"
 
 export const { docs, meta } = defineDocs({
+  dir: "content/docs",
   docs: {
     schema: frontmatterSchema.extend({
       docs: z.string().optional(),

@@ -1,0 +1,85 @@
+---
+title: Command
+docs: https://cmdk.paco.me
+---
+
+import CommandDialogExample from "@/examples/command/command-dialog"
+import CommandExample from "@/examples/command/command-example"
+
+<ComponentPreview>
+  <CommandExample />
+</ComponentPreview>
+
+### Installation
+
+<InstallationTabs items={["Npm", "Manual"]}>
+  <InstallationTabsContent value="Npm">
+  ```package-install
+  @mijn-ui/react-command
+  ```
+  </InstallationTabsContent>
+  <InstallationTabsContent value="Manual">
+  <Steps>
+  <Step>
+    **Add the Dialog Component**
+
+    To get started, you need to install the dialog component. Follow the link below to install it:
+
+    [Dialog component](/docs/next-js/components/dialog)
+  </Step>
+  <Step>
+  **Install Required Dependencies:** 
+  ```package-install
+  cmdk
+  ```
+  </Step>
+  <Step>
+  **Copy and paste the following code into `mijn-ui` folder.**
+
+  ```json doc-gen:file
+    {
+      "file": "../../packages/components/command/src/command.tsx",
+      "codeblock": {
+        "lang": "tsx",
+        "meta": "title=\"mijn-ui/components/react-command.tsx\""
+      }
+    }
+  ```
+  </Step>
+  
+  <Step>
+  **Ensure that everything is functioning correctly after installation.**
+  </Step>
+</Steps>
+</InstallationTabsContent>
+</InstallationTabs>
+
+**Example Usage**
+
+```json doc-gen:file
+  {
+    "file": "./examples/command/command-example.tsx",
+    "codeblock": {
+      "lang": "tsx",
+      "meta": "title=\"command-example.tsx\""
+    }
+  }
+```
+
+---
+
+### Command Dialog
+
+<ComponentPreview>
+  <CommandDialogExample />
+</ComponentPreview>
+
+```json doc-gen:file
+{
+  "file": "./examples/command/command-dialog.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": "title=\"command-dialog.tsx\""
+  }
+}
+```

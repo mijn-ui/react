@@ -1,0 +1,124 @@
+---
+title: Accordion
+docs: https://www.radix-ui.com/primitives/docs/components/accordion
+apiReference: https://www.radix-ui.com/primitives/docs/components/accordion#api-reference
+---
+
+import AccordionCustomIconExample from "@/examples/accordion/custom-icon"
+import MultiAccordionExample from "@/examples/accordion/multi-accordion"
+import SingleAccordionExample from "@/examples/accordion/single-accordion"
+import UnstyledAccordionExample from "@/examples/accordion/unstyled-accordion.tsx"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@mijn-ui/react-accordion"
+
+<ComponentPreview>
+  <SingleAccordionExample />
+</ComponentPreview>
+
+### Installation
+
+<InstallationTabs items={["Npm", "Manual"]}>
+  <InstallationTabsContent value="Npm">
+  ```package-install
+  @mijn-ui/react-accordion
+  ```
+  </InstallationTabsContent>
+
+  <InstallationTabsContent value="Manual">
+    <Steps>
+      <Step>
+        **Install Required Packages**
+
+        ```package-install
+        @radix-ui/react-accordion
+        ```
+
+      </Step>
+
+      <Step>
+        **Copy and paste the following code into  `mijn-ui` folder.**
+
+        ```json doc-gen:file
+          {
+            "file": "../../packages/components/accordion/src/accordion.tsx",
+            "codeblock": {
+              "lang": "tsx",
+              "meta": "title=\"mijn-ui/components/react-accordion.tsx\""
+            }
+          }
+        ```
+      </Step>
+    </Steps>
+
+  </InstallationTabsContent>
+</InstallationTabs>
+
+**Example Usage**
+
+```json doc-gen:file
+{
+  "file": "./examples/accordion/single-accordion.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": "title=\"single-accordion.tsx\""
+  }
+}
+```
+
+---
+
+### Multi Accordion
+
+<ComponentPreview>
+  <MultiAccordionExample />
+</ComponentPreview>
+
+```json doc-gen:file
+{
+  "file": "./examples/accordion/multi-accordion.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": ""
+  }
+}
+```
+
+---
+
+### Custom Icon
+
+<ComponentPreview>
+  <AccordionCustomIconExample />
+</ComponentPreview>
+
+```json doc-gen:file
+{
+  "file": "./examples/accordion/custom-icon.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": ""
+  }
+}
+```
+
+---
+
+### Unstyled Accordion
+
+<ComponentPreview>
+  <UnstyledAccordionExample />
+</ComponentPreview>
+
+```json doc-gen:file
+{
+  "file": "./examples/accordion/unstyled-accordion.tsx",
+  "codeblock": {
+    "lang": "tsx",
+    "meta": ""
+  }
+}
+```
