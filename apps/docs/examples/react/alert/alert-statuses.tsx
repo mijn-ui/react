@@ -55,7 +55,7 @@ const AlertStatus = () => {
         </AlertDescription>
       </Alert>
 
-      {/* ----------------------------- Neutral/Default ---------------------------- */}
+      {/* ----------------------------- Muted/Default ---------------------------- */}
       <Alert className="w-full max-w-lg" status="default">
         <AlertIcon>
           <MdErrorOutline />

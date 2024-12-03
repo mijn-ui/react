@@ -11,8 +11,8 @@
     --surface: 0 0% 98%; /* neutral-50 */
     --surface-text: 0 0% 0%; /* black */
 
-    --neutral: 0 0% 83%; /* neutral-300 */
-    --neutral-text: 0 0% 25%; /* neutral-700 */
+    --muted: 0 0% 83%; /* neutral-300 */
+    --muted-text: 0 0% 25%; /* neutral-700 */
 
     --accent: 0 0% 90%; /* neutral-200 */
     --accent-text: 0 0% 0%; /* black */
@@ -54,8 +54,8 @@
     --surface: 0 0% 7%; /* neutral-925 */
     --surface-text: 0 0% 96%; /* neutral-100 */
 
-    --neutral: 0 0% 15%; /* neutral-800 */
-    --neutral-text: 0 0% 64%; /* neutral-400 */
+    --muted: 0 0% 15%; /* neutral-800 */
+    --muted-text: 0 0% 64%; /* neutral-400 */
 
     --accent: 0 0% 12%; /* neutral-850 */
     --accent-text: 0 0% 96%; /* neutral-100 */

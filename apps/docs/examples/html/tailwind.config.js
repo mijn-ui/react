@@ -16,9 +16,9 @@ export default {
           text: "hsl(var(--surface-text) / <alpha-value>)",
         },
 
-        neutral: {
-          DEFAULT: "hsl(var(--neutral) / <alpha-value>)",
-          text: "hsl(var(--neutral-text) / <alpha-value>)",
+        muted: {
+          DEFAULT: "hsl(var(--muted) / <alpha-value>)",
+          text: "hsl(var(--muted-text) / <alpha-value>)",
         },
 
         accent: {
