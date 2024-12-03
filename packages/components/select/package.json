@@ -41,8 +41,8 @@
     "@radix-ui/react-select": "^2.1.2"
   },
   "peerDependencies": {
-    "react": "19.0.0-rc-b01722d5-20241114",
-    "react-dom": "19.0.0-rc-b01722d5-20241114"
+    "react": "^19.0",
+    "react-dom": "^19.0"
   },
   "publishConfig": {
     "access": "public"

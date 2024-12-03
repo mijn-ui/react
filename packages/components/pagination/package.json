@@ -41,8 +41,8 @@
     "@mijn-ui/react-button": "workspace:*"
   },
   "peerDependencies": {
-    "react": "19.0.0-rc-b01722d5-20241114",
-    "react-dom": "19.0.0-rc-b01722d5-20241114"
+    "react": "^19.0",
+    "react-dom": "^19.0"
   },
   "publishConfig": {
     "access": "public"
