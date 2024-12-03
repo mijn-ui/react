@@ -1,5 +1,13 @@
 # @mijn-ui-react/button
 
+## 0.0.6
+
+### Patch Changes
+
+- 73a2336: Update theme variable name `neutral` to `muted` which is conflicting with the tailwind neutral color utilities
+- Updated dependencies [73a2336]
+  - @mijn-ui/react-utilities@0.0.5
+
 ## 0.0.5
 
 ### Patch Changes

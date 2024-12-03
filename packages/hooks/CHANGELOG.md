@@ -1,5 +1,11 @@
 # @mijn-ui-react/hooks
 
+## 0.0.6
+
+### Patch Changes
+
+- 73a2336: Update theme variable name `neutral` to `muted` which is conflicting with the tailwind neutral color utilities
+
 ## 0.0.5
 
 ### Patch Changes
