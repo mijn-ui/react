@@ -1,4 +1,4 @@
-import { componentConfig } from "../../tsup-config/component"
+import { componentConfig } from "tsup-config"
 import { defineConfig } from "tsup"
 
 export default defineConfig({

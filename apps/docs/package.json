@@ -6,7 +6,7 @@
     "build": "next build",
     "dev": "next dev",
     "start": "next start",
-    "postinstall": "fumadocs-mdx",
+    "postinstall": "echo 'Running fumadocs-mdx...' && fumadocs-mdx || echo 'fumadocs-mdx failed'",
     "lint": "eslint .",
     "types:check": "tsc --noEmit",
     "clean": "rimraf .next"

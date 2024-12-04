@@ -8,6 +8,7 @@ const withAnalyzer = createBundleAnalyzer({
 /** @type {import('next').NextConfig} */
 
 const config = withAnalyzer({
+  output: "standalone",
   reactStrictMode: true,
   swcMinify: true,
   eslint: {

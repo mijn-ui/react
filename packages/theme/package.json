@@ -29,7 +29,8 @@
     "tailwindcss": "^3.4.15",
     "tailwindcss-animate": "^1.0.7",
     "eslint-config-custom": "workspace:*",
-    "tsconfig": "workspace:*"
+    "tsconfig": "workspace:*",
+    "tsup-config": "workspace:*"
   },
   "peerDependencies": {
     "tailwindcss": ">=3.4.0"

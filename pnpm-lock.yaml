@@ -295,6 +295,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/components/alert:
     dependencies:
@@ -326,6 +329,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/components/alert-dialog:
     dependencies:
@@ -363,6 +369,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/components/autocomplete:
     dependencies:
@@ -409,6 +418,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/components/avatar:
     dependencies:
@@ -443,6 +455,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/components/badge:
     dependencies:
@@ -474,6 +489,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/components/button:
     dependencies:
@@ -511,6 +529,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/components/calendar:
     dependencies:
@@ -548,6 +569,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/components/card:
     dependencies:
@@ -579,6 +603,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/components/checkbox:
     dependencies:
@@ -619,6 +646,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/components/collapsible:
     dependencies:
@@ -647,6 +677,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/components/command:
     dependencies:
@@ -687,6 +720,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/components/date-picker:
     dependencies:
@@ -742,6 +778,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/components/dialog:
     dependencies:
@@ -776,6 +815,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/components/dropdown-menu:
     dependencies:
@@ -813,6 +855,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/components/input:
     dependencies:
@@ -844,6 +889,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/components/label:
     dependencies:
@@ -878,6 +926,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/components/pagination:
     dependencies:
@@ -912,6 +963,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/components/popover:
     dependencies:
@@ -946,6 +1000,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/components/progress:
     dependencies:
@@ -977,6 +1034,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/components/radio-group:
     dependencies:
@@ -1014,6 +1074,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/components/scroll-area:
     dependencies:
@@ -1045,6 +1108,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/components/select:
     dependencies:
@@ -1079,6 +1145,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/components/separator:
     dependencies:
@@ -1110,6 +1179,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/components/skeleton:
     dependencies:
@@ -1138,6 +1210,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/components/switch:
     dependencies:
@@ -1169,6 +1244,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/components/table:
     dependencies:
@@ -1197,6 +1275,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/components/tabs:
     dependencies:
@@ -1228,6 +1309,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/components/textarea:
     dependencies:
@@ -1256,6 +1340,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../../tsup-config
 
   packages/eslint-config-custom: {}
 
@@ -1283,6 +1370,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../tsup-config
 
   packages/theme:
     devDependencies:
@@ -1298,6 +1388,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../tsup-config
 
   packages/ts-config: {}
 
@@ -1308,9 +1401,6 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
-      next:
-        specifier: 15.0.3
-        version: 15.0.3(react-dom@19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114))(react@19.0.0-rc-b01722d5-20241114)
       react:
         specifier: 19.0.0-rc-b01722d5-20241114
         version: 19.0.0-rc-b01722d5-20241114
@@ -1339,6 +1429,9 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../tsup-config
 
 packages:
 

@@ -1,7 +1,25 @@
 {
   "name": "tsup-config",
   "version": "0.0.0",
-  "type": "module",
   "private": true,
-  "license": "MIT"
+  "author": "Htet Aung Lin<htetaunglin.coder@gmail.com>",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "dist"
+  ],
+  "tsup": {
+    "entry": [
+      "index.ts"
+    ],
+    "splitting": false,
+    "sourcemap": true,
+    "clean": true
+  },
+  "scripts": {
+    "build": "tsup"
+  }
 }
