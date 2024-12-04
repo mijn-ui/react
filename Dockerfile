@@ -42,19 +42,25 @@ RUN rm -rf ./**/*/src
 # Final image
 FROM alpine AS runner
 ARG PROJECT
-
+# Don't run production as root
 RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nodejs
-USER nodejs
+RUN adduser --system --uid 1001 nextjs
+USER nextjs
 
 WORKDIR /app
-COPY --from=builder --chown=nodejs:nodejs /app .
+COPY --from=builder --chown=nextjs:nodejs app/apps/docs/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs app/apps/docs/.next/static  ./apps/docs/.next/static
+# https://stackoverflow.com/questions/70096208/dockerfile-copy-folder-if-it-exists-conditional-copy
+COPY --from=builder --chown=nextjs:nodejs app/apps/docs/publi[c] ./apps/docs/public
+
+
 WORKDIR /app/apps/${PROJECT}
 
-ARG PORT=8080
+ARG PORT=3000
+EXPOSE ${PORT}
 ENV PORT=${PORT}
 ENV NODE_ENV=production
-EXPOSE ${PORT}
+ENV HOSTNAME="0.0.0.0"
 
-CMD node dist/main
+CMD node server.js
 
