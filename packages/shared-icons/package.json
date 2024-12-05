@@ -25,7 +25,8 @@
   },
   "devDependencies": {
     "tsconfig": "workspace:*",
-    "tsup-config": "workspace:*"
+    "tsup-config": "workspace:*",
+    "@types/react": "^18.3.12"
   },
   "dependencies": {
     "react": "19.0.0-rc-b01722d5-20241114"
