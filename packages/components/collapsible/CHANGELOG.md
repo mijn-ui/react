@@ -1,5 +1,11 @@
 # @mijn-ui-react/collapsible
 
+## 0.0.6
+
+### Patch Changes
+
+- 4ff5f86: Add ReadMeFile and keywords
+
 ## 0.0.5
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @mijn-ui/react-theme
 
+## 0.0.5
+
+### Patch Changes
+
+- 4ff5f86: Add ReadMeFile and keywords
+
 ## 0.0.4
 
 ### Patch Changes
