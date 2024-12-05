@@ -53,7 +53,7 @@ const KanbanCardItem = ({
 
       {progress && (
         <div className="space-y-1">
-          <div className="text-muted-text flex items-center justify-between text-xs">
+          <div className="flex items-center justify-between text-xs text-muted-text">
             <h5>CheckList</h5>
             <p>3/4</p>
           </div>
@@ -61,7 +61,7 @@ const KanbanCardItem = ({
         </div>
       )}
 
-      <div className="text-muted-text flex w-full items-center justify-between">
+      <div className="flex w-full items-center justify-between text-muted-text">
         <div className="flex items-center gap-2 sm:gap-4">
           <div className="flex items-center gap-1">
             <GoClock size={20} />

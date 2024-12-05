@@ -11,6 +11,7 @@
     "test": "turbo run test",
     "types:check": "turbo run types:check",
     "lint": "turbo run lint",
+    "lint:fix": "turbo run lint -- --fix",
     "lint:prettier": "prettier --cache --check --ignore-path .gitignore --ignore-path .prettierignore .",
     "prettier": "prettier --cache --write --list-different --ignore-path .gitignore --ignore-path .prettierignore .",
     "changeset": "changeset",

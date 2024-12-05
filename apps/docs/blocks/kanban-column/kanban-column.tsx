@@ -268,7 +268,7 @@ const KanbanItemCount = React.forwardRef<
     <span
       ref={ref}
       className={cn(
-        "text-muted-text flex size-5 items-center justify-center rounded-full bg-surface text-xs font-medium",
+        "flex size-5 items-center justify-center rounded-full bg-surface text-xs font-medium text-muted-text",
         className,
       )}
       {...props}

@@ -124,7 +124,7 @@ const KanbanExample = () => {
                 size="icon"
                 color="accent"
                 variant="text"
-                className="text-muted-text size-7 rounded-full hover:text-main-text"
+                className="size-7 rounded-full text-muted-text hover:text-main-text"
               >
                 <LuMoreVertical />
               </Button>
@@ -167,7 +167,7 @@ const KanbanExample = () => {
                     <span>
                       <StickyNoteIcon /> {/* custom Icon */}
                     </span>
-                    <p className="text-muted-text text-sm">
+                    <p className="text-sm text-muted-text">
                       No tasks currently. Board is empty.
                     </p>
                   </div>
@@ -175,7 +175,7 @@ const KanbanExample = () => {
               )}
             </KanbanContent>
             <KanbanFooter>
-              <button className="text-muted-text flex items-center gap-2 text-sm">
+              <button className="flex items-center gap-2 text-sm text-muted-text">
                 <span>
                   <LuPlus className="size-5" />
                 </span>
