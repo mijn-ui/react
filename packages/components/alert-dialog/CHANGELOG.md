@@ -1,5 +1,12 @@
 # @mijn-ui-react/alert-dialog
 
+## 0.0.7
+
+### Patch Changes
+
+- Updated dependencies [8424853]
+  - @mijn-ui/react-button@0.0.7
+
 ## 0.0.6
 
 ### Patch Changes

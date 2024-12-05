@@ -1,5 +1,17 @@
 # @mijn-ui-react/date-picker
 
+## 0.0.7
+
+### Patch Changes
+
+- 8424853: remove react-icons to use internal shared icons
+- Updated dependencies [8424853]
+  - @mijn-ui/react-calendar@0.0.7
+  - @mijn-ui/react-button@0.0.7
+  - @mijn-ui/react-select@0.0.6
+  - @mijn-ui/shared-icons@0.0.1
+  - @mijn-ui/react-popover@0.0.7
+
 ## 0.0.6
 
 ### Patch Changes
