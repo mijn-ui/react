@@ -36,5 +36,10 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "keywords": [
+    "mijn-ui",
+    "react",
+    "icons"
+  ]
 }

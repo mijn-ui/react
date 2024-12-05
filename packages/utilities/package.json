@@ -59,5 +59,10 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "keywords": [
+    "react",
+    "utilities",
+    "mijn-ui"
+  ]
 }
