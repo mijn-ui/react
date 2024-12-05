@@ -94,14 +94,12 @@ const KeyFeaturesPlayground = () => {
       <figcaption className="mb-3 text-base">Try it here!</figcaption>
 
       <div className="flex h-80 w-full flex-col items-center overflow-hidden rounded-md border sm:flex-row">
-        <div className="flex h-full min-h-32 flex-auto items-center justify-center bg-main">
+        <div className="bg-main flex h-full min-h-32 flex-auto items-center justify-center">
           <Button
             unstyled={buttonOptions.unstyled}
             loading={buttonOptions.loading}
             disabled={buttonOptions.disabled}
-            /* eslint-disable-next-line */
-            // @ts-expect-error
-            color={buttonOptions.color}
+            color={buttonOptions.color ? buttonOptions.color : undefined}
             variant={buttonOptions.variant}
             radius={buttonOptions.radius}
             size={buttonOptions.size}
@@ -110,7 +108,7 @@ const KeyFeaturesPlayground = () => {
           </Button>
         </div>
 
-        <div className="flex size-full grow flex-col items-center gap-4 bg-surface p-5 sm:max-w-80 xl:w-1/2 xl:max-w-none xl:flex-initial">
+        <div className="bg-surface flex size-full grow flex-col items-center gap-4 p-5 sm:max-w-80 xl:w-1/2 xl:max-w-none xl:flex-initial">
           <div className="flex items-center gap-5 sm:w-full">
             <CheckboxWithLabel
               id="unstyled"

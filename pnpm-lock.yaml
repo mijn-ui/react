@@ -131,6 +131,9 @@ importers:
       '@mijn-ui/react-dropdown-menu':
         specifier: workspace:*
         version: link:../../packages/components/dropdown-menu
+      '@mijn-ui/react-hooks':
+        specifier: workspace:*
+        version: link:../../packages/hooks
       '@mijn-ui/react-input':
         specifier: workspace:*
         version: link:../../packages/components/input

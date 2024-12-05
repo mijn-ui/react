@@ -56,12 +56,15 @@ Manual setups can be time-consuming, so I created a [nextjs-starter](https://git
   <Step>
   **Configure TypeScript Path Aliases**
 
-  ```json doc-gen:file
+  ```tsx title="tsconfig.json"
   {
-    "file": "./examples/_configs/tsconfig-example.json",
-    "codeblock": {
-      "lang": "json",
-      "meta": "title=\"tsconfig.json\""
+    "compilerOptions": {
+      "baseUrl": ".", // Sets the root directory
+      "paths": {
+        // Path aliases for cleaner imports
+        "@/*": ["./src/*"], 
+        "@mijn-ui/*": ["./mijn-ui/*"] 
+      }
     }
   }
   ```
