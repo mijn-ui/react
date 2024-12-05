@@ -48,5 +48,10 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "keywords": [
+    "dropdown-menu",
+    "react",
+    "nextjs"
+  ]
 }

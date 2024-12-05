@@ -48,5 +48,10 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "keywords": [
+    "calendar",
+    "react",
+    "nextjs"
+  ]
 }

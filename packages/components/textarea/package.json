@@ -45,5 +45,10 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "keywords": [
+    "textarea",
+    "react",
+    "nextjs"
+  ]
 }

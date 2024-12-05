@@ -49,5 +49,10 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "keywords": [
+    "command",
+    "react",
+    "nextjs"
+  ]
 }

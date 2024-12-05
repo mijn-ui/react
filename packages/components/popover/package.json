@@ -47,5 +47,10 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "keywords": [
+    "popover",
+    "react",
+    "nextjs"
+  ]
 }

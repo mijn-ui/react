@@ -46,5 +46,10 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "keywords": [
+    "switch",
+    "react",
+    "nextjs"
+  ]
 }

@@ -46,5 +46,10 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "keywords": [
+    "progress",
+    "react",
+    "nextjs"
+  ]
 }

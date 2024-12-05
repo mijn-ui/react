@@ -54,5 +54,10 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "keywords": [
+    "date-picker",
+    "react",
+    "nextjs"
+  ]
 }

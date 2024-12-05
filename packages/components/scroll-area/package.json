@@ -46,5 +46,10 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "keywords": [
+    "scroll-area",
+    "react",
+    "nextjs"
+  ]
 }
