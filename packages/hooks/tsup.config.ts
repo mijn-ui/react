@@ -3,5 +3,5 @@ import { defineConfig } from "tsup"
 
 export default defineConfig({
   ...baseConfig,
-  entry: ["src/use-controlled-state.ts"],
+  entry: ["src/index.ts"],
 })

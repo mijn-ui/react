@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { useControlledState } from "@mijn-ui/react-hooks/use-controlled-state"
+import { useControlledState } from "@mijn-ui/react-hooks"
 import {
   UnstyledProps,
   applyUnstyled,
