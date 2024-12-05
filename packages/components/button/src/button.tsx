@@ -2,7 +2,7 @@ import * as React from "react"
 import { UnstyledProps, applyUnstyled } from "@mijn-ui/react-utilities/shared"
 import { Slot, Slottable } from "@radix-ui/react-slot"
 import { type VariantProps, cva } from "class-variance-authority"
-import { LuLoader2 } from "react-icons/lu"
+import { LoaderCircleIcon } from "@mijn-ui/shared-icons"
 
 const buttonStyles = cva(
   [
@@ -162,7 +162,7 @@ const Button = ({
       {...props}
     >
       {loading && (
-        <LuLoader2
+        <LoaderCircleIcon
           className={applyUnstyled(
             unstyled,
             "mr-2 h-5 w-5 animate-spin text-current",

@@ -10,7 +10,7 @@ import {
 } from "@mijn-ui/react-utilities/shared"
 import { type DialogProps } from "@radix-ui/react-dialog"
 import { Command as CommandPrimitive } from "cmdk"
-import { LuSearch } from "react-icons/lu"
+import { SearchIcon } from "@mijn-ui/shared-icons"
 
 /* -------------------------------------------------------------------------- */
 /*                                   Command                                  */
@@ -85,7 +85,7 @@ const CommandInput = ({ className, unstyled, ...props }: CommandInputProps) => {
       /* eslint-disable-next-line */
       cmdk-input-wrapper=""
     >
-      <LuSearch
+      <SearchIcon
         className={applyUnstyled(
           isUnstyled,
           "mr-2 h-4 w-4 shrink-0 opacity-50",

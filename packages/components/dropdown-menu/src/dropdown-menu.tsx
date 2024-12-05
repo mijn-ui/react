@@ -9,7 +9,7 @@ import {
   UnstyledProps,
 } from "@mijn-ui/react-utilities/shared"
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu"
-import { LuCheck, LuChevronRight, LuCircle } from "react-icons/lu"
+import { CheckIcon, ChevronRightIcon, CircleIcon } from "@mijn-ui/shared-icons"
 
 const DropdownMenuGroup = DropdownMenuPrimitive.Group
 
@@ -98,7 +98,7 @@ const DropdownMenuSubTrigger = ({
       {...props}
     >
       {children}
-      <LuChevronRight className="ml-auto" />
+      <ChevronRightIcon className="ml-auto" />
     </DropdownMenuPrimitive.SubTrigger>
   )
 }
@@ -235,7 +235,7 @@ const DropdownMenuCheckboxItem = ({
         )}
       >
         <DropdownMenuPrimitive.ItemIndicator>
-          <LuCheck className="size-4" />
+          <CheckIcon className="size-4" />
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
       {children}
@@ -276,7 +276,7 @@ const DropdownMenuRadioItem = ({
         )}
       >
         <DropdownMenuPrimitive.ItemIndicator>
-          <LuCircle className="size-2 fill-current" />
+          <CircleIcon className="size-2 fill-current" />
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
       {children}

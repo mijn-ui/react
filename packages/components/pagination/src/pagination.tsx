@@ -4,7 +4,7 @@ import * as React from "react"
 import { buttonStyles } from "@mijn-ui/react-button"
 import { UnstyledProvider, useUnstyled } from "@mijn-ui/react-utilities/context"
 import { UnstyledProps, applyUnstyled } from "@mijn-ui/react-utilities/shared"
-import { LuMoreHorizontal } from "react-icons/lu"
+import { EllipsisIcon } from "@mijn-ui/shared-icons"
 
 /* -------------------------------------------------------------------------- */
 /*                             usePagination Hook                            */
@@ -319,7 +319,7 @@ const PaginationPreviousEllipsis = ({
       )}
       {...props}
     >
-      <LuMoreHorizontal className="size-4" />
+      <EllipsisIcon className="size-4" />
     </span>
   )
 }
@@ -351,7 +351,7 @@ const PaginationNextEllipsis = ({
       )}
       {...props}
     >
-      <LuMoreHorizontal className="size-4" />
+      <EllipsisIcon className="size-4" />
     </span>
   )
 }

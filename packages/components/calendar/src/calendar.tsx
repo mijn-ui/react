@@ -5,11 +5,11 @@ import { buttonStyles } from "@mijn-ui/react-button"
 import { cn } from "@mijn-ui/react-utilities/shared"
 import { DayFlag, DayPicker, SelectionState, UI } from "react-day-picker"
 import {
-  LuChevronDown,
-  LuChevronLeft,
-  LuChevronRight,
-  LuChevronUp,
-} from "react-icons/lu"
+  ChevronDownIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  ChevronUpIcon,
+} from "@mijn-ui/shared-icons"
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>
 
@@ -70,13 +70,13 @@ export const Calendar = ({
 const Chevron = ({ orientation = "left" }) => {
   switch (orientation) {
     case "left":
-      return <LuChevronLeft className="size-4" />
+      return <ChevronLeftIcon className="size-4" />
     case "right":
-      return <LuChevronRight className="size-4" />
+      return <ChevronRightIcon className="size-4" />
     case "up":
-      return <LuChevronUp className="size-4" />
+      return <ChevronUpIcon className="size-4" />
     case "down":
-      return <LuChevronDown className="size-4" />
+      return <ChevronDownIcon className="size-4" />
     default:
       return null
   }

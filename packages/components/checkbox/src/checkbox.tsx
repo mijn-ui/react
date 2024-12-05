@@ -9,8 +9,7 @@ import {
 } from "@mijn-ui/react-utilities/shared"
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
 import { VariantProps, cva } from "class-variance-authority"
-import { LuCheck } from "react-icons/lu"
-import { RxDividerHorizontal } from "react-icons/rx"
+import { CheckIcon, DividerHorizontalIcon } from "@mijn-ui/shared-icons"
 
 export const checkboxStyles = cva(
   [
@@ -89,9 +88,9 @@ const Checkbox = ({
         className={cn("flex items-center justify-center text-current")}
       >
         {checked === "indeterminate" && (
-          <RxDividerHorizontal className="size-4" />
+          <DividerHorizontalIcon className="size-4" />
         )}
-        {checked === true && <LuCheck className="size-4" />}
+        {checked === true && <CheckIcon className="size-4" />}
       </CheckboxPrimitive.Indicator>
     </CheckboxPrimitive.Root>
   )

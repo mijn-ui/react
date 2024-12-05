@@ -5,7 +5,7 @@ import { UnstyledProvider, useUnstyled } from "@mijn-ui/react-utilities/context"
 import { VariantProps, cva } from "class-variance-authority"
 import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
 import * as RadixAccordion from "@radix-ui/react-accordion"
-import { LuChevronDown } from "react-icons/lu"
+import { ChevronDownIcon } from "@mijn-ui/shared-icons"
 
 const accordionStyles = cva("[&>div]:border-b-main-border [&>div]:border-b", {
   variants: {
@@ -109,7 +109,7 @@ const AccordionTrigger = ({
         {icon ? (
           icon
         ) : (
-          <LuChevronDown
+          <ChevronDownIcon
             className={applyUnstyled(
               isUnstyled,
               "h-4 w-4 shrink-0 text-muted-text duration-400 ease-in-out group-data-[state=open]:rotate-180",

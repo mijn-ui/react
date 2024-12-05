@@ -3,7 +3,7 @@
 import * as React from "react"
 import { cn } from "@mijn-ui/react-utilities/shared"
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group"
-import { LuCircle } from "react-icons/lu"
+import { CircleIcon } from "@mijn-ui/shared-icons"
 
 type RadioGroupProps = React.ComponentPropsWithRef<
   typeof RadioGroupPrimitive.Root
@@ -33,7 +33,7 @@ const RadioGroupItem = ({ className, ...props }: RadioGroupItemProps) => {
       {...props}
     >
       <RadioGroupPrimitive.Indicator className="flex items-center justify-center">
-        <LuCircle className="size-2.5 fill-current text-current" />
+        <CircleIcon className="size-2.5 fill-current text-current" />
       </RadioGroupPrimitive.Indicator>
     </RadioGroupPrimitive.Item>
   )

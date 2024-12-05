@@ -31,7 +31,7 @@ import {
 } from "date-fns"
 import { formatInTimeZone, toDate } from "date-fns-tz"
 import { DateRange, UI } from "react-day-picker"
-import { LuCalendar } from "react-icons/lu"
+import { CalendarIcon } from "@mijn-ui/shared-icons"
 
 const months = [
   "January",
@@ -396,7 +396,7 @@ export const CalendarDatePicker = React.forwardRef<
               onClick={handleTogglePopover}
               suppressHydrationWarning
             >
-              <LuCalendar className="mr-2 size-4" />
+              <CalendarIcon className="mr-2 size-4" />
               <span>
                 {date?.from ? (
                   date.to ? (

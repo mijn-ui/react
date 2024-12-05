@@ -14,7 +14,7 @@ import {
 import * as PopoverPrimitive from "@radix-ui/react-popover"
 import { Popover } from "@radix-ui/react-popover"
 import { Command as CommandPrimitive } from "cmdk"
-import { LuCheck } from "react-icons/lu"
+import { CheckIcon } from "@mijn-ui/shared-icons"
 
 type AutocompleteContextProps = {
   onValueChange: (value: string) => void
@@ -315,7 +315,7 @@ const AutocompleteItem = ({
       {...props}
     >
       {children}
-      {isSelected ? <LuCheck className="w-4" /> : null}
+      {isSelected ? <CheckIcon className="w-4" /> : null}
     </CommandPrimitive.Item>
   )
 }

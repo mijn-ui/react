@@ -264,6 +264,9 @@ importers:
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
+      '@mijn-ui/shared-icons':
+        specifier: workspace:*
+        version: link:../../shared-icons
       '@radix-ui/react-accordion':
         specifier: ^1.2.1
         version: 1.2.1(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114))(react@19.0.0-rc-b01722d5-20241114)
@@ -276,9 +279,6 @@ importers:
       react-dom:
         specifier: 19.0.0-rc-b01722d5-20241114
         version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
-      react-icons:
-        specifier: ^5.3.0
-        version: 5.3.0(react@19.0.0-rc-b01722d5-20241114)
     devDependencies:
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
@@ -387,6 +387,9 @@ importers:
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
+      '@mijn-ui/shared-icons':
+        specifier: workspace:*
+        version: link:../../shared-icons
       '@radix-ui/react-popover':
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114))(react@19.0.0-rc-b01722d5-20241114)
@@ -399,9 +402,6 @@ importers:
       react-dom:
         specifier: 19.0.0-rc-b01722d5-20241114
         version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
-      react-icons:
-        specifier: 5.3.0
-        version: 5.3.0(react@19.0.0-rc-b01722d5-20241114)
     devDependencies:
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
@@ -498,6 +498,9 @@ importers:
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
+      '@mijn-ui/shared-icons':
+        specifier: workspace:*
+        version: link:../../shared-icons
       '@radix-ui/react-slot':
         specifier: ^1.1.0
         version: 1.1.0(@types/react@18.3.12)(react@19.0.0-rc-b01722d5-20241114)
@@ -510,9 +513,6 @@ importers:
       react-dom:
         specifier: 19.0.0-rc-b01722d5-20241114
         version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
-      react-icons:
-        specifier: ^5.3.0
-        version: 5.3.0(react@19.0.0-rc-b01722d5-20241114)
     devDependencies:
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
@@ -541,6 +541,9 @@ importers:
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
+      '@mijn-ui/shared-icons':
+        specifier: workspace:*
+        version: link:../../shared-icons
       react:
         specifier: 19.0.0-rc-b01722d5-20241114
         version: 19.0.0-rc-b01722d5-20241114
@@ -550,9 +553,6 @@ importers:
       react-dom:
         specifier: 19.0.0-rc-b01722d5-20241114
         version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
-      react-icons:
-        specifier: ^5.3.0
-        version: 5.3.0(react@19.0.0-rc-b01722d5-20241114)
     devDependencies:
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
@@ -615,6 +615,9 @@ importers:
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
+      '@mijn-ui/shared-icons':
+        specifier: workspace:*
+        version: link:../../shared-icons
       '@radix-ui/react-checkbox':
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114))(react@19.0.0-rc-b01722d5-20241114)
@@ -627,9 +630,6 @@ importers:
       react-dom:
         specifier: 19.0.0-rc-b01722d5-20241114
         version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
-      react-icons:
-        specifier: ^5.3.0
-        version: 5.3.0(react@19.0.0-rc-b01722d5-20241114)
     devDependencies:
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
@@ -689,6 +689,9 @@ importers:
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
+      '@mijn-ui/shared-icons':
+        specifier: workspace:*
+        version: link:../../shared-icons
       '@radix-ui/react-dialog':
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114))(react@19.0.0-rc-b01722d5-20241114)
@@ -701,9 +704,6 @@ importers:
       react-dom:
         specifier: 19.0.0-rc-b01722d5-20241114
         version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
-      react-icons:
-        specifier: ^5.3.0
-        version: 5.3.0(react@19.0.0-rc-b01722d5-20241114)
     devDependencies:
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
@@ -741,6 +741,9 @@ importers:
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
+      '@mijn-ui/shared-icons':
+        specifier: workspace:*
+        version: link:../../shared-icons
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
@@ -759,9 +762,6 @@ importers:
       react-dom:
         specifier: 19.0.0-rc-b01722d5-20241114
         version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
-      react-icons:
-        specifier: ^5.3.0
-        version: 5.3.0(react@19.0.0-rc-b01722d5-20241114)
     devDependencies:
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
@@ -827,6 +827,9 @@ importers:
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
+      '@mijn-ui/shared-icons':
+        specifier: workspace:*
+        version: link:../../shared-icons
       '@radix-ui/react-dropdown-menu':
         specifier: ^2.1.2
         version: 2.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114))(react@19.0.0-rc-b01722d5-20241114)
@@ -836,9 +839,6 @@ importers:
       react-dom:
         specifier: 19.0.0-rc-b01722d5-20241114
         version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
-      react-icons:
-        specifier: ^5.3.0
-        version: 5.3.0(react@19.0.0-rc-b01722d5-20241114)
     devDependencies:
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
@@ -938,15 +938,15 @@ importers:
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
+      '@mijn-ui/shared-icons':
+        specifier: workspace:*
+        version: link:../../shared-icons
       react:
         specifier: 19.0.0-rc-b01722d5-20241114
         version: 19.0.0-rc-b01722d5-20241114
       react-dom:
         specifier: 19.0.0-rc-b01722d5-20241114
         version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
-      react-icons:
-        specifier: ^5.3.0
-        version: 5.3.0(react@19.0.0-rc-b01722d5-20241114)
     devDependencies:
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
@@ -1043,6 +1043,9 @@ importers:
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
+      '@mijn-ui/shared-icons':
+        specifier: workspace:*
+        version: link:../../shared-icons
       '@radix-ui/react-radio-group':
         specifier: ^1.2.1
         version: 1.2.1(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114))(react@19.0.0-rc-b01722d5-20241114)
@@ -1055,9 +1058,6 @@ importers:
       react-dom:
         specifier: 19.0.0-rc-b01722d5-20241114
         version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
-      react-icons:
-        specifier: ^5.3.0
-        version: 5.3.0(react@19.0.0-rc-b01722d5-20241114)
     devDependencies:
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
@@ -1117,6 +1117,9 @@ importers:
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
+      '@mijn-ui/shared-icons':
+        specifier: workspace:*
+        version: link:../../shared-icons
       '@radix-ui/react-select':
         specifier: ^2.1.2
         version: 2.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114))(react@19.0.0-rc-b01722d5-20241114)
@@ -1126,9 +1129,6 @@ importers:
       react-dom:
         specifier: 19.0.0-rc-b01722d5-20241114
         version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
-      react-icons:
-        specifier: ^5.3.0
-        version: 5.3.0(react@19.0.0-rc-b01722d5-20241114)
     devDependencies:
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
@@ -1367,6 +1367,19 @@ importers:
       eslint-config-custom:
         specifier: workspace:*
         version: link:../eslint-config-custom
+      tsconfig:
+        specifier: workspace:*
+        version: link:../ts-config
+      tsup-config:
+        specifier: workspace:*
+        version: link:../tsup-config
+
+  packages/shared-icons:
+    dependencies:
+      react:
+        specifier: 19.0.0-rc-b01722d5-20241114
+        version: 19.0.0-rc-b01722d5-20241114
+    devDependencies:
       tsconfig:
         specifier: workspace:*
         version: link:../ts-config

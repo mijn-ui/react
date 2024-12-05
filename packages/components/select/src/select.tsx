@@ -8,7 +8,11 @@ import {
   UnstyledProps,
 } from "@mijn-ui/react-utilities/shared"
 import * as SelectPrimitive from "@radix-ui/react-select"
-import { LuCheck, LuChevronDown, LuChevronUp } from "react-icons/lu"
+import {
+  CheckIcon,
+  ChevronDownIcon,
+  ChevronUpIcon,
+} from "@mijn-ui/shared-icons"
 
 const SelectGroup = SelectPrimitive.Group
 
@@ -60,7 +64,7 @@ const SelectTrigger = ({
     >
       {children}
       <SelectPrimitive.Icon asChild>
-        <LuChevronDown className="size-4 opacity-50" />
+        <ChevronDownIcon className="size-4 opacity-50" />
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
   )
@@ -92,7 +96,7 @@ const SelectScrollUpButton = ({
       )}
       {...props}
     >
-      <LuChevronUp className="size-4" />
+      <ChevronUpIcon className="size-4" />
     </SelectPrimitive.ScrollUpButton>
   )
 }
@@ -123,7 +127,7 @@ const SelectScrollDownButton = ({
       )}
       {...props}
     >
-      <LuChevronDown className="size-4" />
+      <ChevronDownIcon className="size-4" />
     </SelectPrimitive.ScrollDownButton>
   )
 }
@@ -239,7 +243,7 @@ const SelectItem = ({
         )}
       >
         <SelectPrimitive.ItemIndicator>
-          <LuCheck className="size-4" />
+          <CheckIcon className="size-4" />
         </SelectPrimitive.ItemIndicator>
       </span>
     </SelectPrimitive.Item>
