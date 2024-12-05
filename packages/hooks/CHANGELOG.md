@@ -1,5 +1,12 @@
 # @mijn-ui-react/hooks
 
+## 0.0.7
+
+### Patch Changes
+
+- ce84d7c: Fix: hooks don't get bundle properly.
+- 4ff5f86: Add ReadMeFile and keywords
+
 ## 0.0.6
 
 ### Patch Changes

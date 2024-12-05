@@ -1,5 +1,13 @@
 # @mijn-ui-react/progress
 
+## 0.0.6
+
+### Patch Changes
+
+- 4ff5f86: Add ReadMeFile and keywords
+- Updated dependencies [4ff5f86]
+  - @mijn-ui/react-utilities@0.0.6
+
 ## 0.0.5
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @mijn-ui-react/popover
 
+## 0.0.8
+
+### Patch Changes
+
+- 4ff5f86: Add ReadMeFile and keywords
+- Updated dependencies [4ff5f86]
+  - @mijn-ui/react-button@0.0.8
+  - @mijn-ui/react-utilities@0.0.6
+
 ## 0.0.7
 
 ### Patch Changes

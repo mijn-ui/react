@@ -1,5 +1,14 @@
 # @mijn-ui-react/accordion
 
+## 0.0.7
+
+### Patch Changes
+
+- 4ff5f86: Add ReadMeFile and keywords
+- Updated dependencies [4ff5f86]
+  - @mijn-ui/shared-icons@0.0.2
+  - @mijn-ui/react-utilities@0.0.6
+
 ## 0.0.6
 
 ### Patch Changes
