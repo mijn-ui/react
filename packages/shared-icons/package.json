@@ -1,0 +1,39 @@
+{
+  "name": "@mijn-ui/shared-icons",
+  "author": "Htet Aung Lin<htetaunglin.coder@gmail.com>",
+  "version": "0.0.0",
+  "homepage": "https://mijn-ui.vercel.app",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mijn-ui/mijn-ui-react.git",
+    "directory": "packages/shared-icons/src"
+  },
+  "bugs": {
+    "url": "https://github.com/mijn-ui/mijn-ui-react/issues"
+  },
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsup"
+  },
+  "devDependencies": {
+    "tsconfig": "workspace:*",
+    "tsup-config": "workspace:*"
+  },
+  "dependencies": {
+    "react": "19.0.0-rc-b01722d5-20241114"
+  },
+  "peerDependencies": {
+    "react": "^19.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
