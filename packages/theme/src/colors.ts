@@ -17,8 +17,8 @@ const defaultColors: Preset = {
     primary: "29 100% 52%",
     "primary-text": "0 0% 100%",
 
-    secondary: "33 100% 87%",
-    "secondary-text": "29 93% 39%",
+    secondary: "33 35% 50%",
+    "secondary-text": "0 0% 100%",
 
     info: "216 76% 52%",
     "info-text": "219 64% 43%",
@@ -59,8 +59,8 @@ const defaultColors: Preset = {
     primary: "29 100% 52%",
     "primary-text": "0 0% 100%",
 
-    secondary: "34 100% 82%",
-    "secondary-text": "29 93% 39%",
+    secondary: "33 35% 50%",
+    "secondary-text": "0 0% 100%",
 
     info: "216 76% 52%",
     "info-text": "207 70% 80%",
