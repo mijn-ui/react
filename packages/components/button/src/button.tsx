@@ -1,9 +1,8 @@
 import * as React from "react"
 import { UnstyledProps, applyUnstyled } from "@mijn-ui/react-utilities/shared"
 import { Slot, Slottable } from "@radix-ui/react-slot"
-import { type VariantProps } from "class-variance-authority"
 import { LoaderCircleIcon } from "@mijn-ui/shared-icons"
-import { tv } from "tailwind-variants"
+import { tv, VariantProps } from "tailwind-variants"
 
 const filled = {
   primary: "bg-primary text-primary-text",
