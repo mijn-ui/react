@@ -106,7 +106,7 @@ const Navbar = () => {
             </div>
           </Button>
 
-          <Button color={"secondary"} size={"sm"} className="px-2" asChild>
+          <Button color={"accent"} size={"sm"} className="px-2" asChild>
             <Link target="_blank" href={GITHUB_URL}>
               <LuGithub size={18} />
             </Link>
