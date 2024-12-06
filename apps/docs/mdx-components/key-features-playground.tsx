@@ -146,7 +146,7 @@ const KeyFeaturesPlayground = () => {
               label="Variant"
               options={[
                 { value: "filled", id: "filled" },
-                { value: "outline", id: "outline" },
+                { value: "outlined", id: "outlined" },
                 { value: "text", id: "text" },
               ]}
             />

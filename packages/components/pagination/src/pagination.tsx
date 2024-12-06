@@ -210,7 +210,7 @@ const PaginationList = ({
             className={applyUnstyled(
               isUnstyled,
               buttonStyles({
-                variant: page === currentPage ? "outline" : "text",
+                variant: page === currentPage ? "outlined" : "text",
                 color: "accent",
                 size: "icon",
               }),

@@ -29,11 +29,11 @@ export const Calendar = ({
         [UI.MonthCaption]: "flex justify-center py-2 relative items-center",
         [UI.CaptionLabel]: "text-sm font-medium",
         [UI.PreviousMonthButton]: cn(
-          buttonStyles({ color: "muted", variant: "outline" }),
+          buttonStyles({ color: "muted", variant: "outlined" }),
           "absolute left-1 top-0 z-10 size-7 bg-transparent p-0 opacity-50 hover:opacity-100",
         ),
         [UI.NextMonthButton]: cn(
-          buttonStyles({ color: "muted", variant: "outline" }),
+          buttonStyles({ color: "muted", variant: "outlined" }),
           "absolute right-1 top-0 z-10 size-7 bg-transparent p-0 opacity-50 hover:opacity-100",
         ),
         [UI.MonthGrid]: "w-full border-collapse space-y-1",

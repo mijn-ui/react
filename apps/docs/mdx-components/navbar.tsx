@@ -52,7 +52,7 @@ const Navbar = () => {
   const renderPages = PAGES.map((page) => (
     <Link
       key={page.title}
-      className="text-muted-text hover:text-secondary-text text-sm"
+      className="text-muted-text hover:text-secondary text-sm"
       href={page.href}
     >
       {page.title}
@@ -94,7 +94,7 @@ const Navbar = () => {
           <Button
             onClick={() => setOpenSearch(true)}
             color={"accent"}
-            variant={"outline"}
+            variant={"outlined"}
             size={"sm"}
             className="gap-2"
           >
@@ -106,7 +106,7 @@ const Navbar = () => {
             </div>
           </Button>
 
-          <Button color={"accent"} size={"sm"} className="border px-2" asChild>
+          <Button color={"secondary"} size={"sm"} className="px-2" asChild>
             <Link target="_blank" href={GITHUB_URL}>
               <LuGithub size={18} />
             </Link>
@@ -119,14 +119,14 @@ const Navbar = () => {
         <div className="flex items-center md:hidden">
           <button
             onClick={() => setOpenSearch(true)}
-            className="text-muted-text hover:text-secondary-text inline-flex size-8 items-center justify-center transition duration-200"
+            className="text-muted-text hover:text-secondary inline-flex size-8 items-center justify-center transition duration-200"
           >
             <LuSearch />
           </button>
 
           <ClickAwayListener onClickAway={() => setDropdownOpen(false)}>
             <Collapsible open={dropdownOpen} onOpenChange={setDropdownOpen}>
-              <CollapsibleTrigger className="text-muted-text hover:text-secondary-text flex size-8 items-center justify-center transition duration-200">
+              <CollapsibleTrigger className="text-muted-text hover:text-secondary flex size-8 items-center justify-center transition duration-200">
                 <LuChevronDown className="text-lg" />
               </CollapsibleTrigger>
               <CollapsibleContent className="top-[calc(var(--navbar-height)] bg-surface data-[state=closed]:animate-collapsible-close data-[state=open]:animate-collapsible-open absolute inset-x-0 mt-2 overflow-hidden text-sm transition-[height]">
@@ -136,7 +136,7 @@ const Navbar = () => {
 
                   <div className="flex w-full items-center justify-between">
                     <Link
-                      className="text-muted-text hover:text-secondary-text inline-flex items-center gap-2"
+                      className="text-muted-text hover:text-secondary inline-flex items-center gap-2"
                       target="_blank"
                       href={GITHUB_URL}
                     >
