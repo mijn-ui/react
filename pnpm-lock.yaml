@@ -501,6 +501,9 @@ importers:
       '@mijn-ui/react-hooks':
         specifier: workspace:*
         version: link:../../hooks
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../../theme
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
@@ -510,18 +513,12 @@ importers:
       '@radix-ui/react-slot':
         specifier: ^1.1.0
         version: 1.1.0(@types/react@18.3.12)(react@19.0.0-rc-b01722d5-20241114)
-      class-variance-authority:
-        specifier: ^0.7.0
-        version: 0.7.0
       react:
         specifier: 19.0.0-rc-b01722d5-20241114
         version: 19.0.0-rc-b01722d5-20241114
       react-dom:
         specifier: 19.0.0-rc-b01722d5-20241114
         version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
-      tailwind-variants:
-        specifier: ^0.3.0
-        version: 0.3.0(tailwindcss@3.4.15)
     devDependencies:
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
@@ -1400,6 +1397,10 @@ importers:
         version: link:../tsup-config
 
   packages/theme:
+    dependencies:
+      tailwind-variants:
+        specifier: ^0.3.0
+        version: 0.3.0(tailwindcss@3.4.15)
     devDependencies:
       eslint-config-custom:
         specifier: workspace:*

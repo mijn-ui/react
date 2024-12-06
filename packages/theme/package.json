@@ -26,9 +26,9 @@
     "types:check": "tsc --noEmit"
   },
   "devDependencies": {
+    "eslint-config-custom": "workspace:*",
     "tailwindcss": "^3.4.15",
     "tailwindcss-animate": "^1.0.7",
-    "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
     "tsup-config": "workspace:*"
   },
@@ -43,5 +43,8 @@
     "react",
     "tailwindcss-plugin",
     "theme"
-  ]
+  ],
+  "dependencies": {
+    "tailwind-variants": "^0.3.0"
+  }
 }
