@@ -11,7 +11,7 @@ const filled = {
   muted: "bg-muted text-muted-text",
   success: "bg-success text-success-text",
   warning: "bg-warning text-warning-text",
-  danger: "bg-danger text-danger-text",
+  danger: "bg-danger text-danger-filled-text",
 }
 
 const outlined = {
