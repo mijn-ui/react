@@ -13,6 +13,7 @@ const config = withAnalyzer({
   basePath: "/react",
   assetPrefix: "/react",
   swcMinify: true,
+  assetPrefix: "/react",
   eslint: {
     ignoreDuringBuilds: true,
   },
