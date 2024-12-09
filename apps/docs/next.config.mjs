@@ -10,6 +10,7 @@ const withAnalyzer = createBundleAnalyzer({
 const config = withAnalyzer({
   output: "standalone",
   reactStrictMode: true,
+  basePath: "/react",
   assetPrefix: "/react",
   swcMinify: true,
   eslint: {
