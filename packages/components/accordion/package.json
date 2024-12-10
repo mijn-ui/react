@@ -37,10 +37,10 @@
   "dependencies": {
     "@mijn-ui/react-utilities": "workspace:*",
     "@radix-ui/react-accordion": "^1.2.1",
-    "class-variance-authority": "^0.7.0",
     "react": "19.0.0-rc-b01722d5-20241114",
     "react-dom": "19.0.0-rc-b01722d5-20241114",
-    "@mijn-ui/shared-icons": "workspace:*"
+    "@mijn-ui/shared-icons": "workspace:*",
+    "@mijn-ui/react-theme": "workspace:*"
   },
   "peerDependencies": {
     "react": "^19.0",

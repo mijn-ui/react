@@ -1,24 +1,20 @@
 "use client"
 
 import * as React from "react"
-import { UnstyledProvider, useUnstyled } from "@mijn-ui/react-utilities/context"
-import { VariantProps, cva } from "class-variance-authority"
 import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
+import { createDynamicContext } from "@mijn-ui/react-utilities/context"
 import * as RadixAccordion from "@radix-ui/react-accordion"
 import { ChevronDownIcon } from "@mijn-ui/shared-icons"
+import { AccordionVariantProps, accordionStyles } from "@mijn-ui/react-theme"
 
-const accordionStyles = cva("[&>div]:border-b-main-border [&>div]:border-b", {
-  variants: {
-    variant: {
-      default: "",
-      surface: "bg-surface rounded-xl px-4 pb-4 pt-2 shadow-sm",
-      bordered: "border-main-border rounded-xl border px-4 pb-4 pt-2",
-    },
-  },
-  defaultVariants: {
-    variant: "default",
-  },
-})
+/* -------------------------------------------------------------------------- */
+/*                              AccordionContext                              */
+/* -------------------------------------------------------------------------- */
+
+type AccordionContextType = UnstyledProps & ReturnType<typeof accordionStyles>
+
+const { Provider: AccordionProvider, useDynamicContext: useAccordionContext } =
+  createDynamicContext<AccordionContextType>()
 
 /* -------------------------------------------------------------------------- */
 /*                                  Accordion                                 */
@@ -27,7 +23,7 @@ const accordionStyles = cva("[&>div]:border-b-main-border [&>div]:border-b", {
 export type AccordionProps = React.ComponentPropsWithRef<
   typeof RadixAccordion.Root
 > &
-  VariantProps<typeof accordionStyles> &
+  AccordionVariantProps &
   UnstyledProps
 
 const Accordion = ({
@@ -35,18 +31,18 @@ const Accordion = ({
   unstyled = false,
   variant,
   ...props
-}: AccordionProps) => (
-  <UnstyledProvider unstyled={unstyled}>
-    <RadixAccordion.Root
-      className={applyUnstyled(
-        unstyled,
-        accordionStyles({ variant }),
-        className,
-      )}
-      {...props}
-    />
-  </UnstyledProvider>
-)
+}: AccordionProps) => {
+  const styles = accordionStyles({ variant })
+
+  return (
+    <AccordionProvider value={{ unstyled, ...styles }}>
+      <RadixAccordion.Root
+        className={applyUnstyled(unstyled, styles.base(), className)}
+        {...props}
+      />
+    </AccordionProvider>
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                AccordionItem                               */
@@ -62,12 +58,12 @@ const AccordionItem = ({
   unstyled,
   ...props
 }: AccordionItemProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled()
+  const { unstyled: contextUnstyled, item } = useAccordionContext()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <RadixAccordion.Item
-      className={applyUnstyled(isUnstyled, "w-full", className)}
+      className={applyUnstyled(isUnstyled, item(), className)}
       {...props}
     />
   )
@@ -91,17 +87,17 @@ const AccordionTrigger = ({
   children,
   ...props
 }: AccordionTriggerProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled()
+  const {
+    unstyled: contextUnstyled,
+    trigger,
+    icon: iconStyles,
+  } = useAccordionContext()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <RadixAccordion.Header className={applyUnstyled(isUnstyled, "flex")}>
       <RadixAccordion.Trigger
-        className={applyUnstyled(
-          isUnstyled,
-          "group flex w-full items-center justify-between py-3",
-          className,
-        )}
+        className={applyUnstyled(isUnstyled, trigger(), className)}
         {...props}
       >
         {children}
@@ -110,10 +106,7 @@ const AccordionTrigger = ({
           icon
         ) : (
           <ChevronDownIcon
-            className={applyUnstyled(
-              isUnstyled,
-              "h-4 w-4 shrink-0 text-muted-text duration-400 ease-in-out group-data-[state=open]:rotate-180",
-            )}
+            className={applyUnstyled(isUnstyled, iconStyles())}
           />
         )}
       </RadixAccordion.Trigger>
@@ -136,15 +129,12 @@ const AccordionContent = ({
   children,
   ...props
 }: AccordionContentProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled()
+  const { unstyled: contextUnstyled, content } = useAccordionContext()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <RadixAccordion.Content
-      className={applyUnstyled(
-        isUnstyled,
-        "overflow-hidden text-sm transition-[height] data-[state=closed]:animate-accordion-close data-[state=open]:animate-accordion-open",
-      )}
+      className={applyUnstyled(isUnstyled, content())}
       {...props}
     >
       <div className={applyUnstyled(isUnstyled, "pb-3 pt-0", className)}>
