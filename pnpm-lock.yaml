@@ -541,9 +541,9 @@ importers:
 
   packages/components/calendar:
     dependencies:
-      '@mijn-ui/react-button':
+      '@mijn-ui/react-theme':
         specifier: workspace:*
-        version: link:../button
+        version: link:../../theme
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
