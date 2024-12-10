@@ -581,12 +581,12 @@ importers:
 
   packages/components/card:
     dependencies:
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../../theme
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
-      class-variance-authority:
-        specifier: ^0.7.0
-        version: 0.7.0
       react:
         specifier: 19.0.0-rc-b01722d5-20241114
         version: 19.0.0-rc-b01722d5-20241114

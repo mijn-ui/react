@@ -1,12 +1,22 @@
 "use client"
 
 import * as React from "react"
-import { UnstyledProvider, useUnstyled } from "@mijn-ui/react-utilities/context"
+import { createDynamicContext } from "@mijn-ui/react-utilities/context"
 import {
   applyUnstyled,
   cn,
   UnstyledProps,
 } from "@mijn-ui/react-utilities/shared"
+import { cardStyles } from "@mijn-ui/react-theme"
+
+/* -------------------------------------------------------------------------- */
+/*                              CardContext                                   */
+/* -------------------------------------------------------------------------- */
+
+type CardContextType = UnstyledProps & ReturnType<typeof cardStyles>
+
+const { Provider: CardProvider, useDynamicContext: useCardContext } =
+  createDynamicContext<CardContextType>()
 
 /* -------------------------------------------------------------------------- */
 /*                                    Card                                    */
@@ -14,17 +24,15 @@ import {
 
 type CardProps = React.ComponentProps<"div"> & UnstyledProps
 
-const Card = ({ className, unstyled = false, ...props }: CardProps) => (
-  <UnstyledProvider unstyled={unstyled}>
-    <div
-      className={cn(
-        "bg-surface text-surface-text rounded-lg shadow-sm",
-        className,
-      )}
-      {...props}
-    />
-  </UnstyledProvider>
-)
+const Card = ({ className, unstyled = false, ...props }: CardProps) => {
+  const styles = cardStyles()
+
+  return (
+    <CardProvider value={{ unstyled, ...styles }}>
+      <div className={cn(styles.base(), className)} {...props} />
+    </CardProvider>
+  )
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                 CardHeader                                 */
@@ -33,16 +41,12 @@ const Card = ({ className, unstyled = false, ...props }: CardProps) => (
 type CardHeaderProps = React.ComponentPropsWithRef<"div"> & UnstyledProps
 
 const CardHeader = ({ className, unstyled, ...props }: CardHeaderProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled()
+  const { unstyled: contextUnstyled, header } = useCardContext()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <div
-      className={applyUnstyled(
-        isUnstyled,
-        "flex flex-col space-y-1.5 p-4",
-        className,
-      )}
+      className={applyUnstyled(isUnstyled, header(), className)}
       {...props}
     />
   )
@@ -55,18 +59,11 @@ const CardHeader = ({ className, unstyled, ...props }: CardHeaderProps) => {
 type CardTitleProps = React.ComponentPropsWithRef<"div"> & UnstyledProps
 
 const CardTitle = ({ className, unstyled, ...props }: CardTitleProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled()
+  const { unstyled: contextUnstyled, title } = useCardContext()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
-    <div
-      className={applyUnstyled(
-        isUnstyled,
-        "text-2xl font-semibold leading-none tracking-tight",
-        className,
-      )}
-      {...props}
-    />
+    <div className={applyUnstyled(isUnstyled, title(), className)} {...props} />
   )
 }
 
@@ -81,16 +78,12 @@ const CardDescription = ({
   unstyled,
   ...props
 }: CardDescriptionProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled()
+  const { unstyled: contextUnstyled, description } = useCardContext()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <div
-      className={applyUnstyled(
-        isUnstyled,
-        "text-sm text-muted-text",
-        className,
-      )}
+      className={applyUnstyled(isUnstyled, description(), className)}
       {...props}
     />
   )
@@ -103,12 +96,12 @@ const CardDescription = ({
 type CardContentProps = React.ComponentPropsWithRef<"div"> & UnstyledProps
 
 const CardContent = ({ className, unstyled, ...props }: CardContentProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled()
+  const { unstyled: contextUnstyled, content } = useCardContext()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <div
-      className={applyUnstyled(isUnstyled, "p-4 pt-0", className)}
+      className={applyUnstyled(isUnstyled, content(), className)}
       {...props}
     />
   )
@@ -121,16 +114,12 @@ const CardContent = ({ className, unstyled, ...props }: CardContentProps) => {
 type CardFooterProps = React.ComponentPropsWithRef<"div"> & UnstyledProps
 
 const CardFooter = ({ className, unstyled, ...props }: CardFooterProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled()
+  const { unstyled: contextUnstyled, footer } = useCardContext()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <div
-      className={applyUnstyled(
-        isUnstyled,
-        "flex items-center p-4 pt-0",
-        className,
-      )}
+      className={applyUnstyled(isUnstyled, footer(), className)}
       {...props}
     />
   )
