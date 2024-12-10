@@ -27,6 +27,7 @@ export default function HomePage() {
             buttonStyles({
               size: "sm",
               color: "secondary",
+              variant: "outlined",
               className: "text-xs md:text-sm",
             }),
           )}
