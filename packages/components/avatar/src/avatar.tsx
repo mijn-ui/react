@@ -1,33 +1,14 @@
 "use client"
 
 import * as React from "react"
-import { UnstyledProvider, useUnstyled } from "@mijn-ui/react-utilities/context"
-import {
-  UnstyledProps,
-  applyUnstyled,
-  cn,
-} from "@mijn-ui/react-utilities/shared"
+import { createDynamicContext } from "@mijn-ui/react-utilities/context"
+import { UnstyledProps, applyUnstyled } from "@mijn-ui/react-utilities/shared"
 import * as AvatarPrimitive from "@radix-ui/react-avatar"
-import { VariantProps, cva } from "class-variance-authority"
-
-export const avatarStyles = cva(
-  ["relative size-10 shrink-0 overflow-hidden rounded-full"],
-  {
-    variants: {
-      size: {
-        xxl: "size-16 text-base",
-        xl: "size-14 text-sm",
-        lg: "size-12 text-sm",
-        md: "size-10 text-sm",
-        sm: "size-8 text-xs",
-        xs: "size-6 text-xs",
-      },
-    },
-    defaultVariants: {
-      size: "md",
-    },
-  },
-)
+import {
+  avatarGroupStyles,
+  avatarStyles,
+  AvatarVariantProps,
+} from "@mijn-ui/react-theme"
 
 /* -------------------------------------------------------------------------- */
 /*                                 AvatarGroup                                */
@@ -44,46 +25,50 @@ const AvatarGroup = ({
   unstyled = false,
   ...props
 }: AvatarGroupProps) => {
+  const { group, groupRemainChildren } = avatarGroupStyles()
   const childArray = React.Children.toArray(children)
   const visibleChildren = max ? childArray.slice(0, max) : childArray
   const remainingChildrenCount = max ? childArray.length - max : 0
 
   return (
-    <UnstyledProvider unstyled={unstyled}>
-      <div
-        className={cn("flex items-center justify-center -space-x-2", className)}
-        {...props}
-      >
-        {visibleChildren}
-        {remainingChildrenCount > 0 && (
-          <span className="text-muted-text !ml-1.5 flex items-center justify-center text-xs">
-            +{remainingChildrenCount}
-          </span>
-        )}
-      </div>
-    </UnstyledProvider>
+    <div className={applyUnstyled(unstyled, group(), className)} {...props}>
+      {visibleChildren}
+      {remainingChildrenCount > 0 && (
+        <span className={applyUnstyled(unstyled, groupRemainChildren())}>
+          +{remainingChildrenCount}
+        </span>
+      )}
+    </div>
   )
 }
 
 /* -------------------------------------------------------------------------- */
-/*                                   Avatar                                   */
+/*                              AvatarContext                                  */
 /* -------------------------------------------------------------------------- */
 
-export type AvatarVariantProps = VariantProps<typeof avatarStyles>
+type AvatarContextType = UnstyledProps & ReturnType<typeof avatarStyles>
+
+const { Provider: AvatarProvider, useDynamicContext: useAvatarContext } =
+  createDynamicContext<AvatarContextType>()
+
+/* -------------------------------------------------------------------------- */
+/*                                   Avatar                                   */
+/* -------------------------------------------------------------------------- */
 
 type AvatarProps = React.ComponentPropsWithRef<typeof AvatarPrimitive.Root> &
   AvatarVariantProps &
   UnstyledProps
 
 const Avatar = ({ unstyled, size, className, ...props }: AvatarProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled()
-  const isUnstyled = unstyled ?? contextUnstyled
+  const styles = avatarStyles({ size })
 
   return (
-    <AvatarPrimitive.Root
-      className={applyUnstyled(isUnstyled, avatarStyles({ size }), className)}
-      {...props}
-    />
+    <AvatarProvider value={{ unstyled, ...styles }}>
+      <AvatarPrimitive.Root
+        className={applyUnstyled(unstyled, styles.base(), className)}
+        {...props}
+      />
+    </AvatarProvider>
   )
 }
 
@@ -97,16 +82,12 @@ type AvatarImageProps = React.ComponentPropsWithRef<
   UnstyledProps
 
 const AvatarImage = ({ unstyled, className, ...props }: AvatarImageProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled()
+  const { unstyled: contextUnstyled, image } = useAvatarContext()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <AvatarPrimitive.Image
-      className={applyUnstyled(
-        isUnstyled,
-        "aspect-square h-full w-full object-cover",
-        className,
-      )}
+      className={applyUnstyled(isUnstyled, image(), className)}
       {...props}
     />
   )
@@ -126,16 +107,12 @@ const AvatarFallback = ({
   className,
   ...props
 }: AvatarFallbackProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled()
+  const { unstyled: contextUnstyled, fallback } = useAvatarContext()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <AvatarPrimitive.Fallback
-      className={applyUnstyled(
-        isUnstyled,
-        "bg-muted flex h-full w-full items-center justify-center rounded-full",
-        className,
-      )}
+      className={applyUnstyled(isUnstyled, fallback(), className)}
       {...props}
     />
   )

@@ -39,7 +39,7 @@
     "react-dom": "19.0.0-rc-b01722d5-20241114",
     "@radix-ui/react-avatar": "^1.1.1",
     "@mijn-ui/react-utilities": "workspace:*",
-    "class-variance-authority": "^0.7.0"
+    "@mijn-ui/react-theme": "workspace:*"
   },
   "peerDependencies": {
     "react": "^19.0",

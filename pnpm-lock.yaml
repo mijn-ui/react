@@ -427,15 +427,15 @@ importers:
 
   packages/components/avatar:
     dependencies:
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../../theme
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       '@radix-ui/react-avatar':
         specifier: ^1.1.1
         version: 1.1.1(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114))(react@19.0.0-rc-b01722d5-20241114)
-      class-variance-authority:
-        specifier: ^0.7.0
-        version: 0.7.0
       react:
         specifier: 19.0.0-rc-b01722d5-20241114
         version: 19.0.0-rc-b01722d5-20241114
