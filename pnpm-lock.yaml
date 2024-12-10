@@ -467,6 +467,9 @@ importers:
 
   packages/components/badge:
     dependencies:
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../../theme
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
@@ -476,9 +479,6 @@ importers:
       react-dom:
         specifier: 19.0.0-rc-b01722d5-20241114
         version: 19.0.0-rc-b01722d5-20241114(react@19.0.0-rc-b01722d5-20241114)
-      tailwind-variants:
-        specifier: ^0.3.0
-        version: 0.3.0(tailwindcss@3.4.15)
     devDependencies:
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
