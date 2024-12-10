@@ -12,23 +12,23 @@ import { LuAlertCircle, LuBug } from "react-icons/lu"
 type AlertProps = {
   title: string
   description: string
-  status?: VariantProps<typeof alertStyles>["status"]
+  color?: VariantProps<typeof alertStyles>["color"]
   className?: string
 }
 
 const Alert = ({
   title,
   description,
-  status = "info",
+  color = "info",
   className,
 }: AlertProps) => {
-  const Icon = status === "danger" ? LuBug : LuAlertCircle
+  const Icon = color === "danger" ? LuBug : LuAlertCircle
 
   return (
     <MijnUIAlert
       className={cn("not-prose w-full backdrop-blur-md", className)}
-      variant="default"
-      status={status}
+      variant="subtle"
+      color={color}
     >
       <AlertIcon>
         <Icon />

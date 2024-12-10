@@ -10,7 +10,7 @@ const AlertOutline = () => {
   return (
     <div className="flex w-full flex-wrap items-center justify-center gap-4">
       {/* ----------------------------- Default ---------------------------- */}
-      <Alert className="w-full max-w-lg" variant={"outlined"}>
+      <Alert className="w-full max-w-lg" color="default" variant={"outlined"}>
         <AlertIcon>
           {" "}
           <MdErrorOutline />
@@ -20,11 +20,7 @@ const AlertOutline = () => {
       </Alert>
 
       {/* ----------------------------- Success ---------------------------- */}
-      <Alert
-        className="w-full max-w-lg"
-        status={"success"}
-        variant={"outlined"}
-      >
+      <Alert className="w-full max-w-lg" color={"success"} variant={"outlined"}>
         <AlertIcon>
           {" "}
           <MdErrorOutline />
@@ -34,11 +30,7 @@ const AlertOutline = () => {
       </Alert>
 
       {/* ----------------------------- Warning ---------------------------- */}
-      <Alert
-        className="w-full max-w-lg"
-        status={"warning"}
-        variant={"outlined"}
-      >
+      <Alert className="w-full max-w-lg" color={"warning"} variant={"outlined"}>
         <AlertIcon>
           {" "}
           <MdErrorOutline />
@@ -48,7 +40,7 @@ const AlertOutline = () => {
       </Alert>
 
       {/* ----------------------------- Danger ---------------------------- */}
-      <Alert className="w-full max-w-lg" status={"danger"} variant={"outlined"}>
+      <Alert className="w-full max-w-lg" color={"danger"} variant={"outlined"}>
         <AlertIcon>
           {" "}
           <MdErrorOutline />
@@ -58,7 +50,7 @@ const AlertOutline = () => {
       </Alert>
 
       {/* ------------------------------ Info ----------------------------- */}
-      <Alert className="w-full max-w-lg" status={"info"} variant={"outlined"}>
+      <Alert className="w-full max-w-lg" color={"info"} variant={"outlined"}>
         <AlertIcon>
           {" "}
           <MdErrorOutline />

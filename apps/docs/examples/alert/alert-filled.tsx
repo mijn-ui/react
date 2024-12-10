@@ -10,7 +10,7 @@ const AlertFilled = () => {
   return (
     <div className="flex w-full flex-wrap items-center justify-center gap-4">
       {/* ----------------------------- Default ---------------------------- */}
-      <Alert className="w-full max-w-lg" variant={"filled"}>
+      <Alert className="w-full max-w-lg" color="default" variant={"filled"}>
         <AlertIcon>
           {" "}
           <MdErrorOutline />
@@ -20,7 +20,7 @@ const AlertFilled = () => {
       </Alert>
 
       {/* ----------------------------- Success ---------------------------- */}
-      <Alert className="w-full max-w-lg" status={"success"} variant={"filled"}>
+      <Alert className="w-full max-w-lg" color={"success"} variant={"filled"}>
         <AlertIcon>
           {" "}
           <MdErrorOutline />
@@ -30,7 +30,7 @@ const AlertFilled = () => {
       </Alert>
 
       {/* ----------------------------- Warning ---------------------------- */}
-      <Alert className="w-full max-w-lg" status={"warning"} variant={"filled"}>
+      <Alert className="w-full max-w-lg" color={"warning"} variant={"filled"}>
         <AlertIcon>
           {" "}
           <MdErrorOutline />
@@ -40,7 +40,7 @@ const AlertFilled = () => {
       </Alert>
 
       {/* ----------------------------- Danger ---------------------------- */}
-      <Alert className="w-full max-w-lg" status={"danger"} variant={"filled"}>
+      <Alert className="w-full max-w-lg" color={"danger"} variant={"filled"}>
         <AlertIcon>
           {" "}
           <MdErrorOutline />
@@ -50,7 +50,7 @@ const AlertFilled = () => {
       </Alert>
 
       {/* ------------------------------ Info ----------------------------- */}
-      <Alert className="w-full max-w-lg" status={"info"} variant={"filled"}>
+      <Alert className="w-full max-w-lg" color={"info"} variant={"filled"}>
         <AlertIcon>
           {" "}
           <MdErrorOutline />

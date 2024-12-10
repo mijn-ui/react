@@ -12,7 +12,7 @@ const AlertStatus = () => {
   return (
     <div className="flex flex-col gap-4">
       {/* --------------------------------- Success -------------------------------- */}
-      <Alert className="w-full max-w-lg" status="success">
+      <Alert className="w-full max-w-lg" color="success">
         <AlertIcon>
           <LuCheckCircle />
         </AlertIcon>
@@ -23,7 +23,7 @@ const AlertStatus = () => {
       </Alert>
 
       {/* --------------------------------- Info -------------------------------- */}
-      <Alert className="w-full max-w-lg" status="info">
+      <Alert className="w-full max-w-lg" color="info">
         <AlertIcon>
           <IoRocketOutline />
         </AlertIcon>
@@ -34,7 +34,7 @@ const AlertStatus = () => {
       </Alert>
 
       {/* --------------------------------- Warning -------------------------------- */}
-      <Alert className="w-full max-w-lg" status="warning">
+      <Alert className="w-full max-w-lg" color="warning">
         <AlertIcon>
           <LuFileWarning />
         </AlertIcon>
@@ -45,7 +45,7 @@ const AlertStatus = () => {
       </Alert>
 
       {/* --------------------------------- Danger -------------------------------- */}
-      <Alert className="w-full max-w-lg" status="danger">
+      <Alert className="w-full max-w-lg" color="danger">
         <AlertIcon>
           <MdErrorOutline />
         </AlertIcon>
@@ -56,7 +56,7 @@ const AlertStatus = () => {
       </Alert>
 
       {/* ----------------------------- Muted/Default ---------------------------- */}
-      <Alert className="w-full max-w-lg" status="default">
+      <Alert className="w-full max-w-lg" color="default">
         <AlertIcon>
           <MdErrorOutline />
         </AlertIcon>
