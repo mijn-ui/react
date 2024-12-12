@@ -25,7 +25,7 @@ export default [
       },
       tailwindcss: {
         config: "./tailwind.config.js",
-        callees: ["clsx", "cva", "cn"],
+        callees: ["clsx", "tv", "cn"],
       },
     },
     rules: {
