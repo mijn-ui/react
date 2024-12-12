@@ -7,7 +7,8 @@ import Logo from "@/app/components/logo"
 import ThemeToggler from "@/app/components/theme-toggler"
 import ClickAwayListener from "@/app/utils/click-away-listener"
 import { Badge } from "@mijn-ui/react-badge"
-import { Button, buttonStyles } from "@mijn-ui/react-button"
+import { Button } from "@mijn-ui/react-button"
+import { buttonStyles } from "@mijn-ui/react-theme"
 import {
   Collapsible,
   CollapsibleContent,
