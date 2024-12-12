@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { createDynamicContext } from "@mijn-ui/react-utilities/context"
+import { createContext } from "@mijn-ui/react-utilities/context"
 import {
   applyUnstyled,
   cn,
@@ -15,8 +15,12 @@ import { alertStyles, AlertVariantProps } from "@mijn-ui/react-theme"
 
 type AlertContextType = UnstyledProps & ReturnType<typeof alertStyles>
 
-const { Provider: AlertProvider, useDynamicContext: useAlertContext } =
-  createDynamicContext<AlertContextType>()
+const [AlertProvider, useAlertContext] = createContext<AlertContextType>({
+  name: "AlertContext",
+  strict: true,
+  errorMessage:
+    "useAlertContext: `context` is undefined. Seems you forgot to wrap component within <Alert />",
+})
 
 /* -------------------------------------------------------------------------- */
 /*                                    Alert                                   */

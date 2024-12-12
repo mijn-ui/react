@@ -2,10 +2,7 @@
 
 import * as React from "react"
 import { Popover, PopoverAnchor, PopoverContent } from "@mijn-ui/react-popover"
-import {
-  createDynamicContext,
-  useUnstyled,
-} from "@mijn-ui/react-utilities/context"
+import { createContext } from "@mijn-ui/react-utilities/context"
 import {
   UnstyledProps,
   applyUnstyled,
@@ -33,10 +30,13 @@ type AutocompleteContextType = {
 } & UnstyledProps &
   ReturnType<typeof autocompleteStyles>
 
-const {
-  Provider: AutocompleteProvider,
-  useDynamicContext: useAutocompleteContext,
-} = createDynamicContext<AutocompleteContextType>()
+const [AutocompleteProvider, useAutocompleteContext] =
+  createContext<AutocompleteContextType>({
+    name: "AutocompleteContext",
+    strict: true,
+    errorMessage:
+      "useAutocompleteContext: `context` is undefined. Seems you forgot to wrap component within <Autocomplete />",
+  })
 
 /* -------------------------------------------------------------------------- */
 /*                                  Autocomplete                                  */
@@ -292,10 +292,14 @@ const AutocompleteItem = ({
   value,
   ...props
 }: AutocompleteItemProps) => {
-  const { selectedValue, handleSelectOption, item } = useAutocompleteContext()
+  const {
+    unstyled: contextUnstyled,
+    selectedValue,
+    handleSelectOption,
+    item,
+  } = useAutocompleteContext()
   const isSelected = selectedValue === value
 
-  const { unstyled: contextUnstyled } = useUnstyled()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (

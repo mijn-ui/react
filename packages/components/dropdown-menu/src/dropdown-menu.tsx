@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { createDynamicContext } from "@mijn-ui/react-utilities/context"
+import { createContext } from "@mijn-ui/react-utilities/context"
 import {
   applyUnstyled,
   cn,
@@ -25,8 +25,13 @@ const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup
 
 type DropdownContextType = UnstyledProps & ReturnType<typeof dropdownMenuStyles>
 
-const { Provider: DropdownProvider, useDynamicContext: useDropdownContext } =
-  createDynamicContext<DropdownContextType>()
+const [DropdownProvider, useDropdownContext] =
+  createContext<DropdownContextType>({
+    name: "DropdownContext",
+    strict: true,
+    errorMessage:
+      "useDropdownContext: `context` is undefined. Seems you forgot to wrap component within <Dropdown />",
+  })
 
 /* -------------------------------------------------------------------------- */
 /*                                DropdownMenu                                */

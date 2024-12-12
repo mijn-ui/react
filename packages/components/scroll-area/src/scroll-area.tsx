@@ -8,7 +8,7 @@ import {
 } from "@mijn-ui/react-utilities/shared"
 import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area"
 import { scrollAreaStyles } from "@mijn-ui/react-theme"
-import { createDynamicContext } from "@mijn-ui/react-utilities/context"
+import { createContext } from "@mijn-ui/react-utilities/context"
 
 /* -------------------------------------------------------------------------- */
 /*                              ScrollAreaContext                             */
@@ -16,10 +16,13 @@ import { createDynamicContext } from "@mijn-ui/react-utilities/context"
 
 type ScrollAreaContextType = UnstyledProps & ReturnType<typeof scrollAreaStyles>
 
-const {
-  Provider: ScrollAreaProvider,
-  useDynamicContext: useScrollAreaContext,
-} = createDynamicContext<ScrollAreaContextType>()
+const [ScrollAreaProvider, useScrollAreaContext] =
+  createContext<ScrollAreaContextType>({
+    name: "ScrollAreaContext",
+    strict: true,
+    errorMessage:
+      "useScrollAreaContext: `context` is undefined. Seems you forgot to wrap component within <ScrollArea />",
+  })
 
 /* -------------------------------------------------------------------------- */
 /*                                 ScrollArea                                 */

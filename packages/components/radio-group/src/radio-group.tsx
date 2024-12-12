@@ -5,7 +5,7 @@ import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group"
 import { CircleIcon } from "@mijn-ui/shared-icons"
 import { radioGroupStyles } from "@mijn-ui/react-theme"
-import { createDynamicContext } from "@mijn-ui/react-utilities/context"
+import { createContext } from "@mijn-ui/react-utilities/context"
 
 /* -------------------------------------------------------------------------- */
 /*                              RadioGroupContext                             */
@@ -13,10 +13,13 @@ import { createDynamicContext } from "@mijn-ui/react-utilities/context"
 
 type RadioGroupContextType = UnstyledProps & ReturnType<typeof radioGroupStyles>
 
-const {
-  Provider: RadioGroupProvider,
-  useDynamicContext: useRadioGroupContext,
-} = createDynamicContext<RadioGroupContextType>()
+const [RadioGroupProvider, useRadioGroupContext] =
+  createContext<RadioGroupContextType>({
+    name: "RadioGroupContext",
+    strict: true,
+    errorMessage:
+      "useRadioGroupContext: `context` is undefined. Seems you forgot to wrap component within <RadioGroup />",
+  })
 
 /* -------------------------------------------------------------------------- */
 /*                                 RadioGroup                                 */

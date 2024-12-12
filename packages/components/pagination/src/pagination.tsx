@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { createDynamicContext } from "@mijn-ui/react-utilities/context"
+import { createContext } from "@mijn-ui/react-utilities/context"
 import { UnstyledProps, applyUnstyled } from "@mijn-ui/react-utilities/shared"
 import { EllipsisIcon } from "@mijn-ui/shared-icons"
 import { paginationStyles } from "@mijn-ui/react-theme"
@@ -78,10 +78,13 @@ type PaginationContextType = {
 } & UnstyledProps &
   ReturnType<typeof paginationStyles>
 
-const {
-  Provider: PaginationProvider,
-  useDynamicContext: usePaginationContext,
-} = createDynamicContext<PaginationContextType>()
+const [PaginationProvider, usePaginationContext] =
+  createContext<PaginationContextType>({
+    name: "PaginationContext",
+    strict: true,
+    errorMessage:
+      "usePaginationContext: `context` is undefined. Seems you forgot to wrap component within <Pagination />",
+  })
 
 type PaginationProps = {
   totalPages: number

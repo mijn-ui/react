@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { createDynamicContext } from "@mijn-ui/react-utilities/context"
+import { createContext } from "@mijn-ui/react-utilities/context"
 import { UnstyledProps, applyUnstyled } from "@mijn-ui/react-utilities/shared"
 import * as AvatarPrimitive from "@radix-ui/react-avatar"
 import {
@@ -9,6 +9,19 @@ import {
   avatarStyles,
   AvatarVariantProps,
 } from "@mijn-ui/react-theme"
+
+/* -------------------------------------------------------------------------- */
+/*                              AvatarContext                                  */
+/* -------------------------------------------------------------------------- */
+
+type AvatarContextType = UnstyledProps & ReturnType<typeof avatarStyles>
+
+const [AvatarProvider, useAvatarContext] = createContext<AvatarContextType>({
+  name: "AvatarContext",
+  strict: true,
+  errorMessage:
+    "useAvatarContext: `context` is undefined. Seems you forgot to wrap component within <Avatar />",
+})
 
 /* -------------------------------------------------------------------------- */
 /*                                 AvatarGroup                                */
@@ -41,15 +54,6 @@ const AvatarGroup = ({
     </div>
   )
 }
-
-/* -------------------------------------------------------------------------- */
-/*                              AvatarContext                                  */
-/* -------------------------------------------------------------------------- */
-
-type AvatarContextType = UnstyledProps & ReturnType<typeof avatarStyles>
-
-const { Provider: AvatarProvider, useDynamicContext: useAvatarContext } =
-  createDynamicContext<AvatarContextType>()
 
 /* -------------------------------------------------------------------------- */
 /*                                   Avatar                                   */

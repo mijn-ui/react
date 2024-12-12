@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { createDynamicContext } from "@mijn-ui/react-utilities/context"
+import { createContext } from "@mijn-ui/react-utilities/context"
 import { UnstyledProps, applyUnstyled } from "@mijn-ui/react-utilities/shared"
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
 import {
@@ -18,10 +18,13 @@ const AlertDialogPortal = AlertDialogPrimitive.Portal
 type AlertDialogContextType = UnstyledProps &
   ReturnType<typeof alertDialogStyles>
 
-const {
-  Provider: AlertDialogProvider,
-  useDynamicContext: useAlertDialogContext,
-} = createDynamicContext<AlertDialogContextType>()
+const [AlertDialogProvider, useAlertDialogContext] =
+  createContext<AlertDialogContextType>({
+    name: "AlertDialogContext",
+    strict: true,
+    errorMessage:
+      "useAlertDialogContext: `context` is undefined. Seems you forgot to wrap component within <AlertDialog />",
+  })
 
 /* -------------------------------------------------------------------------- */
 /*                                 AlertDialog                                */

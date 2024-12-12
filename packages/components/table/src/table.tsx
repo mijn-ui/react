@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { createDynamicContext } from "@mijn-ui/react-utilities/context"
+import { createContext } from "@mijn-ui/react-utilities/context"
 import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
 import { tableStyles } from "@mijn-ui/react-theme"
 
@@ -11,8 +11,12 @@ import { tableStyles } from "@mijn-ui/react-theme"
 
 type TableContextType = UnstyledProps & ReturnType<typeof tableStyles>
 
-const { Provider: TableProvider, useDynamicContext: useTableContext } =
-  createDynamicContext<TableContextType>()
+const [TableProvider, useTableContext] = createContext<TableContextType>({
+  name: "TableContext",
+  strict: true,
+  errorMessage:
+    "useTableContext: `context` is undefined. Seems you forgot to wrap component within <Table />",
+})
 
 /* -------------------------------------------------------------------------- */
 /*                                    Table                                   */

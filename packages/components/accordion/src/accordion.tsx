@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
-import { createDynamicContext } from "@mijn-ui/react-utilities/context"
+import { createContext } from "@mijn-ui/react-utilities/context"
 import * as RadixAccordion from "@radix-ui/react-accordion"
 import { ChevronDownIcon } from "@mijn-ui/shared-icons"
 import { AccordionVariantProps, accordionStyles } from "@mijn-ui/react-theme"
@@ -13,8 +13,13 @@ import { AccordionVariantProps, accordionStyles } from "@mijn-ui/react-theme"
 
 type AccordionContextType = UnstyledProps & ReturnType<typeof accordionStyles>
 
-const { Provider: AccordionProvider, useDynamicContext: useAccordionContext } =
-  createDynamicContext<AccordionContextType>()
+export const [AccordionProvider, useAccordionContext] =
+  createContext<AccordionContextType>({
+    name: "AccordionContext",
+    strict: true,
+    errorMessage:
+      "useAccordionContext: `context` is undefined. Seems you forgot to wrap component within <Accordoin />",
+  })
 
 /* -------------------------------------------------------------------------- */
 /*                                  Accordion                                 */

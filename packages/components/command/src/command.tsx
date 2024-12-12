@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { Dialog, DialogContent } from "@mijn-ui/react-dialog"
-import { createDynamicContext } from "@mijn-ui/react-utilities/context"
+import { createContext } from "@mijn-ui/react-utilities/context"
 import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
 import { type DialogProps } from "@radix-ui/react-dialog"
 import { Command as CommandPrimitive } from "cmdk"
@@ -15,8 +15,12 @@ import { commandStyles } from "@mijn-ui/react-theme"
 
 type CommandContextType = UnstyledProps & ReturnType<typeof commandStyles>
 
-const { Provider: CommandProvider, useDynamicContext: useCommandContext } =
-  createDynamicContext<CommandContextType>()
+const [CommandProvider, useCommandContext] = createContext<CommandContextType>({
+  name: "CommandContext",
+  strict: true,
+  errorMessage:
+    "useCommandContext: `context` is undefined. Seems you forgot to wrap component within <Command />",
+})
 
 /* -------------------------------------------------------------------------- */
 /*                                   Command                                  */

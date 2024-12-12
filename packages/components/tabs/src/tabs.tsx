@@ -4,7 +4,7 @@ import * as React from "react"
 import * as TabsPrimitive from "@radix-ui/react-tabs"
 
 import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
-import { createDynamicContext } from "@mijn-ui/react-utilities/context"
+import { createContext } from "@mijn-ui/react-utilities/context"
 import { tabsStyles } from "@mijn-ui/react-theme"
 
 /* -------------------------------------------------------------------------- */
@@ -13,8 +13,12 @@ import { tabsStyles } from "@mijn-ui/react-theme"
 
 type TabsContextType = UnstyledProps & ReturnType<typeof tabsStyles>
 
-const { Provider: TabsProvider, useDynamicContext: useTabsContext } =
-  createDynamicContext<TabsContextType>()
+const [TabsProvider, useTabsContext] = createContext<TabsContextType>({
+  name: "TabsContext",
+  strict: true,
+  errorMessage:
+    "useTabsContext: `context` is undefined. Seems you forgot to wrap component within <Tabs />",
+})
 
 type TabsProps = React.ComponentPropsWithRef<typeof TabsPrimitive.Root> &
   UnstyledProps

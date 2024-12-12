@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { createDynamicContext } from "@mijn-ui/react-utilities/context"
+import { createContext } from "@mijn-ui/react-utilities/context"
 import {
   applyUnstyled,
   cn,
@@ -15,8 +15,12 @@ import { cardStyles } from "@mijn-ui/react-theme"
 
 type CardContextType = UnstyledProps & ReturnType<typeof cardStyles>
 
-const { Provider: CardProvider, useDynamicContext: useCardContext } =
-  createDynamicContext<CardContextType>()
+const [CardProvider, useCardContext] = createContext<CardContextType>({
+  name: "CardContext",
+  strict: true,
+  errorMessage:
+    "useCardContext: `context` is undefined. Seems you forgot to wrap component within <Card />",
+})
 
 /* -------------------------------------------------------------------------- */
 /*                                    Card                                    */

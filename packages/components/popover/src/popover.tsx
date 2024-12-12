@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { createDynamicContext } from "@mijn-ui/react-utilities/context"
+import { createContext } from "@mijn-ui/react-utilities/context"
 import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
 import * as RadixPopover from "@radix-ui/react-popover"
 import { popoverStyles } from "@mijn-ui/react-theme"
@@ -16,8 +16,12 @@ const PopoverAnchor = RadixPopover.Anchor
 
 type AlertContextType = UnstyledProps & ReturnType<typeof popoverStyles>
 
-const { Provider: PopoverProvider, useDynamicContext: usePopoverContext } =
-  createDynamicContext<AlertContextType>()
+const [PopoverProvider, usePopoverContext] = createContext<AlertContextType>({
+  name: "PopoverContext",
+  strict: true,
+  errorMessage:
+    "usePopoverContext: `context` is undefined. Seems you forgot to wrap component within <Popover />",
+})
 
 type PopoverProps = React.ComponentPropsWithoutRef<typeof RadixPopover.Root> &
   UnstyledProps

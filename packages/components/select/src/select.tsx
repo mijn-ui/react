@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { createDynamicContext } from "@mijn-ui/react-utilities/context"
+import { createContext } from "@mijn-ui/react-utilities/context"
 import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
 import * as SelectPrimitive from "@radix-ui/react-select"
 import {
@@ -17,8 +17,12 @@ import { selectStyles } from "@mijn-ui/react-theme"
 
 type SelectContextType = UnstyledProps & ReturnType<typeof selectStyles>
 
-const { Provider: SelectProvider, useDynamicContext: useSelectContext } =
-  createDynamicContext<SelectContextType>()
+const [SelectProvider, useSelectContext] = createContext<SelectContextType>({
+  name: "SelectContext",
+  strict: true,
+  errorMessage:
+    "useSelectContext: `context` is undefined. Seems you forgot to wrap component within <Select />",
+})
 
 /* -------------------------------------------------------------------------- */
 /*                                   Select                                   */
