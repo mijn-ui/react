@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Popover, PopoverContent } from "@mijn-ui/react-popover"
+import { Popover, PopoverAnchor, PopoverContent } from "@mijn-ui/react-popover"
 import {
   createDynamicContext,
   useUnstyled,
@@ -11,7 +11,6 @@ import {
   applyUnstyled,
   mergeRefs,
 } from "@mijn-ui/react-utilities/shared"
-import * as PopoverPrimitive from "@radix-ui/react-popover"
 import { Command as CommandPrimitive } from "cmdk"
 import { CheckIcon } from "@mijn-ui/shared-icons"
 import { autocompleteStyles } from "@mijn-ui/react-theme"
@@ -164,7 +163,7 @@ const AutocompleteTrigger = ({
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
-    <PopoverPrimitive.Anchor asChild>
+    <PopoverAnchor asChild>
       <CommandPrimitive.Input
         ref={mergeRefs([inputRef, ref])}
         value={inputValue}
@@ -177,7 +176,7 @@ const AutocompleteTrigger = ({
         className={applyUnstyled(isUnstyled, trigger(), className)}
         {...props}
       />
-    </PopoverPrimitive.Anchor>
+    </PopoverAnchor>
   )
 }
 

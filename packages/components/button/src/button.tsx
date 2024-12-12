@@ -48,4 +48,4 @@ const Button = ({
   )
 }
 
-export { Button, buttonStyles }
+export { Button }

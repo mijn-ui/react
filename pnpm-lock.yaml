@@ -310,9 +310,6 @@ importers:
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
-      class-variance-authority:
-        specifier: ^0.7.0
-        version: 0.7.0
       react:
         specifier: 19.0.0-rc-b01722d5-20241114
         version: 19.0.0-rc-b01722d5-20241114
@@ -750,15 +747,15 @@ importers:
       '@mijn-ui/react-select':
         specifier: workspace:*
         version: link:../select
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../../theme
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
       '@mijn-ui/shared-icons':
         specifier: workspace:*
         version: link:../../shared-icons
-      class-variance-authority:
-        specifier: ^0.7.0
-        version: 0.7.0
       date-fns:
         specifier: ^4.1.0
         version: 4.1.0
