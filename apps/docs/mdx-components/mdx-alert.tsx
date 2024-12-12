@@ -3,16 +3,15 @@ import {
   AlertIcon,
   AlertTitle,
   Alert as MijnUIAlert,
-  alertStyles,
 } from "@mijn-ui/react-alert"
+import { AlertVariantProps } from "@mijn-ui/react-theme"
 import { cn } from "@mijn-ui/react-utilities/shared"
-import { VariantProps } from "class-variance-authority"
 import { LuAlertCircle, LuBug } from "react-icons/lu"
 
 type AlertProps = {
   title: string
   description: string
-  color?: VariantProps<typeof alertStyles>["color"]
+  color?: AlertVariantProps["color"]
   className?: string
 }
 

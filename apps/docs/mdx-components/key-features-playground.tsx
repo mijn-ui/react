@@ -2,21 +2,16 @@
 
 import React from "react"
 import { Button } from "@mijn-ui/react-button"
-import { buttonStyles } from "@mijn-ui/react-button"
 import { Checkbox } from "@mijn-ui/react-checkbox"
 import { Label } from "@mijn-ui/react-label"
 import { RadioGroup, RadioGroupItem } from "@mijn-ui/react-radio-group"
-import { VariantProps } from "class-variance-authority"
+import { ButtonVariantProps } from "@mijn-ui/react-theme"
 
 type ButtonOptionsType = {
   unstyled: boolean
-  variant: VariantProps<typeof buttonStyles>["variant"]
   loading: boolean
   disabled: boolean
-  color: VariantProps<typeof buttonStyles>["color"]
-  size: VariantProps<typeof buttonStyles>["size"]
-  radius: VariantProps<typeof buttonStyles>["radius"]
-}
+} & ButtonVariantProps
 
 const CheckboxWithLabel = ({
   id,
