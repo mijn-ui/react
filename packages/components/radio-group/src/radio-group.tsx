@@ -1,43 +1,79 @@
 "use client"
 
 import * as React from "react"
-import { cn } from "@mijn-ui/react-utilities/shared"
+import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group"
 import { CircleIcon } from "@mijn-ui/shared-icons"
+import { radioGroupStyles } from "@mijn-ui/react-theme"
+import { createDynamicContext } from "@mijn-ui/react-utilities/context"
+
+/* -------------------------------------------------------------------------- */
+/*                              RadioGroupContext                             */
+/* -------------------------------------------------------------------------- */
+
+type RadioGroupContextType = UnstyledProps & ReturnType<typeof radioGroupStyles>
+
+const {
+  Provider: RadioGroupProvider,
+  useDynamicContext: useRadioGroupContext,
+} = createDynamicContext<RadioGroupContextType>()
+
+/* -------------------------------------------------------------------------- */
+/*                                 RadioGroup                                 */
+/* -------------------------------------------------------------------------- */
 
 type RadioGroupProps = React.ComponentPropsWithRef<
   typeof RadioGroupPrimitive.Root
->
+> &
+  UnstyledProps
 
-const RadioGroup = ({ className, ...props }: RadioGroupProps) => {
+const RadioGroup = ({ unstyled, className, ...props }: RadioGroupProps) => {
+  const styles = radioGroupStyles()
+
   return (
-    <RadioGroupPrimitive.Root
-      className={cn("grid gap-2", className)}
-      {...props}
-    />
+    <RadioGroupProvider value={{ unstyled, ...styles }}>
+      <RadioGroupPrimitive.Root
+        className={applyUnstyled(unstyled, styles.base(), className)}
+        {...props}
+      />
+    </RadioGroupProvider>
   )
 }
-RadioGroup.displayName = RadioGroupPrimitive.Root.displayName
+
+/* -------------------------------------------------------------------------- */
+/*                               RadioGroupItem                               */
+/* -------------------------------------------------------------------------- */
 
 type RadioGroupItemProps = React.ComponentPropsWithRef<
   typeof RadioGroupPrimitive.Item
->
+> &
+  UnstyledProps
 
-const RadioGroupItem = ({ className, ...props }: RadioGroupItemProps) => {
+const RadioGroupItem = ({
+  unstyled,
+  className,
+  ...props
+}: RadioGroupItemProps) => {
+  const {
+    unstyled: contextUnstyled,
+    item,
+    indicator,
+    icon,
+  } = useRadioGroupContext()
+  const isUnstyled = unstyled ?? contextUnstyled
+
   return (
     <RadioGroupPrimitive.Item
-      className={cn(
-        "border-primary text-primary ring-offset-main focus-visible:ring-ring aspect-square size-4 rounded-full border focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
-        className,
-      )}
+      className={applyUnstyled(isUnstyled, item(), className)}
       {...props}
     >
-      <RadioGroupPrimitive.Indicator className="flex items-center justify-center">
-        <CircleIcon className="size-2.5 fill-current text-current" />
+      <RadioGroupPrimitive.Indicator
+        className={applyUnstyled(isUnstyled, indicator())}
+      >
+        <CircleIcon className={applyUnstyled(isUnstyled, icon())} />
       </RadioGroupPrimitive.Indicator>
     </RadioGroupPrimitive.Item>
   )
 }
-RadioGroupItem.displayName = RadioGroupPrimitive.Item.displayName
 
 export { RadioGroup, RadioGroupItem }

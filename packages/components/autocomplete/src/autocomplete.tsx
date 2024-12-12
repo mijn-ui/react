@@ -1,22 +1,22 @@
 "use client"
 
 import * as React from "react"
-import { CommandEmpty } from "@mijn-ui/react-command"
-import { PopoverContent } from "@mijn-ui/react-popover"
-import { Skeleton } from "@mijn-ui/react-skeleton"
-import { UnstyledProvider, useUnstyled } from "@mijn-ui/react-utilities/context"
+import { Popover, PopoverContent } from "@mijn-ui/react-popover"
+import {
+  createDynamicContext,
+  useUnstyled,
+} from "@mijn-ui/react-utilities/context"
 import {
   UnstyledProps,
   applyUnstyled,
-  cn,
   mergeRefs,
 } from "@mijn-ui/react-utilities/shared"
 import * as PopoverPrimitive from "@radix-ui/react-popover"
-import { Popover } from "@radix-ui/react-popover"
 import { Command as CommandPrimitive } from "cmdk"
 import { CheckIcon } from "@mijn-ui/shared-icons"
+import { autocompleteStyles } from "@mijn-ui/react-theme"
 
-type AutocompleteContextProps = {
+type AutocompleteContextType = {
   onValueChange: (value: string) => void
   inputValue: string
   setInputValue: React.Dispatch<React.SetStateAction<string>>
@@ -31,18 +31,13 @@ type AutocompleteContextProps = {
   handleBlur: () => void
 
   setShouldFilter: React.Dispatch<React.SetStateAction<boolean>>
-}
+} & UnstyledProps &
+  ReturnType<typeof autocompleteStyles>
 
-const AutocompleteContext =
-  React.createContext<AutocompleteContextProps | null>(null)
-
-const useAutocomplete = () => {
-  const context = React.useContext(AutocompleteContext)
-  if (!context) {
-    throw new Error("useAutocomplete must be used within AutocompleteProvider")
-  }
-  return context
-}
+const {
+  Provider: AutocompleteProvider,
+  useDynamicContext: useAutocompleteContext,
+} = createDynamicContext<AutocompleteContextType>()
 
 /* -------------------------------------------------------------------------- */
 /*                                  Autocomplete                                  */
@@ -56,6 +51,7 @@ type AutocompleteProps = React.ComponentPropsWithoutRef<
 } & UnstyledProps
 
 const Autocomplete = ({
+  className,
   unstyled = false,
   value,
   onValueChange,
@@ -103,9 +99,13 @@ const Autocomplete = ({
     }, 0)
   }
 
+  const styles = autocompleteStyles()
+
   return (
-    <AutocompleteContext.Provider
+    <AutocompleteProvider
       value={{
+        ...styles,
+
         isOpen,
         setOpen,
 
@@ -124,17 +124,16 @@ const Autocomplete = ({
       }}
     >
       <Popover open={isOpen} onOpenChange={setOpen}>
-        <UnstyledProvider unstyled={unstyled}>
-          <CommandPrimitive
-            shouldFilter={shouldFilter}
-            onKeyDown={handleKeyDown}
-            {...props}
-          >
-            {children}
-          </CommandPrimitive>
-        </UnstyledProvider>
+        <CommandPrimitive
+          shouldFilter={shouldFilter}
+          onKeyDown={handleKeyDown}
+          className={applyUnstyled(unstyled, styles.base(), className)}
+          {...props}
+        >
+          {children}
+        </CommandPrimitive>
       </Popover>
-    </AutocompleteContext.Provider>
+    </AutocompleteProvider>
   )
 }
 
@@ -160,8 +159,8 @@ const AutocompleteTrigger = ({
     setOpen,
     handleBlur,
     setShouldFilter,
-  } = useAutocomplete()
-  const { unstyled: contextUnstyled } = useUnstyled()
+  } = useAutocompleteContext()
+  const { unstyled: contextUnstyled, trigger } = useAutocompleteContext()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
@@ -175,7 +174,7 @@ const AutocompleteTrigger = ({
         }}
         onBlur={handleBlur}
         onFocus={() => setOpen(true)}
-        className={applyUnstyled(isUnstyled, "", className)}
+        className={applyUnstyled(isUnstyled, trigger(), className)}
         {...props}
       />
     </PopoverPrimitive.Anchor>
@@ -201,7 +200,12 @@ const AutocompleteContent = ({
   children,
   ...props
 }: AutocompleteContentProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled()
+  const {
+    unstyled: contextUnstyled,
+    content,
+    contentEmpty,
+    skeleton,
+  } = useAutocompleteContext()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
@@ -216,11 +220,8 @@ const AutocompleteContent = ({
           e.preventDefault()
         }
       }}
-      className={applyUnstyled(
-        isUnstyled,
-        "w-[--radix-popover-trigger-width] overflow-y-auto p-1",
-        className,
-      )}
+      className={applyUnstyled(isUnstyled, content(), className)}
+      unstyled={isUnstyled}
       // you can set this to true if you want to flip the content to flip when there isn't enough space for the comboBox content
       avoidCollisions={false}
       // to prevent scrolling issue when Popover inside Dialog
@@ -232,11 +233,15 @@ const AutocompleteContent = ({
       <CommandPrimitive.List {...props}>
         {!loading && children}
         {!loading && (
-          <CommandEmpty>{emptyMessage || "No Options Found"}</CommandEmpty>
+          <CommandPrimitive.Empty
+            className={applyUnstyled(isUnstyled, contentEmpty())}
+          >
+            {emptyMessage || "No Options Found"}
+          </CommandPrimitive.Empty>
         )}
         {loading && (
           <CommandPrimitive.Loading>
-            <Skeleton className="h-7 w-full" />
+            <div className={applyUnstyled(isUnstyled, skeleton())} />
           </CommandPrimitive.Loading>
         )}
       </CommandPrimitive.List>
@@ -259,12 +264,12 @@ const AutocompleteGroup = ({
   className,
   ...props
 }: AutocompleteGroupProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled()
+  const { unstyled: contextUnstyled, group } = useAutocompleteContext()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <CommandPrimitive.Group
-      className={applyUnstyled(isUnstyled, "", className)}
+      className={applyUnstyled(isUnstyled, group(), className)}
       {...props}
     >
       {children}
@@ -288,7 +293,7 @@ const AutocompleteItem = ({
   value,
   ...props
 }: AutocompleteItemProps) => {
-  const { selectedValue, handleSelectOption } = useAutocomplete()
+  const { selectedValue, handleSelectOption, item } = useAutocompleteContext()
   const isSelected = selectedValue === value
 
   const { unstyled: contextUnstyled } = useUnstyled()
@@ -305,17 +310,13 @@ const AutocompleteItem = ({
       onSelect={handleSelectOption}
       className={applyUnstyled(
         isUnstyled,
-        cn(
-          "data-[selected=true]:bg-accent data-[selected=true]:text-accent-text relative flex w-full cursor-default select-none items-center justify-between gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-auto data-[disabled=true]:opacity-50",
-          isSelected &&
-            "bg-primary/20 text-primary data-[selected=true]:bg-primary/20 data-[selected=true]:text-primary",
-        ),
+        item({ selected: isSelected }),
         className,
       )}
       {...props}
     >
       {children}
-      {isSelected ? <CheckIcon className="w-4" /> : null}
+      {isSelected ? <CheckIcon /> : null}
     </CommandPrimitive.Item>
   )
 }

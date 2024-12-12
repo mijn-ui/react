@@ -13,7 +13,7 @@ const DropdownMenuExample = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>Edit</DropdownMenuTrigger>
-      <DropdownMenuContent className="">
+      <DropdownMenuContent>
         <DropdownMenuItem>Undo</DropdownMenuItem>
         <DropdownMenuItem disabled>Redo</DropdownMenuItem>
         <DropdownMenuItem>Cut</DropdownMenuItem>
@@ -23,7 +23,7 @@ const DropdownMenuExample = () => {
             Copy as
           </DropdownMenuSubTrigger>
           <DropdownMenuPortal>
-            <DropdownMenuSubContent className="">
+            <DropdownMenuSubContent>
               <DropdownMenuItem>Text</DropdownMenuItem>
               <DropdownMenuItem>Video</DropdownMenuItem>
             </DropdownMenuSubContent>
@@ -35,7 +35,7 @@ const DropdownMenuExample = () => {
             Audio
           </DropdownMenuSubTrigger>
           <DropdownMenuPortal>
-            <DropdownMenuSubContent className="">
+            <DropdownMenuSubContent>
               <DropdownMenuItem>png</DropdownMenuItem>
               <DropdownMenuItem>jpg</DropdownMenuItem>
               <DropdownMenuItem>svg</DropdownMenuItem>
@@ -50,7 +50,7 @@ const DropdownMenuExample = () => {
             Share
           </DropdownMenuSubTrigger>
           <DropdownMenuPortal>
-            <DropdownMenuSubContent className="">
+            <DropdownMenuSubContent>
               <DropdownMenuItem>Mail</DropdownMenuItem>
               <DropdownMenuItem>Instagram</DropdownMenuItem>
             </DropdownMenuSubContent>

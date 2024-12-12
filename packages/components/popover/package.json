@@ -38,7 +38,7 @@
     "react": "19.0.0-rc-b01722d5-20241114",
     "react-dom": "19.0.0-rc-b01722d5-20241114",
     "@mijn-ui/react-utilities": "workspace:*",
-    "@mijn-ui/react-button": "workspace:*",
+    "@mijn-ui/react-theme": "workspace:*",
     "@radix-ui/react-popover": "^1.1.2"
   },
   "peerDependencies": {

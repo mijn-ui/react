@@ -3,6 +3,7 @@
 import * as React from "react"
 import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
 import * as ProgressPrimitive from "@radix-ui/react-progress"
+import { progressStyles } from "@mijn-ui/react-theme"
 
 type ProgressProps = React.ComponentPropsWithRef<
   typeof ProgressPrimitive.Root
@@ -15,21 +16,21 @@ const Progress = ({
   value,
   ref,
   ...props
-}: ProgressProps) => (
-  <ProgressPrimitive.Root
-    ref={ref}
-    className={applyUnstyled(
-      unstyled,
-      "relative h-2 w-full overflow-hidden rounded-full bg-muted",
-      className,
-    )}
-    {...props}
-  >
-    <ProgressPrimitive.Indicator
-      className="bg-primary size-full flex-1 transition-all"
-      style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
-    />
-  </ProgressPrimitive.Root>
-)
+}: ProgressProps) => {
+  const { base, indicator } = progressStyles()
+
+  return (
+    <ProgressPrimitive.Root
+      ref={ref}
+      className={applyUnstyled(unstyled, base(), className)}
+      {...props}
+    >
+      <ProgressPrimitive.Indicator
+        className={indicator()}
+        style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
+      />
+    </ProgressPrimitive.Root>
+  )
+}
 
 export { Progress }

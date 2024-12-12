@@ -5,7 +5,7 @@ const alertStyles = tv({
   slots: {
     base: "group relative w-full rounded-lg px-3 py-4 [&>span~*]:pl-8",
     iconWrapper:
-      "translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:h-5 [&>svg]:w-5 [&>svg]:text-current",
+      "translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:size-5 [&>svg]:text-current",
     title: "w-full font-semibold leading-none",
     description: "mt-1 text-sm",
   },

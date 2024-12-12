@@ -5,9 +5,9 @@ const accordionStyles = tv({
     base: "",
     item: "border-b-main-border border-b",
     trigger: "group flex w-full items-center justify-between py-3",
-    icon: "h-4 w-4 shrink-0 text-muted-text duration-400 ease-in-out group-data-[state=open]:rotate-180",
+    icon: "text-muted-text duration-400 size-4 shrink-0 ease-in-out group-data-[state=open]:rotate-180",
     content:
-      "overflow-hidden text-sm transition-[height] data-[state=closed]:animate-accordion-close data-[state=open]:animate-accordion-open",
+      "data-[state=closed]:animate-accordion-close data-[state=open]:animate-accordion-open overflow-hidden text-sm transition-[height]",
     contentChild: "pb-3 pt-0",
   },
   variants: {

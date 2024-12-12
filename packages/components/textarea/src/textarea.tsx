@@ -1,16 +1,15 @@
 import * as React from "react"
-import { cn } from "@mijn-ui/react-utilities/shared"
+import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
+import { textareaStyles } from "@mijn-ui/react-theme"
 
-export type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement>
+export type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> &
+  UnstyledProps
 
 const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ className, ...props }, ref) => {
+  ({ unstyled, className, ...props }, ref) => {
     return (
       <textarea
-        className={cn(
-          "border-input placeholder:text-muted-text focus-visible:ring-ring flex min-h-[80px] w-full rounded-md border bg-transparent px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 disabled:cursor-not-allowed disabled:opacity-50",
-          className,
-        )}
+        className={applyUnstyled(unstyled, textareaStyles(), className)}
         ref={ref}
         {...props}
       />

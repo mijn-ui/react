@@ -1,8 +1,18 @@
 "use client"
 
 import * as React from "react"
-import { UnstyledProvider, useUnstyled } from "@mijn-ui/react-utilities/context"
+import { createDynamicContext } from "@mijn-ui/react-utilities/context"
 import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
+import { tableStyles } from "@mijn-ui/react-theme"
+
+/* -------------------------------------------------------------------------- */
+/*                                TableContext                                */
+/* -------------------------------------------------------------------------- */
+
+type TableContextType = UnstyledProps & ReturnType<typeof tableStyles>
+
+const { Provider: TableProvider, useDynamicContext: useTableContext } =
+  createDynamicContext<TableContextType>()
 
 /* -------------------------------------------------------------------------- */
 /*                                    Table                                   */
@@ -11,13 +21,15 @@ import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
 type TableProps = React.ComponentPropsWithRef<"table"> & UnstyledProps
 
 const Table = ({ className, unstyled = false, ...props }: TableProps) => {
+  const styles = tableStyles()
+
   return (
-    <UnstyledProvider unstyled={unstyled}>
+    <TableProvider value={{ unstyled, ...styles }}>
       <table
-        className={applyUnstyled(unstyled, "relative text-sm", className)}
+        className={applyUnstyled(unstyled, styles.base(), className)}
         {...props}
       />
-    </UnstyledProvider>
+    </TableProvider>
   )
 }
 
@@ -33,12 +45,12 @@ const TableHeader = ({
 
   ...props
 }: TableHeaderProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled()
+  const { unstyled: contextUnstyled, header } = useTableContext()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <thead
-      className={applyUnstyled(isUnstyled, "h-11", className)}
+      className={applyUnstyled(isUnstyled, header(), className)}
       {...props}
     />
   )
@@ -51,16 +63,12 @@ const TableHeader = ({
 type TableBodyProps = React.ComponentPropsWithRef<"tbody"> & UnstyledProps
 
 const TableBody = ({ className, unstyled, ...props }: TableBodyProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled()
+  const { unstyled: contextUnstyled, body } = useTableContext()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <tbody
-      className={applyUnstyled(
-        isUnstyled,
-        "divide-border divide-y [&>tr:hover]:bg-accent",
-        className,
-      )}
+      className={applyUnstyled(isUnstyled, body(), className)}
       {...props}
     />
   )
@@ -73,16 +81,12 @@ const TableBody = ({ className, unstyled, ...props }: TableBodyProps) => {
 type TableFooterProps = React.ComponentPropsWithRef<"tfoot"> & UnstyledProps
 
 const TableFooter = ({ className, unstyled, ...props }: TableFooterProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled()
+  const { unstyled: contextUnstyled, footer } = useTableContext()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <tfoot
-      className={applyUnstyled(
-        isUnstyled,
-        "border-t border-t-main-border font-medium",
-        className,
-      )}
+      className={applyUnstyled(isUnstyled, footer(), className)}
       {...props}
     />
   )
@@ -95,18 +99,11 @@ const TableFooter = ({ className, unstyled, ...props }: TableFooterProps) => {
 type TableRowProps = React.ComponentPropsWithRef<"tr"> & UnstyledProps
 
 const TableRow = ({ className, unstyled, ...props }: TableRowProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled()
+  const { unstyled: contextUnstyled, row } = useTableContext()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
-    <tr
-      className={applyUnstyled(
-        isUnstyled,
-        "border-b border-main-border text-left",
-        className,
-      )}
-      {...props}
-    />
+    <tr className={applyUnstyled(isUnstyled, row(), className)} {...props} />
   )
 }
 
@@ -121,16 +118,12 @@ const TableHeaderCell = ({
   unstyled,
   ...props
 }: TableHeaderCellProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled()
+  const { unstyled: contextUnstyled, headerCell } = useTableContext()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <th
-      className={applyUnstyled(
-        isUnstyled,
-        "px-4 py-3 font-semibold",
-        className,
-      )}
+      className={applyUnstyled(isUnstyled, headerCell(), className)}
       {...props}
     />
   )
@@ -143,14 +136,11 @@ const TableHeaderCell = ({
 type TableCellProps = React.ComponentPropsWithRef<"td"> & UnstyledProps
 
 const TableCell = ({ className, unstyled, ...props }: TableCellProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled()
+  const { unstyled: contextUnstyled, cell } = useTableContext()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
-    <td
-      className={applyUnstyled(isUnstyled, "px-4 py-2 align-middle", className)}
-      {...props}
-    />
+    <td className={applyUnstyled(isUnstyled, cell(), className)} {...props} />
   )
 }
 
@@ -161,16 +151,12 @@ const TableCell = ({ className, unstyled, ...props }: TableCellProps) => {
 type TableCaptionProps = React.ComponentPropsWithRef<"caption"> & UnstyledProps
 
 const TableCaption = ({ className, unstyled, ...props }: TableCaptionProps) => {
-  const { unstyled: contextUnstyled } = useUnstyled()
+  const { unstyled: contextUnstyled, caption } = useTableContext()
   const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <caption
-      className={applyUnstyled(
-        isUnstyled,
-        "mt-4 text-sm text-muted-text",
-        className,
-      )}
+      className={applyUnstyled(isUnstyled, caption(), className)}
       {...props}
     />
   )

@@ -1,12 +1,12 @@
-import { cn } from "@mijn-ui/react-utilities/shared"
+import { skeletonStyles } from "@mijn-ui/react-theme"
+import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
 
-function Skeleton({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
+type SkeletonProps = React.ComponentPropsWithRef<"div"> & UnstyledProps
+
+function Skeleton({ unstyled, className, ...props }: SkeletonProps) {
   return (
     <div
-      className={cn("bg-muted animate-pulse rounded-md", className)}
+      className={applyUnstyled(unstyled, skeletonStyles(), className)}
       {...props}
     />
   )

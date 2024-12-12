@@ -37,8 +37,8 @@
   "dependencies": {
     "react": "19.0.0-rc-b01722d5-20241114",
     "react-dom": "19.0.0-rc-b01722d5-20241114",
-    "class-variance-authority": "^0.7.0",
     "@mijn-ui/react-utilities": "workspace:*",
+    "@mijn-ui/react-theme": "workspace:*",
     "@radix-ui/react-label": "^2.1.0"
   },
   "peerDependencies": {

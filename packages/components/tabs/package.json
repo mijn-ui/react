@@ -35,10 +35,11 @@
     "tsup-config": "workspace:*"
   },
   "dependencies": {
-    "@mijn-ui/react-utilities": "workspace:*",
-    "@radix-ui/react-tabs": "^1.1.1",
     "react": "19.0.0-rc-b01722d5-20241114",
-    "react-dom": "19.0.0-rc-b01722d5-20241114"
+    "react-dom": "19.0.0-rc-b01722d5-20241114",
+    "@radix-ui/react-tabs": "^1.1.1",
+    "@mijn-ui/react-utilities": "workspace:*",
+    "@mijn-ui/react-theme": "workspace:*"
   },
   "peerDependencies": {
     "react": "^19.0",

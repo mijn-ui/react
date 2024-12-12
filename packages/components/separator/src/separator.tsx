@@ -1,14 +1,17 @@
 "use client"
 
 import * as React from "react"
-import { cn } from "@mijn-ui/react-utilities/shared"
+import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
 import * as SeparatorPrimitive from "@radix-ui/react-separator"
+import { separatorStyles } from "@mijn-ui/react-theme"
 
 type SeparatorProps = React.ComponentPropsWithRef<
   typeof SeparatorPrimitive.Root
->
+> &
+  UnstyledProps
 
 const Separator = ({
+  unstyled,
   className,
   orientation = "horizontal",
   decorative = true,
@@ -17,9 +20,9 @@ const Separator = ({
   <SeparatorPrimitive.Root
     decorative={decorative}
     orientation={orientation}
-    className={cn(
-      "bg-main-border shrink-0",
-      orientation === "horizontal" ? "h-px w-full" : "h-full w-px",
+    className={applyUnstyled(
+      unstyled,
+      separatorStyles({ orientation }),
       className,
     )}
     {...props}
