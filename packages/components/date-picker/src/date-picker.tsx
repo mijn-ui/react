@@ -6,7 +6,7 @@ Adapted from https://github.com/sersavan/shadcn-calendar-component.
 Full credit for the original implementation goes to [sersavan](https://github.com/sersavan), whose work served as the foundation for this component.  
  */
 import * as React from "react"
-import { Button, buttonStyles } from "@mijn-ui/react-button"
+import { Button } from "@mijn-ui/react-button"
 import { Calendar } from "@mijn-ui/react-calendar"
 import { Popover, PopoverContent, PopoverTrigger } from "@mijn-ui/react-popover"
 import {
@@ -17,7 +17,6 @@ import {
   SelectValue,
 } from "@mijn-ui/react-select"
 import { cn } from "@mijn-ui/react-utilities/shared"
-import { VariantProps } from "class-variance-authority"
 import {
   endOfDay,
   endOfMonth,
@@ -32,6 +31,7 @@ import {
 import { formatInTimeZone, toDate } from "date-fns-tz"
 import { DateRange, UI } from "react-day-picker"
 import { CalendarIcon } from "@mijn-ui/shared-icons"
+import { buttonStyles, ButtonVariantProps } from "@mijn-ui/react-theme"
 
 const months = [
   "January",
@@ -49,7 +49,7 @@ const months = [
 ]
 
 type CalendarDatePickerProps = React.HTMLAttributes<HTMLButtonElement> &
-  VariantProps<typeof buttonStyles> & {
+  ButtonVariantProps & {
     id?: string
     className?: string
     date: DateRange

@@ -37,15 +37,15 @@
   "dependencies": {
     "react": "19.0.0-rc-b01722d5-20241114",
     "react-dom": "19.0.0-rc-b01722d5-20241114",
+    "date-fns": "^4.1.0",
+    "date-fns-tz": "^3.2.0",
+    "react-day-picker": "^9.3.0",
     "@mijn-ui/react-select": "workspace:*",
     "@mijn-ui/react-popover": "workspace:*",
     "@mijn-ui/react-calendar": "workspace:*",
     "@mijn-ui/react-button": "workspace:*",
+    "@mijn-ui/react-theme": "workspace:*",
     "@mijn-ui/react-utilities": "workspace:*",
-    "class-variance-authority": "^0.7.0",
-    "date-fns": "^4.1.0",
-    "date-fns-tz": "^3.2.0",
-    "react-day-picker": "^9.3.0",
     "@mijn-ui/shared-icons": "workspace:*"
   },
   "peerDependencies": {
