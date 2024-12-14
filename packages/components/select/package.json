@@ -28,20 +28,20 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^15.0.3",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
     "tsup-config": "workspace:*"
   },
   "dependencies": {
-    "react": "19.0.0-rc-b01722d5-20241114",
-    "react-dom": "19.0.0-rc-b01722d5-20241114",
-    "@mijn-ui/react-utilities": "workspace:*",
     "@mijn-ui/react-hooks": "workspace:*",
     "@mijn-ui/react-theme": "workspace:*",
+    "@mijn-ui/react-utilities": "workspace:*",
     "@mijn-ui/shared-icons": "workspace:*",
-    "@radix-ui/react-select": "^2.1.2"
+    "@radix-ui/react-select": "^2.1.3",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
   },
   "peerDependencies": {
     "react": "^19.0",

@@ -26,10 +26,10 @@
   "devDependencies": {
     "tsconfig": "workspace:*",
     "tsup-config": "workspace:*",
-    "@types/react": "^18.3.12"
+    "@types/react": "^19.0.0"
   },
   "dependencies": {
-    "react": "19.0.0-rc-b01722d5-20241114"
+    "react": "19.0.0"
   },
   "peerDependencies": {
     "react": "^19.0"
