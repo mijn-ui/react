@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "react": "19.0.0-rc-b01722d5-20241114",
+    "@mijn-ui/react-utilities": "workspace:*",
     "react-dom": "19.0.0-rc-b01722d5-20241114"
   },
   "peerDependencies": {
