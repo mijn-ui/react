@@ -16,7 +16,7 @@ const CardExample = () => {
           variant={"text"}
           color={"accent"}
           size={"icon"}
-          className="text-disabled-text rounded-lg bg-accent p-0 sm:size-12"
+          className="rounded-lg bg-accent p-0 text-muted-text sm:size-12"
           asChild
         >
           <span>
@@ -24,7 +24,7 @@ const CardExample = () => {
           </span>
         </Button>
 
-        <div className="text-disabled-text absolute right-4 top-4">
+        <div className="absolute right-4 top-4 text-muted-text">
           <LuArrowUpRight className="size-5 sm:size-6" />
         </div>
       </CardHeader>

@@ -11,7 +11,7 @@ const UnstyledAccordion = () => {
       className="w-96 rounded-2xl border border-orange-500 p-4"
       collapsible
       type="single"
-      unstyled
+      unstyled // [!code highlight]
     >
       <AccordionItem className="my-2" value="item-1">
         <AccordionTrigger className="flex w-full items-center justify-between bg-neutral-200 px-4 py-2 text-left dark:bg-neutral-800">

@@ -16,21 +16,22 @@ export default function HomePage() {
       <div className="flex w-full items-center justify-start gap-2 md:justify-center">
         <Link
           className={cn(
-            buttonStyles({ size: "sm", className: "text-xs md:text-sm" }),
+            buttonStyles({
+              size: "sm",
+              className: "text-xs md:text-sm",
+            }).base(),
           )}
           href={"/docs"}
         >
           Getting Started
         </Link>
         <Link
-          className={cn(
-            buttonStyles({
-              size: "sm",
-              color: "secondary",
-              variant: "outlined",
-              className: "text-xs md:text-sm",
-            }),
-          )}
+          className={buttonStyles({
+            size: "sm",
+            color: "secondary",
+            variant: "outlined",
+            className: "text-xs md:text-sm",
+          }).base()}
           href={"/blocks"}
         >
           Blocks

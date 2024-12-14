@@ -68,7 +68,7 @@ const Navbar = () => {
           color: "accent",
           size: "icon",
           className: "-me-2 md:hidden",
-        }),
+        }).base(),
       )}
     >
       {isSidebarOpen ? <LuX /> : <LuMenu />}
