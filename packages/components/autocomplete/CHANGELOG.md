@@ -1,5 +1,34 @@
 # @mijn-ui-react/autocomplete
 
+## 0.0.9
+
+### Patch Changes
+
+- fe02d23: Make context errors more user friendly.
+- 051449d: Replace styles with theme package's styles
+- Updated dependencies [9444ec9]
+- Updated dependencies [add6e87]
+- Updated dependencies [88d96e8]
+- Updated dependencies [051449d]
+- Updated dependencies [fe02d23]
+- Updated dependencies [add6e87]
+- Updated dependencies [051449d]
+- Updated dependencies [d961021]
+- Updated dependencies [49f9bf7]
+- Updated dependencies [9b913d0]
+- Updated dependencies [fd30e1a]
+- Updated dependencies [92be87c]
+- Updated dependencies [2b64600]
+- Updated dependencies [9fe766a]
+- Updated dependencies [2595897]
+- Updated dependencies [0131172]
+  - @mijn-ui/react-utilities@0.0.7
+  - @mijn-ui/react-theme@0.0.6
+  - @mijn-ui/react-skeleton@0.0.7
+  - @mijn-ui/react-command@0.0.9
+  - @mijn-ui/react-popover@0.0.9
+  - @mijn-ui/react-hooks@0.0.8
+
 ## 0.0.8
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @mijn-ui/react-theme
 
+## 0.0.6
+
+### Patch Changes
+
+- add6e87: Add checkbox and command styles.
+- d961021: Update themes and add accordion, alert and badge styles.
+- 49f9bf7: Add card styles
+- fd30e1a: Refactor classes and update slots.
+- 92be87c: Add avatar styles.
+- 9fe766a: Add button theme
+- 2595897: Add alert dialog styles.
+- 0131172: Add calendar styles.
+
 ## 0.0.5
 
 ### Patch Changes

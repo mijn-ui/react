@@ -1,5 +1,13 @@
 # @mijn-ui-react/utilities
 
+## 0.0.7
+
+### Patch Changes
+
+- 9444ec9: Update createContext and remove unnecessary contexts.
+- 88d96e8: Add tv-unstyled-slots util and refactor.
+- 2b64600: Add dynamic context utility.
+
 ## 0.0.6
 
 ### Patch Changes
