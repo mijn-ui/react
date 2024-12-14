@@ -8,7 +8,7 @@ import {
 const alertDialogStyles = tv({
   slots: {
     base: "",
-    trigger: buttonStyles({ color: "secondary" }),
+    trigger: buttonStyles({ color: "secondary" }).base(),
     overlay: dialogOverlayClasses,
     contentWrapper: "fixed inset-0 z-50 flex items-center justify-center",
     content: [
@@ -19,8 +19,8 @@ const alertDialogStyles = tv({
     footer: "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2",
     title: "text-lg font-semibold",
     description: "text-muted-text text-sm",
-    action: buttonStyles(),
-    cancel: buttonStyles({ color: "accent", variant: "text" }),
+    action: buttonStyles().base(),
+    cancel: buttonStyles({ color: "accent", variant: "text" }).base(),
   },
 })
 

@@ -22,7 +22,7 @@ const commonIconWrapperClasses =
 const dropdownMenuStyles = tv({
   slots: {
     base: "",
-    trigger: buttonStyles({ color: "secondary" }),
+    trigger: buttonStyles({ color: "secondary" }).base(),
     subTrigger:
       "focus:bg-accent data-[state=open]:bg-accent flex cursor-default select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none",
     subTriggerIcon: "pointer-events-none ml-auto size-4 shrink-0",

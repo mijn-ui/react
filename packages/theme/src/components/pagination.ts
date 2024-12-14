@@ -19,14 +19,14 @@ const paginationStyles = tv({
           variant: "outlined",
           color: "accent",
           size: "icon",
-        }),
+        }).base(),
       },
       false: {
         item: buttonStyles({
           variant: "text",
           color: "accent",
           size: "icon",
-        }),
+        }).base(),
       },
     },
   },
@@ -38,7 +38,7 @@ const paginationStyles = tv({
         color: "accent",
         size: "md",
         className: "gap-1 font-medium",
-      }),
+      }).base(),
     },
     {
       slots: ["previousElipsis", "nextElipsis"],

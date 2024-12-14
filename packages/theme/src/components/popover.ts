@@ -5,8 +5,8 @@ import { popupAnimationClasses } from "../utils/classes"
 const popoverStyles = tv({
   slots: {
     base: "",
-    trigger: buttonStyles({ color: "secondary" }),
-    close: buttonStyles({ variant: "text" }),
+    trigger: buttonStyles({ color: "secondary" }).base(),
+    close: buttonStyles({ variant: "text" }).base(),
     content: [
       popupAnimationClasses,
       "border-main-border bg-surface text-surface-text z-50 w-full rounded-lg border p-4 shadow-md outline-none !duration-300",

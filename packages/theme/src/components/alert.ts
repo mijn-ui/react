@@ -12,8 +12,8 @@ const alertStyles = tv({
   variants: {
     variant: {
       filled: "",
-      outlined: "border",
-      subtle: "border",
+      outlined: { base: "border" },
+      subtle: { base: "border" },
     },
     color: {
       default: "",

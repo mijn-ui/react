@@ -7,7 +7,7 @@ const cardStyles = tv({
     content: "p-4 pt-0",
     footer: "flex items-center p-4 pt-0",
     title: "text-2xl font-semibold leading-none tracking-tight",
-    description: "text-sm text-muted-text",
+    description: "text-muted-text text-sm",
   },
 })
 
