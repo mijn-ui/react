@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-scroll-area
 
 A custom scrollable container for overflowing content.

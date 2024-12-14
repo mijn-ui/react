@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-card
 
 A container for grouping and displaying related content or actions.

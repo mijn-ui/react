@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-tabs
 
 A navigation component for organizing content into separate panels.

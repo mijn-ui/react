@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-alert-dialog
 
 A modal dialog for alerting users about important actions or decisions.

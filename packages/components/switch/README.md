@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-switch
 
 A toggle control for enabling or disabling settings.

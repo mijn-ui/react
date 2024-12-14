@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-autocomplete
 
 An input field with suggestions dropdown.

@@ -30,7 +30,7 @@ const TableExample = () => {
             <TableCell>Alex Cooper</TableCell>
             <TableCell className="min-w-32">
               <p>Feb 17, 2024</p>
-              <p className="text-muted-text text-xs">08:48 AM</p>
+              <p className="text-xs text-muted-text">08:48 AM</p>
             </TableCell>
 
             <TableCell className="hidden text-balance sm:table-cell">
@@ -58,7 +58,7 @@ const TableExample = () => {
 
             <TableCell className="min-w-32">
               <p>Feb 17, 2024</p>
-              <p className="text-muted-text text-xs"> 08:48 AM</p>
+              <p className="text-xs text-muted-text"> 08:48 AM</p>
             </TableCell>
 
             <TableCell className="hidden text-balance sm:table-cell">
@@ -86,7 +86,7 @@ const TableExample = () => {
 
             <TableCell className="min-w-32">
               <p>Feb 17, 2024</p>
-              <p className="text-muted-text text-xs"> 08:48 AM</p>
+              <p className="text-xs text-muted-text"> 08:48 AM</p>
             </TableCell>
 
             <TableCell className="hidden text-balance sm:table-cell">
@@ -116,7 +116,7 @@ const TableExample = () => {
 
             <TableCell className="min-w-32">
               <p>Feb 17, 2024</p>
-              <p className="text-muted-text text-xs"> 08:48 AM</p>
+              <p className="text-xs text-muted-text"> 08:48 AM</p>
             </TableCell>
 
             <TableCell className="hidden text-balance sm:table-cell">

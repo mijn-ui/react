@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-date-picker
 
 A calendar-based date picker component built with React Date Picker and Popover.

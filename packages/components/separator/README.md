@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-separator
 
 A divider for grouping content or sections.

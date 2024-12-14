@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-dropdown-menu
 
 A contextual menu for displaying a list of actions or options.

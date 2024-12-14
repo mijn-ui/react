@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-radio-group
 
 A group of radio buttons for single-option selection.

@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-accordion
 
 A vertically stacked list of expandable items, perfect for organizing content.

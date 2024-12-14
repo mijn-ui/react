@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-table
 
 A structured layout for displaying tabular data.

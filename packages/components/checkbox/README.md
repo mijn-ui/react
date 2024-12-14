@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-checkbox
 
 A control for selecting one or multiple options.

@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-select
 
 A dropdown selector for single or multiple options.

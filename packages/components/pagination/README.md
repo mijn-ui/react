@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-pagination
 
 A navigation control for traversing paginated content.

@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-calendar
 
 A date field component that allows users to enter and edit date.

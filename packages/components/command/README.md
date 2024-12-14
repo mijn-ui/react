@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-command
 
 A command palette for quick access to actions and navigation, often used for keyboard shortcuts.

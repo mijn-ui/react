@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-collapsible
 
 A toggleable area for showing or hiding content.

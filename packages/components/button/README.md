@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-button
 
 A flexible and customizable button component for various actions.

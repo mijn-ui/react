@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-input
 
 A basic input field for user text entry.

@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-avatar
 
 A graphical representation of a user or profile.

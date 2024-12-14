@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-progress
 
 A visual indicator of task completion or status.

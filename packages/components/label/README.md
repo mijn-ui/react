@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-label
 
 A text label for form controls.

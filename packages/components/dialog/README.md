@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-dialog
 
 A modal window for displaying additional content or actions.

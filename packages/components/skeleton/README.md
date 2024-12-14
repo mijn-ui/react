@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-skeleton
 
 A placeholder for loading states or empty content.

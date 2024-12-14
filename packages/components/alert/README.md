@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-alert
 
 A component for displaying critical information or notifications.

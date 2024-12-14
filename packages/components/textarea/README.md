@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-textarea
 
 A multi-line input field for larger text entry.

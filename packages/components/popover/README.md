@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-popover
 
 A floating panel for contextual information or actions.

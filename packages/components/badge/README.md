@@ -1,4 +1,3 @@
-
 # @mijn-ui/react-badge
 
 A small label used to indicate status or metadata.
