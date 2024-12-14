@@ -39,6 +39,7 @@
     "react-dom": "19.0.0-rc-b01722d5-20241114",
     "@mijn-ui/shared-icons": "workspace:*",
     "@mijn-ui/react-utilities": "workspace:*",
+    "@mijn-ui/react-hooks": "workspace:*",
     "@mijn-ui/react-theme": "workspace:*",
     "@radix-ui/react-dropdown-menu": "^2.1.2"
   },

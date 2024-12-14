@@ -2,7 +2,10 @@
 
 import * as React from "react"
 import { Label } from "@mijn-ui/react-label"
-import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
+import {
+  createTVUnstyledSlots,
+  UnstyledProps,
+} from "@mijn-ui/react-utilities/shared"
 import { inputStyles } from "@mijn-ui/react-theme"
 
 export type InputProps = React.ComponentPropsWithRef<"input"> & {
@@ -30,31 +33,30 @@ const Input = ({
   disabled,
   ...props
 }: InputProps) => {
+  const styles = inputStyles({
+    disabled,
+    startIcon: !!startIcon,
+    endIcon: !!endIcon,
+  })
   const {
     base,
     input,
-    label: labelStyles,
     startIcon: startIconStyle,
     endIcon: endIconStyle,
-  } = inputStyles({ disabled, startIcon: !!startIcon, endIcon: !!endIcon })
+    label: labelStyles,
+  } = createTVUnstyledSlots(styles, unstyled)
   const id = React.useId()
 
   return (
-    <div className={applyUnstyled(unstyled, base(), className)}>
+    <div className={base({ className })}>
       {startIcon && (
-        <div
-          className={applyUnstyled(
-            unstyled,
-            startIconStyle(),
-            classNames?.startIcon,
-          )}
-        >
+        <div className={startIconStyle({ className: classNames?.startIcon })}>
           {startIcon}
         </div>
       )}
       <input
         type={type}
-        className={applyUnstyled(unstyled, input(), classNames?.input)}
+        className={input({ className: classNames?.input })}
         id={userId || id}
         disabled={disabled}
         // Adding an empty space by default ensures the floating label moves correctly on focus or when input is present.
@@ -64,7 +66,7 @@ const Input = ({
 
       {label && (
         <Label
-          className={applyUnstyled(unstyled, labelStyles(), classNames?.label)}
+          className={labelStyles({ className: classNames?.label })}
           htmlFor={userId || id}
         >
           {label}
@@ -72,13 +74,7 @@ const Input = ({
       )}
 
       {endIcon && (
-        <div
-          className={applyUnstyled(
-            unstyled,
-            endIconStyle(),
-            classNames?.endIcon,
-          )}
-        >
+        <div className={endIconStyle({ className: classNames?.endIcon })}>
           {endIcon}
         </div>
       )}

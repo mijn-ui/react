@@ -2,19 +2,21 @@
 
 import * as React from "react"
 import {
-  applyUnstyled,
-  cn,
+  createTVUnstyledSlots,
   UnstyledProps,
 } from "@mijn-ui/react-utilities/shared"
 import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area"
 import { scrollAreaStyles } from "@mijn-ui/react-theme"
 import { createContext } from "@mijn-ui/react-utilities/context"
+import { useTVUnstyled } from "@mijn-ui/react-hooks"
 
 /* -------------------------------------------------------------------------- */
 /*                              ScrollAreaContext                             */
 /* -------------------------------------------------------------------------- */
 
-type ScrollAreaContextType = UnstyledProps & ReturnType<typeof scrollAreaStyles>
+type ScrollAreaContextType = UnstyledProps & {
+  styles: ReturnType<typeof scrollAreaStyles>
+}
 
 const [ScrollAreaProvider, useScrollAreaContext] =
   createContext<ScrollAreaContextType>({
@@ -23,6 +25,15 @@ const [ScrollAreaProvider, useScrollAreaContext] =
     errorMessage:
       "useScrollAreaContext: `context` is undefined. Seems you forgot to wrap component within <ScrollArea />",
   })
+
+/* -------------------------------------------------------------------------- */
+/*                               ScrollAreaHook                               */
+/* -------------------------------------------------------------------------- */
+
+const useScrollAreaStyles = (unstyledOverride?: boolean) => {
+  const context = useScrollAreaContext()
+  return useTVUnstyled(context, unstyledOverride)
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                 ScrollArea                                 */
@@ -40,16 +51,12 @@ const ScrollArea = ({
   ...props
 }: ScrollAreaProps) => {
   const styles = scrollAreaStyles()
+  const { base, viewport } = createTVUnstyledSlots(styles, unstyled)
 
   return (
-    <ScrollAreaProvider value={{ unstyled, ...styles }}>
-      <ScrollAreaPrimitive.Root
-        className={applyUnstyled(unstyled, styles.base(), className)}
-        {...props}
-      >
-        <ScrollAreaPrimitive.Viewport
-          className={applyUnstyled(unstyled, styles.viewport())}
-        >
+    <ScrollAreaProvider value={{ unstyled, styles }}>
+      <ScrollAreaPrimitive.Root className={base({ className })} {...props}>
+        <ScrollAreaPrimitive.Viewport className={viewport()}>
           {children}
         </ScrollAreaPrimitive.Viewport>
         <ScrollBar />
@@ -74,22 +81,15 @@ const ScrollBar = ({
   orientation = "vertical",
   ...props
 }: ScrollBarProps) => {
-  const {
-    unstyled: contextUnstyled,
-    scrollbar,
-    scrollThumb,
-  } = useScrollAreaContext()
-  const isUnstyled = unstyled ?? contextUnstyled
+  const { scrollbar, scrollThumb } = useScrollAreaStyles(unstyled)
 
   return (
     <ScrollAreaPrimitive.ScrollAreaScrollbar
       orientation={orientation}
-      className={cn(scrollbar({ orientation }), className)}
+      className={scrollbar({ orientation, className })}
       {...props}
     >
-      <ScrollAreaPrimitive.ScrollAreaThumb
-        className={applyUnstyled(isUnstyled, scrollThumb())}
-      />
+      <ScrollAreaPrimitive.ScrollAreaThumb className={scrollThumb()} />
     </ScrollAreaPrimitive.ScrollAreaScrollbar>
   )
 }

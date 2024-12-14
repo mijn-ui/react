@@ -11,8 +11,11 @@ import {
 import { Command as CommandPrimitive } from "cmdk"
 import { CheckIcon } from "@mijn-ui/shared-icons"
 import { autocompleteStyles } from "@mijn-ui/react-theme"
+import { useTVUnstyled } from "@mijn-ui/react-hooks"
 
 type AutocompleteContextType = {
+  styles: ReturnType<typeof autocompleteStyles>
+
   onValueChange: (value: string) => void
   inputValue: string
   setInputValue: React.Dispatch<React.SetStateAction<string>>
@@ -27,8 +30,7 @@ type AutocompleteContextType = {
   handleBlur: () => void
 
   setShouldFilter: React.Dispatch<React.SetStateAction<boolean>>
-} & UnstyledProps &
-  ReturnType<typeof autocompleteStyles>
+} & UnstyledProps
 
 const [AutocompleteProvider, useAutocompleteContext] =
   createContext<AutocompleteContextType>({
@@ -39,7 +41,16 @@ const [AutocompleteProvider, useAutocompleteContext] =
   })
 
 /* -------------------------------------------------------------------------- */
-/*                                  Autocomplete                                  */
+/*                              AutocompleteHook                              */
+/* -------------------------------------------------------------------------- */
+
+const useAutocompleteStyles = (unstyledOverride?: boolean) => {
+  const context = useAutocompleteContext()
+  return useTVUnstyled(context, unstyledOverride)
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                Autocomplete                                */
 /* -------------------------------------------------------------------------- */
 
 type AutocompleteProps = React.ComponentPropsWithoutRef<
@@ -103,7 +114,7 @@ const Autocomplete = ({
   return (
     <AutocompleteProvider
       value={{
-        ...styles,
+        styles,
 
         isOpen,
         setOpen,
@@ -126,7 +137,7 @@ const Autocomplete = ({
         <CommandPrimitive
           shouldFilter={shouldFilter}
           onKeyDown={handleKeyDown}
-          className={applyUnstyled(unstyled, styles.base(), className)}
+          className={applyUnstyled(unstyled, styles.base({ className }))}
           {...props}
         >
           {children}
@@ -159,8 +170,7 @@ const AutocompleteTrigger = ({
     handleBlur,
     setShouldFilter,
   } = useAutocompleteContext()
-  const { unstyled: contextUnstyled, trigger } = useAutocompleteContext()
-  const isUnstyled = unstyled ?? contextUnstyled
+  const { trigger } = useAutocompleteStyles(unstyled)
 
   return (
     <PopoverAnchor asChild>
@@ -173,7 +183,7 @@ const AutocompleteTrigger = ({
         }}
         onBlur={handleBlur}
         onFocus={() => setOpen(true)}
-        className={applyUnstyled(isUnstyled, trigger(), className)}
+        className={trigger({ className })}
         {...props}
       />
     </PopoverAnchor>
@@ -199,13 +209,8 @@ const AutocompleteContent = ({
   children,
   ...props
 }: AutocompleteContentProps) => {
-  const {
-    unstyled: contextUnstyled,
-    content,
-    contentEmpty,
-    skeleton,
-  } = useAutocompleteContext()
-  const isUnstyled = unstyled ?? contextUnstyled
+  const { isUnstyled, content, contentEmpty, skeleton } =
+    useAutocompleteStyles(unstyled)
 
   return (
     <PopoverContent
@@ -219,7 +224,7 @@ const AutocompleteContent = ({
           e.preventDefault()
         }
       }}
-      className={applyUnstyled(isUnstyled, content(), className)}
+      className={content({ className })}
       unstyled={isUnstyled}
       // you can set this to true if you want to flip the content to flip when there isn't enough space for the comboBox content
       avoidCollisions={false}
@@ -232,15 +237,13 @@ const AutocompleteContent = ({
       <CommandPrimitive.List {...props}>
         {!loading && children}
         {!loading && (
-          <CommandPrimitive.Empty
-            className={applyUnstyled(isUnstyled, contentEmpty())}
-          >
+          <CommandPrimitive.Empty className={contentEmpty()}>
             {emptyMessage || "No Options Found"}
           </CommandPrimitive.Empty>
         )}
         {loading && (
           <CommandPrimitive.Loading>
-            <div className={applyUnstyled(isUnstyled, skeleton())} />
+            <div className={skeleton()} />
           </CommandPrimitive.Loading>
         )}
       </CommandPrimitive.List>
@@ -263,14 +266,10 @@ const AutocompleteGroup = ({
   className,
   ...props
 }: AutocompleteGroupProps) => {
-  const { unstyled: contextUnstyled, group } = useAutocompleteContext()
-  const isUnstyled = unstyled ?? contextUnstyled
+  const { group } = useAutocompleteStyles(unstyled)
 
   return (
-    <CommandPrimitive.Group
-      className={applyUnstyled(isUnstyled, group(), className)}
-      {...props}
-    >
+    <CommandPrimitive.Group className={group({ className })} {...props}>
       {children}
     </CommandPrimitive.Group>
   )
@@ -292,15 +291,9 @@ const AutocompleteItem = ({
   value,
   ...props
 }: AutocompleteItemProps) => {
-  const {
-    unstyled: contextUnstyled,
-    selectedValue,
-    handleSelectOption,
-    item,
-  } = useAutocompleteContext()
+  const { selectedValue, handleSelectOption } = useAutocompleteContext()
+  const { item } = useAutocompleteStyles(unstyled)
   const isSelected = selectedValue === value
-
-  const isUnstyled = unstyled ?? contextUnstyled
 
   return (
     <CommandPrimitive.Item
@@ -311,11 +304,7 @@ const AutocompleteItem = ({
         event.stopPropagation()
       }}
       onSelect={handleSelectOption}
-      className={applyUnstyled(
-        isUnstyled,
-        item({ selected: isSelected }),
-        className,
-      )}
+      className={item({ className, selected: isSelected })}
       {...props}
     >
       {children}

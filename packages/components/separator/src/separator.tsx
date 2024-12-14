@@ -1,7 +1,10 @@
 "use client"
 
 import * as React from "react"
-import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
+import {
+  createTVUnstyledSlots,
+  UnstyledProps,
+} from "@mijn-ui/react-utilities/shared"
 import * as SeparatorPrimitive from "@radix-ui/react-separator"
 import { separatorStyles } from "@mijn-ui/react-theme"
 
@@ -16,17 +19,20 @@ const Separator = ({
   orientation = "horizontal",
   decorative = true,
   ...props
-}: SeparatorProps) => (
-  <SeparatorPrimitive.Root
-    decorative={decorative}
-    orientation={orientation}
-    className={applyUnstyled(
-      unstyled,
-      separatorStyles({ orientation }),
-      className,
-    )}
-    {...props}
-  />
-)
+}: SeparatorProps) => {
+  const { base } = createTVUnstyledSlots(
+    separatorStyles({ orientation }),
+    unstyled,
+  )
+
+  return (
+    <SeparatorPrimitive.Root
+      decorative={decorative}
+      orientation={orientation}
+      className={base({ className })}
+      {...props}
+    />
+  )
+}
 
 export { Separator }

@@ -1,7 +1,10 @@
 "use client"
 
 import * as React from "react"
-import { cn } from "@mijn-ui/react-utilities/shared"
+import {
+  createTVUnstyledSlots,
+  UnstyledProps,
+} from "@mijn-ui/react-utilities/shared"
 import { DayFlag, DayPicker, SelectionState, UI } from "react-day-picker"
 import {
   ChevronDownIcon,
@@ -11,20 +14,22 @@ import {
 } from "@mijn-ui/shared-icons"
 import { calendarStyles } from "@mijn-ui/react-theme"
 
-export type CalendarProps = React.ComponentProps<typeof DayPicker>
+export type CalendarProps = React.ComponentProps<typeof DayPicker> &
+  UnstyledProps
 
 export const Calendar = ({
+  unstyled,
   className,
   classNames,
   showOutsideDays = true,
   ...props
 }: CalendarProps) => {
-  const styles = calendarStyles()
+  const styles = createTVUnstyledSlots(calendarStyles(), unstyled)
 
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
-      className={cn(styles.base(), className)}
+      className={styles.base({ className })}
       classNames={{
         [UI.Months]: styles.months(),
         [UI.Month]: styles.month(),

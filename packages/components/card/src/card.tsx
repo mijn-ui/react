@@ -2,18 +2,17 @@
 
 import * as React from "react"
 import { createContext } from "@mijn-ui/react-utilities/context"
-import {
-  applyUnstyled,
-  cn,
-  UnstyledProps,
-} from "@mijn-ui/react-utilities/shared"
+import { cn, UnstyledProps } from "@mijn-ui/react-utilities/shared"
 import { cardStyles } from "@mijn-ui/react-theme"
+import { useTVUnstyled } from "@mijn-ui/react-hooks"
 
 /* -------------------------------------------------------------------------- */
 /*                              CardContext                                   */
 /* -------------------------------------------------------------------------- */
 
-type CardContextType = UnstyledProps & ReturnType<typeof cardStyles>
+type CardContextType = UnstyledProps & {
+  styles: ReturnType<typeof cardStyles>
+}
 
 const [CardProvider, useCardContext] = createContext<CardContextType>({
   name: "CardContext",
@@ -21,6 +20,15 @@ const [CardProvider, useCardContext] = createContext<CardContextType>({
   errorMessage:
     "useCardContext: `context` is undefined. Seems you forgot to wrap component within <Card />",
 })
+
+/* -------------------------------------------------------------------------- */
+/*                                  CardHook                                  */
+/* -------------------------------------------------------------------------- */
+
+const useCardStyles = (unstyledOverride?: boolean) => {
+  const context = useCardContext()
+  return useTVUnstyled(context, unstyledOverride)
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                    Card                                    */
@@ -32,8 +40,8 @@ const Card = ({ className, unstyled = false, ...props }: CardProps) => {
   const styles = cardStyles()
 
   return (
-    <CardProvider value={{ unstyled, ...styles }}>
-      <div className={cn(styles.base(), className)} {...props} />
+    <CardProvider value={{ unstyled, styles }}>
+      <div className={cn(styles.base({ className }))} {...props} />
     </CardProvider>
   )
 }
@@ -45,15 +53,9 @@ const Card = ({ className, unstyled = false, ...props }: CardProps) => {
 type CardHeaderProps = React.ComponentPropsWithRef<"div"> & UnstyledProps
 
 const CardHeader = ({ className, unstyled, ...props }: CardHeaderProps) => {
-  const { unstyled: contextUnstyled, header } = useCardContext()
-  const isUnstyled = unstyled ?? contextUnstyled
+  const { header } = useCardStyles(unstyled)
 
-  return (
-    <div
-      className={applyUnstyled(isUnstyled, header(), className)}
-      {...props}
-    />
-  )
+  return <div className={header({ className })} {...props} />
 }
 
 /* -------------------------------------------------------------------------- */
@@ -63,12 +65,9 @@ const CardHeader = ({ className, unstyled, ...props }: CardHeaderProps) => {
 type CardTitleProps = React.ComponentPropsWithRef<"div"> & UnstyledProps
 
 const CardTitle = ({ className, unstyled, ...props }: CardTitleProps) => {
-  const { unstyled: contextUnstyled, title } = useCardContext()
-  const isUnstyled = unstyled ?? contextUnstyled
+  const { title } = useCardStyles(unstyled)
 
-  return (
-    <div className={applyUnstyled(isUnstyled, title(), className)} {...props} />
-  )
+  return <div className={title({ className })} {...props} />
 }
 
 /* -------------------------------------------------------------------------- */
@@ -82,15 +81,9 @@ const CardDescription = ({
   unstyled,
   ...props
 }: CardDescriptionProps) => {
-  const { unstyled: contextUnstyled, description } = useCardContext()
-  const isUnstyled = unstyled ?? contextUnstyled
+  const { description } = useCardStyles(unstyled)
 
-  return (
-    <div
-      className={applyUnstyled(isUnstyled, description(), className)}
-      {...props}
-    />
-  )
+  return <div className={description({ className })} {...props} />
 }
 
 /* -------------------------------------------------------------------------- */
@@ -100,15 +93,9 @@ const CardDescription = ({
 type CardContentProps = React.ComponentPropsWithRef<"div"> & UnstyledProps
 
 const CardContent = ({ className, unstyled, ...props }: CardContentProps) => {
-  const { unstyled: contextUnstyled, content } = useCardContext()
-  const isUnstyled = unstyled ?? contextUnstyled
+  const { content } = useCardStyles(unstyled)
 
-  return (
-    <div
-      className={applyUnstyled(isUnstyled, content(), className)}
-      {...props}
-    />
-  )
+  return <div className={content({ className })} {...props} />
 }
 
 /* -------------------------------------------------------------------------- */
@@ -118,15 +105,9 @@ const CardContent = ({ className, unstyled, ...props }: CardContentProps) => {
 type CardFooterProps = React.ComponentPropsWithRef<"div"> & UnstyledProps
 
 const CardFooter = ({ className, unstyled, ...props }: CardFooterProps) => {
-  const { unstyled: contextUnstyled, footer } = useCardContext()
-  const isUnstyled = unstyled ?? contextUnstyled
+  const { footer } = useCardStyles(unstyled)
 
-  return (
-    <div
-      className={applyUnstyled(isUnstyled, footer(), className)}
-      {...props}
-    />
-  )
+  return <div className={footer({ className })} {...props} />
 }
 
 export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }

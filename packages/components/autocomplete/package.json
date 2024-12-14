@@ -38,6 +38,7 @@
     "react": "19.0.0-rc-b01722d5-20241114",
     "react-dom": "19.0.0-rc-b01722d5-20241114",
     "@mijn-ui/react-utilities": "workspace:*",
+    "@mijn-ui/react-hooks": "workspace:*",
     "@mijn-ui/react-popover": "workspace:*",
     "@mijn-ui/react-theme": "workspace:*",
     "@mijn-ui/react-command": "workspace:*",

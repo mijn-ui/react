@@ -2,10 +2,14 @@
 
 import * as React from "react"
 import { useControlledState } from "@mijn-ui/react-hooks"
-import { UnstyledProps, applyUnstyled } from "@mijn-ui/react-utilities/shared"
+import {
+  UnstyledProps,
+  createTVUnstyledSlots,
+} from "@mijn-ui/react-utilities/shared"
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
 import { CheckIcon, DividerHorizontalIcon } from "@mijn-ui/shared-icons"
 import { checkboxStyles, CheckboxVariantProps } from "@mijn-ui/react-theme"
+
 /* -------------------------------------------------------------------------- */
 /*                                  Checkbox                                  */
 /* -------------------------------------------------------------------------- */
@@ -34,24 +38,21 @@ const Checkbox = ({
     !!defaultChecked,
     ControlledOnCheckedChange,
   )
-  const { base, indicator, icon } = checkboxStyles({ color, size })
+  const styles = checkboxStyles({ color, size })
+  const { base, indicator, icon } = createTVUnstyledSlots(styles, unstyled)
 
   return (
     <CheckboxPrimitive.Root
-      className={applyUnstyled(unstyled, base(), className)}
+      className={base({ className })}
       {...props}
       checked={checked}
       onCheckedChange={setChecked}
     >
-      <CheckboxPrimitive.Indicator
-        className={applyUnstyled(unstyled, indicator())}
-      >
+      <CheckboxPrimitive.Indicator className={indicator()}>
         {checked === "indeterminate" && (
-          <DividerHorizontalIcon className={applyUnstyled(unstyled, icon())} />
+          <DividerHorizontalIcon className={icon()} />
         )}
-        {checked === true && (
-          <CheckIcon className={applyUnstyled(unstyled, icon())} />
-        )}
+        {checked === true && <CheckIcon className={icon()} />}
       </CheckboxPrimitive.Indicator>
     </CheckboxPrimitive.Root>
   )

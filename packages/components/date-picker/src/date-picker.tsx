@@ -391,7 +391,7 @@ export const CalendarDatePicker = React.forwardRef<
               {...props}
               className={cn(
                 "w-auto",
-                buttonStyles({ color, variant, className }),
+                buttonStyles({ color, variant, className }).base(),
               )}
               onClick={handleTogglePopover}
               suppressHydrationWarning

@@ -2,18 +2,17 @@
 
 import * as React from "react"
 import { createContext } from "@mijn-ui/react-utilities/context"
-import {
-  applyUnstyled,
-  cn,
-  UnstyledProps,
-} from "@mijn-ui/react-utilities/shared"
+import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
 import { alertStyles, AlertVariantProps } from "@mijn-ui/react-theme"
+import { useTVUnstyled } from "@mijn-ui/react-hooks"
 
 /* -------------------------------------------------------------------------- */
 /*                              AlertContext                                  */
 /* -------------------------------------------------------------------------- */
 
-type AlertContextType = UnstyledProps & ReturnType<typeof alertStyles>
+type AlertContextType = UnstyledProps & {
+  styles: ReturnType<typeof alertStyles>
+}
 
 const [AlertProvider, useAlertContext] = createContext<AlertContextType>({
   name: "AlertContext",
@@ -21,6 +20,15 @@ const [AlertProvider, useAlertContext] = createContext<AlertContextType>({
   errorMessage:
     "useAlertContext: `context` is undefined. Seems you forgot to wrap component within <Alert />",
 })
+
+/* -------------------------------------------------------------------------- */
+/*                                  AlertHook                                 */
+/* -------------------------------------------------------------------------- */
+
+const useAlertStyles = (unstyledOverride?: boolean) => {
+  const context = useAlertContext()
+  return useTVUnstyled(context, unstyledOverride)
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                    Alert                                   */
@@ -40,10 +48,9 @@ const Alert = ({
   const styles = alertStyles({ variant, color })
 
   return (
-    <AlertProvider value={{ ...styles, unstyled }}>
+    <AlertProvider value={{ styles, unstyled }}>
       <div
-        data-variant={variant}
-        className={applyUnstyled(unstyled, styles.base(), className)}
+        className={applyUnstyled(unstyled, styles.base({ className }))}
         {...props}
       />
     </AlertProvider>
@@ -57,15 +64,9 @@ const Alert = ({
 type AlertIconProps = React.ComponentProps<"span"> & UnstyledProps
 
 const AlertIcon = ({ unstyled, className, ...props }: AlertIconProps) => {
-  const { unstyled: contextUnstyled, iconWrapper } = useAlertContext()
-  const isUnstyled = unstyled ?? contextUnstyled
+  const { iconWrapper } = useAlertStyles(unstyled)
 
-  return (
-    <span
-      className={applyUnstyled(isUnstyled, iconWrapper(), className)}
-      {...props}
-    />
-  )
+  return <span className={iconWrapper({ className })} {...props} />
 }
 
 /* -------------------------------------------------------------------------- */
@@ -75,12 +76,9 @@ const AlertIcon = ({ unstyled, className, ...props }: AlertIconProps) => {
 type AlertTitle = React.ComponentProps<"h5"> & UnstyledProps
 
 const AlertTitle = ({ unstyled, className, ...props }: AlertTitle) => {
-  const { unstyled: contextUnstyled, title } = useAlertContext()
-  const isUnstyled = unstyled ?? contextUnstyled
+  const { title } = useAlertStyles(unstyled)
 
-  return (
-    <h5 className={applyUnstyled(isUnstyled, title(), className)} {...props} />
-  )
+  return <h5 className={title({ className })} {...props} />
 }
 
 /* -------------------------------------------------------------------------- */
@@ -94,10 +92,9 @@ const AlertDescription = ({
   className,
   ...props
 }: AlertDescriptionProps) => {
-  const { unstyled: contextUnstyled, description } = useAlertContext()
-  const isUnstyled = unstyled ?? contextUnstyled
+  const { description } = useAlertStyles(unstyled)
 
-  return <p className={cn(isUnstyled, description(), className)} {...props} />
+  return <p className={description({ className })} {...props} />
 }
 
 export { Alert, AlertDescription, AlertIcon, alertStyles, AlertTitle }

@@ -2,14 +2,11 @@
 
 import * as React from "react"
 import { createContext } from "@mijn-ui/react-utilities/context"
-import {
-  applyUnstyled,
-  cn,
-  UnstyledProps,
-} from "@mijn-ui/react-utilities/shared"
+import { UnstyledProps } from "@mijn-ui/react-utilities/shared"
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu"
 import { CheckIcon, ChevronRightIcon, CircleIcon } from "@mijn-ui/shared-icons"
 import { dropdownMenuStyles } from "@mijn-ui/react-theme"
+import { useTVUnstyled } from "@mijn-ui/react-hooks"
 
 const DropdownMenuGroup = DropdownMenuPrimitive.Group
 
@@ -23,7 +20,9 @@ const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup
 /*                             DropdownMenuContext                            */
 /* -------------------------------------------------------------------------- */
 
-type DropdownContextType = UnstyledProps & ReturnType<typeof dropdownMenuStyles>
+type DropdownContextType = UnstyledProps & {
+  styles: ReturnType<typeof dropdownMenuStyles>
+}
 
 const [DropdownProvider, useDropdownContext] =
   createContext<DropdownContextType>({
@@ -32,6 +31,15 @@ const [DropdownProvider, useDropdownContext] =
     errorMessage:
       "useDropdownContext: `context` is undefined. Seems you forgot to wrap component within <Dropdown />",
   })
+
+/* -------------------------------------------------------------------------- */
+/*                              DropdownMenuHook                              */
+/* -------------------------------------------------------------------------- */
+
+const useDropdownStyles = (unstyledOverride?: boolean) => {
+  const context = useDropdownContext()
+  return useTVUnstyled(context, unstyledOverride)
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                DropdownMenu                                */
@@ -43,7 +51,7 @@ const DropdownMenu = ({ unstyled = false, ...props }: DropdownMenuProps) => {
   const styles = dropdownMenuStyles()
 
   return (
-    <DropdownProvider value={{ unstyled, ...styles }}>
+    <DropdownProvider value={{ unstyled, styles }}>
       <DropdownMenuPrimitive.Root {...props} />
     </DropdownProvider>
   )
@@ -63,12 +71,10 @@ const DropdownMenuTrigger = ({
   className,
   ...props
 }: DropdownTriggerProps) => {
-  const { unstyled: contextUnstyled, trigger } = useDropdownContext()
-  const isUnstyled = unstyled ?? contextUnstyled
-
+  const { trigger } = useDropdownStyles(unstyled)
   return (
     <DropdownMenuPrimitive.Trigger
-      className={applyUnstyled(isUnstyled, trigger(), className)}
+      className={trigger({ className })}
       {...props}
     />
   )
@@ -92,14 +98,11 @@ const DropdownMenuSubTrigger = ({
   children,
   ...props
 }: DropdownMenuSubTriggerProps) => {
-  const { unstyled: contextUnstyled, subTrigger } = useDropdownContext()
-  const isUnstyled = unstyled ?? contextUnstyled
+  const { subTrigger } = useDropdownStyles(unstyled)
 
   return (
     <DropdownMenuPrimitive.SubTrigger
-      className={cn(
-        applyUnstyled(isUnstyled, subTrigger({ inset }), className),
-      )}
+      className={subTrigger({ className, inset })}
       {...props}
     >
       {children}
@@ -122,12 +125,11 @@ const DropdownMenuSubContent = ({
   className,
   ...props
 }: DropdownMenuSubContentProps) => {
-  const { unstyled: contextUnstyled, subContent } = useDropdownContext()
-  const isUnstyled = unstyled ?? contextUnstyled
+  const { subContent } = useDropdownStyles(unstyled)
 
   return (
     <DropdownMenuPrimitive.SubContent
-      className={applyUnstyled(isUnstyled, subContent(), className)}
+      className={subContent({ className })}
       {...props}
     />
   )
@@ -148,14 +150,12 @@ const DropdownMenuContent = ({
   sideOffset = 4,
   ...props
 }: DropdownMenuContentProps) => {
-  const { unstyled: contextUnstyled, content } = useDropdownContext()
-  const isUnstyled = unstyled ?? contextUnstyled
-
+  const { content } = useDropdownStyles(unstyled)
   return (
     <DropdownMenuPrimitive.Portal>
       <DropdownMenuPrimitive.Content
         sideOffset={sideOffset}
-        className={applyUnstyled(isUnstyled, content(), className)}
+        className={content({ className })}
         {...props}
       />
     </DropdownMenuPrimitive.Portal>
@@ -178,12 +178,11 @@ const DropdownMenuItem = ({
   inset,
   ...props
 }: DropdownMenuItemProps) => {
-  const { unstyled: contextUnstyled, item } = useDropdownContext()
-  const isUnstyled = unstyled ?? contextUnstyled
+  const { item } = useDropdownStyles(unstyled)
 
   return (
     <DropdownMenuPrimitive.Item
-      className={applyUnstyled(isUnstyled, item({ inset }), className)}
+      className={item({ className, inset })}
       {...props}
     />
   )
@@ -205,25 +204,17 @@ const DropdownMenuCheckboxItem = ({
   checked,
   ...props
 }: DropdownMenuCheckboxItemProps) => {
-  const {
-    unstyled: contextUnstyled,
-    checkboxItem,
-    checkboxItemIconWrapper,
-    checkboxItemIcon,
-  } = useDropdownContext()
-  const isUnstyled = unstyled ?? contextUnstyled
-
+  const { checkboxItem, checkboxItemIconWrapper, checkboxItemIcon } =
+    useDropdownStyles(unstyled)
   return (
     <DropdownMenuPrimitive.CheckboxItem
-      className={applyUnstyled(isUnstyled, checkboxItem(), className)}
+      className={checkboxItem({ className })}
       checked={checked}
       {...props}
     >
-      <span className={applyUnstyled(isUnstyled, checkboxItemIconWrapper())}>
+      <span className={checkboxItemIconWrapper()}>
         <DropdownMenuPrimitive.ItemIndicator>
-          <CheckIcon
-            className={applyUnstyled(isUnstyled, checkboxItemIcon())}
-          />
+          <CheckIcon className={checkboxItemIcon()} />
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
       {children}
@@ -246,22 +237,16 @@ const DropdownMenuRadioItem = ({
   children,
   ...props
 }: DropdownMenuRadioItemProps) => {
-  const {
-    unstyled: contextUnstyled,
-    radioItem,
-    radioItemIconWrapper,
-    radioItemIcon,
-  } = useDropdownContext()
-  const isUnstyled = unstyled ?? contextUnstyled
-
+  const { radioItem, radioItemIconWrapper, radioItemIcon } =
+    useDropdownStyles(unstyled)
   return (
     <DropdownMenuPrimitive.RadioItem
-      className={applyUnstyled(isUnstyled, radioItem(), className)}
+      className={radioItem({ className })}
       {...props}
     >
-      <span className={applyUnstyled(isUnstyled, radioItemIconWrapper())}>
+      <span className={radioItemIconWrapper()}>
         <DropdownMenuPrimitive.ItemIndicator>
-          <CircleIcon className={applyUnstyled(isUnstyled, radioItemIcon())} />
+          <CircleIcon className={radioItemIcon()} />
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
       {children}
@@ -284,12 +269,10 @@ const DropdownMenuLabel = ({
   inset,
   ...props
 }: DropdownMenuLabelProps) => {
-  const { unstyled: contextUnstyled, label } = useDropdownContext()
-  const isUnstyled = unstyled ?? contextUnstyled
-
+  const { label } = useDropdownStyles(unstyled)
   return (
     <DropdownMenuPrimitive.Label
-      className={applyUnstyled(isUnstyled, label({ inset }), className)}
+      className={label({ className, inset })}
       {...props}
     />
   )
@@ -309,12 +292,11 @@ const DropdownMenuSeparator = ({
   unstyled,
   ...props
 }: DropdownMenuSeparatorProps) => {
-  const { unstyled: contextUnstyled, separator } = useDropdownContext()
-  const isUnstyled = unstyled ?? contextUnstyled
+  const { separator } = useDropdownStyles(unstyled)
 
   return (
     <DropdownMenuPrimitive.Separator
-      className={applyUnstyled(isUnstyled, separator(), className)}
+      className={separator({ className })}
       {...props}
     />
   )
@@ -329,15 +311,9 @@ const DropdownMenuShortcut = ({
   unstyled,
   ...props
 }: React.HTMLAttributes<HTMLSpanElement> & UnstyledProps) => {
-  const { unstyled: contextUnstyled, shortcut } = useDropdownContext()
-  const isUnstyled = unstyled ?? contextUnstyled
+  const { shortcut } = useDropdownStyles(unstyled)
 
-  return (
-    <span
-      className={applyUnstyled(isUnstyled, shortcut(), className)}
-      {...props}
-    />
-  )
+  return <span className={shortcut({ className })} {...props} />
 }
 DropdownMenuShortcut.displayName = "DropdownMenuShortcut"
 

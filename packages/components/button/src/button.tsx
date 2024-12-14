@@ -1,5 +1,8 @@
 import * as React from "react"
-import { UnstyledProps, applyUnstyled } from "@mijn-ui/react-utilities/shared"
+import {
+  UnstyledProps,
+  createTVUnstyledSlots,
+} from "@mijn-ui/react-utilities/shared"
 import { Slot, Slottable } from "@radix-ui/react-slot"
 import { LoaderCircleIcon } from "@mijn-ui/shared-icons"
 import { ButtonVariantProps, buttonStyles } from "@mijn-ui/react-theme"
@@ -24,25 +27,16 @@ const Button = ({
   ...props
 }: ButtonProps) => {
   const Component = asChild ? Slot : "button"
+  const styles = buttonStyles({ color, variant, size, radius })
+  const { base, icon } = createTVUnstyledSlots(styles, unstyled)
 
   return (
     <Component
-      className={applyUnstyled(
-        unstyled,
-        buttonStyles({ color, variant, size, radius }),
-        className,
-      )}
+      className={base({ className })}
       disabled={loading || disabled}
       {...props}
     >
-      {loading && (
-        <LoaderCircleIcon
-          className={applyUnstyled(
-            unstyled,
-            "mr-2 h-5 w-5 animate-spin text-current",
-          )}
-        />
-      )}
+      {loading && <LoaderCircleIcon className={icon()} />}
       <Slottable>{loading ? "Loading..." : children}</Slottable>
     </Component>
   )

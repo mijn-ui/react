@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { createContext } from "@mijn-ui/react-utilities/context"
-import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
+import { UnstyledProps } from "@mijn-ui/react-utilities/shared"
 import * as SelectPrimitive from "@radix-ui/react-select"
 import {
   CheckIcon,
@@ -10,12 +10,15 @@ import {
   ChevronUpIcon,
 } from "@mijn-ui/shared-icons"
 import { selectStyles } from "@mijn-ui/react-theme"
+import { useTVUnstyled } from "@mijn-ui/react-hooks"
 
 /* -------------------------------------------------------------------------- */
 /*                                SelectContext                               */
 /* -------------------------------------------------------------------------- */
 
-type SelectContextType = UnstyledProps & ReturnType<typeof selectStyles>
+type SelectContextType = UnstyledProps & {
+  styles: ReturnType<typeof selectStyles>
+}
 
 const [SelectProvider, useSelectContext] = createContext<SelectContextType>({
   name: "SelectContext",
@@ -23,6 +26,15 @@ const [SelectProvider, useSelectContext] = createContext<SelectContextType>({
   errorMessage:
     "useSelectContext: `context` is undefined. Seems you forgot to wrap component within <Select />",
 })
+
+/* -------------------------------------------------------------------------- */
+/*                                 SelectHook                                 */
+/* -------------------------------------------------------------------------- */
+
+const useSelectStyles = (unstyledOverride?: boolean) => {
+  const context = useSelectContext()
+  return useTVUnstyled(context, unstyledOverride)
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                   Select                                   */
@@ -39,7 +51,7 @@ const Select = ({ unstyled = false, ...props }: SelectProps) => {
   const styles = selectStyles()
 
   return (
-    <SelectProvider value={{ unstyled, ...styles }}>
+    <SelectProvider value={{ unstyled, styles }}>
       <SelectPrimitive.Root {...props} />
     </SelectProvider>
   )
@@ -60,14 +72,10 @@ const SelectTrigger = ({
   children,
   ...props
 }: SelectTriggerProps) => {
-  const { unstyled: contextUnstyled, trigger } = useSelectContext()
-  const isUnstyled = unstyled ?? contextUnstyled
+  const { trigger } = useSelectStyles(unstyled)
 
   return (
-    <SelectPrimitive.Trigger
-      className={applyUnstyled(isUnstyled, trigger(), className)}
-      {...props}
-    >
+    <SelectPrimitive.Trigger className={trigger({ className })} {...props}>
       {children}
       <SelectPrimitive.Icon asChild>
         <ChevronDownIcon />
@@ -90,12 +98,11 @@ const SelectScrollUpButton = ({
   className,
   ...props
 }: SelectScrollUpButtonProps) => {
-  const { unstyled: contextUnstyled, scrollUpBtn } = useSelectContext()
-  const isUnstyled = unstyled ?? contextUnstyled
+  const { scrollUpBtn } = useSelectStyles(unstyled)
 
   return (
     <SelectPrimitive.ScrollUpButton
-      className={applyUnstyled(isUnstyled, scrollUpBtn(), className)}
+      className={scrollUpBtn({ className })}
       {...props}
     >
       <ChevronUpIcon className="" />
@@ -117,12 +124,11 @@ const SelectScrollDownButton = ({
   className,
   ...props
 }: SelectScrollDownButtonProps) => {
-  const { unstyled: contextUnstyled, scrollDownBtn } = useSelectContext()
-  const isUnstyled = unstyled ?? contextUnstyled
+  const { scrollDownBtn } = useSelectStyles(unstyled)
 
   return (
     <SelectPrimitive.ScrollDownButton
-      className={applyUnstyled(isUnstyled, scrollDownBtn(), className)}
+      className={scrollDownBtn({ className })}
       {...props}
     >
       <ChevronDownIcon className="size-4" />
@@ -146,20 +152,17 @@ const SelectContent = ({
   position = "popper",
   ...props
 }: SelectContentProps) => {
-  const { unstyled: contextUnstyled, content, viewport } = useSelectContext()
-  const isUnstyled = unstyled ?? contextUnstyled
+  const { content, viewport } = useSelectStyles(unstyled)
 
   return (
     <SelectPrimitive.Portal>
       <SelectPrimitive.Content
-        className={applyUnstyled(isUnstyled, content({ position }), className)}
+        className={content({ position, className })}
         position={position}
         {...props}
       >
         <SelectScrollUpButton />
-        <SelectPrimitive.Viewport
-          className={applyUnstyled(isUnstyled, viewport({ position }))}
-        >
+        <SelectPrimitive.Viewport className={viewport({ position })}>
           {children}
         </SelectPrimitive.Viewport>
         <SelectScrollDownButton />
@@ -178,15 +181,9 @@ type SelectLabelProps = React.ComponentPropsWithRef<
   UnstyledProps
 
 const SelectLabel = ({ unstyled, className, ...props }: SelectLabelProps) => {
-  const { unstyled: contextUnstyled, label } = useSelectContext()
-  const isUnstyled = unstyled ?? contextUnstyled
+  const { label } = useSelectStyles(unstyled)
 
-  return (
-    <SelectPrimitive.Label
-      className={applyUnstyled(isUnstyled, label(), className)}
-      {...props}
-    />
-  )
+  return <SelectPrimitive.Label className={label({ className })} {...props} />
 }
 
 /* -------------------------------------------------------------------------- */
@@ -204,17 +201,13 @@ const SelectItem = ({
   children,
   ...props
 }: SelectItemProps) => {
-  const { unstyled: contextUnstyled, item, itemIndicator } = useSelectContext()
-  const isUnstyled = unstyled ?? contextUnstyled
+  const { item, itemIndicator } = useSelectStyles(unstyled)
 
   return (
-    <SelectPrimitive.Item
-      className={applyUnstyled(isUnstyled, item(), className)}
-      {...props}
-    >
+    <SelectPrimitive.Item className={item({ className })} {...props}>
       <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
 
-      <span className={applyUnstyled(isUnstyled, itemIndicator())}>
+      <span className={itemIndicator()}>
         <SelectPrimitive.ItemIndicator>
           <CheckIcon />
         </SelectPrimitive.ItemIndicator>
@@ -237,12 +230,11 @@ const SelectSeparator = ({
   className,
   ...props
 }: SelectSeparatorProps) => {
-  const { unstyled: contextUnstyled, separator } = useSelectContext()
-  const isUnstyled = unstyled ?? contextUnstyled
+  const { separator } = useSelectStyles(unstyled)
 
   return (
     <SelectPrimitive.Separator
-      className={applyUnstyled(isUnstyled, separator(), className)}
+      className={separator({ className })}
       {...props}
     />
   )
