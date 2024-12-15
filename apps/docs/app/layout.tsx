@@ -30,17 +30,8 @@ export default function Layout({ children }: { children: ReactNode }) {
             }}
             search={{
               options: {
-                defaultTag: "next-js",
-                tags: [
-                  {
-                    name: "Next.js",
-                    value: "next-js",
-                  },
-                  {
-                    name: "Tailwind Css",
-                    value: "tailwind",
-                  },
-                ],
+                api: "/react/api/search",
+                type: "fetch",
               },
             }}
           >
