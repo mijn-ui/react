@@ -28,6 +28,5 @@ jobs:
       - name: Build packages
         run: pnpm run build
 
-      # Haven't written tests yet
-      # - name: Run Tests
-      #   run: pnpm test
+      - name: Run Tests
+        run: pnpm test
