@@ -3,6 +3,8 @@ title: Theming
 description: Mijn-UI uses Tawilind CSS variables for themeing.
 ---
 
+MijnUI uses [`tailwind-variants`](https://www.tailwind-variants.org/) under the hood for styling, a utility developed by the [NextUI](https://nextui.org/) team and component theme implementations also take inspiration from their work.
+
 ### Variables List
 
 - `main` colors for backgrounds, text, and borders across the UI.
@@ -122,24 +124,28 @@ description: Mijn-UI uses Tawilind CSS variables for themeing.
 
 ---
 
-
 ### Overriding Colors
 
-Mijn-UI defines color variables using a Tailwind plugin, but you can easily override them in your CSS. Use the [variables list](/docs/theming#variables-list) as a reference to redefine specific colors.
+To override the default themes, you can easily redefine them in your CSS file. Use the provided [list of variables](/react/docs/theme#variables-list) as a reference to modify specific colors.
 
 For example, to override the `--main` color:
 
 ```css
-@layer base {
   :root {
     --main: 0 0% 100%; /* white */
   }
-
+ 
   .dark {
     --main: 0 0% 7%; /* neutral-925 */
   }
-}
 ```
+
+<Alert 
+  color="danger"
+  title="Note:" 
+  description="Colors must be defined in HSL format without parentheses. Otherwise, you may encounter unexpected color results." 
+  className="mt-4" 
+/>
 
 ---
 
