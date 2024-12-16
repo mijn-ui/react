@@ -7,7 +7,7 @@ export function createMetadata(override: Metadata): Metadata {
       title: override.title ?? undefined,
       description: override.description ?? undefined,
       url: "https://mijn-ui.vercel.app",
-      images: "/banner.png",
+      images: "/react/banner.png",
       siteName: "MijnUI",
       ...override.openGraph,
     },
@@ -15,7 +15,7 @@ export function createMetadata(override: Metadata): Metadata {
       card: "summary_large_image",
       title: override.title ?? undefined,
       description: override.description ?? undefined,
-      images: "/banner.png",
+      images: "/react/banner.png",
       ...override.twitter,
     },
   }
