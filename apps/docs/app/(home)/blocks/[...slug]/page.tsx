@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import { blocks, source } from "@/app/source"
+import { blocks } from "@/app/source"
 import ComponentPreview from "@/mdx-components/component-preview"
 import Alert from "@/mdx-components/mdx-alert"
 import NavigationCard from "@/mdx-components/navigation-card"
@@ -61,7 +61,7 @@ export async function generateMetadata(props: {
   params: Promise<{ slug?: string[] }>
 }) {
   const params = await props.params
-  const page = source.getPage(params.slug)
+  const page = blocks.getPage(params.slug)
   if (!page) notFound()
 
   return metadataImage.withImage(page.slugs, {
