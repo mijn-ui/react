@@ -26,6 +26,8 @@
     "types:check": "tsc --noEmit"
   },
   "devDependencies": {
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "@next/eslint-plugin-next": "^15.0.3",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
@@ -33,14 +35,11 @@
     "tsconfig": "workspace:*",
     "tsup-config": "workspace:*"
   },
-  "dependencies": {
-    "react": "19.0.0",
-    "@mijn-ui/react-utilities": "workspace:*",
-    "react-dom": "19.0.0"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "react": "^19.0",
-    "react-dom": "^19.0"
+    "react-dom": "^19.0",
+    "@mijn-ui/react-utilities": ">=0.0.7"
   },
   "peerDependenciesMeta": {
     "tailwindcss": {

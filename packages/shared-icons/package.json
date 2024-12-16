@@ -24,12 +24,10 @@
     "build": "tsup"
   },
   "devDependencies": {
+    "react": "19.0.0",
     "tsconfig": "workspace:*",
     "tsup-config": "workspace:*",
     "@types/react": "^19.0.0"
-  },
-  "dependencies": {
-    "react": "19.0.0"
   },
   "peerDependencies": {
     "react": "^19.0"

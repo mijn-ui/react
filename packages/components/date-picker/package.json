@@ -27,6 +27,8 @@
     "types:check": "tsc --noEmit"
   },
   "devDependencies": {
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "@next/eslint-plugin-next": "^15.0.3",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
@@ -35,8 +37,6 @@
     "tsup-config": "workspace:*"
   },
   "dependencies": {
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
     "date-fns": "^4.1.0",
     "date-fns-tz": "^3.2.0",
     "react-day-picker": "^9.3.0",
@@ -44,13 +44,13 @@
     "@mijn-ui/react-popover": "workspace:*",
     "@mijn-ui/react-calendar": "workspace:*",
     "@mijn-ui/react-button": "workspace:*",
-    "@mijn-ui/react-theme": "workspace:*",
-    "@mijn-ui/react-utilities": "workspace:*",
     "@mijn-ui/shared-icons": "workspace:*"
   },
   "peerDependencies": {
     "react": "^19.0",
-    "react-dom": "^19.0"
+    "react-dom": "^19.0",
+    "@mijn-ui/react-theme": ">=0.0.6",
+    "@mijn-ui/react-utilities": ">=0.0.7"
   },
   "publishConfig": {
     "access": "public"

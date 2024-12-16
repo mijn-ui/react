@@ -35,17 +35,18 @@
     "types:check": "tsc --noEmit"
   },
   "devDependencies": {
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "@next/eslint-plugin-next": "^15.0.3",
-    "@types/react": "^19.0.0",
     "@types/node": "22.9.0",
+    "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "eslint-config-custom": "workspace:*",
+    "tailwind-variants": "^0.3.0",
     "tsconfig": "workspace:*",
     "tsup-config": "workspace:*"
   },
   "dependencies": {
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
     "clsx": "^2.1.1",
     "tailwind-merge": "^2.5.3"
   },
