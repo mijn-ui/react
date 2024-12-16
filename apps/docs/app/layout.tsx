@@ -5,6 +5,7 @@ import ThemeProvider from "./components/providers/theme-provider"
 import "./css/global.css"
 import { RootProvider } from "fumadocs-ui/provider"
 import { Metadata } from "next"
+import { baseUrl } from "@/lib/metadata"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
   },
   description:
     "An open-source library built with Radix Primitives and Tailwind CSS, offering customizable, unstyled components.",
+  metadataBase: baseUrl,
 }
 
 // I'm not sure why the tailwindcss typography plugin isn't working in development mode.
