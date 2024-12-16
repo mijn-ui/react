@@ -4,11 +4,21 @@ import { Inter } from "next/font/google"
 import ThemeProvider from "./components/providers/theme-provider"
 import "./css/global.css"
 import { RootProvider } from "fumadocs-ui/provider"
+import { Metadata } from "next"
 
 const inter = Inter({
   subsets: ["latin"],
   fallback: ["sans-serif"],
 })
+
+export const metadata: Metadata = {
+  title: {
+    template: "%s | MijnUI",
+    default: "MijnUI",
+  },
+  description:
+    "An open-source library built with Radix Primitives and Tailwind CSS, offering customizable, unstyled components.",
+}
 
 // I'm not sure why the tailwindcss typography plugin isn't working in development mode.
 // It might be due to my machine, but it works fine in production mode. As a temporary workaround,

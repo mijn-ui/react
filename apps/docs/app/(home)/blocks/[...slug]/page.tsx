@@ -1,11 +1,12 @@
 import { notFound } from "next/navigation"
-import { blocks } from "@/app/source"
+import { blocks, source } from "@/app/source"
 import ComponentPreview from "@/mdx-components/component-preview"
 import Alert from "@/mdx-components/mdx-alert"
 import NavigationCard from "@/mdx-components/navigation-card"
 import { Step, Steps } from "fumadocs-ui/components/steps"
 import { Tab, Tabs } from "fumadocs-ui/components/tabs"
 import defaultMdxComponents from "fumadocs-ui/mdx"
+import { metadataImage } from "@/lib/metadata-image"
 
 export default async function Blocks(props: {
   params: Promise<{ slug?: string[] }>
@@ -23,7 +24,7 @@ export default async function Blocks(props: {
         <h1 className="text-3xl font-bold md:text-4xl md:font-extrabold">
           {page.data.title}
         </h1>
-        <p className="text-lg text-fd-muted-foreground">
+        <p className="text-fd-muted-foreground text-lg">
           {page.data.description}
         </p>
       </div>
@@ -60,11 +61,11 @@ export async function generateMetadata(props: {
   params: Promise<{ slug?: string[] }>
 }) {
   const params = await props.params
-  const page = blocks.getPage(params.slug)
+  const page = source.getPage(params.slug)
   if (!page) notFound()
 
-  return {
+  return metadataImage.withImage(page.slugs, {
     title: page.data.title,
     description: page.data.description,
-  }
+  })
 }

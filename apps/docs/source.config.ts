@@ -35,4 +35,6 @@ export const blocks = defineCollections({
   }),
 })
 
-export default defineConfig()
+export default defineConfig({
+  lastModifiedTime: "git",
+})
