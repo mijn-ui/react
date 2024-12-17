@@ -5,16 +5,17 @@ import { source, blocks } from "@/app/source"
 export const revalidate = false
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const url = (path: string): string => new URL(path, baseUrl).toString()
+  const url = (path: string): string =>
+    new URL(`/react${path}`, baseUrl).toString()
 
   return [
     {
-      url: url("/react"),
+      url: url(""),
       changeFrequency: "monthly",
       priority: 1,
     },
     {
-      url: url("/react/blocks"),
+      url: url("/blocks"),
       changeFrequency: "weekly",
       priority: 0.8,
     },
