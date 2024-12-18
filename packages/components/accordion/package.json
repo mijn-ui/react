@@ -27,11 +27,8 @@
     "types:check": "tsc --noEmit"
   },
   "devDependencies": {
-    "@mijn-ui/react-theme": "workspace:*",
-    "@mijn-ui/react-hooks": "workspace:*",
-    "@mijn-ui/react-utilities": "workspace:*",
     "@next/eslint-plugin-next": "^15.0.3",
-    "@storybook/react": "^8.4.7",
+    "@mijn-ui/react-theme": "workspace:*",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "eslint-config-custom": "workspace:*",

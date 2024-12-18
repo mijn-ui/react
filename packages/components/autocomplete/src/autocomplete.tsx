@@ -53,7 +53,7 @@ const useAutocompleteStyles = (unstyledOverride?: boolean) => {
 /*                                Autocomplete                                */
 /* -------------------------------------------------------------------------- */
 
-type AutocompleteProps = React.ComponentPropsWithoutRef<
+export type AutocompleteProps = React.ComponentPropsWithoutRef<
   typeof CommandPrimitive
 > & {
   value: string
@@ -114,6 +114,7 @@ const Autocomplete = ({
   return (
     <AutocompleteProvider
       value={{
+        unstyled,
         styles,
 
         isOpen,

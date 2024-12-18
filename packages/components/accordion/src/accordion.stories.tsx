@@ -179,19 +179,19 @@ export const Variants: Story = {
     return (
       <div className="flex flex-col items-center gap-8">
         <div className="space-y-2">
-          <h3 className="text-muted-text w-full text-start font-bold">
+          <h3 className="text-muted-text w-full text-start font-semibold">
             Default
           </h3>
           <AccordionTemplate {...args} />
         </div>
         <div className="space-y-2">
-          <h3 className="text-muted-text w-full text-start font-bold">
+          <h3 className="text-muted-text w-full text-start font-semibold">
             Surface
           </h3>
           <AccordionTemplate {...args} variant="surface" />
         </div>
         <div className="space-y-2">
-          <h3 className="text-muted-text w-full text-start font-bold">
+          <h3 className="text-muted-text w-full text-start font-semibold">
             Outlined
           </h3>
           <AccordionTemplate {...args} variant="outlined" />

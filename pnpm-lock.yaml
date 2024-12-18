@@ -14,6 +14,9 @@ importers:
       '@eslint/js':
         specifier: ^9.14.0
         version: 9.15.0
+      '@storybook/react':
+        specifier: ^8.4.7
+        version: 8.4.7(@storybook/test@8.4.7(storybook@8.4.7(prettier@3.3.3)))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(storybook@8.4.7(prettier@3.3.3))(typescript@5.6.3)
       '@types/eslint__js':
         specifier: ^8.42.3
         version: 8.42.3
@@ -267,6 +270,12 @@ importers:
 
   packages/components/accordion:
     dependencies:
+      '@mijn-ui/react-hooks':
+        specifier: '>=0.0.8'
+        version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+      '@mijn-ui/react-utilities':
+        specifier: '>=0.0.7'
+        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
       '@mijn-ui/shared-icons':
         specifier: workspace:*
         version: link:../../shared-icons
@@ -274,21 +283,12 @@ importers:
         specifier: ^1.2.2
         version: 1.2.2(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
     devDependencies:
-      '@mijn-ui/react-hooks':
-        specifier: workspace:*
-        version: link:../../hooks
       '@mijn-ui/react-theme':
         specifier: workspace:*
         version: link:../../theme
-      '@mijn-ui/react-utilities':
-        specifier: workspace:*
-        version: link:../../utilities
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
-      '@storybook/react':
-        specifier: ^8.4.7
-        version: 8.4.7(@storybook/test@8.4.7(storybook@8.4.7(prettier@3.3.3)))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(storybook@8.4.7(prettier@3.3.3))(typescript@5.6.3)
       '@types/react':
         specifier: ^19.0.0
         version: 19.0.1
@@ -316,13 +316,16 @@ importers:
       '@mijn-ui/react-hooks':
         specifier: '>=0.0.8'
         version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
-      '@mijn-ui/react-theme':
-        specifier: '>=0.0.6'
-        version: 0.0.6(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: '>=0.0.7'
         version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
     devDependencies:
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../../theme
+      '@mijn-ui/shared-icons':
+        specifier: workspace:*
+        version: link:../../shared-icons
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
@@ -353,9 +356,6 @@ importers:
       '@mijn-ui/react-hooks':
         specifier: '>=0.0.8'
         version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
-      '@mijn-ui/react-theme':
-        specifier: '>=0.0.6'
-        version: 0.0.6(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: '>=0.0.7'
         version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
@@ -363,6 +363,9 @@ importers:
         specifier: ^1.1.3
         version: 1.1.3(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
     devDependencies:
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../../theme
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
@@ -402,9 +405,6 @@ importers:
       '@mijn-ui/react-skeleton':
         specifier: workspace:*
         version: link:../skeleton
-      '@mijn-ui/react-theme':
-        specifier: '>=0.0.6'
-        version: 0.0.6(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: '>=0.0.7'
         version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
@@ -418,6 +418,21 @@ importers:
         specifier: ^1.0.4
         version: 1.0.4(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
     devDependencies:
+      '@mijn-ui/react-button':
+        specifier: workspace:*
+        version: link:../button
+      '@mijn-ui/react-dialog':
+        specifier: workspace:*
+        version: link:../dialog
+      '@mijn-ui/react-input':
+        specifier: workspace:*
+        version: link:../input
+      '@mijn-ui/react-scroll-area':
+        specifier: workspace:*
+        version: link:../scroll-area
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../../theme
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
@@ -448,9 +463,6 @@ importers:
       '@mijn-ui/react-hooks':
         specifier: '>=0.0.8'
         version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
-      '@mijn-ui/react-theme':
-        specifier: '>=0.0.6'
-        version: 0.0.6(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: '>=0.0.7'
         version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
@@ -458,6 +470,9 @@ importers:
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
     devDependencies:
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../../theme
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
@@ -519,9 +534,6 @@ importers:
 
   packages/components/button:
     dependencies:
-      '@mijn-ui/react-theme':
-        specifier: '>=0.0.6'
-        version: 0.0.6(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: '>=0.0.7'
         version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
@@ -532,6 +544,9 @@ importers:
         specifier: ^1.1.1
         version: 1.1.1(@types/react@19.0.1)(react@19.0.0)
     devDependencies:
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../../theme
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
@@ -559,9 +574,6 @@ importers:
 
   packages/components/calendar:
     dependencies:
-      '@mijn-ui/react-theme':
-        specifier: '>=0.0.6'
-        version: 0.0.6(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: '>=0.0.7'
         version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
@@ -572,6 +584,9 @@ importers:
         specifier: ^9.3.0
         version: 9.3.2(react@19.0.0)
     devDependencies:
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../../theme
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
@@ -639,9 +654,6 @@ importers:
       '@mijn-ui/react-hooks':
         specifier: '>=0.0.8'
         version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
-      '@mijn-ui/react-theme':
-        specifier: '>=0.0.6'
-        version: 0.0.6(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: '>=0.0.7'
         version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
@@ -652,6 +664,9 @@ importers:
         specifier: ^1.1.3
         version: 1.1.3(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
     devDependencies:
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../../theme
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
@@ -683,6 +698,9 @@ importers:
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
     devDependencies:
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../../theme
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
@@ -716,9 +734,6 @@ importers:
       '@mijn-ui/react-hooks':
         specifier: '>=0.0.8'
         version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
-      '@mijn-ui/react-theme':
-        specifier: '>=0.0.6'
-        version: 0.0.6(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: '>=0.0.7'
         version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
@@ -732,6 +747,9 @@ importers:
         specifier: ^1.0.4
         version: 1.0.4(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
     devDependencies:
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../../theme
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
@@ -771,9 +789,6 @@ importers:
       '@mijn-ui/react-select':
         specifier: workspace:*
         version: link:../select
-      '@mijn-ui/react-theme':
-        specifier: '>=0.0.6'
-        version: 0.0.6(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: '>=0.0.7'
         version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
@@ -790,6 +805,9 @@ importers:
         specifier: ^9.3.0
         version: 9.3.2(react@19.0.0)
     devDependencies:
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../../theme
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
@@ -823,9 +841,6 @@ importers:
       '@mijn-ui/react-hooks':
         specifier: '>=0.0.8'
         version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
-      '@mijn-ui/react-theme':
-        specifier: '>=0.0.6'
-        version: 0.0.6(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: '>=0.0.7'
         version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
@@ -833,6 +848,9 @@ importers:
         specifier: ^1.1.3
         version: 1.1.3(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
     devDependencies:
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../../theme
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
@@ -863,9 +881,6 @@ importers:
       '@mijn-ui/react-hooks':
         specifier: '>=0.0.8'
         version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
-      '@mijn-ui/react-theme':
-        specifier: '>=0.0.6'
-        version: 0.0.6(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: '>=0.0.7'
         version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
@@ -876,6 +891,9 @@ importers:
         specifier: ^2.1.3
         version: 2.1.3(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
     devDependencies:
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../../theme
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
@@ -906,13 +924,13 @@ importers:
       '@mijn-ui/react-label':
         specifier: workspace:*
         version: link:../label
-      '@mijn-ui/react-theme':
-        specifier: '>=0.0.6'
-        version: 0.0.6(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: workspace:*
         version: link:../../utilities
     devDependencies:
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../../theme
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
@@ -940,9 +958,6 @@ importers:
 
   packages/components/label:
     dependencies:
-      '@mijn-ui/react-theme':
-        specifier: '>=0.0.6'
-        version: 0.0.6(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: '>=0.0.7'
         version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
@@ -950,6 +965,9 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
     devDependencies:
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../../theme
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
@@ -1020,9 +1038,6 @@ importers:
       '@mijn-ui/react-hooks':
         specifier: '>=0.0.8'
         version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
-      '@mijn-ui/react-theme':
-        specifier: '>=0.0.6'
-        version: 0.0.6(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: '>=0.0.7'
         version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
@@ -1030,6 +1045,9 @@ importers:
         specifier: ^1.1.3
         version: 1.1.3(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
     devDependencies:
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../../theme
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
@@ -1057,9 +1075,6 @@ importers:
 
   packages/components/progress:
     dependencies:
-      '@mijn-ui/react-theme':
-        specifier: '>=0.0.6'
-        version: 0.0.6(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: '>=0.0.7'
         version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
@@ -1067,6 +1082,9 @@ importers:
         specifier: ^1.1.1
         version: 1.1.1(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
     devDependencies:
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../../theme
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
@@ -1097,9 +1115,6 @@ importers:
       '@mijn-ui/react-hooks':
         specifier: '>=0.0.8'
         version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
-      '@mijn-ui/react-theme':
-        specifier: '>=0.0.6'
-        version: 0.0.6(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: '>=0.0.7'
         version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
@@ -1110,6 +1125,9 @@ importers:
         specifier: ^1.2.2
         version: 1.2.2(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
     devDependencies:
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../../theme
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
@@ -1140,9 +1158,6 @@ importers:
       '@mijn-ui/react-hooks':
         specifier: '>=0.0.8'
         version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
-      '@mijn-ui/react-theme':
-        specifier: '>=0.0.6'
-        version: 0.0.6(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: '>=0.0.7'
         version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
@@ -1150,6 +1165,9 @@ importers:
         specifier: ^1.2.2
         version: 1.2.2(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
     devDependencies:
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../../theme
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
@@ -1180,9 +1198,6 @@ importers:
       '@mijn-ui/react-hooks':
         specifier: '>=0.0.8'
         version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
-      '@mijn-ui/react-theme':
-        specifier: '>=0.0.6'
-        version: 0.0.6(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: '>=0.0.7'
         version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
@@ -1193,6 +1208,9 @@ importers:
         specifier: ^2.1.3
         version: 2.1.3(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
     devDependencies:
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../../theme
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
@@ -1220,9 +1238,6 @@ importers:
 
   packages/components/separator:
     dependencies:
-      '@mijn-ui/react-theme':
-        specifier: '>=0.0.6'
-        version: 0.0.6(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: '>=0.0.7'
         version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
@@ -1230,6 +1245,9 @@ importers:
         specifier: ^1.1.1
         version: 1.1.1(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
     devDependencies:
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../../theme
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
@@ -1291,9 +1309,6 @@ importers:
 
   packages/components/switch:
     dependencies:
-      '@mijn-ui/react-theme':
-        specifier: '>=0.0.6'
-        version: 0.0.6(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: '>=0.0.7'
         version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
@@ -1301,6 +1316,9 @@ importers:
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
     devDependencies:
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../../theme
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
@@ -1368,9 +1386,6 @@ importers:
       '@mijn-ui/react-hooks':
         specifier: '>=0.0.8'
         version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
-      '@mijn-ui/react-theme':
-        specifier: '>=0.0.6'
-        version: 0.0.6(tailwindcss@3.4.15)
       '@mijn-ui/react-utilities':
         specifier: '>=0.0.7'
         version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
@@ -1378,6 +1393,9 @@ importers:
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
     devDependencies:
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../../theme
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
@@ -1488,8 +1506,8 @@ importers:
   packages/storybook:
     dependencies:
       '@mijn-ui/react-theme':
-        specifier: ^0.0.6
-        version: 0.0.6(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../theme
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -2373,11 +2391,6 @@ packages:
     peerDependenciesMeta:
       tailwindcss:
         optional: true
-
-  '@mijn-ui/react-theme@0.0.6':
-    resolution: {integrity: sha512-Y8ztUZFcoBc6EC/x2ocX9RVEBDvwKFXIMnkIGBDexbHTH8HXRb0oEpXqNb084QtuXcRoI2+BJ2VAkjsYnM5DHw==}
-    peerDependencies:
-      tailwindcss: '>=3.4.0'
 
   '@mijn-ui/react-utilities@0.0.7':
     resolution: {integrity: sha512-OqU8e0H2lTE7KzqIYR2y7t2h6LrVgf47Mqw4mAVLXogwc7lHZcGg40SsVK4GezINjKHNcGby+voaG/AGGsgvYQ==}
@@ -7149,11 +7162,6 @@ snapshots:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
     optionalDependencies:
-      tailwindcss: 3.4.15
-
-  '@mijn-ui/react-theme@0.0.6(tailwindcss@3.4.15)':
-    dependencies:
-      tailwind-variants: 0.3.0(tailwindcss@3.4.15)
       tailwindcss: 3.4.15
 
   '@mijn-ui/react-utilities@0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)':
