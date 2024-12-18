@@ -8,7 +8,7 @@ import { IoRocketOutline } from "react-icons/io5"
 import { LuCheckCircle, LuFileWarning } from "react-icons/lu"
 import { MdErrorOutline } from "react-icons/md"
 
-const AlertStatus = () => {
+const AlertColors = () => {
   return (
     <div className="flex flex-col gap-4">
       {/* --------------------------------- Success -------------------------------- */}
@@ -69,4 +69,4 @@ const AlertStatus = () => {
   )
 }
 
-export default AlertStatus
+export default AlertColors
