@@ -28,7 +28,6 @@
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
     "tailwindcss": "^3.4.15",
-    "tailwindcss-animate": "^1.0.7",
     "tsconfig": "workspace:*",
     "tsup-config": "workspace:*"
   },
@@ -45,6 +44,7 @@
     "theme"
   ],
   "dependencies": {
-    "tailwind-variants": "^0.3.0"
+    "tailwind-variants": "^0.3.0",
+    "tailwindcss-animate": "^1.0.7"
   }
 }

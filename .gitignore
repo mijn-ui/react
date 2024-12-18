@@ -35,12 +35,3 @@ yarn-error.log*
 # Misc
 .DS_Store
 *.pem
-
-# generated content
-.contentlayer
-.content-collections
-.source
-
-# others
-next-env.d.ts
-*storybook.log

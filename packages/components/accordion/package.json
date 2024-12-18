@@ -27,12 +27,16 @@
     "types:check": "tsc --noEmit"
   },
   "devDependencies": {
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
+    "@mijn-ui/react-theme": "workspace:*",
+    "@mijn-ui/react-hooks": "workspace:*",
+    "@mijn-ui/react-utilities": "workspace:*",
+    "@next/eslint-plugin-next": "^15.0.3",
+    "@storybook/react": "^8.4.7",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "@next/eslint-plugin-next": "^15.0.3",
     "eslint-config-custom": "workspace:*",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "tsconfig": "workspace:*",
     "tsup-config": "workspace:*"
   },
@@ -41,11 +45,11 @@
     "@radix-ui/react-accordion": "^1.2.2"
   },
   "peerDependencies": {
-    "react": "^19.0",
-    "react-dom": "^19.0",
-    "@mijn-ui/react-theme": ">=0.0.6",
     "@mijn-ui/react-hooks": ">=0.0.8",
-    "@mijn-ui/react-utilities": ">=0.0.7"
+    "@mijn-ui/react-theme": ">=0.0.6",
+    "@mijn-ui/react-utilities": ">=0.0.7",
+    "react": "^19.0",
+    "react-dom": "^19.0"
   },
   "publishConfig": {
     "access": "public"

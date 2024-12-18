@@ -1,5 +1,5 @@
 {
-  "name": "docs",
+  "name": "@mijn-ui/docs",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -8,6 +8,7 @@
     "start": "next start",
     "postinstall": "echo 'Running fumadocs-mdx...' && fumadocs-mdx || echo 'fumadocs-mdx failed'",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "types:check": "tsc --noEmit",
     "clean": "rimraf .next"
   },
