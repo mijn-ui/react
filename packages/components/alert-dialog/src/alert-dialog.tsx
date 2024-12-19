@@ -1,8 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { createContext } from "@mijn-ui/react-utilities/context"
-import { UnstyledProps } from "@mijn-ui/react-utilities/shared"
+import { createContext } from "@mijn-ui/react-utilities"
+import { UnstyledProps } from "@mijn-ui/react-core"
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
 import {
   alertDialogStyles,

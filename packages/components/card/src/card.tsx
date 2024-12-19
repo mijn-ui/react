@@ -1,8 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { createContext } from "@mijn-ui/react-utilities/context"
-import { cn, UnstyledProps } from "@mijn-ui/react-utilities/shared"
+import { createContext, cn } from "@mijn-ui/react-utilities"
+import { UnstyledProps } from "@mijn-ui/react-core"
 import { cardStyles } from "@mijn-ui/react-theme"
 import { useTVUnstyled } from "@mijn-ui/react-hooks"
 

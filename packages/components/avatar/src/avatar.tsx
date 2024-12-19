@@ -1,12 +1,12 @@
 "use client"
 
 import * as React from "react"
-import { createContext } from "@mijn-ui/react-utilities/context"
+import { createContext } from "@mijn-ui/react-utilities"
 import {
   UnstyledProps,
   applyUnstyled,
   createTVUnstyledSlots,
-} from "@mijn-ui/react-utilities/shared"
+} from "@mijn-ui/react-core"
 import * as AvatarPrimitive from "@radix-ui/react-avatar"
 import {
   avatarGroupStyles,

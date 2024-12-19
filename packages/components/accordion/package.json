@@ -39,12 +39,13 @@
   },
   "dependencies": {
     "@mijn-ui/shared-icons": "workspace:*",
-    "@radix-ui/react-accordion": "^1.2.2"
+    "@radix-ui/react-accordion": "^1.2.2",
+    "@mijn-ui/react-utilities": "workspace:*",
+    "@mijn-ui/react-hooks": "workspace:*"
   },
   "peerDependencies": {
-    "@mijn-ui/react-hooks": ">=0.0.8",
     "@mijn-ui/react-theme": ">=0.0.6",
-    "@mijn-ui/react-utilities": ">=0.0.7",
+    "@mijn-ui/react-core": "workspace:*",
     "react": "^19.0",
     "react-dom": "^19.0"
   },

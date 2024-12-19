@@ -38,13 +38,14 @@
     "tsup-config": "workspace:*"
   },
   "dependencies": {
-    "@radix-ui/react-progress": "^1.1.1"
+    "@radix-ui/react-progress": "^1.1.1",
+    "@mijn-ui/react-utilities": "workspace:*"
   },
   "peerDependencies": {
+    "@mijn-ui/react-core": "workspace:*",
     "react": "^19.0",
     "react-dom": "^19.0",
-    "@mijn-ui/react-theme": ">=0.0.6",
-    "@mijn-ui/react-utilities": ">=0.0.7"
+    "@mijn-ui/react-theme": ">=0.0.6"
   },
   "publishConfig": {
     "access": "public"

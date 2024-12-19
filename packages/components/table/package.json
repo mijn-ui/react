@@ -27,6 +27,7 @@
     "types:check": "tsc --noEmit"
   },
   "devDependencies": {
+    "@mijn-ui/react-utilities": "workspace:*",
     "@mijn-ui/react-theme": "workspace:*",
     "react": "19.0.0",
     "react-dom": "19.0.0",
@@ -38,14 +39,13 @@
     "tsup-config": "workspace:*"
   },
   "dependencies": {
-    "@mijn-ui/react-theme": "workspace:*"
+    "@mijn-ui/react-hooks": "workspace:*"
   },
   "peerDependencies": {
+    "@mijn-ui/react-core": "workspace:*",
     "react": "^19.0",
     "react-dom": "^19.0",
-    "@mijn-ui/react-theme": ">=0.0.6",
-    "@mijn-ui/react-utilities": ">=0.0.7",
-    "@mijn-ui/react-hooks": ">=0.0.8"
+    "@mijn-ui/react-theme": ">=0.0.6"
   },
   "publishConfig": {
     "access": "public"

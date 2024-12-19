@@ -3,8 +3,8 @@
 import * as React from "react"
 import * as TabsPrimitive from "@radix-ui/react-tabs"
 
-import { UnstyledProps } from "@mijn-ui/react-utilities/shared"
-import { createContext } from "@mijn-ui/react-utilities/context"
+import { UnstyledProps } from "@mijn-ui/react-core"
+import { createContext } from "@mijn-ui/react-utilities"
 import { tabsStyles } from "@mijn-ui/react-theme"
 import { useTVUnstyled } from "@mijn-ui/react-hooks"
 

@@ -1,10 +1,7 @@
 "use client"
 
 import * as React from "react"
-import {
-  createTVUnstyledSlots,
-  UnstyledProps,
-} from "@mijn-ui/react-utilities/shared"
+import { createTVUnstyledSlots, UnstyledProps } from "@mijn-ui/react-core"
 import * as ProgressPrimitive from "@radix-ui/react-progress"
 import { progressStyles } from "@mijn-ui/react-theme"
 

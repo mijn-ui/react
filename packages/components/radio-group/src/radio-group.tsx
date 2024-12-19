@@ -1,11 +1,11 @@
 "use client"
 
 import * as React from "react"
-import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
+import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-core"
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group"
 import { CircleIcon } from "@mijn-ui/shared-icons"
 import { radioGroupStyles } from "@mijn-ui/react-theme"
-import { createContext } from "@mijn-ui/react-utilities/context"
+import { createContext } from "@mijn-ui/react-utilities"
 import { useTVUnstyled } from "@mijn-ui/react-hooks"
 
 /* -------------------------------------------------------------------------- */

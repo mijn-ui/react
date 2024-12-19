@@ -2,8 +2,8 @@
 
 import * as React from "react"
 import { Dialog, DialogContent } from "@mijn-ui/react-dialog"
-import { createContext } from "@mijn-ui/react-utilities/context"
-import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
+import { createContext } from "@mijn-ui/react-utilities"
+import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-core"
 import { type DialogProps } from "@radix-ui/react-dialog"
 import { Command as CommandPrimitive } from "cmdk"
 import { SearchIcon } from "@mijn-ui/shared-icons"

@@ -1,8 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { createContext } from "@mijn-ui/react-utilities/context"
-import { UnstyledProps } from "@mijn-ui/react-utilities/shared"
+import { createContext } from "@mijn-ui/react-utilities"
+import { UnstyledProps } from "@mijn-ui/react-core"
 import * as DialogPrimitive from "@radix-ui/react-dialog"
 import { dialogStyles, DialogVariantProps } from "@mijn-ui/react-theme"
 import { useTVUnstyled } from "@mijn-ui/react-hooks"

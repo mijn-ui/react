@@ -2,12 +2,8 @@
 
 import * as React from "react"
 import { Popover, PopoverAnchor, PopoverContent } from "@mijn-ui/react-popover"
-import { createContext } from "@mijn-ui/react-utilities/context"
-import {
-  UnstyledProps,
-  applyUnstyled,
-  mergeRefs,
-} from "@mijn-ui/react-utilities/shared"
+import { createContext, mergeRefs } from "@mijn-ui/react-utilities"
+import { UnstyledProps, applyUnstyled } from "@mijn-ui/react-core"
 import { Command as CommandPrimitive } from "cmdk"
 import { CheckIcon } from "@mijn-ui/shared-icons"
 import { autocompleteStyles } from "@mijn-ui/react-theme"

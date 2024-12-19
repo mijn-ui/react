@@ -1,4 +1,4 @@
-import { createTVUnstyledSlots } from "@mijn-ui/react-utilities/shared"
+import { createTVUnstyledSlots } from "@mijn-ui/react-core"
 
 /**
  * A utility hook for managing styled and unstyled variants with the `tailwind-variants` package.

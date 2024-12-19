@@ -1,8 +1,5 @@
 import { skeletonStyles } from "@mijn-ui/react-theme"
-import {
-  createTVUnstyledSlots,
-  UnstyledProps,
-} from "@mijn-ui/react-utilities/shared"
+import { createTVUnstyledSlots, UnstyledProps } from "@mijn-ui/react-core"
 
 type SkeletonProps = React.ComponentPropsWithRef<"div"> & UnstyledProps
 

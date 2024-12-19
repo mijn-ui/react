@@ -37,11 +37,10 @@
     "tsconfig": "workspace:*",
     "tsup-config": "workspace:*"
   },
-  "dependencies": {},
   "peerDependencies": {
-    "@mijn-ui/react-utilities": ">=0.0.7",
     "react": "^19.0",
-    "react-dom": "^19.0"
+    "react-dom": "^19.0",
+    "@mijn-ui/react-core": "workspace:*"
   },
   "peerDependenciesMeta": {
     "tailwindcss": {

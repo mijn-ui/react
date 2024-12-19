@@ -276,12 +276,15 @@ importers:
 
   packages/components/accordion:
     dependencies:
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
       '@mijn-ui/react-hooks':
-        specifier: '>=0.0.8'
-        version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../hooks
       '@mijn-ui/react-utilities':
-        specifier: '>=0.0.7'
-        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../utilities/react-utilities
       '@mijn-ui/shared-icons':
         specifier: workspace:*
         version: link:../../utilities/shared-icons
@@ -319,12 +322,15 @@ importers:
 
   packages/components/alert:
     dependencies:
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
       '@mijn-ui/react-hooks':
-        specifier: '>=0.0.8'
-        version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../hooks
       '@mijn-ui/react-utilities':
-        specifier: '>=0.0.7'
-        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../utilities/react-utilities
     devDependencies:
       '@mijn-ui/react-theme':
         specifier: workspace:*
@@ -359,12 +365,15 @@ importers:
 
   packages/components/alert-dialog:
     dependencies:
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
       '@mijn-ui/react-hooks':
-        specifier: '>=0.0.8'
-        version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../hooks
       '@mijn-ui/react-utilities':
-        specifier: '>=0.0.7'
-        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../utilities/react-utilities
       '@radix-ui/react-alert-dialog':
         specifier: ^1.1.3
         version: 1.1.3(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -402,9 +411,12 @@ importers:
       '@mijn-ui/react-command':
         specifier: workspace:*
         version: link:../command
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
       '@mijn-ui/react-hooks':
-        specifier: '>=0.0.8'
-        version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../hooks
       '@mijn-ui/react-popover':
         specifier: workspace:*
         version: link:../popover
@@ -412,8 +424,8 @@ importers:
         specifier: workspace:*
         version: link:../skeleton
       '@mijn-ui/react-utilities':
-        specifier: '>=0.0.7'
-        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../utilities/react-utilities
       '@mijn-ui/shared-icons':
         specifier: workspace:*
         version: link:../../utilities/shared-icons
@@ -466,12 +478,15 @@ importers:
 
   packages/components/avatar:
     dependencies:
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
       '@mijn-ui/react-hooks':
-        specifier: '>=0.0.8'
-        version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../hooks
       '@mijn-ui/react-utilities':
-        specifier: '>=0.0.7'
-        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../utilities/react-utilities
       '@radix-ui/react-avatar':
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -506,13 +521,16 @@ importers:
 
   packages/components/badge:
     dependencies:
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
+      '@mijn-ui/react-utilities':
+        specifier: workspace:*
+        version: link:../../utilities/react-utilities
+    devDependencies:
       '@mijn-ui/react-theme':
         specifier: workspace:*
         version: link:../../theme
-      '@mijn-ui/react-utilities':
-        specifier: '>=0.0.7'
-        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
-    devDependencies:
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
@@ -540,9 +558,12 @@ importers:
 
   packages/components/button:
     dependencies:
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
       '@mijn-ui/react-utilities':
-        specifier: '>=0.0.7'
-        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../utilities/react-utilities
       '@mijn-ui/shared-icons':
         specifier: workspace:*
         version: link:../../utilities/shared-icons
@@ -580,9 +601,12 @@ importers:
 
   packages/components/calendar:
     dependencies:
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
       '@mijn-ui/react-utilities':
-        specifier: '>=0.0.7'
-        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../utilities/react-utilities
       '@mijn-ui/shared-icons':
         specifier: workspace:*
         version: link:../../utilities/shared-icons
@@ -620,16 +644,19 @@ importers:
 
   packages/components/card:
     dependencies:
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
       '@mijn-ui/react-hooks':
-        specifier: '>=0.0.8'
-        version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../hooks
+      '@mijn-ui/react-utilities':
+        specifier: workspace:*
+        version: link:../../utilities/react-utilities
+    devDependencies:
       '@mijn-ui/react-theme':
         specifier: workspace:*
         version: link:../../theme
-      '@mijn-ui/react-utilities':
-        specifier: '>=0.0.7'
-        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
-    devDependencies:
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
@@ -657,12 +684,15 @@ importers:
 
   packages/components/checkbox:
     dependencies:
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
       '@mijn-ui/react-hooks':
-        specifier: '>=0.0.8'
-        version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../hooks
       '@mijn-ui/react-utilities':
-        specifier: '>=0.0.7'
-        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../utilities/react-utilities
       '@mijn-ui/shared-icons':
         specifier: workspace:*
         version: link:../../utilities/shared-icons
@@ -700,6 +730,9 @@ importers:
 
   packages/components/collapsible:
     dependencies:
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
       '@radix-ui/react-collapsible':
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -734,15 +767,18 @@ importers:
 
   packages/components/command:
     dependencies:
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
       '@mijn-ui/react-dialog':
         specifier: workspace:*
         version: link:../dialog
       '@mijn-ui/react-hooks':
-        specifier: '>=0.0.8'
-        version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../hooks
       '@mijn-ui/react-utilities':
-        specifier: '>=0.0.7'
-        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../utilities/react-utilities
       '@mijn-ui/shared-icons':
         specifier: workspace:*
         version: link:../../utilities/shared-icons
@@ -789,6 +825,9 @@ importers:
       '@mijn-ui/react-calendar':
         specifier: workspace:*
         version: link:../calendar
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
       '@mijn-ui/react-popover':
         specifier: workspace:*
         version: link:../popover
@@ -796,8 +835,8 @@ importers:
         specifier: workspace:*
         version: link:../select
       '@mijn-ui/react-utilities':
-        specifier: '>=0.0.7'
-        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../utilities/react-utilities
       '@mijn-ui/shared-icons':
         specifier: workspace:*
         version: link:../../utilities/shared-icons
@@ -844,12 +883,15 @@ importers:
       '@mijn-ui/react-button':
         specifier: workspace:*
         version: link:../button
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
       '@mijn-ui/react-hooks':
-        specifier: '>=0.0.8'
-        version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../hooks
       '@mijn-ui/react-utilities':
-        specifier: '>=0.0.7'
-        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../utilities/react-utilities
       '@radix-ui/react-dialog':
         specifier: ^1.1.3
         version: 1.1.3(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -884,12 +926,15 @@ importers:
 
   packages/components/dropdown-menu:
     dependencies:
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
       '@mijn-ui/react-hooks':
-        specifier: '>=0.0.8'
-        version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../hooks
       '@mijn-ui/react-utilities':
-        specifier: '>=0.0.7'
-        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../utilities/react-utilities
       '@mijn-ui/shared-icons':
         specifier: workspace:*
         version: link:../../utilities/shared-icons
@@ -927,6 +972,9 @@ importers:
 
   packages/components/input:
     dependencies:
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
       '@mijn-ui/react-label':
         specifier: workspace:*
         version: link:../label
@@ -964,9 +1012,12 @@ importers:
 
   packages/components/label:
     dependencies:
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
       '@mijn-ui/react-utilities':
-        specifier: '>=0.0.7'
-        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../utilities/react-utilities
       '@radix-ui/react-label':
         specifier: ^2.1.1
         version: 2.1.1(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -1001,19 +1052,22 @@ importers:
 
   packages/components/pagination:
     dependencies:
-      '@mijn-ui/react-hooks':
-        specifier: '>=0.0.8'
-        version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
-      '@mijn-ui/react-theme':
+      '@mijn-ui/react-core':
         specifier: workspace:*
-        version: link:../../theme
+        version: link:../../core
+      '@mijn-ui/react-hooks':
+        specifier: workspace:*
+        version: link:../../hooks
       '@mijn-ui/react-utilities':
-        specifier: '>=0.0.7'
-        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../utilities/react-utilities
       '@mijn-ui/shared-icons':
         specifier: workspace:*
         version: link:../../utilities/shared-icons
     devDependencies:
+      '@mijn-ui/react-theme':
+        specifier: workspace:*
+        version: link:../../theme
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
@@ -1041,12 +1095,15 @@ importers:
 
   packages/components/popover:
     dependencies:
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
       '@mijn-ui/react-hooks':
-        specifier: '>=0.0.8'
-        version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../hooks
       '@mijn-ui/react-utilities':
-        specifier: '>=0.0.7'
-        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../utilities/react-utilities
       '@radix-ui/react-popover':
         specifier: ^1.1.3
         version: 1.1.3(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -1081,9 +1138,12 @@ importers:
 
   packages/components/progress:
     dependencies:
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
       '@mijn-ui/react-utilities':
-        specifier: '>=0.0.7'
-        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../utilities/react-utilities
       '@radix-ui/react-progress':
         specifier: ^1.1.1
         version: 1.1.1(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -1118,12 +1178,15 @@ importers:
 
   packages/components/radio-group:
     dependencies:
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
       '@mijn-ui/react-hooks':
-        specifier: '>=0.0.8'
-        version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../hooks
       '@mijn-ui/react-utilities':
-        specifier: '>=0.0.7'
-        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../utilities/react-utilities
       '@mijn-ui/shared-icons':
         specifier: workspace:*
         version: link:../../utilities/shared-icons
@@ -1161,12 +1224,15 @@ importers:
 
   packages/components/scroll-area:
     dependencies:
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
       '@mijn-ui/react-hooks':
-        specifier: '>=0.0.8'
-        version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../hooks
       '@mijn-ui/react-utilities':
-        specifier: '>=0.0.7'
-        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../utilities/react-utilities
       '@radix-ui/react-scroll-area':
         specifier: ^1.2.2
         version: 1.2.2(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -1201,12 +1267,15 @@ importers:
 
   packages/components/select:
     dependencies:
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
       '@mijn-ui/react-hooks':
-        specifier: '>=0.0.8'
-        version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../hooks
       '@mijn-ui/react-utilities':
-        specifier: '>=0.0.7'
-        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../utilities/react-utilities
       '@mijn-ui/shared-icons':
         specifier: workspace:*
         version: link:../../utilities/shared-icons
@@ -1244,9 +1313,12 @@ importers:
 
   packages/components/separator:
     dependencies:
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
       '@mijn-ui/react-utilities':
-        specifier: '>=0.0.7'
-        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../utilities/react-utilities
       '@radix-ui/react-separator':
         specifier: ^1.1.1
         version: 1.1.1(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -1281,13 +1353,16 @@ importers:
 
   packages/components/skeleton:
     dependencies:
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
+      '@mijn-ui/react-utilities':
+        specifier: workspace:*
+        version: link:../../utilities/react-utilities
+    devDependencies:
       '@mijn-ui/react-theme':
         specifier: workspace:*
         version: link:../../theme
-      '@mijn-ui/react-utilities':
-        specifier: '>=0.0.7'
-        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
-    devDependencies:
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
@@ -1315,9 +1390,12 @@ importers:
 
   packages/components/switch:
     dependencies:
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
       '@mijn-ui/react-utilities':
-        specifier: '>=0.0.7'
-        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../utilities/react-utilities
       '@radix-ui/react-switch':
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -1352,16 +1430,19 @@ importers:
 
   packages/components/table:
     dependencies:
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
       '@mijn-ui/react-hooks':
-        specifier: '>=0.0.8'
-        version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../hooks
+    devDependencies:
       '@mijn-ui/react-theme':
         specifier: workspace:*
         version: link:../../theme
       '@mijn-ui/react-utilities':
-        specifier: '>=0.0.7'
-        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
-    devDependencies:
+        specifier: workspace:*
+        version: link:../../utilities/react-utilities
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
@@ -1389,12 +1470,15 @@ importers:
 
   packages/components/tabs:
     dependencies:
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
       '@mijn-ui/react-hooks':
-        specifier: '>=0.0.8'
-        version: 0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../hooks
       '@mijn-ui/react-utilities':
-        specifier: '>=0.0.7'
-        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+        specifier: workspace:*
+        version: link:../../utilities/react-utilities
       '@radix-ui/react-tabs':
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -1429,13 +1513,16 @@ importers:
 
   packages/components/textarea:
     dependencies:
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../../core
+      '@mijn-ui/react-utilities':
+        specifier: workspace:*
+        version: link:../../utilities/react-utilities
+    devDependencies:
       '@mijn-ui/react-theme':
         specifier: workspace:*
         version: link:../../theme
-      '@mijn-ui/react-utilities':
-        specifier: '>=0.0.7'
-        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
-    devDependencies:
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
         version: 15.0.3
@@ -1497,9 +1584,9 @@ importers:
 
   packages/hooks:
     dependencies:
-      '@mijn-ui/react-utilities':
-        specifier: '>=0.0.7'
-        version: 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
+      '@mijn-ui/react-core':
+        specifier: workspace:*
+        version: link:../core
     devDependencies:
       '@next/eslint-plugin-next':
         specifier: ^15.0.3
@@ -2409,26 +2496,6 @@ packages:
     peerDependencies:
       '@types/react': '>=16'
       react: '>=16'
-
-  '@mijn-ui/react-hooks@0.0.8':
-    resolution: {integrity: sha512-pEb/J/tUDtl0lTVe281oLEvAwd8vIbiQWKE4azApUTARBajkZ4oBnS71C6CdrbVWaXRTvdiPuymRJYUzh3L8Fw==}
-    peerDependencies:
-      react: ^19.0
-      react-dom: ^19.0
-      tailwindcss: '*'
-    peerDependenciesMeta:
-      tailwindcss:
-        optional: true
-
-  '@mijn-ui/react-utilities@0.0.7':
-    resolution: {integrity: sha512-OqU8e0H2lTE7KzqIYR2y7t2h6LrVgf47Mqw4mAVLXogwc7lHZcGg40SsVK4GezINjKHNcGby+voaG/AGGsgvYQ==}
-    peerDependencies:
-      react: ^19.0
-      react-dom: ^19.0
-      tailwindcss: '*'
-    peerDependenciesMeta:
-      tailwindcss:
-        optional: true
 
   '@next/bundle-analyzer@15.0.3':
     resolution: {integrity: sha512-x7ZNvpoQPO0C5ZG//qVp21Qs3v6+C8LBJmdu9DKj4/NmjlnwoQ7dqRZ/nKZcwVhkFT7BHf+Qd5FaeHq9IDJvDQ==}
@@ -7315,23 +7382,6 @@ snapshots:
       '@types/mdx': 2.0.13
       '@types/react': 18.3.17
       react: 18.3.1
-
-  '@mijn-ui/react-hooks@0.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)':
-    dependencies:
-      '@mijn-ui/react-utilities': 0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-    optionalDependencies:
-      tailwindcss: 3.4.15
-
-  '@mijn-ui/react-utilities@0.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.15)':
-    dependencies:
-      clsx: 2.1.1
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-      tailwind-merge: 2.5.4
-    optionalDependencies:
-      tailwindcss: 3.4.15
 
   '@next/bundle-analyzer@15.0.3':
     dependencies:

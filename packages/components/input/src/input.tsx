@@ -2,10 +2,7 @@
 
 import * as React from "react"
 import { Label } from "@mijn-ui/react-label"
-import {
-  createTVUnstyledSlots,
-  UnstyledProps,
-} from "@mijn-ui/react-utilities/shared"
+import { createTVUnstyledSlots, UnstyledProps } from "@mijn-ui/react-core"
 import { inputStyles } from "@mijn-ui/react-theme"
 
 export type InputProps = React.ComponentPropsWithRef<"input"> & {

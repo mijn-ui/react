@@ -1,8 +1,5 @@
 import * as React from "react"
-import {
-  UnstyledProps,
-  createTVUnstyledSlots,
-} from "@mijn-ui/react-utilities/shared"
+import { UnstyledProps, createTVUnstyledSlots } from "@mijn-ui/react-core"
 import { BadgeVariantsProps, badgeStyles } from "@mijn-ui/react-theme"
 
 export type BadgeProps = React.HTMLAttributes<HTMLDivElement> &

@@ -1,8 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { createContext } from "@mijn-ui/react-utilities/context"
-import { UnstyledProps } from "@mijn-ui/react-utilities/shared"
+import { createContext } from "@mijn-ui/react-utilities"
+import { UnstyledProps } from "@mijn-ui/react-core"
 import * as RadixPopover from "@radix-ui/react-popover"
 import { popoverStyles } from "@mijn-ui/react-theme"
 import { useTVUnstyled } from "@mijn-ui/react-hooks"

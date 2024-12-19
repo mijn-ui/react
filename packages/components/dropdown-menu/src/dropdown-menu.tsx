@@ -1,8 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { createContext } from "@mijn-ui/react-utilities/context"
-import { UnstyledProps } from "@mijn-ui/react-utilities/shared"
+import { createContext } from "@mijn-ui/react-utilities"
+import { UnstyledProps } from "@mijn-ui/react-core"
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu"
 import { CheckIcon, ChevronRightIcon, CircleIcon } from "@mijn-ui/shared-icons"
 import { dropdownMenuStyles } from "@mijn-ui/react-theme"

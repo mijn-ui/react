@@ -45,13 +45,14 @@
     "@mijn-ui/react-popover": "workspace:*",
     "@mijn-ui/react-calendar": "workspace:*",
     "@mijn-ui/react-button": "workspace:*",
+    "@mijn-ui/react-utilities": "workspace:*",
     "@mijn-ui/shared-icons": "workspace:*"
   },
   "peerDependencies": {
+    "@mijn-ui/react-core": "workspace:*",
     "react": "^19.0",
     "react-dom": "^19.0",
-    "@mijn-ui/react-theme": ">=0.0.6",
-    "@mijn-ui/react-utilities": ">=0.0.7"
+    "@mijn-ui/react-theme": ">=0.0.6"
   },
   "publishConfig": {
     "access": "public"

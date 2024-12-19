@@ -2,10 +2,7 @@
 
 import * as React from "react"
 import { useControlledState } from "@mijn-ui/react-hooks"
-import {
-  UnstyledProps,
-  createTVUnstyledSlots,
-} from "@mijn-ui/react-utilities/shared"
+import { UnstyledProps, createTVUnstyledSlots } from "@mijn-ui/react-core"
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
 import { CheckIcon, DividerHorizontalIcon } from "@mijn-ui/shared-icons"
 import { checkboxStyles, CheckboxVariantProps } from "@mijn-ui/react-theme"

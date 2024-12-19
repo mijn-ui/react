@@ -1,13 +1,10 @@
 "use client"
 
 import * as React from "react"
-import {
-  createTVUnstyledSlots,
-  UnstyledProps,
-} from "@mijn-ui/react-utilities/shared"
+import { createTVUnstyledSlots, UnstyledProps } from "@mijn-ui/react-core"
 import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area"
 import { scrollAreaStyles } from "@mijn-ui/react-theme"
-import { createContext } from "@mijn-ui/react-utilities/context"
+import { createContext } from "@mijn-ui/react-utilities"
 import { useTVUnstyled } from "@mijn-ui/react-hooks"
 
 /* -------------------------------------------------------------------------- */

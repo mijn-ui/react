@@ -38,13 +38,13 @@
     "tsup-config": "workspace:*"
   },
   "dependencies": {
-    "@mijn-ui/react-theme": "workspace:*"
+    "@mijn-ui/react-utilities": "workspace:*"
   },
   "peerDependencies": {
+    "@mijn-ui/react-core": "workspace:*",
     "react": "^19.0",
     "react-dom": "^19.0",
-    "@mijn-ui/react-theme": ">=0.0.6",
-    "@mijn-ui/react-utilities": ">=0.0.7"
+    "@mijn-ui/react-theme": ">=0.0.6"
   },
   "publishConfig": {
     "access": "public"

@@ -2,8 +2,8 @@ import { it, expect, describe } from "vitest"
 import { tv } from "tailwind-variants"
 import { renderHook } from "@testing-library/react"
 import { useTVUnstyled } from "../use-tv-unstyled"
-import { UnstyledProps } from "@mijn-ui/react-utilities/shared"
-import { createContext } from "@mijn-ui/react-utilities/context"
+import { UnstyledProps } from "@mijn-ui/react-core"
+import { createContext } from "@mijn-ui/react-utilities"
 
 describe("useTVUnstyled", () => {
   // Constants for default classes

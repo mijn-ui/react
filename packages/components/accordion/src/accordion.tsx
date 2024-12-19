@@ -1,8 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-utilities/shared"
-import { createContext } from "@mijn-ui/react-utilities/context"
+import { applyUnstyled, UnstyledProps } from "@mijn-ui/react-core"
+import { createContext } from "@mijn-ui/react-utilities"
 import * as RadixAccordion from "@radix-ui/react-accordion"
 import { ChevronDownIcon } from "@mijn-ui/shared-icons"
 import { AccordionVariantProps, accordionStyles } from "@mijn-ui/react-theme"
