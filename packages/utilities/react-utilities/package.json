@@ -17,16 +17,8 @@
   "bugs": {
     "url": "https://github.com/mijn-ui/mijn-ui-react/issues"
   },
-  "exports": {
-    "./shared": {
-      "import": "./dist/shared/index.js",
-      "types": "./dist/shared/index.d.ts"
-    },
-    "./context": {
-      "import": "./dist/context/index.js",
-      "types": "./dist/context/index.d.ts"
-    }
-  },
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "clean": "rimraf dist",
     "build": "tsup",
@@ -36,13 +28,10 @@
   },
   "devDependencies": {
     "react": "19.0.0",
-    "react-dom": "19.0.0",
     "@next/eslint-plugin-next": "^15.0.3",
     "@types/node": "22.9.0",
     "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
     "eslint-config-custom": "workspace:*",
-    "tailwind-variants": "^0.3.0",
     "tsconfig": "workspace:*",
     "tsup-config": "workspace:*"
   },
@@ -51,8 +40,7 @@
     "tailwind-merge": "^2.5.3"
   },
   "peerDependencies": {
-    "react": "^19.0",
-    "react-dom": "^19.0"
+    "react": "^19.0"
   },
   "peerDependenciesMeta": {
     "tailwindcss": {

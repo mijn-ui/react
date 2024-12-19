@@ -1,4 +1,6 @@
-// adapted from nextui
+"use client"
+
+/* Adapted From NextUI ❤️ */
 
 import * as React from "react"
 
