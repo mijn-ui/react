@@ -1,0 +1,57 @@
+{
+  "name": "@mijn-ui/react-core",
+  "author": "Htet Aung Lin<htetaunglin.coder@gmail.com>",
+  "version": "0.0.1",
+  "homepage": "https://mijn-ui.vercel.app",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mijn-ui/mijn-ui-react.git",
+    "directory": "packages/utilities/src"
+  },
+  "bugs": {
+    "url": "https://github.com/mijn-ui/mijn-ui-react/issues"
+  },
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsup",
+    "test": "vitest",
+    "lint": "eslint .",
+    "types:check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "react": "19.0.0",
+    "@types/node": "22.9.0",
+    "@types/react": "^19.0.0",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "tsup-config": "workspace:*"
+  },
+  "dependencies": {
+    "@mijn-ui/react-utilities": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^19.0",
+    "react-dom": "^19.0"
+  },
+  "peerDependenciesMeta": {
+    "tailwindcss": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "react",
+    "core",
+    "mijn-ui"
+  ]
+}
