@@ -6,38 +6,43 @@ import { UnstyledProps } from "@mijn-ui/react-utilities/shared"
 import { createContext } from "@mijn-ui/react-utilities/context"
 
 describe("useTVUnstyled", () => {
-  const baseDefault = "rounded-md"
-  const iconDefault = "p-4"
-  const indicatorDefault = "border-solid"
-
-  const colorClasses = {
-    primary: "bg-primary",
-    secondary: "bg-secondary",
-    accent: "bg-accent",
+  // Constants for default classes
+  const DEFAULT_CLASSES = {
+    base: "rounded-md",
+    icon: "p-4",
+    indicator: "border-solid",
   }
 
-  const sizeClasses = {
-    sm: "size-4",
-    md: "size-5",
-    lg: "size-6",
+  // Constants for variants
+  const VARIANTS = {
+    color: {
+      primary: "bg-primary",
+      secondary: "bg-secondary",
+      accent: "bg-accent",
+    },
+    size: {
+      sm: "size-4",
+      md: "size-5",
+      lg: "size-6",
+    },
   }
 
-  const userClass = "user-classes"
+  const DEFAULT_VARIANTS = {
+    color: "primary",
+    size: "md",
+  } as const
 
+  const USER_CLASS = "user-classes"
+
+  // Component styles using tailwind-variants
   const componentStyles = tv({
     slots: {
-      base: baseDefault,
-      icon: iconDefault,
-      indicator: indicatorDefault,
+      base: DEFAULT_CLASSES.base,
+      icon: DEFAULT_CLASSES.icon,
+      indicator: DEFAULT_CLASSES.indicator,
     },
-    variants: {
-      color: colorClasses,
-      size: sizeClasses,
-    },
-    defaultVariants: {
-      color: "primary",
-      size: "md",
-    },
+    variants: VARIANTS,
+    defaultVariants: DEFAULT_VARIANTS,
   })
 
   const styles = componentStyles({
@@ -45,6 +50,7 @@ describe("useTVUnstyled", () => {
     size: "lg",
   })
 
+  // Context setup
   type ContextType = UnstyledProps & {
     styles: ReturnType<typeof componentStyles>
   }
@@ -52,123 +58,114 @@ describe("useTVUnstyled", () => {
   const [ComponentProvider, useComponentContext] = createContext<ContextType>({
     name: "ComponentContext",
     strict: true,
-    errorMessage: "Test error message",
   })
 
+  const verifyClassNames = (
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    result: any,
+    expectedClasses: Record<string, string>,
+  ) => {
+    Object.entries(expectedClasses).forEach(([slot, expectedClass]) => {
+      expect(result.current[slot]({ className: USER_CLASS })).toBe(
+        expectedClass,
+      )
+    })
+  }
+
+  // Run hook with context and optional unstyledOverride
   const runTest = (unstyled: boolean, unstyledOverride?: boolean) => {
-    type WrapperProps = {
-      children: React.ReactNode
-      value: ContextType
-    }
-
-    const createWrapper = ({ children, value }: WrapperProps) => {
-      return <ComponentProvider value={value}>{children}</ComponentProvider>
-    }
-
     return renderHook(
       () => {
         const context = useComponentContext()
         return useTVUnstyled(context, unstyledOverride)
       },
       {
-        wrapper: ({ children }) =>
-          createWrapper({
-            children,
-            value: { unstyled, styles },
-          }),
+        wrapper: ({ children }: { children: React.ReactNode }) => (
+          <ComponentProvider value={{ unstyled, styles }}>
+            {children}
+          </ComponentProvider>
+        ),
       },
     )
   }
 
-  describe("if default unstyled is false", () => {
-    it("should return default & user classes if unstyledOverride is not defined", () => {
-      const unstyled = false
-      const { result } = runTest(unstyled)
+  describe("when default unstyled is false", () => {
+    const UNSTYLED = false
+
+    it("should return default & user classes if unstyledOverride is undefined", () => {
+      const { result } = runTest(UNSTYLED)
 
       expect(result.current.isUnstyled).toBe(false)
-      expect(result.current.base({ className: userClass })).toBe(
-        `${baseDefault} ${colorClasses.secondary} ${sizeClasses.lg} ${userClass}`,
-      )
-      expect(result.current.indicator({ className: userClass })).toBe(
-        `${indicatorDefault} ${userClass}`,
-      )
-      expect(result.current.icon({ className: userClass })).toBe(
-        `${iconDefault} ${userClass}`,
-      )
+
+      verifyClassNames(result, {
+        base: `${DEFAULT_CLASSES.base} ${VARIANTS.color.secondary} ${VARIANTS.size.lg} ${USER_CLASS}`,
+        indicator: `${DEFAULT_CLASSES.indicator} ${USER_CLASS}`,
+        icon: `${DEFAULT_CLASSES.icon} ${USER_CLASS}`,
+      })
     })
 
     it("should return default & user classes if unstyledOverride is false", () => {
-      const unstyled = false
-      const unstyledOverride = false
-      const { result } = runTest(unstyled, unstyledOverride)
+      const { result } = runTest(UNSTYLED, false)
 
       expect(result.current.isUnstyled).toBe(false)
-      expect(result.current.base({ className: userClass })).toBe(
-        `${baseDefault} ${colorClasses.secondary} ${sizeClasses.lg} ${userClass}`,
-      )
-      expect(result.current.indicator({ className: userClass })).toBe(
-        `${indicatorDefault} ${userClass}`,
-      )
-      expect(result.current.icon({ className: userClass })).toBe(
-        `${iconDefault} ${userClass}`,
-      )
+
+      verifyClassNames(result, {
+        base: `${DEFAULT_CLASSES.base} ${VARIANTS.color.secondary} ${VARIANTS.size.lg} ${USER_CLASS}`,
+        indicator: `${DEFAULT_CLASSES.indicator} ${USER_CLASS}`,
+        icon: `${DEFAULT_CLASSES.icon} ${USER_CLASS}`,
+      })
     })
 
-    it("should return default & user classes if unstyledOverride is true", () => {
-      const unstyled = false
-      const unstyledOverride = true
-      const { result } = runTest(unstyled, unstyledOverride)
+    it("should return only user classes if unstyledOverride is true", () => {
+      const { result } = runTest(UNSTYLED, true)
 
       expect(result.current.isUnstyled).toBe(true)
-      expect(result.current.base({ className: userClass })).toBe(`${userClass}`)
-      expect(result.current.indicator({ className: userClass })).toBe(
-        `${userClass}`,
-      )
-      expect(result.current.icon({ className: userClass })).toBe(`${userClass}`)
+
+      verifyClassNames(result, {
+        base: USER_CLASS,
+        indicator: USER_CLASS,
+        icon: USER_CLASS,
+      })
     })
   })
 
-  describe("if default unstyled is true", () => {
-    it("should return user classes if unstyledOverride is not defined", () => {
-      const unstyled = true
-      const { result } = runTest(unstyled)
+  describe("when default unstyled is true", () => {
+    const UNSTYLED = true
+
+    it("should return only user classes if unstyledOverride is undefined", () => {
+      const { result } = runTest(UNSTYLED)
 
       expect(result.current.isUnstyled).toBe(true)
-      expect(result.current.base({ className: userClass })).toBe(`${userClass}`)
-      expect(result.current.indicator({ className: userClass })).toBe(
-        `${userClass}`,
-      )
-      expect(result.current.icon({ className: userClass })).toBe(`${userClass}`)
+
+      verifyClassNames(result, {
+        base: USER_CLASS,
+        indicator: USER_CLASS,
+        icon: USER_CLASS,
+      })
     })
 
-    it("should return user classes if unstyledOverride is true", () => {
-      const unstyled = true
-      const unstyledOverride = true
-      const { result } = runTest(unstyled, unstyledOverride)
+    it("should return only user classes if unstyledOverride is true", () => {
+      const { result } = runTest(UNSTYLED, true)
 
       expect(result.current.isUnstyled).toBe(true)
-      expect(result.current.base({ className: userClass })).toBe(`${userClass}`)
-      expect(result.current.indicator({ className: userClass })).toBe(
-        `${userClass}`,
-      )
-      expect(result.current.icon({ className: userClass })).toBe(`${userClass}`)
+
+      verifyClassNames(result, {
+        base: USER_CLASS,
+        indicator: USER_CLASS,
+        icon: USER_CLASS,
+      })
     })
 
     it("should return default & user classes if unstyledOverride is false", () => {
-      const unstyled = true
-      const unstyledOverride = false
-      const { result } = runTest(unstyled, unstyledOverride)
+      const { result } = runTest(UNSTYLED, false)
 
       expect(result.current.isUnstyled).toBe(false)
-      expect(result.current.base({ className: userClass })).toBe(
-        `${baseDefault} ${colorClasses.secondary} ${sizeClasses.lg} ${userClass}`,
-      )
-      expect(result.current.indicator({ className: userClass })).toBe(
-        `${indicatorDefault} ${userClass}`,
-      )
-      expect(result.current.icon({ className: userClass })).toBe(
-        `${iconDefault} ${userClass}`,
-      )
+
+      verifyClassNames(result, {
+        base: `${DEFAULT_CLASSES.base} ${VARIANTS.color.secondary} ${VARIANTS.size.lg} ${USER_CLASS}`,
+        indicator: `${DEFAULT_CLASSES.indicator} ${USER_CLASS}`,
+        icon: `${DEFAULT_CLASSES.icon} ${USER_CLASS}`,
+      })
     })
   })
 })
