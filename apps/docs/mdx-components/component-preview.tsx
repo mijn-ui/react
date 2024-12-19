@@ -1,4 +1,4 @@
-import { cn } from "@mijn-ui/react-utilities/shared"
+import { cn } from "@mijn-ui/react-utilities"
 
 type CodePreviewerProps = {
   children?: React.ReactNode

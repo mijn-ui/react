@@ -15,7 +15,7 @@ import {
   CollapsibleTrigger,
 } from "@mijn-ui/react-collapsible"
 import { Separator } from "@mijn-ui/react-separator"
-import { cn } from "@mijn-ui/react-utilities/shared"
+import { cn } from "@mijn-ui/react-utilities"
 import { SidebarTrigger } from "fumadocs-core/sidebar"
 import { useSearchContext, useSidebar } from "fumadocs-ui/provider"
 import {

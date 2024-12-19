@@ -1,5 +1,5 @@
 import React from "react"
-import { cn } from "@mijn-ui/react-utilities/shared"
+import { cn } from "@mijn-ui/react-utilities"
 
 const LeftRadialGradient = ({
   className,

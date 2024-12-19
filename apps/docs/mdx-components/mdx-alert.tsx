@@ -5,7 +5,7 @@ import {
   Alert as MijnUIAlert,
 } from "@mijn-ui/react-alert"
 import { AlertVariantProps } from "@mijn-ui/react-theme"
-import { cn } from "@mijn-ui/react-utilities/shared"
+import { cn } from "@mijn-ui/react-utilities"
 import { LuAlertCircle, LuBug } from "react-icons/lu"
 
 type AlertProps = {
