@@ -535,6 +535,7 @@ export const CalendarDatePicker = React.forwardRef<
               style={{
                 maxHeight: "var(--radix-popover-content-available-height)",
                 overflowY: "auto",
+                overflowX: "hidden",
               }}
             >
               <div className="flex">
@@ -547,7 +548,7 @@ export const CalendarDatePicker = React.forwardRef<
                         color="accent"
                         size="sm"
                         className={cn(
-                          "hover:bg-primary/90 hover:text-primary-text justify-start",
+                          "hover:bg-primary/90 hover:text-primary-text min-w-max justify-start",
                           selectedRange === label &&
                             "bg-primary text-primary-text hover:bg-primary/90 hover:text-main",
                         )}
