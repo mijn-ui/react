@@ -27,7 +27,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build Packages
-        run: pnpm build:pkg
+        run: pnpm build
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
