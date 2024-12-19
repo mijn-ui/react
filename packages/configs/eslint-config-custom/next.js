@@ -21,7 +21,7 @@ export default [
     },
     settings: {
       react: {
-        version: "19.0.0-rc-b01722d5-20241114",
+        version: "detect",
       },
       tailwindcss: {
         config: "./tailwind.config.js",
